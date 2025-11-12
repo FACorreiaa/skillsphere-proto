@@ -2,7 +2,7 @@ version: v2
 managed:
   enabled: true
 plugins:
-  - remote: buf.build/protocolbuffers/go:v27.2
+  - remote: buf.build/protocolbuffers/go:v1.36.10
     out: gen
     opt: paths=source_relative
   - remote: buf.build/connectrpc/go:v1.16.2
