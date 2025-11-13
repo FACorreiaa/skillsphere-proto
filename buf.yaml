@@ -1,7 +1,7 @@
 version: v2
 modules:
   - path: proto
-    name: buf.build/facorreiaa/skillsphere-proto
+    name: buf.build/skillsphere/proto
 lint:
   use:
     - STANDARD
