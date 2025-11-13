@@ -1,3 +1,4 @@
+
 syntax = "proto3";
 
 package skillsphere.workshop.v1;
@@ -7,6 +8,7 @@ import "common/v1/common.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/workshop/v1;workshopv1";
 
+//
 // WorkshopService manages group sessions (1-to-many) with ticketing
 service WorkshopService {
   // Create a new workshop
