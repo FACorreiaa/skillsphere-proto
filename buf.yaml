@@ -1,13 +1,17 @@
 version: v2
 modules:
-  - path: .
-    name: buf.build/skillsphere/proto
+  - path: proto
+    name: buf.build/FACorreiaa/skillsphere-proto
 lint:
-    use:
-      - STANDARD
+  use:
+    - STANDARD
+  except:
+    - PACKAGE_VERSION_SUFFIX
+    - PACKAGE_DIRECTORY_MATCH
+    - ENUM_VALUE_PREFIX
 breaking:
   use:
     - FILE
 deps:
   - buf.build/googleapis/googleapis
-  - buf.build/bufbuild/protovalidate
+  - buf/validate/validate.proto

@@ -1,0 +1,206 @@
+syntax = "proto3";
+
+package skillsphere.chat.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/chat/v1;chatv1";
+
+// ChatService handles real-time messaging between users
+service ChatService {
+  // Send a message
+  rpc SendMessage(SendMessageRequest) returns (SendMessageResponse);
+
+  // Get chat history
+  rpc GetMessages(GetMessagesRequest) returns (GetMessagesResponse);
+
+  // Stream messages in real-time (server streaming for WebSocket-like behavior)
+  rpc StreamMessages(StreamMessagesRequest) returns (stream StreamMessagesResponse);
+
+  // Mark messages as read
+  rpc MarkAsRead(MarkAsReadRequest) returns (MarkAsReadResponse);
+
+  // List user conversations
+  rpc ListConversations(ListConversationsRequest) returns (ListConversationsResponse);
+
+  // Delete message
+  rpc DeleteMessage(DeleteMessageRequest) returns (DeleteMessageResponse);
+
+  // React to message (emoji reactions)
+  rpc ReactToMessage(ReactToMessageRequest) returns (ReactToMessageResponse);
+
+  // Report message
+  rpc ReportMessage(ReportMessageRequest) returns (ReportMessageResponse);
+}
+
+// ============================================================================
+// Message Types
+// ============================================================================
+
+enum MessageType {
+  MESSAGE_TYPE_UNSPECIFIED = 0;
+  MESSAGE_TYPE_TEXT = 1;
+  MESSAGE_TYPE_IMAGE = 2;
+  MESSAGE_TYPE_FILE = 3;
+  MESSAGE_TYPE_SYSTEM = 4;              // System notifications
+}
+
+message Message {
+  string message_id = 1;
+  string conversation_id = 2;
+  string sender_id = 3;
+  string recipient_id = 4;
+  MessageType type = 5;
+  string content = 6;                   // Text or file URL
+  repeated skillsphere.common.v1.Attachment attachments = 7;
+  google.protobuf.Timestamp sent_at = 8;
+  google.protobuf.Timestamp read_at = 9;
+  bool is_read = 10;
+  bool is_deleted = 11;
+  repeated Reaction reactions = 12;
+}
+
+message Reaction {
+  string user_id = 1;
+  string emoji = 2;                     // Unicode emoji
+  google.protobuf.Timestamp created_at = 3;
+}
+
+message Conversation {
+  string conversation_id = 1;
+  repeated string participant_ids = 2;
+  Message last_message = 3;
+  int32 unread_count = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp updated_at = 6;
+  bool is_archived = 7;
+}
+
+// ============================================================================
+// Send Message
+// ============================================================================
+
+message SendMessageRequest {
+  string sender_id = 1;
+  string recipient_id = 2;
+  string conversation_id = 3;           // Optional for new conversations
+  MessageType type = 4;
+  string content = 5;
+  repeated skillsphere.common.v1.Attachment attachments = 6;
+}
+
+message SendMessageResponse {
+  Message message = 1;
+  string conversation_id = 2;
+}
+
+// ============================================================================
+// Get Messages
+// ============================================================================
+
+message GetMessagesRequest {
+  string conversation_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+  google.protobuf.Timestamp since = 4;  // Get messages after this time
+}
+
+message GetMessagesResponse {
+  repeated Message messages = 1;
+  string next_page_token = 2;
+}
+
+// ============================================================================
+// Stream Messages
+// ============================================================================
+
+message StreamMessagesRequest {
+  string user_id = 1;
+  repeated string conversation_ids = 2;  // Empty for all conversations
+}
+
+message StreamMessagesResponse {
+  Message message = 1;
+  string event_type = 2;                // "new_message", "message_read", "typing"
+  TypingIndicator typing = 3;           // Optional
+}
+
+message TypingIndicator {
+  string user_id = 1;
+  string conversation_id = 2;
+  bool is_typing = 3;
+}
+
+// ============================================================================
+// Mark As Read
+// ============================================================================
+
+message MarkAsReadRequest {
+  string user_id = 1;
+  repeated string message_ids = 2;
+  string conversation_id = 3;           // Mark all in conversation
+}
+
+message MarkAsReadResponse {
+  int32 marked_count = 1;
+}
+
+// ============================================================================
+// List Conversations
+// ============================================================================
+
+message ListConversationsRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+  bool unread_only = 4;
+}
+
+message ListConversationsResponse {
+  repeated Conversation conversations = 1;
+  string next_page_token = 2;
+}
+
+// ============================================================================
+// Delete Message
+// ============================================================================
+
+message DeleteMessageRequest {
+  string message_id = 1;
+  string user_id = 2;                   // For authorization
+}
+
+message DeleteMessageResponse {
+  bool success = 1;
+}
+
+// ============================================================================
+// React To Message
+// ============================================================================
+
+message ReactToMessageRequest {
+  string message_id = 1;
+  string user_id = 2;
+  string emoji = 3;
+}
+
+message ReactToMessageResponse {
+  Reaction reaction = 1;
+}
+
+// ============================================================================
+// Report Message
+// ============================================================================
+
+message ReportMessageRequest {
+  string message_id = 1;
+  string reporter_id = 2;
+  string reason = 3;
+  string description = 4;
+}
+
+message ReportMessageResponse {
+  string report_id = 1;
+  string status = 2;
+}

@@ -1,0 +1,298 @@
+syntax = "proto3";
+
+package skillsphere.review.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/review/v1;reviewv1";
+
+// ReviewService handles asynchronous expert reviews of uploaded content
+service ReviewService {
+  // Request a review
+  rpc RequestReview(RequestReviewRequest) returns (RequestReviewResponse);
+
+  // Get review details
+  rpc GetReview(GetReviewRequest) returns (GetReviewResponse);
+
+  // Submit review (expert provides feedback)
+  rpc SubmitReview(SubmitReviewRequest) returns (SubmitReviewResponse);
+
+  // List available reviewers for a skill
+  rpc ListReviewers(ListReviewersRequest) returns (ListReviewersResponse);
+
+  // Get user's review requests
+  rpc GetUserReviews(GetUserReviewsRequest) returns (GetUserReviewsResponse);
+
+  // Get reviewer's pending reviews
+  rpc GetPendingReviews(GetPendingReviewsRequest) returns (GetPendingReviewsResponse);
+
+  // Accept review request
+  rpc AcceptReviewRequest(AcceptReviewRequestRequest) returns (AcceptReviewRequestResponse);
+
+  // Decline review request
+  rpc DeclineReviewRequest(DeclineReviewRequestRequest) returns (DeclineReviewRequestResponse);
+
+  // Rate review quality
+  rpc RateReview(RateReviewRequest) returns (RateReviewResponse);
+
+  // Request revision of review
+  rpc RequestRevision(RequestRevisionRequest) returns (RequestRevisionResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum ReviewStatus {
+  REVIEW_STATUS_UNSPECIFIED = 0;
+  REVIEW_STATUS_PENDING = 1;                 // Awaiting reviewer acceptance
+  REVIEW_STATUS_ACCEPTED = 2;                // Reviewer working on it
+  REVIEW_STATUS_IN_PROGRESS = 3;
+  REVIEW_STATUS_COMPLETED = 4;
+  REVIEW_STATUS_REVISION_REQUESTED = 5;
+  REVIEW_STATUS_DECLINED = 6;
+  REVIEW_STATUS_CANCELLED = 7;
+}
+
+enum ReviewType {
+  REVIEW_TYPE_UNSPECIFIED = 0;
+  REVIEW_TYPE_CODE_REVIEW = 1;
+  REVIEW_TYPE_DESIGN_REVIEW = 2;
+  REVIEW_TYPE_WRITING_REVIEW = 3;
+  REVIEW_TYPE_VIDEO_REVIEW = 4;
+  REVIEW_TYPE_PORTFOLIO_REVIEW = 5;
+  REVIEW_TYPE_RESUME_REVIEW = 6;
+}
+
+enum ReviewDepth {
+  REVIEW_DEPTH_UNSPECIFIED = 0;
+  REVIEW_DEPTH_QUICK = 1;                    // 15-30 min, high-level
+  REVIEW_DEPTH_STANDARD = 2;                 // 1-2 hours, detailed
+  REVIEW_DEPTH_COMPREHENSIVE = 3;            // 3+ hours, in-depth
+}
+
+// ============================================================================
+// Messages
+// ============================================================================
+
+message Review {
+  string review_id = 1;
+  string requester_id = 2;
+  string reviewer_id = 3;
+  string skill_id = 4;
+
+  // Request details
+  ReviewType type = 5;
+  ReviewDepth depth = 6;
+  string title = 7;
+  string description = 8;
+  repeated skillsphere.common.v1.Attachment content = 9;
+  repeated string specific_questions = 10;
+
+  // Pricing
+  skillsphere.common.v1.Money price = 11;
+  string payment_id = 12;
+
+  // Timeline
+  google.protobuf.Timestamp requested_at = 13;
+  google.protobuf.Timestamp accepted_at = 14;
+  google.protobuf.Timestamp deadline = 15;
+  google.protobuf.Timestamp completed_at = 16;
+
+  // Review content
+  string feedback = 17;
+  repeated FeedbackSection sections = 18;
+  repeated skillsphere.common.v1.Attachment attachments = 19;
+  string video_feedback_url = 20;            // Optional video walkthrough
+
+  // Ratings
+  int32 requester_rating = 21;               // Requester rates the review
+  string requester_comment = 22;
+  int32 reviewer_rating = 23;                // Reviewer rates the experience
+  string reviewer_comment = 24;
+
+  // Status
+  ReviewStatus status = 25;
+}
+
+message FeedbackSection {
+  string title = 1;                          // e.g., "Code Quality", "Architecture"
+  string content = 2;
+  int32 rating = 3;                          // 1-5 stars for this aspect
+  repeated string strengths = 4;
+  repeated string improvements = 5;
+  repeated string resources = 6;             // Recommended learning resources
+}
+
+message Reviewer {
+  skillsphere.common.v1.User user = 1;
+  repeated string expertise = 2;             // Skill IDs
+  double average_review_rating = 3;
+  int32 total_reviews = 4;
+  int32 response_time_hours = 5;             // Average time to accept
+  skillsphere.common.v1.Money hourly_rate = 6;
+  repeated ReviewType review_types = 7;
+  bool is_available = 8;
+}
+
+// ============================================================================
+// Request Review
+// ============================================================================
+
+message RequestReviewRequest {
+  string requester_id = 1;
+  string reviewer_id = 2;                    // Specific reviewer or empty for matching
+  string skill_id = 3;
+  ReviewType type = 4;
+  ReviewDepth depth = 5;
+  string title = 6;
+  string description = 7;
+  repeated skillsphere.common.v1.Attachment content = 8;
+  repeated string specific_questions = 9;
+  google.protobuf.Timestamp deadline = 10;
+  string payment_method_id = 11;
+}
+
+message RequestReviewResponse {
+  Review review = 1;
+  skillsphere.common.v1.Money total_price = 2;
+  string escrow_payment_id = 3;
+}
+
+// ============================================================================
+// Get Review
+// ============================================================================
+
+message GetReviewRequest {
+  string review_id = 1;
+}
+
+message GetReviewResponse {
+  Review review = 1;
+  skillsphere.common.v1.User requester = 2;
+  skillsphere.common.v1.User reviewer = 3;
+}
+
+// ============================================================================
+// Submit Review
+// ============================================================================
+
+message SubmitReviewRequest {
+  string review_id = 1;
+  string reviewer_id = 2;
+  string feedback = 3;
+  repeated FeedbackSection sections = 4;
+  repeated skillsphere.common.v1.Attachment attachments = 5;
+  string video_feedback_url = 6;
+}
+
+message SubmitReviewResponse {
+  Review review = 1;
+  bool payment_released = 2;
+}
+
+// ============================================================================
+// List Reviewers
+// ============================================================================
+
+message ListReviewersRequest {
+  string skill_id = 1;
+  ReviewType type = 2;
+  skillsphere.common.v1.Money max_price = 3;
+  int32 min_rating = 4;
+  bool available_now = 5;
+}
+
+message ListReviewersResponse {
+  repeated Reviewer reviewers = 1;
+}
+
+// ============================================================================
+// Get User Reviews
+// ============================================================================
+
+message GetUserReviewsRequest {
+  string user_id = 1;
+  bool as_requester = 2;
+  bool as_reviewer = 3;
+  ReviewStatus status = 4;
+}
+
+message GetUserReviewsResponse {
+  repeated Review requested_reviews = 1;
+  repeated Review provided_reviews = 2;
+}
+
+// ============================================================================
+// Get Pending Reviews
+// ============================================================================
+
+message GetPendingReviewsRequest {
+  string reviewer_id = 1;
+}
+
+message GetPendingReviewsResponse {
+  repeated Review pending_reviews = 1;
+  int32 total_count = 2;
+}
+
+// ============================================================================
+// Accept Review Request
+// ============================================================================
+
+message AcceptReviewRequestRequest {
+  string review_id = 1;
+  string reviewer_id = 2;
+  google.protobuf.Timestamp estimated_completion = 3;
+}
+
+message AcceptReviewRequestResponse {
+  Review review = 1;
+}
+
+// ============================================================================
+// Decline Review Request
+// ============================================================================
+
+message DeclineReviewRequestRequest {
+  string review_id = 1;
+  string reviewer_id = 2;
+  string reason = 3;
+}
+
+message DeclineReviewRequestResponse {
+  bool success = 1;
+  bool refund_issued = 2;
+}
+
+// ============================================================================
+// Rate Review
+// ============================================================================
+
+message RateReviewRequest {
+  string review_id = 1;
+  string user_id = 2;
+  int32 rating = 3;
+  string comment = 4;
+}
+
+message RateReviewResponse {
+  Review review = 1;
+}
+
+// ============================================================================
+// Request Revision
+// ============================================================================
+
+message RequestRevisionRequest {
+  string review_id = 1;
+  string requester_id = 2;
+  string revision_notes = 3;
+  repeated string specific_areas = 4;
+}
+
+message RequestRevisionResponse {
+  Review review = 1;
+  google.protobuf.Timestamp new_deadline = 2;
+}

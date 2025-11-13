@@ -1,0 +1,231 @@
+syntax = "proto3";
+
+package skillsphere.certification.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/certification/v1;certificationv1";
+
+// CertificationService manages blockchain-based skill certifications and badges
+service CertificationService {
+  // Issue certification/badge after session completion
+  rpc IssueCertification(IssueCertificationRequest) returns (IssueCertificationResponse);
+
+  // Verify certification authenticity
+  rpc VerifyCertification(VerifyCertificationRequest) returns (VerifyCertificationResponse);
+
+  // Get user certifications
+  rpc GetUserCertifications(GetUserCertificationsRequest) returns (GetUserCertificationsResponse);
+
+  // Revoke certification
+  rpc RevokeCertification(RevokeCertificationRequest) returns (RevokeCertificationResponse);
+
+  // Get certification details
+  rpc GetCertification(GetCertificationRequest) returns (GetCertificationResponse);
+
+  // Share certification (generate shareable link)
+  rpc ShareCertification(ShareCertificationRequest) returns (ShareCertificationResponse);
+
+  // Mint NFT badge (blockchain)
+  rpc MintNFTBadge(MintNFTBadgeRequest) returns (MintNFTBadgeResponse);
+
+  // Get available badge templates
+  rpc GetBadgeTemplates(GetBadgeTemplatesRequest) returns (GetBadgeTemplatesResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum CertificationType {
+  CERTIFICATION_TYPE_UNSPECIFIED = 0;
+  CERTIFICATION_TYPE_SKILL_COMPLETION = 1;   // Completed skill exchange
+  CERTIFICATION_TYPE_EXPERT_VERIFIED = 2;    // Verified by expert
+  CERTIFICATION_TYPE_MILESTONE = 3;          // Platform milestone (e.g., 100 sessions)
+  CERTIFICATION_TYPE_ACHIEVEMENT = 4;        // Special achievement badge
+}
+
+enum BlockchainNetwork {
+  BLOCKCHAIN_NETWORK_UNSPECIFIED = 0;
+  BLOCKCHAIN_NETWORK_POLYGON = 1;
+  BLOCKCHAIN_NETWORK_ETHEREUM = 2;
+  BLOCKCHAIN_NETWORK_SOLANA = 3;
+}
+
+enum CertificationStatus {
+  CERTIFICATION_STATUS_UNSPECIFIED = 0;
+  CERTIFICATION_STATUS_PENDING = 1;          // Awaiting blockchain confirmation
+  CERTIFICATION_STATUS_ISSUED = 2;
+  CERTIFICATION_STATUS_REVOKED = 3;
+}
+
+// ============================================================================
+// Messages
+// ============================================================================
+
+message Certification {
+  string certification_id = 1;
+  string user_id = 2;
+  string skill_id = 3;
+  string skill_name = 4;
+  CertificationType type = 5;
+  CertificationStatus status = 6;
+
+  // Blockchain info
+  BlockchainNetwork blockchain = 7;
+  string contract_address = 8;
+  string token_id = 9;                       // NFT token ID
+  string transaction_hash = 10;
+
+  // Certificate details
+  string issuer_id = 11;                     // User or platform who issued
+  string issuer_name = 12;
+  string badge_image_url = 13;
+  string certificate_url = 14;               // Shareable certificate page
+  map<string, string> metadata = 15;         // Additional data
+
+  // Timestamps
+  google.protobuf.Timestamp issued_at = 16;
+  google.protobuf.Timestamp expires_at = 17; // Optional expiration
+  google.protobuf.Timestamp revoked_at = 18;
+}
+
+message BadgeTemplate {
+  string template_id = 1;
+  string name = 2;
+  string description = 3;
+  string image_url = 4;
+  CertificationType type = 5;
+  map<string, string> requirements = 6;      // What's needed to earn it
+}
+
+// ============================================================================
+// Issue Certification
+// ============================================================================
+
+message IssueCertificationRequest {
+  string user_id = 1;
+  string skill_id = 2;
+  string session_id = 3;                     // Optional reference
+  string issuer_id = 4;
+  CertificationType type = 5;
+  string template_id = 6;                    // Badge template
+  bool mint_as_nft = 7;                      // Mint on blockchain
+  BlockchainNetwork blockchain = 8;
+}
+
+message IssueCertificationResponse {
+  Certification certification = 1;
+  string share_url = 2;                      // Public certificate URL
+  bool blockchain_pending = 3;               // If NFT minting in progress
+}
+
+// ============================================================================
+// Verify Certification
+// ============================================================================
+
+message VerifyCertificationRequest {
+  string certification_id = 1;
+  string verification_code = 2;              // Optional for QR code scans
+}
+
+message VerifyCertificationResponse {
+  Certification certification = 1;
+  bool is_valid = 2;
+  string blockchain_proof_url = 3;           // Link to blockchain explorer
+  string message = 4;
+}
+
+// ============================================================================
+// Get User Certifications
+// ============================================================================
+
+message GetUserCertificationsRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+  CertificationType type_filter = 4;
+  bool include_revoked = 5;
+}
+
+message GetUserCertificationsResponse {
+  repeated Certification certifications = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
+}
+
+// ============================================================================
+// Revoke Certification
+// ============================================================================
+
+message RevokeCertificationRequest {
+  string certification_id = 1;
+  string admin_id = 2;                       // Admin performing revocation
+  string reason = 3;
+}
+
+message RevokeCertificationResponse {
+  Certification certification = 1;
+  bool blockchain_updated = 2;
+}
+
+// ============================================================================
+// Get Certification
+// ============================================================================
+
+message GetCertificationRequest {
+  string certification_id = 1;
+}
+
+message GetCertificationResponse {
+  Certification certification = 1;
+  skillsphere.common.v1.User user = 2;
+  skillsphere.common.v1.Skill skill = 3;
+}
+
+// ============================================================================
+// Share Certification
+// ============================================================================
+
+message ShareCertificationRequest {
+  string certification_id = 1;
+  repeated string platforms = 2;             // "linkedin", "twitter", "email"
+}
+
+message ShareCertificationResponse {
+  string public_url = 1;
+  map<string, string> share_links = 2;       // Platform-specific share URLs
+  string qr_code_url = 3;                    // QR code image
+}
+
+// ============================================================================
+// Mint NFT Badge
+// ============================================================================
+
+message MintNFTBadgeRequest {
+  string certification_id = 1;
+  string user_wallet_address = 2;
+  BlockchainNetwork blockchain = 3;
+}
+
+message MintNFTBadgeResponse {
+  string transaction_hash = 1;
+  string token_id = 2;
+  string contract_address = 3;
+  string opensea_url = 4;                    // Link to view on OpenSea
+  google.protobuf.Timestamp minted_at = 5;
+}
+
+// ============================================================================
+// Get Badge Templates
+// ============================================================================
+
+message GetBadgeTemplatesRequest {
+  CertificationType type_filter = 1;
+  int32 limit = 2;
+}
+
+message GetBadgeTemplatesResponse {
+  repeated BadgeTemplate templates = 1;
+}

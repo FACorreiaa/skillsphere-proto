@@ -1,0 +1,229 @@
+syntax = "proto3";
+
+package skillsphere.auth.v1;
+
+import "google/protobuf/timestamp.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/auth/v1;authv1";
+
+// AuthService handles user authentication and authorization
+service AuthService {
+  // Register a new user
+  rpc Register(RegisterRequest) returns (RegisterResponse);
+
+  // Login with email/password
+  rpc Login(LoginRequest) returns (LoginResponse);
+
+  // Logout (invalidate token)
+  rpc Logout(LogoutRequest) returns (LogoutResponse);
+
+  // Refresh access token
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
+
+  // Validate token
+  rpc ValidateToken(ValidateTokenRequest) returns (ValidateTokenResponse);
+
+  // OAuth login (Google, GitHub, etc.)
+  rpc OAuthLogin(OAuthLoginRequest) returns (OAuthLoginResponse);
+
+  // Request password reset
+  rpc RequestPasswordReset(RequestPasswordResetRequest) returns (RequestPasswordResetResponse);
+
+  // Reset password with token
+  rpc ResetPassword(ResetPasswordRequest) returns (ResetPasswordResponse);
+
+  // Change password
+  rpc ChangePassword(ChangePasswordRequest) returns (ChangePasswordResponse);
+
+  // Verify email
+  rpc VerifyEmail(VerifyEmailRequest) returns (VerifyEmailResponse);
+
+  // Resend verification email
+  rpc ResendVerificationEmail(ResendVerificationEmailRequest) returns (ResendVerificationEmailResponse);
+}
+
+// ============================================================================
+// OAuth Providers
+// ============================================================================
+
+enum OAuthProvider {
+  OAUTH_PROVIDER_UNSPECIFIED = 0;
+  OAUTH_PROVIDER_GOOGLE = 1;
+  OAUTH_PROVIDER_GITHUB = 2;
+  OAUTH_PROVIDER_LINKEDIN = 3;
+  OAUTH_PROVIDER_FACEBOOK = 4;
+}
+
+// ============================================================================
+// Register
+// ============================================================================
+
+message RegisterRequest {
+  string email = 1;
+  string username = 2;
+  string password = 3;
+  string display_name = 4;
+}
+
+message RegisterResponse {
+  string user_id = 1;
+  string access_token = 2;
+  string refresh_token = 3;
+  google.protobuf.Timestamp expires_at = 4;
+  bool email_verification_required = 5;
+}
+
+// ============================================================================
+// Login
+// ============================================================================
+
+message LoginRequest {
+  string email = 1;
+  string password = 2;
+  string device_id = 3;                 // Optional for device tracking
+}
+
+message LoginResponse {
+  string user_id = 1;
+  string access_token = 2;
+  string refresh_token = 3;
+  google.protobuf.Timestamp expires_at = 4;
+  UserProfile user = 5;
+}
+
+message UserProfile {
+  string user_id = 1;
+  string email = 2;
+  string username = 3;
+  string display_name = 4;
+  string avatar_url = 5;
+  bool is_verified = 6;
+}
+
+// ============================================================================
+// Logout
+// ============================================================================
+
+message LogoutRequest {
+  string access_token = 1;
+  string refresh_token = 2;
+}
+
+message LogoutResponse {
+  bool success = 1;
+}
+
+// ============================================================================
+// Refresh Token
+// ============================================================================
+
+message RefreshTokenRequest {
+  string refresh_token = 1;
+}
+
+message RefreshTokenResponse {
+  string access_token = 1;
+  string refresh_token = 2;
+  google.protobuf.Timestamp expires_at = 3;
+}
+
+// ============================================================================
+// Validate Token
+// ============================================================================
+
+message ValidateTokenRequest {
+  string access_token = 1;
+}
+
+message ValidateTokenResponse {
+  bool is_valid = 1;
+  string user_id = 2;
+  google.protobuf.Timestamp expires_at = 3;
+  repeated string permissions = 4;      // e.g., "user:read", "session:create"
+}
+
+// ============================================================================
+// OAuth Login
+// ============================================================================
+
+message OAuthLoginRequest {
+  OAuthProvider provider = 1;
+  string authorization_code = 2;
+  string redirect_uri = 3;
+}
+
+message OAuthLoginResponse {
+  string user_id = 1;
+  string access_token = 2;
+  string refresh_token = 3;
+  google.protobuf.Timestamp expires_at = 4;
+  UserProfile user = 5;
+  bool is_new_user = 6;                 // True if account was just created
+}
+
+// ============================================================================
+// Request Password Reset
+// ============================================================================
+
+message RequestPasswordResetRequest {
+  string email = 1;
+}
+
+message RequestPasswordResetResponse {
+  bool success = 1;
+  string message = 2;                   // "Email sent" or error message
+}
+
+// ============================================================================
+// Reset Password
+// ============================================================================
+
+message ResetPasswordRequest {
+  string reset_token = 1;
+  string new_password = 2;
+}
+
+message ResetPasswordResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// ============================================================================
+// Change Password
+// ============================================================================
+
+message ChangePasswordRequest {
+  string user_id = 1;
+  string current_password = 2;
+  string new_password = 3;
+}
+
+message ChangePasswordResponse {
+  bool success = 1;
+}
+
+// ============================================================================
+// Verify Email
+// ============================================================================
+
+message VerifyEmailRequest {
+  string verification_token = 1;
+}
+
+message VerifyEmailResponse {
+  bool success = 1;
+  string user_id = 2;
+}
+
+// ============================================================================
+// Resend Verification Email
+// ============================================================================
+
+message ResendVerificationEmailRequest {
+  string email = 1;
+}
+
+message ResendVerificationEmailResponse {
+  bool success = 1;
+  string message = 2;
+}

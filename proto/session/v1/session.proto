@@ -1,0 +1,232 @@
+syntax = "proto3";
+
+package skillsphere.session.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/session/v1;sessionv1";
+
+// SessionService manages 1:1 skill exchange sessions
+service SessionService {
+  // Create a new session
+  rpc CreateSession(CreateSessionRequest) returns (CreateSessionResponse);
+
+  // Get session by ID
+  rpc GetSession(GetSessionRequest) returns (GetSessionResponse);
+
+  // Update session details
+  rpc UpdateSession(UpdateSessionRequest) returns (UpdateSessionResponse);
+
+  // Cancel session
+  rpc CancelSession(CancelSessionRequest) returns (CancelSessionResponse);
+
+  // Start session (mark as in progress)
+  rpc StartSession(StartSessionRequest) returns (StartSessionResponse);
+
+  // Complete session
+  rpc CompleteSession(CompleteSessionRequest) returns (CompleteSessionResponse);
+
+  // List user sessions
+  rpc ListUserSessions(ListUserSessionsRequest) returns (ListUserSessionsResponse);
+
+  // Rate session partner
+  rpc RateSession(RateSessionRequest) returns (RateSessionResponse);
+
+  // Report session issue
+  rpc ReportSession(ReportSessionRequest) returns (ReportSessionResponse);
+
+  // Get upcoming sessions
+  rpc GetUpcomingSessions(GetUpcomingSessionsRequest) returns (GetUpcomingSessionsResponse);
+}
+
+// ============================================================================
+// Session Message
+// ============================================================================
+
+message Session {
+  string session_id = 1;
+  string initiator_id = 2;              // User who created the session
+  string partner_id = 3;                // Other participant
+
+  // Skills being exchanged
+  repeated string initiator_offers = 4;  // Skills initiator will teach
+  repeated string partner_offers = 5;    // Skills partner will teach
+
+  // Scheduling
+  google.protobuf.Timestamp scheduled_start = 6;
+  google.protobuf.Timestamp scheduled_end = 7;
+  google.protobuf.Timestamp actual_start = 8;
+  google.protobuf.Timestamp actual_end = 9;
+
+  // Status
+  skillsphere.common.v1.SessionStatus status = 10;
+  string meeting_url = 11;              // Video call link
+  string notes = 12;                    // Session agenda/notes
+
+  // Metadata
+  google.protobuf.Timestamp created_at = 13;
+  google.protobuf.Timestamp updated_at = 14;
+  string cancellation_reason = 15;
+  bool is_premium = 16;                 // Premium feature flag
+}
+
+// ============================================================================
+// Create Session
+// ============================================================================
+
+message CreateSessionRequest {
+  string initiator_id = 1;
+  string partner_id = 2;
+  repeated string initiator_offers = 3;
+  repeated string partner_offers = 4;
+  google.protobuf.Timestamp scheduled_start = 5;
+  google.protobuf.Timestamp scheduled_end = 6;
+  string notes = 7;
+}
+
+message CreateSessionResponse {
+  Session session = 1;
+  string invitation_message = 2;        // Pre-formatted message to send partner
+}
+
+// ============================================================================
+// Get Session
+// ============================================================================
+
+message GetSessionRequest {
+  string session_id = 1;
+}
+
+message GetSessionResponse {
+  Session session = 1;
+  skillsphere.common.v1.User initiator = 2;
+  skillsphere.common.v1.User partner = 3;
+}
+
+// ============================================================================
+// Update Session
+// ============================================================================
+
+message UpdateSessionRequest {
+  string session_id = 1;
+  google.protobuf.Timestamp scheduled_start = 2;
+  google.protobuf.Timestamp scheduled_end = 3;
+  string notes = 4;
+  repeated string initiator_offers = 5;
+  repeated string partner_offers = 6;
+}
+
+message UpdateSessionResponse {
+  Session session = 1;
+}
+
+// ============================================================================
+// Cancel Session
+// ============================================================================
+
+message CancelSessionRequest {
+  string session_id = 1;
+  string user_id = 2;                   // Who is cancelling
+  string reason = 3;
+}
+
+message CancelSessionResponse {
+  Session session = 1;
+  bool refund_issued = 2;               // For premium sessions
+}
+
+// ============================================================================
+// Start Session
+// ============================================================================
+
+message StartSessionRequest {
+  string session_id = 1;
+  string user_id = 2;
+}
+
+message StartSessionResponse {
+  Session session = 1;
+  string meeting_url = 2;
+}
+
+// ============================================================================
+// Complete Session
+// ============================================================================
+
+message CompleteSessionRequest {
+  string session_id = 1;
+  string user_id = 2;
+  string summary = 3;                   // Session summary
+}
+
+message CompleteSessionResponse {
+  Session session = 1;
+  bool eligible_for_certification = 2;
+}
+
+// ============================================================================
+// List User Sessions
+// ============================================================================
+
+message ListUserSessionsRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+  skillsphere.common.v1.SessionStatus status_filter = 4;
+  google.protobuf.Timestamp start_date = 5;
+  google.protobuf.Timestamp end_date = 6;
+}
+
+message ListUserSessionsResponse {
+  repeated Session sessions = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
+}
+
+// ============================================================================
+// Rate Session
+// ============================================================================
+
+message RateSessionRequest {
+  string session_id = 1;
+  string reviewer_id = 2;               // User giving the rating
+  int32 score = 3;                      // 1-5 stars
+  string comment = 4;
+  repeated string tags = 5;             // e.g., "helpful", "punctual", "knowledgeable"
+}
+
+message RateSessionResponse {
+  skillsphere.common.v1.Rating rating = 1;
+  bool badge_earned = 2;                // If user earned a new badge
+  string badge_name = 3;
+}
+
+// ============================================================================
+// Report Session
+// ============================================================================
+
+message ReportSessionRequest {
+  string session_id = 1;
+  string reporter_id = 2;
+  string reason = 3;
+  string description = 4;
+}
+
+message ReportSessionResponse {
+  string report_id = 1;
+  string status = 2;                    // "pending", "under_review", "resolved"
+}
+
+// ============================================================================
+// Get Upcoming Sessions
+// ============================================================================
+
+message GetUpcomingSessionsRequest {
+  string user_id = 1;
+  int32 days_ahead = 2;                 // Default 7
+}
+
+message GetUpcomingSessionsResponse {
+  repeated Session sessions = 1;
+}

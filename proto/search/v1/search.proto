@@ -1,0 +1,195 @@
+syntax = "proto3";
+
+package skillsphere.search.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/search/v1;searchv1";
+
+// SearchService provides discovery and search functionality
+service SearchService {
+  // Search for users by skills, location, etc.
+  rpc SearchUsers(SearchUsersRequest) returns (SearchUsersResponse);
+
+  // Search for skills by keyword or category
+  rpc SearchSkills(SearchSkillsRequest) returns (SearchSkillsResponse);
+
+  // Get trending skills
+  rpc GetTrendingSkills(GetTrendingSkillsRequest) returns (GetTrendingSkillsResponse);
+
+  // Get featured users (curated by admins)
+  rpc GetFeaturedUsers(GetFeaturedUsersRequest) returns (GetFeaturedUsersResponse);
+
+  // Get skill recommendations based on search history
+  rpc GetSearchSuggestions(GetSearchSuggestionsRequest) returns (GetSearchSuggestionsResponse);
+
+  // Advanced search with multiple filters
+  rpc AdvancedSearch(AdvancedSearchRequest) returns (AdvancedSearchResponse);
+}
+
+// ============================================================================
+// Search Users
+// ============================================================================
+
+message SearchUsersRequest {
+  string query = 1;                     // Keyword search (name, bio, skills)
+  skillsphere.common.v1.SearchFilters filters = 2;
+  int32 page_size = 3;
+  string page_token = 4;
+  SearchSortBy sort_by = 5;
+}
+
+enum SearchSortBy {
+  SEARCH_SORT_BY_UNSPECIFIED = 0;
+  SEARCH_SORT_BY_RELEVANCE = 1;
+  SEARCH_SORT_BY_RATING = 2;
+  SEARCH_SORT_BY_SESSIONS = 3;
+  SEARCH_SORT_BY_DISTANCE = 4;
+  SEARCH_SORT_BY_RECENT = 5;
+}
+
+message SearchUsersResponse {
+  repeated UserSearchResult results = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
+  SearchMetadata metadata = 4;
+}
+
+message UserSearchResult {
+  skillsphere.common.v1.User user = 1;
+  double relevance_score = 2;           // 0.0-1.0
+  repeated string matched_skills = 3;
+  string snippet = 4;                   // Highlighted text snippet
+  double distance_km = 5;               // If geo-search enabled
+}
+
+message SearchMetadata {
+  int32 query_time_ms = 1;
+  string query_id = 2;                  // For analytics
+  repeated string applied_filters = 3;
+}
+
+// ============================================================================
+// Search Skills
+// ============================================================================
+
+message SearchSkillsRequest {
+  string query = 1;
+  repeated skillsphere.common.v1.SkillCategory categories = 2;
+  int32 limit = 3;
+}
+
+message SearchSkillsResponse {
+  repeated SkillSearchResult results = 1;
+}
+
+message SkillSearchResult {
+  skillsphere.common.v1.Skill skill = 1;
+  double relevance_score = 2;
+  int32 user_count = 3;                 // How many users have this skill
+  bool is_trending = 4;
+}
+
+// ============================================================================
+// Get Trending Skills
+// ============================================================================
+
+message GetTrendingSkillsRequest {
+  int32 limit = 1;                      // Default 10, max 50
+  skillsphere.common.v1.SkillCategory category = 2;
+  int32 days = 3;                       // Trending window (default 7)
+  string region = 4;                    // Optional geographic filter
+}
+
+message GetTrendingSkillsResponse {
+  repeated TrendingSkill skills = 1;
+  google.protobuf.Timestamp computed_at = 2;
+}
+
+message TrendingSkill {
+  skillsphere.common.v1.Skill skill = 1;
+  int32 trend_score = 2;
+  int32 sessions_count = 3;
+  double growth_rate = 4;               // Percentage
+  int32 rank = 5;                       // Position in trending list
+}
+
+// ============================================================================
+// Get Featured Users
+// ============================================================================
+
+message GetFeaturedUsersRequest {
+  int32 limit = 1;
+  skillsphere.common.v1.SkillCategory category = 2;
+}
+
+message GetFeaturedUsersResponse {
+  repeated FeaturedUser users = 1;
+}
+
+message FeaturedUser {
+  skillsphere.common.v1.User user = 1;
+  string feature_reason = 2;            // Why they're featured
+  string badge = 3;                     // e.g., "Top Contributor", "Expert"
+}
+
+// ============================================================================
+// Get Search Suggestions
+// ============================================================================
+
+message GetSearchSuggestionsRequest {
+  string user_id = 1;
+  string partial_query = 2;             // Autocomplete query
+  int32 limit = 3;
+}
+
+message GetSearchSuggestionsResponse {
+  repeated Suggestion suggestions = 1;
+}
+
+message Suggestion {
+  string text = 1;
+  string type = 2;                      // "skill", "user", "category"
+  int32 popularity = 3;
+}
+
+// ============================================================================
+// Advanced Search
+// ============================================================================
+
+message AdvancedSearchRequest {
+  SearchQuery query = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message SearchQuery {
+  // User filters
+  repeated string skill_ids_offered = 1;
+  repeated string skill_ids_wanted = 2;
+  skillsphere.common.v1.ProficiencyLevel min_proficiency = 3;
+
+  // Location filters
+  skillsphere.common.v1.Location location = 4;
+  int32 max_distance_km = 5;
+
+  // Availability filters
+  repeated skillsphere.common.v1.DayOfWeek available_days = 6;
+  string timezone = 7;
+
+  // Rating filters
+  double min_rating = 8;
+  int32 min_sessions = 9;
+
+  // Subscription filters
+  skillsphere.common.v1.SubscriptionTier min_tier = 10;
+  bool verified_only = 11;
+}
+
+message AdvancedSearchResponse {
+  repeated UserSearchResult results = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
+  SearchMetadata metadata = 4;
+}

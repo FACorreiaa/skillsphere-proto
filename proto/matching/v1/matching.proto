@@ -1,0 +1,163 @@
+syntax = "proto3";
+
+package skillsphere.matching.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/matching/v1;matchingv1";
+
+// MatchingService implements skill matching algorithms for pairing users
+service MatchingService {
+  // Find matches for a user based on skills
+  rpc FindMatches(FindMatchesRequest) returns (FindMatchesResponse);
+
+  // Get match score between two users
+  rpc GetMatchScore(GetMatchScoreRequest) returns (GetMatchScoreResponse);
+
+  // Get personalized recommendations
+  rpc GetRecommendations(GetRecommendationsRequest) returns (GetRecommendationsResponse);
+
+  // Get similar users based on skills
+  rpc GetSimilarUsers(GetSimilarUsersRequest) returns (GetSimilarUsersResponse);
+
+  // Generate skill embeddings (AI-powered)
+  rpc GenerateEmbeddings(GenerateEmbeddingsRequest) returns (GenerateEmbeddingsResponse);
+}
+
+// ============================================================================
+// Matching Algorithms
+// ============================================================================
+
+enum MatchingAlgorithm {
+  MATCHING_ALGORITHM_UNSPECIFIED = 0;
+  MATCHING_ALGORITHM_EUCLIDEAN = 1;     // Distance-based matching
+  MATCHING_ALGORITHM_COSINE = 2;        // Cosine similarity
+  MATCHING_ALGORITHM_EMBEDDING = 3;     // AI embeddings (semantic)
+  MATCHING_ALGORITHM_HYBRID = 4;        // Combination of algorithms
+}
+
+// ============================================================================
+// Find Matches
+// ============================================================================
+
+message FindMatchesRequest {
+  string user_id = 1;
+  MatchingAlgorithm algorithm = 2;
+  int32 limit = 3;                      // Default 20, max 100
+  skillsphere.common.v1.SearchFilters filters = 4;
+  double min_match_score = 5;           // Threshold 0.0-1.0 (default 0.5)
+}
+
+message FindMatchesResponse {
+  repeated Match matches = 1;
+  MatchingMetadata metadata = 2;
+}
+
+message Match {
+  skillsphere.common.v1.User user = 1;
+  double match_score = 2;               // 0.0-1.0
+  repeated SkillMatch skill_matches = 3;
+  string explanation = 4;               // Human-readable reason
+  bool is_mutual = 5;                   // Both users can help each other
+}
+
+message SkillMatch {
+  string skill_name = 1;
+  int32 user_proficiency = 2;
+  int32 match_proficiency = 3;
+  bool is_complementary = 4;            // User offers what match wants
+}
+
+message MatchingMetadata {
+  MatchingAlgorithm algorithm_used = 1;
+  int32 total_candidates = 2;
+  int32 filtered_count = 3;
+  google.protobuf.Timestamp computed_at = 4;
+}
+
+// ============================================================================
+// Get Match Score
+// ============================================================================
+
+message GetMatchScoreRequest {
+  string user_id_1 = 1;
+  string user_id_2 = 2;
+  MatchingAlgorithm algorithm = 3;
+}
+
+message GetMatchScoreResponse {
+  double match_score = 1;
+  repeated SkillMatch skill_matches = 2;
+  string explanation = 3;
+  bool is_mutual = 4;
+}
+
+// ============================================================================
+// Get Recommendations
+// ============================================================================
+
+message GetRecommendationsRequest {
+  string user_id = 1;
+  int32 limit = 2;
+  RecommendationType type = 3;
+}
+
+enum RecommendationType {
+  RECOMMENDATION_TYPE_UNSPECIFIED = 0;
+  RECOMMENDATION_TYPE_PARTNERS = 1;     // Users to exchange with
+  RECOMMENDATION_TYPE_SKILLS = 2;       // Skills to learn
+  RECOMMENDATION_TYPE_SESSIONS = 3;     // Suggested session times
+}
+
+message GetRecommendationsResponse {
+  repeated Recommendation recommendations = 1;
+}
+
+message Recommendation {
+  string item_id = 1;                   // User ID or Skill ID
+  string item_type = 2;                 // "user", "skill", "session"
+  string title = 3;
+  string description = 4;
+  double relevance_score = 5;
+  string reason = 6;
+}
+
+// ============================================================================
+// Get Similar Users
+// ============================================================================
+
+message GetSimilarUsersRequest {
+  string user_id = 1;
+  int32 limit = 2;
+  MatchingAlgorithm algorithm = 3;
+}
+
+message GetSimilarUsersResponse {
+  repeated SimilarUser users = 1;
+}
+
+message SimilarUser {
+  skillsphere.common.v1.User user = 1;
+  double similarity_score = 2;
+  repeated string common_skills = 3;
+}
+
+// ============================================================================
+// Generate Embeddings (AI-powered)
+// ============================================================================
+
+message GenerateEmbeddingsRequest {
+  string user_id = 1;
+  repeated string skill_names = 2;
+}
+
+message GenerateEmbeddingsResponse {
+  repeated SkillEmbedding embeddings = 1;
+}
+
+message SkillEmbedding {
+  string skill_name = 1;
+  repeated float vector = 2;            // 300D vector from Gemini
+  string model_version = 3;
+}

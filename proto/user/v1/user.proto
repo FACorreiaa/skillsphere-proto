@@ -1,0 +1,239 @@
+syntax = "proto3";
+
+package skillsphere.user.v1;
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/field_mask.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/user/v1;userv1";
+
+// UserService manages user profiles, account operations, and preferences
+service UserService {
+  // Create a new user account
+  rpc CreateUser(CreateUserRequest) returns (CreateUserResponse);
+
+  // Get user profile by ID
+  rpc GetUser(GetUserRequest) returns (GetUserResponse);
+
+  // Get multiple users by IDs (batch operation)
+  rpc BatchGetUsers(BatchGetUsersRequest) returns (BatchGetUsersResponse);
+
+  // Update user profile
+  rpc UpdateUser(UpdateUserRequest) returns (UpdateUserResponse);
+
+  // Delete user account (soft delete)
+  rpc DeleteUser(DeleteUserRequest) returns (DeleteUserResponse);
+
+  // List users with pagination and filters
+  rpc ListUsers(ListUsersRequest) returns (ListUsersResponse);
+
+  // Get user statistics
+  rpc GetUserStats(GetUserStatsRequest) returns (GetUserStatsResponse);
+
+  // Update user availability
+  rpc UpdateAvailability(UpdateAvailabilityRequest) returns (UpdateAvailabilityResponse);
+
+  // Update notification preferences
+  rpc UpdateNotificationPreferences(UpdateNotificationPreferencesRequest) returns (UpdateNotificationPreferencesResponse);
+
+  // Get user's session history
+  rpc GetUserSessions(GetUserSessionsRequest) returns (GetUserSessionsResponse);
+
+  // Get user's ratings and reviews
+  rpc GetUserRatings(GetUserRatingsRequest) returns (GetUserRatingsResponse);
+
+  // Verify user account (for premium features)
+  rpc VerifyUser(VerifyUserRequest) returns (VerifyUserResponse);
+}
+
+// ============================================================================
+// Create User
+// ============================================================================
+
+message CreateUserRequest {
+  string email = 1;
+  string username = 2;
+  string password = 3;                  // Will be hashed on server
+  string display_name = 4;
+  string bio = 5;
+  skillsphere.common.v1.Location location = 6;
+}
+
+message CreateUserResponse {
+  skillsphere.common.v1.User user = 1;
+  string access_token = 2;              // JWT for immediate login
+}
+
+// ============================================================================
+// Get User
+// ============================================================================
+
+message GetUserRequest {
+  string user_id = 1;
+}
+
+message GetUserResponse {
+  skillsphere.common.v1.User user = 1;
+}
+
+// ============================================================================
+// Batch Get Users
+// ============================================================================
+
+message BatchGetUsersRequest {
+  repeated string user_ids = 1;         // Max 100
+}
+
+message BatchGetUsersResponse {
+  repeated skillsphere.common.v1.User users = 1;
+  repeated string not_found_ids = 2;    // IDs that don't exist
+}
+
+// ============================================================================
+// Update User
+// ============================================================================
+
+message UpdateUserRequest {
+  skillsphere.common.v1.User user = 1;
+  google.protobuf.FieldMask update_mask = 2;  // e.g., "bio,avatar_url,location"
+}
+
+message UpdateUserResponse {
+  skillsphere.common.v1.User user = 1;
+}
+
+// ============================================================================
+// Delete User
+// ============================================================================
+
+message DeleteUserRequest {
+  string user_id = 1;
+  string reason = 2;                    // Optional reason for deletion
+}
+
+message DeleteUserResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// ============================================================================
+// List Users
+// ============================================================================
+
+message ListUsersRequest {
+  int32 page_size = 1;                  // Default 20, max 100
+  string page_token = 2;                // Opaque cursor for pagination
+  skillsphere.common.v1.SearchFilters filters = 3;
+  string sort_by = 4;                   // e.g., "created_at", "rating", "sessions"
+  bool ascending = 5;                   // Default false (descending)
+}
+
+message ListUsersResponse {
+  repeated skillsphere.common.v1.User users = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
+}
+
+// ============================================================================
+// Get User Stats
+// ============================================================================
+
+message GetUserStatsRequest {
+  string user_id = 1;
+}
+
+message GetUserStatsResponse {
+  int32 total_sessions = 1;
+  int32 completed_sessions = 2;
+  int32 cancelled_sessions = 3;
+  int32 no_show_count = 4;
+  double average_rating = 5;
+  int32 total_reviews = 6;
+  int32 skills_offered_count = 7;
+  int32 skills_wanted_count = 8;
+  int32 active_days = 9;                // Days since last activity
+  google.protobuf.Timestamp member_since = 10;
+}
+
+// ============================================================================
+// Update Availability
+// ============================================================================
+
+message UpdateAvailabilityRequest {
+  string user_id = 1;
+  skillsphere.common.v1.Availability availability = 2;
+}
+
+message UpdateAvailabilityResponse {
+  skillsphere.common.v1.Availability availability = 1;
+}
+
+// ============================================================================
+// Update Notification Preferences
+// ============================================================================
+
+message UpdateNotificationPreferencesRequest {
+  string user_id = 1;
+  skillsphere.common.v1.NotificationPreferences preferences = 2;
+}
+
+message UpdateNotificationPreferencesResponse {
+  skillsphere.common.v1.NotificationPreferences preferences = 1;
+}
+
+// ============================================================================
+// Get User Sessions
+// ============================================================================
+
+message GetUserSessionsRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+  skillsphere.common.v1.SessionStatus status_filter = 4;
+}
+
+message GetUserSessionsResponse {
+  repeated Session sessions = 1;        // Simplified session for listing
+  string next_page_token = 2;
+}
+
+message Session {
+  string session_id = 1;
+  string partner_id = 2;
+  string partner_name = 3;
+  repeated string skills = 4;
+  skillsphere.common.v1.SessionStatus status = 5;
+  google.protobuf.Timestamp scheduled_at = 6;
+}
+
+// ============================================================================
+// Get User Ratings
+// ============================================================================
+
+message GetUserRatingsRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message GetUserRatingsResponse {
+  repeated skillsphere.common.v1.Rating ratings = 1;
+  string next_page_token = 2;
+  double average_score = 3;
+}
+
+// ============================================================================
+// Verify User
+// ============================================================================
+
+message VerifyUserRequest {
+  string user_id = 1;
+  string verification_method = 2;       // e.g., "email", "phone", "document"
+  string verification_token = 3;
+}
+
+message VerifyUserResponse {
+  bool verified = 1;
+  string badge_url = 2;                 // URL to verification badge image
+}

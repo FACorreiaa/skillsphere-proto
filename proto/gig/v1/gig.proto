@@ -1,0 +1,372 @@
+syntax = "proto3";
+
+package skillsphere.gig.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/gig/v1;gigv1";
+
+// GigService manages the freelance marketplace for paid skill exchanges
+service GigService {
+  // Create a gig offer
+  rpc CreateGig(CreateGigRequest) returns (CreateGigResponse);
+
+  // Get gig details
+  rpc GetGig(GetGigRequest) returns (GetGigResponse);
+
+  // Update gig
+  rpc UpdateGig(UpdateGigRequest) returns (UpdateGigResponse);
+
+  // Delete gig
+  rpc DeleteGig(DeleteGigRequest) returns (DeleteGigResponse);
+
+  // List gigs (marketplace browse)
+  rpc ListGigs(ListGigsRequest) returns (ListGigsResponse);
+
+  // Search gigs
+  rpc SearchGigs(SearchGigsRequest) returns (SearchGigsResponse);
+
+  // Apply to gig (submit proposal)
+  rpc ApplyToGig(ApplyToGigRequest) returns (ApplyToGigResponse);
+
+  // Accept application
+  rpc AcceptApplication(AcceptApplicationRequest) returns (AcceptApplicationResponse);
+
+  // Reject application
+  rpc RejectApplication(RejectApplicationRequest) returns (RejectApplicationResponse);
+
+  // Submit work
+  rpc SubmitWork(SubmitWorkRequest) returns (SubmitWorkResponse);
+
+  // Approve work (release payment)
+  rpc ApproveWork(ApproveWorkRequest) returns (ApproveWorkResponse);
+
+  // Request revision
+  rpc RequestRevision(RequestRevisionRequest) returns (RequestRevisionResponse);
+
+  // Dispute gig
+  rpc DisputeGig(DisputeGigRequest) returns (DisputeGigResponse);
+
+  // Get user's gigs
+  rpc GetUserGigs(GetUserGigsRequest) returns (GetUserGigsResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum GigStatus {
+  GIG_STATUS_UNSPECIFIED = 0;
+  GIG_STATUS_OPEN = 1;
+  GIG_STATUS_IN_PROGRESS = 2;
+  GIG_STATUS_SUBMITTED = 3;
+  GIG_STATUS_REVISION_REQUESTED = 4;
+  GIG_STATUS_COMPLETED = 5;
+  GIG_STATUS_DISPUTED = 6;
+  GIG_STATUS_CANCELLED = 7;
+}
+
+enum GigType {
+  GIG_TYPE_UNSPECIFIED = 0;
+  GIG_TYPE_TUTORING = 1;                     // Hourly teaching
+  GIG_TYPE_PROJECT = 2;                      // Fixed-price project
+  GIG_TYPE_CONSULTING = 3;                   // Advisory
+  GIG_TYPE_REVIEW = 4;                       // Code/design review
+}
+
+enum ApplicationStatus {
+  APPLICATION_STATUS_UNSPECIFIED = 0;
+  APPLICATION_STATUS_PENDING = 1;
+  APPLICATION_STATUS_ACCEPTED = 2;
+  APPLICATION_STATUS_REJECTED = 3;
+  APPLICATION_STATUS_WITHDRAWN = 4;
+}
+
+// ============================================================================
+// Messages
+// ============================================================================
+
+message Gig {
+  string gig_id = 1;
+  string creator_id = 2;
+  string title = 3;
+  string description = 4;
+  repeated string skill_ids = 5;
+
+  // Pricing
+  GigType type = 6;
+  skillsphere.common.v1.Money budget = 7;
+  bool is_hourly = 8;                        // Hourly vs. fixed price
+  int32 estimated_hours = 9;
+
+  // Requirements
+  skillsphere.common.v1.ProficiencyLevel required_proficiency = 10;
+  repeated string requirements = 11;
+  repeated skillsphere.common.v1.Attachment attachments = 12;
+
+  // Timeline
+  google.protobuf.Timestamp deadline = 13;
+  google.protobuf.Timestamp created_at = 14;
+  google.protobuf.Timestamp updated_at = 15;
+
+  // Status
+  GigStatus status = 16;
+  string assigned_to = 17;                   // Freelancer user ID
+  int32 application_count = 18;
+
+  // Completion
+  google.protobuf.Timestamp completed_at = 19;
+  double rating = 20;
+  string review = 21;
+}
+
+message Application {
+  string application_id = 1;
+  string gig_id = 2;
+  string freelancer_id = 3;
+  string cover_letter = 4;
+  skillsphere.common.v1.Money proposed_amount = 5;
+  int32 estimated_hours = 6;
+  ApplicationStatus status = 7;
+  google.protobuf.Timestamp applied_at = 8;
+  google.protobuf.Timestamp responded_at = 9;
+}
+
+message WorkSubmission {
+  string submission_id = 1;
+  string gig_id = 2;
+  string freelancer_id = 3;
+  string description = 4;
+  repeated skillsphere.common.v1.Attachment deliverables = 5;
+  google.protobuf.Timestamp submitted_at = 6;
+  int32 revision_number = 7;
+}
+
+// ============================================================================
+// Create Gig
+// ============================================================================
+
+message CreateGigRequest {
+  string creator_id = 1;
+  string title = 2;
+  string description = 3;
+  repeated string skill_ids = 4;
+  GigType type = 5;
+  skillsphere.common.v1.Money budget = 6;
+  bool is_hourly = 7;
+  int32 estimated_hours = 8;
+  skillsphere.common.v1.ProficiencyLevel required_proficiency = 9;
+  repeated string requirements = 10;
+  google.protobuf.Timestamp deadline = 11;
+}
+
+message CreateGigResponse {
+  Gig gig = 1;
+  string escrow_payment_id = 2;              // Payment held in escrow
+}
+
+// ============================================================================
+// Get Gig
+// ============================================================================
+
+message GetGigRequest {
+  string gig_id = 1;
+}
+
+message GetGigResponse {
+  Gig gig = 1;
+  skillsphere.common.v1.User creator = 2;
+  skillsphere.common.v1.User assigned_freelancer = 3;
+}
+
+// ============================================================================
+// Update Gig
+// ============================================================================
+
+message UpdateGigRequest {
+  string gig_id = 1;
+  string title = 2;
+  string description = 3;
+  skillsphere.common.v1.Money budget = 4;
+  google.protobuf.Timestamp deadline = 5;
+}
+
+message UpdateGigResponse {
+  Gig gig = 1;
+}
+
+// ============================================================================
+// Delete Gig
+// ============================================================================
+
+message DeleteGigRequest {
+  string gig_id = 1;
+  string creator_id = 2;
+}
+
+message DeleteGigResponse {
+  bool success = 1;
+  bool refund_issued = 2;
+}
+
+// ============================================================================
+// List Gigs
+// ============================================================================
+
+message ListGigsRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+  repeated skillsphere.common.v1.SkillCategory categories = 3;
+  GigType type = 4;
+  skillsphere.common.v1.Money min_budget = 5;
+  skillsphere.common.v1.Money max_budget = 6;
+  GigStatus status = 7;
+}
+
+message ListGigsResponse {
+  repeated Gig gigs = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
+}
+
+// ============================================================================
+// Search Gigs
+// ============================================================================
+
+message SearchGigsRequest {
+  string query = 1;
+  int32 limit = 2;
+  repeated skillsphere.common.v1.SkillCategory categories = 3;
+}
+
+message SearchGigsResponse {
+  repeated Gig gigs = 1;
+}
+
+// ============================================================================
+// Apply To Gig
+// ============================================================================
+
+message ApplyToGigRequest {
+  string gig_id = 1;
+  string freelancer_id = 2;
+  string cover_letter = 3;
+  skillsphere.common.v1.Money proposed_amount = 4;
+  int32 estimated_hours = 5;
+}
+
+message ApplyToGigResponse {
+  Application application = 1;
+}
+
+// ============================================================================
+// Accept Application
+// ============================================================================
+
+message AcceptApplicationRequest {
+  string application_id = 1;
+  string creator_id = 2;
+}
+
+message AcceptApplicationResponse {
+  Application application = 1;
+  Gig gig = 2;
+}
+
+// ============================================================================
+// Reject Application
+// ============================================================================
+
+message RejectApplicationRequest {
+  string application_id = 1;
+  string creator_id = 2;
+  string reason = 3;
+}
+
+message RejectApplicationResponse {
+  Application application = 1;
+}
+
+// ============================================================================
+// Submit Work
+// ============================================================================
+
+message SubmitWorkRequest {
+  string gig_id = 1;
+  string freelancer_id = 2;
+  string description = 3;
+  repeated skillsphere.common.v1.Attachment deliverables = 4;
+}
+
+message SubmitWorkResponse {
+  WorkSubmission submission = 1;
+  string notification_sent = 2;
+}
+
+// ============================================================================
+// Approve Work
+// ============================================================================
+
+message ApproveWorkRequest {
+  string gig_id = 1;
+  string creator_id = 2;
+  int32 rating = 3;                          // 1-5 stars
+  string review = 4;
+}
+
+message ApproveWorkResponse {
+  Gig gig = 1;
+  bool payment_released = 2;
+  string payout_id = 3;
+}
+
+// ============================================================================
+// Request Revision
+// ============================================================================
+
+message RequestRevisionRequest {
+  string gig_id = 1;
+  string creator_id = 2;
+  string feedback = 3;
+  repeated string revision_points = 4;
+}
+
+message RequestRevisionResponse {
+  Gig gig = 1;
+  int32 revision_number = 2;
+}
+
+// ============================================================================
+// Dispute Gig
+// ============================================================================
+
+message DisputeGigRequest {
+  string gig_id = 1;
+  string disputing_user_id = 2;
+  string reason = 3;
+  string description = 4;
+  repeated skillsphere.common.v1.Attachment evidence = 5;
+}
+
+message DisputeGigResponse {
+  string dispute_id = 1;
+  string status = 2;                         // "pending", "under_review"
+}
+
+// ============================================================================
+// Get User Gigs
+// ============================================================================
+
+message GetUserGigsRequest {
+  string user_id = 1;
+  bool as_creator = 2;
+  bool as_freelancer = 3;
+  GigStatus status_filter = 4;
+}
+
+message GetUserGigsResponse {
+  repeated Gig created_gigs = 1;
+  repeated Gig freelance_gigs = 2;
+  repeated Application applications = 3;
+}

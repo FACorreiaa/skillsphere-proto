@@ -1,0 +1,325 @@
+syntax = "proto3";
+
+package skillsphere.challenge.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/challenge/v1;challengev1";
+
+// ChallengeService manages community skill challenges with gamification
+service ChallengeService {
+  // Create a challenge
+  rpc CreateChallenge(CreateChallengeRequest) returns (CreateChallengeResponse);
+
+  // Get challenge details
+  rpc GetChallenge(GetChallengeRequest) returns (GetChallengeResponse);
+
+  // List challenges
+  rpc ListChallenges(ListChallengesRequest) returns (ListChallengesResponse);
+
+  // Join challenge
+  rpc JoinChallenge(JoinChallengeRequest) returns (JoinChallengeResponse);
+
+  // Submit challenge entry
+  rpc SubmitEntry(SubmitEntryRequest) returns (SubmitEntryResponse);
+
+  // Vote on entry
+  rpc VoteOnEntry(VoteOnEntryRequest) returns (VoteOnEntryResponse);
+
+  // Get challenge leaderboard
+  rpc GetLeaderboard(GetLeaderboardRequest) returns (GetLeaderboardResponse);
+
+  // Get user's challenges
+  rpc GetUserChallenges(GetUserChallengesRequest) returns (GetUserChallengesResponse);
+
+  // Award challenge winners
+  rpc AwardWinners(AwardWinnersRequest) returns (AwardWinnersResponse);
+
+  // Get trending challenges
+  rpc GetTrendingChallenges(GetTrendingChallengesRequest) returns (GetTrendingChallengesResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum ChallengeStatus {
+  CHALLENGE_STATUS_UNSPECIFIED = 0;
+  CHALLENGE_STATUS_UPCOMING = 1;
+  CHALLENGE_STATUS_ACTIVE = 2;
+  CHALLENGE_STATUS_VOTING = 3;
+  CHALLENGE_STATUS_COMPLETED = 4;
+  CHALLENGE_STATUS_CANCELLED = 5;
+}
+
+enum ChallengeType {
+  CHALLENGE_TYPE_UNSPECIFIED = 0;
+  CHALLENGE_TYPE_WEEKLY = 1;
+  CHALLENGE_TYPE_MONTHLY = 2;
+  CHALLENGE_TYPE_SPECIAL_EVENT = 3;
+  CHALLENGE_TYPE_SPONSORED = 4;
+}
+
+enum EntryStatus {
+  ENTRY_STATUS_UNSPECIFIED = 0;
+  ENTRY_STATUS_DRAFT = 1;
+  ENTRY_STATUS_SUBMITTED = 2;
+  ENTRY_STATUS_DISQUALIFIED = 3;
+  ENTRY_STATUS_WINNER = 4;
+}
+
+// ============================================================================
+// Messages
+// ============================================================================
+
+message Challenge {
+  string challenge_id = 1;
+  string title = 2;
+  string description = 3;
+  repeated string skill_ids = 4;
+  skillsphere.common.v1.ChallengeDifficulty difficulty = 5;
+
+  // Timeline
+  google.protobuf.Timestamp start_date = 6;
+  google.protobuf.Timestamp end_date = 7;
+  google.protobuf.Timestamp voting_end_date = 8;
+
+  // Rules
+  repeated string rules = 9;
+  repeated string judging_criteria = 10;
+  int32 max_participants = 11;
+  bool requires_verification = 12;
+
+  // Rewards
+  repeated Prize prizes = 13;
+  bool has_sponsor = 14;
+  string sponsor_name = 15;
+  string sponsor_logo_url = 16;
+
+  // Status
+  ChallengeStatus status = 17;
+  ChallengeType type = 18;
+  int32 participant_count = 19;
+  int32 entry_count = 20;
+
+  // Metadata
+  string banner_image_url = 21;
+  repeated string tags = 22;
+  google.protobuf.Timestamp created_at = 23;
+}
+
+message Prize {
+  int32 rank = 1;                            // 1st, 2nd, 3rd place
+  string title = 2;                          // e.g., "First Place"
+  string description = 3;
+  skillsphere.common.v1.Money cash_prize = 4;
+  repeated string perks = 5;                 // e.g., "Premium subscription", "Certification"
+}
+
+message ChallengeEntry {
+  string entry_id = 1;
+  string challenge_id = 2;
+  string user_id = 3;
+  string title = 4;
+  string description = 5;
+  repeated skillsphere.common.v1.Attachment attachments = 6;
+  string demo_url = 7;                       // Live demo or video
+  string source_url = 8;                     // GitHub repo, etc.
+
+  // Voting
+  int32 vote_count = 9;
+  double average_rating = 10;
+  repeated string tags = 11;
+
+  // Status
+  EntryStatus status = 12;
+  google.protobuf.Timestamp submitted_at = 13;
+  int32 rank = 14;                           // Final rank (if winner)
+}
+
+message Vote {
+  string vote_id = 1;
+  string entry_id = 2;
+  string voter_id = 3;
+  int32 rating = 4;                          // 1-5 stars
+  string comment = 5;
+  google.protobuf.Timestamp voted_at = 6;
+}
+
+message LeaderboardEntry {
+  int32 rank = 1;
+  skillsphere.common.v1.User user = 2;
+  ChallengeEntry entry = 3;
+  int32 total_votes = 4;
+  double score = 5;
+}
+
+// ============================================================================
+// Create Challenge
+// ============================================================================
+
+message CreateChallengeRequest {
+  string title = 1;
+  string description = 2;
+  repeated string skill_ids = 3;
+  skillsphere.common.v1.ChallengeDifficulty difficulty = 4;
+  google.protobuf.Timestamp start_date = 5;
+  google.protobuf.Timestamp end_date = 6;
+  repeated string rules = 7;
+  repeated Prize prizes = 8;
+  ChallengeType type = 9;
+}
+
+message CreateChallengeResponse {
+  Challenge challenge = 1;
+  string shareable_url = 2;
+}
+
+// ============================================================================
+// Get Challenge
+// ============================================================================
+
+message GetChallengeRequest {
+  string challenge_id = 1;
+}
+
+message GetChallengeResponse {
+  Challenge challenge = 1;
+  bool user_is_participating = 2;
+  ChallengeEntry user_entry = 3;            // If user has submitted
+}
+
+// ============================================================================
+// List Challenges
+// ============================================================================
+
+message ListChallengesRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+  ChallengeStatus status = 3;
+  repeated skillsphere.common.v1.SkillCategory categories = 4;
+  skillsphere.common.v1.ChallengeDifficulty difficulty = 5;
+}
+
+message ListChallengesResponse {
+  repeated Challenge challenges = 1;
+  string next_page_token = 2;
+}
+
+// ============================================================================
+// Join Challenge
+// ============================================================================
+
+message JoinChallengeRequest {
+  string challenge_id = 1;
+  string user_id = 2;
+}
+
+message JoinChallengeResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// ============================================================================
+// Submit Entry
+// ============================================================================
+
+message SubmitEntryRequest {
+  string challenge_id = 1;
+  string user_id = 2;
+  string title = 3;
+  string description = 4;
+  repeated skillsphere.common.v1.Attachment attachments = 5;
+  string demo_url = 6;
+  string source_url = 7;
+  repeated string tags = 8;
+}
+
+message SubmitEntryResponse {
+  ChallengeEntry entry = 1;
+  string confirmation_message = 2;
+}
+
+// ============================================================================
+// Vote On Entry
+// ============================================================================
+
+message VoteOnEntryRequest {
+  string entry_id = 1;
+  string voter_id = 2;
+  int32 rating = 3;
+  string comment = 4;
+}
+
+message VoteOnEntryResponse {
+  Vote vote = 1;
+  ChallengeEntry updated_entry = 2;
+}
+
+// ============================================================================
+// Get Leaderboard
+// ============================================================================
+
+message GetLeaderboardRequest {
+  string challenge_id = 1;
+  int32 limit = 2;                           // Top N entries
+}
+
+message GetLeaderboardResponse {
+  repeated LeaderboardEntry entries = 1;
+  google.protobuf.Timestamp last_updated = 2;
+}
+
+// ============================================================================
+// Get User Challenges
+// ============================================================================
+
+message GetUserChallengesRequest {
+  string user_id = 1;
+  ChallengeStatus status = 2;
+}
+
+message GetUserChallengesResponse {
+  repeated UserChallenge challenges = 1;
+}
+
+message UserChallenge {
+  Challenge challenge = 1;
+  ChallengeEntry user_entry = 2;
+  int32 user_rank = 3;
+  bool has_won = 4;
+}
+
+// ============================================================================
+// Award Winners
+// ============================================================================
+
+message AwardWinnersRequest {
+  string challenge_id = 1;
+  repeated Winner winners = 2;
+  string admin_id = 3;
+}
+
+message Winner {
+  string entry_id = 1;
+  int32 rank = 2;
+  string prize_description = 3;
+}
+
+message AwardWinnersResponse {
+  bool success = 1;
+  repeated string winner_user_ids = 2;
+}
+
+// ============================================================================
+// Get Trending Challenges
+// ============================================================================
+
+message GetTrendingChallengesRequest {
+  int32 limit = 1;
+}
+
+message GetTrendingChallengesResponse {
+  repeated Challenge challenges = 1;
+}

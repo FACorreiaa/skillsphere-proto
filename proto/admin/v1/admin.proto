@@ -1,0 +1,485 @@
+syntax = "proto3";
+
+package skillsphere.admin.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/admin/v1;adminv1";
+
+// AdminService provides moderation and platform management tools
+service AdminService {
+  // User moderation
+  rpc SuspendUser(SuspendUserRequest) returns (SuspendUserResponse);
+  rpc UnsuspendUser(UnsuspendUserRequest) returns (UnsuspendUserResponse);
+  rpc BanUser(BanUserRequest) returns (BanUserResponse);
+  rpc DeleteUserAccount(DeleteUserAccountRequest) returns (DeleteUserAccountResponse);
+
+  // Content moderation
+  rpc FlagContent(FlagContentRequest) returns (FlagContentResponse);
+  rpc ReviewFlaggedContent(ReviewFlaggedContentRequest) returns (ReviewFlaggedContentResponse);
+  rpc RemoveContent(RemoveContentRequest) returns (RemoveContentResponse);
+
+  // Dispute resolution
+  rpc GetDisputes(GetDisputesRequest) returns (GetDisputesResponse);
+  rpc ResolveDispute(ResolveDisputeRequest) returns (ResolveDisputeResponse);
+
+  // Reports management
+  rpc GetReports(GetReportsRequest) returns (GetReportsResponse);
+  rpc InvestigateReport(InvestigateReportRequest) returns (InvestigateReportResponse);
+  rpc CloseReport(CloseReportRequest) returns (CloseReportResponse);
+
+  // Platform configuration
+  rpc UpdatePlatformSettings(UpdatePlatformSettingsRequest) returns (UpdatePlatformSettingsResponse);
+  rpc GetPlatformSettings(GetPlatformSettingsRequest) returns (GetPlatformSettingsResponse);
+
+  // Feature flags
+  rpc ToggleFeatureFlag(ToggleFeatureFlagRequest) returns (ToggleFeatureFlagResponse);
+  rpc ListFeatureFlags(ListFeatureFlagsRequest) returns (ListFeatureFlagsResponse);
+
+  // User verification
+  rpc VerifyExpert(VerifyExpertRequest) returns (VerifyExpertResponse);
+  rpc RevokeVerification(RevokeVerificationRequest) returns (RevokeVerificationResponse);
+
+  // Audit logs
+  rpc GetAuditLogs(GetAuditLogsRequest) returns (GetAuditLogsResponse);
+
+  // Announcements
+  rpc CreateAnnouncement(CreateAnnouncementRequest) returns (CreateAnnouncementResponse);
+  rpc GetAnnouncements(GetAnnouncementsRequest) returns (GetAnnouncementsResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum ModerationAction {
+  MODERATION_ACTION_UNSPECIFIED = 0;
+  MODERATION_ACTION_WARNING = 1;
+  MODERATION_ACTION_CONTENT_REMOVAL = 2;
+  MODERATION_ACTION_SUSPENSION = 3;
+  MODERATION_ACTION_BAN = 4;
+  MODERATION_ACTION_NO_ACTION = 5;
+}
+
+enum ReportStatus {
+  REPORT_STATUS_UNSPECIFIED = 0;
+  REPORT_STATUS_PENDING = 1;
+  REPORT_STATUS_UNDER_REVIEW = 2;
+  REPORT_STATUS_RESOLVED = 3;
+  REPORT_STATUS_DISMISSED = 4;
+}
+
+enum ReportType {
+  REPORT_TYPE_UNSPECIFIED = 0;
+  REPORT_TYPE_HARASSMENT = 1;
+  REPORT_TYPE_SPAM = 2;
+  REPORT_TYPE_INAPPROPRIATE_CONTENT = 3;
+  REPORT_TYPE_FRAUD = 4;
+  REPORT_TYPE_COPYRIGHT = 5;
+  REPORT_TYPE_OTHER = 6;
+}
+
+enum DisputeStatus {
+  DISPUTE_STATUS_UNSPECIFIED = 0;
+  DISPUTE_STATUS_PENDING = 1;
+  DISPUTE_STATUS_UNDER_REVIEW = 2;
+  DISPUTE_STATUS_RESOLVED = 3;
+  DISPUTE_STATUS_ESCALATED = 4;
+}
+
+enum AnnouncementPriority {
+  ANNOUNCEMENT_PRIORITY_UNSPECIFIED = 0;
+  ANNOUNCEMENT_PRIORITY_LOW = 1;
+  ANNOUNCEMENT_PRIORITY_MEDIUM = 2;
+  ANNOUNCEMENT_PRIORITY_HIGH = 3;
+  ANNOUNCEMENT_PRIORITY_CRITICAL = 4;
+}
+
+// ============================================================================
+// Suspend User
+// ============================================================================
+
+message SuspendUserRequest {
+  string user_id = 1;
+  string admin_id = 2;
+  string reason = 3;
+  int32 duration_days = 4;                   // 0 for indefinite
+}
+
+message SuspendUserResponse {
+  skillsphere.common.v1.User user = 1;
+  google.protobuf.Timestamp suspended_until = 2;
+}
+
+// ============================================================================
+// Unsuspend User
+// ============================================================================
+
+message UnsuspendUserRequest {
+  string user_id = 1;
+  string admin_id = 2;
+  string reason = 3;
+}
+
+message UnsuspendUserResponse {
+  skillsphere.common.v1.User user = 1;
+}
+
+// ============================================================================
+// Ban User
+// ============================================================================
+
+message BanUserRequest {
+  string user_id = 1;
+  string admin_id = 2;
+  string reason = 3;
+  bool permanent = 4;
+}
+
+message BanUserResponse {
+  skillsphere.common.v1.User user = 1;
+  string ban_id = 2;
+}
+
+// ============================================================================
+// Delete User Account
+// ============================================================================
+
+message DeleteUserAccountRequest {
+  string user_id = 1;
+  string admin_id = 2;
+  string reason = 3;
+  bool hard_delete = 4;                      // Permanently remove vs. soft delete
+}
+
+message DeleteUserAccountResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+// ============================================================================
+// Flag Content
+// ============================================================================
+
+message FlagContentRequest {
+  string content_id = 1;
+  string content_type = 2;                   // "message", "profile", "workshop", etc.
+  string reporter_id = 3;
+  ReportType report_type = 4;
+  string description = 5;
+  repeated skillsphere.common.v1.Attachment evidence = 6;
+}
+
+message FlagContentResponse {
+  string flag_id = 1;
+  ReportStatus status = 2;
+}
+
+// ============================================================================
+// Review Flagged Content
+// ============================================================================
+
+message ReviewFlaggedContentRequest {
+  string flag_id = 1;
+  string admin_id = 2;
+}
+
+message ReviewFlaggedContentResponse {
+  FlaggedContent content = 1;
+}
+
+message FlaggedContent {
+  string flag_id = 1;
+  string content_id = 2;
+  string content_type = 3;
+  string content_preview = 4;
+  ReportType report_type = 5;
+  string description = 6;
+  string reporter_id = 7;
+  string reported_user_id = 8;
+  int32 flag_count = 9;                      // How many times flagged
+  ReportStatus status = 10;
+  google.protobuf.Timestamp flagged_at = 11;
+}
+
+// ============================================================================
+// Remove Content
+// ============================================================================
+
+message RemoveContentRequest {
+  string content_id = 1;
+  string content_type = 2;
+  string admin_id = 3;
+  string reason = 4;
+  ModerationAction action = 5;
+}
+
+message RemoveContentResponse {
+  bool success = 1;
+  bool user_notified = 2;
+}
+
+// ============================================================================
+// Get Disputes
+// ============================================================================
+
+message GetDisputesRequest {
+  DisputeStatus status = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message GetDisputesResponse {
+  repeated Dispute disputes = 1;
+  string next_page_token = 2;
+}
+
+message Dispute {
+  string dispute_id = 1;
+  string disputing_user_id = 2;
+  string disputed_user_id = 3;
+  string related_id = 4;                     // Session, gig, or payment ID
+  string related_type = 5;
+  string reason = 6;
+  string description = 7;
+  repeated skillsphere.common.v1.Attachment evidence = 8;
+  DisputeStatus status = 9;
+  string assigned_admin_id = 10;
+  google.protobuf.Timestamp created_at = 11;
+  google.protobuf.Timestamp resolved_at = 12;
+}
+
+// ============================================================================
+// Resolve Dispute
+// ============================================================================
+
+message ResolveDisputeRequest {
+  string dispute_id = 1;
+  string admin_id = 2;
+  string resolution = 3;
+  string winner_id = 4;                      // User who wins the dispute
+  skillsphere.common.v1.Money refund_amount = 5;
+}
+
+message ResolveDisputeResponse {
+  Dispute dispute = 1;
+  bool refund_issued = 2;
+}
+
+// ============================================================================
+// Get Reports
+// ============================================================================
+
+message GetReportsRequest {
+  ReportStatus status = 1;
+  ReportType type = 2;
+  int32 page_size = 3;
+  string page_token = 4;
+}
+
+message GetReportsResponse {
+  repeated Report reports = 1;
+  string next_page_token = 2;
+}
+
+message Report {
+  string report_id = 1;
+  string reporter_id = 2;
+  string reported_user_id = 3;
+  string related_id = 4;
+  ReportType type = 5;
+  string description = 6;
+  ReportStatus status = 7;
+  string assigned_admin_id = 8;
+  google.protobuf.Timestamp created_at = 9;
+}
+
+// ============================================================================
+// Investigate Report
+// ============================================================================
+
+message InvestigateReportRequest {
+  string report_id = 1;
+  string admin_id = 2;
+}
+
+message InvestigateReportResponse {
+  Report report = 1;
+  repeated AdminNote notes = 2;
+}
+
+message AdminNote {
+  string note_id = 1;
+  string admin_id = 2;
+  string content = 3;
+  google.protobuf.Timestamp created_at = 4;
+}
+
+// ============================================================================
+// Close Report
+// ============================================================================
+
+message CloseReportRequest {
+  string report_id = 1;
+  string admin_id = 2;
+  ModerationAction action_taken = 3;
+  string resolution_notes = 4;
+}
+
+message CloseReportResponse {
+  Report report = 1;
+}
+
+// ============================================================================
+// Platform Settings
+// ============================================================================
+
+message UpdatePlatformSettingsRequest {
+  string admin_id = 1;
+  PlatformSettings settings = 2;
+}
+
+message UpdatePlatformSettingsResponse {
+  PlatformSettings settings = 1;
+}
+
+message GetPlatformSettingsRequest {
+  string admin_id = 1;
+}
+
+message GetPlatformSettingsResponse {
+  PlatformSettings settings = 1;
+}
+
+message PlatformSettings {
+  bool maintenance_mode = 1;
+  string maintenance_message = 2;
+  bool new_signups_enabled = 3;
+  int32 max_sessions_per_day = 4;
+  int32 min_session_rating = 5;
+  bool auto_approve_certifications = 6;
+  double platform_fee_percentage = 7;
+  map<string, string> custom_settings = 8;
+}
+
+// ============================================================================
+// Feature Flags
+// ============================================================================
+
+message ToggleFeatureFlagRequest {
+  string admin_id = 1;
+  string feature_name = 2;
+  bool enabled = 3;
+  repeated string user_ids = 4;              // Optional: enable for specific users
+}
+
+message ToggleFeatureFlagResponse {
+  FeatureFlag feature = 1;
+}
+
+message ListFeatureFlagsRequest {
+  string admin_id = 1;
+}
+
+message ListFeatureFlagsResponse {
+  repeated FeatureFlag features = 1;
+}
+
+message FeatureFlag {
+  string name = 1;
+  bool enabled = 2;
+  string description = 3;
+  repeated string enabled_for_users = 4;
+  google.protobuf.Timestamp updated_at = 5;
+}
+
+// ============================================================================
+// Expert Verification
+// ============================================================================
+
+message VerifyExpertRequest {
+  string user_id = 1;
+  string admin_id = 2;
+  repeated string skill_ids = 3;
+  string verification_notes = 4;
+}
+
+message VerifyExpertResponse {
+  skillsphere.common.v1.User user = 1;
+  string badge_url = 2;
+}
+
+message RevokeVerificationRequest {
+  string user_id = 1;
+  string admin_id = 2;
+  string reason = 3;
+}
+
+message RevokeVerificationResponse {
+  skillsphere.common.v1.User user = 1;
+}
+
+// ============================================================================
+// Audit Logs
+// ============================================================================
+
+message GetAuditLogsRequest {
+  string admin_id = 1;
+  google.protobuf.Timestamp start_date = 2;
+  google.protobuf.Timestamp end_date = 3;
+  string action_type = 4;                    // Optional filter
+  string target_user_id = 5;                 // Optional filter
+  int32 page_size = 6;
+  string page_token = 7;
+}
+
+message GetAuditLogsResponse {
+  repeated AuditLog logs = 1;
+  string next_page_token = 2;
+}
+
+message AuditLog {
+  string log_id = 1;
+  string admin_id = 2;
+  string action = 3;
+  string target_type = 4;                    // "user", "content", "dispute"
+  string target_id = 5;
+  map<string, string> details = 6;
+  google.protobuf.Timestamp timestamp = 7;
+}
+
+// ============================================================================
+// Announcements
+// ============================================================================
+
+message CreateAnnouncementRequest {
+  string admin_id = 1;
+  string title = 2;
+  string content = 3;
+  AnnouncementPriority priority = 4;
+  repeated string target_user_ids = 5;       // Empty for all users
+  google.protobuf.Timestamp expires_at = 6;
+}
+
+message CreateAnnouncementResponse {
+  Announcement announcement = 1;
+}
+
+message GetAnnouncementsRequest {
+  bool active_only = 1;
+}
+
+message GetAnnouncementsResponse {
+  repeated Announcement announcements = 1;
+}
+
+message Announcement {
+  string announcement_id = 1;
+  string title = 2;
+  string content = 3;
+  AnnouncementPriority priority = 4;
+  google.protobuf.Timestamp created_at = 5;
+  google.protobuf.Timestamp expires_at = 6;
+  bool is_active = 7;
+}

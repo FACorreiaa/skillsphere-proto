@@ -1,0 +1,343 @@
+syntax = "proto3";
+
+package skillsphere.payment.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/payment/v1;paymentv1";
+
+// PaymentService handles all payment operations via Stripe integration
+service PaymentService {
+  // Create subscription for premium tiers
+  rpc CreateSubscription(CreateSubscriptionRequest) returns (CreateSubscriptionResponse);
+
+  // Cancel subscription
+  rpc CancelSubscription(CancelSubscriptionRequest) returns (CancelSubscriptionResponse);
+
+  // Update subscription (upgrade/downgrade)
+  rpc UpdateSubscription(UpdateSubscriptionRequest) returns (UpdateSubscriptionResponse);
+
+  // Get subscription details
+  rpc GetSubscription(GetSubscriptionRequest) returns (GetSubscriptionResponse);
+
+  // Create one-time payment (for workshops, certifications)
+  rpc CreatePayment(CreatePaymentRequest) returns (CreatePaymentResponse);
+
+  // Create escrow payment (for gig marketplace)
+  rpc CreateEscrowPayment(CreateEscrowPaymentRequest) returns (CreateEscrowPaymentResponse);
+
+  // Release escrow funds
+  rpc ReleaseEscrow(ReleaseEscrowRequest) returns (ReleaseEscrowResponse);
+
+  // Refund payment
+  rpc RefundPayment(RefundPaymentRequest) returns (RefundPaymentResponse);
+
+  // Process payout to expert
+  rpc ProcessPayout(ProcessPayoutRequest) returns (ProcessPayoutResponse);
+
+  // Get payment history
+  rpc GetPaymentHistory(GetPaymentHistoryRequest) returns (GetPaymentHistoryResponse);
+
+  // Add payment method
+  rpc AddPaymentMethod(AddPaymentMethodRequest) returns (AddPaymentMethodResponse);
+
+  // Remove payment method
+  rpc RemovePaymentMethod(RemovePaymentMethodRequest) returns (RemovePaymentMethodResponse);
+
+  // Get invoices
+  rpc GetInvoices(GetInvoicesRequest) returns (GetInvoicesResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum PaymentMethod {
+  PAYMENT_METHOD_UNSPECIFIED = 0;
+  PAYMENT_METHOD_CARD = 1;
+  PAYMENT_METHOD_PAYPAL = 2;
+  PAYMENT_METHOD_BANK_TRANSFER = 3;
+  PAYMENT_METHOD_CRYPTO = 4;
+}
+
+enum PaymentPurpose {
+  PAYMENT_PURPOSE_UNSPECIFIED = 0;
+  PAYMENT_PURPOSE_SUBSCRIPTION = 1;
+  PAYMENT_PURPOSE_WORKSHOP = 2;
+  PAYMENT_PURPOSE_GIG = 3;
+  PAYMENT_PURPOSE_CERTIFICATION = 4;
+  PAYMENT_PURPOSE_PREMIUM_CHAT = 5;
+}
+
+// ============================================================================
+// Messages
+// ============================================================================
+
+message Payment {
+  string payment_id = 1;
+  string user_id = 2;
+  skillsphere.common.v1.Money amount = 3;
+  PaymentMethod payment_method = 4;
+  PaymentPurpose purpose = 5;
+  skillsphere.common.v1.PaymentStatus status = 6;
+  string stripe_payment_intent_id = 7;
+  string description = 8;
+  google.protobuf.Timestamp created_at = 9;
+  google.protobuf.Timestamp updated_at = 10;
+}
+
+message Subscription {
+  string subscription_id = 1;
+  string user_id = 2;
+  skillsphere.common.v1.SubscriptionTier tier = 3;
+  string stripe_subscription_id = 4;
+  skillsphere.common.v1.Money monthly_amount = 5;
+  google.protobuf.Timestamp current_period_start = 6;
+  google.protobuf.Timestamp current_period_end = 7;
+  bool is_active = 8;
+  bool cancel_at_period_end = 9;
+  google.protobuf.Timestamp cancelled_at = 10;
+}
+
+message EscrowPayment {
+  string escrow_id = 1;
+  string payer_id = 2;
+  string payee_id = 3;
+  string gig_id = 4;
+  skillsphere.common.v1.Money amount = 5;
+  skillsphere.common.v1.PaymentStatus status = 6;
+  google.protobuf.Timestamp held_until = 7;
+  google.protobuf.Timestamp released_at = 8;
+  string release_condition = 9;          // e.g., "gig_completed"
+}
+
+// ============================================================================
+// Create Subscription
+// ============================================================================
+
+message CreateSubscriptionRequest {
+  string user_id = 1;
+  skillsphere.common.v1.SubscriptionTier tier = 2;
+  string payment_method_id = 3;          // Stripe payment method ID
+  string promo_code = 4;                 // Optional discount code
+}
+
+message CreateSubscriptionResponse {
+  Subscription subscription = 1;
+  string client_secret = 2;              // For 3D Secure confirmation
+  bool requires_action = 3;
+}
+
+// ============================================================================
+// Cancel Subscription
+// ============================================================================
+
+message CancelSubscriptionRequest {
+  string user_id = 1;
+  bool immediate = 2;                    // Cancel now vs. at period end
+  string cancellation_reason = 3;
+}
+
+message CancelSubscriptionResponse {
+  Subscription subscription = 1;
+  google.protobuf.Timestamp effective_date = 2;
+}
+
+// ============================================================================
+// Update Subscription
+// ============================================================================
+
+message UpdateSubscriptionRequest {
+  string user_id = 1;
+  skillsphere.common.v1.SubscriptionTier new_tier = 2;
+  bool prorate = 3;                      // Prorate charges
+}
+
+message UpdateSubscriptionResponse {
+  Subscription subscription = 1;
+  skillsphere.common.v1.Money proration_amount = 2;
+}
+
+// ============================================================================
+// Get Subscription
+// ============================================================================
+
+message GetSubscriptionRequest {
+  string user_id = 1;
+}
+
+message GetSubscriptionResponse {
+  Subscription subscription = 1;
+  repeated SubscriptionFeature features = 2;
+}
+
+message SubscriptionFeature {
+  string name = 1;
+  string description = 2;
+  bool is_available = 3;
+}
+
+// ============================================================================
+// Create Payment
+// ============================================================================
+
+message CreatePaymentRequest {
+  string user_id = 1;
+  skillsphere.common.v1.Money amount = 2;
+  PaymentPurpose purpose = 3;
+  string payment_method_id = 4;
+  string description = 5;
+  map<string, string> metadata = 6;     // e.g., workshop_id, cert_id
+}
+
+message CreatePaymentResponse {
+  Payment payment = 1;
+  string client_secret = 2;
+  bool requires_action = 3;
+}
+
+// ============================================================================
+// Create Escrow Payment
+// ============================================================================
+
+message CreateEscrowPaymentRequest {
+  string payer_id = 1;
+  string payee_id = 2;
+  string gig_id = 3;
+  skillsphere.common.v1.Money amount = 4;
+  string payment_method_id = 5;
+  int32 hold_days = 6;                   // Days to hold before auto-release
+}
+
+message CreateEscrowPaymentResponse {
+  EscrowPayment escrow = 1;
+}
+
+// ============================================================================
+// Release Escrow
+// ============================================================================
+
+message ReleaseEscrowRequest {
+  string escrow_id = 1;
+  string user_id = 2;                    // For authorization
+  string release_reason = 3;
+}
+
+message ReleaseEscrowResponse {
+  EscrowPayment escrow = 1;
+  bool payout_initiated = 2;
+}
+
+// ============================================================================
+// Refund Payment
+// ============================================================================
+
+message RefundPaymentRequest {
+  string payment_id = 1;
+  skillsphere.common.v1.Money amount = 2;  // Partial or full
+  string reason = 3;
+}
+
+message RefundPaymentResponse {
+  string refund_id = 1;
+  skillsphere.common.v1.Money refunded_amount = 2;
+  skillsphere.common.v1.PaymentStatus status = 3;
+}
+
+// ============================================================================
+// Process Payout
+// ============================================================================
+
+message ProcessPayoutRequest {
+  string user_id = 1;
+  skillsphere.common.v1.Money amount = 2;
+  string destination_account = 3;        // Stripe Connect account
+}
+
+message ProcessPayoutResponse {
+  string payout_id = 1;
+  google.protobuf.Timestamp estimated_arrival = 2;
+  skillsphere.common.v1.PaymentStatus status = 3;
+}
+
+// ============================================================================
+// Get Payment History
+// ============================================================================
+
+message GetPaymentHistoryRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+  google.protobuf.Timestamp start_date = 4;
+  google.protobuf.Timestamp end_date = 5;
+  PaymentPurpose purpose_filter = 6;
+}
+
+message GetPaymentHistoryResponse {
+  repeated Payment payments = 1;
+  string next_page_token = 2;
+  skillsphere.common.v1.Money total_spent = 3;
+}
+
+// ============================================================================
+// Add Payment Method
+// ============================================================================
+
+message AddPaymentMethodRequest {
+  string user_id = 1;
+  string stripe_payment_method_id = 2;
+  bool set_as_default = 3;
+}
+
+message AddPaymentMethodResponse {
+  PaymentMethodInfo payment_method = 1;
+}
+
+message PaymentMethodInfo {
+  string payment_method_id = 1;
+  PaymentMethod type = 2;
+  string last_four = 3;                  // Last 4 digits of card
+  string brand = 4;                      // Visa, Mastercard, etc.
+  int32 exp_month = 5;
+  int32 exp_year = 6;
+  bool is_default = 7;
+}
+
+// ============================================================================
+// Remove Payment Method
+// ============================================================================
+
+message RemovePaymentMethodRequest {
+  string user_id = 1;
+  string payment_method_id = 2;
+}
+
+message RemovePaymentMethodResponse {
+  bool success = 1;
+}
+
+// ============================================================================
+// Get Invoices
+// ============================================================================
+
+message GetInvoicesRequest {
+  string user_id = 1;
+  int32 page_size = 2;
+  string page_token = 3;
+}
+
+message GetInvoicesResponse {
+  repeated Invoice invoices = 1;
+  string next_page_token = 2;
+}
+
+message Invoice {
+  string invoice_id = 1;
+  string stripe_invoice_id = 2;
+  skillsphere.common.v1.Money amount = 3;
+  google.protobuf.Timestamp due_date = 4;
+  google.protobuf.Timestamp paid_at = 5;
+  bool is_paid = 6;
+  string invoice_url = 7;                // PDF download URL
+}

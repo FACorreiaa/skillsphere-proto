@@ -1,0 +1,343 @@
+syntax = "proto3";
+
+package skillsphere.workshop.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/workshop/v1;workshopv1";
+
+// WorkshopService manages group sessions (1-to-many) with ticketing
+service WorkshopService {
+  // Create a new workshop
+  rpc CreateWorkshop(CreateWorkshopRequest) returns (CreateWorkshopResponse);
+
+  // Get workshop details
+  rpc GetWorkshop(GetWorkshopRequest) returns (GetWorkshopResponse);
+
+  // Update workshop
+  rpc UpdateWorkshop(UpdateWorkshopRequest) returns (UpdateWorkshopResponse);
+
+  // Cancel workshop
+  rpc CancelWorkshop(CancelWorkshopRequest) returns (CancelWorkshopResponse);
+
+  // List workshops (with filters)
+  rpc ListWorkshops(ListWorkshopsRequest) returns (ListWorkshopsResponse);
+
+  // Register for workshop (purchase ticket)
+  rpc RegisterForWorkshop(RegisterForWorkshopRequest) returns (RegisterForWorkshopResponse);
+
+  // Cancel registration (refund)
+  rpc CancelRegistration(CancelRegistrationRequest) returns (CancelRegistrationResponse);
+
+  // Get workshop attendees
+  rpc GetAttendees(GetAttendeesRequest) returns (GetAttendeesResponse);
+
+  // Start workshop (go live)
+  rpc StartWorkshop(StartWorkshopRequest) returns (StartWorkshopResponse);
+
+  // End workshop
+  rpc EndWorkshop(EndWorkshopRequest) returns (EndWorkshopResponse);
+
+  // Get user's workshops (as host or attendee)
+  rpc GetUserWorkshops(GetUserWorkshopsRequest) returns (GetUserWorkshopsResponse);
+
+  // Get workshop recordings
+  rpc GetWorkshopRecording(GetWorkshopRecordingRequest) returns (GetWorkshopRecordingResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum WorkshopStatus {
+  WORKSHOP_STATUS_UNSPECIFIED = 0;
+  WORKSHOP_STATUS_DRAFT = 1;
+  WORKSHOP_STATUS_PUBLISHED = 2;
+  WORKSHOP_STATUS_SCHEDULED = 3;
+  WORKSHOP_STATUS_LIVE = 4;
+  WORKSHOP_STATUS_COMPLETED = 5;
+  WORKSHOP_STATUS_CANCELLED = 6;
+}
+
+enum WorkshopFormat {
+  WORKSHOP_FORMAT_UNSPECIFIED = 0;
+  WORKSHOP_FORMAT_LECTURE = 1;
+  WORKSHOP_FORMAT_INTERACTIVE = 2;
+  WORKSHOP_FORMAT_HANDS_ON = 3;
+  WORKSHOP_FORMAT_Q_AND_A = 4;
+}
+
+// ============================================================================
+// Messages
+// ============================================================================
+
+message Workshop {
+  string workshop_id = 1;
+  string host_id = 2;
+  string title = 3;
+  string description = 4;
+  repeated string skill_ids = 5;
+
+  // Scheduling
+  google.protobuf.Timestamp scheduled_start = 6;
+  google.protobuf.Timestamp scheduled_end = 7;
+  int32 duration_minutes = 8;
+  string timezone = 9;
+
+  // Capacity and pricing
+  int32 max_participants = 10;
+  int32 current_participants = 11;
+  skillsphere.common.v1.Money ticket_price = 12;
+  bool is_free = 13;
+
+  // Content
+  string cover_image_url = 14;
+  WorkshopFormat format = 15;
+  DifficultyLevel difficulty = 16;
+  repeated string prerequisites = 17;
+  repeated string learning_outcomes = 18;
+
+  // Technical
+  string meeting_url = 19;
+  string recording_url = 20;
+  repeated skillsphere.common.v1.Attachment materials = 21;
+
+  // Status
+  WorkshopStatus status = 22;
+  google.protobuf.Timestamp created_at = 23;
+  google.protobuf.Timestamp updated_at = 24;
+
+  // Stats
+  double average_rating = 25;
+  int32 total_reviews = 26;
+}
+
+enum DifficultyLevel {
+  DIFFICULTY_LEVEL_UNSPECIFIED = 0;
+  DIFFICULTY_LEVEL_BEGINNER = 1;
+  DIFFICULTY_LEVEL_INTERMEDIATE = 2;
+  DIFFICULTY_LEVEL_ADVANCED = 3;
+}
+
+message Registration {
+  string registration_id = 1;
+  string workshop_id = 2;
+  string user_id = 3;
+  string payment_id = 4;
+  google.protobuf.Timestamp registered_at = 5;
+  bool attended = 6;
+  bool cancelled = 7;
+  google.protobuf.Timestamp cancelled_at = 8;
+}
+
+// ============================================================================
+// Create Workshop
+// ============================================================================
+
+message CreateWorkshopRequest {
+  string host_id = 1;
+  string title = 2;
+  string description = 3;
+  repeated string skill_ids = 4;
+  google.protobuf.Timestamp scheduled_start = 5;
+  int32 duration_minutes = 6;
+  int32 max_participants = 7;
+  skillsphere.common.v1.Money ticket_price = 8;
+  bool is_free = 9;
+  WorkshopFormat format = 10;
+  DifficultyLevel difficulty = 11;
+  repeated string prerequisites = 12;
+  repeated string learning_outcomes = 13;
+}
+
+message CreateWorkshopResponse {
+  Workshop workshop = 1;
+  string shareable_url = 2;
+}
+
+// ============================================================================
+// Get Workshop
+// ============================================================================
+
+message GetWorkshopRequest {
+  string workshop_id = 1;
+}
+
+message GetWorkshopResponse {
+  Workshop workshop = 1;
+  skillsphere.common.v1.User host = 2;
+  bool is_full = 3;
+  bool user_is_registered = 4;
+}
+
+// ============================================================================
+// Update Workshop
+// ============================================================================
+
+message UpdateWorkshopRequest {
+  string workshop_id = 1;
+  string title = 2;
+  string description = 3;
+  google.protobuf.Timestamp scheduled_start = 4;
+  int32 max_participants = 5;
+  skillsphere.common.v1.Money ticket_price = 6;
+}
+
+message UpdateWorkshopResponse {
+  Workshop workshop = 1;
+}
+
+// ============================================================================
+// Cancel Workshop
+// ============================================================================
+
+message CancelWorkshopRequest {
+  string workshop_id = 1;
+  string host_id = 2;
+  string reason = 3;
+}
+
+message CancelWorkshopResponse {
+  Workshop workshop = 1;
+  int32 refunds_issued = 2;
+}
+
+// ============================================================================
+// List Workshops
+// ============================================================================
+
+message ListWorkshopsRequest {
+  int32 page_size = 1;
+  string page_token = 2;
+  repeated skillsphere.common.v1.SkillCategory categories = 3;
+  DifficultyLevel difficulty = 4;
+  bool free_only = 5;
+  bool upcoming_only = 6;
+  google.protobuf.Timestamp start_date = 7;
+  google.protobuf.Timestamp end_date = 8;
+  string host_id = 9;                        // Filter by host
+}
+
+message ListWorkshopsResponse {
+  repeated Workshop workshops = 1;
+  string next_page_token = 2;
+  int32 total_count = 3;
+}
+
+// ============================================================================
+// Register For Workshop
+// ============================================================================
+
+message RegisterForWorkshopRequest {
+  string workshop_id = 1;
+  string user_id = 2;
+  string payment_method_id = 3;              // For paid workshops
+}
+
+message RegisterForWorkshopResponse {
+  Registration registration = 1;
+  string confirmation_email = 2;
+  string calendar_invite = 3;                // ICS file URL
+}
+
+// ============================================================================
+// Cancel Registration
+// ============================================================================
+
+message CancelRegistrationRequest {
+  string registration_id = 1;
+  string user_id = 2;
+  string reason = 3;
+}
+
+message CancelRegistrationResponse {
+  bool success = 1;
+  bool refund_issued = 2;
+  skillsphere.common.v1.Money refund_amount = 3;
+}
+
+// ============================================================================
+// Get Attendees
+// ============================================================================
+
+message GetAttendeesRequest {
+  string workshop_id = 1;
+  string host_id = 2;                        // Authorization
+}
+
+message GetAttendeesResponse {
+  repeated Attendee attendees = 1;
+  int32 total_registered = 2;
+  int32 total_attended = 3;
+}
+
+message Attendee {
+  string user_id = 1;
+  string username = 2;
+  string avatar_url = 3;
+  google.protobuf.Timestamp registered_at = 4;
+  bool attended = 5;
+}
+
+// ============================================================================
+// Start Workshop
+// ============================================================================
+
+message StartWorkshopRequest {
+  string workshop_id = 1;
+  string host_id = 2;
+}
+
+message StartWorkshopResponse {
+  Workshop workshop = 1;
+  string streaming_url = 2;
+  string host_key = 3;                       // Auth key for host controls
+}
+
+// ============================================================================
+// End Workshop
+// ============================================================================
+
+message EndWorkshopRequest {
+  string workshop_id = 1;
+  string host_id = 2;
+  string recording_url = 3;                  // Optional recording
+}
+
+message EndWorkshopResponse {
+  Workshop workshop = 1;
+  bool recording_available = 2;
+}
+
+// ============================================================================
+// Get User Workshops
+// ============================================================================
+
+message GetUserWorkshopsRequest {
+  string user_id = 1;
+  bool as_host = 2;                          // Workshops user is hosting
+  bool as_attendee = 3;                      // Workshops user is attending
+  WorkshopStatus status_filter = 4;
+}
+
+message GetUserWorkshopsResponse {
+  repeated Workshop hosted_workshops = 1;
+  repeated Workshop attending_workshops = 2;
+}
+
+// ============================================================================
+// Get Workshop Recording
+// ============================================================================
+
+message GetWorkshopRecordingRequest {
+  string workshop_id = 1;
+  string user_id = 2;                        // Check if user attended
+}
+
+message GetWorkshopRecordingResponse {
+  string recording_url = 1;
+  bool is_available = 2;
+  google.protobuf.Timestamp available_until = 3;
+  repeated skillsphere.common.v1.Attachment materials = 4;
+}

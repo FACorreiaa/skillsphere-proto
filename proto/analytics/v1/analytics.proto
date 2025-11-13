@@ -1,0 +1,336 @@
+syntax = "proto3";
+
+package skillsphere.analytics.v1;
+
+import "google/protobuf/timestamp.proto";
+import "common/v1/common.proto";
+
+option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/analytics/v1;analyticsv1";
+
+// AnalyticsService provides platform metrics, insights, and data analysis
+service AnalyticsService {
+  // Get platform overview stats
+  rpc GetPlatformStats(GetPlatformStatsRequest) returns (GetPlatformStatsResponse);
+
+  // Get skill trends
+  rpc GetSkillTrends(GetSkillTrendsRequest) returns (GetSkillTrendsResponse);
+
+  // Get user engagement metrics
+  rpc GetUserEngagement(GetUserEngagementRequest) returns (GetUserEngagementResponse);
+
+  // Get revenue analytics
+  rpc GetRevenueAnalytics(GetRevenueAnalyticsRequest) returns (GetRevenueAnalyticsResponse);
+
+  // Get session analytics
+  rpc GetSessionAnalytics(GetSessionAnalyticsRequest) returns (GetSessionAnalyticsResponse);
+
+  // Get user growth metrics
+  rpc GetUserGrowth(GetUserGrowthRequest) returns (GetUserGrowthResponse);
+
+  // Get geographic distribution
+  rpc GetGeographicDistribution(GetGeographicDistributionRequest) returns (GetGeographicDistributionResponse);
+
+  // Get retention metrics
+  rpc GetRetentionMetrics(GetRetentionMetricsRequest) returns (GetRetentionMetricsResponse);
+
+  // Get conversion funnel
+  rpc GetConversionFunnel(GetConversionFunnelRequest) returns (GetConversionFunnelResponse);
+
+  // Track custom event
+  rpc TrackEvent(TrackEventRequest) returns (TrackEventResponse);
+
+  // Get user journey
+  rpc GetUserJourney(GetUserJourneyRequest) returns (GetUserJourneyResponse);
+}
+
+// ============================================================================
+// Enums
+// ============================================================================
+
+enum TimeGranularity {
+  TIME_GRANULARITY_UNSPECIFIED = 0;
+  TIME_GRANULARITY_HOURLY = 1;
+  TIME_GRANULARITY_DAILY = 2;
+  TIME_GRANULARITY_WEEKLY = 3;
+  TIME_GRANULARITY_MONTHLY = 4;
+}
+
+enum MetricType {
+  METRIC_TYPE_UNSPECIFIED = 0;
+  METRIC_TYPE_COUNT = 1;
+  METRIC_TYPE_SUM = 2;
+  METRIC_TYPE_AVERAGE = 3;
+  METRIC_TYPE_PERCENTAGE = 4;
+}
+
+// ============================================================================
+// Get Platform Stats
+// ============================================================================
+
+message GetPlatformStatsRequest {
+  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp end_date = 2;
+}
+
+message GetPlatformStatsResponse {
+  PlatformStats stats = 1;
+  google.protobuf.Timestamp computed_at = 2;
+}
+
+message PlatformStats {
+  int32 total_users = 1;
+  int32 active_users = 2;                    // Last 30 days
+  int32 new_users = 3;                       // In date range
+  int32 total_sessions = 4;
+  int32 completed_sessions = 5;
+  int32 total_skills = 6;
+  double average_session_rating = 7;
+  skillsphere.common.v1.Money total_revenue = 8;
+  int32 premium_subscribers = 9;
+  double conversion_rate = 10;               // Free to premium
+  int32 total_certifications = 11;
+  int32 total_workshops = 12;
+  int32 total_gigs = 13;
+  double user_satisfaction = 14;             // 0-100
+}
+
+// ============================================================================
+// Get Skill Trends
+// ============================================================================
+
+message GetSkillTrendsRequest {
+  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp end_date = 2;
+  TimeGranularity granularity = 3;
+  int32 top_n = 4;                           // Top N skills
+}
+
+message GetSkillTrendsResponse {
+  repeated SkillTrend trends = 1;
+}
+
+message SkillTrend {
+  string skill_id = 1;
+  string skill_name = 2;
+  repeated DataPoint data_points = 3;
+  double growth_rate = 4;                    // Percentage
+  int32 total_sessions = 5;
+  int32 total_users = 6;
+}
+
+message DataPoint {
+  google.protobuf.Timestamp timestamp = 1;
+  double value = 2;
+  MetricType metric_type = 3;
+}
+
+// ============================================================================
+// Get User Engagement
+// ============================================================================
+
+message GetUserEngagementRequest {
+  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp end_date = 2;
+  string user_id = 3;                        // Optional for specific user
+}
+
+message GetUserEngagementResponse {
+  EngagementMetrics metrics = 1;
+}
+
+message EngagementMetrics {
+  int32 daily_active_users = 1;
+  int32 weekly_active_users = 2;
+  int32 monthly_active_users = 3;
+  double average_session_duration_minutes = 4;
+  double sessions_per_user = 5;
+  int32 total_messages_sent = 6;
+  int32 total_searches = 7;
+  repeated TopFeature top_features = 8;
+  double stickiness = 9;                     // DAU/MAU ratio
+}
+
+message TopFeature {
+  string feature_name = 1;
+  int32 usage_count = 2;
+  double percentage = 3;
+}
+
+// ============================================================================
+// Get Revenue Analytics
+// ============================================================================
+
+message GetRevenueAnalyticsRequest {
+  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp end_date = 2;
+  TimeGranularity granularity = 3;
+}
+
+message GetRevenueAnalyticsResponse {
+  repeated RevenueDataPoint revenue_over_time = 1;
+  RevenueBreakdown breakdown = 2;
+  skillsphere.common.v1.Money total_revenue = 3;
+  skillsphere.common.v1.Money average_revenue_per_user = 4;
+  double month_over_month_growth = 5;
+}
+
+message RevenueDataPoint {
+  google.protobuf.Timestamp timestamp = 1;
+  skillsphere.common.v1.Money amount = 2;
+}
+
+message RevenueBreakdown {
+  skillsphere.common.v1.Money subscriptions = 1;
+  skillsphere.common.v1.Money workshops = 2;
+  skillsphere.common.v1.Money gigs = 3;
+  skillsphere.common.v1.Money certifications = 4;
+  skillsphere.common.v1.Money reviews = 5;
+}
+
+// ============================================================================
+// Get Session Analytics
+// ============================================================================
+
+message GetSessionAnalyticsRequest {
+  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp end_date = 2;
+}
+
+message GetSessionAnalyticsResponse {
+  int32 total_sessions = 1;
+  int32 completed_sessions = 2;
+  int32 cancelled_sessions = 3;
+  int32 no_show_sessions = 4;
+  double completion_rate = 5;
+  double average_rating = 6;
+  double average_duration_minutes = 7;
+  repeated string most_exchanged_skills = 8;
+  repeated TimeSlotPopularity peak_hours = 9;
+}
+
+message TimeSlotPopularity {
+  int32 hour = 1;                            // 0-23
+  int32 session_count = 2;
+}
+
+// ============================================================================
+// Get User Growth
+// ============================================================================
+
+message GetUserGrowthRequest {
+  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp end_date = 2;
+  TimeGranularity granularity = 3;
+}
+
+message GetUserGrowthResponse {
+  repeated DataPoint growth_data = 1;
+  int32 total_signups = 2;
+  double growth_rate = 3;
+  int32 churned_users = 4;
+  double churn_rate = 5;
+}
+
+// ============================================================================
+// Get Geographic Distribution
+// ============================================================================
+
+message GetGeographicDistributionRequest {
+  string metric = 1;                         // "users", "sessions", "revenue"
+}
+
+message GetGeographicDistributionResponse {
+  repeated GeographicData data = 1;
+}
+
+message GeographicData {
+  string country = 1;
+  string country_code = 2;
+  int32 user_count = 3;
+  int32 session_count = 4;
+  skillsphere.common.v1.Money revenue = 5;
+  double percentage = 6;
+}
+
+// ============================================================================
+// Get Retention Metrics
+// ============================================================================
+
+message GetRetentionMetricsRequest {
+  google.protobuf.Timestamp cohort_start = 1;
+  int32 periods = 2;                         // Number of periods to track
+  string period_type = 3;                    // "day", "week", "month"
+}
+
+message GetRetentionMetricsResponse {
+  repeated RetentionCohort cohorts = 1;
+  double overall_retention_rate = 2;
+}
+
+message RetentionCohort {
+  google.protobuf.Timestamp cohort_date = 1;
+  int32 initial_users = 2;
+  repeated double retention_by_period = 3;   // Percentage retained each period
+}
+
+// ============================================================================
+// Get Conversion Funnel
+// ============================================================================
+
+message GetConversionFunnelRequest {
+  google.protobuf.Timestamp start_date = 1;
+  google.protobuf.Timestamp end_date = 2;
+  string funnel_name = 3;                    // e.g., "signup", "subscription"
+}
+
+message GetConversionFunnelResponse {
+  repeated FunnelStage stages = 1;
+  double overall_conversion_rate = 2;
+}
+
+message FunnelStage {
+  string name = 1;
+  int32 user_count = 2;
+  double conversion_rate = 3;                // To next stage
+  double drop_off_rate = 4;
+}
+
+// ============================================================================
+// Track Event
+// ============================================================================
+
+message TrackEventRequest {
+  string user_id = 1;
+  string event_name = 2;
+  map<string, string> properties = 3;
+  google.protobuf.Timestamp timestamp = 4;
+  string session_id = 5;                     // Optional session context
+}
+
+message TrackEventResponse {
+  bool success = 1;
+  string event_id = 2;
+}
+
+// ============================================================================
+// Get User Journey
+// ============================================================================
+
+message GetUserJourneyRequest {
+  string user_id = 1;
+  google.protobuf.Timestamp start_date = 2;
+  google.protobuf.Timestamp end_date = 3;
+}
+
+message GetUserJourneyResponse {
+  repeated UserEvent events = 1;
+  string journey_summary = 2;
+  repeated string key_milestones = 3;
+}
+
+message UserEvent {
+  string event_name = 1;
+  google.protobuf.Timestamp timestamp = 2;
+  map<string, string> properties = 3;
+  string page = 4;
+}
