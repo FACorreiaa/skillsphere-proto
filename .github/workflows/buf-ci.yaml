@@ -20,7 +20,7 @@ jobs:
       # 1️⃣ Install buf
       - uses: bufbuild/buf-action@v1
         with:
-          setup-only: true
+          token: ${{ secrets.BUF_TOKEN }}
 
       # 2️⃣ Run lint check
       - name: Lint proto files
@@ -34,5 +34,5 @@ jobs:
       - name: Push to Buf Schema Registry
         if: github.ref == 'refs/heads/main'
         env:
-          BUF_TOKEN: ${{ secrets.SKILLSPHERE_PROTO }}
+          BUF_TOKEN: ${{ secrets.BUF_TOKEN }}
         run: buf push
