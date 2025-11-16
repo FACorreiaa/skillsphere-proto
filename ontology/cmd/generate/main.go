@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
@@ -24,6 +25,7 @@ func main() {
 		descriptorPath = flag.String("descriptor", "", "path to an existing FileDescriptorSet (optional)")
 		modulePath     = flag.String("module-path", ".", "path to the Buf module (if descriptor is not provided)")
 		outPath        = flag.String("out", defaultOutFile, "output TTL file path")
+		contextPath    = flag.String("context-out", "", "optional JSON-LD context output path")
 	)
 	flag.Parse()
 
@@ -48,11 +50,14 @@ func main() {
 		writeEnum(&buf, enum)
 	}
 
-	if err := os.MkdirAll(filepath.Dir(*outPath), 0o755); err != nil {
-		die(fmt.Errorf("create output directory: %w", err))
+	if err := writeFile(*outPath, buf.Bytes()); err != nil {
+		die(err)
 	}
-	if err := os.WriteFile(*outPath, buf.Bytes(), 0o644); err != nil {
-		die(fmt.Errorf("write file: %w", err))
+
+	if context := strings.TrimSpace(*contextPath); context != "" {
+		if err := writeContextFile(context, enums); err != nil {
+			die(err)
+		}
 	}
 }
 
@@ -73,6 +78,16 @@ func loadDescriptor(descriptorPath, modulePath string) ([]byte, error) {
 		return nil, fmt.Errorf("buf build failed: %w", err)
 	}
 	return stdout.Bytes(), nil
+}
+
+func writeFile(path string, data []byte) error {
+	if err := os.MkdirAll(filepath.Dir(path), 0o755); err != nil {
+		return fmt.Errorf("create output directory: %w", err)
+	}
+	if err := os.WriteFile(path, data, 0o644); err != nil {
+		return fmt.Errorf("write file: %w", err)
+	}
+	return nil
 }
 
 type enumInfo struct {
@@ -147,6 +162,37 @@ func writeEnum(buf *bytes.Buffer, enum enumInfo) {
 		buf.WriteString(fmt.Sprintf("  skos:notation \"%s\" ;\n", value.Notation))
 		buf.WriteString(fmt.Sprintf("  skos:inScheme sk:%sScheme .\n\n", enum.Name))
 	}
+}
+
+func writeContextFile(path string, enums []enumInfo) error {
+	ctx := map[string]string{
+		"sk": skillSphereNS,
+	}
+	for _, enum := range enums {
+		conceptKey := fmt.Sprintf("%sConcept", enum.Name)
+		schemeKey := fmt.Sprintf("%sScheme", enum.Name)
+		ctx[conceptKey] = iriFor(conceptKey)
+		ctx[schemeKey] = iriFor(schemeKey)
+		for _, value := range enum.Values {
+			key := strings.TrimPrefix(value.ConceptName, "sk:")
+			ctx[key] = iriFor(key)
+		}
+	}
+
+	payload := struct {
+		Context map[string]string `json:"@context"`
+	}{Context: ctx}
+
+	data, err := json.MarshalIndent(payload, "", "  ")
+	if err != nil {
+		return fmt.Errorf("marshal context: %w", err)
+	}
+	data = append(data, '\n')
+	return writeFile(path, data)
+}
+
+func iriFor(local string) string {
+	return skillSphereNS + local
 }
 
 func camelToScreamingSnake(s string) string {

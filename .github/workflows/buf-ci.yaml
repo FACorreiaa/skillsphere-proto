@@ -17,6 +17,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+
       # 1️⃣ Install buf
       - uses: bufbuild/buf-action@v1
         with:
@@ -30,7 +34,42 @@ jobs:
       - name: Check breaking changes
         run: buf breaking --against '.git#branch=main'
 
-      # 4️⃣ Push to Buf Schema Registry (only on main)
+      # 4️⃣ Generate ontology artifacts from protos
+      - name: Generate ontology artifacts
+        run: |
+          mkdir -p "$RUNNER_TEMP/go-cache"
+          GOCACHE="$RUNNER_TEMP/go-cache" make ontology
+
+      - name: Ensure ontology artifacts are committed
+        run: git diff --exit-code ontology/generated.ttl ontology/generated.context.jsonld
+
+      - name: Validate ontology SHACL shapes
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install rdflib pyshacl
+          python - <<'PY'
+from rdflib import Graph
+from pyshacl import validate
+
+data = Graph()
+for path in ("ontology/skillsphere.ttl", "ontology/generated.ttl"):
+    data.parse(path, format="turtle")
+
+shapes = Graph()
+shapes.parse("ontology/shapes.ttl", format="turtle")
+
+conforms, _, report_text = validate(
+    data_graph=data,
+    shacl_graph=shapes,
+    inference="rdfs",
+    abort_on_first=False,
+)
+if not conforms:
+    print(report_text)
+    raise SystemExit(1)
+PY
+
+      # 5️⃣ Push to Buf Schema Registry (only on main)
       - name: Push to Buf Schema Registry
         if: github.ref == 'refs/heads/main'
         env:
