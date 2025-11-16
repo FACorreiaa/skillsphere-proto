@@ -4,6 +4,7 @@ package skillsphere.admin.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/admin/v1;adminv1";
 
@@ -101,10 +102,24 @@ enum AnnouncementPriority {
 // ============================================================================
 
 message SuspendUserRequest {
-  string user_id = 1;
-  string admin_id = 2;
-  string reason = 3;
-  int32 duration_days = 4;                   // 0 for indefinite
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
+  int32 duration_days = 4 [                  // 0 for indefinite
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 message SuspendUserResponse {
@@ -117,9 +132,21 @@ message SuspendUserResponse {
 // ============================================================================
 
 message UnsuspendUserRequest {
-  string user_id = 1;
-  string admin_id = 2;
-  string reason = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message UnsuspendUserResponse {
@@ -131,15 +158,32 @@ message UnsuspendUserResponse {
 // ============================================================================
 
 message BanUserRequest {
-  string user_id = 1;
-  string admin_id = 2;
-  string reason = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
   bool permanent = 4;
 }
 
 message BanUserResponse {
   skillsphere.common.v1.User user = 1;
-  string ban_id = 2;
+  string ban_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 // ============================================================================
@@ -147,15 +191,29 @@ message BanUserResponse {
 // ============================================================================
 
 message DeleteUserAccountRequest {
-  string user_id = 1;
-  string admin_id = 2;
-  string reason = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
   bool hard_delete = 4;                      // Permanently remove vs. soft delete
 }
 
 message DeleteUserAccountResponse {
   bool success = 1;
-  string message = 2;
+  string message = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }
 
 // ============================================================================
@@ -163,17 +221,40 @@ message DeleteUserAccountResponse {
 // ============================================================================
 
 message FlagContentRequest {
-  string content_id = 1;
-  string content_type = 2;                   // "message", "profile", "workshop", etc.
-  string reporter_id = 3;
-  ReportType report_type = 4;
-  string description = 5;
-  repeated skillsphere.common.v1.Attachment evidence = 6;
+  string content_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string content_type = 2 [                  // "message", "profile", "workshop", etc.
+    (buf.validate.field).string.max_len = 50
+  ];
+  string reporter_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  ReportType report_type = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string description = 5 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  repeated skillsphere.common.v1.Attachment evidence = 6 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
 }
 
 message FlagContentResponse {
-  string flag_id = 1;
-  ReportStatus status = 2;
+  string flag_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  ReportStatus status = 2 [(buf.validate.field).enum.defined_only = true];
 }
 
 // ============================================================================
@@ -181,8 +262,18 @@ message FlagContentResponse {
 // ============================================================================
 
 message ReviewFlaggedContentRequest {
-  string flag_id = 1;
-  string admin_id = 2;
+  string flag_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message ReviewFlaggedContentResponse {
@@ -190,16 +281,48 @@ message ReviewFlaggedContentResponse {
 }
 
 message FlaggedContent {
-  string flag_id = 1;
-  string content_id = 2;
-  string content_type = 3;
-  string content_preview = 4;
-  ReportType report_type = 5;
-  string description = 6;
-  string reporter_id = 7;
-  string reported_user_id = 8;
-  int32 flag_count = 9;                      // How many times flagged
-  ReportStatus status = 10;
+  string flag_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string content_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string content_type = 3 [
+    (buf.validate.field).string.max_len = 50
+  ];
+  string content_preview = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  ReportType report_type = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string description = 6 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  string reporter_id = 7 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reported_user_id = 8 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 flag_count = 9 [                     // How many times flagged
+    (buf.validate.field).int32.gte = 0
+  ];
+  ReportStatus status = 10 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp flagged_at = 11;
 }
 
@@ -208,11 +331,27 @@ message FlaggedContent {
 // ============================================================================
 
 message RemoveContentRequest {
-  string content_id = 1;
-  string content_type = 2;
-  string admin_id = 3;
-  string reason = 4;
-  ModerationAction action = 5;
+  string content_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string content_type = 2 [
+    (buf.validate.field).string.max_len = 50
+  ];
+  string admin_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 4 [
+    (buf.validate.field).string.max_len = 500
+  ];
+  ModerationAction action = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message RemoveContentResponse {
@@ -225,27 +364,73 @@ message RemoveContentResponse {
 // ============================================================================
 
 message GetDisputesRequest {
-  DisputeStatus status = 1;
-  int32 page_size = 2;
-  string page_token = 3;
+  DisputeStatus status = 1 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 page_size = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 3 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message GetDisputesResponse {
   repeated Dispute disputes = 1;
-  string next_page_token = 2;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message Dispute {
-  string dispute_id = 1;
-  string disputing_user_id = 2;
-  string disputed_user_id = 3;
-  string related_id = 4;                     // Session, gig, or payment ID
-  string related_type = 5;
-  string reason = 6;
-  string description = 7;
-  repeated skillsphere.common.v1.Attachment evidence = 8;
-  DisputeStatus status = 9;
-  string assigned_admin_id = 10;
+  string dispute_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string disputing_user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string disputed_user_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string related_id = 4 [                    // Session, gig, or payment ID
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string related_type = 5 [
+    (buf.validate.field).string.max_len = 50
+  ];
+  string reason = 6 [
+    (buf.validate.field).string.max_len = 200
+  ];
+  string description = 7 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated skillsphere.common.v1.Attachment evidence = 8 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  DisputeStatus status = 9 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string assigned_admin_id = 10 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp created_at = 11;
   google.protobuf.Timestamp resolved_at = 12;
 }
@@ -255,10 +440,27 @@ message Dispute {
 // ============================================================================
 
 message ResolveDisputeRequest {
-  string dispute_id = 1;
-  string admin_id = 2;
-  string resolution = 3;
-  string winner_id = 4;                      // User who wins the dispute
+  string dispute_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string resolution = 3 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  string winner_id = 4 [                     // User who wins the dispute
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   skillsphere.common.v1.Money refund_amount = 5;
 }
 
@@ -272,26 +474,70 @@ message ResolveDisputeResponse {
 // ============================================================================
 
 message GetReportsRequest {
-  ReportStatus status = 1;
-  ReportType type = 2;
-  int32 page_size = 3;
-  string page_token = 4;
+  ReportStatus status = 1 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ReportType type = 2 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 page_size = 3 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 4 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message GetReportsResponse {
   repeated Report reports = 1;
-  string next_page_token = 2;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message Report {
-  string report_id = 1;
-  string reporter_id = 2;
-  string reported_user_id = 3;
-  string related_id = 4;
-  ReportType type = 5;
-  string description = 6;
-  ReportStatus status = 7;
-  string assigned_admin_id = 8;
+  string report_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reporter_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reported_user_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string related_id = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  ReportType type = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string description = 6 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  ReportStatus status = 7 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string assigned_admin_id = 8 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp created_at = 9;
 }
 
@@ -300,8 +546,18 @@ message Report {
 // ============================================================================
 
 message InvestigateReportRequest {
-  string report_id = 1;
-  string admin_id = 2;
+  string report_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message InvestigateReportResponse {
@@ -310,9 +566,21 @@ message InvestigateReportResponse {
 }
 
 message AdminNote {
-  string note_id = 1;
-  string admin_id = 2;
-  string content = 3;
+  string note_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string content = 3 [
+    (buf.validate.field).string.max_len = 2000
+  ];
   google.protobuf.Timestamp created_at = 4;
 }
 
@@ -321,10 +589,24 @@ message AdminNote {
 // ============================================================================
 
 message CloseReportRequest {
-  string report_id = 1;
-  string admin_id = 2;
-  ModerationAction action_taken = 3;
-  string resolution_notes = 4;
+  string report_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  ModerationAction action_taken = 3 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string resolution_notes = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message CloseReportResponse {
@@ -336,8 +618,13 @@ message CloseReportResponse {
 // ============================================================================
 
 message UpdatePlatformSettingsRequest {
-  string admin_id = 1;
-  PlatformSettings settings = 2;
+  string admin_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  PlatformSettings settings = 2 [(buf.validate.field).required = true];
 }
 
 message UpdatePlatformSettingsResponse {
@@ -345,7 +632,12 @@ message UpdatePlatformSettingsResponse {
 }
 
 message GetPlatformSettingsRequest {
-  string admin_id = 1;
+  string admin_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetPlatformSettingsResponse {
@@ -354,13 +646,43 @@ message GetPlatformSettingsResponse {
 
 message PlatformSettings {
   bool maintenance_mode = 1;
-  string maintenance_message = 2;
+  string maintenance_message = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
   bool new_signups_enabled = 3;
-  int32 max_sessions_per_day = 4;
-  int32 min_session_rating = 5;
+  int32 max_sessions_per_day = 4 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 100
+    }
+  ];
+  int32 min_session_rating = 5 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 5
+    }
+  ];
   bool auto_approve_certifications = 6;
-  double platform_fee_percentage = 7;
-  map<string, string> custom_settings = 8;
+  double platform_fee_percentage = 7 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
+  map<string, string> custom_settings = 8 [
+    (buf.validate.field).map.max_pairs = 50,
+    (buf.validate.field).map.keys = {
+      string: {
+        min_len: 1
+        max_len: 64
+      }
+    },
+    (buf.validate.field).map.values = {
+      string: {
+        max_len: 200
+      }
+    }
+  ];
 }
 
 // ============================================================================
@@ -368,10 +690,28 @@ message PlatformSettings {
 // ============================================================================
 
 message ToggleFeatureFlagRequest {
-  string admin_id = 1;
-  string feature_name = 2;
+  string admin_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string feature_name = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 64
+    }
+  ];
   bool enabled = 3;
-  repeated string user_ids = 4;              // Optional: enable for specific users
+  repeated string user_ids = 4 [             // Optional: enable for specific users
+    (buf.validate.field).repeated.max_items = 100,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 }
 
 message ToggleFeatureFlagResponse {
@@ -379,7 +719,12 @@ message ToggleFeatureFlagResponse {
 }
 
 message ListFeatureFlagsRequest {
-  string admin_id = 1;
+  string admin_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message ListFeatureFlagsResponse {
@@ -387,10 +732,25 @@ message ListFeatureFlagsResponse {
 }
 
 message FeatureFlag {
-  string name = 1;
+  string name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 64
+    }
+  ];
   bool enabled = 2;
-  string description = 3;
-  repeated string enabled_for_users = 4;
+  string description = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
+  repeated string enabled_for_users = 4 [
+    (buf.validate.field).repeated.max_items = 100,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
   google.protobuf.Timestamp updated_at = 5;
 }
 
@@ -399,21 +759,58 @@ message FeatureFlag {
 // ============================================================================
 
 message VerifyExpertRequest {
-  string user_id = 1;
-  string admin_id = 2;
-  repeated string skill_ids = 3;
-  string verification_notes = 4;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated string skill_ids = 3 [
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  string verification_notes = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message VerifyExpertResponse {
   skillsphere.common.v1.User user = 1;
-  string badge_url = 2;
+  string badge_url = 2 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }
 
 message RevokeVerificationRequest {
-  string user_id = 1;
-  string admin_id = 2;
-  string reason = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message RevokeVerificationResponse {
@@ -425,27 +822,74 @@ message RevokeVerificationResponse {
 // ============================================================================
 
 message GetAuditLogsRequest {
-  string admin_id = 1;
+  string admin_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp start_date = 2;
   google.protobuf.Timestamp end_date = 3;
-  string action_type = 4;                    // Optional filter
-  string target_user_id = 5;                 // Optional filter
-  int32 page_size = 6;
-  string page_token = 7;
+  string action_type = 4 [                   // Optional filter
+    (buf.validate.field).string.max_len = 50
+  ];
+  string target_user_id = 5 [                // Optional filter
+    (buf.validate.field).string.max_len = 50
+  ];
+  int32 page_size = 6 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 200
+    }
+  ];
+  string page_token = 7 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message GetAuditLogsResponse {
   repeated AuditLog logs = 1;
-  string next_page_token = 2;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message AuditLog {
-  string log_id = 1;
-  string admin_id = 2;
-  string action = 3;
-  string target_type = 4;                    // "user", "content", "dispute"
-  string target_id = 5;
-  map<string, string> details = 6;
+  string log_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string admin_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string action = 3 [
+    (buf.validate.field).string.max_len = 100
+  ];
+  string target_type = 4 [                   // "user", "content", "dispute"
+    (buf.validate.field).string.max_len = 50
+  ];
+  string target_id = 5 [
+    (buf.validate.field).string.max_len = 50
+  ];
+  map<string, string> details = 6 [
+    (buf.validate.field).map.max_pairs = 20,
+    (buf.validate.field).map.keys = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    },
+    (buf.validate.field).map.values = {
+      string: {
+        max_len: 256
+      }
+    }
+  ];
   google.protobuf.Timestamp timestamp = 7;
 }
 
@@ -454,11 +898,36 @@ message AuditLog {
 // ============================================================================
 
 message CreateAnnouncementRequest {
-  string admin_id = 1;
-  string title = 2;
-  string content = 3;
-  AnnouncementPriority priority = 4;
-  repeated string target_user_ids = 5;       // Empty for all users
+  string admin_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 120
+    }
+  ];
+  string content = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 5000
+    }
+  ];
+  AnnouncementPriority priority = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated string target_user_ids = 5 [      // Empty for all users
+    (buf.validate.field).repeated.max_items = 500,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
   google.protobuf.Timestamp expires_at = 6;
 }
 
@@ -475,10 +944,27 @@ message GetAnnouncementsResponse {
 }
 
 message Announcement {
-  string announcement_id = 1;
-  string title = 2;
-  string content = 3;
-  AnnouncementPriority priority = 4;
+  string announcement_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 120
+    }
+  ];
+  string content = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 5000
+    }
+  ];
+  AnnouncementPriority priority = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp created_at = 5;
   google.protobuf.Timestamp expires_at = 6;
   bool is_active = 7;

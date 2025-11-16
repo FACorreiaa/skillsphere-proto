@@ -36,7 +36,7 @@ public object GetRetentionMetricsResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CohortsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts"];`
+     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts", (.buf.validate.field) = { ... }`
      */
      public val cohorts: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.RetentionCohort, CohortsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetRetentionMetricsResponseKt {
         _builder.cohortsList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts"];`
+     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts", (.buf.validate.field) = { ... }`
      * @param value The cohorts to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetRetentionMetricsResponseKt {
       _builder.addCohorts(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts"];`
+     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts", (.buf.validate.field) = { ... }`
      * @param value The cohorts to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetRetentionMetricsResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts"];`
+     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts", (.buf.validate.field) = { ... }`
      * @param values The cohorts to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetRetentionMetricsResponseKt {
       _builder.addAllCohorts(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts"];`
+     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts", (.buf.validate.field) = { ... }`
      * @param values The cohorts to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetRetentionMetricsResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts"];`
+     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The cohorts to set.
      */
@@ -92,7 +92,7 @@ public object GetRetentionMetricsResponseKt {
       _builder.setCohorts(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts"];`
+     * `repeated .skillsphere.analytics.v1.RetentionCohort cohorts = 1 [json_name = "cohorts", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearCohorts")
@@ -101,7 +101,7 @@ public object GetRetentionMetricsResponseKt {
     }
 
     /**
-     * `double overall_retention_rate = 2 [json_name = "overallRetentionRate"];`
+     * `double overall_retention_rate = 2 [json_name = "overallRetentionRate", (.buf.validate.field) = { ... }`
      */
     public var overallRetentionRate: kotlin.Double
       @kotlin.jvm.JvmName("getOverallRetentionRate")
@@ -111,7 +111,7 @@ public object GetRetentionMetricsResponseKt {
         _builder.overallRetentionRate = value
       }
     /**
-     * `double overall_retention_rate = 2 [json_name = "overallRetentionRate"];`
+     * `double overall_retention_rate = 2 [json_name = "overallRetentionRate", (.buf.validate.field) = { ... }`
      */
     public fun clearOverallRetentionRate() {
       _builder.clearOverallRetentionRate()

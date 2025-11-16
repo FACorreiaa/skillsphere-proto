@@ -5,6 +5,7 @@ package skillsphere.workshop.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/workshop/v1;workshopv1";
 
@@ -75,44 +76,129 @@ enum WorkshopFormat {
 // ============================================================================
 
 message Workshop {
-  string workshop_id = 1;
-  string host_id = 2;
-  string title = 3;
-  string description = 4;
-  repeated string skill_ids = 5;
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string host_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 4 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated string skill_ids = 5 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 
   // Scheduling
   google.protobuf.Timestamp scheduled_start = 6;
   google.protobuf.Timestamp scheduled_end = 7;
-  int32 duration_minutes = 8;
-  string timezone = 9;
+  int32 duration_minutes = 8 [
+    (buf.validate.field).int32 = {
+      gte: 15
+      lte: 480
+    }
+  ];
+  string timezone = 9 [
+    (buf.validate.field).string.max_len = 100
+  ];
 
   // Capacity and pricing
-  int32 max_participants = 10;
-  int32 current_participants = 11;
+  int32 max_participants = 10 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 1000
+    }
+  ];
+  int32 current_participants = 11 [
+    (buf.validate.field).int32.gte = 0
+  ];
   skillsphere.common.v1.Money ticket_price = 12;
   bool is_free = 13;
 
   // Content
-  string cover_image_url = 14;
-  WorkshopFormat format = 15;
-  DifficultyLevel difficulty = 16;
-  repeated string prerequisites = 17;
-  repeated string learning_outcomes = 18;
+  string cover_image_url = 14 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  WorkshopFormat format = 15 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  DifficultyLevel difficulty = 16 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated string prerequisites = 17 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  repeated string learning_outcomes = 18 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 
   // Technical
-  string meeting_url = 19;
-  string recording_url = 20;
-  repeated skillsphere.common.v1.Attachment materials = 21;
+  string meeting_url = 19 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  string recording_url = 20 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  repeated skillsphere.common.v1.Attachment materials = 21 [
+    (buf.validate.field).repeated.max_items = 20
+  ];
 
   // Status
-  WorkshopStatus status = 22;
+  WorkshopStatus status = 22 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp created_at = 23;
   google.protobuf.Timestamp updated_at = 24;
 
   // Stats
-  double average_rating = 25;
-  int32 total_reviews = 26;
+  double average_rating = 25 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
+  int32 total_reviews = 26 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 enum DifficultyLevel {
@@ -123,10 +209,27 @@ enum DifficultyLevel {
 }
 
 message Registration {
-  string registration_id = 1;
-  string workshop_id = 2;
-  string user_id = 3;
-  string payment_id = 4;
+  string registration_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string workshop_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string payment_id = 4 [
+    (buf.validate.field).string.max_len = 50
+  ];
   google.protobuf.Timestamp registered_at = 5;
   bool attended = 6;
   bool cancelled = 7;
@@ -138,24 +241,82 @@ message Registration {
 // ============================================================================
 
 message CreateWorkshopRequest {
-  string host_id = 1;
-  string title = 2;
-  string description = 3;
-  repeated string skill_ids = 4;
+  string host_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated string skill_ids = 4 [
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 20
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
   google.protobuf.Timestamp scheduled_start = 5;
-  int32 duration_minutes = 6;
-  int32 max_participants = 7;
+  int32 duration_minutes = 6 [
+    (buf.validate.field).int32 = {
+      gte: 15
+      lte: 480
+    }
+  ];
+  int32 max_participants = 7 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 1000
+    }
+  ];
   skillsphere.common.v1.Money ticket_price = 8;
   bool is_free = 9;
-  WorkshopFormat format = 10;
-  DifficultyLevel difficulty = 11;
-  repeated string prerequisites = 12;
-  repeated string learning_outcomes = 13;
+  WorkshopFormat format = 10 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  DifficultyLevel difficulty = 11 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated string prerequisites = 12 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  repeated string learning_outcomes = 13 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 }
 
 message CreateWorkshopResponse {
   Workshop workshop = 1;
-  string shareable_url = 2;
+  string shareable_url = 2 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }
 
 // ============================================================================
@@ -163,7 +324,12 @@ message CreateWorkshopResponse {
 // ============================================================================
 
 message GetWorkshopRequest {
-  string workshop_id = 1;
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetWorkshopResponse {
@@ -178,11 +344,28 @@ message GetWorkshopResponse {
 // ============================================================================
 
 message UpdateWorkshopRequest {
-  string workshop_id = 1;
-  string title = 2;
-  string description = 3;
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
   google.protobuf.Timestamp scheduled_start = 4;
-  int32 max_participants = 5;
+  int32 max_participants = 5 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 1000
+    }
+  ];
   skillsphere.common.v1.Money ticket_price = 6;
 }
 
@@ -195,9 +378,21 @@ message UpdateWorkshopResponse {
 // ============================================================================
 
 message CancelWorkshopRequest {
-  string workshop_id = 1;
-  string host_id = 2;
-  string reason = 3;
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string host_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message CancelWorkshopResponse {
@@ -210,21 +405,38 @@ message CancelWorkshopResponse {
 // ============================================================================
 
 message ListWorkshopsRequest {
-  int32 page_size = 1;
-  string page_token = 2;
-  repeated skillsphere.common.v1.SkillCategory categories = 3;
-  DifficultyLevel difficulty = 4;
+  int32 page_size = 1 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  repeated skillsphere.common.v1.SkillCategory categories = 3 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  DifficultyLevel difficulty = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   bool free_only = 5;
   bool upcoming_only = 6;
   google.protobuf.Timestamp start_date = 7;
   google.protobuf.Timestamp end_date = 8;
-  string host_id = 9;                        // Filter by host
+  string host_id = 9 [                       // Filter by host
+    (buf.validate.field).string.max_len = 50
+  ];
 }
 
 message ListWorkshopsResponse {
   repeated Workshop workshops = 1;
-  string next_page_token = 2;
-  int32 total_count = 3;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  int32 total_count = 3 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // ============================================================================
@@ -232,15 +444,34 @@ message ListWorkshopsResponse {
 // ============================================================================
 
 message RegisterForWorkshopRequest {
-  string workshop_id = 1;
-  string user_id = 2;
-  string payment_method_id = 3;              // For paid workshops
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string payment_method_id = 3 [             // For paid workshops
+    (buf.validate.field).string.max_len = 100
+  ];
 }
 
 message RegisterForWorkshopResponse {
   Registration registration = 1;
-  string confirmation_email = 2;
-  string calendar_invite = 3;                // ICS file URL
+  string confirmation_email = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  string calendar_invite = 3 [               // ICS file URL
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }
 
 // ============================================================================
@@ -248,9 +479,21 @@ message RegisterForWorkshopResponse {
 // ============================================================================
 
 message CancelRegistrationRequest {
-  string registration_id = 1;
-  string user_id = 2;
-  string reason = 3;
+  string registration_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message CancelRegistrationResponse {
@@ -264,8 +507,18 @@ message CancelRegistrationResponse {
 // ============================================================================
 
 message GetAttendeesRequest {
-  string workshop_id = 1;
-  string host_id = 2;                        // Authorization
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string host_id = 2 [                       // Authorization
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetAttendeesResponse {
@@ -275,9 +528,24 @@ message GetAttendeesResponse {
 }
 
 message Attendee {
-  string user_id = 1;
-  string username = 2;
-  string avatar_url = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string username = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  string avatar_url = 3 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
   google.protobuf.Timestamp registered_at = 4;
   bool attended = 5;
 }
@@ -287,14 +555,31 @@ message Attendee {
 // ============================================================================
 
 message StartWorkshopRequest {
-  string workshop_id = 1;
-  string host_id = 2;
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string host_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message StartWorkshopResponse {
   Workshop workshop = 1;
-  string streaming_url = 2;
-  string host_key = 3;                       // Auth key for host controls
+  string streaming_url = 2 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  string host_key = 3 [                      // Auth key for host controls
+    (buf.validate.field).string.max_len = 128
+  ];
 }
 
 // ============================================================================
@@ -302,9 +587,24 @@ message StartWorkshopResponse {
 // ============================================================================
 
 message EndWorkshopRequest {
-  string workshop_id = 1;
-  string host_id = 2;
-  string recording_url = 3;                  // Optional recording
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string host_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string recording_url = 3 [                 // Optional recording
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }
 
 message EndWorkshopResponse {
@@ -317,10 +617,17 @@ message EndWorkshopResponse {
 // ============================================================================
 
 message GetUserWorkshopsRequest {
-  string user_id = 1;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   bool as_host = 2;                          // Workshops user is hosting
   bool as_attendee = 3;                      // Workshops user is attending
-  WorkshopStatus status_filter = 4;
+  WorkshopStatus status_filter = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message GetUserWorkshopsResponse {
@@ -333,12 +640,27 @@ message GetUserWorkshopsResponse {
 // ============================================================================
 
 message GetWorkshopRecordingRequest {
-  string workshop_id = 1;
-  string user_id = 2;                        // Check if user attended
+  string workshop_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [                       // Check if user attended
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetWorkshopRecordingResponse {
-  string recording_url = 1;
+  string recording_url = 1 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
   bool is_available = 2;
   google.protobuf.Timestamp available_until = 3;
   repeated skillsphere.common.v1.Attachment materials = 4;

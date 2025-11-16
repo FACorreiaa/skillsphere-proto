@@ -30,7 +30,7 @@ public object AnalyzeSkillGapRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.AnalyzeSkillGapRequest = _builder.build()
 
     /**
-     * `string user_id_1 = 1 [json_name = "userId1"];`
+     * `string user_id_1 = 1 [json_name = "userId1", (.buf.validate.field) = { ... }`
      */
     public var userId1: kotlin.String
       @kotlin.jvm.JvmName("getUserId1")
@@ -40,14 +40,14 @@ public object AnalyzeSkillGapRequestKt {
         _builder.userId1 = value
       }
     /**
-     * `string user_id_1 = 1 [json_name = "userId1"];`
+     * `string user_id_1 = 1 [json_name = "userId1", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId1() {
       _builder.clearUserId1()
     }
 
     /**
-     * `string user_id_2 = 2 [json_name = "userId2"];`
+     * `string user_id_2 = 2 [json_name = "userId2", (.buf.validate.field) = { ... }`
      */
     public var userId2: kotlin.String
       @kotlin.jvm.JvmName("getUserId2")
@@ -57,7 +57,7 @@ public object AnalyzeSkillGapRequestKt {
         _builder.userId2 = value
       }
     /**
-     * `string user_id_2 = 2 [json_name = "userId2"];`
+     * `string user_id_2 = 2 [json_name = "userId2", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId2() {
       _builder.clearUserId2()
@@ -70,11 +70,7 @@ public object AnalyzeSkillGapRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class FocusSkillsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `repeated string focus_skills = 3 [json_name = "focusSkills"];`
+     * `repeated string focus_skills = 3 [json_name = "focusSkills", (.buf.validate.field) = { ... }`
      * @return A list containing the focusSkills.
      */
     public val focusSkills: com.google.protobuf.kotlin.DslList<kotlin.String, FocusSkillsProxy>
@@ -83,11 +79,7 @@ public object AnalyzeSkillGapRequestKt {
         _builder.focusSkillsList
       )
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `repeated string focus_skills = 3 [json_name = "focusSkills"];`
+     * `repeated string focus_skills = 3 [json_name = "focusSkills", (.buf.validate.field) = { ... }`
      * @param value The focusSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -96,11 +88,7 @@ public object AnalyzeSkillGapRequestKt {
       _builder.addFocusSkills(value)
     }
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `repeated string focus_skills = 3 [json_name = "focusSkills"];`
+     * `repeated string focus_skills = 3 [json_name = "focusSkills", (.buf.validate.field) = { ... }`
      * @param value The focusSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -110,11 +98,7 @@ public object AnalyzeSkillGapRequestKt {
       add(value)
     }
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `repeated string focus_skills = 3 [json_name = "focusSkills"];`
+     * `repeated string focus_skills = 3 [json_name = "focusSkills", (.buf.validate.field) = { ... }`
      * @param values The focusSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -123,11 +107,7 @@ public object AnalyzeSkillGapRequestKt {
       _builder.addAllFocusSkills(values)
     }
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `repeated string focus_skills = 3 [json_name = "focusSkills"];`
+     * `repeated string focus_skills = 3 [json_name = "focusSkills", (.buf.validate.field) = { ... }`
      * @param values The focusSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -137,11 +117,7 @@ public object AnalyzeSkillGapRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `repeated string focus_skills = 3 [json_name = "focusSkills"];`
+     * `repeated string focus_skills = 3 [json_name = "focusSkills", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The focusSkills to set.
      */
@@ -150,11 +126,7 @@ public object AnalyzeSkillGapRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, FocusSkillsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setFocusSkills(index, value)
     }/**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `repeated string focus_skills = 3 [json_name = "focusSkills"];`
+     * `repeated string focus_skills = 3 [json_name = "focusSkills", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setFocusSkills")

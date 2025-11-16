@@ -30,7 +30,7 @@ public object GetReportsRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.GetReportsRequest = _builder.build()
 
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 1 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 1 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.admin.v1.ReportStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -47,14 +47,14 @@ public object GetReportsRequestKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 1 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 1 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
     }
 
     /**
-     * `.skillsphere.admin.v1.ReportType type = 2 [json_name = "type"];`
+     * `.skillsphere.admin.v1.ReportType type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.admin.v1.ReportType
       @kotlin.jvm.JvmName("getType")
@@ -71,14 +71,14 @@ public object GetReportsRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportType type = 2 [json_name = "type"];`
+     * `.skillsphere.admin.v1.ReportType type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `int32 page_size = 3 [json_name = "pageSize"];`
+     * `int32 page_size = 3 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -88,14 +88,14 @@ public object GetReportsRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 3 [json_name = "pageSize"];`
+     * `int32 page_size = 3 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 4 [json_name = "pageToken"];`
+     * `string page_token = 4 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -105,7 +105,7 @@ public object GetReportsRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 4 [json_name = "pageToken"];`
+     * `string page_token = 4 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()

@@ -30,7 +30,7 @@ public object SubscriptionKt {
     internal fun _build(): com.skillsphere.payment.v1.Subscription = _builder.build()
 
     /**
-     * `string subscription_id = 1 [json_name = "subscriptionId"];`
+     * `string subscription_id = 1 [json_name = "subscriptionId", (.buf.validate.field) = { ... }`
      */
     public var subscriptionId: kotlin.String
       @kotlin.jvm.JvmName("getSubscriptionId")
@@ -40,14 +40,14 @@ public object SubscriptionKt {
         _builder.subscriptionId = value
       }
     /**
-     * `string subscription_id = 1 [json_name = "subscriptionId"];`
+     * `string subscription_id = 1 [json_name = "subscriptionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSubscriptionId() {
       _builder.clearSubscriptionId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,14 +57,14 @@ public object SubscriptionKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `.skillsphere.common.v1.SubscriptionTier tier = 3 [json_name = "tier"];`
+     * `.skillsphere.common.v1.SubscriptionTier tier = 3 [json_name = "tier", (.buf.validate.field) = { ... }`
      */
     public var tier: com.skillsphere.common.v1.SubscriptionTier
       @kotlin.jvm.JvmName("getTier")
@@ -81,14 +81,14 @@ public object SubscriptionKt {
         _builder.tierValue = value
       }
     /**
-     * `.skillsphere.common.v1.SubscriptionTier tier = 3 [json_name = "tier"];`
+     * `.skillsphere.common.v1.SubscriptionTier tier = 3 [json_name = "tier", (.buf.validate.field) = { ... }`
      */
     public fun clearTier() {
       _builder.clearTier()
     }
 
     /**
-     * `string stripe_subscription_id = 4 [json_name = "stripeSubscriptionId"];`
+     * `string stripe_subscription_id = 4 [json_name = "stripeSubscriptionId", (.buf.validate.field) = { ... }`
      */
     public var stripeSubscriptionId: kotlin.String
       @kotlin.jvm.JvmName("getStripeSubscriptionId")
@@ -98,7 +98,7 @@ public object SubscriptionKt {
         _builder.stripeSubscriptionId = value
       }
     /**
-     * `string stripe_subscription_id = 4 [json_name = "stripeSubscriptionId"];`
+     * `string stripe_subscription_id = 4 [json_name = "stripeSubscriptionId", (.buf.validate.field) = { ... }`
      */
     public fun clearStripeSubscriptionId() {
       _builder.clearStripeSubscriptionId()

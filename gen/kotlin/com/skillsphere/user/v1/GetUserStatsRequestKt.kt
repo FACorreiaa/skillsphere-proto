@@ -30,7 +30,7 @@ public object GetUserStatsRequestKt {
     internal fun _build(): com.skillsphere.user.v1.GetUserStatsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object GetUserStatsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()

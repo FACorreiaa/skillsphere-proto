@@ -1,0 +1,724 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "gig/v1/gig.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "GigService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "commonv1Location": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "ISO 3166-1 alpha-2 (e.g., \"US\", \"BR\")"
+        },
+        "timezone": {
+          "type": "string",
+          "title": "IANA timezone (e.g., \"America/New_York\")"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Geographic location for user matching"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "skillspheregigv1RequestRevisionResponse": {
+      "type": "object",
+      "properties": {
+        "gig": {
+          "$ref": "#/definitions/v1Gig"
+        },
+        "revisionNumber": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AcceptApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "$ref": "#/definitions/v1Application"
+        },
+        "gig": {
+          "$ref": "#/definitions/v1Gig"
+        }
+      }
+    },
+    "v1Application": {
+      "type": "object",
+      "properties": {
+        "applicationId": {
+          "type": "string"
+        },
+        "gigId": {
+          "type": "string"
+        },
+        "freelancerId": {
+          "type": "string"
+        },
+        "coverLetter": {
+          "type": "string"
+        },
+        "proposedAmount": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "estimatedHours": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ApplicationStatus"
+        },
+        "appliedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "respondedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1ApplicationStatus": {
+      "type": "string",
+      "enum": [
+        "APPLICATION_STATUS_UNSPECIFIED",
+        "APPLICATION_STATUS_PENDING",
+        "APPLICATION_STATUS_ACCEPTED",
+        "APPLICATION_STATUS_REJECTED",
+        "APPLICATION_STATUS_WITHDRAWN"
+      ],
+      "default": "APPLICATION_STATUS_UNSPECIFIED"
+    },
+    "v1ApplyToGigResponse": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "$ref": "#/definitions/v1Application"
+        }
+      }
+    },
+    "v1ApproveWorkResponse": {
+      "type": "object",
+      "properties": {
+        "gig": {
+          "$ref": "#/definitions/v1Gig"
+        },
+        "paymentReleased": {
+          "type": "boolean"
+        },
+        "payoutId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Attachment": {
+      "type": "object",
+      "properties": {
+        "attachmentId": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/definitions/v1ContentType"
+        },
+        "fileSizeBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "File attachment (for reviews, workshops, etc.)"
+    },
+    "v1Availability": {
+      "type": "object",
+      "properties": {
+        "timeSlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TimeSlot"
+          }
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "title": "User availability schedule"
+    },
+    "v1ContentType": {
+      "type": "string",
+      "enum": [
+        "CONTENT_TYPE_UNSPECIFIED",
+        "CONTENT_TYPE_CODE",
+        "CONTENT_TYPE_DESIGN",
+        "CONTENT_TYPE_VIDEO",
+        "CONTENT_TYPE_DOCUMENT",
+        "CONTENT_TYPE_AUDIO"
+      ],
+      "default": "CONTENT_TYPE_UNSPECIFIED",
+      "title": "Content type for reviews"
+    },
+    "v1CreateGigResponse": {
+      "type": "object",
+      "properties": {
+        "gig": {
+          "$ref": "#/definitions/v1Gig"
+        },
+        "escrowPaymentId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DayOfWeek": {
+      "type": "string",
+      "enum": [
+        "DAY_OF_WEEK_UNSPECIFIED",
+        "DAY_OF_WEEK_MONDAY",
+        "DAY_OF_WEEK_TUESDAY",
+        "DAY_OF_WEEK_WEDNESDAY",
+        "DAY_OF_WEEK_THURSDAY",
+        "DAY_OF_WEEK_FRIDAY",
+        "DAY_OF_WEEK_SATURDAY",
+        "DAY_OF_WEEK_SUNDAY"
+      ],
+      "default": "DAY_OF_WEEK_UNSPECIFIED",
+      "title": "Days of the week for availability"
+    },
+    "v1DeleteGigResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "refundIssued": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1DisputeGigResponse": {
+      "type": "object",
+      "properties": {
+        "disputeId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetGigResponse": {
+      "type": "object",
+      "properties": {
+        "gig": {
+          "$ref": "#/definitions/v1Gig"
+        },
+        "creator": {
+          "$ref": "#/definitions/v1User"
+        },
+        "assignedFreelancer": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetUserGigsResponse": {
+      "type": "object",
+      "properties": {
+        "createdGigs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Gig"
+          }
+        },
+        "freelanceGigs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Gig"
+          }
+        },
+        "applications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Application"
+          }
+        }
+      }
+    },
+    "v1Gig": {
+      "type": "object",
+      "properties": {
+        "gigId": {
+          "type": "string"
+        },
+        "creatorId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "skillIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "type": {
+          "$ref": "#/definitions/v1GigType",
+          "title": "Pricing"
+        },
+        "budget": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "isHourly": {
+          "type": "boolean",
+          "title": "Hourly vs. fixed price"
+        },
+        "estimatedHours": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "requiredProficiency": {
+          "$ref": "#/definitions/v1ProficiencyLevel",
+          "title": "Requirements"
+        },
+        "requirements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Attachment"
+          }
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Timeline"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "$ref": "#/definitions/v1GigStatus",
+          "title": "Status"
+        },
+        "assignedTo": {
+          "type": "string"
+        },
+        "applicationCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Completion"
+        },
+        "rating": {
+          "type": "number",
+          "format": "double"
+        },
+        "review": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GigStatus": {
+      "type": "string",
+      "enum": [
+        "GIG_STATUS_UNSPECIFIED",
+        "GIG_STATUS_OPEN",
+        "GIG_STATUS_IN_PROGRESS",
+        "GIG_STATUS_SUBMITTED",
+        "GIG_STATUS_REVISION_REQUESTED",
+        "GIG_STATUS_COMPLETED",
+        "GIG_STATUS_DISPUTED",
+        "GIG_STATUS_CANCELLED"
+      ],
+      "default": "GIG_STATUS_UNSPECIFIED"
+    },
+    "v1GigType": {
+      "type": "string",
+      "enum": [
+        "GIG_TYPE_UNSPECIFIED",
+        "GIG_TYPE_TUTORING",
+        "GIG_TYPE_PROJECT",
+        "GIG_TYPE_CONSULTING",
+        "GIG_TYPE_REVIEW"
+      ],
+      "default": "GIG_TYPE_UNSPECIFIED",
+      "title": "- GIG_TYPE_TUTORING: Hourly teaching\n - GIG_TYPE_PROJECT: Fixed-price project\n - GIG_TYPE_CONSULTING: Advisory\n - GIG_TYPE_REVIEW: Code/design review"
+    },
+    "v1ListGigsResponse": {
+      "type": "object",
+      "properties": {
+        "gigs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Gig"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Money": {
+      "type": "object",
+      "properties": {
+        "currencyCode": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "Money amount for payments"
+    },
+    "v1ProficiencyLevel": {
+      "type": "string",
+      "enum": [
+        "PROFICIENCY_LEVEL_UNSPECIFIED",
+        "PROFICIENCY_LEVEL_BEGINNER",
+        "PROFICIENCY_LEVEL_INTERMEDIATE",
+        "PROFICIENCY_LEVEL_EXPERT"
+      ],
+      "default": "PROFICIENCY_LEVEL_UNSPECIFIED",
+      "description": "- PROFICIENCY_LEVEL_BEGINNER: 1-3\n - PROFICIENCY_LEVEL_INTERMEDIATE: 4-7\n - PROFICIENCY_LEVEL_EXPERT: 8-10",
+      "title": "Proficiency level for skills (1-10 scale)"
+    },
+    "v1RejectApplicationResponse": {
+      "type": "object",
+      "properties": {
+        "application": {
+          "$ref": "#/definitions/v1Application"
+        }
+      }
+    },
+    "v1SearchGigsResponse": {
+      "type": "object",
+      "properties": {
+        "gigs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Gig"
+          }
+        }
+      }
+    },
+    "v1SkillCategory": {
+      "type": "string",
+      "enum": [
+        "SKILL_CATEGORY_UNSPECIFIED",
+        "SKILL_CATEGORY_TECH",
+        "SKILL_CATEGORY_LANGUAGES",
+        "SKILL_CATEGORY_CREATIVE",
+        "SKILL_CATEGORY_PROFESSIONAL",
+        "SKILL_CATEGORY_HOBBIES",
+        "SKILL_CATEGORY_FITNESS",
+        "SKILL_CATEGORY_ACADEMICS",
+        "SKILL_CATEGORY_LIFE_SKILLS"
+      ],
+      "default": "SKILL_CATEGORY_UNSPECIFIED",
+      "description": "- SKILL_CATEGORY_TECH: Programming, DevOps, Data Science\n - SKILL_CATEGORY_LANGUAGES: English, Spanish, Mandarin\n - SKILL_CATEGORY_CREATIVE: Design, Music, Writing\n - SKILL_CATEGORY_PROFESSIONAL: Business, Finance, Marketing\n - SKILL_CATEGORY_HOBBIES: Cooking, Gaming, Gardening\n - SKILL_CATEGORY_FITNESS: Yoga, Weightlifting, Running\n - SKILL_CATEGORY_ACADEMICS: Math, Science, History\n - SKILL_CATEGORY_LIFE_SKILLS: Time management, Communication",
+      "title": "Skill categories for organizing skills"
+    },
+    "v1SubmitWorkResponse": {
+      "type": "object",
+      "properties": {
+        "submission": {
+          "$ref": "#/definitions/v1WorkSubmission"
+        },
+        "notificationSent": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SubscriptionTier": {
+      "type": "string",
+      "enum": [
+        "SUBSCRIPTION_TIER_UNSPECIFIED",
+        "SUBSCRIPTION_TIER_FREE",
+        "SUBSCRIPTION_TIER_PREMIUM",
+        "SUBSCRIPTION_TIER_PROFESSIONAL"
+      ],
+      "default": "SUBSCRIPTION_TIER_UNSPECIFIED",
+      "description": "- SUBSCRIPTION_TIER_FREE: Basic free tier\n - SUBSCRIPTION_TIER_PREMIUM: $5-10/month\n - SUBSCRIPTION_TIER_PROFESSIONAL: $15-20/month",
+      "title": "Subscription tier"
+    },
+    "v1TimeSlot": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "$ref": "#/definitions/v1DayOfWeek"
+        },
+        "startTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        },
+        "endTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        }
+      },
+      "title": "Time slot for availability"
+    },
+    "v1UpdateGigResponse": {
+      "type": "object",
+      "properties": {
+        "gig": {
+          "$ref": "#/definitions/v1Gig"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location"
+        },
+        "availability": {
+          "$ref": "#/definitions/v1Availability"
+        },
+        "status": {
+          "$ref": "#/definitions/v1UserStatus"
+        },
+        "subscriptionTier": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "skillsOffered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          },
+          "title": "Skills"
+        },
+        "skillsWanted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double",
+          "title": "Stats"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalReviews": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Metadata"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastActiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isVerified": {
+          "type": "boolean",
+          "description": "Blue checkmark for trusted experts",
+          "title": "Premium features"
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "IDs of blockchain certifications"
+        }
+      },
+      "title": "User profile"
+    },
+    "v1UserSkill": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "proficiencyCategory": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "isOffered": {
+          "type": "boolean",
+          "title": "True if offering, false if wanting"
+        },
+        "acquiredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "experienceDescription": {
+          "type": "string"
+        }
+      },
+      "title": "User skill association (offered or wanted)"
+    },
+    "v1UserStatus": {
+      "type": "string",
+      "enum": [
+        "USER_STATUS_UNSPECIFIED",
+        "USER_STATUS_ACTIVE",
+        "USER_STATUS_SUSPENDED",
+        "USER_STATUS_BANNED",
+        "USER_STATUS_DELETED"
+      ],
+      "default": "USER_STATUS_UNSPECIFIED",
+      "title": "User account status"
+    },
+    "v1WorkSubmission": {
+      "type": "object",
+      "properties": {
+        "submissionId": {
+          "type": "string"
+        },
+        "gigId": {
+          "type": "string"
+        },
+        "freelancerId": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "deliverables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Attachment"
+          }
+        },
+        "submittedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "revisionNumber": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    }
+  }
+}

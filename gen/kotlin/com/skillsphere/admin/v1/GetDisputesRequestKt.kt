@@ -30,7 +30,7 @@ public object GetDisputesRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.GetDisputesRequest = _builder.build()
 
     /**
-     * `.skillsphere.admin.v1.DisputeStatus status = 1 [json_name = "status"];`
+     * `.skillsphere.admin.v1.DisputeStatus status = 1 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.admin.v1.DisputeStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -47,14 +47,14 @@ public object GetDisputesRequestKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.admin.v1.DisputeStatus status = 1 [json_name = "status"];`
+     * `.skillsphere.admin.v1.DisputeStatus status = 1 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
     }
 
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -64,14 +64,14 @@ public object GetDisputesRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -81,7 +81,7 @@ public object GetDisputesRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()

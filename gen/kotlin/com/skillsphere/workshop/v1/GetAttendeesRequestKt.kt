@@ -30,7 +30,7 @@ public object GetAttendeesRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.GetAttendeesRequest = _builder.build()
 
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public var workshopId: kotlin.String
       @kotlin.jvm.JvmName("getWorkshopId")
@@ -40,18 +40,14 @@ public object GetAttendeesRequestKt {
         _builder.workshopId = value
       }
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public fun clearWorkshopId() {
       _builder.clearWorkshopId()
     }
 
     /**
-     * ```
-     * Authorization
-     * ```
-     *
-     * `string host_id = 2 [json_name = "hostId"];`
+     * `string host_id = 2 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public var hostId: kotlin.String
       @kotlin.jvm.JvmName("getHostId")
@@ -61,11 +57,7 @@ public object GetAttendeesRequestKt {
         _builder.hostId = value
       }
     /**
-     * ```
-     * Authorization
-     * ```
-     *
-     * `string host_id = 2 [json_name = "hostId"];`
+     * `string host_id = 2 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public fun clearHostId() {
       _builder.clearHostId()

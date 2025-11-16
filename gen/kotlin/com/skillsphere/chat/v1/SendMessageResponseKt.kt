@@ -57,7 +57,7 @@ public object SendMessageResponseKt {
       get() = _builder.messageOrNull
 
     /**
-     * `string conversation_id = 2 [json_name = "conversationId"];`
+     * `string conversation_id = 2 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public var conversationId: kotlin.String
       @kotlin.jvm.JvmName("getConversationId")
@@ -67,7 +67,7 @@ public object SendMessageResponseKt {
         _builder.conversationId = value
       }
     /**
-     * `string conversation_id = 2 [json_name = "conversationId"];`
+     * `string conversation_id = 2 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public fun clearConversationId() {
       _builder.clearConversationId()

@@ -30,7 +30,7 @@ public object UpdateGigRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.UpdateGigRequest = _builder.build()
 
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -40,14 +40,14 @@ public object UpdateGigRequestKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
     }
 
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -57,14 +57,14 @@ public object UpdateGigRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -74,7 +74,7 @@ public object UpdateGigRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()

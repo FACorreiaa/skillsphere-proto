@@ -34,7 +34,7 @@ public object LocationKt {
     internal fun _build(): com.skillsphere.common.v1.Location = _builder.build()
 
     /**
-     * `string city = 1 [json_name = "city"];`
+     * `string city = 1 [json_name = "city", (.buf.validate.field) = { ... }`
      */
     public var city: kotlin.String
       @kotlin.jvm.JvmName("getCity")
@@ -44,14 +44,14 @@ public object LocationKt {
         _builder.city = value
       }
     /**
-     * `string city = 1 [json_name = "city"];`
+     * `string city = 1 [json_name = "city", (.buf.validate.field) = { ... }`
      */
     public fun clearCity() {
       _builder.clearCity()
     }
 
     /**
-     * `string country = 2 [json_name = "country"];`
+     * `string country = 2 [json_name = "country", (.buf.validate.field) = { ... }`
      */
     public var country: kotlin.String
       @kotlin.jvm.JvmName("getCountry")
@@ -61,7 +61,7 @@ public object LocationKt {
         _builder.country = value
       }
     /**
-     * `string country = 2 [json_name = "country"];`
+     * `string country = 2 [json_name = "country", (.buf.validate.field) = { ... }`
      */
     public fun clearCountry() {
       _builder.clearCountry()
@@ -72,7 +72,7 @@ public object LocationKt {
      * ISO 3166-1 alpha-2 (e.g., "US", "BR")
      * ```
      *
-     * `string country_code = 3 [json_name = "countryCode"];`
+     * `string country_code = 3 [json_name = "countryCode", (.buf.validate.field) = { ... }`
      */
     public var countryCode: kotlin.String
       @kotlin.jvm.JvmName("getCountryCode")
@@ -86,7 +86,7 @@ public object LocationKt {
      * ISO 3166-1 alpha-2 (e.g., "US", "BR")
      * ```
      *
-     * `string country_code = 3 [json_name = "countryCode"];`
+     * `string country_code = 3 [json_name = "countryCode", (.buf.validate.field) = { ... }`
      */
     public fun clearCountryCode() {
       _builder.clearCountryCode()
@@ -97,7 +97,7 @@ public object LocationKt {
      * IANA timezone (e.g., "America/New_York")
      * ```
      *
-     * `string timezone = 4 [json_name = "timezone"];`
+     * `string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }`
      */
     public var timezone: kotlin.String
       @kotlin.jvm.JvmName("getTimezone")
@@ -111,18 +111,14 @@ public object LocationKt {
      * IANA timezone (e.g., "America/New_York")
      * ```
      *
-     * `string timezone = 4 [json_name = "timezone"];`
+     * `string timezone = 4 [json_name = "timezone", (.buf.validate.field) = { ... }`
      */
     public fun clearTimezone() {
       _builder.clearTimezone()
     }
 
     /**
-     * ```
-     * Optional for distance-based matching
-     * ```
-     *
-     * `double latitude = 5 [json_name = "latitude"];`
+     * `double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }`
      */
     public var latitude: kotlin.Double
       @kotlin.jvm.JvmName("getLatitude")
@@ -132,18 +128,14 @@ public object LocationKt {
         _builder.latitude = value
       }
     /**
-     * ```
-     * Optional for distance-based matching
-     * ```
-     *
-     * `double latitude = 5 [json_name = "latitude"];`
+     * `double latitude = 5 [json_name = "latitude", (.buf.validate.field) = { ... }`
      */
     public fun clearLatitude() {
       _builder.clearLatitude()
     }
 
     /**
-     * `double longitude = 6 [json_name = "longitude"];`
+     * `double longitude = 6 [json_name = "longitude", (.buf.validate.field) = { ... }`
      */
     public var longitude: kotlin.Double
       @kotlin.jvm.JvmName("getLongitude")
@@ -153,7 +145,7 @@ public object LocationKt {
         _builder.longitude = value
       }
     /**
-     * `double longitude = 6 [json_name = "longitude"];`
+     * `double longitude = 6 [json_name = "longitude", (.buf.validate.field) = { ... }`
      */
     public fun clearLongitude() {
       _builder.clearLongitude()

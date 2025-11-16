@@ -30,7 +30,7 @@ public object RefundPaymentRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.RefundPaymentRequest = _builder.build()
 
     /**
-     * `string payment_id = 1 [json_name = "paymentId"];`
+     * `string payment_id = 1 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public var paymentId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentId")
@@ -40,7 +40,7 @@ public object RefundPaymentRequestKt {
         _builder.paymentId = value
       }
     /**
-     * `string payment_id = 1 [json_name = "paymentId"];`
+     * `string payment_id = 1 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentId() {
       _builder.clearPaymentId()
@@ -86,7 +86,7 @@ public object RefundPaymentRequestKt {
       get() = _builder.amountOrNull
 
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -96,7 +96,7 @@ public object RefundPaymentRequestKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()

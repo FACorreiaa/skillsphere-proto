@@ -30,7 +30,7 @@ public object AwardWinnersRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.AwardWinnersRequest = _builder.build()
 
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public var challengeId: kotlin.String
       @kotlin.jvm.JvmName("getChallengeId")
@@ -40,7 +40,7 @@ public object AwardWinnersRequestKt {
         _builder.challengeId = value
       }
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public fun clearChallengeId() {
       _builder.clearChallengeId()
@@ -53,7 +53,7 @@ public object AwardWinnersRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class WinnersProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners"];`
+     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners", (.buf.validate.field) = { ... }`
      */
      public val winners: com.google.protobuf.kotlin.DslList<com.skillsphere.challenge.v1.Winner, WinnersProxy>
       @kotlin.jvm.JvmSynthetic
@@ -61,7 +61,7 @@ public object AwardWinnersRequestKt {
         _builder.winnersList
       )
     /**
-     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners"];`
+     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners", (.buf.validate.field) = { ... }`
      * @param value The winners to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -70,7 +70,7 @@ public object AwardWinnersRequestKt {
       _builder.addWinners(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners"];`
+     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners", (.buf.validate.field) = { ... }`
      * @param value The winners to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -80,7 +80,7 @@ public object AwardWinnersRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners"];`
+     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners", (.buf.validate.field) = { ... }`
      * @param values The winners to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -89,7 +89,7 @@ public object AwardWinnersRequestKt {
       _builder.addAllWinners(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners"];`
+     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners", (.buf.validate.field) = { ... }`
      * @param values The winners to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -99,7 +99,7 @@ public object AwardWinnersRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners"];`
+     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The winners to set.
      */
@@ -109,7 +109,7 @@ public object AwardWinnersRequestKt {
       _builder.setWinners(index, value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners"];`
+     * `repeated .skillsphere.challenge.v1.Winner winners = 2 [json_name = "winners", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearWinners")
@@ -118,7 +118,7 @@ public object AwardWinnersRequestKt {
     }
 
     /**
-     * `string admin_id = 3 [json_name = "adminId"];`
+     * `string admin_id = 3 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -128,7 +128,7 @@ public object AwardWinnersRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 3 [json_name = "adminId"];`
+     * `string admin_id = 3 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()

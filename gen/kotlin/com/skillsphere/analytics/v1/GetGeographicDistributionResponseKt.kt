@@ -36,7 +36,7 @@ public object GetGeographicDistributionResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class DataProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data"];`
+     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data", (.buf.validate.field) = { ... }`
      */
      public val data: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.GeographicData, DataProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetGeographicDistributionResponseKt {
         _builder.dataList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data"];`
+     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data", (.buf.validate.field) = { ... }`
      * @param value The data to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetGeographicDistributionResponseKt {
       _builder.addData(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data"];`
+     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data", (.buf.validate.field) = { ... }`
      * @param value The data to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetGeographicDistributionResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data"];`
+     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data", (.buf.validate.field) = { ... }`
      * @param values The data to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetGeographicDistributionResponseKt {
       _builder.addAllData(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data"];`
+     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data", (.buf.validate.field) = { ... }`
      * @param values The data to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetGeographicDistributionResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data"];`
+     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The data to set.
      */
@@ -92,7 +92,7 @@ public object GetGeographicDistributionResponseKt {
       _builder.setData(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data"];`
+     * `repeated .skillsphere.analytics.v1.GeographicData data = 1 [json_name = "data", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearData")

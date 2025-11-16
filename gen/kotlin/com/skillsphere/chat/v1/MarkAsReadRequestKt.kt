@@ -30,7 +30,7 @@ public object MarkAsReadRequestKt {
     internal fun _build(): com.skillsphere.chat.v1.MarkAsReadRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object MarkAsReadRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -53,7 +53,7 @@ public object MarkAsReadRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class MessageIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string message_ids = 2 [json_name = "messageIds"];`
+     * `repeated string message_ids = 2 [json_name = "messageIds", (.buf.validate.field) = { ... }`
      * @return A list containing the messageIds.
      */
     public val messageIds: com.google.protobuf.kotlin.DslList<kotlin.String, MessageIdsProxy>
@@ -62,7 +62,7 @@ public object MarkAsReadRequestKt {
         _builder.messageIdsList
       )
     /**
-     * `repeated string message_ids = 2 [json_name = "messageIds"];`
+     * `repeated string message_ids = 2 [json_name = "messageIds", (.buf.validate.field) = { ... }`
      * @param value The messageIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -71,7 +71,7 @@ public object MarkAsReadRequestKt {
       _builder.addMessageIds(value)
     }
     /**
-     * `repeated string message_ids = 2 [json_name = "messageIds"];`
+     * `repeated string message_ids = 2 [json_name = "messageIds", (.buf.validate.field) = { ... }`
      * @param value The messageIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -81,7 +81,7 @@ public object MarkAsReadRequestKt {
       add(value)
     }
     /**
-     * `repeated string message_ids = 2 [json_name = "messageIds"];`
+     * `repeated string message_ids = 2 [json_name = "messageIds", (.buf.validate.field) = { ... }`
      * @param values The messageIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,7 +90,7 @@ public object MarkAsReadRequestKt {
       _builder.addAllMessageIds(values)
     }
     /**
-     * `repeated string message_ids = 2 [json_name = "messageIds"];`
+     * `repeated string message_ids = 2 [json_name = "messageIds", (.buf.validate.field) = { ... }`
      * @param values The messageIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -100,7 +100,7 @@ public object MarkAsReadRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string message_ids = 2 [json_name = "messageIds"];`
+     * `repeated string message_ids = 2 [json_name = "messageIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The messageIds to set.
      */
@@ -109,7 +109,7 @@ public object MarkAsReadRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, MessageIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setMessageIds(index, value)
     }/**
-     * `repeated string message_ids = 2 [json_name = "messageIds"];`
+     * `repeated string message_ids = 2 [json_name = "messageIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setMessageIds")
@@ -117,11 +117,7 @@ public object MarkAsReadRequestKt {
       _builder.clearMessageIds()
     }
     /**
-     * ```
-     * Mark all in conversation
-     * ```
-     *
-     * `string conversation_id = 3 [json_name = "conversationId"];`
+     * `string conversation_id = 3 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public var conversationId: kotlin.String
       @kotlin.jvm.JvmName("getConversationId")
@@ -131,11 +127,7 @@ public object MarkAsReadRequestKt {
         _builder.conversationId = value
       }
     /**
-     * ```
-     * Mark all in conversation
-     * ```
-     *
-     * `string conversation_id = 3 [json_name = "conversationId"];`
+     * `string conversation_id = 3 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public fun clearConversationId() {
       _builder.clearConversationId()

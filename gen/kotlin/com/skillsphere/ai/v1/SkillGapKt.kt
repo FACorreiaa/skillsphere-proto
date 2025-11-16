@@ -30,7 +30,7 @@ public object SkillGapKt {
     internal fun _build(): com.skillsphere.ai.v1.SkillGap = _builder.build()
 
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -40,14 +40,14 @@ public object SkillGapKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
     }
 
     /**
-     * `int32 user1_proficiency = 2 [json_name = "user1Proficiency"];`
+     * `int32 user1_proficiency = 2 [json_name = "user1Proficiency", (.buf.validate.field) = { ... }`
      */
     public var user1Proficiency: kotlin.Int
       @kotlin.jvm.JvmName("getUser1Proficiency")
@@ -57,14 +57,14 @@ public object SkillGapKt {
         _builder.user1Proficiency = value
       }
     /**
-     * `int32 user1_proficiency = 2 [json_name = "user1Proficiency"];`
+     * `int32 user1_proficiency = 2 [json_name = "user1Proficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearUser1Proficiency() {
       _builder.clearUser1Proficiency()
     }
 
     /**
-     * `int32 user2_proficiency = 3 [json_name = "user2Proficiency"];`
+     * `int32 user2_proficiency = 3 [json_name = "user2Proficiency", (.buf.validate.field) = { ... }`
      */
     public var user2Proficiency: kotlin.Int
       @kotlin.jvm.JvmName("getUser2Proficiency")
@@ -74,18 +74,14 @@ public object SkillGapKt {
         _builder.user2Proficiency = value
       }
     /**
-     * `int32 user2_proficiency = 3 [json_name = "user2Proficiency"];`
+     * `int32 user2_proficiency = 3 [json_name = "user2Proficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearUser2Proficiency() {
       _builder.clearUser2Proficiency()
     }
 
     /**
-     * ```
-     * Absolute difference
-     * ```
-     *
-     * `int32 gap_size = 4 [json_name = "gapSize"];`
+     * `int32 gap_size = 4 [json_name = "gapSize", (.buf.validate.field) = { ... }`
      */
     public var gapSize: kotlin.Int
       @kotlin.jvm.JvmName("getGapSize")
@@ -95,11 +91,7 @@ public object SkillGapKt {
         _builder.gapSize = value
       }
     /**
-     * ```
-     * Absolute difference
-     * ```
-     *
-     * `int32 gap_size = 4 [json_name = "gapSize"];`
+     * `int32 gap_size = 4 [json_name = "gapSize", (.buf.validate.field) = { ... }`
      */
     public fun clearGapSize() {
       _builder.clearGapSize()
@@ -131,7 +123,7 @@ public object SkillGapKt {
     }
 
     /**
-     * `string explanation = 6 [json_name = "explanation"];`
+     * `string explanation = 6 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public var explanation: kotlin.String
       @kotlin.jvm.JvmName("getExplanation")
@@ -141,7 +133,7 @@ public object SkillGapKt {
         _builder.explanation = value
       }
     /**
-     * `string explanation = 6 [json_name = "explanation"];`
+     * `string explanation = 6 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public fun clearExplanation() {
       _builder.clearExplanation()

@@ -74,11 +74,7 @@ public object VerifyCertificationResponseKt {
     }
 
     /**
-     * ```
-     * Link to blockchain explorer
-     * ```
-     *
-     * `string blockchain_proof_url = 3 [json_name = "blockchainProofUrl"];`
+     * `string blockchain_proof_url = 3 [json_name = "blockchainProofUrl", (.buf.validate.field) = { ... }`
      */
     public var blockchainProofUrl: kotlin.String
       @kotlin.jvm.JvmName("getBlockchainProofUrl")
@@ -88,18 +84,14 @@ public object VerifyCertificationResponseKt {
         _builder.blockchainProofUrl = value
       }
     /**
-     * ```
-     * Link to blockchain explorer
-     * ```
-     *
-     * `string blockchain_proof_url = 3 [json_name = "blockchainProofUrl"];`
+     * `string blockchain_proof_url = 3 [json_name = "blockchainProofUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearBlockchainProofUrl() {
       _builder.clearBlockchainProofUrl()
     }
 
     /**
-     * `string message = 4 [json_name = "message"];`
+     * `string message = 4 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public var message: kotlin.String
       @kotlin.jvm.JvmName("getMessage")
@@ -109,7 +101,7 @@ public object VerifyCertificationResponseKt {
         _builder.message = value
       }
     /**
-     * `string message = 4 [json_name = "message"];`
+     * `string message = 4 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public fun clearMessage() {
       _builder.clearMessage()

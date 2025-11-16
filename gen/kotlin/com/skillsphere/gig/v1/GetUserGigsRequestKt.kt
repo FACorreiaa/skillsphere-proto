@@ -30,7 +30,7 @@ public object GetUserGigsRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.GetUserGigsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object GetUserGigsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -81,7 +81,7 @@ public object GetUserGigsRequestKt {
     }
 
     /**
-     * `.skillsphere.gig.v1.GigStatus status_filter = 4 [json_name = "statusFilter"];`
+     * `.skillsphere.gig.v1.GigStatus status_filter = 4 [json_name = "statusFilter", (.buf.validate.field) = { ... }`
      */
     public var statusFilter: com.skillsphere.gig.v1.GigStatus
       @kotlin.jvm.JvmName("getStatusFilter")
@@ -98,7 +98,7 @@ public object GetUserGigsRequestKt {
         _builder.statusFilterValue = value
       }
     /**
-     * `.skillsphere.gig.v1.GigStatus status_filter = 4 [json_name = "statusFilter"];`
+     * `.skillsphere.gig.v1.GigStatus status_filter = 4 [json_name = "statusFilter", (.buf.validate.field) = { ... }`
      */
     public fun clearStatusFilter() {
       _builder.clearStatusFilter()

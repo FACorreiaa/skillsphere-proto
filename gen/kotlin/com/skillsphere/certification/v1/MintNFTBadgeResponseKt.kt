@@ -30,7 +30,7 @@ public object MintNFTBadgeResponseKt {
     internal fun _build(): com.skillsphere.certification.v1.MintNFTBadgeResponse = _builder.build()
 
     /**
-     * `string transaction_hash = 1 [json_name = "transactionHash"];`
+     * `string transaction_hash = 1 [json_name = "transactionHash", (.buf.validate.field) = { ... }`
      */
     public var transactionHash: kotlin.String
       @kotlin.jvm.JvmName("getTransactionHash")
@@ -40,14 +40,14 @@ public object MintNFTBadgeResponseKt {
         _builder.transactionHash = value
       }
     /**
-     * `string transaction_hash = 1 [json_name = "transactionHash"];`
+     * `string transaction_hash = 1 [json_name = "transactionHash", (.buf.validate.field) = { ... }`
      */
     public fun clearTransactionHash() {
       _builder.clearTransactionHash()
     }
 
     /**
-     * `string token_id = 2 [json_name = "tokenId"];`
+     * `string token_id = 2 [json_name = "tokenId", (.buf.validate.field) = { ... }`
      */
     public var tokenId: kotlin.String
       @kotlin.jvm.JvmName("getTokenId")
@@ -57,14 +57,14 @@ public object MintNFTBadgeResponseKt {
         _builder.tokenId = value
       }
     /**
-     * `string token_id = 2 [json_name = "tokenId"];`
+     * `string token_id = 2 [json_name = "tokenId", (.buf.validate.field) = { ... }`
      */
     public fun clearTokenId() {
       _builder.clearTokenId()
     }
 
     /**
-     * `string contract_address = 3 [json_name = "contractAddress"];`
+     * `string contract_address = 3 [json_name = "contractAddress", (.buf.validate.field) = { ... }`
      */
     public var contractAddress: kotlin.String
       @kotlin.jvm.JvmName("getContractAddress")
@@ -74,18 +74,14 @@ public object MintNFTBadgeResponseKt {
         _builder.contractAddress = value
       }
     /**
-     * `string contract_address = 3 [json_name = "contractAddress"];`
+     * `string contract_address = 3 [json_name = "contractAddress", (.buf.validate.field) = { ... }`
      */
     public fun clearContractAddress() {
       _builder.clearContractAddress()
     }
 
     /**
-     * ```
-     * Link to view on OpenSea
-     * ```
-     *
-     * `string opensea_url = 4 [json_name = "openseaUrl"];`
+     * `string opensea_url = 4 [json_name = "openseaUrl", (.buf.validate.field) = { ... }`
      */
     public var openseaUrl: kotlin.String
       @kotlin.jvm.JvmName("getOpenseaUrl")
@@ -95,11 +91,7 @@ public object MintNFTBadgeResponseKt {
         _builder.openseaUrl = value
       }
     /**
-     * ```
-     * Link to view on OpenSea
-     * ```
-     *
-     * `string opensea_url = 4 [json_name = "openseaUrl"];`
+     * `string opensea_url = 4 [json_name = "openseaUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearOpenseaUrl() {
       _builder.clearOpenseaUrl()

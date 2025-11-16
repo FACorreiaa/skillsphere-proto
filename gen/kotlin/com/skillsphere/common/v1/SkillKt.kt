@@ -34,7 +34,7 @@ public object SkillKt {
     internal fun _build(): com.skillsphere.common.v1.Skill = _builder.build()
 
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -44,18 +44,14 @@ public object SkillKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * ```
-     * e.g., "Python Programming"
-     * ```
-     *
-     * `string name = 2 [json_name = "name"];`
+     * `string name = 2 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public var name: kotlin.String
       @kotlin.jvm.JvmName("getName")
@@ -65,18 +61,14 @@ public object SkillKt {
         _builder.name = value
       }
     /**
-     * ```
-     * e.g., "Python Programming"
-     * ```
-     *
-     * `string name = 2 [json_name = "name"];`
+     * `string name = 2 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public fun clearName() {
       _builder.clearName()
     }
 
     /**
-     * `.skillsphere.common.v1.SkillCategory category = 3 [json_name = "category"];`
+     * `.skillsphere.common.v1.SkillCategory category = 3 [json_name = "category", (.buf.validate.field) = { ... }`
      */
     public var category: com.skillsphere.common.v1.SkillCategory
       @kotlin.jvm.JvmName("getCategory")
@@ -93,18 +85,14 @@ public object SkillKt {
         _builder.categoryValue = value
       }
     /**
-     * `.skillsphere.common.v1.SkillCategory category = 3 [json_name = "category"];`
+     * `.skillsphere.common.v1.SkillCategory category = 3 [json_name = "category", (.buf.validate.field) = { ... }`
      */
     public fun clearCategory() {
       _builder.clearCategory()
     }
 
     /**
-     * ```
-     * Optional detailed description
-     * ```
-     *
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -114,11 +102,7 @@ public object SkillKt {
         _builder.description = value
       }
     /**
-     * ```
-     * Optional detailed description
-     * ```
-     *
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -135,7 +119,7 @@ public object SkillKt {
      * Keywords for search (e.g., ["backend", "django"])
      * ```
      *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @return A list containing the tags.
      */
     public val tags: com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>
@@ -148,7 +132,7 @@ public object SkillKt {
      * Keywords for search (e.g., ["backend", "django"])
      * ```
      *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -161,7 +145,7 @@ public object SkillKt {
      * Keywords for search (e.g., ["backend", "django"])
      * ```
      *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -175,7 +159,7 @@ public object SkillKt {
      * Keywords for search (e.g., ["backend", "django"])
      * ```
      *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -188,7 +172,7 @@ public object SkillKt {
      * Keywords for search (e.g., ["backend", "django"])
      * ```
      *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -202,7 +186,7 @@ public object SkillKt {
      * Keywords for search (e.g., ["backend", "django"])
      * ```
      *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The tags to set.
      */
@@ -215,7 +199,7 @@ public object SkillKt {
      * Keywords for search (e.g., ["backend", "django"])
      * ```
      *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTags")
@@ -223,11 +207,7 @@ public object SkillKt {
       _builder.clearTags()
     }
     /**
-     * ```
-     * For trending skills
-     * ```
-     *
-     * `int32 popularity_score = 6 [json_name = "popularityScore"];`
+     * `int32 popularity_score = 6 [json_name = "popularityScore", (.buf.validate.field) = { ... }`
      */
     public var popularityScore: kotlin.Int
       @kotlin.jvm.JvmName("getPopularityScore")
@@ -237,11 +217,7 @@ public object SkillKt {
         _builder.popularityScore = value
       }
     /**
-     * ```
-     * For trending skills
-     * ```
-     *
-     * `int32 popularity_score = 6 [json_name = "popularityScore"];`
+     * `int32 popularity_score = 6 [json_name = "popularityScore", (.buf.validate.field) = { ... }`
      */
     public fun clearPopularityScore() {
       _builder.clearPopularityScore()

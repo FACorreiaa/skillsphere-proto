@@ -30,7 +30,7 @@ public object UpdateUserSkillRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.UpdateUserSkillRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object UpdateUserSkillRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -57,14 +57,14 @@ public object UpdateUserSkillRequestKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel"];`
+     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel", (.buf.validate.field) = { ... }`
      */
     public var proficiencyLevel: kotlin.Int
       @kotlin.jvm.JvmName("getProficiencyLevel")
@@ -74,14 +74,14 @@ public object UpdateUserSkillRequestKt {
         _builder.proficiencyLevel = value
       }
     /**
-     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel"];`
+     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel", (.buf.validate.field) = { ... }`
      */
     public fun clearProficiencyLevel() {
       _builder.clearProficiencyLevel()
     }
 
     /**
-     * `string experience_description = 4 [json_name = "experienceDescription"];`
+     * `string experience_description = 4 [json_name = "experienceDescription", (.buf.validate.field) = { ... }`
      */
     public var experienceDescription: kotlin.String
       @kotlin.jvm.JvmName("getExperienceDescription")
@@ -91,7 +91,7 @@ public object UpdateUserSkillRequestKt {
         _builder.experienceDescription = value
       }
     /**
-     * `string experience_description = 4 [json_name = "experienceDescription"];`
+     * `string experience_description = 4 [json_name = "experienceDescription", (.buf.validate.field) = { ... }`
      */
     public fun clearExperienceDescription() {
       _builder.clearExperienceDescription()

@@ -30,7 +30,7 @@ public object FunnelStageKt {
     internal fun _build(): com.skillsphere.analytics.v1.FunnelStage = _builder.build()
 
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public var name: kotlin.String
       @kotlin.jvm.JvmName("getName")
@@ -40,14 +40,14 @@ public object FunnelStageKt {
         _builder.name = value
       }
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public fun clearName() {
       _builder.clearName()
     }
 
     /**
-     * `int32 user_count = 2 [json_name = "userCount"];`
+     * `int32 user_count = 2 [json_name = "userCount", (.buf.validate.field) = { ... }`
      */
     public var userCount: kotlin.Int
       @kotlin.jvm.JvmName("getUserCount")
@@ -57,18 +57,14 @@ public object FunnelStageKt {
         _builder.userCount = value
       }
     /**
-     * `int32 user_count = 2 [json_name = "userCount"];`
+     * `int32 user_count = 2 [json_name = "userCount", (.buf.validate.field) = { ... }`
      */
     public fun clearUserCount() {
       _builder.clearUserCount()
     }
 
     /**
-     * ```
-     * To next stage
-     * ```
-     *
-     * `double conversion_rate = 3 [json_name = "conversionRate"];`
+     * `double conversion_rate = 3 [json_name = "conversionRate", (.buf.validate.field) = { ... }`
      */
     public var conversionRate: kotlin.Double
       @kotlin.jvm.JvmName("getConversionRate")
@@ -78,18 +74,14 @@ public object FunnelStageKt {
         _builder.conversionRate = value
       }
     /**
-     * ```
-     * To next stage
-     * ```
-     *
-     * `double conversion_rate = 3 [json_name = "conversionRate"];`
+     * `double conversion_rate = 3 [json_name = "conversionRate", (.buf.validate.field) = { ... }`
      */
     public fun clearConversionRate() {
       _builder.clearConversionRate()
     }
 
     /**
-     * `double drop_off_rate = 4 [json_name = "dropOffRate"];`
+     * `double drop_off_rate = 4 [json_name = "dropOffRate", (.buf.validate.field) = { ... }`
      */
     public var dropOffRate: kotlin.Double
       @kotlin.jvm.JvmName("getDropOffRate")
@@ -99,7 +91,7 @@ public object FunnelStageKt {
         _builder.dropOffRate = value
       }
     /**
-     * `double drop_off_rate = 4 [json_name = "dropOffRate"];`
+     * `double drop_off_rate = 4 [json_name = "dropOffRate", (.buf.validate.field) = { ... }`
      */
     public fun clearDropOffRate() {
       _builder.clearDropOffRate()

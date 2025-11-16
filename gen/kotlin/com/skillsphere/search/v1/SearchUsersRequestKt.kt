@@ -30,11 +30,7 @@ public object SearchUsersRequestKt {
     internal fun _build(): com.skillsphere.search.v1.SearchUsersRequest = _builder.build()
 
     /**
-     * ```
-     * Keyword search (name, bio, skills)
-     * ```
-     *
-     * `string query = 1 [json_name = "query"];`
+     * `string query = 1 [json_name = "query", (.buf.validate.field) = { ... }`
      */
     public var query: kotlin.String
       @kotlin.jvm.JvmName("getQuery")
@@ -44,11 +40,7 @@ public object SearchUsersRequestKt {
         _builder.query = value
       }
     /**
-     * ```
-     * Keyword search (name, bio, skills)
-     * ```
-     *
-     * `string query = 1 [json_name = "query"];`
+     * `string query = 1 [json_name = "query", (.buf.validate.field) = { ... }`
      */
     public fun clearQuery() {
       _builder.clearQuery()
@@ -82,7 +74,7 @@ public object SearchUsersRequestKt {
       get() = _builder.filtersOrNull
 
     /**
-     * `int32 page_size = 3 [json_name = "pageSize"];`
+     * `int32 page_size = 3 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -92,14 +84,14 @@ public object SearchUsersRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 3 [json_name = "pageSize"];`
+     * `int32 page_size = 3 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 4 [json_name = "pageToken"];`
+     * `string page_token = 4 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -109,14 +101,14 @@ public object SearchUsersRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 4 [json_name = "pageToken"];`
+     * `string page_token = 4 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()
     }
 
     /**
-     * `.skillsphere.search.v1.SearchSortBy sort_by = 5 [json_name = "sortBy"];`
+     * `.skillsphere.search.v1.SearchSortBy sort_by = 5 [json_name = "sortBy", (.buf.validate.field) = { ... }`
      */
     public var sortBy: com.skillsphere.search.v1.SearchSortBy
       @kotlin.jvm.JvmName("getSortBy")
@@ -133,7 +125,7 @@ public object SearchUsersRequestKt {
         _builder.sortByValue = value
       }
     /**
-     * `.skillsphere.search.v1.SearchSortBy sort_by = 5 [json_name = "sortBy"];`
+     * `.skillsphere.search.v1.SearchSortBy sort_by = 5 [json_name = "sortBy", (.buf.validate.field) = { ... }`
      */
     public fun clearSortBy() {
       _builder.clearSortBy()

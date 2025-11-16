@@ -30,7 +30,7 @@ public object RequestRevisionRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.RequestRevisionRequest = _builder.build()
 
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -40,14 +40,14 @@ public object RequestRevisionRequestKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
     }
 
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public var creatorId: kotlin.String
       @kotlin.jvm.JvmName("getCreatorId")
@@ -57,14 +57,14 @@ public object RequestRevisionRequestKt {
         _builder.creatorId = value
       }
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public fun clearCreatorId() {
       _builder.clearCreatorId()
     }
 
     /**
-     * `string feedback = 3 [json_name = "feedback"];`
+     * `string feedback = 3 [json_name = "feedback", (.buf.validate.field) = { ... }`
      */
     public var feedback: kotlin.String
       @kotlin.jvm.JvmName("getFeedback")
@@ -74,7 +74,7 @@ public object RequestRevisionRequestKt {
         _builder.feedback = value
       }
     /**
-     * `string feedback = 3 [json_name = "feedback"];`
+     * `string feedback = 3 [json_name = "feedback", (.buf.validate.field) = { ... }`
      */
     public fun clearFeedback() {
       _builder.clearFeedback()
@@ -87,7 +87,7 @@ public object RequestRevisionRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class RevisionPointsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string revision_points = 4 [json_name = "revisionPoints"];`
+     * `repeated string revision_points = 4 [json_name = "revisionPoints", (.buf.validate.field) = { ... }`
      * @return A list containing the revisionPoints.
      */
     public val revisionPoints: com.google.protobuf.kotlin.DslList<kotlin.String, RevisionPointsProxy>
@@ -96,7 +96,7 @@ public object RequestRevisionRequestKt {
         _builder.revisionPointsList
       )
     /**
-     * `repeated string revision_points = 4 [json_name = "revisionPoints"];`
+     * `repeated string revision_points = 4 [json_name = "revisionPoints", (.buf.validate.field) = { ... }`
      * @param value The revisionPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +105,7 @@ public object RequestRevisionRequestKt {
       _builder.addRevisionPoints(value)
     }
     /**
-     * `repeated string revision_points = 4 [json_name = "revisionPoints"];`
+     * `repeated string revision_points = 4 [json_name = "revisionPoints", (.buf.validate.field) = { ... }`
      * @param value The revisionPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +115,7 @@ public object RequestRevisionRequestKt {
       add(value)
     }
     /**
-     * `repeated string revision_points = 4 [json_name = "revisionPoints"];`
+     * `repeated string revision_points = 4 [json_name = "revisionPoints", (.buf.validate.field) = { ... }`
      * @param values The revisionPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +124,7 @@ public object RequestRevisionRequestKt {
       _builder.addAllRevisionPoints(values)
     }
     /**
-     * `repeated string revision_points = 4 [json_name = "revisionPoints"];`
+     * `repeated string revision_points = 4 [json_name = "revisionPoints", (.buf.validate.field) = { ... }`
      * @param values The revisionPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +134,7 @@ public object RequestRevisionRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string revision_points = 4 [json_name = "revisionPoints"];`
+     * `repeated string revision_points = 4 [json_name = "revisionPoints", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The revisionPoints to set.
      */
@@ -143,7 +143,7 @@ public object RequestRevisionRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, RevisionPointsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setRevisionPoints(index, value)
     }/**
-     * `repeated string revision_points = 4 [json_name = "revisionPoints"];`
+     * `repeated string revision_points = 4 [json_name = "revisionPoints", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setRevisionPoints")

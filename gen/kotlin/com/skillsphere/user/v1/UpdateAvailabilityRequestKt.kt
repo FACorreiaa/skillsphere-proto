@@ -30,7 +30,7 @@ public object UpdateAvailabilityRequestKt {
     internal fun _build(): com.skillsphere.user.v1.UpdateAvailabilityRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object UpdateAvailabilityRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `.skillsphere.common.v1.Availability availability = 2 [json_name = "availability"];`
+     * `.skillsphere.common.v1.Availability availability = 2 [json_name = "availability", (.buf.validate.field) = { ... }`
      */
     public var availability: com.skillsphere.common.v1.Availability
       @kotlin.jvm.JvmName("getAvailability")
@@ -57,13 +57,13 @@ public object UpdateAvailabilityRequestKt {
         _builder.availability = value
       }
     /**
-     * `.skillsphere.common.v1.Availability availability = 2 [json_name = "availability"];`
+     * `.skillsphere.common.v1.Availability availability = 2 [json_name = "availability", (.buf.validate.field) = { ... }`
      */
     public fun clearAvailability() {
       _builder.clearAvailability()
     }
     /**
-     * `.skillsphere.common.v1.Availability availability = 2 [json_name = "availability"];`
+     * `.skillsphere.common.v1.Availability availability = 2 [json_name = "availability", (.buf.validate.field) = { ... }`
      * @return Whether the availability field is set.
      */
     public fun hasAvailability(): kotlin.Boolean {

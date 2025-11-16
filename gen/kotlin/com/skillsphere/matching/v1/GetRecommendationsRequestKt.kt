@@ -30,7 +30,7 @@ public object GetRecommendationsRequestKt {
     internal fun _build(): com.skillsphere.matching.v1.GetRecommendationsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetRecommendationsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -57,14 +57,14 @@ public object GetRecommendationsRequestKt {
         _builder.limit = value
       }
     /**
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()
     }
 
     /**
-     * `.skillsphere.matching.v1.RecommendationType type = 3 [json_name = "type"];`
+     * `.skillsphere.matching.v1.RecommendationType type = 3 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.matching.v1.RecommendationType
       @kotlin.jvm.JvmName("getType")
@@ -81,7 +81,7 @@ public object GetRecommendationsRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.matching.v1.RecommendationType type = 3 [json_name = "type"];`
+     * `.skillsphere.matching.v1.RecommendationType type = 3 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()

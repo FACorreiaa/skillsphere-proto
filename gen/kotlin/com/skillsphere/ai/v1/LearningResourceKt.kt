@@ -30,7 +30,7 @@ public object LearningResourceKt {
     internal fun _build(): com.skillsphere.ai.v1.LearningResource = _builder.build()
 
     /**
-     * `string title = 1 [json_name = "title"];`
+     * `string title = 1 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -40,14 +40,14 @@ public object LearningResourceKt {
         _builder.title = value
       }
     /**
-     * `string title = 1 [json_name = "title"];`
+     * `string title = 1 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string url = 2 [json_name = "url"];`
+     * `string url = 2 [json_name = "url", (.buf.validate.field) = { ... }`
      */
     public var url: kotlin.String
       @kotlin.jvm.JvmName("getUrl")
@@ -57,18 +57,14 @@ public object LearningResourceKt {
         _builder.url = value
       }
     /**
-     * `string url = 2 [json_name = "url"];`
+     * `string url = 2 [json_name = "url", (.buf.validate.field) = { ... }`
      */
     public fun clearUrl() {
       _builder.clearUrl()
     }
 
     /**
-     * ```
-     * "video", "article", "course", "book"
-     * ```
-     *
-     * `string type = 3 [json_name = "type"];`
+     * `string type = 3 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: kotlin.String
       @kotlin.jvm.JvmName("getType")
@@ -78,18 +74,14 @@ public object LearningResourceKt {
         _builder.type = value
       }
     /**
-     * ```
-     * "video", "article", "course", "book"
-     * ```
-     *
-     * `string type = 3 [json_name = "type"];`
+     * `string type = 3 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `int32 duration_minutes = 4 [json_name = "durationMinutes"];`
+     * `int32 duration_minutes = 4 [json_name = "durationMinutes", (.buf.validate.field) = { ... }`
      */
     public var durationMinutes: kotlin.Int
       @kotlin.jvm.JvmName("getDurationMinutes")
@@ -99,7 +91,7 @@ public object LearningResourceKt {
         _builder.durationMinutes = value
       }
     /**
-     * `int32 duration_minutes = 4 [json_name = "durationMinutes"];`
+     * `int32 duration_minutes = 4 [json_name = "durationMinutes", (.buf.validate.field) = { ... }`
      */
     public fun clearDurationMinutes() {
       _builder.clearDurationMinutes()

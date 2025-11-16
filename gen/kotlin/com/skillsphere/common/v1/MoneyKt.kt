@@ -34,11 +34,7 @@ public object MoneyKt {
     internal fun _build(): com.skillsphere.common.v1.Money = _builder.build()
 
     /**
-     * ```
-     * ISO 4217 (e.g., "USD", "BRL")
-     * ```
-     *
-     * `string currency_code = 1 [json_name = "currencyCode"];`
+     * `string currency_code = 1 [json_name = "currencyCode", (.buf.validate.field) = { ... }`
      */
     public var currencyCode: kotlin.String
       @kotlin.jvm.JvmName("getCurrencyCode")
@@ -48,22 +44,14 @@ public object MoneyKt {
         _builder.currencyCode = value
       }
     /**
-     * ```
-     * ISO 4217 (e.g., "USD", "BRL")
-     * ```
-     *
-     * `string currency_code = 1 [json_name = "currencyCode"];`
+     * `string currency_code = 1 [json_name = "currencyCode", (.buf.validate.field) = { ... }`
      */
     public fun clearCurrencyCode() {
       _builder.clearCurrencyCode()
     }
 
     /**
-     * ```
-     * Amount in smallest currency unit (cents)
-     * ```
-     *
-     * `int64 amount = 2 [json_name = "amount"];`
+     * `int64 amount = 2 [json_name = "amount", (.buf.validate.field) = { ... }`
      */
     public var amount: kotlin.Long
       @kotlin.jvm.JvmName("getAmount")
@@ -73,11 +61,7 @@ public object MoneyKt {
         _builder.amount = value
       }
     /**
-     * ```
-     * Amount in smallest currency unit (cents)
-     * ```
-     *
-     * `int64 amount = 2 [json_name = "amount"];`
+     * `int64 amount = 2 [json_name = "amount", (.buf.validate.field) = { ... }`
      */
     public fun clearAmount() {
       _builder.clearAmount()

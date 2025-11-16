@@ -30,7 +30,7 @@ public object GetWorkshopRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.GetWorkshopRequest = _builder.build()
 
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public var workshopId: kotlin.String
       @kotlin.jvm.JvmName("getWorkshopId")
@@ -40,7 +40,7 @@ public object GetWorkshopRequestKt {
         _builder.workshopId = value
       }
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public fun clearWorkshopId() {
       _builder.clearWorkshopId()

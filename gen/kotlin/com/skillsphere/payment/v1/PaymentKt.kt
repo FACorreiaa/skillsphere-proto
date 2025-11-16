@@ -30,7 +30,7 @@ public object PaymentKt {
     internal fun _build(): com.skillsphere.payment.v1.Payment = _builder.build()
 
     /**
-     * `string payment_id = 1 [json_name = "paymentId"];`
+     * `string payment_id = 1 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public var paymentId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentId")
@@ -40,14 +40,14 @@ public object PaymentKt {
         _builder.paymentId = value
       }
     /**
-     * `string payment_id = 1 [json_name = "paymentId"];`
+     * `string payment_id = 1 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentId() {
       _builder.clearPaymentId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,7 +57,7 @@ public object PaymentKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -91,7 +91,7 @@ public object PaymentKt {
       get() = _builder.amountOrNull
 
     /**
-     * `.skillsphere.payment.v1.PaymentMethod payment_method = 4 [json_name = "paymentMethod"];`
+     * `.skillsphere.payment.v1.PaymentMethod payment_method = 4 [json_name = "paymentMethod", (.buf.validate.field) = { ... }`
      */
     public var paymentMethod: com.skillsphere.payment.v1.PaymentMethod
       @kotlin.jvm.JvmName("getPaymentMethod")
@@ -108,14 +108,14 @@ public object PaymentKt {
         _builder.paymentMethodValue = value
       }
     /**
-     * `.skillsphere.payment.v1.PaymentMethod payment_method = 4 [json_name = "paymentMethod"];`
+     * `.skillsphere.payment.v1.PaymentMethod payment_method = 4 [json_name = "paymentMethod", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethod() {
       _builder.clearPaymentMethod()
     }
 
     /**
-     * `.skillsphere.payment.v1.PaymentPurpose purpose = 5 [json_name = "purpose"];`
+     * `.skillsphere.payment.v1.PaymentPurpose purpose = 5 [json_name = "purpose", (.buf.validate.field) = { ... }`
      */
     public var purpose: com.skillsphere.payment.v1.PaymentPurpose
       @kotlin.jvm.JvmName("getPurpose")
@@ -132,14 +132,14 @@ public object PaymentKt {
         _builder.purposeValue = value
       }
     /**
-     * `.skillsphere.payment.v1.PaymentPurpose purpose = 5 [json_name = "purpose"];`
+     * `.skillsphere.payment.v1.PaymentPurpose purpose = 5 [json_name = "purpose", (.buf.validate.field) = { ... }`
      */
     public fun clearPurpose() {
       _builder.clearPurpose()
     }
 
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.common.v1.PaymentStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -156,14 +156,14 @@ public object PaymentKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
     }
 
     /**
-     * `string stripe_payment_intent_id = 7 [json_name = "stripePaymentIntentId"];`
+     * `string stripe_payment_intent_id = 7 [json_name = "stripePaymentIntentId", (.buf.validate.field) = { ... }`
      */
     public var stripePaymentIntentId: kotlin.String
       @kotlin.jvm.JvmName("getStripePaymentIntentId")
@@ -173,14 +173,14 @@ public object PaymentKt {
         _builder.stripePaymentIntentId = value
       }
     /**
-     * `string stripe_payment_intent_id = 7 [json_name = "stripePaymentIntentId"];`
+     * `string stripe_payment_intent_id = 7 [json_name = "stripePaymentIntentId", (.buf.validate.field) = { ... }`
      */
     public fun clearStripePaymentIntentId() {
       _builder.clearStripePaymentIntentId()
     }
 
     /**
-     * `string description = 8 [json_name = "description"];`
+     * `string description = 8 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -190,7 +190,7 @@ public object PaymentKt {
         _builder.description = value
       }
     /**
-     * `string description = 8 [json_name = "description"];`
+     * `string description = 8 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()

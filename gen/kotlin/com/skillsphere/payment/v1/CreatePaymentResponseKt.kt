@@ -57,7 +57,7 @@ public object CreatePaymentResponseKt {
       get() = _builder.paymentOrNull
 
     /**
-     * `string client_secret = 2 [json_name = "clientSecret"];`
+     * `string client_secret = 2 [json_name = "clientSecret", (.buf.validate.field) = { ... }`
      */
     public var clientSecret: kotlin.String
       @kotlin.jvm.JvmName("getClientSecret")
@@ -67,7 +67,7 @@ public object CreatePaymentResponseKt {
         _builder.clientSecret = value
       }
     /**
-     * `string client_secret = 2 [json_name = "clientSecret"];`
+     * `string client_secret = 2 [json_name = "clientSecret", (.buf.validate.field) = { ... }`
      */
     public fun clearClientSecret() {
       _builder.clearClientSecret()

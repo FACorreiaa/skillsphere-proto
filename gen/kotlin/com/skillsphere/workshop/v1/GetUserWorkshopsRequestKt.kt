@@ -30,7 +30,7 @@ public object GetUserWorkshopsRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.GetUserWorkshopsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object GetUserWorkshopsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -97,7 +97,7 @@ public object GetUserWorkshopsRequestKt {
     }
 
     /**
-     * `.skillsphere.workshop.v1.WorkshopStatus status_filter = 4 [json_name = "statusFilter"];`
+     * `.skillsphere.workshop.v1.WorkshopStatus status_filter = 4 [json_name = "statusFilter", (.buf.validate.field) = { ... }`
      */
     public var statusFilter: com.skillsphere.workshop.v1.WorkshopStatus
       @kotlin.jvm.JvmName("getStatusFilter")
@@ -114,7 +114,7 @@ public object GetUserWorkshopsRequestKt {
         _builder.statusFilterValue = value
       }
     /**
-     * `.skillsphere.workshop.v1.WorkshopStatus status_filter = 4 [json_name = "statusFilter"];`
+     * `.skillsphere.workshop.v1.WorkshopStatus status_filter = 4 [json_name = "statusFilter", (.buf.validate.field) = { ... }`
      */
     public fun clearStatusFilter() {
       _builder.clearStatusFilter()

@@ -30,7 +30,7 @@ public object ApproveWorkRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.ApproveWorkRequest = _builder.build()
 
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -40,14 +40,14 @@ public object ApproveWorkRequestKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
     }
 
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public var creatorId: kotlin.String
       @kotlin.jvm.JvmName("getCreatorId")
@@ -57,18 +57,14 @@ public object ApproveWorkRequestKt {
         _builder.creatorId = value
       }
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public fun clearCreatorId() {
       _builder.clearCreatorId()
     }
 
     /**
-     * ```
-     * 1-5 stars
-     * ```
-     *
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public var rating: kotlin.Int
       @kotlin.jvm.JvmName("getRating")
@@ -78,18 +74,14 @@ public object ApproveWorkRequestKt {
         _builder.rating = value
       }
     /**
-     * ```
-     * 1-5 stars
-     * ```
-     *
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public fun clearRating() {
       _builder.clearRating()
     }
 
     /**
-     * `string review = 4 [json_name = "review"];`
+     * `string review = 4 [json_name = "review", (.buf.validate.field) = { ... }`
      */
     public var review: kotlin.String
       @kotlin.jvm.JvmName("getReview")
@@ -99,7 +91,7 @@ public object ApproveWorkRequestKt {
         _builder.review = value
       }
     /**
-     * `string review = 4 [json_name = "review"];`
+     * `string review = 4 [json_name = "review", (.buf.validate.field) = { ... }`
      */
     public fun clearReview() {
       _builder.clearReview()

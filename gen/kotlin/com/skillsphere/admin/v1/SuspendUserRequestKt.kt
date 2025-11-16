@@ -30,7 +30,7 @@ public object SuspendUserRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.SuspendUserRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object SuspendUserRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,14 +57,14 @@ public object SuspendUserRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -74,18 +74,14 @@ public object SuspendUserRequestKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()
     }
 
     /**
-     * ```
-     * 0 for indefinite
-     * ```
-     *
-     * `int32 duration_days = 4 [json_name = "durationDays"];`
+     * `int32 duration_days = 4 [json_name = "durationDays", (.buf.validate.field) = { ... }`
      */
     public var durationDays: kotlin.Int
       @kotlin.jvm.JvmName("getDurationDays")
@@ -95,11 +91,7 @@ public object SuspendUserRequestKt {
         _builder.durationDays = value
       }
     /**
-     * ```
-     * 0 for indefinite
-     * ```
-     *
-     * `int32 duration_days = 4 [json_name = "durationDays"];`
+     * `int32 duration_days = 4 [json_name = "durationDays", (.buf.validate.field) = { ... }`
      */
     public fun clearDurationDays() {
       _builder.clearDurationDays()

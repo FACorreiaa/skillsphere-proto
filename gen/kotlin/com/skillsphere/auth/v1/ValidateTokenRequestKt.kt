@@ -30,7 +30,7 @@ public object ValidateTokenRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.ValidateTokenRequest = _builder.build()
 
     /**
-     * `string access_token = 1 [json_name = "accessToken"];`
+     * `string access_token = 1 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public var accessToken: kotlin.String
       @kotlin.jvm.JvmName("getAccessToken")
@@ -40,7 +40,7 @@ public object ValidateTokenRequestKt {
         _builder.accessToken = value
       }
     /**
-     * `string access_token = 1 [json_name = "accessToken"];`
+     * `string access_token = 1 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public fun clearAccessToken() {
       _builder.clearAccessToken()

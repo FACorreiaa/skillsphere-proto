@@ -1,0 +1,452 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "payment/v1/payment.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "PaymentService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AddPaymentMethodResponse": {
+      "type": "object",
+      "properties": {
+        "paymentMethod": {
+          "$ref": "#/definitions/v1PaymentMethodInfo"
+        }
+      }
+    },
+    "v1CancelSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "subscription": {
+          "$ref": "#/definitions/v1Subscription"
+        },
+        "effectiveDate": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1CreateEscrowPaymentResponse": {
+      "type": "object",
+      "properties": {
+        "escrow": {
+          "$ref": "#/definitions/v1EscrowPayment"
+        }
+      }
+    },
+    "v1CreatePaymentResponse": {
+      "type": "object",
+      "properties": {
+        "payment": {
+          "$ref": "#/definitions/v1Payment"
+        },
+        "clientSecret": {
+          "type": "string"
+        },
+        "requiresAction": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "subscription": {
+          "$ref": "#/definitions/v1Subscription"
+        },
+        "clientSecret": {
+          "type": "string"
+        },
+        "requiresAction": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1EscrowPayment": {
+      "type": "object",
+      "properties": {
+        "escrowId": {
+          "type": "string"
+        },
+        "payerId": {
+          "type": "string"
+        },
+        "payeeId": {
+          "type": "string"
+        },
+        "gigId": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "status": {
+          "$ref": "#/definitions/v1PaymentStatus"
+        },
+        "heldUntil": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "releasedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "releaseCondition": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetInvoicesResponse": {
+      "type": "object",
+      "properties": {
+        "invoices": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Invoice"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetPaymentHistoryResponse": {
+      "type": "object",
+      "properties": {
+        "payments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Payment"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "totalSpent": {
+          "$ref": "#/definitions/v1Money"
+        }
+      }
+    },
+    "v1GetSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "subscription": {
+          "$ref": "#/definitions/v1Subscription"
+        },
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SubscriptionFeature"
+          }
+        }
+      }
+    },
+    "v1Invoice": {
+      "type": "object",
+      "properties": {
+        "invoiceId": {
+          "type": "string"
+        },
+        "stripeInvoiceId": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "dueDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "paidAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isPaid": {
+          "type": "boolean"
+        },
+        "invoiceUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Money": {
+      "type": "object",
+      "properties": {
+        "currencyCode": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "Money amount for payments"
+    },
+    "v1Payment": {
+      "type": "object",
+      "properties": {
+        "paymentId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "amount": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "paymentMethod": {
+          "$ref": "#/definitions/v1PaymentMethod"
+        },
+        "purpose": {
+          "$ref": "#/definitions/v1PaymentPurpose"
+        },
+        "status": {
+          "$ref": "#/definitions/v1PaymentStatus"
+        },
+        "stripePaymentIntentId": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1PaymentMethod": {
+      "type": "string",
+      "enum": [
+        "PAYMENT_METHOD_UNSPECIFIED",
+        "PAYMENT_METHOD_CARD",
+        "PAYMENT_METHOD_PAYPAL",
+        "PAYMENT_METHOD_BANK_TRANSFER",
+        "PAYMENT_METHOD_CRYPTO"
+      ],
+      "default": "PAYMENT_METHOD_UNSPECIFIED"
+    },
+    "v1PaymentMethodInfo": {
+      "type": "object",
+      "properties": {
+        "paymentMethodId": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/v1PaymentMethod"
+        },
+        "lastFour": {
+          "type": "string"
+        },
+        "brand": {
+          "type": "string"
+        },
+        "expMonth": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "expYear": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isDefault": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1PaymentPurpose": {
+      "type": "string",
+      "enum": [
+        "PAYMENT_PURPOSE_UNSPECIFIED",
+        "PAYMENT_PURPOSE_SUBSCRIPTION",
+        "PAYMENT_PURPOSE_WORKSHOP",
+        "PAYMENT_PURPOSE_GIG",
+        "PAYMENT_PURPOSE_CERTIFICATION",
+        "PAYMENT_PURPOSE_PREMIUM_CHAT"
+      ],
+      "default": "PAYMENT_PURPOSE_UNSPECIFIED"
+    },
+    "v1PaymentStatus": {
+      "type": "string",
+      "enum": [
+        "PAYMENT_STATUS_UNSPECIFIED",
+        "PAYMENT_STATUS_PENDING",
+        "PAYMENT_STATUS_COMPLETED",
+        "PAYMENT_STATUS_FAILED",
+        "PAYMENT_STATUS_REFUNDED",
+        "PAYMENT_STATUS_HELD_IN_ESCROW"
+      ],
+      "default": "PAYMENT_STATUS_UNSPECIFIED",
+      "title": "Payment status"
+    },
+    "v1ProcessPayoutResponse": {
+      "type": "object",
+      "properties": {
+        "payoutId": {
+          "type": "string"
+        },
+        "estimatedArrival": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "$ref": "#/definitions/v1PaymentStatus"
+        }
+      }
+    },
+    "v1RefundPaymentResponse": {
+      "type": "object",
+      "properties": {
+        "refundId": {
+          "type": "string"
+        },
+        "refundedAmount": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "status": {
+          "$ref": "#/definitions/v1PaymentStatus"
+        }
+      }
+    },
+    "v1ReleaseEscrowResponse": {
+      "type": "object",
+      "properties": {
+        "escrow": {
+          "$ref": "#/definitions/v1EscrowPayment"
+        },
+        "payoutInitiated": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1RemovePaymentMethodResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Subscription": {
+      "type": "object",
+      "properties": {
+        "subscriptionId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "tier": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "stripeSubscriptionId": {
+          "type": "string"
+        },
+        "monthlyAmount": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "currentPeriodStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "currentPeriodEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isActive": {
+          "type": "boolean"
+        },
+        "cancelAtPeriodEnd": {
+          "type": "boolean"
+        },
+        "cancelledAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1SubscriptionFeature": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "isAvailable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SubscriptionTier": {
+      "type": "string",
+      "enum": [
+        "SUBSCRIPTION_TIER_UNSPECIFIED",
+        "SUBSCRIPTION_TIER_FREE",
+        "SUBSCRIPTION_TIER_PREMIUM",
+        "SUBSCRIPTION_TIER_PROFESSIONAL"
+      ],
+      "default": "SUBSCRIPTION_TIER_UNSPECIFIED",
+      "description": "- SUBSCRIPTION_TIER_FREE: Basic free tier\n - SUBSCRIPTION_TIER_PREMIUM: $5-10/month\n - SUBSCRIPTION_TIER_PROFESSIONAL: $15-20/month",
+      "title": "Subscription tier"
+    },
+    "v1UpdateSubscriptionResponse": {
+      "type": "object",
+      "properties": {
+        "subscription": {
+          "$ref": "#/definitions/v1Subscription"
+        },
+        "prorationAmount": {
+          "$ref": "#/definitions/v1Money"
+        }
+      }
+    }
+  }
+}

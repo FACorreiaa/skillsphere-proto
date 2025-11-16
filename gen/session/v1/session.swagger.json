@@ -1,0 +1,520 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "session/v1/session.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SessionService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "commonv1Location": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "ISO 3166-1 alpha-2 (e.g., \"US\", \"BR\")"
+        },
+        "timezone": {
+          "type": "string",
+          "title": "IANA timezone (e.g., \"America/New_York\")"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Geographic location for user matching"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "skillspheresessionv1Session": {
+      "type": "object",
+      "properties": {
+        "sessionId": {
+          "type": "string"
+        },
+        "initiatorId": {
+          "type": "string"
+        },
+        "partnerId": {
+          "type": "string"
+        },
+        "initiatorOffers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Skills being exchanged"
+        },
+        "partnerOffers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "scheduledStart": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Scheduling"
+        },
+        "scheduledEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actualStart": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actualEnd": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "status": {
+          "$ref": "#/definitions/v1SessionStatus",
+          "title": "Status"
+        },
+        "meetingUrl": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Metadata"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "cancellationReason": {
+          "type": "string"
+        },
+        "isPremium": {
+          "type": "boolean",
+          "title": "Premium feature flag"
+        }
+      }
+    },
+    "v1Availability": {
+      "type": "object",
+      "properties": {
+        "timeSlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TimeSlot"
+          }
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "title": "User availability schedule"
+    },
+    "v1CancelSessionResponse": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "$ref": "#/definitions/skillspheresessionv1Session"
+        },
+        "refundIssued": {
+          "type": "boolean",
+          "title": "For premium sessions"
+        }
+      }
+    },
+    "v1CompleteSessionResponse": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "$ref": "#/definitions/skillspheresessionv1Session"
+        },
+        "eligibleForCertification": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1CreateSessionResponse": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "$ref": "#/definitions/skillspheresessionv1Session"
+        },
+        "invitationMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DayOfWeek": {
+      "type": "string",
+      "enum": [
+        "DAY_OF_WEEK_UNSPECIFIED",
+        "DAY_OF_WEEK_MONDAY",
+        "DAY_OF_WEEK_TUESDAY",
+        "DAY_OF_WEEK_WEDNESDAY",
+        "DAY_OF_WEEK_THURSDAY",
+        "DAY_OF_WEEK_FRIDAY",
+        "DAY_OF_WEEK_SATURDAY",
+        "DAY_OF_WEEK_SUNDAY"
+      ],
+      "default": "DAY_OF_WEEK_UNSPECIFIED",
+      "title": "Days of the week for availability"
+    },
+    "v1GetSessionResponse": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "$ref": "#/definitions/skillspheresessionv1Session"
+        },
+        "initiator": {
+          "$ref": "#/definitions/v1User"
+        },
+        "partner": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetUpcomingSessionsResponse": {
+      "type": "object",
+      "properties": {
+        "sessions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/skillspheresessionv1Session"
+          }
+        }
+      }
+    },
+    "v1ListUserSessionsResponse": {
+      "type": "object",
+      "properties": {
+        "sessions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/skillspheresessionv1Session"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1ProficiencyLevel": {
+      "type": "string",
+      "enum": [
+        "PROFICIENCY_LEVEL_UNSPECIFIED",
+        "PROFICIENCY_LEVEL_BEGINNER",
+        "PROFICIENCY_LEVEL_INTERMEDIATE",
+        "PROFICIENCY_LEVEL_EXPERT"
+      ],
+      "default": "PROFICIENCY_LEVEL_UNSPECIFIED",
+      "description": "- PROFICIENCY_LEVEL_BEGINNER: 1-3\n - PROFICIENCY_LEVEL_INTERMEDIATE: 4-7\n - PROFICIENCY_LEVEL_EXPERT: 8-10",
+      "title": "Proficiency level for skills (1-10 scale)"
+    },
+    "v1RateSessionResponse": {
+      "type": "object",
+      "properties": {
+        "rating": {
+          "$ref": "#/definitions/v1Rating"
+        },
+        "badgeEarned": {
+          "type": "boolean",
+          "title": "If user earned a new badge"
+        },
+        "badgeName": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Rating": {
+      "type": "object",
+      "properties": {
+        "ratingId": {
+          "type": "string"
+        },
+        "sessionId": {
+          "type": "string"
+        },
+        "reviewerId": {
+          "type": "string"
+        },
+        "revieweeId": {
+          "type": "string"
+        },
+        "score": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "Rating and review"
+    },
+    "v1ReportSessionResponse": {
+      "type": "object",
+      "properties": {
+        "reportId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SessionStatus": {
+      "type": "string",
+      "enum": [
+        "SESSION_STATUS_UNSPECIFIED",
+        "SESSION_STATUS_SCHEDULED",
+        "SESSION_STATUS_IN_PROGRESS",
+        "SESSION_STATUS_COMPLETED",
+        "SESSION_STATUS_CANCELLED",
+        "SESSION_STATUS_NO_SHOW"
+      ],
+      "default": "SESSION_STATUS_UNSPECIFIED",
+      "title": "Session status"
+    },
+    "v1StartSessionResponse": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "$ref": "#/definitions/skillspheresessionv1Session"
+        },
+        "meetingUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SubscriptionTier": {
+      "type": "string",
+      "enum": [
+        "SUBSCRIPTION_TIER_UNSPECIFIED",
+        "SUBSCRIPTION_TIER_FREE",
+        "SUBSCRIPTION_TIER_PREMIUM",
+        "SUBSCRIPTION_TIER_PROFESSIONAL"
+      ],
+      "default": "SUBSCRIPTION_TIER_UNSPECIFIED",
+      "description": "- SUBSCRIPTION_TIER_FREE: Basic free tier\n - SUBSCRIPTION_TIER_PREMIUM: $5-10/month\n - SUBSCRIPTION_TIER_PROFESSIONAL: $15-20/month",
+      "title": "Subscription tier"
+    },
+    "v1TimeSlot": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "$ref": "#/definitions/v1DayOfWeek"
+        },
+        "startTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        },
+        "endTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        }
+      },
+      "title": "Time slot for availability"
+    },
+    "v1UpdateSessionResponse": {
+      "type": "object",
+      "properties": {
+        "session": {
+          "$ref": "#/definitions/skillspheresessionv1Session"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location"
+        },
+        "availability": {
+          "$ref": "#/definitions/v1Availability"
+        },
+        "status": {
+          "$ref": "#/definitions/v1UserStatus"
+        },
+        "subscriptionTier": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "skillsOffered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          },
+          "title": "Skills"
+        },
+        "skillsWanted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double",
+          "title": "Stats"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalReviews": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Metadata"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastActiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isVerified": {
+          "type": "boolean",
+          "description": "Blue checkmark for trusted experts",
+          "title": "Premium features"
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "IDs of blockchain certifications"
+        }
+      },
+      "title": "User profile"
+    },
+    "v1UserSkill": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "proficiencyCategory": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "isOffered": {
+          "type": "boolean",
+          "title": "True if offering, false if wanting"
+        },
+        "acquiredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "experienceDescription": {
+          "type": "string"
+        }
+      },
+      "title": "User skill association (offered or wanted)"
+    },
+    "v1UserStatus": {
+      "type": "string",
+      "enum": [
+        "USER_STATUS_UNSPECIFIED",
+        "USER_STATUS_ACTIVE",
+        "USER_STATUS_SUSPENDED",
+        "USER_STATUS_BANNED",
+        "USER_STATUS_DELETED"
+      ],
+      "default": "USER_STATUS_UNSPECIFIED",
+      "title": "User account status"
+    }
+  }
+}

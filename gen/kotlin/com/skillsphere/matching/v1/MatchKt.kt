@@ -57,11 +57,7 @@ public object MatchKt {
       get() = _builder.userOrNull
 
     /**
-     * ```
-     * 0.0-1.0
-     * ```
-     *
-     * `double match_score = 2 [json_name = "matchScore"];`
+     * `double match_score = 2 [json_name = "matchScore", (.buf.validate.field) = { ... }`
      */
     public var matchScore: kotlin.Double
       @kotlin.jvm.JvmName("getMatchScore")
@@ -71,11 +67,7 @@ public object MatchKt {
         _builder.matchScore = value
       }
     /**
-     * ```
-     * 0.0-1.0
-     * ```
-     *
-     * `double match_score = 2 [json_name = "matchScore"];`
+     * `double match_score = 2 [json_name = "matchScore", (.buf.validate.field) = { ... }`
      */
     public fun clearMatchScore() {
       _builder.clearMatchScore()
@@ -88,7 +80,7 @@ public object MatchKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillMatchesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches"];`
+     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches", (.buf.validate.field) = { ... }`
      */
      public val skillMatches: com.google.protobuf.kotlin.DslList<com.skillsphere.matching.v1.SkillMatch, SkillMatchesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -96,7 +88,7 @@ public object MatchKt {
         _builder.skillMatchesList
       )
     /**
-     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches"];`
+     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches", (.buf.validate.field) = { ... }`
      * @param value The skillMatches to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +97,7 @@ public object MatchKt {
       _builder.addSkillMatches(value)
     }
     /**
-     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches"];`
+     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches", (.buf.validate.field) = { ... }`
      * @param value The skillMatches to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +107,7 @@ public object MatchKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches"];`
+     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches", (.buf.validate.field) = { ... }`
      * @param values The skillMatches to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +116,7 @@ public object MatchKt {
       _builder.addAllSkillMatches(values)
     }
     /**
-     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches"];`
+     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches", (.buf.validate.field) = { ... }`
      * @param values The skillMatches to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +126,7 @@ public object MatchKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches"];`
+     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillMatches to set.
      */
@@ -144,7 +136,7 @@ public object MatchKt {
       _builder.setSkillMatches(index, value)
     }
     /**
-     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches"];`
+     * `repeated .skillsphere.matching.v1.SkillMatch skill_matches = 3 [json_name = "skillMatches", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearSkillMatches")
@@ -153,11 +145,7 @@ public object MatchKt {
     }
 
     /**
-     * ```
-     * Human-readable reason
-     * ```
-     *
-     * `string explanation = 4 [json_name = "explanation"];`
+     * `string explanation = 4 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public var explanation: kotlin.String
       @kotlin.jvm.JvmName("getExplanation")
@@ -167,11 +155,7 @@ public object MatchKt {
         _builder.explanation = value
       }
     /**
-     * ```
-     * Human-readable reason
-     * ```
-     *
-     * `string explanation = 4 [json_name = "explanation"];`
+     * `string explanation = 4 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public fun clearExplanation() {
       _builder.clearExplanation()

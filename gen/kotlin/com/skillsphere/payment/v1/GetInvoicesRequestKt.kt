@@ -30,7 +30,7 @@ public object GetInvoicesRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.GetInvoicesRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetInvoicesRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -57,14 +57,14 @@ public object GetInvoicesRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -74,7 +74,7 @@ public object GetInvoicesRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()

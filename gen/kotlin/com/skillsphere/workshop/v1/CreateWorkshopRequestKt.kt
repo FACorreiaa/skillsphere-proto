@@ -30,7 +30,7 @@ public object CreateWorkshopRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.CreateWorkshopRequest = _builder.build()
 
     /**
-     * `string host_id = 1 [json_name = "hostId"];`
+     * `string host_id = 1 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public var hostId: kotlin.String
       @kotlin.jvm.JvmName("getHostId")
@@ -40,14 +40,14 @@ public object CreateWorkshopRequestKt {
         _builder.hostId = value
       }
     /**
-     * `string host_id = 1 [json_name = "hostId"];`
+     * `string host_id = 1 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public fun clearHostId() {
       _builder.clearHostId()
     }
 
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -57,14 +57,14 @@ public object CreateWorkshopRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -74,7 +74,7 @@ public object CreateWorkshopRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -87,7 +87,7 @@ public object CreateWorkshopRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @return A list containing the skillIds.
      */
     public val skillIds: com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>
@@ -96,7 +96,7 @@ public object CreateWorkshopRequestKt {
         _builder.skillIdsList
       )
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +105,7 @@ public object CreateWorkshopRequestKt {
       _builder.addSkillIds(value)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +115,7 @@ public object CreateWorkshopRequestKt {
       add(value)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +124,7 @@ public object CreateWorkshopRequestKt {
       _builder.addAllSkillIds(values)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +134,7 @@ public object CreateWorkshopRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillIds to set.
      */
@@ -143,7 +143,7 @@ public object CreateWorkshopRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillIds(index, value)
     }/**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillIds")
@@ -178,7 +178,7 @@ public object CreateWorkshopRequestKt {
       get() = _builder.scheduledStartOrNull
 
     /**
-     * `int32 duration_minutes = 6 [json_name = "durationMinutes"];`
+     * `int32 duration_minutes = 6 [json_name = "durationMinutes", (.buf.validate.field) = { ... }`
      */
     public var durationMinutes: kotlin.Int
       @kotlin.jvm.JvmName("getDurationMinutes")
@@ -188,14 +188,14 @@ public object CreateWorkshopRequestKt {
         _builder.durationMinutes = value
       }
     /**
-     * `int32 duration_minutes = 6 [json_name = "durationMinutes"];`
+     * `int32 duration_minutes = 6 [json_name = "durationMinutes", (.buf.validate.field) = { ... }`
      */
     public fun clearDurationMinutes() {
       _builder.clearDurationMinutes()
     }
 
     /**
-     * `int32 max_participants = 7 [json_name = "maxParticipants"];`
+     * `int32 max_participants = 7 [json_name = "maxParticipants", (.buf.validate.field) = { ... }`
      */
     public var maxParticipants: kotlin.Int
       @kotlin.jvm.JvmName("getMaxParticipants")
@@ -205,7 +205,7 @@ public object CreateWorkshopRequestKt {
         _builder.maxParticipants = value
       }
     /**
-     * `int32 max_participants = 7 [json_name = "maxParticipants"];`
+     * `int32 max_participants = 7 [json_name = "maxParticipants", (.buf.validate.field) = { ... }`
      */
     public fun clearMaxParticipants() {
       _builder.clearMaxParticipants()
@@ -256,7 +256,7 @@ public object CreateWorkshopRequestKt {
     }
 
     /**
-     * `.skillsphere.workshop.v1.WorkshopFormat format = 10 [json_name = "format"];`
+     * `.skillsphere.workshop.v1.WorkshopFormat format = 10 [json_name = "format", (.buf.validate.field) = { ... }`
      */
     public var format: com.skillsphere.workshop.v1.WorkshopFormat
       @kotlin.jvm.JvmName("getFormat")
@@ -273,14 +273,14 @@ public object CreateWorkshopRequestKt {
         _builder.formatValue = value
       }
     /**
-     * `.skillsphere.workshop.v1.WorkshopFormat format = 10 [json_name = "format"];`
+     * `.skillsphere.workshop.v1.WorkshopFormat format = 10 [json_name = "format", (.buf.validate.field) = { ... }`
      */
     public fun clearFormat() {
       _builder.clearFormat()
     }
 
     /**
-     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 11 [json_name = "difficulty"];`
+     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 11 [json_name = "difficulty", (.buf.validate.field) = { ... }`
      */
     public var difficulty: com.skillsphere.workshop.v1.DifficultyLevel
       @kotlin.jvm.JvmName("getDifficulty")
@@ -297,7 +297,7 @@ public object CreateWorkshopRequestKt {
         _builder.difficultyValue = value
       }
     /**
-     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 11 [json_name = "difficulty"];`
+     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 11 [json_name = "difficulty", (.buf.validate.field) = { ... }`
      */
     public fun clearDifficulty() {
       _builder.clearDifficulty()
@@ -310,7 +310,7 @@ public object CreateWorkshopRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PrerequisitesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string prerequisites = 12 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 12 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @return A list containing the prerequisites.
      */
     public val prerequisites: com.google.protobuf.kotlin.DslList<kotlin.String, PrerequisitesProxy>
@@ -319,7 +319,7 @@ public object CreateWorkshopRequestKt {
         _builder.prerequisitesList
       )
     /**
-     * `repeated string prerequisites = 12 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 12 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param value The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -328,7 +328,7 @@ public object CreateWorkshopRequestKt {
       _builder.addPrerequisites(value)
     }
     /**
-     * `repeated string prerequisites = 12 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 12 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param value The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -338,7 +338,7 @@ public object CreateWorkshopRequestKt {
       add(value)
     }
     /**
-     * `repeated string prerequisites = 12 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 12 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param values The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -347,7 +347,7 @@ public object CreateWorkshopRequestKt {
       _builder.addAllPrerequisites(values)
     }
     /**
-     * `repeated string prerequisites = 12 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 12 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param values The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -357,7 +357,7 @@ public object CreateWorkshopRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string prerequisites = 12 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 12 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The prerequisites to set.
      */
@@ -366,7 +366,7 @@ public object CreateWorkshopRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PrerequisitesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPrerequisites(index, value)
     }/**
-     * `repeated string prerequisites = 12 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 12 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPrerequisites")
@@ -380,7 +380,7 @@ public object CreateWorkshopRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class LearningOutcomesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes"];`
+     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes", (.buf.validate.field) = { ... }`
      * @return A list containing the learningOutcomes.
      */
     public val learningOutcomes: com.google.protobuf.kotlin.DslList<kotlin.String, LearningOutcomesProxy>
@@ -389,7 +389,7 @@ public object CreateWorkshopRequestKt {
         _builder.learningOutcomesList
       )
     /**
-     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes"];`
+     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes", (.buf.validate.field) = { ... }`
      * @param value The learningOutcomes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -398,7 +398,7 @@ public object CreateWorkshopRequestKt {
       _builder.addLearningOutcomes(value)
     }
     /**
-     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes"];`
+     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes", (.buf.validate.field) = { ... }`
      * @param value The learningOutcomes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -408,7 +408,7 @@ public object CreateWorkshopRequestKt {
       add(value)
     }
     /**
-     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes"];`
+     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes", (.buf.validate.field) = { ... }`
      * @param values The learningOutcomes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -417,7 +417,7 @@ public object CreateWorkshopRequestKt {
       _builder.addAllLearningOutcomes(values)
     }
     /**
-     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes"];`
+     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes", (.buf.validate.field) = { ... }`
      * @param values The learningOutcomes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -427,7 +427,7 @@ public object CreateWorkshopRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes"];`
+     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The learningOutcomes to set.
      */
@@ -436,7 +436,7 @@ public object CreateWorkshopRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, LearningOutcomesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setLearningOutcomes(index, value)
     }/**
-     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes"];`
+     * `repeated string learning_outcomes = 13 [json_name = "learningOutcomes", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setLearningOutcomes")

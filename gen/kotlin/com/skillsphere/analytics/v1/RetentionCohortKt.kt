@@ -57,7 +57,7 @@ public object RetentionCohortKt {
       get() = _builder.cohortDateOrNull
 
     /**
-     * `int32 initial_users = 2 [json_name = "initialUsers"];`
+     * `int32 initial_users = 2 [json_name = "initialUsers", (.buf.validate.field) = { ... }`
      */
     public var initialUsers: kotlin.Int
       @kotlin.jvm.JvmName("getInitialUsers")
@@ -67,7 +67,7 @@ public object RetentionCohortKt {
         _builder.initialUsers = value
       }
     /**
-     * `int32 initial_users = 2 [json_name = "initialUsers"];`
+     * `int32 initial_users = 2 [json_name = "initialUsers", (.buf.validate.field) = { ... }`
      */
     public fun clearInitialUsers() {
       _builder.clearInitialUsers()
@@ -80,11 +80,7 @@ public object RetentionCohortKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class RetentionByPeriodProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Percentage retained each period
-     * ```
-     *
-     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod"];`
+     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod", (.buf.validate.field) = { ... }`
      */
      public val retentionByPeriod: com.google.protobuf.kotlin.DslList<kotlin.Double, RetentionByPeriodProxy>
       @kotlin.jvm.JvmSynthetic
@@ -92,11 +88,7 @@ public object RetentionCohortKt {
         _builder.retentionByPeriodList
       )
     /**
-     * ```
-     * Percentage retained each period
-     * ```
-     *
-     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod"];`
+     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod", (.buf.validate.field) = { ... }`
      * @param value The retentionByPeriod to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -104,11 +96,7 @@ public object RetentionCohortKt {
     public fun com.google.protobuf.kotlin.DslList<kotlin.Double, RetentionByPeriodProxy>.add(value: kotlin.Double) {
       _builder.addRetentionByPeriod(value)
     }/**
-     * ```
-     * Percentage retained each period
-     * ```
-     *
-     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod"];`
+     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod", (.buf.validate.field) = { ... }`
      * @param value The retentionByPeriod to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -117,11 +105,7 @@ public object RetentionCohortKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.Double, RetentionByPeriodProxy>.plusAssign(value: kotlin.Double) {
       add(value)
     }/**
-     * ```
-     * Percentage retained each period
-     * ```
-     *
-     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod"];`
+     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod", (.buf.validate.field) = { ... }`
      * @param values The retentionByPeriod to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -129,11 +113,7 @@ public object RetentionCohortKt {
     public fun com.google.protobuf.kotlin.DslList<kotlin.Double, RetentionByPeriodProxy>.addAll(values: kotlin.collections.Iterable<kotlin.Double>) {
       _builder.addAllRetentionByPeriod(values)
     }/**
-     * ```
-     * Percentage retained each period
-     * ```
-     *
-     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod"];`
+     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod", (.buf.validate.field) = { ... }`
      * @param values The retentionByPeriod to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -142,11 +122,7 @@ public object RetentionCohortKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.Double, RetentionByPeriodProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.Double>) {
       addAll(values)
     }/**
-     * ```
-     * Percentage retained each period
-     * ```
-     *
-     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod"];`
+     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The retentionByPeriod to set.
      */
@@ -155,11 +131,7 @@ public object RetentionCohortKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.Double, RetentionByPeriodProxy>.set(index: kotlin.Int, value: kotlin.Double) {
       _builder.setRetentionByPeriod(index, value)
     }/**
-     * ```
-     * Percentage retained each period
-     * ```
-     *
-     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod"];`
+     * `repeated double retention_by_period = 3 [json_name = "retentionByPeriod", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearRetentionByPeriod")

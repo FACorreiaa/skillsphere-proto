@@ -30,7 +30,7 @@ public object ListGigsRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.ListGigsRequest = _builder.build()
 
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -40,14 +40,14 @@ public object ListGigsRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -57,7 +57,7 @@ public object ListGigsRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()
@@ -70,7 +70,7 @@ public object ListGigsRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CategoriesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
      public val categories: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -78,7 +78,7 @@ public object ListGigsRequestKt {
         _builder.categoriesList
       )
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -86,7 +86,7 @@ public object ListGigsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.add(value: com.skillsphere.common.v1.SkillCategory) {
       _builder.addCategories(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -95,7 +95,7 @@ public object ListGigsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(value: com.skillsphere.common.v1.SkillCategory) {
       add(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -103,7 +103,7 @@ public object ListGigsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.addAll(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       _builder.addAllCategories(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -112,7 +112,7 @@ public object ListGigsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       addAll(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The categories to set.
      */
@@ -121,7 +121,7 @@ public object ListGigsRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.set(index: kotlin.Int, value: com.skillsphere.common.v1.SkillCategory) {
       _builder.setCategories(index, value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearCategories")
@@ -129,7 +129,7 @@ public object ListGigsRequestKt {
       _builder.clearCategories()
     }
     /**
-     * `.skillsphere.gig.v1.GigType type = 4 [json_name = "type"];`
+     * `.skillsphere.gig.v1.GigType type = 4 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.gig.v1.GigType
       @kotlin.jvm.JvmName("getType")
@@ -146,7 +146,7 @@ public object ListGigsRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.gig.v1.GigType type = 4 [json_name = "type"];`
+     * `.skillsphere.gig.v1.GigType type = 4 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
@@ -207,7 +207,7 @@ public object ListGigsRequestKt {
       get() = _builder.maxBudgetOrNull
 
     /**
-     * `.skillsphere.gig.v1.GigStatus status = 7 [json_name = "status"];`
+     * `.skillsphere.gig.v1.GigStatus status = 7 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.gig.v1.GigStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -224,7 +224,7 @@ public object ListGigsRequestKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.gig.v1.GigStatus status = 7 [json_name = "status"];`
+     * `.skillsphere.gig.v1.GigStatus status = 7 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

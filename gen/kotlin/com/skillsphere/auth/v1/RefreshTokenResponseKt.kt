@@ -30,7 +30,7 @@ public object RefreshTokenResponseKt {
     internal fun _build(): com.skillsphere.auth.v1.RefreshTokenResponse = _builder.build()
 
     /**
-     * `string access_token = 1 [json_name = "accessToken"];`
+     * `string access_token = 1 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public var accessToken: kotlin.String
       @kotlin.jvm.JvmName("getAccessToken")
@@ -40,14 +40,14 @@ public object RefreshTokenResponseKt {
         _builder.accessToken = value
       }
     /**
-     * `string access_token = 1 [json_name = "accessToken"];`
+     * `string access_token = 1 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public fun clearAccessToken() {
       _builder.clearAccessToken()
     }
 
     /**
-     * `string refresh_token = 2 [json_name = "refreshToken"];`
+     * `string refresh_token = 2 [json_name = "refreshToken", (.buf.validate.field) = { ... }`
      */
     public var refreshToken: kotlin.String
       @kotlin.jvm.JvmName("getRefreshToken")
@@ -57,7 +57,7 @@ public object RefreshTokenResponseKt {
         _builder.refreshToken = value
       }
     /**
-     * `string refresh_token = 2 [json_name = "refreshToken"];`
+     * `string refresh_token = 2 [json_name = "refreshToken", (.buf.validate.field) = { ... }`
      */
     public fun clearRefreshToken() {
       _builder.clearRefreshToken()

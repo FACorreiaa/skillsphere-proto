@@ -47,7 +47,7 @@ public object RegisterRequestKt {
     }
 
     /**
-     * `string username = 2 [json_name = "username"];`
+     * `string username = 2 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public var username: kotlin.String
       @kotlin.jvm.JvmName("getUsername")
@@ -57,14 +57,14 @@ public object RegisterRequestKt {
         _builder.username = value
       }
     /**
-     * `string username = 2 [json_name = "username"];`
+     * `string username = 2 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public fun clearUsername() {
       _builder.clearUsername()
     }
 
     /**
-     * `string password = 3 [json_name = "password"];`
+     * `string password = 3 [json_name = "password", (.buf.validate.field) = { ... }`
      */
     public var password: kotlin.String
       @kotlin.jvm.JvmName("getPassword")
@@ -74,14 +74,14 @@ public object RegisterRequestKt {
         _builder.password = value
       }
     /**
-     * `string password = 3 [json_name = "password"];`
+     * `string password = 3 [json_name = "password", (.buf.validate.field) = { ... }`
      */
     public fun clearPassword() {
       _builder.clearPassword()
     }
 
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public var displayName: kotlin.String
       @kotlin.jvm.JvmName("getDisplayName")
@@ -91,7 +91,7 @@ public object RegisterRequestKt {
         _builder.displayName = value
       }
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public fun clearDisplayName() {
       _builder.clearDisplayName()

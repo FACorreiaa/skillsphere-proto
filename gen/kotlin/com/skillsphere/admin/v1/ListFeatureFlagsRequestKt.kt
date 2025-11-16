@@ -30,7 +30,7 @@ public object ListFeatureFlagsRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.ListFeatureFlagsRequest = _builder.build()
 
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -40,7 +40,7 @@ public object ListFeatureFlagsRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()

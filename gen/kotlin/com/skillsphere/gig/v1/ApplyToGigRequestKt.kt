@@ -30,7 +30,7 @@ public object ApplyToGigRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.ApplyToGigRequest = _builder.build()
 
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -40,14 +40,14 @@ public object ApplyToGigRequestKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
     }
 
     /**
-     * `string freelancer_id = 2 [json_name = "freelancerId"];`
+     * `string freelancer_id = 2 [json_name = "freelancerId", (.buf.validate.field) = { ... }`
      */
     public var freelancerId: kotlin.String
       @kotlin.jvm.JvmName("getFreelancerId")
@@ -57,14 +57,14 @@ public object ApplyToGigRequestKt {
         _builder.freelancerId = value
       }
     /**
-     * `string freelancer_id = 2 [json_name = "freelancerId"];`
+     * `string freelancer_id = 2 [json_name = "freelancerId", (.buf.validate.field) = { ... }`
      */
     public fun clearFreelancerId() {
       _builder.clearFreelancerId()
     }
 
     /**
-     * `string cover_letter = 3 [json_name = "coverLetter"];`
+     * `string cover_letter = 3 [json_name = "coverLetter", (.buf.validate.field) = { ... }`
      */
     public var coverLetter: kotlin.String
       @kotlin.jvm.JvmName("getCoverLetter")
@@ -74,7 +74,7 @@ public object ApplyToGigRequestKt {
         _builder.coverLetter = value
       }
     /**
-     * `string cover_letter = 3 [json_name = "coverLetter"];`
+     * `string cover_letter = 3 [json_name = "coverLetter", (.buf.validate.field) = { ... }`
      */
     public fun clearCoverLetter() {
       _builder.clearCoverLetter()
@@ -108,7 +108,7 @@ public object ApplyToGigRequestKt {
       get() = _builder.proposedAmountOrNull
 
     /**
-     * `int32 estimated_hours = 5 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 5 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public var estimatedHours: kotlin.Int
       @kotlin.jvm.JvmName("getEstimatedHours")
@@ -118,7 +118,7 @@ public object ApplyToGigRequestKt {
         _builder.estimatedHours = value
       }
     /**
-     * `int32 estimated_hours = 5 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 5 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public fun clearEstimatedHours() {
       _builder.clearEstimatedHours()

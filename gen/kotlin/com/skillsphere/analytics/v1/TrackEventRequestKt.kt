@@ -30,7 +30,7 @@ public object TrackEventRequestKt {
     internal fun _build(): com.skillsphere.analytics.v1.TrackEventRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object TrackEventRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string event_name = 2 [json_name = "eventName"];`
+     * `string event_name = 2 [json_name = "eventName", (.buf.validate.field) = { ... }`
      */
     public var eventName: kotlin.String
       @kotlin.jvm.JvmName("getEventName")
@@ -57,7 +57,7 @@ public object TrackEventRequestKt {
         _builder.eventName = value
       }
     /**
-     * `string event_name = 2 [json_name = "eventName"];`
+     * `string event_name = 2 [json_name = "eventName", (.buf.validate.field) = { ... }`
      */
     public fun clearEventName() {
       _builder.clearEventName()
@@ -70,7 +70,7 @@ public object TrackEventRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PropertiesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
      public val properties: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, PropertiesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -79,7 +79,7 @@ public object TrackEventRequestKt {
         _builder.propertiesMap
       )
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putProperties")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, PropertiesProxy>
@@ -87,7 +87,7 @@ public object TrackEventRequestKt {
          _builder.putProperties(key, value)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setProperties")
@@ -97,7 +97,7 @@ public object TrackEventRequestKt {
          put(key, value)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeProperties")
@@ -106,7 +106,7 @@ public object TrackEventRequestKt {
          _builder.removeProperties(key)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllProperties")
@@ -115,7 +115,7 @@ public object TrackEventRequestKt {
          _builder.putAllProperties(map)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearProperties")
@@ -152,11 +152,7 @@ public object TrackEventRequestKt {
       get() = _builder.timestampOrNull
 
     /**
-     * ```
-     * Optional session context
-     * ```
-     *
-     * `string session_id = 5 [json_name = "sessionId"];`
+     * `string session_id = 5 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -166,11 +162,7 @@ public object TrackEventRequestKt {
         _builder.sessionId = value
       }
     /**
-     * ```
-     * Optional session context
-     * ```
-     *
-     * `string session_id = 5 [json_name = "sessionId"];`
+     * `string session_id = 5 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()

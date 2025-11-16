@@ -30,7 +30,7 @@ public object AnnouncementKt {
     internal fun _build(): com.skillsphere.admin.v1.Announcement = _builder.build()
 
     /**
-     * `string announcement_id = 1 [json_name = "announcementId"];`
+     * `string announcement_id = 1 [json_name = "announcementId", (.buf.validate.field) = { ... }`
      */
     public var announcementId: kotlin.String
       @kotlin.jvm.JvmName("getAnnouncementId")
@@ -40,14 +40,14 @@ public object AnnouncementKt {
         _builder.announcementId = value
       }
     /**
-     * `string announcement_id = 1 [json_name = "announcementId"];`
+     * `string announcement_id = 1 [json_name = "announcementId", (.buf.validate.field) = { ... }`
      */
     public fun clearAnnouncementId() {
       _builder.clearAnnouncementId()
     }
 
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -57,14 +57,14 @@ public object AnnouncementKt {
         _builder.title = value
       }
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string content = 3 [json_name = "content"];`
+     * `string content = 3 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public var content: kotlin.String
       @kotlin.jvm.JvmName("getContent")
@@ -74,14 +74,14 @@ public object AnnouncementKt {
         _builder.content = value
       }
     /**
-     * `string content = 3 [json_name = "content"];`
+     * `string content = 3 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public fun clearContent() {
       _builder.clearContent()
     }
 
     /**
-     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority"];`
+     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority", (.buf.validate.field) = { ... }`
      */
     public var priority: com.skillsphere.admin.v1.AnnouncementPriority
       @kotlin.jvm.JvmName("getPriority")
@@ -98,7 +98,7 @@ public object AnnouncementKt {
         _builder.priorityValue = value
       }
     /**
-     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority"];`
+     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority", (.buf.validate.field) = { ... }`
      */
     public fun clearPriority() {
       _builder.clearPriority()

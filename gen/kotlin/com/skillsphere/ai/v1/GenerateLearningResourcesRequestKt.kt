@@ -30,7 +30,7 @@ public object GenerateLearningResourcesRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.GenerateLearningResourcesRequest = _builder.build()
 
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -40,14 +40,14 @@ public object GenerateLearningResourcesRequestKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
     }
 
     /**
-     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level"];`
+     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level", (.buf.validate.field) = { ... }`
      */
     public var level: com.skillsphere.ai.v1.DifficultyLevel
       @kotlin.jvm.JvmName("getLevel")
@@ -64,7 +64,7 @@ public object GenerateLearningResourcesRequestKt {
         _builder.levelValue = value
       }
     /**
-     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level"];`
+     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level", (.buf.validate.field) = { ... }`
      */
     public fun clearLevel() {
       _builder.clearLevel()
@@ -77,11 +77,7 @@ public object GenerateLearningResourcesRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PreferredFormatsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * "video", "article", "interactive"
-     * ```
-     *
-     * `repeated string preferred_formats = 3 [json_name = "preferredFormats"];`
+     * `repeated string preferred_formats = 3 [json_name = "preferredFormats", (.buf.validate.field) = { ... }`
      * @return A list containing the preferredFormats.
      */
     public val preferredFormats: com.google.protobuf.kotlin.DslList<kotlin.String, PreferredFormatsProxy>
@@ -90,11 +86,7 @@ public object GenerateLearningResourcesRequestKt {
         _builder.preferredFormatsList
       )
     /**
-     * ```
-     * "video", "article", "interactive"
-     * ```
-     *
-     * `repeated string preferred_formats = 3 [json_name = "preferredFormats"];`
+     * `repeated string preferred_formats = 3 [json_name = "preferredFormats", (.buf.validate.field) = { ... }`
      * @param value The preferredFormats to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -103,11 +95,7 @@ public object GenerateLearningResourcesRequestKt {
       _builder.addPreferredFormats(value)
     }
     /**
-     * ```
-     * "video", "article", "interactive"
-     * ```
-     *
-     * `repeated string preferred_formats = 3 [json_name = "preferredFormats"];`
+     * `repeated string preferred_formats = 3 [json_name = "preferredFormats", (.buf.validate.field) = { ... }`
      * @param value The preferredFormats to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -117,11 +105,7 @@ public object GenerateLearningResourcesRequestKt {
       add(value)
     }
     /**
-     * ```
-     * "video", "article", "interactive"
-     * ```
-     *
-     * `repeated string preferred_formats = 3 [json_name = "preferredFormats"];`
+     * `repeated string preferred_formats = 3 [json_name = "preferredFormats", (.buf.validate.field) = { ... }`
      * @param values The preferredFormats to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -130,11 +114,7 @@ public object GenerateLearningResourcesRequestKt {
       _builder.addAllPreferredFormats(values)
     }
     /**
-     * ```
-     * "video", "article", "interactive"
-     * ```
-     *
-     * `repeated string preferred_formats = 3 [json_name = "preferredFormats"];`
+     * `repeated string preferred_formats = 3 [json_name = "preferredFormats", (.buf.validate.field) = { ... }`
      * @param values The preferredFormats to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -144,11 +124,7 @@ public object GenerateLearningResourcesRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * "video", "article", "interactive"
-     * ```
-     *
-     * `repeated string preferred_formats = 3 [json_name = "preferredFormats"];`
+     * `repeated string preferred_formats = 3 [json_name = "preferredFormats", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The preferredFormats to set.
      */
@@ -157,11 +133,7 @@ public object GenerateLearningResourcesRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PreferredFormatsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPreferredFormats(index, value)
     }/**
-     * ```
-     * "video", "article", "interactive"
-     * ```
-     *
-     * `repeated string preferred_formats = 3 [json_name = "preferredFormats"];`
+     * `repeated string preferred_formats = 3 [json_name = "preferredFormats", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPreferredFormats")

@@ -30,7 +30,7 @@ public object RejectApplicationRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.RejectApplicationRequest = _builder.build()
 
     /**
-     * `string application_id = 1 [json_name = "applicationId"];`
+     * `string application_id = 1 [json_name = "applicationId", (.buf.validate.field) = { ... }`
      */
     public var applicationId: kotlin.String
       @kotlin.jvm.JvmName("getApplicationId")
@@ -40,14 +40,14 @@ public object RejectApplicationRequestKt {
         _builder.applicationId = value
       }
     /**
-     * `string application_id = 1 [json_name = "applicationId"];`
+     * `string application_id = 1 [json_name = "applicationId", (.buf.validate.field) = { ... }`
      */
     public fun clearApplicationId() {
       _builder.clearApplicationId()
     }
 
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public var creatorId: kotlin.String
       @kotlin.jvm.JvmName("getCreatorId")
@@ -57,14 +57,14 @@ public object RejectApplicationRequestKt {
         _builder.creatorId = value
       }
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public fun clearCreatorId() {
       _builder.clearCreatorId()
     }
 
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -74,7 +74,7 @@ public object RejectApplicationRequestKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()

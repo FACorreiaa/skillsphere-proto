@@ -30,7 +30,7 @@ public object GeographicDataKt {
     internal fun _build(): com.skillsphere.analytics.v1.GeographicData = _builder.build()
 
     /**
-     * `string country = 1 [json_name = "country"];`
+     * `string country = 1 [json_name = "country", (.buf.validate.field) = { ... }`
      */
     public var country: kotlin.String
       @kotlin.jvm.JvmName("getCountry")
@@ -40,14 +40,14 @@ public object GeographicDataKt {
         _builder.country = value
       }
     /**
-     * `string country = 1 [json_name = "country"];`
+     * `string country = 1 [json_name = "country", (.buf.validate.field) = { ... }`
      */
     public fun clearCountry() {
       _builder.clearCountry()
     }
 
     /**
-     * `string country_code = 2 [json_name = "countryCode"];`
+     * `string country_code = 2 [json_name = "countryCode", (.buf.validate.field) = { ... }`
      */
     public var countryCode: kotlin.String
       @kotlin.jvm.JvmName("getCountryCode")
@@ -57,14 +57,14 @@ public object GeographicDataKt {
         _builder.countryCode = value
       }
     /**
-     * `string country_code = 2 [json_name = "countryCode"];`
+     * `string country_code = 2 [json_name = "countryCode", (.buf.validate.field) = { ... }`
      */
     public fun clearCountryCode() {
       _builder.clearCountryCode()
     }
 
     /**
-     * `int32 user_count = 3 [json_name = "userCount"];`
+     * `int32 user_count = 3 [json_name = "userCount", (.buf.validate.field) = { ... }`
      */
     public var userCount: kotlin.Int
       @kotlin.jvm.JvmName("getUserCount")
@@ -74,14 +74,14 @@ public object GeographicDataKt {
         _builder.userCount = value
       }
     /**
-     * `int32 user_count = 3 [json_name = "userCount"];`
+     * `int32 user_count = 3 [json_name = "userCount", (.buf.validate.field) = { ... }`
      */
     public fun clearUserCount() {
       _builder.clearUserCount()
     }
 
     /**
-     * `int32 session_count = 4 [json_name = "sessionCount"];`
+     * `int32 session_count = 4 [json_name = "sessionCount", (.buf.validate.field) = { ... }`
      */
     public var sessionCount: kotlin.Int
       @kotlin.jvm.JvmName("getSessionCount")
@@ -91,7 +91,7 @@ public object GeographicDataKt {
         _builder.sessionCount = value
       }
     /**
-     * `int32 session_count = 4 [json_name = "sessionCount"];`
+     * `int32 session_count = 4 [json_name = "sessionCount", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionCount() {
       _builder.clearSessionCount()
@@ -125,7 +125,7 @@ public object GeographicDataKt {
       get() = _builder.revenueOrNull
 
     /**
-     * `double percentage = 6 [json_name = "percentage"];`
+     * `double percentage = 6 [json_name = "percentage", (.buf.validate.field) = { ... }`
      */
     public var percentage: kotlin.Double
       @kotlin.jvm.JvmName("getPercentage")
@@ -135,7 +135,7 @@ public object GeographicDataKt {
         _builder.percentage = value
       }
     /**
-     * `double percentage = 6 [json_name = "percentage"];`
+     * `double percentage = 6 [json_name = "percentage", (.buf.validate.field) = { ... }`
      */
     public fun clearPercentage() {
       _builder.clearPercentage()

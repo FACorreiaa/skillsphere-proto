@@ -30,7 +30,7 @@ public object FlaggedContentKt {
     internal fun _build(): com.skillsphere.admin.v1.FlaggedContent = _builder.build()
 
     /**
-     * `string flag_id = 1 [json_name = "flagId"];`
+     * `string flag_id = 1 [json_name = "flagId", (.buf.validate.field) = { ... }`
      */
     public var flagId: kotlin.String
       @kotlin.jvm.JvmName("getFlagId")
@@ -40,14 +40,14 @@ public object FlaggedContentKt {
         _builder.flagId = value
       }
     /**
-     * `string flag_id = 1 [json_name = "flagId"];`
+     * `string flag_id = 1 [json_name = "flagId", (.buf.validate.field) = { ... }`
      */
     public fun clearFlagId() {
       _builder.clearFlagId()
     }
 
     /**
-     * `string content_id = 2 [json_name = "contentId"];`
+     * `string content_id = 2 [json_name = "contentId", (.buf.validate.field) = { ... }`
      */
     public var contentId: kotlin.String
       @kotlin.jvm.JvmName("getContentId")
@@ -57,14 +57,14 @@ public object FlaggedContentKt {
         _builder.contentId = value
       }
     /**
-     * `string content_id = 2 [json_name = "contentId"];`
+     * `string content_id = 2 [json_name = "contentId", (.buf.validate.field) = { ... }`
      */
     public fun clearContentId() {
       _builder.clearContentId()
     }
 
     /**
-     * `string content_type = 3 [json_name = "contentType"];`
+     * `string content_type = 3 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public var contentType: kotlin.String
       @kotlin.jvm.JvmName("getContentType")
@@ -74,14 +74,14 @@ public object FlaggedContentKt {
         _builder.contentType = value
       }
     /**
-     * `string content_type = 3 [json_name = "contentType"];`
+     * `string content_type = 3 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public fun clearContentType() {
       _builder.clearContentType()
     }
 
     /**
-     * `string content_preview = 4 [json_name = "contentPreview"];`
+     * `string content_preview = 4 [json_name = "contentPreview", (.buf.validate.field) = { ... }`
      */
     public var contentPreview: kotlin.String
       @kotlin.jvm.JvmName("getContentPreview")
@@ -91,14 +91,14 @@ public object FlaggedContentKt {
         _builder.contentPreview = value
       }
     /**
-     * `string content_preview = 4 [json_name = "contentPreview"];`
+     * `string content_preview = 4 [json_name = "contentPreview", (.buf.validate.field) = { ... }`
      */
     public fun clearContentPreview() {
       _builder.clearContentPreview()
     }
 
     /**
-     * `.skillsphere.admin.v1.ReportType report_type = 5 [json_name = "reportType"];`
+     * `.skillsphere.admin.v1.ReportType report_type = 5 [json_name = "reportType", (.buf.validate.field) = { ... }`
      */
     public var reportType: com.skillsphere.admin.v1.ReportType
       @kotlin.jvm.JvmName("getReportType")
@@ -115,14 +115,14 @@ public object FlaggedContentKt {
         _builder.reportTypeValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportType report_type = 5 [json_name = "reportType"];`
+     * `.skillsphere.admin.v1.ReportType report_type = 5 [json_name = "reportType", (.buf.validate.field) = { ... }`
      */
     public fun clearReportType() {
       _builder.clearReportType()
     }
 
     /**
-     * `string description = 6 [json_name = "description"];`
+     * `string description = 6 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -132,14 +132,14 @@ public object FlaggedContentKt {
         _builder.description = value
       }
     /**
-     * `string description = 6 [json_name = "description"];`
+     * `string description = 6 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
     }
 
     /**
-     * `string reporter_id = 7 [json_name = "reporterId"];`
+     * `string reporter_id = 7 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public var reporterId: kotlin.String
       @kotlin.jvm.JvmName("getReporterId")
@@ -149,14 +149,14 @@ public object FlaggedContentKt {
         _builder.reporterId = value
       }
     /**
-     * `string reporter_id = 7 [json_name = "reporterId"];`
+     * `string reporter_id = 7 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public fun clearReporterId() {
       _builder.clearReporterId()
     }
 
     /**
-     * `string reported_user_id = 8 [json_name = "reportedUserId"];`
+     * `string reported_user_id = 8 [json_name = "reportedUserId", (.buf.validate.field) = { ... }`
      */
     public var reportedUserId: kotlin.String
       @kotlin.jvm.JvmName("getReportedUserId")
@@ -166,18 +166,14 @@ public object FlaggedContentKt {
         _builder.reportedUserId = value
       }
     /**
-     * `string reported_user_id = 8 [json_name = "reportedUserId"];`
+     * `string reported_user_id = 8 [json_name = "reportedUserId", (.buf.validate.field) = { ... }`
      */
     public fun clearReportedUserId() {
       _builder.clearReportedUserId()
     }
 
     /**
-     * ```
-     * How many times flagged
-     * ```
-     *
-     * `int32 flag_count = 9 [json_name = "flagCount"];`
+     * `int32 flag_count = 9 [json_name = "flagCount", (.buf.validate.field) = { ... }`
      */
     public var flagCount: kotlin.Int
       @kotlin.jvm.JvmName("getFlagCount")
@@ -187,18 +183,14 @@ public object FlaggedContentKt {
         _builder.flagCount = value
       }
     /**
-     * ```
-     * How many times flagged
-     * ```
-     *
-     * `int32 flag_count = 9 [json_name = "flagCount"];`
+     * `int32 flag_count = 9 [json_name = "flagCount", (.buf.validate.field) = { ... }`
      */
     public fun clearFlagCount() {
       _builder.clearFlagCount()
     }
 
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 10 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 10 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.admin.v1.ReportStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -215,7 +207,7 @@ public object FlaggedContentKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 10 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 10 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

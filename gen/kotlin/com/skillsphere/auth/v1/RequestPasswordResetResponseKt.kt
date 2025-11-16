@@ -47,11 +47,7 @@ public object RequestPasswordResetResponseKt {
     }
 
     /**
-     * ```
-     * "Email sent" or error message
-     * ```
-     *
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public var message: kotlin.String
       @kotlin.jvm.JvmName("getMessage")
@@ -61,11 +57,7 @@ public object RequestPasswordResetResponseKt {
         _builder.message = value
       }
     /**
-     * ```
-     * "Email sent" or error message
-     * ```
-     *
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public fun clearMessage() {
       _builder.clearMessage()

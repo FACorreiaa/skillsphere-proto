@@ -30,7 +30,7 @@ public object UserProfileKt {
     internal fun _build(): com.skillsphere.auth.v1.UserProfile = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object UserProfileKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string email = 2 [json_name = "email"];`
+     * `string email = 2 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public var email: kotlin.String
       @kotlin.jvm.JvmName("getEmail")
@@ -57,14 +57,14 @@ public object UserProfileKt {
         _builder.email = value
       }
     /**
-     * `string email = 2 [json_name = "email"];`
+     * `string email = 2 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public fun clearEmail() {
       _builder.clearEmail()
     }
 
     /**
-     * `string username = 3 [json_name = "username"];`
+     * `string username = 3 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public var username: kotlin.String
       @kotlin.jvm.JvmName("getUsername")
@@ -74,14 +74,14 @@ public object UserProfileKt {
         _builder.username = value
       }
     /**
-     * `string username = 3 [json_name = "username"];`
+     * `string username = 3 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public fun clearUsername() {
       _builder.clearUsername()
     }
 
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public var displayName: kotlin.String
       @kotlin.jvm.JvmName("getDisplayName")
@@ -91,14 +91,14 @@ public object UserProfileKt {
         _builder.displayName = value
       }
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public fun clearDisplayName() {
       _builder.clearDisplayName()
     }
 
     /**
-     * `string avatar_url = 5 [json_name = "avatarUrl"];`
+     * `string avatar_url = 5 [json_name = "avatarUrl", (.buf.validate.field) = { ... }`
      */
     public var avatarUrl: kotlin.String
       @kotlin.jvm.JvmName("getAvatarUrl")
@@ -108,7 +108,7 @@ public object UserProfileKt {
         _builder.avatarUrl = value
       }
     /**
-     * `string avatar_url = 5 [json_name = "avatarUrl"];`
+     * `string avatar_url = 5 [json_name = "avatarUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearAvatarUrl() {
       _builder.clearAvatarUrl()

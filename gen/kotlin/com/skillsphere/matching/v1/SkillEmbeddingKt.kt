@@ -30,7 +30,7 @@ public object SkillEmbeddingKt {
     internal fun _build(): com.skillsphere.matching.v1.SkillEmbedding = _builder.build()
 
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -40,7 +40,7 @@ public object SkillEmbeddingKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
@@ -53,11 +53,7 @@ public object SkillEmbeddingKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class VectorProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * 300D vector from Gemini
-     * ```
-     *
-     * `repeated float vector = 2 [json_name = "vector"];`
+     * `repeated float vector = 2 [json_name = "vector", (.buf.validate.field) = { ... }`
      */
      public val vector: com.google.protobuf.kotlin.DslList<kotlin.Float, VectorProxy>
       @kotlin.jvm.JvmSynthetic
@@ -65,11 +61,7 @@ public object SkillEmbeddingKt {
         _builder.vectorList
       )
     /**
-     * ```
-     * 300D vector from Gemini
-     * ```
-     *
-     * `repeated float vector = 2 [json_name = "vector"];`
+     * `repeated float vector = 2 [json_name = "vector", (.buf.validate.field) = { ... }`
      * @param value The vector to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -77,11 +69,7 @@ public object SkillEmbeddingKt {
     public fun com.google.protobuf.kotlin.DslList<kotlin.Float, VectorProxy>.add(value: kotlin.Float) {
       _builder.addVector(value)
     }/**
-     * ```
-     * 300D vector from Gemini
-     * ```
-     *
-     * `repeated float vector = 2 [json_name = "vector"];`
+     * `repeated float vector = 2 [json_name = "vector", (.buf.validate.field) = { ... }`
      * @param value The vector to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,11 +78,7 @@ public object SkillEmbeddingKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.Float, VectorProxy>.plusAssign(value: kotlin.Float) {
       add(value)
     }/**
-     * ```
-     * 300D vector from Gemini
-     * ```
-     *
-     * `repeated float vector = 2 [json_name = "vector"];`
+     * `repeated float vector = 2 [json_name = "vector", (.buf.validate.field) = { ... }`
      * @param values The vector to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -102,11 +86,7 @@ public object SkillEmbeddingKt {
     public fun com.google.protobuf.kotlin.DslList<kotlin.Float, VectorProxy>.addAll(values: kotlin.collections.Iterable<kotlin.Float>) {
       _builder.addAllVector(values)
     }/**
-     * ```
-     * 300D vector from Gemini
-     * ```
-     *
-     * `repeated float vector = 2 [json_name = "vector"];`
+     * `repeated float vector = 2 [json_name = "vector", (.buf.validate.field) = { ... }`
      * @param values The vector to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,11 +95,7 @@ public object SkillEmbeddingKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<kotlin.Float, VectorProxy>.plusAssign(values: kotlin.collections.Iterable<kotlin.Float>) {
       addAll(values)
     }/**
-     * ```
-     * 300D vector from Gemini
-     * ```
-     *
-     * `repeated float vector = 2 [json_name = "vector"];`
+     * `repeated float vector = 2 [json_name = "vector", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The vector to set.
      */
@@ -128,11 +104,7 @@ public object SkillEmbeddingKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.Float, VectorProxy>.set(index: kotlin.Int, value: kotlin.Float) {
       _builder.setVector(index, value)
     }/**
-     * ```
-     * 300D vector from Gemini
-     * ```
-     *
-     * `repeated float vector = 2 [json_name = "vector"];`
+     * `repeated float vector = 2 [json_name = "vector", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearVector")
@@ -140,7 +112,7 @@ public object SkillEmbeddingKt {
       _builder.clearVector()
     }
     /**
-     * `string model_version = 3 [json_name = "modelVersion"];`
+     * `string model_version = 3 [json_name = "modelVersion", (.buf.validate.field) = { ... }`
      */
     public var modelVersion: kotlin.String
       @kotlin.jvm.JvmName("getModelVersion")
@@ -150,7 +122,7 @@ public object SkillEmbeddingKt {
         _builder.modelVersion = value
       }
     /**
-     * `string model_version = 3 [json_name = "modelVersion"];`
+     * `string model_version = 3 [json_name = "modelVersion", (.buf.validate.field) = { ... }`
      */
     public fun clearModelVersion() {
       _builder.clearModelVersion()

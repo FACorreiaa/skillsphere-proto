@@ -84,7 +84,7 @@ public object UserChallengeKt {
       get() = _builder.userEntryOrNull
 
     /**
-     * `int32 user_rank = 3 [json_name = "userRank"];`
+     * `int32 user_rank = 3 [json_name = "userRank", (.buf.validate.field) = { ... }`
      */
     public var userRank: kotlin.Int
       @kotlin.jvm.JvmName("getUserRank")
@@ -94,7 +94,7 @@ public object UserChallengeKt {
         _builder.userRank = value
       }
     /**
-     * `int32 user_rank = 3 [json_name = "userRank"];`
+     * `int32 user_rank = 3 [json_name = "userRank", (.buf.validate.field) = { ... }`
      */
     public fun clearUserRank() {
       _builder.clearUserRank()

@@ -30,7 +30,7 @@ public object ReviewKt {
     internal fun _build(): com.skillsphere.review.v1.Review = _builder.build()
 
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public var reviewId: kotlin.String
       @kotlin.jvm.JvmName("getReviewId")
@@ -40,14 +40,14 @@ public object ReviewKt {
         _builder.reviewId = value
       }
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewId() {
       _builder.clearReviewId()
     }
 
     /**
-     * `string requester_id = 2 [json_name = "requesterId"];`
+     * `string requester_id = 2 [json_name = "requesterId", (.buf.validate.field) = { ... }`
      */
     public var requesterId: kotlin.String
       @kotlin.jvm.JvmName("getRequesterId")
@@ -57,14 +57,14 @@ public object ReviewKt {
         _builder.requesterId = value
       }
     /**
-     * `string requester_id = 2 [json_name = "requesterId"];`
+     * `string requester_id = 2 [json_name = "requesterId", (.buf.validate.field) = { ... }`
      */
     public fun clearRequesterId() {
       _builder.clearRequesterId()
     }
 
     /**
-     * `string reviewer_id = 3 [json_name = "reviewerId"];`
+     * `string reviewer_id = 3 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public var reviewerId: kotlin.String
       @kotlin.jvm.JvmName("getReviewerId")
@@ -74,14 +74,14 @@ public object ReviewKt {
         _builder.reviewerId = value
       }
     /**
-     * `string reviewer_id = 3 [json_name = "reviewerId"];`
+     * `string reviewer_id = 3 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerId() {
       _builder.clearReviewerId()
     }
 
     /**
-     * `string skill_id = 4 [json_name = "skillId"];`
+     * `string skill_id = 4 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -91,7 +91,7 @@ public object ReviewKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 4 [json_name = "skillId"];`
+     * `string skill_id = 4 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
@@ -102,7 +102,7 @@ public object ReviewKt {
      * Request details
      * ```
      *
-     * `.skillsphere.review.v1.ReviewType type = 5 [json_name = "type"];`
+     * `.skillsphere.review.v1.ReviewType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.review.v1.ReviewType
       @kotlin.jvm.JvmName("getType")
@@ -123,14 +123,14 @@ public object ReviewKt {
      * Request details
      * ```
      *
-     * `.skillsphere.review.v1.ReviewType type = 5 [json_name = "type"];`
+     * `.skillsphere.review.v1.ReviewType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `.skillsphere.review.v1.ReviewDepth depth = 6 [json_name = "depth"];`
+     * `.skillsphere.review.v1.ReviewDepth depth = 6 [json_name = "depth", (.buf.validate.field) = { ... }`
      */
     public var depth: com.skillsphere.review.v1.ReviewDepth
       @kotlin.jvm.JvmName("getDepth")
@@ -147,14 +147,14 @@ public object ReviewKt {
         _builder.depthValue = value
       }
     /**
-     * `.skillsphere.review.v1.ReviewDepth depth = 6 [json_name = "depth"];`
+     * `.skillsphere.review.v1.ReviewDepth depth = 6 [json_name = "depth", (.buf.validate.field) = { ... }`
      */
     public fun clearDepth() {
       _builder.clearDepth()
     }
 
     /**
-     * `string title = 7 [json_name = "title"];`
+     * `string title = 7 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -164,14 +164,14 @@ public object ReviewKt {
         _builder.title = value
       }
     /**
-     * `string title = 7 [json_name = "title"];`
+     * `string title = 7 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 8 [json_name = "description"];`
+     * `string description = 8 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -181,7 +181,7 @@ public object ReviewKt {
         _builder.description = value
       }
     /**
-     * `string description = 8 [json_name = "description"];`
+     * `string description = 8 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -194,7 +194,7 @@ public object ReviewKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ContentProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content", (.buf.validate.field) = { ... }`
      */
      public val content: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, ContentProxy>
       @kotlin.jvm.JvmSynthetic
@@ -202,7 +202,7 @@ public object ReviewKt {
         _builder.contentList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param value The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -211,7 +211,7 @@ public object ReviewKt {
       _builder.addContent(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param value The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -221,7 +221,7 @@ public object ReviewKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param values The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -230,7 +230,7 @@ public object ReviewKt {
       _builder.addAllContent(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param values The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -240,7 +240,7 @@ public object ReviewKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The content to set.
      */
@@ -250,7 +250,7 @@ public object ReviewKt {
       _builder.setContent(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 9 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearContent")
@@ -265,7 +265,7 @@ public object ReviewKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SpecificQuestionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string specific_questions = 10 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 10 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @return A list containing the specificQuestions.
      */
     public val specificQuestions: com.google.protobuf.kotlin.DslList<kotlin.String, SpecificQuestionsProxy>
@@ -274,7 +274,7 @@ public object ReviewKt {
         _builder.specificQuestionsList
       )
     /**
-     * `repeated string specific_questions = 10 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 10 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param value The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -283,7 +283,7 @@ public object ReviewKt {
       _builder.addSpecificQuestions(value)
     }
     /**
-     * `repeated string specific_questions = 10 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 10 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param value The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -293,7 +293,7 @@ public object ReviewKt {
       add(value)
     }
     /**
-     * `repeated string specific_questions = 10 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 10 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param values The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -302,7 +302,7 @@ public object ReviewKt {
       _builder.addAllSpecificQuestions(values)
     }
     /**
-     * `repeated string specific_questions = 10 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 10 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param values The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -312,7 +312,7 @@ public object ReviewKt {
       addAll(values)
     }
     /**
-     * `repeated string specific_questions = 10 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 10 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The specificQuestions to set.
      */
@@ -321,7 +321,7 @@ public object ReviewKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SpecificQuestionsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSpecificQuestions(index, value)
     }/**
-     * `repeated string specific_questions = 10 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 10 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSpecificQuestions")
@@ -368,7 +368,7 @@ public object ReviewKt {
       get() = _builder.priceOrNull
 
     /**
-     * `string payment_id = 12 [json_name = "paymentId"];`
+     * `string payment_id = 12 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public var paymentId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentId")
@@ -378,7 +378,7 @@ public object ReviewKt {
         _builder.paymentId = value
       }
     /**
-     * `string payment_id = 12 [json_name = "paymentId"];`
+     * `string payment_id = 12 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentId() {
       _builder.clearPaymentId()
@@ -509,7 +509,7 @@ public object ReviewKt {
      * Review content
      * ```
      *
-     * `string feedback = 17 [json_name = "feedback"];`
+     * `string feedback = 17 [json_name = "feedback", (.buf.validate.field) = { ... }`
      */
     public var feedback: kotlin.String
       @kotlin.jvm.JvmName("getFeedback")
@@ -523,7 +523,7 @@ public object ReviewKt {
      * Review content
      * ```
      *
-     * `string feedback = 17 [json_name = "feedback"];`
+     * `string feedback = 17 [json_name = "feedback", (.buf.validate.field) = { ... }`
      */
     public fun clearFeedback() {
       _builder.clearFeedback()
@@ -536,7 +536,7 @@ public object ReviewKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SectionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections", (.buf.validate.field) = { ... }`
      */
      public val sections: com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.FeedbackSection, SectionsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -544,7 +544,7 @@ public object ReviewKt {
         _builder.sectionsList
       )
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param value The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -553,7 +553,7 @@ public object ReviewKt {
       _builder.addSections(value)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param value The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -563,7 +563,7 @@ public object ReviewKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param values The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -572,7 +572,7 @@ public object ReviewKt {
       _builder.addAllSections(values)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param values The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -582,7 +582,7 @@ public object ReviewKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The sections to set.
      */
@@ -592,7 +592,7 @@ public object ReviewKt {
       _builder.setSections(index, value)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 18 [json_name = "sections", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearSections")
@@ -607,7 +607,7 @@ public object ReviewKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AttachmentsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
      public val attachments: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, AttachmentsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -615,7 +615,7 @@ public object ReviewKt {
         _builder.attachmentsList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -624,7 +624,7 @@ public object ReviewKt {
       _builder.addAttachments(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -634,7 +634,7 @@ public object ReviewKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -643,7 +643,7 @@ public object ReviewKt {
       _builder.addAllAttachments(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -653,7 +653,7 @@ public object ReviewKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The attachments to set.
      */
@@ -663,7 +663,7 @@ public object ReviewKt {
       _builder.setAttachments(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 19 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearAttachments")
@@ -672,11 +672,7 @@ public object ReviewKt {
     }
 
     /**
-     * ```
-     * Optional video walkthrough
-     * ```
-     *
-     * `string video_feedback_url = 20 [json_name = "videoFeedbackUrl"];`
+     * `string video_feedback_url = 20 [json_name = "videoFeedbackUrl", (.buf.validate.field) = { ... }`
      */
     public var videoFeedbackUrl: kotlin.String
       @kotlin.jvm.JvmName("getVideoFeedbackUrl")
@@ -686,11 +682,7 @@ public object ReviewKt {
         _builder.videoFeedbackUrl = value
       }
     /**
-     * ```
-     * Optional video walkthrough
-     * ```
-     *
-     * `string video_feedback_url = 20 [json_name = "videoFeedbackUrl"];`
+     * `string video_feedback_url = 20 [json_name = "videoFeedbackUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearVideoFeedbackUrl() {
       _builder.clearVideoFeedbackUrl()
@@ -701,7 +693,7 @@ public object ReviewKt {
      * Ratings
      * ```
      *
-     * `int32 requester_rating = 21 [json_name = "requesterRating"];`
+     * `int32 requester_rating = 21 [json_name = "requesterRating", (.buf.validate.field) = { ... }`
      */
     public var requesterRating: kotlin.Int
       @kotlin.jvm.JvmName("getRequesterRating")
@@ -715,14 +707,14 @@ public object ReviewKt {
      * Ratings
      * ```
      *
-     * `int32 requester_rating = 21 [json_name = "requesterRating"];`
+     * `int32 requester_rating = 21 [json_name = "requesterRating", (.buf.validate.field) = { ... }`
      */
     public fun clearRequesterRating() {
       _builder.clearRequesterRating()
     }
 
     /**
-     * `string requester_comment = 22 [json_name = "requesterComment"];`
+     * `string requester_comment = 22 [json_name = "requesterComment", (.buf.validate.field) = { ... }`
      */
     public var requesterComment: kotlin.String
       @kotlin.jvm.JvmName("getRequesterComment")
@@ -732,18 +724,14 @@ public object ReviewKt {
         _builder.requesterComment = value
       }
     /**
-     * `string requester_comment = 22 [json_name = "requesterComment"];`
+     * `string requester_comment = 22 [json_name = "requesterComment", (.buf.validate.field) = { ... }`
      */
     public fun clearRequesterComment() {
       _builder.clearRequesterComment()
     }
 
     /**
-     * ```
-     * Reviewer rates the experience
-     * ```
-     *
-     * `int32 reviewer_rating = 23 [json_name = "reviewerRating"];`
+     * `int32 reviewer_rating = 23 [json_name = "reviewerRating", (.buf.validate.field) = { ... }`
      */
     public var reviewerRating: kotlin.Int
       @kotlin.jvm.JvmName("getReviewerRating")
@@ -753,18 +741,14 @@ public object ReviewKt {
         _builder.reviewerRating = value
       }
     /**
-     * ```
-     * Reviewer rates the experience
-     * ```
-     *
-     * `int32 reviewer_rating = 23 [json_name = "reviewerRating"];`
+     * `int32 reviewer_rating = 23 [json_name = "reviewerRating", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerRating() {
       _builder.clearReviewerRating()
     }
 
     /**
-     * `string reviewer_comment = 24 [json_name = "reviewerComment"];`
+     * `string reviewer_comment = 24 [json_name = "reviewerComment", (.buf.validate.field) = { ... }`
      */
     public var reviewerComment: kotlin.String
       @kotlin.jvm.JvmName("getReviewerComment")
@@ -774,7 +758,7 @@ public object ReviewKt {
         _builder.reviewerComment = value
       }
     /**
-     * `string reviewer_comment = 24 [json_name = "reviewerComment"];`
+     * `string reviewer_comment = 24 [json_name = "reviewerComment", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerComment() {
       _builder.clearReviewerComment()
@@ -785,7 +769,7 @@ public object ReviewKt {
      * Status
      * ```
      *
-     * `.skillsphere.review.v1.ReviewStatus status = 25 [json_name = "status"];`
+     * `.skillsphere.review.v1.ReviewStatus status = 25 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.review.v1.ReviewStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -806,7 +790,7 @@ public object ReviewKt {
      * Status
      * ```
      *
-     * `.skillsphere.review.v1.ReviewStatus status = 25 [json_name = "status"];`
+     * `.skillsphere.review.v1.ReviewStatus status = 25 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

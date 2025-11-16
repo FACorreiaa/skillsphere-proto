@@ -1,0 +1,646 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "search/v1/search.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SearchService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "commonv1Location": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "ISO 3166-1 alpha-2 (e.g., \"US\", \"BR\")"
+        },
+        "timezone": {
+          "type": "string",
+          "title": "IANA timezone (e.g., \"America/New_York\")"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Geographic location for user matching"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "skillspheresearchv1GetTrendingSkillsResponse": {
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/skillspheresearchv1TrendingSkill"
+          }
+        },
+        "computedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "skillspheresearchv1SearchSkillsResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SkillSearchResult"
+          }
+        }
+      }
+    },
+    "skillspheresearchv1TrendingSkill": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "$ref": "#/definitions/v1Skill"
+        },
+        "trendScore": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sessionsCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "growthRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "rank": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1AdvancedSearchResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSearchResult"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "metadata": {
+          "$ref": "#/definitions/v1SearchMetadata"
+        }
+      }
+    },
+    "v1Availability": {
+      "type": "object",
+      "properties": {
+        "timeSlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TimeSlot"
+          }
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "title": "User availability schedule"
+    },
+    "v1DayOfWeek": {
+      "type": "string",
+      "enum": [
+        "DAY_OF_WEEK_UNSPECIFIED",
+        "DAY_OF_WEEK_MONDAY",
+        "DAY_OF_WEEK_TUESDAY",
+        "DAY_OF_WEEK_WEDNESDAY",
+        "DAY_OF_WEEK_THURSDAY",
+        "DAY_OF_WEEK_FRIDAY",
+        "DAY_OF_WEEK_SATURDAY",
+        "DAY_OF_WEEK_SUNDAY"
+      ],
+      "default": "DAY_OF_WEEK_UNSPECIFIED",
+      "title": "Days of the week for availability"
+    },
+    "v1FeaturedUser": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        },
+        "featureReason": {
+          "type": "string"
+        },
+        "badge": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetFeaturedUsersResponse": {
+      "type": "object",
+      "properties": {
+        "users": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FeaturedUser"
+          }
+        }
+      }
+    },
+    "v1GetSearchSuggestionsResponse": {
+      "type": "object",
+      "properties": {
+        "suggestions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Suggestion"
+          }
+        }
+      }
+    },
+    "v1ProficiencyLevel": {
+      "type": "string",
+      "enum": [
+        "PROFICIENCY_LEVEL_UNSPECIFIED",
+        "PROFICIENCY_LEVEL_BEGINNER",
+        "PROFICIENCY_LEVEL_INTERMEDIATE",
+        "PROFICIENCY_LEVEL_EXPERT"
+      ],
+      "default": "PROFICIENCY_LEVEL_UNSPECIFIED",
+      "description": "- PROFICIENCY_LEVEL_BEGINNER: 1-3\n - PROFICIENCY_LEVEL_INTERMEDIATE: 4-7\n - PROFICIENCY_LEVEL_EXPERT: 8-10",
+      "title": "Proficiency level for skills (1-10 scale)"
+    },
+    "v1SearchFilters": {
+      "type": "object",
+      "properties": {
+        "categories": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1SkillCategory"
+          }
+        },
+        "skillIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location"
+        },
+        "maxDistanceKm": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minProficiency": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "minSubscription": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "verifiedOnly": {
+          "type": "boolean"
+        },
+        "minRating": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Search filters (reusable across services)"
+    },
+    "v1SearchMetadata": {
+      "type": "object",
+      "properties": {
+        "queryTimeMs": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "queryId": {
+          "type": "string"
+        },
+        "appliedFilters": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1SearchQuery": {
+      "type": "object",
+      "properties": {
+        "skillIdsOffered": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "User filters"
+        },
+        "skillIdsWanted": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "minProficiency": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location",
+          "title": "Location filters"
+        },
+        "maxDistanceKm": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "availableDays": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1DayOfWeek"
+          },
+          "title": "Availability filters"
+        },
+        "timezone": {
+          "type": "string"
+        },
+        "minRating": {
+          "type": "number",
+          "format": "double",
+          "title": "Rating filters"
+        },
+        "minSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minTier": {
+          "$ref": "#/definitions/v1SubscriptionTier",
+          "title": "Subscription filters"
+        },
+        "verifiedOnly": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SearchSortBy": {
+      "type": "string",
+      "enum": [
+        "SEARCH_SORT_BY_UNSPECIFIED",
+        "SEARCH_SORT_BY_RELEVANCE",
+        "SEARCH_SORT_BY_RATING",
+        "SEARCH_SORT_BY_SESSIONS",
+        "SEARCH_SORT_BY_DISTANCE",
+        "SEARCH_SORT_BY_RECENT"
+      ],
+      "default": "SEARCH_SORT_BY_UNSPECIFIED"
+    },
+    "v1SearchUsersResponse": {
+      "type": "object",
+      "properties": {
+        "results": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSearchResult"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "metadata": {
+          "$ref": "#/definitions/v1SearchMetadata"
+        }
+      }
+    },
+    "v1Skill": {
+      "type": "object",
+      "properties": {
+        "skillId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/v1SkillCategory"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Keywords for search (e.g., [\"backend\", \"django\"])"
+        },
+        "popularityScore": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Skill definition"
+    },
+    "v1SkillCategory": {
+      "type": "string",
+      "enum": [
+        "SKILL_CATEGORY_UNSPECIFIED",
+        "SKILL_CATEGORY_TECH",
+        "SKILL_CATEGORY_LANGUAGES",
+        "SKILL_CATEGORY_CREATIVE",
+        "SKILL_CATEGORY_PROFESSIONAL",
+        "SKILL_CATEGORY_HOBBIES",
+        "SKILL_CATEGORY_FITNESS",
+        "SKILL_CATEGORY_ACADEMICS",
+        "SKILL_CATEGORY_LIFE_SKILLS"
+      ],
+      "default": "SKILL_CATEGORY_UNSPECIFIED",
+      "description": "- SKILL_CATEGORY_TECH: Programming, DevOps, Data Science\n - SKILL_CATEGORY_LANGUAGES: English, Spanish, Mandarin\n - SKILL_CATEGORY_CREATIVE: Design, Music, Writing\n - SKILL_CATEGORY_PROFESSIONAL: Business, Finance, Marketing\n - SKILL_CATEGORY_HOBBIES: Cooking, Gaming, Gardening\n - SKILL_CATEGORY_FITNESS: Yoga, Weightlifting, Running\n - SKILL_CATEGORY_ACADEMICS: Math, Science, History\n - SKILL_CATEGORY_LIFE_SKILLS: Time management, Communication",
+      "title": "Skill categories for organizing skills"
+    },
+    "v1SkillSearchResult": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "$ref": "#/definitions/v1Skill"
+        },
+        "relevanceScore": {
+          "type": "number",
+          "format": "double"
+        },
+        "userCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isTrending": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SubscriptionTier": {
+      "type": "string",
+      "enum": [
+        "SUBSCRIPTION_TIER_UNSPECIFIED",
+        "SUBSCRIPTION_TIER_FREE",
+        "SUBSCRIPTION_TIER_PREMIUM",
+        "SUBSCRIPTION_TIER_PROFESSIONAL"
+      ],
+      "default": "SUBSCRIPTION_TIER_UNSPECIFIED",
+      "description": "- SUBSCRIPTION_TIER_FREE: Basic free tier\n - SUBSCRIPTION_TIER_PREMIUM: $5-10/month\n - SUBSCRIPTION_TIER_PROFESSIONAL: $15-20/month",
+      "title": "Subscription tier"
+    },
+    "v1Suggestion": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "popularity": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1TimeSlot": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "$ref": "#/definitions/v1DayOfWeek"
+        },
+        "startTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        },
+        "endTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        }
+      },
+      "title": "Time slot for availability"
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location"
+        },
+        "availability": {
+          "$ref": "#/definitions/v1Availability"
+        },
+        "status": {
+          "$ref": "#/definitions/v1UserStatus"
+        },
+        "subscriptionTier": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "skillsOffered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          },
+          "title": "Skills"
+        },
+        "skillsWanted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double",
+          "title": "Stats"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalReviews": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Metadata"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastActiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isVerified": {
+          "type": "boolean",
+          "description": "Blue checkmark for trusted experts",
+          "title": "Premium features"
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "IDs of blockchain certifications"
+        }
+      },
+      "title": "User profile"
+    },
+    "v1UserSearchResult": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        },
+        "relevanceScore": {
+          "type": "number",
+          "format": "double"
+        },
+        "matchedSkills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "snippet": {
+          "type": "string"
+        },
+        "distanceKm": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1UserSkill": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "proficiencyCategory": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "isOffered": {
+          "type": "boolean",
+          "title": "True if offering, false if wanting"
+        },
+        "acquiredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "experienceDescription": {
+          "type": "string"
+        }
+      },
+      "title": "User skill association (offered or wanted)"
+    },
+    "v1UserStatus": {
+      "type": "string",
+      "enum": [
+        "USER_STATUS_UNSPECIFIED",
+        "USER_STATUS_ACTIVE",
+        "USER_STATUS_SUSPENDED",
+        "USER_STATUS_BANNED",
+        "USER_STATUS_DELETED"
+      ],
+      "default": "USER_STATUS_UNSPECIFIED",
+      "title": "User account status"
+    }
+  }
+}

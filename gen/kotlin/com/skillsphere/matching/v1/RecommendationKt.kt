@@ -30,11 +30,7 @@ public object RecommendationKt {
     internal fun _build(): com.skillsphere.matching.v1.Recommendation = _builder.build()
 
     /**
-     * ```
-     * User ID or Skill ID
-     * ```
-     *
-     * `string item_id = 1 [json_name = "itemId"];`
+     * `string item_id = 1 [json_name = "itemId", (.buf.validate.field) = { ... }`
      */
     public var itemId: kotlin.String
       @kotlin.jvm.JvmName("getItemId")
@@ -44,22 +40,14 @@ public object RecommendationKt {
         _builder.itemId = value
       }
     /**
-     * ```
-     * User ID or Skill ID
-     * ```
-     *
-     * `string item_id = 1 [json_name = "itemId"];`
+     * `string item_id = 1 [json_name = "itemId", (.buf.validate.field) = { ... }`
      */
     public fun clearItemId() {
       _builder.clearItemId()
     }
 
     /**
-     * ```
-     * "user", "skill", "session"
-     * ```
-     *
-     * `string item_type = 2 [json_name = "itemType"];`
+     * `string item_type = 2 [json_name = "itemType", (.buf.validate.field) = { ... }`
      */
     public var itemType: kotlin.String
       @kotlin.jvm.JvmName("getItemType")
@@ -69,18 +57,14 @@ public object RecommendationKt {
         _builder.itemType = value
       }
     /**
-     * ```
-     * "user", "skill", "session"
-     * ```
-     *
-     * `string item_type = 2 [json_name = "itemType"];`
+     * `string item_type = 2 [json_name = "itemType", (.buf.validate.field) = { ... }`
      */
     public fun clearItemType() {
       _builder.clearItemType()
     }
 
     /**
-     * `string title = 3 [json_name = "title"];`
+     * `string title = 3 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -90,14 +74,14 @@ public object RecommendationKt {
         _builder.title = value
       }
     /**
-     * `string title = 3 [json_name = "title"];`
+     * `string title = 3 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -107,14 +91,14 @@ public object RecommendationKt {
         _builder.description = value
       }
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
     }
 
     /**
-     * `double relevance_score = 5 [json_name = "relevanceScore"];`
+     * `double relevance_score = 5 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public var relevanceScore: kotlin.Double
       @kotlin.jvm.JvmName("getRelevanceScore")
@@ -124,14 +108,14 @@ public object RecommendationKt {
         _builder.relevanceScore = value
       }
     /**
-     * `double relevance_score = 5 [json_name = "relevanceScore"];`
+     * `double relevance_score = 5 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public fun clearRelevanceScore() {
       _builder.clearRelevanceScore()
     }
 
     /**
-     * `string reason = 6 [json_name = "reason"];`
+     * `string reason = 6 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -141,7 +125,7 @@ public object RecommendationKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 6 [json_name = "reason"];`
+     * `string reason = 6 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()

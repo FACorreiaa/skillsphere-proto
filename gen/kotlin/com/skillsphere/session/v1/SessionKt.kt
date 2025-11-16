@@ -30,7 +30,7 @@ public object SessionKt {
     internal fun _build(): com.skillsphere.session.v1.Session = _builder.build()
 
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -40,18 +40,14 @@ public object SessionKt {
         _builder.sessionId = value
       }
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * ```
-     * User who created the session
-     * ```
-     *
-     * `string initiator_id = 2 [json_name = "initiatorId"];`
+     * `string initiator_id = 2 [json_name = "initiatorId", (.buf.validate.field) = { ... }`
      */
     public var initiatorId: kotlin.String
       @kotlin.jvm.JvmName("getInitiatorId")
@@ -61,22 +57,14 @@ public object SessionKt {
         _builder.initiatorId = value
       }
     /**
-     * ```
-     * User who created the session
-     * ```
-     *
-     * `string initiator_id = 2 [json_name = "initiatorId"];`
+     * `string initiator_id = 2 [json_name = "initiatorId", (.buf.validate.field) = { ... }`
      */
     public fun clearInitiatorId() {
       _builder.clearInitiatorId()
     }
 
     /**
-     * ```
-     * Other participant
-     * ```
-     *
-     * `string partner_id = 3 [json_name = "partnerId"];`
+     * `string partner_id = 3 [json_name = "partnerId", (.buf.validate.field) = { ... }`
      */
     public var partnerId: kotlin.String
       @kotlin.jvm.JvmName("getPartnerId")
@@ -86,11 +74,7 @@ public object SessionKt {
         _builder.partnerId = value
       }
     /**
-     * ```
-     * Other participant
-     * ```
-     *
-     * `string partner_id = 3 [json_name = "partnerId"];`
+     * `string partner_id = 3 [json_name = "partnerId", (.buf.validate.field) = { ... }`
      */
     public fun clearPartnerId() {
       _builder.clearPartnerId()
@@ -107,7 +91,7 @@ public object SessionKt {
      * Skills being exchanged
      * ```
      *
-     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @return A list containing the initiatorOffers.
      */
     public val initiatorOffers: com.google.protobuf.kotlin.DslList<kotlin.String, InitiatorOffersProxy>
@@ -120,7 +104,7 @@ public object SessionKt {
      * Skills being exchanged
      * ```
      *
-     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param value The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -133,7 +117,7 @@ public object SessionKt {
      * Skills being exchanged
      * ```
      *
-     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param value The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -147,7 +131,7 @@ public object SessionKt {
      * Skills being exchanged
      * ```
      *
-     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param values The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -160,7 +144,7 @@ public object SessionKt {
      * Skills being exchanged
      * ```
      *
-     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param values The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -174,7 +158,7 @@ public object SessionKt {
      * Skills being exchanged
      * ```
      *
-     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The initiatorOffers to set.
      */
@@ -187,7 +171,7 @@ public object SessionKt {
      * Skills being exchanged
      * ```
      *
-     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 4 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setInitiatorOffers")
@@ -201,11 +185,7 @@ public object SessionKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PartnerOffersProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Skills partner will teach
-     * ```
-     *
-     * `repeated string partner_offers = 5 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 5 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @return A list containing the partnerOffers.
      */
     public val partnerOffers: com.google.protobuf.kotlin.DslList<kotlin.String, PartnerOffersProxy>
@@ -214,11 +194,7 @@ public object SessionKt {
         _builder.partnerOffersList
       )
     /**
-     * ```
-     * Skills partner will teach
-     * ```
-     *
-     * `repeated string partner_offers = 5 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 5 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param value The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -227,11 +203,7 @@ public object SessionKt {
       _builder.addPartnerOffers(value)
     }
     /**
-     * ```
-     * Skills partner will teach
-     * ```
-     *
-     * `repeated string partner_offers = 5 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 5 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param value The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -241,11 +213,7 @@ public object SessionKt {
       add(value)
     }
     /**
-     * ```
-     * Skills partner will teach
-     * ```
-     *
-     * `repeated string partner_offers = 5 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 5 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param values The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -254,11 +222,7 @@ public object SessionKt {
       _builder.addAllPartnerOffers(values)
     }
     /**
-     * ```
-     * Skills partner will teach
-     * ```
-     *
-     * `repeated string partner_offers = 5 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 5 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param values The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -268,11 +232,7 @@ public object SessionKt {
       addAll(values)
     }
     /**
-     * ```
-     * Skills partner will teach
-     * ```
-     *
-     * `repeated string partner_offers = 5 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 5 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The partnerOffers to set.
      */
@@ -281,11 +241,7 @@ public object SessionKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PartnerOffersProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPartnerOffers(index, value)
     }/**
-     * ```
-     * Skills partner will teach
-     * ```
-     *
-     * `repeated string partner_offers = 5 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 5 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPartnerOffers")
@@ -417,7 +373,7 @@ public object SessionKt {
      * Status
      * ```
      *
-     * `.skillsphere.common.v1.SessionStatus status = 10 [json_name = "status"];`
+     * `.skillsphere.common.v1.SessionStatus status = 10 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.common.v1.SessionStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -438,18 +394,14 @@ public object SessionKt {
      * Status
      * ```
      *
-     * `.skillsphere.common.v1.SessionStatus status = 10 [json_name = "status"];`
+     * `.skillsphere.common.v1.SessionStatus status = 10 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
     }
 
     /**
-     * ```
-     * Video call link
-     * ```
-     *
-     * `string meeting_url = 11 [json_name = "meetingUrl"];`
+     * `string meeting_url = 11 [json_name = "meetingUrl", (.buf.validate.field) = { ... }`
      */
     public var meetingUrl: kotlin.String
       @kotlin.jvm.JvmName("getMeetingUrl")
@@ -459,22 +411,14 @@ public object SessionKt {
         _builder.meetingUrl = value
       }
     /**
-     * ```
-     * Video call link
-     * ```
-     *
-     * `string meeting_url = 11 [json_name = "meetingUrl"];`
+     * `string meeting_url = 11 [json_name = "meetingUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearMeetingUrl() {
       _builder.clearMeetingUrl()
     }
 
     /**
-     * ```
-     * Session agenda/notes
-     * ```
-     *
-     * `string notes = 12 [json_name = "notes"];`
+     * `string notes = 12 [json_name = "notes", (.buf.validate.field) = { ... }`
      */
     public var notes: kotlin.String
       @kotlin.jvm.JvmName("getNotes")
@@ -484,11 +428,7 @@ public object SessionKt {
         _builder.notes = value
       }
     /**
-     * ```
-     * Session agenda/notes
-     * ```
-     *
-     * `string notes = 12 [json_name = "notes"];`
+     * `string notes = 12 [json_name = "notes", (.buf.validate.field) = { ... }`
      */
     public fun clearNotes() {
       _builder.clearNotes()
@@ -561,7 +501,7 @@ public object SessionKt {
       get() = _builder.updatedAtOrNull
 
     /**
-     * `string cancellation_reason = 15 [json_name = "cancellationReason"];`
+     * `string cancellation_reason = 15 [json_name = "cancellationReason", (.buf.validate.field) = { ... }`
      */
     public var cancellationReason: kotlin.String
       @kotlin.jvm.JvmName("getCancellationReason")
@@ -571,7 +511,7 @@ public object SessionKt {
         _builder.cancellationReason = value
       }
     /**
-     * `string cancellation_reason = 15 [json_name = "cancellationReason"];`
+     * `string cancellation_reason = 15 [json_name = "cancellationReason", (.buf.validate.field) = { ... }`
      */
     public fun clearCancellationReason() {
       _builder.clearCancellationReason()

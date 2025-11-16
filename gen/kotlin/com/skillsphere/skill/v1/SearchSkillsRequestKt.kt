@@ -30,11 +30,7 @@ public object SearchSkillsRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.SearchSkillsRequest = _builder.build()
 
     /**
-     * ```
-     * Keyword search
-     * ```
-     *
-     * `string query = 1 [json_name = "query"];`
+     * `string query = 1 [json_name = "query", (.buf.validate.field) = { ... }`
      */
     public var query: kotlin.String
       @kotlin.jvm.JvmName("getQuery")
@@ -44,11 +40,7 @@ public object SearchSkillsRequestKt {
         _builder.query = value
       }
     /**
-     * ```
-     * Keyword search
-     * ```
-     *
-     * `string query = 1 [json_name = "query"];`
+     * `string query = 1 [json_name = "query", (.buf.validate.field) = { ... }`
      */
     public fun clearQuery() {
       _builder.clearQuery()
@@ -61,7 +53,7 @@ public object SearchSkillsRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CategoriesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
      public val categories: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -69,7 +61,7 @@ public object SearchSkillsRequestKt {
         _builder.categoriesList
       )
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -77,7 +69,7 @@ public object SearchSkillsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.add(value: com.skillsphere.common.v1.SkillCategory) {
       _builder.addCategories(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -86,7 +78,7 @@ public object SearchSkillsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(value: com.skillsphere.common.v1.SkillCategory) {
       add(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -94,7 +86,7 @@ public object SearchSkillsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.addAll(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       _builder.addAllCategories(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -103,7 +95,7 @@ public object SearchSkillsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       addAll(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The categories to set.
      */
@@ -112,7 +104,7 @@ public object SearchSkillsRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.set(index: kotlin.Int, value: com.skillsphere.common.v1.SkillCategory) {
       _builder.setCategories(index, value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 2 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearCategories")
@@ -120,7 +112,7 @@ public object SearchSkillsRequestKt {
       _builder.clearCategories()
     }
     /**
-     * `int32 limit = 3 [json_name = "limit"];`
+     * `int32 limit = 3 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -130,7 +122,7 @@ public object SearchSkillsRequestKt {
         _builder.limit = value
       }
     /**
-     * `int32 limit = 3 [json_name = "limit"];`
+     * `int32 limit = 3 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()

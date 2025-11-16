@@ -30,7 +30,7 @@ public object MatchingMetadataKt {
     internal fun _build(): com.skillsphere.matching.v1.MatchingMetadata = _builder.build()
 
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm_used = 1 [json_name = "algorithmUsed"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm_used = 1 [json_name = "algorithmUsed", (.buf.validate.field) = { ... }`
      */
     public var algorithmUsed: com.skillsphere.matching.v1.MatchingAlgorithm
       @kotlin.jvm.JvmName("getAlgorithmUsed")
@@ -47,14 +47,14 @@ public object MatchingMetadataKt {
         _builder.algorithmUsedValue = value
       }
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm_used = 1 [json_name = "algorithmUsed"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm_used = 1 [json_name = "algorithmUsed", (.buf.validate.field) = { ... }`
      */
     public fun clearAlgorithmUsed() {
       _builder.clearAlgorithmUsed()
     }
 
     /**
-     * `int32 total_candidates = 2 [json_name = "totalCandidates"];`
+     * `int32 total_candidates = 2 [json_name = "totalCandidates", (.buf.validate.field) = { ... }`
      */
     public var totalCandidates: kotlin.Int
       @kotlin.jvm.JvmName("getTotalCandidates")
@@ -64,14 +64,14 @@ public object MatchingMetadataKt {
         _builder.totalCandidates = value
       }
     /**
-     * `int32 total_candidates = 2 [json_name = "totalCandidates"];`
+     * `int32 total_candidates = 2 [json_name = "totalCandidates", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalCandidates() {
       _builder.clearTotalCandidates()
     }
 
     /**
-     * `int32 filtered_count = 3 [json_name = "filteredCount"];`
+     * `int32 filtered_count = 3 [json_name = "filteredCount", (.buf.validate.field) = { ... }`
      */
     public var filteredCount: kotlin.Int
       @kotlin.jvm.JvmName("getFilteredCount")
@@ -81,7 +81,7 @@ public object MatchingMetadataKt {
         _builder.filteredCount = value
       }
     /**
-     * `int32 filtered_count = 3 [json_name = "filteredCount"];`
+     * `int32 filtered_count = 3 [json_name = "filteredCount", (.buf.validate.field) = { ... }`
      */
     public fun clearFilteredCount() {
       _builder.clearFilteredCount()

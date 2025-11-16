@@ -30,7 +30,7 @@ public object TypingIndicatorKt {
     internal fun _build(): com.skillsphere.chat.v1.TypingIndicator = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object TypingIndicatorKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string conversation_id = 2 [json_name = "conversationId"];`
+     * `string conversation_id = 2 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public var conversationId: kotlin.String
       @kotlin.jvm.JvmName("getConversationId")
@@ -57,7 +57,7 @@ public object TypingIndicatorKt {
         _builder.conversationId = value
       }
     /**
-     * `string conversation_id = 2 [json_name = "conversationId"];`
+     * `string conversation_id = 2 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public fun clearConversationId() {
       _builder.clearConversationId()

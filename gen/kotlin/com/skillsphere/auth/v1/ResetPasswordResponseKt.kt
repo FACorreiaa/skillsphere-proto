@@ -47,7 +47,7 @@ public object ResetPasswordResponseKt {
     }
 
     /**
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public var message: kotlin.String
       @kotlin.jvm.JvmName("getMessage")
@@ -57,7 +57,7 @@ public object ResetPasswordResponseKt {
         _builder.message = value
       }
     /**
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public fun clearMessage() {
       _builder.clearMessage()

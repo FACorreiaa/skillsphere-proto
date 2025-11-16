@@ -30,7 +30,7 @@ public object RequestRevisionRequestKt {
     internal fun _build(): com.skillsphere.review.v1.RequestRevisionRequest = _builder.build()
 
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public var reviewId: kotlin.String
       @kotlin.jvm.JvmName("getReviewId")
@@ -40,14 +40,14 @@ public object RequestRevisionRequestKt {
         _builder.reviewId = value
       }
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewId() {
       _builder.clearReviewId()
     }
 
     /**
-     * `string requester_id = 2 [json_name = "requesterId"];`
+     * `string requester_id = 2 [json_name = "requesterId", (.buf.validate.field) = { ... }`
      */
     public var requesterId: kotlin.String
       @kotlin.jvm.JvmName("getRequesterId")
@@ -57,14 +57,14 @@ public object RequestRevisionRequestKt {
         _builder.requesterId = value
       }
     /**
-     * `string requester_id = 2 [json_name = "requesterId"];`
+     * `string requester_id = 2 [json_name = "requesterId", (.buf.validate.field) = { ... }`
      */
     public fun clearRequesterId() {
       _builder.clearRequesterId()
     }
 
     /**
-     * `string revision_notes = 3 [json_name = "revisionNotes"];`
+     * `string revision_notes = 3 [json_name = "revisionNotes", (.buf.validate.field) = { ... }`
      */
     public var revisionNotes: kotlin.String
       @kotlin.jvm.JvmName("getRevisionNotes")
@@ -74,7 +74,7 @@ public object RequestRevisionRequestKt {
         _builder.revisionNotes = value
       }
     /**
-     * `string revision_notes = 3 [json_name = "revisionNotes"];`
+     * `string revision_notes = 3 [json_name = "revisionNotes", (.buf.validate.field) = { ... }`
      */
     public fun clearRevisionNotes() {
       _builder.clearRevisionNotes()
@@ -87,7 +87,7 @@ public object RequestRevisionRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SpecificAreasProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string specific_areas = 4 [json_name = "specificAreas"];`
+     * `repeated string specific_areas = 4 [json_name = "specificAreas", (.buf.validate.field) = { ... }`
      * @return A list containing the specificAreas.
      */
     public val specificAreas: com.google.protobuf.kotlin.DslList<kotlin.String, SpecificAreasProxy>
@@ -96,7 +96,7 @@ public object RequestRevisionRequestKt {
         _builder.specificAreasList
       )
     /**
-     * `repeated string specific_areas = 4 [json_name = "specificAreas"];`
+     * `repeated string specific_areas = 4 [json_name = "specificAreas", (.buf.validate.field) = { ... }`
      * @param value The specificAreas to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +105,7 @@ public object RequestRevisionRequestKt {
       _builder.addSpecificAreas(value)
     }
     /**
-     * `repeated string specific_areas = 4 [json_name = "specificAreas"];`
+     * `repeated string specific_areas = 4 [json_name = "specificAreas", (.buf.validate.field) = { ... }`
      * @param value The specificAreas to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +115,7 @@ public object RequestRevisionRequestKt {
       add(value)
     }
     /**
-     * `repeated string specific_areas = 4 [json_name = "specificAreas"];`
+     * `repeated string specific_areas = 4 [json_name = "specificAreas", (.buf.validate.field) = { ... }`
      * @param values The specificAreas to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +124,7 @@ public object RequestRevisionRequestKt {
       _builder.addAllSpecificAreas(values)
     }
     /**
-     * `repeated string specific_areas = 4 [json_name = "specificAreas"];`
+     * `repeated string specific_areas = 4 [json_name = "specificAreas", (.buf.validate.field) = { ... }`
      * @param values The specificAreas to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +134,7 @@ public object RequestRevisionRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string specific_areas = 4 [json_name = "specificAreas"];`
+     * `repeated string specific_areas = 4 [json_name = "specificAreas", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The specificAreas to set.
      */
@@ -143,7 +143,7 @@ public object RequestRevisionRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SpecificAreasProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSpecificAreas(index, value)
     }/**
-     * `repeated string specific_areas = 4 [json_name = "specificAreas"];`
+     * `repeated string specific_areas = 4 [json_name = "specificAreas", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSpecificAreas")

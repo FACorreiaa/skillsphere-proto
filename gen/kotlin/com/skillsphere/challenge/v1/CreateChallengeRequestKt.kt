@@ -30,7 +30,7 @@ public object CreateChallengeRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.CreateChallengeRequest = _builder.build()
 
     /**
-     * `string title = 1 [json_name = "title"];`
+     * `string title = 1 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -40,14 +40,14 @@ public object CreateChallengeRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 1 [json_name = "title"];`
+     * `string title = 1 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 2 [json_name = "description"];`
+     * `string description = 2 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -57,7 +57,7 @@ public object CreateChallengeRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 2 [json_name = "description"];`
+     * `string description = 2 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -70,7 +70,7 @@ public object CreateChallengeRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @return A list containing the skillIds.
      */
     public val skillIds: com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>
@@ -79,7 +79,7 @@ public object CreateChallengeRequestKt {
         _builder.skillIdsList
       )
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -88,7 +88,7 @@ public object CreateChallengeRequestKt {
       _builder.addSkillIds(value)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -98,7 +98,7 @@ public object CreateChallengeRequestKt {
       add(value)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -107,7 +107,7 @@ public object CreateChallengeRequestKt {
       _builder.addAllSkillIds(values)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -117,7 +117,7 @@ public object CreateChallengeRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillIds to set.
      */
@@ -126,7 +126,7 @@ public object CreateChallengeRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillIds(index, value)
     }/**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillIds")
@@ -134,7 +134,7 @@ public object CreateChallengeRequestKt {
       _builder.clearSkillIds()
     }
     /**
-     * `.skillsphere.common.v1.ChallengeDifficulty difficulty = 4 [json_name = "difficulty"];`
+     * `.skillsphere.common.v1.ChallengeDifficulty difficulty = 4 [json_name = "difficulty", (.buf.validate.field) = { ... }`
      */
     public var difficulty: com.skillsphere.common.v1.ChallengeDifficulty
       @kotlin.jvm.JvmName("getDifficulty")
@@ -151,7 +151,7 @@ public object CreateChallengeRequestKt {
         _builder.difficultyValue = value
       }
     /**
-     * `.skillsphere.common.v1.ChallengeDifficulty difficulty = 4 [json_name = "difficulty"];`
+     * `.skillsphere.common.v1.ChallengeDifficulty difficulty = 4 [json_name = "difficulty", (.buf.validate.field) = { ... }`
      */
     public fun clearDifficulty() {
       _builder.clearDifficulty()
@@ -218,7 +218,7 @@ public object CreateChallengeRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class RulesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string rules = 7 [json_name = "rules"];`
+     * `repeated string rules = 7 [json_name = "rules", (.buf.validate.field) = { ... }`
      * @return A list containing the rules.
      */
     public val rules: com.google.protobuf.kotlin.DslList<kotlin.String, RulesProxy>
@@ -227,7 +227,7 @@ public object CreateChallengeRequestKt {
         _builder.rulesList
       )
     /**
-     * `repeated string rules = 7 [json_name = "rules"];`
+     * `repeated string rules = 7 [json_name = "rules", (.buf.validate.field) = { ... }`
      * @param value The rules to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -236,7 +236,7 @@ public object CreateChallengeRequestKt {
       _builder.addRules(value)
     }
     /**
-     * `repeated string rules = 7 [json_name = "rules"];`
+     * `repeated string rules = 7 [json_name = "rules", (.buf.validate.field) = { ... }`
      * @param value The rules to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -246,7 +246,7 @@ public object CreateChallengeRequestKt {
       add(value)
     }
     /**
-     * `repeated string rules = 7 [json_name = "rules"];`
+     * `repeated string rules = 7 [json_name = "rules", (.buf.validate.field) = { ... }`
      * @param values The rules to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -255,7 +255,7 @@ public object CreateChallengeRequestKt {
       _builder.addAllRules(values)
     }
     /**
-     * `repeated string rules = 7 [json_name = "rules"];`
+     * `repeated string rules = 7 [json_name = "rules", (.buf.validate.field) = { ... }`
      * @param values The rules to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -265,7 +265,7 @@ public object CreateChallengeRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string rules = 7 [json_name = "rules"];`
+     * `repeated string rules = 7 [json_name = "rules", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The rules to set.
      */
@@ -274,7 +274,7 @@ public object CreateChallengeRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, RulesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setRules(index, value)
     }/**
-     * `repeated string rules = 7 [json_name = "rules"];`
+     * `repeated string rules = 7 [json_name = "rules", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setRules")
@@ -288,7 +288,7 @@ public object CreateChallengeRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PrizesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes"];`
+     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes", (.buf.validate.field) = { ... }`
      */
      public val prizes: com.google.protobuf.kotlin.DslList<com.skillsphere.challenge.v1.Prize, PrizesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -296,7 +296,7 @@ public object CreateChallengeRequestKt {
         _builder.prizesList
       )
     /**
-     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes"];`
+     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes", (.buf.validate.field) = { ... }`
      * @param value The prizes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -305,7 +305,7 @@ public object CreateChallengeRequestKt {
       _builder.addPrizes(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes"];`
+     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes", (.buf.validate.field) = { ... }`
      * @param value The prizes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -315,7 +315,7 @@ public object CreateChallengeRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes"];`
+     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes", (.buf.validate.field) = { ... }`
      * @param values The prizes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -324,7 +324,7 @@ public object CreateChallengeRequestKt {
       _builder.addAllPrizes(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes"];`
+     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes", (.buf.validate.field) = { ... }`
      * @param values The prizes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -334,7 +334,7 @@ public object CreateChallengeRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes"];`
+     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The prizes to set.
      */
@@ -344,7 +344,7 @@ public object CreateChallengeRequestKt {
       _builder.setPrizes(index, value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes"];`
+     * `repeated .skillsphere.challenge.v1.Prize prizes = 8 [json_name = "prizes", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearPrizes")
@@ -353,7 +353,7 @@ public object CreateChallengeRequestKt {
     }
 
     /**
-     * `.skillsphere.challenge.v1.ChallengeType type = 9 [json_name = "type"];`
+     * `.skillsphere.challenge.v1.ChallengeType type = 9 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.challenge.v1.ChallengeType
       @kotlin.jvm.JvmName("getType")
@@ -370,7 +370,7 @@ public object CreateChallengeRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.challenge.v1.ChallengeType type = 9 [json_name = "type"];`
+     * `.skillsphere.challenge.v1.ChallengeType type = 9 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()

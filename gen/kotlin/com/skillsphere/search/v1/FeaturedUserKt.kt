@@ -57,11 +57,7 @@ public object FeaturedUserKt {
       get() = _builder.userOrNull
 
     /**
-     * ```
-     * Why they're featured
-     * ```
-     *
-     * `string feature_reason = 2 [json_name = "featureReason"];`
+     * `string feature_reason = 2 [json_name = "featureReason", (.buf.validate.field) = { ... }`
      */
     public var featureReason: kotlin.String
       @kotlin.jvm.JvmName("getFeatureReason")
@@ -71,22 +67,14 @@ public object FeaturedUserKt {
         _builder.featureReason = value
       }
     /**
-     * ```
-     * Why they're featured
-     * ```
-     *
-     * `string feature_reason = 2 [json_name = "featureReason"];`
+     * `string feature_reason = 2 [json_name = "featureReason", (.buf.validate.field) = { ... }`
      */
     public fun clearFeatureReason() {
       _builder.clearFeatureReason()
     }
 
     /**
-     * ```
-     * e.g., "Top Contributor", "Expert"
-     * ```
-     *
-     * `string badge = 3 [json_name = "badge"];`
+     * `string badge = 3 [json_name = "badge", (.buf.validate.field) = { ... }`
      */
     public var badge: kotlin.String
       @kotlin.jvm.JvmName("getBadge")
@@ -96,11 +84,7 @@ public object FeaturedUserKt {
         _builder.badge = value
       }
     /**
-     * ```
-     * e.g., "Top Contributor", "Expert"
-     * ```
-     *
-     * `string badge = 3 [json_name = "badge"];`
+     * `string badge = 3 [json_name = "badge", (.buf.validate.field) = { ... }`
      */
     public fun clearBadge() {
       _builder.clearBadge()

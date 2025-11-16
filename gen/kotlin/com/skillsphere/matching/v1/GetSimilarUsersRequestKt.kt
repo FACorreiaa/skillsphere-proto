@@ -30,7 +30,7 @@ public object GetSimilarUsersRequestKt {
     internal fun _build(): com.skillsphere.matching.v1.GetSimilarUsersRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetSimilarUsersRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -57,14 +57,14 @@ public object GetSimilarUsersRequestKt {
         _builder.limit = value
       }
     /**
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()
     }
 
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm", (.buf.validate.field) = { ... }`
      */
     public var algorithm: com.skillsphere.matching.v1.MatchingAlgorithm
       @kotlin.jvm.JvmName("getAlgorithm")
@@ -81,7 +81,7 @@ public object GetSimilarUsersRequestKt {
         _builder.algorithmValue = value
       }
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm", (.buf.validate.field) = { ... }`
      */
     public fun clearAlgorithm() {
       _builder.clearAlgorithm()

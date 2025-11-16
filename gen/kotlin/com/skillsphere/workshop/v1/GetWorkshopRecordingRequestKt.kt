@@ -30,7 +30,7 @@ public object GetWorkshopRecordingRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.GetWorkshopRecordingRequest = _builder.build()
 
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public var workshopId: kotlin.String
       @kotlin.jvm.JvmName("getWorkshopId")
@@ -40,18 +40,14 @@ public object GetWorkshopRecordingRequestKt {
         _builder.workshopId = value
       }
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public fun clearWorkshopId() {
       _builder.clearWorkshopId()
     }
 
     /**
-     * ```
-     * Check if user attended
-     * ```
-     *
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -61,11 +57,7 @@ public object GetWorkshopRecordingRequestKt {
         _builder.userId = value
       }
     /**
-     * ```
-     * Check if user attended
-     * ```
-     *
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()

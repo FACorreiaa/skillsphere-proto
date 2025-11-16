@@ -30,7 +30,7 @@ public object GetSkillRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.GetSkillRequest = _builder.build()
 
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -40,7 +40,7 @@ public object GetSkillRequestKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()

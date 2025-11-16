@@ -57,11 +57,7 @@ public object SkillSuggestionKt {
       get() = _builder.skillOrNull
 
     /**
-     * ```
-     * Why this is suggested
-     * ```
-     *
-     * `string reason = 2 [json_name = "reason"];`
+     * `string reason = 2 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -71,22 +67,14 @@ public object SkillSuggestionKt {
         _builder.reason = value
       }
     /**
-     * ```
-     * Why this is suggested
-     * ```
-     *
-     * `string reason = 2 [json_name = "reason"];`
+     * `string reason = 2 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()
     }
 
     /**
-     * ```
-     * 0.0-1.0
-     * ```
-     *
-     * `double relevance_score = 3 [json_name = "relevanceScore"];`
+     * `double relevance_score = 3 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public var relevanceScore: kotlin.Double
       @kotlin.jvm.JvmName("getRelevanceScore")
@@ -96,11 +84,7 @@ public object SkillSuggestionKt {
         _builder.relevanceScore = value
       }
     /**
-     * ```
-     * 0.0-1.0
-     * ```
-     *
-     * `double relevance_score = 3 [json_name = "relevanceScore"];`
+     * `double relevance_score = 3 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public fun clearRelevanceScore() {
       _builder.clearRelevanceScore()

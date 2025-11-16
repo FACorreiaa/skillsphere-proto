@@ -30,7 +30,7 @@ public object GetUpcomingSessionsRequestKt {
     internal fun _build(): com.skillsphere.session.v1.GetUpcomingSessionsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,18 +40,14 @@ public object GetUpcomingSessionsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * Default 7
-     * ```
-     *
-     * `int32 days_ahead = 2 [json_name = "daysAhead"];`
+     * `int32 days_ahead = 2 [json_name = "daysAhead", (.buf.validate.field) = { ... }`
      */
     public var daysAhead: kotlin.Int
       @kotlin.jvm.JvmName("getDaysAhead")
@@ -61,11 +57,7 @@ public object GetUpcomingSessionsRequestKt {
         _builder.daysAhead = value
       }
     /**
-     * ```
-     * Default 7
-     * ```
-     *
-     * `int32 days_ahead = 2 [json_name = "daysAhead"];`
+     * `int32 days_ahead = 2 [json_name = "daysAhead", (.buf.validate.field) = { ... }`
      */
     public fun clearDaysAhead() {
       _builder.clearDaysAhead()

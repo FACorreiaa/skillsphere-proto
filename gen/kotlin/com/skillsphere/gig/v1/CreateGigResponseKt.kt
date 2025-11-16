@@ -57,11 +57,7 @@ public object CreateGigResponseKt {
       get() = _builder.gigOrNull
 
     /**
-     * ```
-     * Payment held in escrow
-     * ```
-     *
-     * `string escrow_payment_id = 2 [json_name = "escrowPaymentId"];`
+     * `string escrow_payment_id = 2 [json_name = "escrowPaymentId", (.buf.validate.field) = { ... }`
      */
     public var escrowPaymentId: kotlin.String
       @kotlin.jvm.JvmName("getEscrowPaymentId")
@@ -71,11 +67,7 @@ public object CreateGigResponseKt {
         _builder.escrowPaymentId = value
       }
     /**
-     * ```
-     * Payment held in escrow
-     * ```
-     *
-     * `string escrow_payment_id = 2 [json_name = "escrowPaymentId"];`
+     * `string escrow_payment_id = 2 [json_name = "escrowPaymentId", (.buf.validate.field) = { ... }`
      */
     public fun clearEscrowPaymentId() {
       _builder.clearEscrowPaymentId()

@@ -30,7 +30,7 @@ public object RevokeCertificationRequestKt {
     internal fun _build(): com.skillsphere.certification.v1.RevokeCertificationRequest = _builder.build()
 
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public var certificationId: kotlin.String
       @kotlin.jvm.JvmName("getCertificationId")
@@ -40,18 +40,14 @@ public object RevokeCertificationRequestKt {
         _builder.certificationId = value
       }
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public fun clearCertificationId() {
       _builder.clearCertificationId()
     }
 
     /**
-     * ```
-     * Admin performing revocation
-     * ```
-     *
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -61,18 +57,14 @@ public object RevokeCertificationRequestKt {
         _builder.adminId = value
       }
     /**
-     * ```
-     * Admin performing revocation
-     * ```
-     *
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -82,7 +74,7 @@ public object RevokeCertificationRequestKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()

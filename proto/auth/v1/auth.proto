@@ -67,19 +67,54 @@ enum Role {
   IS_USER = 2;
 }
 message RegisterRequest {
-  string email = 1 [(buf.validate.field).string.email = true];
-  string username = 2;
-  string password = 3;
-  string display_name = 4;
+  string email = 1 [
+    (buf.validate.field).string = {
+      email: true
+      max_len: 254
+    }
+  ];
+  string username = 2 [
+    (buf.validate.field).string = {
+      min_len: 3
+      max_len: 30
+    }
+  ];
+  string password = 3 [
+    (buf.validate.field).string = {
+      min_len: 8
+      max_len: 128
+    }
+  ];
+  string display_name = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
 }
 
 message RegisterResponse {
-  string user_id = 1;
-  string access_token = 2;
-  string refresh_token = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string access_token = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
+  string refresh_token = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
   google.protobuf.Timestamp expires_at = 4;
   bool email_verification_required = 5;
-  Role role = 6;
+  Role role = 6 [(buf.validate.field).enum.defined_only = true];
 }
 
 // ============================================================================
@@ -87,25 +122,77 @@ message RegisterResponse {
 // ============================================================================
 
 message LoginRequest {
-  string email = 1;
-  string password = 2;
-  optional string device_id = 3;                 // Optional for device tracking
+  string email = 1 [
+    (buf.validate.field).string = {
+      email: true
+      max_len: 254
+    }
+  ];
+  string password = 2 [
+    (buf.validate.field).string = {
+      min_len: 8
+      max_len: 128
+    }
+  ];
+  optional string device_id = 3 [                // Optional for device tracking
+    (buf.validate.field).string.max_len = 128
+  ];
 }
 
 message LoginResponse {
-  string user_id = 1;
-  string access_token = 2;
-  string refresh_token = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string access_token = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
+  string refresh_token = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
   google.protobuf.Timestamp expires_at = 4;
   UserProfile user = 5;
 }
 
 message UserProfile {
-  string user_id = 1;
-  string email = 2;
-  string username = 3;
-  string display_name = 4;
-  string avatar_url = 5;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string email = 2 [
+    (buf.validate.field).string = {
+      email: true
+      max_len: 254
+    }
+  ];
+  string username = 3 [
+    (buf.validate.field).string = {
+      min_len: 3
+      max_len: 30
+    }
+  ];
+  string display_name = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  string avatar_url = 5 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
   bool is_verified = 6;
 }
 
@@ -114,8 +201,18 @@ message UserProfile {
 // ============================================================================
 
 message LogoutRequest {
-  string access_token = 1;
-  string refresh_token = 2;
+  string access_token = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
+  string refresh_token = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
 }
 
 message LogoutResponse {
@@ -127,12 +224,27 @@ message LogoutResponse {
 // ============================================================================
 
 message RefreshTokenRequest {
-  string refresh_token = 1;
+  string refresh_token = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
 }
 
 message RefreshTokenResponse {
-  string access_token = 1;
-  string refresh_token = 2;
+  string access_token = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
+  string refresh_token = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
   google.protobuf.Timestamp expires_at = 3;
 }
 
@@ -141,14 +253,32 @@ message RefreshTokenResponse {
 // ============================================================================
 
 message ValidateTokenRequest {
-  string access_token = 1;
+  string access_token = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
 }
 
 message ValidateTokenResponse {
   bool is_valid = 1;
-  string user_id = 2;
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp expires_at = 3;
-  repeated string permissions = 4;      // e.g., "user:read", "session:create"
+  repeated string permissions = 4 [     // e.g., "user:read", "session:create"
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 64
+      }
+    }
+  ];
 }
 
 // ============================================================================
@@ -156,15 +286,42 @@ message ValidateTokenResponse {
 // ============================================================================
 
 message OAuthLoginRequest {
-  OAuthProvider provider = 1;
-  string authorization_code = 2;
-  string redirect_uri = 3;
+  OAuthProvider provider = 1 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string authorization_code = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 512
+    }
+  ];
+  string redirect_uri = 3 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }
 
 message OAuthLoginResponse {
-  string user_id = 1;
-  string access_token = 2;
-  string refresh_token = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string access_token = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
+  string refresh_token = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
   google.protobuf.Timestamp expires_at = 4;
   UserProfile user = 5;
   bool is_new_user = 6;                 // True if account was just created
@@ -175,12 +332,19 @@ message OAuthLoginResponse {
 // ============================================================================
 
 message RequestPasswordResetRequest {
-  string email = 1;
+  string email = 1 [
+    (buf.validate.field).string = {
+      email: true
+      max_len: 254
+    }
+  ];
 }
 
 message RequestPasswordResetResponse {
   bool success = 1;
-  string message = 2;                   // "Email sent" or error message
+  string message = 2 [                  // "Email sent" or error message
+    (buf.validate.field).string.max_len = 200
+  ];
 }
 
 // ============================================================================
@@ -188,13 +352,25 @@ message RequestPasswordResetResponse {
 // ============================================================================
 
 message ResetPasswordRequest {
-  string reset_token = 1;
-  string new_password = 2;
+  string reset_token = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 512
+    }
+  ];
+  string new_password = 2 [
+    (buf.validate.field).string = {
+      min_len: 8
+      max_len: 128
+    }
+  ];
 }
 
 message ResetPasswordResponse {
   bool success = 1;
-  string message = 2;
+  string message = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }
 
 // ============================================================================
@@ -202,9 +378,24 @@ message ResetPasswordResponse {
 // ============================================================================
 
 message ChangePasswordRequest {
-  string user_id = 1;
-  string current_password = 2;
-  string new_password = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string current_password = 2 [
+    (buf.validate.field).string = {
+      min_len: 8
+      max_len: 128
+    }
+  ];
+  string new_password = 3 [
+    (buf.validate.field).string = {
+      min_len: 8
+      max_len: 128
+    }
+  ];
 }
 
 message ChangePasswordResponse {
@@ -216,12 +407,22 @@ message ChangePasswordResponse {
 // ============================================================================
 
 message VerifyEmailRequest {
-  string verification_token = 1;
+  string verification_token = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 512
+    }
+  ];
 }
 
 message VerifyEmailResponse {
   bool success = 1;
-  string user_id = 2;
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 // ============================================================================
@@ -229,10 +430,17 @@ message VerifyEmailResponse {
 // ============================================================================
 
 message ResendVerificationEmailRequest {
-  string email = 1;
+  string email = 1 [
+    (buf.validate.field).string = {
+      email: true
+      max_len: 254
+    }
+  ];
 }
 
 message ResendVerificationEmailResponse {
   bool success = 1;
-  string message = 2;
+  string message = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }

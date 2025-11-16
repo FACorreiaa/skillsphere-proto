@@ -1,0 +1,793 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "challenge/v1/challenge.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ChallengeService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "commonv1Location": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "ISO 3166-1 alpha-2 (e.g., \"US\", \"BR\")"
+        },
+        "timezone": {
+          "type": "string",
+          "title": "IANA timezone (e.g., \"America/New_York\")"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Geographic location for user matching"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Attachment": {
+      "type": "object",
+      "properties": {
+        "attachmentId": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/definitions/v1ContentType"
+        },
+        "fileSizeBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "File attachment (for reviews, workshops, etc.)"
+    },
+    "v1Availability": {
+      "type": "object",
+      "properties": {
+        "timeSlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TimeSlot"
+          }
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "title": "User availability schedule"
+    },
+    "v1AwardWinnersResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "winnerUserIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1Challenge": {
+      "type": "object",
+      "properties": {
+        "challengeId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "skillIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "difficulty": {
+          "$ref": "#/definitions/v1ChallengeDifficulty"
+        },
+        "startDate": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Timeline"
+        },
+        "endDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "votingEndDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rules": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Rules"
+        },
+        "judgingCriteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "maxParticipants": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "requiresVerification": {
+          "type": "boolean"
+        },
+        "prizes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Prize"
+          },
+          "title": "Rewards"
+        },
+        "hasSponsor": {
+          "type": "boolean"
+        },
+        "sponsorName": {
+          "type": "string"
+        },
+        "sponsorLogoUrl": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ChallengeStatus",
+          "title": "Status"
+        },
+        "type": {
+          "$ref": "#/definitions/v1ChallengeType"
+        },
+        "participantCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "entryCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "bannerImageUrl": {
+          "type": "string",
+          "title": "Metadata"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1ChallengeDifficulty": {
+      "type": "string",
+      "enum": [
+        "CHALLENGE_DIFFICULTY_UNSPECIFIED",
+        "CHALLENGE_DIFFICULTY_EASY",
+        "CHALLENGE_DIFFICULTY_MEDIUM",
+        "CHALLENGE_DIFFICULTY_HARD"
+      ],
+      "default": "CHALLENGE_DIFFICULTY_UNSPECIFIED",
+      "title": "Challenge difficulty"
+    },
+    "v1ChallengeEntry": {
+      "type": "object",
+      "properties": {
+        "entryId": {
+          "type": "string"
+        },
+        "challengeId": {
+          "type": "string"
+        },
+        "userId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Attachment"
+          }
+        },
+        "demoUrl": {
+          "type": "string"
+        },
+        "sourceUrl": {
+          "type": "string"
+        },
+        "voteCount": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Voting"
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/v1EntryStatus",
+          "title": "Status"
+        },
+        "submittedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "rank": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1ChallengeStatus": {
+      "type": "string",
+      "enum": [
+        "CHALLENGE_STATUS_UNSPECIFIED",
+        "CHALLENGE_STATUS_UPCOMING",
+        "CHALLENGE_STATUS_ACTIVE",
+        "CHALLENGE_STATUS_VOTING",
+        "CHALLENGE_STATUS_COMPLETED",
+        "CHALLENGE_STATUS_CANCELLED"
+      ],
+      "default": "CHALLENGE_STATUS_UNSPECIFIED"
+    },
+    "v1ChallengeType": {
+      "type": "string",
+      "enum": [
+        "CHALLENGE_TYPE_UNSPECIFIED",
+        "CHALLENGE_TYPE_WEEKLY",
+        "CHALLENGE_TYPE_MONTHLY",
+        "CHALLENGE_TYPE_SPECIAL_EVENT",
+        "CHALLENGE_TYPE_SPONSORED"
+      ],
+      "default": "CHALLENGE_TYPE_UNSPECIFIED"
+    },
+    "v1ContentType": {
+      "type": "string",
+      "enum": [
+        "CONTENT_TYPE_UNSPECIFIED",
+        "CONTENT_TYPE_CODE",
+        "CONTENT_TYPE_DESIGN",
+        "CONTENT_TYPE_VIDEO",
+        "CONTENT_TYPE_DOCUMENT",
+        "CONTENT_TYPE_AUDIO"
+      ],
+      "default": "CONTENT_TYPE_UNSPECIFIED",
+      "title": "Content type for reviews"
+    },
+    "v1CreateChallengeResponse": {
+      "type": "object",
+      "properties": {
+        "challenge": {
+          "$ref": "#/definitions/v1Challenge"
+        },
+        "shareableUrl": {
+          "type": "string"
+        }
+      }
+    },
+    "v1DayOfWeek": {
+      "type": "string",
+      "enum": [
+        "DAY_OF_WEEK_UNSPECIFIED",
+        "DAY_OF_WEEK_MONDAY",
+        "DAY_OF_WEEK_TUESDAY",
+        "DAY_OF_WEEK_WEDNESDAY",
+        "DAY_OF_WEEK_THURSDAY",
+        "DAY_OF_WEEK_FRIDAY",
+        "DAY_OF_WEEK_SATURDAY",
+        "DAY_OF_WEEK_SUNDAY"
+      ],
+      "default": "DAY_OF_WEEK_UNSPECIFIED",
+      "title": "Days of the week for availability"
+    },
+    "v1EntryStatus": {
+      "type": "string",
+      "enum": [
+        "ENTRY_STATUS_UNSPECIFIED",
+        "ENTRY_STATUS_DRAFT",
+        "ENTRY_STATUS_SUBMITTED",
+        "ENTRY_STATUS_DISQUALIFIED",
+        "ENTRY_STATUS_WINNER"
+      ],
+      "default": "ENTRY_STATUS_UNSPECIFIED"
+    },
+    "v1GetChallengeResponse": {
+      "type": "object",
+      "properties": {
+        "challenge": {
+          "$ref": "#/definitions/v1Challenge"
+        },
+        "userIsParticipating": {
+          "type": "boolean"
+        },
+        "userEntry": {
+          "$ref": "#/definitions/v1ChallengeEntry",
+          "title": "If user has submitted"
+        }
+      }
+    },
+    "v1GetLeaderboardResponse": {
+      "type": "object",
+      "properties": {
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1LeaderboardEntry"
+          }
+        },
+        "lastUpdated": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1GetTrendingChallengesResponse": {
+      "type": "object",
+      "properties": {
+        "challenges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Challenge"
+          }
+        }
+      }
+    },
+    "v1GetUserChallengesResponse": {
+      "type": "object",
+      "properties": {
+        "challenges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserChallenge"
+          }
+        }
+      }
+    },
+    "v1JoinChallengeResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LeaderboardEntry": {
+      "type": "object",
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user": {
+          "$ref": "#/definitions/v1User"
+        },
+        "entry": {
+          "$ref": "#/definitions/v1ChallengeEntry"
+        },
+        "totalVotes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "score": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1ListChallengesResponse": {
+      "type": "object",
+      "properties": {
+        "challenges": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Challenge"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Money": {
+      "type": "object",
+      "properties": {
+        "currencyCode": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "Money amount for payments"
+    },
+    "v1Prize": {
+      "type": "object",
+      "properties": {
+        "rank": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "cashPrize": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "perks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1ProficiencyLevel": {
+      "type": "string",
+      "enum": [
+        "PROFICIENCY_LEVEL_UNSPECIFIED",
+        "PROFICIENCY_LEVEL_BEGINNER",
+        "PROFICIENCY_LEVEL_INTERMEDIATE",
+        "PROFICIENCY_LEVEL_EXPERT"
+      ],
+      "default": "PROFICIENCY_LEVEL_UNSPECIFIED",
+      "description": "- PROFICIENCY_LEVEL_BEGINNER: 1-3\n - PROFICIENCY_LEVEL_INTERMEDIATE: 4-7\n - PROFICIENCY_LEVEL_EXPERT: 8-10",
+      "title": "Proficiency level for skills (1-10 scale)"
+    },
+    "v1SkillCategory": {
+      "type": "string",
+      "enum": [
+        "SKILL_CATEGORY_UNSPECIFIED",
+        "SKILL_CATEGORY_TECH",
+        "SKILL_CATEGORY_LANGUAGES",
+        "SKILL_CATEGORY_CREATIVE",
+        "SKILL_CATEGORY_PROFESSIONAL",
+        "SKILL_CATEGORY_HOBBIES",
+        "SKILL_CATEGORY_FITNESS",
+        "SKILL_CATEGORY_ACADEMICS",
+        "SKILL_CATEGORY_LIFE_SKILLS"
+      ],
+      "default": "SKILL_CATEGORY_UNSPECIFIED",
+      "description": "- SKILL_CATEGORY_TECH: Programming, DevOps, Data Science\n - SKILL_CATEGORY_LANGUAGES: English, Spanish, Mandarin\n - SKILL_CATEGORY_CREATIVE: Design, Music, Writing\n - SKILL_CATEGORY_PROFESSIONAL: Business, Finance, Marketing\n - SKILL_CATEGORY_HOBBIES: Cooking, Gaming, Gardening\n - SKILL_CATEGORY_FITNESS: Yoga, Weightlifting, Running\n - SKILL_CATEGORY_ACADEMICS: Math, Science, History\n - SKILL_CATEGORY_LIFE_SKILLS: Time management, Communication",
+      "title": "Skill categories for organizing skills"
+    },
+    "v1SubmitEntryResponse": {
+      "type": "object",
+      "properties": {
+        "entry": {
+          "$ref": "#/definitions/v1ChallengeEntry"
+        },
+        "confirmationMessage": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SubscriptionTier": {
+      "type": "string",
+      "enum": [
+        "SUBSCRIPTION_TIER_UNSPECIFIED",
+        "SUBSCRIPTION_TIER_FREE",
+        "SUBSCRIPTION_TIER_PREMIUM",
+        "SUBSCRIPTION_TIER_PROFESSIONAL"
+      ],
+      "default": "SUBSCRIPTION_TIER_UNSPECIFIED",
+      "description": "- SUBSCRIPTION_TIER_FREE: Basic free tier\n - SUBSCRIPTION_TIER_PREMIUM: $5-10/month\n - SUBSCRIPTION_TIER_PROFESSIONAL: $15-20/month",
+      "title": "Subscription tier"
+    },
+    "v1TimeSlot": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "$ref": "#/definitions/v1DayOfWeek"
+        },
+        "startTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        },
+        "endTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        }
+      },
+      "title": "Time slot for availability"
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location"
+        },
+        "availability": {
+          "$ref": "#/definitions/v1Availability"
+        },
+        "status": {
+          "$ref": "#/definitions/v1UserStatus"
+        },
+        "subscriptionTier": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "skillsOffered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          },
+          "title": "Skills"
+        },
+        "skillsWanted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double",
+          "title": "Stats"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalReviews": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Metadata"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastActiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isVerified": {
+          "type": "boolean",
+          "description": "Blue checkmark for trusted experts",
+          "title": "Premium features"
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "IDs of blockchain certifications"
+        }
+      },
+      "title": "User profile"
+    },
+    "v1UserChallenge": {
+      "type": "object",
+      "properties": {
+        "challenge": {
+          "$ref": "#/definitions/v1Challenge"
+        },
+        "userEntry": {
+          "$ref": "#/definitions/v1ChallengeEntry"
+        },
+        "userRank": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hasWon": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1UserSkill": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "proficiencyCategory": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "isOffered": {
+          "type": "boolean",
+          "title": "True if offering, false if wanting"
+        },
+        "acquiredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "experienceDescription": {
+          "type": "string"
+        }
+      },
+      "title": "User skill association (offered or wanted)"
+    },
+    "v1UserStatus": {
+      "type": "string",
+      "enum": [
+        "USER_STATUS_UNSPECIFIED",
+        "USER_STATUS_ACTIVE",
+        "USER_STATUS_SUSPENDED",
+        "USER_STATUS_BANNED",
+        "USER_STATUS_DELETED"
+      ],
+      "default": "USER_STATUS_UNSPECIFIED",
+      "title": "User account status"
+    },
+    "v1Vote": {
+      "type": "object",
+      "properties": {
+        "voteId": {
+          "type": "string"
+        },
+        "entryId": {
+          "type": "string"
+        },
+        "voterId": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "votedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1VoteOnEntryResponse": {
+      "type": "object",
+      "properties": {
+        "vote": {
+          "$ref": "#/definitions/v1Vote"
+        },
+        "updatedEntry": {
+          "$ref": "#/definitions/v1ChallengeEntry"
+        }
+      }
+    },
+    "v1Winner": {
+      "type": "object",
+      "properties": {
+        "entryId": {
+          "type": "string"
+        },
+        "rank": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "prizeDescription": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

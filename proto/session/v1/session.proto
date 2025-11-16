@@ -4,6 +4,7 @@ package skillsphere.session.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/session/v1;sessionv1";
 
@@ -45,13 +46,44 @@ service SessionService {
 // ============================================================================
 
 message Session {
-  string session_id = 1;
-  string initiator_id = 2;              // User who created the session
-  string partner_id = 3;                // Other participant
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string initiator_id = 2 [             // User who created the session
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string partner_id = 3 [               // Other participant
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 
   // Skills being exchanged
-  repeated string initiator_offers = 4;  // Skills initiator will teach
-  repeated string partner_offers = 5;    // Skills partner will teach
+  repeated string initiator_offers = 4 [ // Skills initiator will teach
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  repeated string partner_offers = 5 [   // Skills partner will teach
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 
   // Scheduling
   google.protobuf.Timestamp scheduled_start = 6;
@@ -60,14 +92,25 @@ message Session {
   google.protobuf.Timestamp actual_end = 9;
 
   // Status
-  skillsphere.common.v1.SessionStatus status = 10;
-  string meeting_url = 11;              // Video call link
-  string notes = 12;                    // Session agenda/notes
+  skillsphere.common.v1.SessionStatus status = 10 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string meeting_url = 11 [             // Video call link
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  string notes = 12 [                   // Session agenda/notes
+    (buf.validate.field).string.max_len = 2000
+  ];
 
   // Metadata
   google.protobuf.Timestamp created_at = 13;
   google.protobuf.Timestamp updated_at = 14;
-  string cancellation_reason = 15;
+  string cancellation_reason = 15 [
+    (buf.validate.field).string.max_len = 500
+  ];
   bool is_premium = 16;                 // Premium feature flag
 }
 
@@ -76,18 +119,54 @@ message Session {
 // ============================================================================
 
 message CreateSessionRequest {
-  string initiator_id = 1;
-  string partner_id = 2;
-  repeated string initiator_offers = 3;
-  repeated string partner_offers = 4;
+  string initiator_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string partner_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated string initiator_offers = 3 [
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 20
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  repeated string partner_offers = 4 [
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 20
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
   google.protobuf.Timestamp scheduled_start = 5;
   google.protobuf.Timestamp scheduled_end = 6;
-  string notes = 7;
+  string notes = 7 [
+    (buf.validate.field).string.max_len = 2000
+  ];
 }
 
 message CreateSessionResponse {
   Session session = 1;
-  string invitation_message = 2;        // Pre-formatted message to send partner
+  string invitation_message = 2 [       // Pre-formatted message to send partner
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 // ============================================================================
@@ -95,7 +174,12 @@ message CreateSessionResponse {
 // ============================================================================
 
 message GetSessionRequest {
-  string session_id = 1;
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetSessionResponse {
@@ -109,12 +193,35 @@ message GetSessionResponse {
 // ============================================================================
 
 message UpdateSessionRequest {
-  string session_id = 1;
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp scheduled_start = 2;
   google.protobuf.Timestamp scheduled_end = 3;
-  string notes = 4;
-  repeated string initiator_offers = 5;
-  repeated string partner_offers = 6;
+  string notes = 4 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated string initiator_offers = 5 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  repeated string partner_offers = 6 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 }
 
 message UpdateSessionResponse {
@@ -126,9 +233,21 @@ message UpdateSessionResponse {
 // ============================================================================
 
 message CancelSessionRequest {
-  string session_id = 1;
-  string user_id = 2;                   // Who is cancelling
-  string reason = 3;
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [                  // Who is cancelling
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message CancelSessionResponse {
@@ -141,8 +260,18 @@ message CancelSessionResponse {
 // ============================================================================
 
 message StartSessionRequest {
-  string session_id = 1;
-  string user_id = 2;
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message StartSessionResponse {
@@ -155,9 +284,21 @@ message StartSessionResponse {
 // ============================================================================
 
 message CompleteSessionRequest {
-  string session_id = 1;
-  string user_id = 2;
-  string summary = 3;                   // Session summary
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string summary = 3 [                  // Session summary
+    (buf.validate.field).string.max_len = 2000
+  ];
 }
 
 message CompleteSessionResponse {
@@ -170,18 +311,36 @@ message CompleteSessionResponse {
 // ============================================================================
 
 message ListUserSessionsRequest {
-  string user_id = 1;
-  int32 page_size = 2;
-  string page_token = 3;
-  skillsphere.common.v1.SessionStatus status_filter = 4;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 page_size = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 3 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  skillsphere.common.v1.SessionStatus status_filter = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp start_date = 5;
   google.protobuf.Timestamp end_date = 6;
 }
 
 message ListUserSessionsResponse {
   repeated Session sessions = 1;
-  string next_page_token = 2;
-  int32 total_count = 3;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  int32 total_count = 3 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // ============================================================================
@@ -189,11 +348,36 @@ message ListUserSessionsResponse {
 // ============================================================================
 
 message RateSessionRequest {
-  string session_id = 1;
-  string reviewer_id = 2;               // User giving the rating
-  int32 score = 3;                      // 1-5 stars
-  string comment = 4;
-  repeated string tags = 5;             // e.g., "helpful", "punctual", "knowledgeable"
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewer_id = 2 [              // User giving the rating
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 score = 3 [                     // 1-5 stars
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string comment = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  repeated string tags = 5 [            // e.g., "helpful", "punctual", "knowledgeable"
+    (buf.validate.field).repeated.max_items = 10,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    }
+  ];
 }
 
 message RateSessionResponse {
@@ -207,15 +391,39 @@ message RateSessionResponse {
 // ============================================================================
 
 message ReportSessionRequest {
-  string session_id = 1;
-  string reporter_id = 2;
-  string reason = 3;
-  string description = 4;
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reporter_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 200
+  ];
+  string description = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message ReportSessionResponse {
-  string report_id = 1;
-  string status = 2;                    // "pending", "under_review", "resolved"
+  string report_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string status = 2 [                   // "pending", "under_review", "resolved"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 32
+    }
+  ];
 }
 
 // ============================================================================
@@ -223,8 +431,18 @@ message ReportSessionResponse {
 // ============================================================================
 
 message GetUpcomingSessionsRequest {
-  string user_id = 1;
-  int32 days_ahead = 2;                 // Default 7
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 days_ahead = 2 [                // Default 7
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 30
+    }
+  ];
 }
 
 message GetUpcomingSessionsResponse {

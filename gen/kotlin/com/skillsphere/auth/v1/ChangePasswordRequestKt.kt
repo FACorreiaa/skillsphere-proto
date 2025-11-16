@@ -30,7 +30,7 @@ public object ChangePasswordRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.ChangePasswordRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object ChangePasswordRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string current_password = 2 [json_name = "currentPassword"];`
+     * `string current_password = 2 [json_name = "currentPassword", (.buf.validate.field) = { ... }`
      */
     public var currentPassword: kotlin.String
       @kotlin.jvm.JvmName("getCurrentPassword")
@@ -57,14 +57,14 @@ public object ChangePasswordRequestKt {
         _builder.currentPassword = value
       }
     /**
-     * `string current_password = 2 [json_name = "currentPassword"];`
+     * `string current_password = 2 [json_name = "currentPassword", (.buf.validate.field) = { ... }`
      */
     public fun clearCurrentPassword() {
       _builder.clearCurrentPassword()
     }
 
     /**
-     * `string new_password = 3 [json_name = "newPassword"];`
+     * `string new_password = 3 [json_name = "newPassword", (.buf.validate.field) = { ... }`
      */
     public var newPassword: kotlin.String
       @kotlin.jvm.JvmName("getNewPassword")
@@ -74,7 +74,7 @@ public object ChangePasswordRequestKt {
         _builder.newPassword = value
       }
     /**
-     * `string new_password = 3 [json_name = "newPassword"];`
+     * `string new_password = 3 [json_name = "newPassword", (.buf.validate.field) = { ... }`
      */
     public fun clearNewPassword() {
       _builder.clearNewPassword()

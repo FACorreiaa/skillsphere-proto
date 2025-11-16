@@ -4,6 +4,7 @@ package skillsphere.review.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/review/v1;reviewv1";
 
@@ -77,22 +78,65 @@ enum ReviewDepth {
 // ============================================================================
 
 message Review {
-  string review_id = 1;
-  string requester_id = 2;
-  string reviewer_id = 3;
-  string skill_id = 4;
+  string review_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string requester_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewer_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_id = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 
   // Request details
-  ReviewType type = 5;
-  ReviewDepth depth = 6;
-  string title = 7;
-  string description = 8;
-  repeated skillsphere.common.v1.Attachment content = 9;
-  repeated string specific_questions = 10;
+  ReviewType type = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ReviewDepth depth = 6 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string title = 7 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 8 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment content = 9 [
+    (buf.validate.field).repeated.max_items = 20
+  ];
+  repeated string specific_questions = 10 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
 
   // Pricing
   skillsphere.common.v1.Money price = 11;
-  string payment_id = 12;
+  string payment_id = 12 [
+    (buf.validate.field).string.max_len = 50
+  ];
 
   // Timeline
   google.protobuf.Timestamp requested_at = 13;
@@ -101,38 +145,121 @@ message Review {
   google.protobuf.Timestamp completed_at = 16;
 
   // Review content
-  string feedback = 17;
-  repeated FeedbackSection sections = 18;
-  repeated skillsphere.common.v1.Attachment attachments = 19;
-  string video_feedback_url = 20;            // Optional video walkthrough
+  string feedback = 17 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated FeedbackSection sections = 18 [
+    (buf.validate.field).repeated.max_items = 50
+  ];
+  repeated skillsphere.common.v1.Attachment attachments = 19 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  string video_feedback_url = 20 [           // Optional video walkthrough
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 
   // Ratings
-  int32 requester_rating = 21;               // Requester rates the review
-  string requester_comment = 22;
-  int32 reviewer_rating = 23;                // Reviewer rates the experience
-  string reviewer_comment = 24;
+  int32 requester_rating = 21 [              // Requester rates the review
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string requester_comment = 22 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  int32 reviewer_rating = 23 [               // Reviewer rates the experience
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string reviewer_comment = 24 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 
   // Status
-  ReviewStatus status = 25;
+  ReviewStatus status = 25 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message FeedbackSection {
-  string title = 1;                          // e.g., "Code Quality", "Architecture"
-  string content = 2;
-  int32 rating = 3;                          // 1-5 stars for this aspect
-  repeated string strengths = 4;
-  repeated string improvements = 5;
-  repeated string resources = 6;             // Recommended learning resources
+  string title = 1 [                         // e.g., "Code Quality", "Architecture"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  string content = 2 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  int32 rating = 3 [                         // 1-5 stars for this aspect
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  repeated string strengths = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  repeated string improvements = 5 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  repeated string resources = 6 [            // Recommended learning resources
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 }
 
 message Reviewer {
   skillsphere.common.v1.User user = 1;
-  repeated string expertise = 2;             // Skill IDs
-  double average_review_rating = 3;
-  int32 total_reviews = 4;
-  int32 response_time_hours = 5;             // Average time to accept
+  repeated string expertise = 2 [            // Skill IDs
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  double average_review_rating = 3 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
+  int32 total_reviews = 4 [(buf.validate.field).int32.gte = 0];
+  int32 response_time_hours = 5 [            // Average time to accept
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 168
+    }
+  ];
   skillsphere.common.v1.Money hourly_rate = 6;
-  repeated ReviewType review_types = 7;
+  repeated ReviewType review_types = 7 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
   bool is_available = 8;
 }
 
@@ -141,23 +268,63 @@ message Reviewer {
 // ============================================================================
 
 message RequestReviewRequest {
-  string requester_id = 1;
-  string reviewer_id = 2;                    // Specific reviewer or empty for matching
-  string skill_id = 3;
-  ReviewType type = 4;
-  ReviewDepth depth = 5;
-  string title = 6;
-  string description = 7;
-  repeated skillsphere.common.v1.Attachment content = 8;
-  repeated string specific_questions = 9;
+  string requester_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewer_id = 2 [                   // Specific reviewer or empty for matching
+    (buf.validate.field).string.max_len = 50
+  ];
+  string skill_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  ReviewType type = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ReviewDepth depth = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string title = 6 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 7 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment content = 8 [
+    (buf.validate.field).repeated.max_items = 20
+  ];
+  repeated string specific_questions = 9 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
   google.protobuf.Timestamp deadline = 10;
-  string payment_method_id = 11;
+  string payment_method_id = 11 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
 }
 
 message RequestReviewResponse {
   Review review = 1;
   skillsphere.common.v1.Money total_price = 2;
-  string escrow_payment_id = 3;
+  string escrow_payment_id = 3 [
+    (buf.validate.field).string.max_len = 50
+  ];
 }
 
 // ============================================================================
@@ -165,7 +332,12 @@ message RequestReviewResponse {
 // ============================================================================
 
 message GetReviewRequest {
-  string review_id = 1;
+  string review_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetReviewResponse {
@@ -179,12 +351,33 @@ message GetReviewResponse {
 // ============================================================================
 
 message SubmitReviewRequest {
-  string review_id = 1;
-  string reviewer_id = 2;
-  string feedback = 3;
-  repeated FeedbackSection sections = 4;
-  repeated skillsphere.common.v1.Attachment attachments = 5;
-  string video_feedback_url = 6;
+  string review_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewer_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string feedback = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated FeedbackSection sections = 4 [
+    (buf.validate.field).repeated.max_items = 50
+  ];
+  repeated skillsphere.common.v1.Attachment attachments = 5 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  string video_feedback_url = 6 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }
 
 message SubmitReviewResponse {
@@ -197,10 +390,22 @@ message SubmitReviewResponse {
 // ============================================================================
 
 message ListReviewersRequest {
-  string skill_id = 1;
-  ReviewType type = 2;
+  string skill_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  ReviewType type = 2 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   skillsphere.common.v1.Money max_price = 3;
-  int32 min_rating = 4;
+  int32 min_rating = 4 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
   bool available_now = 5;
 }
 
@@ -213,10 +418,17 @@ message ListReviewersResponse {
 // ============================================================================
 
 message GetUserReviewsRequest {
-  string user_id = 1;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   bool as_requester = 2;
   bool as_reviewer = 3;
-  ReviewStatus status = 4;
+  ReviewStatus status = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message GetUserReviewsResponse {
@@ -229,7 +441,12 @@ message GetUserReviewsResponse {
 // ============================================================================
 
 message GetPendingReviewsRequest {
-  string reviewer_id = 1;
+  string reviewer_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetPendingReviewsResponse {
@@ -242,8 +459,18 @@ message GetPendingReviewsResponse {
 // ============================================================================
 
 message AcceptReviewRequestRequest {
-  string review_id = 1;
-  string reviewer_id = 2;
+  string review_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewer_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp estimated_completion = 3;
 }
 
@@ -256,9 +483,21 @@ message AcceptReviewRequestResponse {
 // ============================================================================
 
 message DeclineReviewRequestRequest {
-  string review_id = 1;
-  string reviewer_id = 2;
-  string reason = 3;
+  string review_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewer_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message DeclineReviewRequestResponse {
@@ -271,10 +510,27 @@ message DeclineReviewRequestResponse {
 // ============================================================================
 
 message RateReviewRequest {
-  string review_id = 1;
-  string user_id = 2;
-  int32 rating = 3;
-  string comment = 4;
+  string review_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 rating = 3 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string comment = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message RateReviewResponse {
@@ -286,10 +542,30 @@ message RateReviewResponse {
 // ============================================================================
 
 message RequestRevisionRequest {
-  string review_id = 1;
-  string requester_id = 2;
-  string revision_notes = 3;
-  repeated string specific_areas = 4;
+  string review_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string requester_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string revision_notes = 3 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated string specific_areas = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 }
 
 message RequestRevisionResponse {

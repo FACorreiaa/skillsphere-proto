@@ -101,7 +101,7 @@ public object GetSkillRoadmapResponseKt {
     }
 
     /**
-     * `int32 estimated_hours = 2 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 2 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public var estimatedHours: kotlin.Int
       @kotlin.jvm.JvmName("getEstimatedHours")
@@ -111,7 +111,7 @@ public object GetSkillRoadmapResponseKt {
         _builder.estimatedHours = value
       }
     /**
-     * `int32 estimated_hours = 2 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 2 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public fun clearEstimatedHours() {
       _builder.clearEstimatedHours()
@@ -124,7 +124,7 @@ public object GetSkillRoadmapResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PrerequisitesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string prerequisites = 3 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 3 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @return A list containing the prerequisites.
      */
     public val prerequisites: com.google.protobuf.kotlin.DslList<kotlin.String, PrerequisitesProxy>
@@ -133,7 +133,7 @@ public object GetSkillRoadmapResponseKt {
         _builder.prerequisitesList
       )
     /**
-     * `repeated string prerequisites = 3 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 3 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param value The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -142,7 +142,7 @@ public object GetSkillRoadmapResponseKt {
       _builder.addPrerequisites(value)
     }
     /**
-     * `repeated string prerequisites = 3 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 3 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param value The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -152,7 +152,7 @@ public object GetSkillRoadmapResponseKt {
       add(value)
     }
     /**
-     * `repeated string prerequisites = 3 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 3 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param values The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -161,7 +161,7 @@ public object GetSkillRoadmapResponseKt {
       _builder.addAllPrerequisites(values)
     }
     /**
-     * `repeated string prerequisites = 3 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 3 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param values The prerequisites to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -171,7 +171,7 @@ public object GetSkillRoadmapResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string prerequisites = 3 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 3 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The prerequisites to set.
      */
@@ -180,7 +180,7 @@ public object GetSkillRoadmapResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PrerequisitesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPrerequisites(index, value)
     }/**
-     * `repeated string prerequisites = 3 [json_name = "prerequisites"];`
+     * `repeated string prerequisites = 3 [json_name = "prerequisites", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPrerequisites")
@@ -188,7 +188,7 @@ public object GetSkillRoadmapResponseKt {
       _builder.clearPrerequisites()
     }
     /**
-     * `string summary = 4 [json_name = "summary"];`
+     * `string summary = 4 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public var summary: kotlin.String
       @kotlin.jvm.JvmName("getSummary")
@@ -198,7 +198,7 @@ public object GetSkillRoadmapResponseKt {
         _builder.summary = value
       }
     /**
-     * `string summary = 4 [json_name = "summary"];`
+     * `string summary = 4 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public fun clearSummary() {
       _builder.clearSummary()

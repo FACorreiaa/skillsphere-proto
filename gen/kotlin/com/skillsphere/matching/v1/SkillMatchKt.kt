@@ -30,7 +30,7 @@ public object SkillMatchKt {
     internal fun _build(): com.skillsphere.matching.v1.SkillMatch = _builder.build()
 
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -40,14 +40,14 @@ public object SkillMatchKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
     }
 
     /**
-     * `int32 user_proficiency = 2 [json_name = "userProficiency"];`
+     * `int32 user_proficiency = 2 [json_name = "userProficiency", (.buf.validate.field) = { ... }`
      */
     public var userProficiency: kotlin.Int
       @kotlin.jvm.JvmName("getUserProficiency")
@@ -57,14 +57,14 @@ public object SkillMatchKt {
         _builder.userProficiency = value
       }
     /**
-     * `int32 user_proficiency = 2 [json_name = "userProficiency"];`
+     * `int32 user_proficiency = 2 [json_name = "userProficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearUserProficiency() {
       _builder.clearUserProficiency()
     }
 
     /**
-     * `int32 match_proficiency = 3 [json_name = "matchProficiency"];`
+     * `int32 match_proficiency = 3 [json_name = "matchProficiency", (.buf.validate.field) = { ... }`
      */
     public var matchProficiency: kotlin.Int
       @kotlin.jvm.JvmName("getMatchProficiency")
@@ -74,7 +74,7 @@ public object SkillMatchKt {
         _builder.matchProficiency = value
       }
     /**
-     * `int32 match_proficiency = 3 [json_name = "matchProficiency"];`
+     * `int32 match_proficiency = 3 [json_name = "matchProficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearMatchProficiency() {
       _builder.clearMatchProficiency()

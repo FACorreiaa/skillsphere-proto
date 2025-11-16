@@ -47,11 +47,7 @@ public object VerifyUserResponseKt {
     }
 
     /**
-     * ```
-     * URL to verification badge image
-     * ```
-     *
-     * `string badge_url = 2 [json_name = "badgeUrl"];`
+     * `string badge_url = 2 [json_name = "badgeUrl", (.buf.validate.field) = { ... }`
      */
     public var badgeUrl: kotlin.String
       @kotlin.jvm.JvmName("getBadgeUrl")
@@ -61,11 +57,7 @@ public object VerifyUserResponseKt {
         _builder.badgeUrl = value
       }
     /**
-     * ```
-     * URL to verification badge image
-     * ```
-     *
-     * `string badge_url = 2 [json_name = "badgeUrl"];`
+     * `string badge_url = 2 [json_name = "badgeUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearBadgeUrl() {
       _builder.clearBadgeUrl()

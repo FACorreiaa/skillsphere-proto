@@ -57,7 +57,7 @@ public object BanUserResponseKt {
       get() = _builder.userOrNull
 
     /**
-     * `string ban_id = 2 [json_name = "banId"];`
+     * `string ban_id = 2 [json_name = "banId", (.buf.validate.field) = { ... }`
      */
     public var banId: kotlin.String
       @kotlin.jvm.JvmName("getBanId")
@@ -67,7 +67,7 @@ public object BanUserResponseKt {
         _builder.banId = value
       }
     /**
-     * `string ban_id = 2 [json_name = "banId"];`
+     * `string ban_id = 2 [json_name = "banId", (.buf.validate.field) = { ... }`
      */
     public fun clearBanId() {
       _builder.clearBanId()

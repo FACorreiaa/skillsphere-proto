@@ -34,7 +34,7 @@ public object UserSkillKt {
     internal fun _build(): com.skillsphere.common.v1.UserSkill = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -44,14 +44,14 @@ public object UserSkillKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -61,18 +61,14 @@ public object UserSkillKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * ```
-     * 1-10 scale
-     * ```
-     *
-     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel"];`
+     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel", (.buf.validate.field) = { ... }`
      */
     public var proficiencyLevel: kotlin.Int
       @kotlin.jvm.JvmName("getProficiencyLevel")
@@ -82,18 +78,14 @@ public object UserSkillKt {
         _builder.proficiencyLevel = value
       }
     /**
-     * ```
-     * 1-10 scale
-     * ```
-     *
-     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel"];`
+     * `int32 proficiency_level = 3 [json_name = "proficiencyLevel", (.buf.validate.field) = { ... }`
      */
     public fun clearProficiencyLevel() {
       _builder.clearProficiencyLevel()
     }
 
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel proficiency_category = 4 [json_name = "proficiencyCategory"];`
+     * `.skillsphere.common.v1.ProficiencyLevel proficiency_category = 4 [json_name = "proficiencyCategory", (.buf.validate.field) = { ... }`
      */
     public var proficiencyCategory: com.skillsphere.common.v1.ProficiencyLevel
       @kotlin.jvm.JvmName("getProficiencyCategory")
@@ -110,7 +102,7 @@ public object UserSkillKt {
         _builder.proficiencyCategoryValue = value
       }
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel proficiency_category = 4 [json_name = "proficiencyCategory"];`
+     * `.skillsphere.common.v1.ProficiencyLevel proficiency_category = 4 [json_name = "proficiencyCategory", (.buf.validate.field) = { ... }`
      */
     public fun clearProficiencyCategory() {
       _builder.clearProficiencyCategory()
@@ -169,11 +161,7 @@ public object UserSkillKt {
       get() = _builder.acquiredAtOrNull
 
     /**
-     * ```
-     * Optional narrative (e.g., "5 years in ML")
-     * ```
-     *
-     * `string experience_description = 7 [json_name = "experienceDescription"];`
+     * `string experience_description = 7 [json_name = "experienceDescription", (.buf.validate.field) = { ... }`
      */
     public var experienceDescription: kotlin.String
       @kotlin.jvm.JvmName("getExperienceDescription")
@@ -183,11 +171,7 @@ public object UserSkillKt {
         _builder.experienceDescription = value
       }
     /**
-     * ```
-     * Optional narrative (e.g., "5 years in ML")
-     * ```
-     *
-     * `string experience_description = 7 [json_name = "experienceDescription"];`
+     * `string experience_description = 7 [json_name = "experienceDescription", (.buf.validate.field) = { ... }`
      */
     public fun clearExperienceDescription() {
       _builder.clearExperienceDescription()

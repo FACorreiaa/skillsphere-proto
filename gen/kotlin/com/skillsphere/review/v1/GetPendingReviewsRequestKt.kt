@@ -30,7 +30,7 @@ public object GetPendingReviewsRequestKt {
     internal fun _build(): com.skillsphere.review.v1.GetPendingReviewsRequest = _builder.build()
 
     /**
-     * `string reviewer_id = 1 [json_name = "reviewerId"];`
+     * `string reviewer_id = 1 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public var reviewerId: kotlin.String
       @kotlin.jvm.JvmName("getReviewerId")
@@ -40,7 +40,7 @@ public object GetPendingReviewsRequestKt {
         _builder.reviewerId = value
       }
     /**
-     * `string reviewer_id = 1 [json_name = "reviewerId"];`
+     * `string reviewer_id = 1 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerId() {
       _builder.clearReviewerId()

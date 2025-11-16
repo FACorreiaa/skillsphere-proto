@@ -3,6 +3,7 @@ syntax = "proto3";
 package skillsphere.skill.v1;
 
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/skill/v1;skillv1";
 
@@ -50,10 +51,27 @@ service SkillService {
 // ============================================================================
 
 message CreateSkillRequest {
-  string name = 1;
-  skillsphere.common.v1.SkillCategory category = 2;
-  string description = 3;
-  repeated string tags = 4;
+  string name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  skillsphere.common.v1.SkillCategory category = 2 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated string tags = 4 [
+    (buf.validate.field).repeated.max_items = 25,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    }
+  ];
 }
 
 message CreateSkillResponse {
@@ -65,7 +83,12 @@ message CreateSkillResponse {
 // ============================================================================
 
 message GetSkillRequest {
-  string skill_id = 1;
+  string skill_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetSkillResponse {
@@ -74,10 +97,15 @@ message GetSkillResponse {
 }
 
 message SkillStats {
-  int32 total_users_offering = 1;
-  int32 total_users_wanting = 2;
-  int32 total_sessions = 3;
-  double average_proficiency = 4;
+  int32 total_users_offering = 1 [(buf.validate.field).int32.gte = 0];
+  int32 total_users_wanting = 2 [(buf.validate.field).int32.gte = 0];
+  int32 total_sessions = 3 [(buf.validate.field).int32.gte = 0];
+  double average_proficiency = 4 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 10
+    }
+  ];
 }
 
 // ============================================================================
@@ -85,16 +113,31 @@ message SkillStats {
 // ============================================================================
 
 message ListSkillsRequest {
-  int32 page_size = 1;
-  string page_token = 2;
-  repeated skillsphere.common.v1.SkillCategory categories = 3;
-  string sort_by = 4;                   // "name", "popularity", "created_at"
+  int32 page_size = 1 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  repeated skillsphere.common.v1.SkillCategory categories = 3 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  string sort_by = 4 [                  // "name", "popularity", "created_at"
+    (buf.validate.field).string.max_len = 20
+  ];
 }
 
 message ListSkillsResponse {
   repeated skillsphere.common.v1.Skill skills = 1;
-  string next_page_token = 2;
-  int32 total_count = 3;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  int32 total_count = 3 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // ============================================================================
@@ -102,7 +145,7 @@ message ListSkillsResponse {
 // ============================================================================
 
 message UpdateSkillRequest {
-  skillsphere.common.v1.Skill skill = 1;
+  skillsphere.common.v1.Skill skill = 1 [(buf.validate.field).required = true];
 }
 
 message UpdateSkillResponse {
@@ -114,7 +157,12 @@ message UpdateSkillResponse {
 // ============================================================================
 
 message DeleteSkillRequest {
-  string skill_id = 1;
+  string skill_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message DeleteSkillResponse {
@@ -126,11 +174,28 @@ message DeleteSkillResponse {
 // ============================================================================
 
 message AddUserSkillRequest {
-  string user_id = 1;
-  string skill_id = 2;
-  int32 proficiency_level = 3;          // 1-10
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 proficiency_level = 3 [         // 1-10
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 10
+    }
+  ];
   bool is_offered = 4;                  // true = offering, false = wanting
-  string experience_description = 5;
+  string experience_description = 5 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message AddUserSkillResponse {
@@ -142,8 +207,18 @@ message AddUserSkillResponse {
 // ============================================================================
 
 message RemoveUserSkillRequest {
-  string user_id = 1;
-  string skill_id = 2;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   bool is_offered = 3;
 }
 
@@ -156,10 +231,27 @@ message RemoveUserSkillResponse {
 // ============================================================================
 
 message UpdateUserSkillRequest {
-  string user_id = 1;
-  string skill_id = 2;
-  int32 proficiency_level = 3;
-  string experience_description = 4;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 proficiency_level = 3 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 10
+    }
+  ];
+  string experience_description = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
   bool is_offered = 5;
 }
 
@@ -172,7 +264,12 @@ message UpdateUserSkillResponse {
 // ============================================================================
 
 message GetUserSkillsRequest {
-  string user_id = 1;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   bool offered_only = 2;                // Filter for offered skills
   bool wanted_only = 3;                 // Filter for wanted skills
 }
@@ -187,9 +284,19 @@ message GetUserSkillsResponse {
 // ============================================================================
 
 message GetTrendingSkillsRequest {
-  int32 limit = 1;                      // Default 10, max 50
+  int32 limit = 1 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 50
+    }
+  ];                      // Default 10, max 50
   skillsphere.common.v1.SkillCategory category = 2;
-  int32 days = 3;                       // Trending window (default 7)
+  int32 days = 3 [                      // Trending window (default 7)
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 30
+    }
+  ];
 }
 
 message GetTrendingSkillsResponse {
@@ -198,9 +305,14 @@ message GetTrendingSkillsResponse {
 
 message TrendingSkill {
   skillsphere.common.v1.Skill skill = 1;
-  int32 popularity_score = 2;
-  int32 sessions_last_period = 3;
-  double growth_rate = 4;               // Percentage growth
+  int32 popularity_score = 2 [(buf.validate.field).int32.gte = 0];
+  int32 sessions_last_period = 3 [(buf.validate.field).int32.gte = 0];
+  double growth_rate = 4 [              // Percentage growth
+    (buf.validate.field).double = {
+      gte: -100
+      lte: 100
+    }
+  ];
 }
 
 // ============================================================================
@@ -208,9 +320,21 @@ message TrendingSkill {
 // ============================================================================
 
 message SearchSkillsRequest {
-  string query = 1;                     // Keyword search
-  repeated skillsphere.common.v1.SkillCategory categories = 2;
-  int32 limit = 3;
+  string query = 1 [                    // Keyword search
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 200
+    }
+  ];
+  repeated skillsphere.common.v1.SkillCategory categories = 2 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  int32 limit = 3 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
 }
 
 message SearchSkillsResponse {
@@ -222,8 +346,18 @@ message SearchSkillsResponse {
 // ============================================================================
 
 message GetSkillSuggestionsRequest {
-  string user_id = 1;
-  int32 limit = 2;                      // Default 10
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 limit = 2 [                     // Default 10
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 50
+    }
+  ];
 }
 
 message GetSkillSuggestionsResponse {
@@ -232,6 +366,13 @@ message GetSkillSuggestionsResponse {
 
 message SkillSuggestion {
   skillsphere.common.v1.Skill skill = 1;
-  string reason = 2;                    // Why this is suggested
-  double relevance_score = 3;           // 0.0-1.0
+  string reason = 2 [                   // Why this is suggested
+    (buf.validate.field).string.max_len = 500
+  ];
+  double relevance_score = 3 [          // 0.0-1.0
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 1
+    }
+  ];
 }

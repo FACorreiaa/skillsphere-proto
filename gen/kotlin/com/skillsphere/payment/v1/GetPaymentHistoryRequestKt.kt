@@ -30,7 +30,7 @@ public object GetPaymentHistoryRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.GetPaymentHistoryRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetPaymentHistoryRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -57,14 +57,14 @@ public object GetPaymentHistoryRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -74,7 +74,7 @@ public object GetPaymentHistoryRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()
@@ -135,7 +135,7 @@ public object GetPaymentHistoryRequestKt {
       get() = _builder.endDateOrNull
 
     /**
-     * `.skillsphere.payment.v1.PaymentPurpose purpose_filter = 6 [json_name = "purposeFilter"];`
+     * `.skillsphere.payment.v1.PaymentPurpose purpose_filter = 6 [json_name = "purposeFilter", (.buf.validate.field) = { ... }`
      */
     public var purposeFilter: com.skillsphere.payment.v1.PaymentPurpose
       @kotlin.jvm.JvmName("getPurposeFilter")
@@ -152,7 +152,7 @@ public object GetPaymentHistoryRequestKt {
         _builder.purposeFilterValue = value
       }
     /**
-     * `.skillsphere.payment.v1.PaymentPurpose purpose_filter = 6 [json_name = "purposeFilter"];`
+     * `.skillsphere.payment.v1.PaymentPurpose purpose_filter = 6 [json_name = "purposeFilter", (.buf.validate.field) = { ... }`
      */
     public fun clearPurposeFilter() {
       _builder.clearPurposeFilter()

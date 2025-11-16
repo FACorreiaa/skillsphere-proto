@@ -30,7 +30,7 @@ public object RateReviewRequestKt {
     internal fun _build(): com.skillsphere.review.v1.RateReviewRequest = _builder.build()
 
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public var reviewId: kotlin.String
       @kotlin.jvm.JvmName("getReviewId")
@@ -40,14 +40,14 @@ public object RateReviewRequestKt {
         _builder.reviewId = value
       }
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewId() {
       _builder.clearReviewId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,14 +57,14 @@ public object RateReviewRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public var rating: kotlin.Int
       @kotlin.jvm.JvmName("getRating")
@@ -74,14 +74,14 @@ public object RateReviewRequestKt {
         _builder.rating = value
       }
     /**
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public fun clearRating() {
       _builder.clearRating()
     }
 
     /**
-     * `string comment = 4 [json_name = "comment"];`
+     * `string comment = 4 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public var comment: kotlin.String
       @kotlin.jvm.JvmName("getComment")
@@ -91,7 +91,7 @@ public object RateReviewRequestKt {
         _builder.comment = value
       }
     /**
-     * `string comment = 4 [json_name = "comment"];`
+     * `string comment = 4 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public fun clearComment() {
       _builder.clearComment()

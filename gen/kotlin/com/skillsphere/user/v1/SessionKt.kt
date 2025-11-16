@@ -30,7 +30,7 @@ public object SessionKt {
     internal fun _build(): com.skillsphere.user.v1.Session = _builder.build()
 
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -40,14 +40,14 @@ public object SessionKt {
         _builder.sessionId = value
       }
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * `string partner_id = 2 [json_name = "partnerId"];`
+     * `string partner_id = 2 [json_name = "partnerId", (.buf.validate.field) = { ... }`
      */
     public var partnerId: kotlin.String
       @kotlin.jvm.JvmName("getPartnerId")
@@ -57,14 +57,14 @@ public object SessionKt {
         _builder.partnerId = value
       }
     /**
-     * `string partner_id = 2 [json_name = "partnerId"];`
+     * `string partner_id = 2 [json_name = "partnerId", (.buf.validate.field) = { ... }`
      */
     public fun clearPartnerId() {
       _builder.clearPartnerId()
     }
 
     /**
-     * `string partner_name = 3 [json_name = "partnerName"];`
+     * `string partner_name = 3 [json_name = "partnerName", (.buf.validate.field) = { ... }`
      */
     public var partnerName: kotlin.String
       @kotlin.jvm.JvmName("getPartnerName")
@@ -74,7 +74,7 @@ public object SessionKt {
         _builder.partnerName = value
       }
     /**
-     * `string partner_name = 3 [json_name = "partnerName"];`
+     * `string partner_name = 3 [json_name = "partnerName", (.buf.validate.field) = { ... }`
      */
     public fun clearPartnerName() {
       _builder.clearPartnerName()
@@ -87,7 +87,7 @@ public object SessionKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skills = 4 [json_name = "skills"];`
+     * `repeated string skills = 4 [json_name = "skills", (.buf.validate.field) = { ... }`
      * @return A list containing the skills.
      */
     public val skills: com.google.protobuf.kotlin.DslList<kotlin.String, SkillsProxy>
@@ -96,7 +96,7 @@ public object SessionKt {
         _builder.skillsList
       )
     /**
-     * `repeated string skills = 4 [json_name = "skills"];`
+     * `repeated string skills = 4 [json_name = "skills", (.buf.validate.field) = { ... }`
      * @param value The skills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +105,7 @@ public object SessionKt {
       _builder.addSkills(value)
     }
     /**
-     * `repeated string skills = 4 [json_name = "skills"];`
+     * `repeated string skills = 4 [json_name = "skills", (.buf.validate.field) = { ... }`
      * @param value The skills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +115,7 @@ public object SessionKt {
       add(value)
     }
     /**
-     * `repeated string skills = 4 [json_name = "skills"];`
+     * `repeated string skills = 4 [json_name = "skills", (.buf.validate.field) = { ... }`
      * @param values The skills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +124,7 @@ public object SessionKt {
       _builder.addAllSkills(values)
     }
     /**
-     * `repeated string skills = 4 [json_name = "skills"];`
+     * `repeated string skills = 4 [json_name = "skills", (.buf.validate.field) = { ... }`
      * @param values The skills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +134,7 @@ public object SessionKt {
       addAll(values)
     }
     /**
-     * `repeated string skills = 4 [json_name = "skills"];`
+     * `repeated string skills = 4 [json_name = "skills", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skills to set.
      */
@@ -143,7 +143,7 @@ public object SessionKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkills(index, value)
     }/**
-     * `repeated string skills = 4 [json_name = "skills"];`
+     * `repeated string skills = 4 [json_name = "skills", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkills")
@@ -151,7 +151,7 @@ public object SessionKt {
       _builder.clearSkills()
     }
     /**
-     * `.skillsphere.common.v1.SessionStatus status = 5 [json_name = "status"];`
+     * `.skillsphere.common.v1.SessionStatus status = 5 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.common.v1.SessionStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -168,7 +168,7 @@ public object SessionKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.common.v1.SessionStatus status = 5 [json_name = "status"];`
+     * `.skillsphere.common.v1.SessionStatus status = 5 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

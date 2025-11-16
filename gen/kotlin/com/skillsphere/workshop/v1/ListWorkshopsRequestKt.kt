@@ -30,7 +30,7 @@ public object ListWorkshopsRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.ListWorkshopsRequest = _builder.build()
 
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -40,14 +40,14 @@ public object ListWorkshopsRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -57,7 +57,7 @@ public object ListWorkshopsRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()
@@ -70,7 +70,7 @@ public object ListWorkshopsRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CategoriesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
      public val categories: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -78,7 +78,7 @@ public object ListWorkshopsRequestKt {
         _builder.categoriesList
       )
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -86,7 +86,7 @@ public object ListWorkshopsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.add(value: com.skillsphere.common.v1.SkillCategory) {
       _builder.addCategories(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -95,7 +95,7 @@ public object ListWorkshopsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(value: com.skillsphere.common.v1.SkillCategory) {
       add(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -103,7 +103,7 @@ public object ListWorkshopsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.addAll(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       _builder.addAllCategories(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -112,7 +112,7 @@ public object ListWorkshopsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       addAll(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The categories to set.
      */
@@ -121,7 +121,7 @@ public object ListWorkshopsRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.set(index: kotlin.Int, value: com.skillsphere.common.v1.SkillCategory) {
       _builder.setCategories(index, value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearCategories")
@@ -129,7 +129,7 @@ public object ListWorkshopsRequestKt {
       _builder.clearCategories()
     }
     /**
-     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 4 [json_name = "difficulty"];`
+     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 4 [json_name = "difficulty", (.buf.validate.field) = { ... }`
      */
     public var difficulty: com.skillsphere.workshop.v1.DifficultyLevel
       @kotlin.jvm.JvmName("getDifficulty")
@@ -146,7 +146,7 @@ public object ListWorkshopsRequestKt {
         _builder.difficultyValue = value
       }
     /**
-     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 4 [json_name = "difficulty"];`
+     * `.skillsphere.workshop.v1.DifficultyLevel difficulty = 4 [json_name = "difficulty", (.buf.validate.field) = { ... }`
      */
     public fun clearDifficulty() {
       _builder.clearDifficulty()
@@ -241,11 +241,7 @@ public object ListWorkshopsRequestKt {
       get() = _builder.endDateOrNull
 
     /**
-     * ```
-     * Filter by host
-     * ```
-     *
-     * `string host_id = 9 [json_name = "hostId"];`
+     * `string host_id = 9 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public var hostId: kotlin.String
       @kotlin.jvm.JvmName("getHostId")
@@ -255,11 +251,7 @@ public object ListWorkshopsRequestKt {
         _builder.hostId = value
       }
     /**
-     * ```
-     * Filter by host
-     * ```
-     *
-     * `string host_id = 9 [json_name = "hostId"];`
+     * `string host_id = 9 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public fun clearHostId() {
       _builder.clearHostId()

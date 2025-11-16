@@ -57,7 +57,7 @@ public object VerifyExpertResponseKt {
       get() = _builder.userOrNull
 
     /**
-     * `string badge_url = 2 [json_name = "badgeUrl"];`
+     * `string badge_url = 2 [json_name = "badgeUrl", (.buf.validate.field) = { ... }`
      */
     public var badgeUrl: kotlin.String
       @kotlin.jvm.JvmName("getBadgeUrl")
@@ -67,7 +67,7 @@ public object VerifyExpertResponseKt {
         _builder.badgeUrl = value
       }
     /**
-     * `string badge_url = 2 [json_name = "badgeUrl"];`
+     * `string badge_url = 2 [json_name = "badgeUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearBadgeUrl() {
       _builder.clearBadgeUrl()

@@ -30,7 +30,7 @@ public object GenerateSessionPrepRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.GenerateSessionPrepRequest = _builder.build()
 
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -40,14 +40,14 @@ public object GenerateSessionPrepRequestKt {
         _builder.sessionId = value
       }
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,7 +57,7 @@ public object GenerateSessionPrepRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -70,7 +70,7 @@ public object GenerateSessionPrepRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillsToTeachProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach"];`
+     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach", (.buf.validate.field) = { ... }`
      * @return A list containing the skillsToTeach.
      */
     public val skillsToTeach: com.google.protobuf.kotlin.DslList<kotlin.String, SkillsToTeachProxy>
@@ -79,7 +79,7 @@ public object GenerateSessionPrepRequestKt {
         _builder.skillsToTeachList
       )
     /**
-     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach"];`
+     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach", (.buf.validate.field) = { ... }`
      * @param value The skillsToTeach to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -88,7 +88,7 @@ public object GenerateSessionPrepRequestKt {
       _builder.addSkillsToTeach(value)
     }
     /**
-     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach"];`
+     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach", (.buf.validate.field) = { ... }`
      * @param value The skillsToTeach to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -98,7 +98,7 @@ public object GenerateSessionPrepRequestKt {
       add(value)
     }
     /**
-     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach"];`
+     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach", (.buf.validate.field) = { ... }`
      * @param values The skillsToTeach to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -107,7 +107,7 @@ public object GenerateSessionPrepRequestKt {
       _builder.addAllSkillsToTeach(values)
     }
     /**
-     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach"];`
+     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach", (.buf.validate.field) = { ... }`
      * @param values The skillsToTeach to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -117,7 +117,7 @@ public object GenerateSessionPrepRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach"];`
+     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillsToTeach to set.
      */
@@ -126,7 +126,7 @@ public object GenerateSessionPrepRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillsToTeachProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillsToTeach(index, value)
     }/**
-     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach"];`
+     * `repeated string skills_to_teach = 3 [json_name = "skillsToTeach", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillsToTeach")
@@ -140,7 +140,7 @@ public object GenerateSessionPrepRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillsToLearnProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn"];`
+     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn", (.buf.validate.field) = { ... }`
      * @return A list containing the skillsToLearn.
      */
     public val skillsToLearn: com.google.protobuf.kotlin.DslList<kotlin.String, SkillsToLearnProxy>
@@ -149,7 +149,7 @@ public object GenerateSessionPrepRequestKt {
         _builder.skillsToLearnList
       )
     /**
-     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn"];`
+     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn", (.buf.validate.field) = { ... }`
      * @param value The skillsToLearn to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -158,7 +158,7 @@ public object GenerateSessionPrepRequestKt {
       _builder.addSkillsToLearn(value)
     }
     /**
-     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn"];`
+     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn", (.buf.validate.field) = { ... }`
      * @param value The skillsToLearn to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -168,7 +168,7 @@ public object GenerateSessionPrepRequestKt {
       add(value)
     }
     /**
-     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn"];`
+     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn", (.buf.validate.field) = { ... }`
      * @param values The skillsToLearn to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -177,7 +177,7 @@ public object GenerateSessionPrepRequestKt {
       _builder.addAllSkillsToLearn(values)
     }
     /**
-     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn"];`
+     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn", (.buf.validate.field) = { ... }`
      * @param values The skillsToLearn to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -187,7 +187,7 @@ public object GenerateSessionPrepRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn"];`
+     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillsToLearn to set.
      */
@@ -196,7 +196,7 @@ public object GenerateSessionPrepRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillsToLearnProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillsToLearn(index, value)
     }/**
-     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn"];`
+     * `repeated string skills_to_learn = 4 [json_name = "skillsToLearn", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillsToLearn")
@@ -204,7 +204,7 @@ public object GenerateSessionPrepRequestKt {
       _builder.clearSkillsToLearn()
     }
     /**
-     * `int32 session_duration_minutes = 5 [json_name = "sessionDurationMinutes"];`
+     * `int32 session_duration_minutes = 5 [json_name = "sessionDurationMinutes", (.buf.validate.field) = { ... }`
      */
     public var sessionDurationMinutes: kotlin.Int
       @kotlin.jvm.JvmName("getSessionDurationMinutes")
@@ -214,7 +214,7 @@ public object GenerateSessionPrepRequestKt {
         _builder.sessionDurationMinutes = value
       }
     /**
-     * `int32 session_duration_minutes = 5 [json_name = "sessionDurationMinutes"];`
+     * `int32 session_duration_minutes = 5 [json_name = "sessionDurationMinutes", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionDurationMinutes() {
       _builder.clearSessionDurationMinutes()

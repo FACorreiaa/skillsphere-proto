@@ -57,11 +57,7 @@ public object IssueCertificationResponseKt {
       get() = _builder.certificationOrNull
 
     /**
-     * ```
-     * Public certificate URL
-     * ```
-     *
-     * `string share_url = 2 [json_name = "shareUrl"];`
+     * `string share_url = 2 [json_name = "shareUrl", (.buf.validate.field) = { ... }`
      */
     public var shareUrl: kotlin.String
       @kotlin.jvm.JvmName("getShareUrl")
@@ -71,11 +67,7 @@ public object IssueCertificationResponseKt {
         _builder.shareUrl = value
       }
     /**
-     * ```
-     * Public certificate URL
-     * ```
-     *
-     * `string share_url = 2 [json_name = "shareUrl"];`
+     * `string share_url = 2 [json_name = "shareUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearShareUrl() {
       _builder.clearShareUrl()

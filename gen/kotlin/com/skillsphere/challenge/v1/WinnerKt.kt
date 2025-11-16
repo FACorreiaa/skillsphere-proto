@@ -30,7 +30,7 @@ public object WinnerKt {
     internal fun _build(): com.skillsphere.challenge.v1.Winner = _builder.build()
 
     /**
-     * `string entry_id = 1 [json_name = "entryId"];`
+     * `string entry_id = 1 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public var entryId: kotlin.String
       @kotlin.jvm.JvmName("getEntryId")
@@ -40,14 +40,14 @@ public object WinnerKt {
         _builder.entryId = value
       }
     /**
-     * `string entry_id = 1 [json_name = "entryId"];`
+     * `string entry_id = 1 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public fun clearEntryId() {
       _builder.clearEntryId()
     }
 
     /**
-     * `int32 rank = 2 [json_name = "rank"];`
+     * `int32 rank = 2 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public var rank: kotlin.Int
       @kotlin.jvm.JvmName("getRank")
@@ -57,14 +57,14 @@ public object WinnerKt {
         _builder.rank = value
       }
     /**
-     * `int32 rank = 2 [json_name = "rank"];`
+     * `int32 rank = 2 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public fun clearRank() {
       _builder.clearRank()
     }
 
     /**
-     * `string prize_description = 3 [json_name = "prizeDescription"];`
+     * `string prize_description = 3 [json_name = "prizeDescription", (.buf.validate.field) = { ... }`
      */
     public var prizeDescription: kotlin.String
       @kotlin.jvm.JvmName("getPrizeDescription")
@@ -74,7 +74,7 @@ public object WinnerKt {
         _builder.prizeDescription = value
       }
     /**
-     * `string prize_description = 3 [json_name = "prizeDescription"];`
+     * `string prize_description = 3 [json_name = "prizeDescription", (.buf.validate.field) = { ... }`
      */
     public fun clearPrizeDescription() {
       _builder.clearPrizeDescription()

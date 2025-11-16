@@ -30,7 +30,7 @@ public object VerifyEmailRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.VerifyEmailRequest = _builder.build()
 
     /**
-     * `string verification_token = 1 [json_name = "verificationToken"];`
+     * `string verification_token = 1 [json_name = "verificationToken", (.buf.validate.field) = { ... }`
      */
     public var verificationToken: kotlin.String
       @kotlin.jvm.JvmName("getVerificationToken")
@@ -40,7 +40,7 @@ public object VerifyEmailRequestKt {
         _builder.verificationToken = value
       }
     /**
-     * `string verification_token = 1 [json_name = "verificationToken"];`
+     * `string verification_token = 1 [json_name = "verificationToken", (.buf.validate.field) = { ... }`
      */
     public fun clearVerificationToken() {
       _builder.clearVerificationToken()

@@ -30,7 +30,7 @@ public object EngagementMetricsKt {
     internal fun _build(): com.skillsphere.analytics.v1.EngagementMetrics = _builder.build()
 
     /**
-     * `int32 daily_active_users = 1 [json_name = "dailyActiveUsers"];`
+     * `int32 daily_active_users = 1 [json_name = "dailyActiveUsers", (.buf.validate.field) = { ... }`
      */
     public var dailyActiveUsers: kotlin.Int
       @kotlin.jvm.JvmName("getDailyActiveUsers")
@@ -40,14 +40,14 @@ public object EngagementMetricsKt {
         _builder.dailyActiveUsers = value
       }
     /**
-     * `int32 daily_active_users = 1 [json_name = "dailyActiveUsers"];`
+     * `int32 daily_active_users = 1 [json_name = "dailyActiveUsers", (.buf.validate.field) = { ... }`
      */
     public fun clearDailyActiveUsers() {
       _builder.clearDailyActiveUsers()
     }
 
     /**
-     * `int32 weekly_active_users = 2 [json_name = "weeklyActiveUsers"];`
+     * `int32 weekly_active_users = 2 [json_name = "weeklyActiveUsers", (.buf.validate.field) = { ... }`
      */
     public var weeklyActiveUsers: kotlin.Int
       @kotlin.jvm.JvmName("getWeeklyActiveUsers")
@@ -57,14 +57,14 @@ public object EngagementMetricsKt {
         _builder.weeklyActiveUsers = value
       }
     /**
-     * `int32 weekly_active_users = 2 [json_name = "weeklyActiveUsers"];`
+     * `int32 weekly_active_users = 2 [json_name = "weeklyActiveUsers", (.buf.validate.field) = { ... }`
      */
     public fun clearWeeklyActiveUsers() {
       _builder.clearWeeklyActiveUsers()
     }
 
     /**
-     * `int32 monthly_active_users = 3 [json_name = "monthlyActiveUsers"];`
+     * `int32 monthly_active_users = 3 [json_name = "monthlyActiveUsers", (.buf.validate.field) = { ... }`
      */
     public var monthlyActiveUsers: kotlin.Int
       @kotlin.jvm.JvmName("getMonthlyActiveUsers")
@@ -74,14 +74,14 @@ public object EngagementMetricsKt {
         _builder.monthlyActiveUsers = value
       }
     /**
-     * `int32 monthly_active_users = 3 [json_name = "monthlyActiveUsers"];`
+     * `int32 monthly_active_users = 3 [json_name = "monthlyActiveUsers", (.buf.validate.field) = { ... }`
      */
     public fun clearMonthlyActiveUsers() {
       _builder.clearMonthlyActiveUsers()
     }
 
     /**
-     * `double average_session_duration_minutes = 4 [json_name = "averageSessionDurationMinutes"];`
+     * `double average_session_duration_minutes = 4 [json_name = "averageSessionDurationMinutes", (.buf.validate.field) = { ... }`
      */
     public var averageSessionDurationMinutes: kotlin.Double
       @kotlin.jvm.JvmName("getAverageSessionDurationMinutes")
@@ -91,14 +91,14 @@ public object EngagementMetricsKt {
         _builder.averageSessionDurationMinutes = value
       }
     /**
-     * `double average_session_duration_minutes = 4 [json_name = "averageSessionDurationMinutes"];`
+     * `double average_session_duration_minutes = 4 [json_name = "averageSessionDurationMinutes", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageSessionDurationMinutes() {
       _builder.clearAverageSessionDurationMinutes()
     }
 
     /**
-     * `double sessions_per_user = 5 [json_name = "sessionsPerUser"];`
+     * `double sessions_per_user = 5 [json_name = "sessionsPerUser", (.buf.validate.field) = { ... }`
      */
     public var sessionsPerUser: kotlin.Double
       @kotlin.jvm.JvmName("getSessionsPerUser")
@@ -108,14 +108,14 @@ public object EngagementMetricsKt {
         _builder.sessionsPerUser = value
       }
     /**
-     * `double sessions_per_user = 5 [json_name = "sessionsPerUser"];`
+     * `double sessions_per_user = 5 [json_name = "sessionsPerUser", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionsPerUser() {
       _builder.clearSessionsPerUser()
     }
 
     /**
-     * `int32 total_messages_sent = 6 [json_name = "totalMessagesSent"];`
+     * `int32 total_messages_sent = 6 [json_name = "totalMessagesSent", (.buf.validate.field) = { ... }`
      */
     public var totalMessagesSent: kotlin.Int
       @kotlin.jvm.JvmName("getTotalMessagesSent")
@@ -125,14 +125,14 @@ public object EngagementMetricsKt {
         _builder.totalMessagesSent = value
       }
     /**
-     * `int32 total_messages_sent = 6 [json_name = "totalMessagesSent"];`
+     * `int32 total_messages_sent = 6 [json_name = "totalMessagesSent", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalMessagesSent() {
       _builder.clearTotalMessagesSent()
     }
 
     /**
-     * `int32 total_searches = 7 [json_name = "totalSearches"];`
+     * `int32 total_searches = 7 [json_name = "totalSearches", (.buf.validate.field) = { ... }`
      */
     public var totalSearches: kotlin.Int
       @kotlin.jvm.JvmName("getTotalSearches")
@@ -142,7 +142,7 @@ public object EngagementMetricsKt {
         _builder.totalSearches = value
       }
     /**
-     * `int32 total_searches = 7 [json_name = "totalSearches"];`
+     * `int32 total_searches = 7 [json_name = "totalSearches", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalSearches() {
       _builder.clearTotalSearches()
@@ -155,7 +155,7 @@ public object EngagementMetricsKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TopFeaturesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures"];`
+     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures", (.buf.validate.field) = { ... }`
      */
      public val topFeatures: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.TopFeature, TopFeaturesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -163,7 +163,7 @@ public object EngagementMetricsKt {
         _builder.topFeaturesList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures"];`
+     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures", (.buf.validate.field) = { ... }`
      * @param value The topFeatures to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -172,7 +172,7 @@ public object EngagementMetricsKt {
       _builder.addTopFeatures(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures"];`
+     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures", (.buf.validate.field) = { ... }`
      * @param value The topFeatures to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -182,7 +182,7 @@ public object EngagementMetricsKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures"];`
+     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures", (.buf.validate.field) = { ... }`
      * @param values The topFeatures to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -191,7 +191,7 @@ public object EngagementMetricsKt {
       _builder.addAllTopFeatures(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures"];`
+     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures", (.buf.validate.field) = { ... }`
      * @param values The topFeatures to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -201,7 +201,7 @@ public object EngagementMetricsKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures"];`
+     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The topFeatures to set.
      */
@@ -211,7 +211,7 @@ public object EngagementMetricsKt {
       _builder.setTopFeatures(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures"];`
+     * `repeated .skillsphere.analytics.v1.TopFeature top_features = 8 [json_name = "topFeatures", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearTopFeatures")
@@ -220,11 +220,7 @@ public object EngagementMetricsKt {
     }
 
     /**
-     * ```
-     * DAU/MAU ratio
-     * ```
-     *
-     * `double stickiness = 9 [json_name = "stickiness"];`
+     * `double stickiness = 9 [json_name = "stickiness", (.buf.validate.field) = { ... }`
      */
     public var stickiness: kotlin.Double
       @kotlin.jvm.JvmName("getStickiness")
@@ -234,11 +230,7 @@ public object EngagementMetricsKt {
         _builder.stickiness = value
       }
     /**
-     * ```
-     * DAU/MAU ratio
-     * ```
-     *
-     * `double stickiness = 9 [json_name = "stickiness"];`
+     * `double stickiness = 9 [json_name = "stickiness", (.buf.validate.field) = { ... }`
      */
     public fun clearStickiness() {
       _builder.clearStickiness()

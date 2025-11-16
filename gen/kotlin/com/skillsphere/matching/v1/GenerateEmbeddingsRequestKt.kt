@@ -30,7 +30,7 @@ public object GenerateEmbeddingsRequestKt {
     internal fun _build(): com.skillsphere.matching.v1.GenerateEmbeddingsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object GenerateEmbeddingsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -53,7 +53,7 @@ public object GenerateEmbeddingsRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillNamesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skill_names = 2 [json_name = "skillNames"];`
+     * `repeated string skill_names = 2 [json_name = "skillNames", (.buf.validate.field) = { ... }`
      * @return A list containing the skillNames.
      */
     public val skillNames: com.google.protobuf.kotlin.DslList<kotlin.String, SkillNamesProxy>
@@ -62,7 +62,7 @@ public object GenerateEmbeddingsRequestKt {
         _builder.skillNamesList
       )
     /**
-     * `repeated string skill_names = 2 [json_name = "skillNames"];`
+     * `repeated string skill_names = 2 [json_name = "skillNames", (.buf.validate.field) = { ... }`
      * @param value The skillNames to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -71,7 +71,7 @@ public object GenerateEmbeddingsRequestKt {
       _builder.addSkillNames(value)
     }
     /**
-     * `repeated string skill_names = 2 [json_name = "skillNames"];`
+     * `repeated string skill_names = 2 [json_name = "skillNames", (.buf.validate.field) = { ... }`
      * @param value The skillNames to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -81,7 +81,7 @@ public object GenerateEmbeddingsRequestKt {
       add(value)
     }
     /**
-     * `repeated string skill_names = 2 [json_name = "skillNames"];`
+     * `repeated string skill_names = 2 [json_name = "skillNames", (.buf.validate.field) = { ... }`
      * @param values The skillNames to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,7 +90,7 @@ public object GenerateEmbeddingsRequestKt {
       _builder.addAllSkillNames(values)
     }
     /**
-     * `repeated string skill_names = 2 [json_name = "skillNames"];`
+     * `repeated string skill_names = 2 [json_name = "skillNames", (.buf.validate.field) = { ... }`
      * @param values The skillNames to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -100,7 +100,7 @@ public object GenerateEmbeddingsRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string skill_names = 2 [json_name = "skillNames"];`
+     * `repeated string skill_names = 2 [json_name = "skillNames", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillNames to set.
      */
@@ -109,7 +109,7 @@ public object GenerateEmbeddingsRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillNamesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillNames(index, value)
     }/**
-     * `repeated string skill_names = 2 [json_name = "skillNames"];`
+     * `repeated string skill_names = 2 [json_name = "skillNames", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillNames")

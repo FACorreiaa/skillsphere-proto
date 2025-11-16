@@ -3,6 +3,7 @@ syntax = "proto3";
 package skillsphere.ai.v1;
 
 import "google/protobuf/timestamp.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/ai/v1;aiv1";
 
@@ -62,8 +63,21 @@ enum DifficultyLevel {
 // ============================================================================
 
 message GenerateSkillEmbeddingRequest {
-  repeated string skill_names = 1;
-  string context = 2;                        // Optional context for better embeddings
+  repeated string skill_names = 1 [
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 50
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
+  string context = 2 [                       // Optional context for better embeddings
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message GenerateSkillEmbeddingResponse {
@@ -71,9 +85,18 @@ message GenerateSkillEmbeddingResponse {
 }
 
 message SkillEmbedding {
-  string skill_name = 1;
-  repeated float vector = 2;                 // 768D vector from Gemini
-  string model_version = 3;
+  string skill_name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  repeated float vector = 2 [                // 768D vector from Gemini
+    (buf.validate.field).repeated.max_items = 1024
+  ];
+  string model_version = 3 [
+    (buf.validate.field).string.max_len = 50
+  ];
   google.protobuf.Timestamp generated_at = 4;
 }
 
@@ -82,35 +105,124 @@ message SkillEmbedding {
 // ============================================================================
 
 message GetSkillRoadmapRequest {
-  string user_id = 1;
-  string target_skill = 2;
-  repeated string current_skills = 3;        // User's existing skills
-  DifficultyLevel target_level = 4;
-  int32 timeline_weeks = 5;                  // Desired timeline
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string target_skill = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  repeated string current_skills = 3 [       // User's existing skills
+    (buf.validate.field).repeated.max_items = 100,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
+  DifficultyLevel target_level = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 timeline_weeks = 5 [                 // Desired timeline
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 104
+    }
+  ];
 }
 
 message GetSkillRoadmapResponse {
   repeated RoadmapStep steps = 1;
-  int32 estimated_hours = 2;
-  repeated string prerequisites = 3;
-  string summary = 4;
+  int32 estimated_hours = 2 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 2000
+    }
+  ];
+  repeated string prerequisites = 3 [
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  string summary = 4 [
+    (buf.validate.field).string.max_len = 2000
+  ];
 }
 
 message RoadmapStep {
-  int32 order = 1;
-  string title = 2;
-  string description = 3;
-  repeated string topics = 4;
-  int32 estimated_hours = 5;
-  repeated LearningResource resources = 6;
-  repeated string milestones = 7;
+  int32 order = 1 [
+    (buf.validate.field).int32.gte = 1
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated string topics = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
+  int32 estimated_hours = 5 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 500
+    }
+  ];
+  repeated LearningResource resources = 6 [
+    (buf.validate.field).repeated.max_items = 50
+  ];
+  repeated string milestones = 7 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 }
 
 message LearningResource {
-  string title = 1;
-  string url = 2;
-  string type = 3;                           // "video", "article", "course", "book"
-  int32 duration_minutes = 4;
+  string title = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 200
+    }
+  ];
+  string url = 2 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  string type = 3 [                          // "video", "article", "course", "book"
+    (buf.validate.field).string.max_len = 50
+  ];
+  int32 duration_minutes = 4 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 10000
+    }
+  ];
   bool is_free = 5;
 }
 
@@ -119,17 +231,63 @@ message LearningResource {
 // ============================================================================
 
 message GetMentorAdviceRequest {
-  string user_id = 1;
-  string skill_name = 2;
-  string context = 3;                        // e.g., "preparing for session on React hooks"
-  repeated string specific_questions = 4;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_name = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  string context = 3 [                       // e.g., "preparing for session on React hooks"
+    (buf.validate.field).string.max_len = 1000
+  ];
+  repeated string specific_questions = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
 }
 
 message GetMentorAdviceResponse {
-  string advice = 1;
-  repeated string key_points = 2;
-  repeated string do_list = 3;               // What to do
-  repeated string dont_list = 4;             // What to avoid
+  string advice = 1 [
+    (buf.validate.field).string.max_len = 4000
+  ];
+  repeated string key_points = 2 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
+  repeated string do_list = 3 [              // What to do
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
+  repeated string dont_list = 4 [            // What to avoid
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
   repeated LearningResource resources = 5;
 }
 
@@ -138,20 +296,87 @@ message GetMentorAdviceResponse {
 // ============================================================================
 
 message GenerateSessionPrepRequest {
-  string session_id = 1;
-  string user_id = 2;
-  repeated string skills_to_teach = 3;
-  repeated string skills_to_learn = 4;
-  int32 session_duration_minutes = 5;
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated string skills_to_teach = 3 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
+  repeated string skills_to_learn = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
+  int32 session_duration_minutes = 5 [
+    (buf.validate.field).int32 = {
+      gte: 15
+      lte: 480
+    }
+  ];
 }
 
 message GenerateSessionPrepResponse {
-  string agenda = 1;
-  repeated string teaching_tips = 2;
-  repeated string learning_goals = 3;
-  repeated string discussion_topics = 4;
-  repeated string practice_exercises = 5;
-  string icebreaker = 6;                     // Conversation starter
+  string agenda = 1 [
+    (buf.validate.field).string.max_len = 4000
+  ];
+  repeated string teaching_tips = 2 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
+  repeated string learning_goals = 3 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
+  repeated string discussion_topics = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  repeated string practice_exercises = 5 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
+  string icebreaker = 6 [                    // Conversation starter
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 // ============================================================================
@@ -159,24 +384,74 @@ message GenerateSessionPrepResponse {
 // ============================================================================
 
 message AnalyzeSkillGapRequest {
-  string user_id_1 = 1;
-  string user_id_2 = 2;
-  repeated string focus_skills = 3;          // Optional filter
+  string user_id_1 = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id_2 = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated string focus_skills = 3 [         // Optional filter
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
 }
 
 message AnalyzeSkillGapResponse {
   repeated SkillGap gaps = 1;
-  string summary = 2;
-  repeated string recommendations = 3;
+  string summary = 2 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated string recommendations = 3 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
 }
 
 message SkillGap {
-  string skill_name = 1;
-  int32 user1_proficiency = 2;
-  int32 user2_proficiency = 3;
-  int32 gap_size = 4;                        // Absolute difference
+  string skill_name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  int32 user1_proficiency = 2 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 10
+    }
+  ];
+  int32 user2_proficiency = 3 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 10
+    }
+  ];
+  int32 gap_size = 4 [                       // Absolute difference
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 10
+    }
+  ];
   bool is_complementary = 5;                 // One teaches, other learns
-  string explanation = 6;
+  string explanation = 6 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 // ============================================================================
@@ -184,15 +459,32 @@ message SkillGap {
 // ============================================================================
 
 message GenerateLearningResourcesRequest {
-  string skill_name = 1;
-  DifficultyLevel level = 2;
-  repeated string preferred_formats = 3;     // "video", "article", "interactive"
+  string skill_name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  DifficultyLevel level = 2 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated string preferred_formats = 3 [    // "video", "article", "interactive"
+    (buf.validate.field).repeated.max_items = 10,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
   bool free_only = 4;
 }
 
 message GenerateLearningResourcesResponse {
   repeated LearningResource resources = 1;
-  string learning_path = 2;                  // Suggested order
+  string learning_path = 2 [                 // Suggested order
+    (buf.validate.field).string.max_len = 2000
+  ];
 }
 
 // ============================================================================
@@ -200,20 +492,51 @@ message GenerateLearningResourcesResponse {
 // ============================================================================
 
 message ChatWithMentorRequest {
-  string user_id = 1;
-  string session_id = 2;                     // Optional for context
-  string message = 3;
-  repeated ChatMessage history = 4;          // Conversation history
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string session_id = 2 [                    // Optional for context
+    (buf.validate.field).string.max_len = 50
+  ];
+  string message = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2000
+    }
+  ];
+  repeated ChatMessage history = 4 [         // Conversation history
+    (buf.validate.field).repeated.max_items = 50
+  ];
 }
 
 message ChatWithMentorResponse {
-  string response = 1;
-  repeated string follow_up_suggestions = 2;
+  string response = 1 [
+    (buf.validate.field).string.max_len = 4000
+  ];
+  repeated string follow_up_suggestions = 2 [
+    (buf.validate.field).repeated.max_items = 10,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
 }
 
 message ChatMessage {
-  string role = 1;                           // "user" or "assistant"
-  string content = 2;
+  string role = 1 [                          // "user" or "assistant"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 32
+    }
+  ];
+  string content = 2 [
+    (buf.validate.field).string.max_len = 2000
+  ];
   google.protobuf.Timestamp timestamp = 3;
 }
 
@@ -222,13 +545,27 @@ message ChatMessage {
 // ============================================================================
 
 message StreamMentorChatRequest {
-  string user_id = 1;
-  string message = 2;
-  repeated ChatMessage history = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string message = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2000
+    }
+  ];
+  repeated ChatMessage history = 3 [
+    (buf.validate.field).repeated.max_items = 50
+  ];
 }
 
 message StreamMentorChatResponse {
-  string chunk = 1;                          // Partial response
+  string chunk = 1 [                         // Partial response
+    (buf.validate.field).string.max_len = 2000
+  ];
   bool is_complete = 2;
 }
 
@@ -237,10 +574,24 @@ message StreamMentorChatResponse {
 // ============================================================================
 
 message GenerateAssessmentRequest {
-  string skill_name = 1;
-  DifficultyLevel level = 2;
-  int32 question_count = 3;                  // Default 10
-  string format = 4;                         // "multiple_choice", "coding", "essay"
+  string skill_name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  DifficultyLevel level = 2 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 question_count = 3 [                 // Default 10
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 50
+    }
+  ];
+  string format = 4 [                        // "multiple_choice", "coding", "essay"
+    (buf.validate.field).string.max_len = 50
+  ];
 }
 
 message GenerateAssessmentResponse {
@@ -249,12 +600,36 @@ message GenerateAssessmentResponse {
 }
 
 message AssessmentQuestion {
-  int32 question_number = 1;
-  string question = 2;
-  repeated string options = 3;               // For multiple choice
-  string correct_answer = 4;
-  string explanation = 5;
-  int32 difficulty_score = 6;                // 1-10
+  int32 question_number = 1 [
+    (buf.validate.field).int32.gte = 1
+  ];
+  string question = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 1000
+    }
+  ];
+  repeated string options = 3 [              // For multiple choice
+    (buf.validate.field).repeated.max_items = 10,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 300
+      }
+    }
+  ];
+  string correct_answer = 4 [
+    (buf.validate.field).string.max_len = 500
+  ];
+  string explanation = 5 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  int32 difficulty_score = 6 [               // 1-10
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 10
+    }
+  ];
 }
 
 // ============================================================================
@@ -262,24 +637,75 @@ message AssessmentQuestion {
 // ============================================================================
 
 message AnalyzeProgressRequest {
-  string user_id = 1;
-  string skill_id = 2;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp start_date = 3;
   google.protobuf.Timestamp end_date = 4;
 }
 
 message AnalyzeProgressResponse {
-  string summary = 1;
-  repeated ProgressInsight insights = 2;
-  double progress_percentage = 3;
-  repeated string strengths = 4;
-  repeated string areas_to_improve = 5;
-  repeated string next_steps = 6;
+  string summary = 1 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated ProgressInsight insights = 2 [
+    (buf.validate.field).repeated.max_items = 50
+  ];
+  double progress_percentage = 3 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
+  repeated string strengths = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  repeated string areas_to_improve = 5 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
+  repeated string next_steps = 6 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 }
 
 message ProgressInsight {
-  string category = 1;                       // "sessions", "practice", "consistency"
-  string metric = 2;
-  string trend = 3;                          // "improving", "declining", "stable"
-  string explanation = 4;
+  string category = 1 [                      // "sessions", "practice", "consistency"
+    (buf.validate.field).string.max_len = 50
+  ];
+  string metric = 2 [
+    (buf.validate.field).string.max_len = 100
+  ];
+  string trend = 3 [                         // "improving", "declining", "stable"
+    (buf.validate.field).string.max_len = 32
+  ];
+  string explanation = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }

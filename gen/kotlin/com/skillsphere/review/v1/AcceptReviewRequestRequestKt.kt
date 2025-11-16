@@ -30,7 +30,7 @@ public object AcceptReviewRequestRequestKt {
     internal fun _build(): com.skillsphere.review.v1.AcceptReviewRequestRequest = _builder.build()
 
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public var reviewId: kotlin.String
       @kotlin.jvm.JvmName("getReviewId")
@@ -40,14 +40,14 @@ public object AcceptReviewRequestRequestKt {
         _builder.reviewId = value
       }
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewId() {
       _builder.clearReviewId()
     }
 
     /**
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public var reviewerId: kotlin.String
       @kotlin.jvm.JvmName("getReviewerId")
@@ -57,7 +57,7 @@ public object AcceptReviewRequestRequestKt {
         _builder.reviewerId = value
       }
     /**
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerId() {
       _builder.clearReviewerId()

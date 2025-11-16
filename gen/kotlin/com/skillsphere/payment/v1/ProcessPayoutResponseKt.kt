@@ -30,7 +30,7 @@ public object ProcessPayoutResponseKt {
     internal fun _build(): com.skillsphere.payment.v1.ProcessPayoutResponse = _builder.build()
 
     /**
-     * `string payout_id = 1 [json_name = "payoutId"];`
+     * `string payout_id = 1 [json_name = "payoutId", (.buf.validate.field) = { ... }`
      */
     public var payoutId: kotlin.String
       @kotlin.jvm.JvmName("getPayoutId")
@@ -40,7 +40,7 @@ public object ProcessPayoutResponseKt {
         _builder.payoutId = value
       }
     /**
-     * `string payout_id = 1 [json_name = "payoutId"];`
+     * `string payout_id = 1 [json_name = "payoutId", (.buf.validate.field) = { ... }`
      */
     public fun clearPayoutId() {
       _builder.clearPayoutId()
@@ -74,7 +74,7 @@ public object ProcessPayoutResponseKt {
       get() = _builder.estimatedArrivalOrNull
 
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.common.v1.PaymentStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -91,7 +91,7 @@ public object ProcessPayoutResponseKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

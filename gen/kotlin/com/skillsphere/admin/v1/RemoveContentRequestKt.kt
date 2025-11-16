@@ -30,7 +30,7 @@ public object RemoveContentRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.RemoveContentRequest = _builder.build()
 
     /**
-     * `string content_id = 1 [json_name = "contentId"];`
+     * `string content_id = 1 [json_name = "contentId", (.buf.validate.field) = { ... }`
      */
     public var contentId: kotlin.String
       @kotlin.jvm.JvmName("getContentId")
@@ -40,14 +40,14 @@ public object RemoveContentRequestKt {
         _builder.contentId = value
       }
     /**
-     * `string content_id = 1 [json_name = "contentId"];`
+     * `string content_id = 1 [json_name = "contentId", (.buf.validate.field) = { ... }`
      */
     public fun clearContentId() {
       _builder.clearContentId()
     }
 
     /**
-     * `string content_type = 2 [json_name = "contentType"];`
+     * `string content_type = 2 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public var contentType: kotlin.String
       @kotlin.jvm.JvmName("getContentType")
@@ -57,14 +57,14 @@ public object RemoveContentRequestKt {
         _builder.contentType = value
       }
     /**
-     * `string content_type = 2 [json_name = "contentType"];`
+     * `string content_type = 2 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public fun clearContentType() {
       _builder.clearContentType()
     }
 
     /**
-     * `string admin_id = 3 [json_name = "adminId"];`
+     * `string admin_id = 3 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -74,14 +74,14 @@ public object RemoveContentRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 3 [json_name = "adminId"];`
+     * `string admin_id = 3 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string reason = 4 [json_name = "reason"];`
+     * `string reason = 4 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -91,14 +91,14 @@ public object RemoveContentRequestKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 4 [json_name = "reason"];`
+     * `string reason = 4 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()
     }
 
     /**
-     * `.skillsphere.admin.v1.ModerationAction action = 5 [json_name = "action"];`
+     * `.skillsphere.admin.v1.ModerationAction action = 5 [json_name = "action", (.buf.validate.field) = { ... }`
      */
     public var action: com.skillsphere.admin.v1.ModerationAction
       @kotlin.jvm.JvmName("getAction")
@@ -115,7 +115,7 @@ public object RemoveContentRequestKt {
         _builder.actionValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ModerationAction action = 5 [json_name = "action"];`
+     * `.skillsphere.admin.v1.ModerationAction action = 5 [json_name = "action", (.buf.validate.field) = { ... }`
      */
     public fun clearAction() {
       _builder.clearAction()

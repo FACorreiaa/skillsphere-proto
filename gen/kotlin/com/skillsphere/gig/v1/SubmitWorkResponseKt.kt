@@ -57,7 +57,7 @@ public object SubmitWorkResponseKt {
       get() = _builder.submissionOrNull
 
     /**
-     * `string notification_sent = 2 [json_name = "notificationSent"];`
+     * `string notification_sent = 2 [json_name = "notificationSent", (.buf.validate.field) = { ... }`
      */
     public var notificationSent: kotlin.String
       @kotlin.jvm.JvmName("getNotificationSent")
@@ -67,7 +67,7 @@ public object SubmitWorkResponseKt {
         _builder.notificationSent = value
       }
     /**
-     * `string notification_sent = 2 [json_name = "notificationSent"];`
+     * `string notification_sent = 2 [json_name = "notificationSent", (.buf.validate.field) = { ... }`
      */
     public fun clearNotificationSent() {
       _builder.clearNotificationSent()

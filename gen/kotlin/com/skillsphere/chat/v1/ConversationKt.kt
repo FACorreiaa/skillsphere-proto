@@ -30,7 +30,7 @@ public object ConversationKt {
     internal fun _build(): com.skillsphere.chat.v1.Conversation = _builder.build()
 
     /**
-     * `string conversation_id = 1 [json_name = "conversationId"];`
+     * `string conversation_id = 1 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public var conversationId: kotlin.String
       @kotlin.jvm.JvmName("getConversationId")
@@ -40,7 +40,7 @@ public object ConversationKt {
         _builder.conversationId = value
       }
     /**
-     * `string conversation_id = 1 [json_name = "conversationId"];`
+     * `string conversation_id = 1 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public fun clearConversationId() {
       _builder.clearConversationId()
@@ -53,7 +53,7 @@ public object ConversationKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ParticipantIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string participant_ids = 2 [json_name = "participantIds"];`
+     * `repeated string participant_ids = 2 [json_name = "participantIds", (.buf.validate.field) = { ... }`
      * @return A list containing the participantIds.
      */
     public val participantIds: com.google.protobuf.kotlin.DslList<kotlin.String, ParticipantIdsProxy>
@@ -62,7 +62,7 @@ public object ConversationKt {
         _builder.participantIdsList
       )
     /**
-     * `repeated string participant_ids = 2 [json_name = "participantIds"];`
+     * `repeated string participant_ids = 2 [json_name = "participantIds", (.buf.validate.field) = { ... }`
      * @param value The participantIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -71,7 +71,7 @@ public object ConversationKt {
       _builder.addParticipantIds(value)
     }
     /**
-     * `repeated string participant_ids = 2 [json_name = "participantIds"];`
+     * `repeated string participant_ids = 2 [json_name = "participantIds", (.buf.validate.field) = { ... }`
      * @param value The participantIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -81,7 +81,7 @@ public object ConversationKt {
       add(value)
     }
     /**
-     * `repeated string participant_ids = 2 [json_name = "participantIds"];`
+     * `repeated string participant_ids = 2 [json_name = "participantIds", (.buf.validate.field) = { ... }`
      * @param values The participantIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,7 +90,7 @@ public object ConversationKt {
       _builder.addAllParticipantIds(values)
     }
     /**
-     * `repeated string participant_ids = 2 [json_name = "participantIds"];`
+     * `repeated string participant_ids = 2 [json_name = "participantIds", (.buf.validate.field) = { ... }`
      * @param values The participantIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -100,7 +100,7 @@ public object ConversationKt {
       addAll(values)
     }
     /**
-     * `repeated string participant_ids = 2 [json_name = "participantIds"];`
+     * `repeated string participant_ids = 2 [json_name = "participantIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The participantIds to set.
      */
@@ -109,7 +109,7 @@ public object ConversationKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ParticipantIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setParticipantIds(index, value)
     }/**
-     * `repeated string participant_ids = 2 [json_name = "participantIds"];`
+     * `repeated string participant_ids = 2 [json_name = "participantIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setParticipantIds")
@@ -144,7 +144,7 @@ public object ConversationKt {
       get() = _builder.lastMessageOrNull
 
     /**
-     * `int32 unread_count = 4 [json_name = "unreadCount"];`
+     * `int32 unread_count = 4 [json_name = "unreadCount", (.buf.validate.field) = { ... }`
      */
     public var unreadCount: kotlin.Int
       @kotlin.jvm.JvmName("getUnreadCount")
@@ -154,7 +154,7 @@ public object ConversationKt {
         _builder.unreadCount = value
       }
     /**
-     * `int32 unread_count = 4 [json_name = "unreadCount"];`
+     * `int32 unread_count = 4 [json_name = "unreadCount", (.buf.validate.field) = { ... }`
      */
     public fun clearUnreadCount() {
       _builder.clearUnreadCount()

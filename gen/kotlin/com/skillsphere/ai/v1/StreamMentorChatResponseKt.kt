@@ -30,11 +30,7 @@ public object StreamMentorChatResponseKt {
     internal fun _build(): com.skillsphere.ai.v1.StreamMentorChatResponse = _builder.build()
 
     /**
-     * ```
-     * Partial response
-     * ```
-     *
-     * `string chunk = 1 [json_name = "chunk"];`
+     * `string chunk = 1 [json_name = "chunk", (.buf.validate.field) = { ... }`
      */
     public var chunk: kotlin.String
       @kotlin.jvm.JvmName("getChunk")
@@ -44,11 +40,7 @@ public object StreamMentorChatResponseKt {
         _builder.chunk = value
       }
     /**
-     * ```
-     * Partial response
-     * ```
-     *
-     * `string chunk = 1 [json_name = "chunk"];`
+     * `string chunk = 1 [json_name = "chunk", (.buf.validate.field) = { ... }`
      */
     public fun clearChunk() {
       _builder.clearChunk()

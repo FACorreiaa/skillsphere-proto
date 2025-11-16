@@ -30,7 +30,7 @@ public object CreateEscrowPaymentRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.CreateEscrowPaymentRequest = _builder.build()
 
     /**
-     * `string payer_id = 1 [json_name = "payerId"];`
+     * `string payer_id = 1 [json_name = "payerId", (.buf.validate.field) = { ... }`
      */
     public var payerId: kotlin.String
       @kotlin.jvm.JvmName("getPayerId")
@@ -40,14 +40,14 @@ public object CreateEscrowPaymentRequestKt {
         _builder.payerId = value
       }
     /**
-     * `string payer_id = 1 [json_name = "payerId"];`
+     * `string payer_id = 1 [json_name = "payerId", (.buf.validate.field) = { ... }`
      */
     public fun clearPayerId() {
       _builder.clearPayerId()
     }
 
     /**
-     * `string payee_id = 2 [json_name = "payeeId"];`
+     * `string payee_id = 2 [json_name = "payeeId", (.buf.validate.field) = { ... }`
      */
     public var payeeId: kotlin.String
       @kotlin.jvm.JvmName("getPayeeId")
@@ -57,14 +57,14 @@ public object CreateEscrowPaymentRequestKt {
         _builder.payeeId = value
       }
     /**
-     * `string payee_id = 2 [json_name = "payeeId"];`
+     * `string payee_id = 2 [json_name = "payeeId", (.buf.validate.field) = { ... }`
      */
     public fun clearPayeeId() {
       _builder.clearPayeeId()
     }
 
     /**
-     * `string gig_id = 3 [json_name = "gigId"];`
+     * `string gig_id = 3 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -74,7 +74,7 @@ public object CreateEscrowPaymentRequestKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 3 [json_name = "gigId"];`
+     * `string gig_id = 3 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
@@ -108,7 +108,7 @@ public object CreateEscrowPaymentRequestKt {
       get() = _builder.amountOrNull
 
     /**
-     * `string payment_method_id = 5 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 5 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var paymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentMethodId")
@@ -118,18 +118,14 @@ public object CreateEscrowPaymentRequestKt {
         _builder.paymentMethodId = value
       }
     /**
-     * `string payment_method_id = 5 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 5 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethodId() {
       _builder.clearPaymentMethodId()
     }
 
     /**
-     * ```
-     * Days to hold before auto-release
-     * ```
-     *
-     * `int32 hold_days = 6 [json_name = "holdDays"];`
+     * `int32 hold_days = 6 [json_name = "holdDays", (.buf.validate.field) = { ... }`
      */
     public var holdDays: kotlin.Int
       @kotlin.jvm.JvmName("getHoldDays")
@@ -139,11 +135,7 @@ public object CreateEscrowPaymentRequestKt {
         _builder.holdDays = value
       }
     /**
-     * ```
-     * Days to hold before auto-release
-     * ```
-     *
-     * `int32 hold_days = 6 [json_name = "holdDays"];`
+     * `int32 hold_days = 6 [json_name = "holdDays", (.buf.validate.field) = { ... }`
      */
     public fun clearHoldDays() {
       _builder.clearHoldDays()

@@ -30,7 +30,7 @@ public object EscrowPaymentKt {
     internal fun _build(): com.skillsphere.payment.v1.EscrowPayment = _builder.build()
 
     /**
-     * `string escrow_id = 1 [json_name = "escrowId"];`
+     * `string escrow_id = 1 [json_name = "escrowId", (.buf.validate.field) = { ... }`
      */
     public var escrowId: kotlin.String
       @kotlin.jvm.JvmName("getEscrowId")
@@ -40,14 +40,14 @@ public object EscrowPaymentKt {
         _builder.escrowId = value
       }
     /**
-     * `string escrow_id = 1 [json_name = "escrowId"];`
+     * `string escrow_id = 1 [json_name = "escrowId", (.buf.validate.field) = { ... }`
      */
     public fun clearEscrowId() {
       _builder.clearEscrowId()
     }
 
     /**
-     * `string payer_id = 2 [json_name = "payerId"];`
+     * `string payer_id = 2 [json_name = "payerId", (.buf.validate.field) = { ... }`
      */
     public var payerId: kotlin.String
       @kotlin.jvm.JvmName("getPayerId")
@@ -57,14 +57,14 @@ public object EscrowPaymentKt {
         _builder.payerId = value
       }
     /**
-     * `string payer_id = 2 [json_name = "payerId"];`
+     * `string payer_id = 2 [json_name = "payerId", (.buf.validate.field) = { ... }`
      */
     public fun clearPayerId() {
       _builder.clearPayerId()
     }
 
     /**
-     * `string payee_id = 3 [json_name = "payeeId"];`
+     * `string payee_id = 3 [json_name = "payeeId", (.buf.validate.field) = { ... }`
      */
     public var payeeId: kotlin.String
       @kotlin.jvm.JvmName("getPayeeId")
@@ -74,14 +74,14 @@ public object EscrowPaymentKt {
         _builder.payeeId = value
       }
     /**
-     * `string payee_id = 3 [json_name = "payeeId"];`
+     * `string payee_id = 3 [json_name = "payeeId", (.buf.validate.field) = { ... }`
      */
     public fun clearPayeeId() {
       _builder.clearPayeeId()
     }
 
     /**
-     * `string gig_id = 4 [json_name = "gigId"];`
+     * `string gig_id = 4 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -91,7 +91,7 @@ public object EscrowPaymentKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 4 [json_name = "gigId"];`
+     * `string gig_id = 4 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
@@ -125,7 +125,7 @@ public object EscrowPaymentKt {
       get() = _builder.amountOrNull
 
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.common.v1.PaymentStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -142,7 +142,7 @@ public object EscrowPaymentKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 6 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
@@ -203,11 +203,7 @@ public object EscrowPaymentKt {
       get() = _builder.releasedAtOrNull
 
     /**
-     * ```
-     * e.g., "gig_completed"
-     * ```
-     *
-     * `string release_condition = 9 [json_name = "releaseCondition"];`
+     * `string release_condition = 9 [json_name = "releaseCondition", (.buf.validate.field) = { ... }`
      */
     public var releaseCondition: kotlin.String
       @kotlin.jvm.JvmName("getReleaseCondition")
@@ -217,11 +213,7 @@ public object EscrowPaymentKt {
         _builder.releaseCondition = value
       }
     /**
-     * ```
-     * e.g., "gig_completed"
-     * ```
-     *
-     * `string release_condition = 9 [json_name = "releaseCondition"];`
+     * `string release_condition = 9 [json_name = "releaseCondition", (.buf.validate.field) = { ... }`
      */
     public fun clearReleaseCondition() {
       _builder.clearReleaseCondition()

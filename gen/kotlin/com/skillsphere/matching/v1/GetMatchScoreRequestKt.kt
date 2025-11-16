@@ -30,7 +30,7 @@ public object GetMatchScoreRequestKt {
     internal fun _build(): com.skillsphere.matching.v1.GetMatchScoreRequest = _builder.build()
 
     /**
-     * `string user_id_1 = 1 [json_name = "userId1"];`
+     * `string user_id_1 = 1 [json_name = "userId1", (.buf.validate.field) = { ... }`
      */
     public var userId1: kotlin.String
       @kotlin.jvm.JvmName("getUserId1")
@@ -40,14 +40,14 @@ public object GetMatchScoreRequestKt {
         _builder.userId1 = value
       }
     /**
-     * `string user_id_1 = 1 [json_name = "userId1"];`
+     * `string user_id_1 = 1 [json_name = "userId1", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId1() {
       _builder.clearUserId1()
     }
 
     /**
-     * `string user_id_2 = 2 [json_name = "userId2"];`
+     * `string user_id_2 = 2 [json_name = "userId2", (.buf.validate.field) = { ... }`
      */
     public var userId2: kotlin.String
       @kotlin.jvm.JvmName("getUserId2")
@@ -57,14 +57,14 @@ public object GetMatchScoreRequestKt {
         _builder.userId2 = value
       }
     /**
-     * `string user_id_2 = 2 [json_name = "userId2"];`
+     * `string user_id_2 = 2 [json_name = "userId2", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId2() {
       _builder.clearUserId2()
     }
 
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm", (.buf.validate.field) = { ... }`
      */
     public var algorithm: com.skillsphere.matching.v1.MatchingAlgorithm
       @kotlin.jvm.JvmName("getAlgorithm")
@@ -81,7 +81,7 @@ public object GetMatchScoreRequestKt {
         _builder.algorithmValue = value
       }
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 3 [json_name = "algorithm", (.buf.validate.field) = { ... }`
      */
     public fun clearAlgorithm() {
       _builder.clearAlgorithm()

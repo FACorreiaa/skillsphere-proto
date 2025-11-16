@@ -47,7 +47,7 @@ public object TrackEventResponseKt {
     }
 
     /**
-     * `string event_id = 2 [json_name = "eventId"];`
+     * `string event_id = 2 [json_name = "eventId", (.buf.validate.field) = { ... }`
      */
     public var eventId: kotlin.String
       @kotlin.jvm.JvmName("getEventId")
@@ -57,7 +57,7 @@ public object TrackEventResponseKt {
         _builder.eventId = value
       }
     /**
-     * `string event_id = 2 [json_name = "eventId"];`
+     * `string event_id = 2 [json_name = "eventId", (.buf.validate.field) = { ... }`
      */
     public fun clearEventId() {
       _builder.clearEventId()

@@ -30,7 +30,7 @@ public object CreateGigRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.CreateGigRequest = _builder.build()
 
     /**
-     * `string creator_id = 1 [json_name = "creatorId"];`
+     * `string creator_id = 1 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public var creatorId: kotlin.String
       @kotlin.jvm.JvmName("getCreatorId")
@@ -40,14 +40,14 @@ public object CreateGigRequestKt {
         _builder.creatorId = value
       }
     /**
-     * `string creator_id = 1 [json_name = "creatorId"];`
+     * `string creator_id = 1 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public fun clearCreatorId() {
       _builder.clearCreatorId()
     }
 
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -57,14 +57,14 @@ public object CreateGigRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -74,7 +74,7 @@ public object CreateGigRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -87,7 +87,7 @@ public object CreateGigRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @return A list containing the skillIds.
      */
     public val skillIds: com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>
@@ -96,7 +96,7 @@ public object CreateGigRequestKt {
         _builder.skillIdsList
       )
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +105,7 @@ public object CreateGigRequestKt {
       _builder.addSkillIds(value)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +115,7 @@ public object CreateGigRequestKt {
       add(value)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +124,7 @@ public object CreateGigRequestKt {
       _builder.addAllSkillIds(values)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +134,7 @@ public object CreateGigRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillIds to set.
      */
@@ -143,7 +143,7 @@ public object CreateGigRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillIds(index, value)
     }/**
-     * `repeated string skill_ids = 4 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 4 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillIds")
@@ -151,7 +151,7 @@ public object CreateGigRequestKt {
       _builder.clearSkillIds()
     }
     /**
-     * `.skillsphere.gig.v1.GigType type = 5 [json_name = "type"];`
+     * `.skillsphere.gig.v1.GigType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.gig.v1.GigType
       @kotlin.jvm.JvmName("getType")
@@ -168,7 +168,7 @@ public object CreateGigRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.gig.v1.GigType type = 5 [json_name = "type"];`
+     * `.skillsphere.gig.v1.GigType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
@@ -219,7 +219,7 @@ public object CreateGigRequestKt {
     }
 
     /**
-     * `int32 estimated_hours = 8 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 8 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public var estimatedHours: kotlin.Int
       @kotlin.jvm.JvmName("getEstimatedHours")
@@ -229,14 +229,14 @@ public object CreateGigRequestKt {
         _builder.estimatedHours = value
       }
     /**
-     * `int32 estimated_hours = 8 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 8 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public fun clearEstimatedHours() {
       _builder.clearEstimatedHours()
     }
 
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel required_proficiency = 9 [json_name = "requiredProficiency"];`
+     * `.skillsphere.common.v1.ProficiencyLevel required_proficiency = 9 [json_name = "requiredProficiency", (.buf.validate.field) = { ... }`
      */
     public var requiredProficiency: com.skillsphere.common.v1.ProficiencyLevel
       @kotlin.jvm.JvmName("getRequiredProficiency")
@@ -253,7 +253,7 @@ public object CreateGigRequestKt {
         _builder.requiredProficiencyValue = value
       }
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel required_proficiency = 9 [json_name = "requiredProficiency"];`
+     * `.skillsphere.common.v1.ProficiencyLevel required_proficiency = 9 [json_name = "requiredProficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearRequiredProficiency() {
       _builder.clearRequiredProficiency()
@@ -266,7 +266,7 @@ public object CreateGigRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class RequirementsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string requirements = 10 [json_name = "requirements"];`
+     * `repeated string requirements = 10 [json_name = "requirements", (.buf.validate.field) = { ... }`
      * @return A list containing the requirements.
      */
     public val requirements: com.google.protobuf.kotlin.DslList<kotlin.String, RequirementsProxy>
@@ -275,7 +275,7 @@ public object CreateGigRequestKt {
         _builder.requirementsList
       )
     /**
-     * `repeated string requirements = 10 [json_name = "requirements"];`
+     * `repeated string requirements = 10 [json_name = "requirements", (.buf.validate.field) = { ... }`
      * @param value The requirements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -284,7 +284,7 @@ public object CreateGigRequestKt {
       _builder.addRequirements(value)
     }
     /**
-     * `repeated string requirements = 10 [json_name = "requirements"];`
+     * `repeated string requirements = 10 [json_name = "requirements", (.buf.validate.field) = { ... }`
      * @param value The requirements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -294,7 +294,7 @@ public object CreateGigRequestKt {
       add(value)
     }
     /**
-     * `repeated string requirements = 10 [json_name = "requirements"];`
+     * `repeated string requirements = 10 [json_name = "requirements", (.buf.validate.field) = { ... }`
      * @param values The requirements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -303,7 +303,7 @@ public object CreateGigRequestKt {
       _builder.addAllRequirements(values)
     }
     /**
-     * `repeated string requirements = 10 [json_name = "requirements"];`
+     * `repeated string requirements = 10 [json_name = "requirements", (.buf.validate.field) = { ... }`
      * @param values The requirements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -313,7 +313,7 @@ public object CreateGigRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string requirements = 10 [json_name = "requirements"];`
+     * `repeated string requirements = 10 [json_name = "requirements", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The requirements to set.
      */
@@ -322,7 +322,7 @@ public object CreateGigRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, RequirementsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setRequirements(index, value)
     }/**
-     * `repeated string requirements = 10 [json_name = "requirements"];`
+     * `repeated string requirements = 10 [json_name = "requirements", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setRequirements")

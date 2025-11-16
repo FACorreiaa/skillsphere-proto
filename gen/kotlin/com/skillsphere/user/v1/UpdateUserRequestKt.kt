@@ -30,7 +30,7 @@ public object UpdateUserRequestKt {
     internal fun _build(): com.skillsphere.user.v1.UpdateUserRequest = _builder.build()
 
     /**
-     * `.skillsphere.common.v1.User user = 1 [json_name = "user"];`
+     * `.skillsphere.common.v1.User user = 1 [json_name = "user", (.buf.validate.field) = { ... }`
      */
     public var user: com.skillsphere.common.v1.User
       @kotlin.jvm.JvmName("getUser")
@@ -40,13 +40,13 @@ public object UpdateUserRequestKt {
         _builder.user = value
       }
     /**
-     * `.skillsphere.common.v1.User user = 1 [json_name = "user"];`
+     * `.skillsphere.common.v1.User user = 1 [json_name = "user", (.buf.validate.field) = { ... }`
      */
     public fun clearUser() {
       _builder.clearUser()
     }
     /**
-     * `.skillsphere.common.v1.User user = 1 [json_name = "user"];`
+     * `.skillsphere.common.v1.User user = 1 [json_name = "user", (.buf.validate.field) = { ... }`
      * @return Whether the user field is set.
      */
     public fun hasUser(): kotlin.Boolean {
@@ -57,11 +57,7 @@ public object UpdateUserRequestKt {
       get() = _builder.userOrNull
 
     /**
-     * ```
-     * e.g., "bio,avatar_url,location"
-     * ```
-     *
-     * `.google.protobuf.FieldMask update_mask = 2 [json_name = "updateMask"];`
+     * `.google.protobuf.FieldMask update_mask = 2 [json_name = "updateMask", (.buf.validate.field) = { ... }`
      */
     public var updateMask: com.google.protobuf.FieldMask
       @kotlin.jvm.JvmName("getUpdateMask")
@@ -71,21 +67,13 @@ public object UpdateUserRequestKt {
         _builder.updateMask = value
       }
     /**
-     * ```
-     * e.g., "bio,avatar_url,location"
-     * ```
-     *
-     * `.google.protobuf.FieldMask update_mask = 2 [json_name = "updateMask"];`
+     * `.google.protobuf.FieldMask update_mask = 2 [json_name = "updateMask", (.buf.validate.field) = { ... }`
      */
     public fun clearUpdateMask() {
       _builder.clearUpdateMask()
     }
     /**
-     * ```
-     * e.g., "bio,avatar_url,location"
-     * ```
-     *
-     * `.google.protobuf.FieldMask update_mask = 2 [json_name = "updateMask"];`
+     * `.google.protobuf.FieldMask update_mask = 2 [json_name = "updateMask", (.buf.validate.field) = { ... }`
      * @return Whether the updateMask field is set.
      */
     public fun hasUpdateMask(): kotlin.Boolean {

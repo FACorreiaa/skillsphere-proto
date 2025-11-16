@@ -30,7 +30,7 @@ public object GetBadgeTemplatesRequestKt {
     internal fun _build(): com.skillsphere.certification.v1.GetBadgeTemplatesRequest = _builder.build()
 
     /**
-     * `.skillsphere.certification.v1.CertificationType type_filter = 1 [json_name = "typeFilter"];`
+     * `.skillsphere.certification.v1.CertificationType type_filter = 1 [json_name = "typeFilter", (.buf.validate.field) = { ... }`
      */
     public var typeFilter: com.skillsphere.certification.v1.CertificationType
       @kotlin.jvm.JvmName("getTypeFilter")
@@ -47,14 +47,14 @@ public object GetBadgeTemplatesRequestKt {
         _builder.typeFilterValue = value
       }
     /**
-     * `.skillsphere.certification.v1.CertificationType type_filter = 1 [json_name = "typeFilter"];`
+     * `.skillsphere.certification.v1.CertificationType type_filter = 1 [json_name = "typeFilter", (.buf.validate.field) = { ... }`
      */
     public fun clearTypeFilter() {
       _builder.clearTypeFilter()
     }
 
     /**
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -64,7 +64,7 @@ public object GetBadgeTemplatesRequestKt {
         _builder.limit = value
       }
     /**
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()

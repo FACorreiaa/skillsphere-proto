@@ -30,7 +30,7 @@ public object SearchMetadataKt {
     internal fun _build(): com.skillsphere.search.v1.SearchMetadata = _builder.build()
 
     /**
-     * `int32 query_time_ms = 1 [json_name = "queryTimeMs"];`
+     * `int32 query_time_ms = 1 [json_name = "queryTimeMs", (.buf.validate.field) = { ... }`
      */
     public var queryTimeMs: kotlin.Int
       @kotlin.jvm.JvmName("getQueryTimeMs")
@@ -40,18 +40,14 @@ public object SearchMetadataKt {
         _builder.queryTimeMs = value
       }
     /**
-     * `int32 query_time_ms = 1 [json_name = "queryTimeMs"];`
+     * `int32 query_time_ms = 1 [json_name = "queryTimeMs", (.buf.validate.field) = { ... }`
      */
     public fun clearQueryTimeMs() {
       _builder.clearQueryTimeMs()
     }
 
     /**
-     * ```
-     * For analytics
-     * ```
-     *
-     * `string query_id = 2 [json_name = "queryId"];`
+     * `string query_id = 2 [json_name = "queryId", (.buf.validate.field) = { ... }`
      */
     public var queryId: kotlin.String
       @kotlin.jvm.JvmName("getQueryId")
@@ -61,11 +57,7 @@ public object SearchMetadataKt {
         _builder.queryId = value
       }
     /**
-     * ```
-     * For analytics
-     * ```
-     *
-     * `string query_id = 2 [json_name = "queryId"];`
+     * `string query_id = 2 [json_name = "queryId", (.buf.validate.field) = { ... }`
      */
     public fun clearQueryId() {
       _builder.clearQueryId()
@@ -78,7 +70,7 @@ public object SearchMetadataKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AppliedFiltersProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string applied_filters = 3 [json_name = "appliedFilters"];`
+     * `repeated string applied_filters = 3 [json_name = "appliedFilters", (.buf.validate.field) = { ... }`
      * @return A list containing the appliedFilters.
      */
     public val appliedFilters: com.google.protobuf.kotlin.DslList<kotlin.String, AppliedFiltersProxy>
@@ -87,7 +79,7 @@ public object SearchMetadataKt {
         _builder.appliedFiltersList
       )
     /**
-     * `repeated string applied_filters = 3 [json_name = "appliedFilters"];`
+     * `repeated string applied_filters = 3 [json_name = "appliedFilters", (.buf.validate.field) = { ... }`
      * @param value The appliedFilters to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -96,7 +88,7 @@ public object SearchMetadataKt {
       _builder.addAppliedFilters(value)
     }
     /**
-     * `repeated string applied_filters = 3 [json_name = "appliedFilters"];`
+     * `repeated string applied_filters = 3 [json_name = "appliedFilters", (.buf.validate.field) = { ... }`
      * @param value The appliedFilters to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -106,7 +98,7 @@ public object SearchMetadataKt {
       add(value)
     }
     /**
-     * `repeated string applied_filters = 3 [json_name = "appliedFilters"];`
+     * `repeated string applied_filters = 3 [json_name = "appliedFilters", (.buf.validate.field) = { ... }`
      * @param values The appliedFilters to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +107,7 @@ public object SearchMetadataKt {
       _builder.addAllAppliedFilters(values)
     }
     /**
-     * `repeated string applied_filters = 3 [json_name = "appliedFilters"];`
+     * `repeated string applied_filters = 3 [json_name = "appliedFilters", (.buf.validate.field) = { ... }`
      * @param values The appliedFilters to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -125,7 +117,7 @@ public object SearchMetadataKt {
       addAll(values)
     }
     /**
-     * `repeated string applied_filters = 3 [json_name = "appliedFilters"];`
+     * `repeated string applied_filters = 3 [json_name = "appliedFilters", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The appliedFilters to set.
      */
@@ -134,7 +126,7 @@ public object SearchMetadataKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AppliedFiltersProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setAppliedFilters(index, value)
     }/**
-     * `repeated string applied_filters = 3 [json_name = "appliedFilters"];`
+     * `repeated string applied_filters = 3 [json_name = "appliedFilters", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setAppliedFilters")

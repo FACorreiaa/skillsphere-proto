@@ -34,7 +34,7 @@ public object GetTrendingSkillsRequestKt {
      * Default 10, max 50
      * ```
      *
-     * `int32 limit = 1 [json_name = "limit"];`
+     * `int32 limit = 1 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -48,7 +48,7 @@ public object GetTrendingSkillsRequestKt {
      * Default 10, max 50
      * ```
      *
-     * `int32 limit = 1 [json_name = "limit"];`
+     * `int32 limit = 1 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()
@@ -79,11 +79,7 @@ public object GetTrendingSkillsRequestKt {
     }
 
     /**
-     * ```
-     * Trending window (default 7)
-     * ```
-     *
-     * `int32 days = 3 [json_name = "days"];`
+     * `int32 days = 3 [json_name = "days", (.buf.validate.field) = { ... }`
      */
     public var days: kotlin.Int
       @kotlin.jvm.JvmName("getDays")
@@ -93,11 +89,7 @@ public object GetTrendingSkillsRequestKt {
         _builder.days = value
       }
     /**
-     * ```
-     * Trending window (default 7)
-     * ```
-     *
-     * `int32 days = 3 [json_name = "days"];`
+     * `int32 days = 3 [json_name = "days", (.buf.validate.field) = { ... }`
      */
     public fun clearDays() {
       _builder.clearDays()

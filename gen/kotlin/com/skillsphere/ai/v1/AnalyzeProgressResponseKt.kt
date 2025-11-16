@@ -30,7 +30,7 @@ public object AnalyzeProgressResponseKt {
     internal fun _build(): com.skillsphere.ai.v1.AnalyzeProgressResponse = _builder.build()
 
     /**
-     * `string summary = 1 [json_name = "summary"];`
+     * `string summary = 1 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public var summary: kotlin.String
       @kotlin.jvm.JvmName("getSummary")
@@ -40,7 +40,7 @@ public object AnalyzeProgressResponseKt {
         _builder.summary = value
       }
     /**
-     * `string summary = 1 [json_name = "summary"];`
+     * `string summary = 1 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public fun clearSummary() {
       _builder.clearSummary()
@@ -53,7 +53,7 @@ public object AnalyzeProgressResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class InsightsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights"];`
+     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights", (.buf.validate.field) = { ... }`
      */
      public val insights: com.google.protobuf.kotlin.DslList<com.skillsphere.ai.v1.ProgressInsight, InsightsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -61,7 +61,7 @@ public object AnalyzeProgressResponseKt {
         _builder.insightsList
       )
     /**
-     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights"];`
+     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights", (.buf.validate.field) = { ... }`
      * @param value The insights to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -70,7 +70,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addInsights(value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights"];`
+     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights", (.buf.validate.field) = { ... }`
      * @param value The insights to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -80,7 +80,7 @@ public object AnalyzeProgressResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights"];`
+     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights", (.buf.validate.field) = { ... }`
      * @param values The insights to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -89,7 +89,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addAllInsights(values)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights"];`
+     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights", (.buf.validate.field) = { ... }`
      * @param values The insights to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -99,7 +99,7 @@ public object AnalyzeProgressResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights"];`
+     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The insights to set.
      */
@@ -109,7 +109,7 @@ public object AnalyzeProgressResponseKt {
       _builder.setInsights(index, value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights"];`
+     * `repeated .skillsphere.ai.v1.ProgressInsight insights = 2 [json_name = "insights", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearInsights")
@@ -118,7 +118,7 @@ public object AnalyzeProgressResponseKt {
     }
 
     /**
-     * `double progress_percentage = 3 [json_name = "progressPercentage"];`
+     * `double progress_percentage = 3 [json_name = "progressPercentage", (.buf.validate.field) = { ... }`
      */
     public var progressPercentage: kotlin.Double
       @kotlin.jvm.JvmName("getProgressPercentage")
@@ -128,7 +128,7 @@ public object AnalyzeProgressResponseKt {
         _builder.progressPercentage = value
       }
     /**
-     * `double progress_percentage = 3 [json_name = "progressPercentage"];`
+     * `double progress_percentage = 3 [json_name = "progressPercentage", (.buf.validate.field) = { ... }`
      */
     public fun clearProgressPercentage() {
       _builder.clearProgressPercentage()
@@ -141,7 +141,7 @@ public object AnalyzeProgressResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class StrengthsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @return A list containing the strengths.
      */
     public val strengths: com.google.protobuf.kotlin.DslList<kotlin.String, StrengthsProxy>
@@ -150,7 +150,7 @@ public object AnalyzeProgressResponseKt {
         _builder.strengthsList
       )
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param value The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -159,7 +159,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addStrengths(value)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param value The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -169,7 +169,7 @@ public object AnalyzeProgressResponseKt {
       add(value)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param values The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -178,7 +178,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addAllStrengths(values)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param values The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -188,7 +188,7 @@ public object AnalyzeProgressResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The strengths to set.
      */
@@ -197,7 +197,7 @@ public object AnalyzeProgressResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, StrengthsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setStrengths(index, value)
     }/**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setStrengths")
@@ -211,7 +211,7 @@ public object AnalyzeProgressResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AreasToImproveProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove"];`
+     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove", (.buf.validate.field) = { ... }`
      * @return A list containing the areasToImprove.
      */
     public val areasToImprove: com.google.protobuf.kotlin.DslList<kotlin.String, AreasToImproveProxy>
@@ -220,7 +220,7 @@ public object AnalyzeProgressResponseKt {
         _builder.areasToImproveList
       )
     /**
-     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove"];`
+     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove", (.buf.validate.field) = { ... }`
      * @param value The areasToImprove to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -229,7 +229,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addAreasToImprove(value)
     }
     /**
-     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove"];`
+     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove", (.buf.validate.field) = { ... }`
      * @param value The areasToImprove to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -239,7 +239,7 @@ public object AnalyzeProgressResponseKt {
       add(value)
     }
     /**
-     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove"];`
+     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove", (.buf.validate.field) = { ... }`
      * @param values The areasToImprove to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -248,7 +248,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addAllAreasToImprove(values)
     }
     /**
-     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove"];`
+     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove", (.buf.validate.field) = { ... }`
      * @param values The areasToImprove to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -258,7 +258,7 @@ public object AnalyzeProgressResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove"];`
+     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The areasToImprove to set.
      */
@@ -267,7 +267,7 @@ public object AnalyzeProgressResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, AreasToImproveProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setAreasToImprove(index, value)
     }/**
-     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove"];`
+     * `repeated string areas_to_improve = 5 [json_name = "areasToImprove", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setAreasToImprove")
@@ -281,7 +281,7 @@ public object AnalyzeProgressResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class NextStepsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string next_steps = 6 [json_name = "nextSteps"];`
+     * `repeated string next_steps = 6 [json_name = "nextSteps", (.buf.validate.field) = { ... }`
      * @return A list containing the nextSteps.
      */
     public val nextSteps: com.google.protobuf.kotlin.DslList<kotlin.String, NextStepsProxy>
@@ -290,7 +290,7 @@ public object AnalyzeProgressResponseKt {
         _builder.nextStepsList
       )
     /**
-     * `repeated string next_steps = 6 [json_name = "nextSteps"];`
+     * `repeated string next_steps = 6 [json_name = "nextSteps", (.buf.validate.field) = { ... }`
      * @param value The nextSteps to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -299,7 +299,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addNextSteps(value)
     }
     /**
-     * `repeated string next_steps = 6 [json_name = "nextSteps"];`
+     * `repeated string next_steps = 6 [json_name = "nextSteps", (.buf.validate.field) = { ... }`
      * @param value The nextSteps to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -309,7 +309,7 @@ public object AnalyzeProgressResponseKt {
       add(value)
     }
     /**
-     * `repeated string next_steps = 6 [json_name = "nextSteps"];`
+     * `repeated string next_steps = 6 [json_name = "nextSteps", (.buf.validate.field) = { ... }`
      * @param values The nextSteps to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -318,7 +318,7 @@ public object AnalyzeProgressResponseKt {
       _builder.addAllNextSteps(values)
     }
     /**
-     * `repeated string next_steps = 6 [json_name = "nextSteps"];`
+     * `repeated string next_steps = 6 [json_name = "nextSteps", (.buf.validate.field) = { ... }`
      * @param values The nextSteps to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -328,7 +328,7 @@ public object AnalyzeProgressResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string next_steps = 6 [json_name = "nextSteps"];`
+     * `repeated string next_steps = 6 [json_name = "nextSteps", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The nextSteps to set.
      */
@@ -337,7 +337,7 @@ public object AnalyzeProgressResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, NextStepsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setNextSteps(index, value)
     }/**
-     * `repeated string next_steps = 6 [json_name = "nextSteps"];`
+     * `repeated string next_steps = 6 [json_name = "nextSteps", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setNextSteps")

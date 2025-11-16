@@ -30,7 +30,7 @@ public object AdminNoteKt {
     internal fun _build(): com.skillsphere.admin.v1.AdminNote = _builder.build()
 
     /**
-     * `string note_id = 1 [json_name = "noteId"];`
+     * `string note_id = 1 [json_name = "noteId", (.buf.validate.field) = { ... }`
      */
     public var noteId: kotlin.String
       @kotlin.jvm.JvmName("getNoteId")
@@ -40,14 +40,14 @@ public object AdminNoteKt {
         _builder.noteId = value
       }
     /**
-     * `string note_id = 1 [json_name = "noteId"];`
+     * `string note_id = 1 [json_name = "noteId", (.buf.validate.field) = { ... }`
      */
     public fun clearNoteId() {
       _builder.clearNoteId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,14 +57,14 @@ public object AdminNoteKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string content = 3 [json_name = "content"];`
+     * `string content = 3 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public var content: kotlin.String
       @kotlin.jvm.JvmName("getContent")
@@ -74,7 +74,7 @@ public object AdminNoteKt {
         _builder.content = value
       }
     /**
-     * `string content = 3 [json_name = "content"];`
+     * `string content = 3 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public fun clearContent() {
       _builder.clearContent()

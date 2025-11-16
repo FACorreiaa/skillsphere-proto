@@ -30,7 +30,7 @@ public object GetLeaderboardRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.GetLeaderboardRequest = _builder.build()
 
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public var challengeId: kotlin.String
       @kotlin.jvm.JvmName("getChallengeId")
@@ -40,18 +40,14 @@ public object GetLeaderboardRequestKt {
         _builder.challengeId = value
       }
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public fun clearChallengeId() {
       _builder.clearChallengeId()
     }
 
     /**
-     * ```
-     * Top N entries
-     * ```
-     *
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -61,11 +57,7 @@ public object GetLeaderboardRequestKt {
         _builder.limit = value
       }
     /**
-     * ```
-     * Top N entries
-     * ```
-     *
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()

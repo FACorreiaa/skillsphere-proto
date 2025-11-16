@@ -1,0 +1,446 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "ai/v1/ai.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AIService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "skillsphereaiv1DifficultyLevel": {
+      "type": "string",
+      "enum": [
+        "DIFFICULTY_LEVEL_UNSPECIFIED",
+        "DIFFICULTY_LEVEL_BEGINNER",
+        "DIFFICULTY_LEVEL_INTERMEDIATE",
+        "DIFFICULTY_LEVEL_ADVANCED"
+      ],
+      "default": "DIFFICULTY_LEVEL_UNSPECIFIED"
+    },
+    "skillsphereaiv1SkillEmbedding": {
+      "type": "object",
+      "properties": {
+        "skillName": {
+          "type": "string"
+        },
+        "vector": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "float"
+          }
+        },
+        "modelVersion": {
+          "type": "string"
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1AnalyzeProgressResponse": {
+      "type": "object",
+      "properties": {
+        "summary": {
+          "type": "string"
+        },
+        "insights": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1ProgressInsight"
+          }
+        },
+        "progressPercentage": {
+          "type": "number",
+          "format": "double"
+        },
+        "strengths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "areasToImprove": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "nextSteps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1AnalyzeSkillGapResponse": {
+      "type": "object",
+      "properties": {
+        "gaps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SkillGap"
+          }
+        },
+        "summary": {
+          "type": "string"
+        },
+        "recommendations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1AssessmentQuestion": {
+      "type": "object",
+      "properties": {
+        "questionNumber": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "question": {
+          "type": "string"
+        },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "correctAnswer": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        },
+        "difficultyScore": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1ChatMessage": {
+      "type": "object",
+      "properties": {
+        "role": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1ChatWithMentorResponse": {
+      "type": "object",
+      "properties": {
+        "response": {
+          "type": "string"
+        },
+        "followUpSuggestions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1GenerateAssessmentResponse": {
+      "type": "object",
+      "properties": {
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1AssessmentQuestion"
+          }
+        },
+        "estimatedMinutes": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GenerateLearningResourcesResponse": {
+      "type": "object",
+      "properties": {
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1LearningResource"
+          }
+        },
+        "learningPath": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GenerateSessionPrepResponse": {
+      "type": "object",
+      "properties": {
+        "agenda": {
+          "type": "string"
+        },
+        "teachingTips": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "learningGoals": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "discussionTopics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "practiceExercises": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "icebreaker": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GenerateSkillEmbeddingResponse": {
+      "type": "object",
+      "properties": {
+        "embeddings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/skillsphereaiv1SkillEmbedding"
+          }
+        }
+      }
+    },
+    "v1GetMentorAdviceResponse": {
+      "type": "object",
+      "properties": {
+        "advice": {
+          "type": "string"
+        },
+        "keyPoints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "doList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "dontList": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1LearningResource"
+          }
+        }
+      }
+    },
+    "v1GetSkillRoadmapResponse": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1RoadmapStep"
+          }
+        },
+        "estimatedHours": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "prerequisites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string"
+        }
+      }
+    },
+    "v1LearningResource": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        },
+        "durationMinutes": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isFree": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ProgressInsight": {
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string"
+        },
+        "metric": {
+          "type": "string"
+        },
+        "trend": {
+          "type": "string"
+        },
+        "explanation": {
+          "type": "string"
+        }
+      }
+    },
+    "v1RoadmapStep": {
+      "type": "object",
+      "properties": {
+        "order": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "topics": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "estimatedHours": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1LearningResource"
+          }
+        },
+        "milestones": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1SkillGap": {
+      "type": "object",
+      "properties": {
+        "skillName": {
+          "type": "string"
+        },
+        "user1Proficiency": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "user2Proficiency": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "gapSize": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "isComplementary": {
+          "type": "boolean",
+          "title": "One teaches, other learns"
+        },
+        "explanation": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StreamMentorChatResponse": {
+      "type": "object",
+      "properties": {
+        "chunk": {
+          "type": "string"
+        },
+        "isComplete": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

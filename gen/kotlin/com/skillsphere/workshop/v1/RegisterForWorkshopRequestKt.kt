@@ -30,7 +30,7 @@ public object RegisterForWorkshopRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.RegisterForWorkshopRequest = _builder.build()
 
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public var workshopId: kotlin.String
       @kotlin.jvm.JvmName("getWorkshopId")
@@ -40,14 +40,14 @@ public object RegisterForWorkshopRequestKt {
         _builder.workshopId = value
       }
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public fun clearWorkshopId() {
       _builder.clearWorkshopId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,18 +57,14 @@ public object RegisterForWorkshopRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * For paid workshops
-     * ```
-     *
-     * `string payment_method_id = 3 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 3 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var paymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentMethodId")
@@ -78,11 +74,7 @@ public object RegisterForWorkshopRequestKt {
         _builder.paymentMethodId = value
       }
     /**
-     * ```
-     * For paid workshops
-     * ```
-     *
-     * `string payment_method_id = 3 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 3 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethodId() {
       _builder.clearPaymentMethodId()

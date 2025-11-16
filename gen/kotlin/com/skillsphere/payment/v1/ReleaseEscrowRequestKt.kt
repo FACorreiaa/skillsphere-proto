@@ -30,7 +30,7 @@ public object ReleaseEscrowRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.ReleaseEscrowRequest = _builder.build()
 
     /**
-     * `string escrow_id = 1 [json_name = "escrowId"];`
+     * `string escrow_id = 1 [json_name = "escrowId", (.buf.validate.field) = { ... }`
      */
     public var escrowId: kotlin.String
       @kotlin.jvm.JvmName("getEscrowId")
@@ -40,18 +40,14 @@ public object ReleaseEscrowRequestKt {
         _builder.escrowId = value
       }
     /**
-     * `string escrow_id = 1 [json_name = "escrowId"];`
+     * `string escrow_id = 1 [json_name = "escrowId", (.buf.validate.field) = { ... }`
      */
     public fun clearEscrowId() {
       _builder.clearEscrowId()
     }
 
     /**
-     * ```
-     * For authorization
-     * ```
-     *
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -61,18 +57,14 @@ public object ReleaseEscrowRequestKt {
         _builder.userId = value
       }
     /**
-     * ```
-     * For authorization
-     * ```
-     *
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string release_reason = 3 [json_name = "releaseReason"];`
+     * `string release_reason = 3 [json_name = "releaseReason", (.buf.validate.field) = { ... }`
      */
     public var releaseReason: kotlin.String
       @kotlin.jvm.JvmName("getReleaseReason")
@@ -82,7 +74,7 @@ public object ReleaseEscrowRequestKt {
         _builder.releaseReason = value
       }
     /**
-     * `string release_reason = 3 [json_name = "releaseReason"];`
+     * `string release_reason = 3 [json_name = "releaseReason", (.buf.validate.field) = { ... }`
      */
     public fun clearReleaseReason() {
       _builder.clearReleaseReason()

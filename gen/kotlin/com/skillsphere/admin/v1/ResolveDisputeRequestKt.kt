@@ -30,7 +30,7 @@ public object ResolveDisputeRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.ResolveDisputeRequest = _builder.build()
 
     /**
-     * `string dispute_id = 1 [json_name = "disputeId"];`
+     * `string dispute_id = 1 [json_name = "disputeId", (.buf.validate.field) = { ... }`
      */
     public var disputeId: kotlin.String
       @kotlin.jvm.JvmName("getDisputeId")
@@ -40,14 +40,14 @@ public object ResolveDisputeRequestKt {
         _builder.disputeId = value
       }
     /**
-     * `string dispute_id = 1 [json_name = "disputeId"];`
+     * `string dispute_id = 1 [json_name = "disputeId", (.buf.validate.field) = { ... }`
      */
     public fun clearDisputeId() {
       _builder.clearDisputeId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,14 +57,14 @@ public object ResolveDisputeRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string resolution = 3 [json_name = "resolution"];`
+     * `string resolution = 3 [json_name = "resolution", (.buf.validate.field) = { ... }`
      */
     public var resolution: kotlin.String
       @kotlin.jvm.JvmName("getResolution")
@@ -74,18 +74,14 @@ public object ResolveDisputeRequestKt {
         _builder.resolution = value
       }
     /**
-     * `string resolution = 3 [json_name = "resolution"];`
+     * `string resolution = 3 [json_name = "resolution", (.buf.validate.field) = { ... }`
      */
     public fun clearResolution() {
       _builder.clearResolution()
     }
 
     /**
-     * ```
-     * User who wins the dispute
-     * ```
-     *
-     * `string winner_id = 4 [json_name = "winnerId"];`
+     * `string winner_id = 4 [json_name = "winnerId", (.buf.validate.field) = { ... }`
      */
     public var winnerId: kotlin.String
       @kotlin.jvm.JvmName("getWinnerId")
@@ -95,11 +91,7 @@ public object ResolveDisputeRequestKt {
         _builder.winnerId = value
       }
     /**
-     * ```
-     * User who wins the dispute
-     * ```
-     *
-     * `string winner_id = 4 [json_name = "winnerId"];`
+     * `string winner_id = 4 [json_name = "winnerId", (.buf.validate.field) = { ... }`
      */
     public fun clearWinnerId() {
       _builder.clearWinnerId()

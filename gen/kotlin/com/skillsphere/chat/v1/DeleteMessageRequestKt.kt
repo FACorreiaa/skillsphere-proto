@@ -30,7 +30,7 @@ public object DeleteMessageRequestKt {
     internal fun _build(): com.skillsphere.chat.v1.DeleteMessageRequest = _builder.build()
 
     /**
-     * `string message_id = 1 [json_name = "messageId"];`
+     * `string message_id = 1 [json_name = "messageId", (.buf.validate.field) = { ... }`
      */
     public var messageId: kotlin.String
       @kotlin.jvm.JvmName("getMessageId")
@@ -40,18 +40,14 @@ public object DeleteMessageRequestKt {
         _builder.messageId = value
       }
     /**
-     * `string message_id = 1 [json_name = "messageId"];`
+     * `string message_id = 1 [json_name = "messageId", (.buf.validate.field) = { ... }`
      */
     public fun clearMessageId() {
       _builder.clearMessageId()
     }
 
     /**
-     * ```
-     * For authorization
-     * ```
-     *
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -61,11 +57,7 @@ public object DeleteMessageRequestKt {
         _builder.userId = value
       }
     /**
-     * ```
-     * For authorization
-     * ```
-     *
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()

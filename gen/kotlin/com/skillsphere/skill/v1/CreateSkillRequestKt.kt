@@ -30,7 +30,7 @@ public object CreateSkillRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.CreateSkillRequest = _builder.build()
 
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public var name: kotlin.String
       @kotlin.jvm.JvmName("getName")
@@ -40,14 +40,14 @@ public object CreateSkillRequestKt {
         _builder.name = value
       }
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public fun clearName() {
       _builder.clearName()
     }
 
     /**
-     * `.skillsphere.common.v1.SkillCategory category = 2 [json_name = "category"];`
+     * `.skillsphere.common.v1.SkillCategory category = 2 [json_name = "category", (.buf.validate.field) = { ... }`
      */
     public var category: com.skillsphere.common.v1.SkillCategory
       @kotlin.jvm.JvmName("getCategory")
@@ -64,14 +64,14 @@ public object CreateSkillRequestKt {
         _builder.categoryValue = value
       }
     /**
-     * `.skillsphere.common.v1.SkillCategory category = 2 [json_name = "category"];`
+     * `.skillsphere.common.v1.SkillCategory category = 2 [json_name = "category", (.buf.validate.field) = { ... }`
      */
     public fun clearCategory() {
       _builder.clearCategory()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -81,7 +81,7 @@ public object CreateSkillRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -94,7 +94,7 @@ public object CreateSkillRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TagsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string tags = 4 [json_name = "tags"];`
+     * `repeated string tags = 4 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @return A list containing the tags.
      */
     public val tags: com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>
@@ -103,7 +103,7 @@ public object CreateSkillRequestKt {
         _builder.tagsList
       )
     /**
-     * `repeated string tags = 4 [json_name = "tags"];`
+     * `repeated string tags = 4 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -112,7 +112,7 @@ public object CreateSkillRequestKt {
       _builder.addTags(value)
     }
     /**
-     * `repeated string tags = 4 [json_name = "tags"];`
+     * `repeated string tags = 4 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -122,7 +122,7 @@ public object CreateSkillRequestKt {
       add(value)
     }
     /**
-     * `repeated string tags = 4 [json_name = "tags"];`
+     * `repeated string tags = 4 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -131,7 +131,7 @@ public object CreateSkillRequestKt {
       _builder.addAllTags(values)
     }
     /**
-     * `repeated string tags = 4 [json_name = "tags"];`
+     * `repeated string tags = 4 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -141,7 +141,7 @@ public object CreateSkillRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string tags = 4 [json_name = "tags"];`
+     * `repeated string tags = 4 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The tags to set.
      */
@@ -150,7 +150,7 @@ public object CreateSkillRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setTags(index, value)
     }/**
-     * `repeated string tags = 4 [json_name = "tags"];`
+     * `repeated string tags = 4 [json_name = "tags", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTags")

@@ -30,7 +30,7 @@ public object EndWorkshopRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.EndWorkshopRequest = _builder.build()
 
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public var workshopId: kotlin.String
       @kotlin.jvm.JvmName("getWorkshopId")
@@ -40,14 +40,14 @@ public object EndWorkshopRequestKt {
         _builder.workshopId = value
       }
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public fun clearWorkshopId() {
       _builder.clearWorkshopId()
     }
 
     /**
-     * `string host_id = 2 [json_name = "hostId"];`
+     * `string host_id = 2 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public var hostId: kotlin.String
       @kotlin.jvm.JvmName("getHostId")
@@ -57,18 +57,14 @@ public object EndWorkshopRequestKt {
         _builder.hostId = value
       }
     /**
-     * `string host_id = 2 [json_name = "hostId"];`
+     * `string host_id = 2 [json_name = "hostId", (.buf.validate.field) = { ... }`
      */
     public fun clearHostId() {
       _builder.clearHostId()
     }
 
     /**
-     * ```
-     * Optional recording
-     * ```
-     *
-     * `string recording_url = 3 [json_name = "recordingUrl"];`
+     * `string recording_url = 3 [json_name = "recordingUrl", (.buf.validate.field) = { ... }`
      */
     public var recordingUrl: kotlin.String
       @kotlin.jvm.JvmName("getRecordingUrl")
@@ -78,11 +74,7 @@ public object EndWorkshopRequestKt {
         _builder.recordingUrl = value
       }
     /**
-     * ```
-     * Optional recording
-     * ```
-     *
-     * `string recording_url = 3 [json_name = "recordingUrl"];`
+     * `string recording_url = 3 [json_name = "recordingUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearRecordingUrl() {
       _builder.clearRecordingUrl()

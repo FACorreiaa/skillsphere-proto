@@ -84,7 +84,7 @@ public object GetSkillTrendsRequestKt {
       get() = _builder.endDateOrNull
 
     /**
-     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity"];`
+     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity", (.buf.validate.field) = { ... }`
      */
     public var granularity: com.skillsphere.analytics.v1.TimeGranularity
       @kotlin.jvm.JvmName("getGranularity")
@@ -101,18 +101,14 @@ public object GetSkillTrendsRequestKt {
         _builder.granularityValue = value
       }
     /**
-     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity"];`
+     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity", (.buf.validate.field) = { ... }`
      */
     public fun clearGranularity() {
       _builder.clearGranularity()
     }
 
     /**
-     * ```
-     * Top N skills
-     * ```
-     *
-     * `int32 top_n = 4 [json_name = "topN"];`
+     * `int32 top_n = 4 [json_name = "topN", (.buf.validate.field) = { ... }`
      */
     public var topN: kotlin.Int
       @kotlin.jvm.JvmName("getTopN")
@@ -122,11 +118,7 @@ public object GetSkillTrendsRequestKt {
         _builder.topN = value
       }
     /**
-     * ```
-     * Top N skills
-     * ```
-     *
-     * `int32 top_n = 4 [json_name = "topN"];`
+     * `int32 top_n = 4 [json_name = "topN", (.buf.validate.field) = { ... }`
      */
     public fun clearTopN() {
       _builder.clearTopN()

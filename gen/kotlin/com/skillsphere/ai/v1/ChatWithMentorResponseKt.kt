@@ -30,7 +30,7 @@ public object ChatWithMentorResponseKt {
     internal fun _build(): com.skillsphere.ai.v1.ChatWithMentorResponse = _builder.build()
 
     /**
-     * `string response = 1 [json_name = "response"];`
+     * `string response = 1 [json_name = "response", (.buf.validate.field) = { ... }`
      */
     public var response: kotlin.String
       @kotlin.jvm.JvmName("getResponse")
@@ -40,7 +40,7 @@ public object ChatWithMentorResponseKt {
         _builder.response = value
       }
     /**
-     * `string response = 1 [json_name = "response"];`
+     * `string response = 1 [json_name = "response", (.buf.validate.field) = { ... }`
      */
     public fun clearResponse() {
       _builder.clearResponse()
@@ -53,7 +53,7 @@ public object ChatWithMentorResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class FollowUpSuggestionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions"];`
+     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions", (.buf.validate.field) = { ... }`
      * @return A list containing the followUpSuggestions.
      */
     public val followUpSuggestions: com.google.protobuf.kotlin.DslList<kotlin.String, FollowUpSuggestionsProxy>
@@ -62,7 +62,7 @@ public object ChatWithMentorResponseKt {
         _builder.followUpSuggestionsList
       )
     /**
-     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions"];`
+     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions", (.buf.validate.field) = { ... }`
      * @param value The followUpSuggestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -71,7 +71,7 @@ public object ChatWithMentorResponseKt {
       _builder.addFollowUpSuggestions(value)
     }
     /**
-     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions"];`
+     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions", (.buf.validate.field) = { ... }`
      * @param value The followUpSuggestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -81,7 +81,7 @@ public object ChatWithMentorResponseKt {
       add(value)
     }
     /**
-     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions"];`
+     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions", (.buf.validate.field) = { ... }`
      * @param values The followUpSuggestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,7 +90,7 @@ public object ChatWithMentorResponseKt {
       _builder.addAllFollowUpSuggestions(values)
     }
     /**
-     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions"];`
+     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions", (.buf.validate.field) = { ... }`
      * @param values The followUpSuggestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -100,7 +100,7 @@ public object ChatWithMentorResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions"];`
+     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The followUpSuggestions to set.
      */
@@ -109,7 +109,7 @@ public object ChatWithMentorResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, FollowUpSuggestionsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setFollowUpSuggestions(index, value)
     }/**
-     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions"];`
+     * `repeated string follow_up_suggestions = 2 [json_name = "followUpSuggestions", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setFollowUpSuggestions")

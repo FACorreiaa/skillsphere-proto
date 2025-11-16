@@ -84,7 +84,7 @@ public object GetUserGrowthRequestKt {
       get() = _builder.endDateOrNull
 
     /**
-     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity"];`
+     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity", (.buf.validate.field) = { ... }`
      */
     public var granularity: com.skillsphere.analytics.v1.TimeGranularity
       @kotlin.jvm.JvmName("getGranularity")
@@ -101,7 +101,7 @@ public object GetUserGrowthRequestKt {
         _builder.granularityValue = value
       }
     /**
-     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity"];`
+     * `.skillsphere.analytics.v1.TimeGranularity granularity = 3 [json_name = "granularity", (.buf.validate.field) = { ... }`
      */
     public fun clearGranularity() {
       _builder.clearGranularity()

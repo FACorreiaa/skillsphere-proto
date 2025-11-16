@@ -30,7 +30,7 @@ public object ApplicationKt {
     internal fun _build(): com.skillsphere.gig.v1.Application = _builder.build()
 
     /**
-     * `string application_id = 1 [json_name = "applicationId"];`
+     * `string application_id = 1 [json_name = "applicationId", (.buf.validate.field) = { ... }`
      */
     public var applicationId: kotlin.String
       @kotlin.jvm.JvmName("getApplicationId")
@@ -40,14 +40,14 @@ public object ApplicationKt {
         _builder.applicationId = value
       }
     /**
-     * `string application_id = 1 [json_name = "applicationId"];`
+     * `string application_id = 1 [json_name = "applicationId", (.buf.validate.field) = { ... }`
      */
     public fun clearApplicationId() {
       _builder.clearApplicationId()
     }
 
     /**
-     * `string gig_id = 2 [json_name = "gigId"];`
+     * `string gig_id = 2 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -57,14 +57,14 @@ public object ApplicationKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 2 [json_name = "gigId"];`
+     * `string gig_id = 2 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
     }
 
     /**
-     * `string freelancer_id = 3 [json_name = "freelancerId"];`
+     * `string freelancer_id = 3 [json_name = "freelancerId", (.buf.validate.field) = { ... }`
      */
     public var freelancerId: kotlin.String
       @kotlin.jvm.JvmName("getFreelancerId")
@@ -74,14 +74,14 @@ public object ApplicationKt {
         _builder.freelancerId = value
       }
     /**
-     * `string freelancer_id = 3 [json_name = "freelancerId"];`
+     * `string freelancer_id = 3 [json_name = "freelancerId", (.buf.validate.field) = { ... }`
      */
     public fun clearFreelancerId() {
       _builder.clearFreelancerId()
     }
 
     /**
-     * `string cover_letter = 4 [json_name = "coverLetter"];`
+     * `string cover_letter = 4 [json_name = "coverLetter", (.buf.validate.field) = { ... }`
      */
     public var coverLetter: kotlin.String
       @kotlin.jvm.JvmName("getCoverLetter")
@@ -91,7 +91,7 @@ public object ApplicationKt {
         _builder.coverLetter = value
       }
     /**
-     * `string cover_letter = 4 [json_name = "coverLetter"];`
+     * `string cover_letter = 4 [json_name = "coverLetter", (.buf.validate.field) = { ... }`
      */
     public fun clearCoverLetter() {
       _builder.clearCoverLetter()
@@ -125,7 +125,7 @@ public object ApplicationKt {
       get() = _builder.proposedAmountOrNull
 
     /**
-     * `int32 estimated_hours = 6 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 6 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public var estimatedHours: kotlin.Int
       @kotlin.jvm.JvmName("getEstimatedHours")
@@ -135,14 +135,14 @@ public object ApplicationKt {
         _builder.estimatedHours = value
       }
     /**
-     * `int32 estimated_hours = 6 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 6 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public fun clearEstimatedHours() {
       _builder.clearEstimatedHours()
     }
 
     /**
-     * `.skillsphere.gig.v1.ApplicationStatus status = 7 [json_name = "status"];`
+     * `.skillsphere.gig.v1.ApplicationStatus status = 7 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.gig.v1.ApplicationStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -159,7 +159,7 @@ public object ApplicationKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.gig.v1.ApplicationStatus status = 7 [json_name = "status"];`
+     * `.skillsphere.gig.v1.ApplicationStatus status = 7 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

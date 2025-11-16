@@ -30,7 +30,7 @@ public object GetUserChallengesRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.GetUserChallengesRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetUserChallengesRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `.skillsphere.challenge.v1.ChallengeStatus status = 2 [json_name = "status"];`
+     * `.skillsphere.challenge.v1.ChallengeStatus status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.challenge.v1.ChallengeStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -64,7 +64,7 @@ public object GetUserChallengesRequestKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.challenge.v1.ChallengeStatus status = 2 [json_name = "status"];`
+     * `.skillsphere.challenge.v1.ChallengeStatus status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

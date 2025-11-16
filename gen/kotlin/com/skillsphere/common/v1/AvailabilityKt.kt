@@ -40,7 +40,7 @@ public object AvailabilityKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TimeSlotsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots"];`
+     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots", (.buf.validate.field) = { ... }`
      */
      public val timeSlots: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.TimeSlot, TimeSlotsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -48,7 +48,7 @@ public object AvailabilityKt {
         _builder.timeSlotsList
       )
     /**
-     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots"];`
+     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots", (.buf.validate.field) = { ... }`
      * @param value The timeSlots to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -57,7 +57,7 @@ public object AvailabilityKt {
       _builder.addTimeSlots(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots"];`
+     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots", (.buf.validate.field) = { ... }`
      * @param value The timeSlots to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -67,7 +67,7 @@ public object AvailabilityKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots"];`
+     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots", (.buf.validate.field) = { ... }`
      * @param values The timeSlots to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -76,7 +76,7 @@ public object AvailabilityKt {
       _builder.addAllTimeSlots(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots"];`
+     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots", (.buf.validate.field) = { ... }`
      * @param values The timeSlots to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -86,7 +86,7 @@ public object AvailabilityKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots"];`
+     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The timeSlots to set.
      */
@@ -96,7 +96,7 @@ public object AvailabilityKt {
       _builder.setTimeSlots(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots"];`
+     * `repeated .skillsphere.common.v1.TimeSlot time_slots = 1 [json_name = "timeSlots", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearTimeSlots")
@@ -105,11 +105,7 @@ public object AvailabilityKt {
     }
 
     /**
-     * ```
-     * User's timezone
-     * ```
-     *
-     * `string timezone = 2 [json_name = "timezone"];`
+     * `string timezone = 2 [json_name = "timezone", (.buf.validate.field) = { ... }`
      */
     public var timezone: kotlin.String
       @kotlin.jvm.JvmName("getTimezone")
@@ -119,11 +115,7 @@ public object AvailabilityKt {
         _builder.timezone = value
       }
     /**
-     * ```
-     * User's timezone
-     * ```
-     *
-     * `string timezone = 2 [json_name = "timezone"];`
+     * `string timezone = 2 [json_name = "timezone", (.buf.validate.field) = { ... }`
      */
     public fun clearTimezone() {
       _builder.clearTimezone()

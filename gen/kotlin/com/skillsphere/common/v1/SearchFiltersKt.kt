@@ -40,7 +40,7 @@ public object SearchFiltersKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CategoriesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
      public val categories: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -48,7 +48,7 @@ public object SearchFiltersKt {
         _builder.categoriesList
       )
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -56,7 +56,7 @@ public object SearchFiltersKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.add(value: com.skillsphere.common.v1.SkillCategory) {
       _builder.addCategories(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -65,7 +65,7 @@ public object SearchFiltersKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(value: com.skillsphere.common.v1.SkillCategory) {
       add(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -73,7 +73,7 @@ public object SearchFiltersKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.addAll(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       _builder.addAllCategories(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object SearchFiltersKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       addAll(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The categories to set.
      */
@@ -91,7 +91,7 @@ public object SearchFiltersKt {
     public operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.set(index: kotlin.Int, value: com.skillsphere.common.v1.SkillCategory) {
       _builder.setCategories(index, value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 1 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearCategories")
@@ -105,7 +105,7 @@ public object SearchFiltersKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skill_ids = 2 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 2 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @return A list containing the skillIds.
      */
     public val skillIds: com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>
@@ -114,7 +114,7 @@ public object SearchFiltersKt {
         _builder.skillIdsList
       )
     /**
-     * `repeated string skill_ids = 2 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 2 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -123,7 +123,7 @@ public object SearchFiltersKt {
       _builder.addSkillIds(value)
     }
     /**
-     * `repeated string skill_ids = 2 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 2 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -133,7 +133,7 @@ public object SearchFiltersKt {
       add(value)
     }
     /**
-     * `repeated string skill_ids = 2 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 2 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -142,7 +142,7 @@ public object SearchFiltersKt {
       _builder.addAllSkillIds(values)
     }
     /**
-     * `repeated string skill_ids = 2 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 2 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -152,7 +152,7 @@ public object SearchFiltersKt {
       addAll(values)
     }
     /**
-     * `repeated string skill_ids = 2 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 2 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillIds to set.
      */
@@ -161,7 +161,7 @@ public object SearchFiltersKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillIds(index, value)
     }/**
-     * `repeated string skill_ids = 2 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 2 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillIds")
@@ -196,11 +196,7 @@ public object SearchFiltersKt {
       get() = _builder.locationOrNull
 
     /**
-     * ```
-     * For geo-based search
-     * ```
-     *
-     * `int32 max_distance_km = 4 [json_name = "maxDistanceKm"];`
+     * `int32 max_distance_km = 4 [json_name = "maxDistanceKm", (.buf.validate.field) = { ... }`
      */
     public var maxDistanceKm: kotlin.Int
       @kotlin.jvm.JvmName("getMaxDistanceKm")
@@ -210,18 +206,14 @@ public object SearchFiltersKt {
         _builder.maxDistanceKm = value
       }
     /**
-     * ```
-     * For geo-based search
-     * ```
-     *
-     * `int32 max_distance_km = 4 [json_name = "maxDistanceKm"];`
+     * `int32 max_distance_km = 4 [json_name = "maxDistanceKm", (.buf.validate.field) = { ... }`
      */
     public fun clearMaxDistanceKm() {
       _builder.clearMaxDistanceKm()
     }
 
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 5 [json_name = "minProficiency"];`
+     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 5 [json_name = "minProficiency", (.buf.validate.field) = { ... }`
      */
     public var minProficiency: com.skillsphere.common.v1.ProficiencyLevel
       @kotlin.jvm.JvmName("getMinProficiency")
@@ -238,14 +230,14 @@ public object SearchFiltersKt {
         _builder.minProficiencyValue = value
       }
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 5 [json_name = "minProficiency"];`
+     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 5 [json_name = "minProficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearMinProficiency() {
       _builder.clearMinProficiency()
     }
 
     /**
-     * `.skillsphere.common.v1.SubscriptionTier min_subscription = 6 [json_name = "minSubscription"];`
+     * `.skillsphere.common.v1.SubscriptionTier min_subscription = 6 [json_name = "minSubscription", (.buf.validate.field) = { ... }`
      */
     public var minSubscription: com.skillsphere.common.v1.SubscriptionTier
       @kotlin.jvm.JvmName("getMinSubscription")
@@ -262,7 +254,7 @@ public object SearchFiltersKt {
         _builder.minSubscriptionValue = value
       }
     /**
-     * `.skillsphere.common.v1.SubscriptionTier min_subscription = 6 [json_name = "minSubscription"];`
+     * `.skillsphere.common.v1.SubscriptionTier min_subscription = 6 [json_name = "minSubscription", (.buf.validate.field) = { ... }`
      */
     public fun clearMinSubscription() {
       _builder.clearMinSubscription()
@@ -286,7 +278,7 @@ public object SearchFiltersKt {
     }
 
     /**
-     * `double min_rating = 8 [json_name = "minRating"];`
+     * `double min_rating = 8 [json_name = "minRating", (.buf.validate.field) = { ... }`
      */
     public var minRating: kotlin.Double
       @kotlin.jvm.JvmName("getMinRating")
@@ -296,7 +288,7 @@ public object SearchFiltersKt {
         _builder.minRating = value
       }
     /**
-     * `double min_rating = 8 [json_name = "minRating"];`
+     * `double min_rating = 8 [json_name = "minRating", (.buf.validate.field) = { ... }`
      */
     public fun clearMinRating() {
       _builder.clearMinRating()

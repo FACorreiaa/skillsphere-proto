@@ -30,7 +30,7 @@ public object FeatureFlagKt {
     internal fun _build(): com.skillsphere.admin.v1.FeatureFlag = _builder.build()
 
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public var name: kotlin.String
       @kotlin.jvm.JvmName("getName")
@@ -40,7 +40,7 @@ public object FeatureFlagKt {
         _builder.name = value
       }
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public fun clearName() {
       _builder.clearName()
@@ -64,7 +64,7 @@ public object FeatureFlagKt {
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -74,7 +74,7 @@ public object FeatureFlagKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -87,7 +87,7 @@ public object FeatureFlagKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class EnabledForUsersProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers"];`
+     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers", (.buf.validate.field) = { ... }`
      * @return A list containing the enabledForUsers.
      */
     public val enabledForUsers: com.google.protobuf.kotlin.DslList<kotlin.String, EnabledForUsersProxy>
@@ -96,7 +96,7 @@ public object FeatureFlagKt {
         _builder.enabledForUsersList
       )
     /**
-     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers"];`
+     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers", (.buf.validate.field) = { ... }`
      * @param value The enabledForUsers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +105,7 @@ public object FeatureFlagKt {
       _builder.addEnabledForUsers(value)
     }
     /**
-     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers"];`
+     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers", (.buf.validate.field) = { ... }`
      * @param value The enabledForUsers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +115,7 @@ public object FeatureFlagKt {
       add(value)
     }
     /**
-     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers"];`
+     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers", (.buf.validate.field) = { ... }`
      * @param values The enabledForUsers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +124,7 @@ public object FeatureFlagKt {
       _builder.addAllEnabledForUsers(values)
     }
     /**
-     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers"];`
+     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers", (.buf.validate.field) = { ... }`
      * @param values The enabledForUsers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +134,7 @@ public object FeatureFlagKt {
       addAll(values)
     }
     /**
-     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers"];`
+     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The enabledForUsers to set.
      */
@@ -143,7 +143,7 @@ public object FeatureFlagKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, EnabledForUsersProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setEnabledForUsers(index, value)
     }/**
-     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers"];`
+     * `repeated string enabled_for_users = 4 [json_name = "enabledForUsers", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setEnabledForUsers")

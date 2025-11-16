@@ -30,7 +30,7 @@ public object ShareCertificationRequestKt {
     internal fun _build(): com.skillsphere.certification.v1.ShareCertificationRequest = _builder.build()
 
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public var certificationId: kotlin.String
       @kotlin.jvm.JvmName("getCertificationId")
@@ -40,7 +40,7 @@ public object ShareCertificationRequestKt {
         _builder.certificationId = value
       }
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public fun clearCertificationId() {
       _builder.clearCertificationId()
@@ -53,11 +53,7 @@ public object ShareCertificationRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PlatformsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * "linkedin", "twitter", "email"
-     * ```
-     *
-     * `repeated string platforms = 2 [json_name = "platforms"];`
+     * `repeated string platforms = 2 [json_name = "platforms", (.buf.validate.field) = { ... }`
      * @return A list containing the platforms.
      */
     public val platforms: com.google.protobuf.kotlin.DslList<kotlin.String, PlatformsProxy>
@@ -66,11 +62,7 @@ public object ShareCertificationRequestKt {
         _builder.platformsList
       )
     /**
-     * ```
-     * "linkedin", "twitter", "email"
-     * ```
-     *
-     * `repeated string platforms = 2 [json_name = "platforms"];`
+     * `repeated string platforms = 2 [json_name = "platforms", (.buf.validate.field) = { ... }`
      * @param value The platforms to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -79,11 +71,7 @@ public object ShareCertificationRequestKt {
       _builder.addPlatforms(value)
     }
     /**
-     * ```
-     * "linkedin", "twitter", "email"
-     * ```
-     *
-     * `repeated string platforms = 2 [json_name = "platforms"];`
+     * `repeated string platforms = 2 [json_name = "platforms", (.buf.validate.field) = { ... }`
      * @param value The platforms to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -93,11 +81,7 @@ public object ShareCertificationRequestKt {
       add(value)
     }
     /**
-     * ```
-     * "linkedin", "twitter", "email"
-     * ```
-     *
-     * `repeated string platforms = 2 [json_name = "platforms"];`
+     * `repeated string platforms = 2 [json_name = "platforms", (.buf.validate.field) = { ... }`
      * @param values The platforms to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -106,11 +90,7 @@ public object ShareCertificationRequestKt {
       _builder.addAllPlatforms(values)
     }
     /**
-     * ```
-     * "linkedin", "twitter", "email"
-     * ```
-     *
-     * `repeated string platforms = 2 [json_name = "platforms"];`
+     * `repeated string platforms = 2 [json_name = "platforms", (.buf.validate.field) = { ... }`
      * @param values The platforms to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -120,11 +100,7 @@ public object ShareCertificationRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * "linkedin", "twitter", "email"
-     * ```
-     *
-     * `repeated string platforms = 2 [json_name = "platforms"];`
+     * `repeated string platforms = 2 [json_name = "platforms", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The platforms to set.
      */
@@ -133,11 +109,7 @@ public object ShareCertificationRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PlatformsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPlatforms(index, value)
     }/**
-     * ```
-     * "linkedin", "twitter", "email"
-     * ```
-     *
-     * `repeated string platforms = 2 [json_name = "platforms"];`
+     * `repeated string platforms = 2 [json_name = "platforms", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPlatforms")

@@ -30,7 +30,7 @@ public object ShareCertificationResponseKt {
     internal fun _build(): com.skillsphere.certification.v1.ShareCertificationResponse = _builder.build()
 
     /**
-     * `string public_url = 1 [json_name = "publicUrl"];`
+     * `string public_url = 1 [json_name = "publicUrl", (.buf.validate.field) = { ... }`
      */
     public var publicUrl: kotlin.String
       @kotlin.jvm.JvmName("getPublicUrl")
@@ -40,7 +40,7 @@ public object ShareCertificationResponseKt {
         _builder.publicUrl = value
       }
     /**
-     * `string public_url = 1 [json_name = "publicUrl"];`
+     * `string public_url = 1 [json_name = "publicUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearPublicUrl() {
       _builder.clearPublicUrl()
@@ -53,11 +53,7 @@ public object ShareCertificationResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ShareLinksProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Platform-specific share URLs
-     * ```
-     *
-     * `map<string, string> share_links = 2 [json_name = "shareLinks"];`
+     * `map<string, string> share_links = 2 [json_name = "shareLinks", (.buf.validate.field) = { ... }`
      */
      public val shareLinks: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ShareLinksProxy>
       @kotlin.jvm.JvmSynthetic
@@ -66,11 +62,7 @@ public object ShareCertificationResponseKt {
         _builder.shareLinksMap
       )
     /**
-     * ```
-     * Platform-specific share URLs
-     * ```
-     *
-     * `map<string, string> share_links = 2 [json_name = "shareLinks"];`
+     * `map<string, string> share_links = 2 [json_name = "shareLinks", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putShareLinks")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, ShareLinksProxy>
@@ -78,11 +70,7 @@ public object ShareCertificationResponseKt {
          _builder.putShareLinks(key, value)
        }
     /**
-     * ```
-     * Platform-specific share URLs
-     * ```
-     *
-     * `map<string, string> share_links = 2 [json_name = "shareLinks"];`
+     * `map<string, string> share_links = 2 [json_name = "shareLinks", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setShareLinks")
@@ -92,11 +80,7 @@ public object ShareCertificationResponseKt {
          put(key, value)
        }
     /**
-     * ```
-     * Platform-specific share URLs
-     * ```
-     *
-     * `map<string, string> share_links = 2 [json_name = "shareLinks"];`
+     * `map<string, string> share_links = 2 [json_name = "shareLinks", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeShareLinks")
@@ -105,11 +89,7 @@ public object ShareCertificationResponseKt {
          _builder.removeShareLinks(key)
        }
     /**
-     * ```
-     * Platform-specific share URLs
-     * ```
-     *
-     * `map<string, string> share_links = 2 [json_name = "shareLinks"];`
+     * `map<string, string> share_links = 2 [json_name = "shareLinks", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllShareLinks")
@@ -118,11 +98,7 @@ public object ShareCertificationResponseKt {
          _builder.putAllShareLinks(map)
        }
     /**
-     * ```
-     * Platform-specific share URLs
-     * ```
-     *
-     * `map<string, string> share_links = 2 [json_name = "shareLinks"];`
+     * `map<string, string> share_links = 2 [json_name = "shareLinks", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearShareLinks")
@@ -132,11 +108,7 @@ public object ShareCertificationResponseKt {
        }
 
     /**
-     * ```
-     * QR code image
-     * ```
-     *
-     * `string qr_code_url = 3 [json_name = "qrCodeUrl"];`
+     * `string qr_code_url = 3 [json_name = "qrCodeUrl", (.buf.validate.field) = { ... }`
      */
     public var qrCodeUrl: kotlin.String
       @kotlin.jvm.JvmName("getQrCodeUrl")
@@ -146,11 +118,7 @@ public object ShareCertificationResponseKt {
         _builder.qrCodeUrl = value
       }
     /**
-     * ```
-     * QR code image
-     * ```
-     *
-     * `string qr_code_url = 3 [json_name = "qrCodeUrl"];`
+     * `string qr_code_url = 3 [json_name = "qrCodeUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearQrCodeUrl() {
       _builder.clearQrCodeUrl()

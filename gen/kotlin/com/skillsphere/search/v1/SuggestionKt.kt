@@ -30,7 +30,7 @@ public object SuggestionKt {
     internal fun _build(): com.skillsphere.search.v1.Suggestion = _builder.build()
 
     /**
-     * `string text = 1 [json_name = "text"];`
+     * `string text = 1 [json_name = "text", (.buf.validate.field) = { ... }`
      */
     public var text: kotlin.String
       @kotlin.jvm.JvmName("getText")
@@ -40,18 +40,14 @@ public object SuggestionKt {
         _builder.text = value
       }
     /**
-     * `string text = 1 [json_name = "text"];`
+     * `string text = 1 [json_name = "text", (.buf.validate.field) = { ... }`
      */
     public fun clearText() {
       _builder.clearText()
     }
 
     /**
-     * ```
-     * "skill", "user", "category"
-     * ```
-     *
-     * `string type = 2 [json_name = "type"];`
+     * `string type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: kotlin.String
       @kotlin.jvm.JvmName("getType")
@@ -61,18 +57,14 @@ public object SuggestionKt {
         _builder.type = value
       }
     /**
-     * ```
-     * "skill", "user", "category"
-     * ```
-     *
-     * `string type = 2 [json_name = "type"];`
+     * `string type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `int32 popularity = 3 [json_name = "popularity"];`
+     * `int32 popularity = 3 [json_name = "popularity", (.buf.validate.field) = { ... }`
      */
     public var popularity: kotlin.Int
       @kotlin.jvm.JvmName("getPopularity")
@@ -82,7 +74,7 @@ public object SuggestionKt {
         _builder.popularity = value
       }
     /**
-     * `int32 popularity = 3 [json_name = "popularity"];`
+     * `int32 popularity = 3 [json_name = "popularity", (.buf.validate.field) = { ... }`
      */
     public fun clearPopularity() {
       _builder.clearPopularity()

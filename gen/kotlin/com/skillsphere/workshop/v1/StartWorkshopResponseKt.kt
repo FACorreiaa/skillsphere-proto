@@ -57,7 +57,7 @@ public object StartWorkshopResponseKt {
       get() = _builder.workshopOrNull
 
     /**
-     * `string streaming_url = 2 [json_name = "streamingUrl"];`
+     * `string streaming_url = 2 [json_name = "streamingUrl", (.buf.validate.field) = { ... }`
      */
     public var streamingUrl: kotlin.String
       @kotlin.jvm.JvmName("getStreamingUrl")
@@ -67,18 +67,14 @@ public object StartWorkshopResponseKt {
         _builder.streamingUrl = value
       }
     /**
-     * `string streaming_url = 2 [json_name = "streamingUrl"];`
+     * `string streaming_url = 2 [json_name = "streamingUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearStreamingUrl() {
       _builder.clearStreamingUrl()
     }
 
     /**
-     * ```
-     * Auth key for host controls
-     * ```
-     *
-     * `string host_key = 3 [json_name = "hostKey"];`
+     * `string host_key = 3 [json_name = "hostKey", (.buf.validate.field) = { ... }`
      */
     public var hostKey: kotlin.String
       @kotlin.jvm.JvmName("getHostKey")
@@ -88,11 +84,7 @@ public object StartWorkshopResponseKt {
         _builder.hostKey = value
       }
     /**
-     * ```
-     * Auth key for host controls
-     * ```
-     *
-     * `string host_key = 3 [json_name = "hostKey"];`
+     * `string host_key = 3 [json_name = "hostKey", (.buf.validate.field) = { ... }`
      */
     public fun clearHostKey() {
       _builder.clearHostKey()

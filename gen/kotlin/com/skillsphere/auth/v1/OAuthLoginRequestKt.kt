@@ -30,7 +30,7 @@ public object OAuthLoginRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.OAuthLoginRequest = _builder.build()
 
     /**
-     * `.skillsphere.auth.v1.OAuthProvider provider = 1 [json_name = "provider"];`
+     * `.skillsphere.auth.v1.OAuthProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }`
      */
     public var provider: com.skillsphere.auth.v1.OAuthProvider
       @kotlin.jvm.JvmName("getProvider")
@@ -47,14 +47,14 @@ public object OAuthLoginRequestKt {
         _builder.providerValue = value
       }
     /**
-     * `.skillsphere.auth.v1.OAuthProvider provider = 1 [json_name = "provider"];`
+     * `.skillsphere.auth.v1.OAuthProvider provider = 1 [json_name = "provider", (.buf.validate.field) = { ... }`
      */
     public fun clearProvider() {
       _builder.clearProvider()
     }
 
     /**
-     * `string authorization_code = 2 [json_name = "authorizationCode"];`
+     * `string authorization_code = 2 [json_name = "authorizationCode", (.buf.validate.field) = { ... }`
      */
     public var authorizationCode: kotlin.String
       @kotlin.jvm.JvmName("getAuthorizationCode")
@@ -64,14 +64,14 @@ public object OAuthLoginRequestKt {
         _builder.authorizationCode = value
       }
     /**
-     * `string authorization_code = 2 [json_name = "authorizationCode"];`
+     * `string authorization_code = 2 [json_name = "authorizationCode", (.buf.validate.field) = { ... }`
      */
     public fun clearAuthorizationCode() {
       _builder.clearAuthorizationCode()
     }
 
     /**
-     * `string redirect_uri = 3 [json_name = "redirectUri"];`
+     * `string redirect_uri = 3 [json_name = "redirectUri", (.buf.validate.field) = { ... }`
      */
     public var redirectUri: kotlin.String
       @kotlin.jvm.JvmName("getRedirectUri")
@@ -81,7 +81,7 @@ public object OAuthLoginRequestKt {
         _builder.redirectUri = value
       }
     /**
-     * `string redirect_uri = 3 [json_name = "redirectUri"];`
+     * `string redirect_uri = 3 [json_name = "redirectUri", (.buf.validate.field) = { ... }`
      */
     public fun clearRedirectUri() {
       _builder.clearRedirectUri()

@@ -30,7 +30,7 @@ public object FlagContentResponseKt {
     internal fun _build(): com.skillsphere.admin.v1.FlagContentResponse = _builder.build()
 
     /**
-     * `string flag_id = 1 [json_name = "flagId"];`
+     * `string flag_id = 1 [json_name = "flagId", (.buf.validate.field) = { ... }`
      */
     public var flagId: kotlin.String
       @kotlin.jvm.JvmName("getFlagId")
@@ -40,14 +40,14 @@ public object FlagContentResponseKt {
         _builder.flagId = value
       }
     /**
-     * `string flag_id = 1 [json_name = "flagId"];`
+     * `string flag_id = 1 [json_name = "flagId", (.buf.validate.field) = { ... }`
      */
     public fun clearFlagId() {
       _builder.clearFlagId()
     }
 
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 2 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.admin.v1.ReportStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -64,7 +64,7 @@ public object FlagContentResponseKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 2 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

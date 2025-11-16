@@ -30,7 +30,7 @@ public object ResendVerificationEmailRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.ResendVerificationEmailRequest = _builder.build()
 
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public var email: kotlin.String
       @kotlin.jvm.JvmName("getEmail")
@@ -40,7 +40,7 @@ public object ResendVerificationEmailRequestKt {
         _builder.email = value
       }
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public fun clearEmail() {
       _builder.clearEmail()

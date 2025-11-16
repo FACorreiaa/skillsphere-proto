@@ -30,7 +30,7 @@ public object SubscriptionFeatureKt {
     internal fun _build(): com.skillsphere.payment.v1.SubscriptionFeature = _builder.build()
 
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public var name: kotlin.String
       @kotlin.jvm.JvmName("getName")
@@ -40,14 +40,14 @@ public object SubscriptionFeatureKt {
         _builder.name = value
       }
     /**
-     * `string name = 1 [json_name = "name"];`
+     * `string name = 1 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public fun clearName() {
       _builder.clearName()
     }
 
     /**
-     * `string description = 2 [json_name = "description"];`
+     * `string description = 2 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -57,7 +57,7 @@ public object SubscriptionFeatureKt {
         _builder.description = value
       }
     /**
-     * `string description = 2 [json_name = "description"];`
+     * `string description = 2 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()

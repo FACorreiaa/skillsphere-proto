@@ -101,7 +101,7 @@ public object GetUserRatingsResponseKt {
     }
 
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public var nextPageToken: kotlin.String
       @kotlin.jvm.JvmName("getNextPageToken")
@@ -111,14 +111,14 @@ public object GetUserRatingsResponseKt {
         _builder.nextPageToken = value
       }
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearNextPageToken() {
       _builder.clearNextPageToken()
     }
 
     /**
-     * `double average_score = 3 [json_name = "averageScore"];`
+     * `double average_score = 3 [json_name = "averageScore", (.buf.validate.field) = { ... }`
      */
     public var averageScore: kotlin.Double
       @kotlin.jvm.JvmName("getAverageScore")
@@ -128,7 +128,7 @@ public object GetUserRatingsResponseKt {
         _builder.averageScore = value
       }
     /**
-     * `double average_score = 3 [json_name = "averageScore"];`
+     * `double average_score = 3 [json_name = "averageScore", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageScore() {
       _builder.clearAverageScore()

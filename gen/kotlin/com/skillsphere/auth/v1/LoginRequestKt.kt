@@ -30,7 +30,7 @@ public object LoginRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.LoginRequest = _builder.build()
 
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public var email: kotlin.String
       @kotlin.jvm.JvmName("getEmail")
@@ -40,14 +40,14 @@ public object LoginRequestKt {
         _builder.email = value
       }
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public fun clearEmail() {
       _builder.clearEmail()
     }
 
     /**
-     * `string password = 2 [json_name = "password"];`
+     * `string password = 2 [json_name = "password", (.buf.validate.field) = { ... }`
      */
     public var password: kotlin.String
       @kotlin.jvm.JvmName("getPassword")
@@ -57,18 +57,14 @@ public object LoginRequestKt {
         _builder.password = value
       }
     /**
-     * `string password = 2 [json_name = "password"];`
+     * `string password = 2 [json_name = "password", (.buf.validate.field) = { ... }`
      */
     public fun clearPassword() {
       _builder.clearPassword()
     }
 
     /**
-     * ```
-     * Optional for device tracking
-     * ```
-     *
-     * `optional string device_id = 3 [json_name = "deviceId"];`
+     * `optional string device_id = 3 [json_name = "deviceId", (.buf.validate.field) = { ... }`
      */
     public var deviceId: kotlin.String
       @kotlin.jvm.JvmName("getDeviceId")
@@ -78,21 +74,13 @@ public object LoginRequestKt {
         _builder.deviceId = value
       }
     /**
-     * ```
-     * Optional for device tracking
-     * ```
-     *
-     * `optional string device_id = 3 [json_name = "deviceId"];`
+     * `optional string device_id = 3 [json_name = "deviceId", (.buf.validate.field) = { ... }`
      */
     public fun clearDeviceId() {
       _builder.clearDeviceId()
     }
     /**
-     * ```
-     * Optional for device tracking
-     * ```
-     *
-     * `optional string device_id = 3 [json_name = "deviceId"];`
+     * `optional string device_id = 3 [json_name = "deviceId", (.buf.validate.field) = { ... }`
      * @return Whether the deviceId field is set.
      */
     public fun hasDeviceId(): kotlin.Boolean {

@@ -30,7 +30,7 @@ public object JoinChallengeRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.JoinChallengeRequest = _builder.build()
 
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public var challengeId: kotlin.String
       @kotlin.jvm.JvmName("getChallengeId")
@@ -40,14 +40,14 @@ public object JoinChallengeRequestKt {
         _builder.challengeId = value
       }
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public fun clearChallengeId() {
       _builder.clearChallengeId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,7 +57,7 @@ public object JoinChallengeRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()

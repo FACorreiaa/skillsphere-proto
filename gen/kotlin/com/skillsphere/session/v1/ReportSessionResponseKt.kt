@@ -30,7 +30,7 @@ public object ReportSessionResponseKt {
     internal fun _build(): com.skillsphere.session.v1.ReportSessionResponse = _builder.build()
 
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public var reportId: kotlin.String
       @kotlin.jvm.JvmName("getReportId")
@@ -40,18 +40,14 @@ public object ReportSessionResponseKt {
         _builder.reportId = value
       }
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public fun clearReportId() {
       _builder.clearReportId()
     }
 
     /**
-     * ```
-     * "pending", "under_review", "resolved"
-     * ```
-     *
-     * `string status = 2 [json_name = "status"];`
+     * `string status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: kotlin.String
       @kotlin.jvm.JvmName("getStatus")
@@ -61,11 +57,7 @@ public object ReportSessionResponseKt {
         _builder.status = value
       }
     /**
-     * ```
-     * "pending", "under_review", "resolved"
-     * ```
-     *
-     * `string status = 2 [json_name = "status"];`
+     * `string status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

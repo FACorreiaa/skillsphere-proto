@@ -47,7 +47,7 @@ public object PlatformSettingsKt {
     }
 
     /**
-     * `string maintenance_message = 2 [json_name = "maintenanceMessage"];`
+     * `string maintenance_message = 2 [json_name = "maintenanceMessage", (.buf.validate.field) = { ... }`
      */
     public var maintenanceMessage: kotlin.String
       @kotlin.jvm.JvmName("getMaintenanceMessage")
@@ -57,7 +57,7 @@ public object PlatformSettingsKt {
         _builder.maintenanceMessage = value
       }
     /**
-     * `string maintenance_message = 2 [json_name = "maintenanceMessage"];`
+     * `string maintenance_message = 2 [json_name = "maintenanceMessage", (.buf.validate.field) = { ... }`
      */
     public fun clearMaintenanceMessage() {
       _builder.clearMaintenanceMessage()
@@ -81,7 +81,7 @@ public object PlatformSettingsKt {
     }
 
     /**
-     * `int32 max_sessions_per_day = 4 [json_name = "maxSessionsPerDay"];`
+     * `int32 max_sessions_per_day = 4 [json_name = "maxSessionsPerDay", (.buf.validate.field) = { ... }`
      */
     public var maxSessionsPerDay: kotlin.Int
       @kotlin.jvm.JvmName("getMaxSessionsPerDay")
@@ -91,14 +91,14 @@ public object PlatformSettingsKt {
         _builder.maxSessionsPerDay = value
       }
     /**
-     * `int32 max_sessions_per_day = 4 [json_name = "maxSessionsPerDay"];`
+     * `int32 max_sessions_per_day = 4 [json_name = "maxSessionsPerDay", (.buf.validate.field) = { ... }`
      */
     public fun clearMaxSessionsPerDay() {
       _builder.clearMaxSessionsPerDay()
     }
 
     /**
-     * `int32 min_session_rating = 5 [json_name = "minSessionRating"];`
+     * `int32 min_session_rating = 5 [json_name = "minSessionRating", (.buf.validate.field) = { ... }`
      */
     public var minSessionRating: kotlin.Int
       @kotlin.jvm.JvmName("getMinSessionRating")
@@ -108,7 +108,7 @@ public object PlatformSettingsKt {
         _builder.minSessionRating = value
       }
     /**
-     * `int32 min_session_rating = 5 [json_name = "minSessionRating"];`
+     * `int32 min_session_rating = 5 [json_name = "minSessionRating", (.buf.validate.field) = { ... }`
      */
     public fun clearMinSessionRating() {
       _builder.clearMinSessionRating()
@@ -132,7 +132,7 @@ public object PlatformSettingsKt {
     }
 
     /**
-     * `double platform_fee_percentage = 7 [json_name = "platformFeePercentage"];`
+     * `double platform_fee_percentage = 7 [json_name = "platformFeePercentage", (.buf.validate.field) = { ... }`
      */
     public var platformFeePercentage: kotlin.Double
       @kotlin.jvm.JvmName("getPlatformFeePercentage")
@@ -142,7 +142,7 @@ public object PlatformSettingsKt {
         _builder.platformFeePercentage = value
       }
     /**
-     * `double platform_fee_percentage = 7 [json_name = "platformFeePercentage"];`
+     * `double platform_fee_percentage = 7 [json_name = "platformFeePercentage", (.buf.validate.field) = { ... }`
      */
     public fun clearPlatformFeePercentage() {
       _builder.clearPlatformFeePercentage()
@@ -155,7 +155,7 @@ public object PlatformSettingsKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CustomSettingsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `map<string, string> custom_settings = 8 [json_name = "customSettings"];`
+     * `map<string, string> custom_settings = 8 [json_name = "customSettings", (.buf.validate.field) = { ... }`
      */
      public val customSettings: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, CustomSettingsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -164,7 +164,7 @@ public object PlatformSettingsKt {
         _builder.customSettingsMap
       )
     /**
-     * `map<string, string> custom_settings = 8 [json_name = "customSettings"];`
+     * `map<string, string> custom_settings = 8 [json_name = "customSettings", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putCustomSettings")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, CustomSettingsProxy>
@@ -172,7 +172,7 @@ public object PlatformSettingsKt {
          _builder.putCustomSettings(key, value)
        }
     /**
-     * `map<string, string> custom_settings = 8 [json_name = "customSettings"];`
+     * `map<string, string> custom_settings = 8 [json_name = "customSettings", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setCustomSettings")
@@ -182,7 +182,7 @@ public object PlatformSettingsKt {
          put(key, value)
        }
     /**
-     * `map<string, string> custom_settings = 8 [json_name = "customSettings"];`
+     * `map<string, string> custom_settings = 8 [json_name = "customSettings", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeCustomSettings")
@@ -191,7 +191,7 @@ public object PlatformSettingsKt {
          _builder.removeCustomSettings(key)
        }
     /**
-     * `map<string, string> custom_settings = 8 [json_name = "customSettings"];`
+     * `map<string, string> custom_settings = 8 [json_name = "customSettings", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllCustomSettings")
@@ -200,7 +200,7 @@ public object PlatformSettingsKt {
          _builder.putAllCustomSettings(map)
        }
     /**
-     * `map<string, string> custom_settings = 8 [json_name = "customSettings"];`
+     * `map<string, string> custom_settings = 8 [json_name = "customSettings", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearCustomSettings")

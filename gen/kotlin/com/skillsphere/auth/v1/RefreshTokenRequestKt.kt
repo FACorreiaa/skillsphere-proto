@@ -30,7 +30,7 @@ public object RefreshTokenRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.RefreshTokenRequest = _builder.build()
 
     /**
-     * `string refresh_token = 1 [json_name = "refreshToken"];`
+     * `string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }`
      */
     public var refreshToken: kotlin.String
       @kotlin.jvm.JvmName("getRefreshToken")
@@ -40,7 +40,7 @@ public object RefreshTokenRequestKt {
         _builder.refreshToken = value
       }
     /**
-     * `string refresh_token = 1 [json_name = "refreshToken"];`
+     * `string refresh_token = 1 [json_name = "refreshToken", (.buf.validate.field) = { ... }`
      */
     public fun clearRefreshToken() {
       _builder.clearRefreshToken()

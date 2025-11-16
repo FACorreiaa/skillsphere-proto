@@ -30,7 +30,7 @@ public object AcceptApplicationRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.AcceptApplicationRequest = _builder.build()
 
     /**
-     * `string application_id = 1 [json_name = "applicationId"];`
+     * `string application_id = 1 [json_name = "applicationId", (.buf.validate.field) = { ... }`
      */
     public var applicationId: kotlin.String
       @kotlin.jvm.JvmName("getApplicationId")
@@ -40,14 +40,14 @@ public object AcceptApplicationRequestKt {
         _builder.applicationId = value
       }
     /**
-     * `string application_id = 1 [json_name = "applicationId"];`
+     * `string application_id = 1 [json_name = "applicationId", (.buf.validate.field) = { ... }`
      */
     public fun clearApplicationId() {
       _builder.clearApplicationId()
     }
 
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public var creatorId: kotlin.String
       @kotlin.jvm.JvmName("getCreatorId")
@@ -57,7 +57,7 @@ public object AcceptApplicationRequestKt {
         _builder.creatorId = value
       }
     /**
-     * `string creator_id = 2 [json_name = "creatorId"];`
+     * `string creator_id = 2 [json_name = "creatorId", (.buf.validate.field) = { ... }`
      */
     public fun clearCreatorId() {
       _builder.clearCreatorId()

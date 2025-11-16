@@ -30,7 +30,7 @@ public object VoteKt {
     internal fun _build(): com.skillsphere.challenge.v1.Vote = _builder.build()
 
     /**
-     * `string vote_id = 1 [json_name = "voteId"];`
+     * `string vote_id = 1 [json_name = "voteId", (.buf.validate.field) = { ... }`
      */
     public var voteId: kotlin.String
       @kotlin.jvm.JvmName("getVoteId")
@@ -40,14 +40,14 @@ public object VoteKt {
         _builder.voteId = value
       }
     /**
-     * `string vote_id = 1 [json_name = "voteId"];`
+     * `string vote_id = 1 [json_name = "voteId", (.buf.validate.field) = { ... }`
      */
     public fun clearVoteId() {
       _builder.clearVoteId()
     }
 
     /**
-     * `string entry_id = 2 [json_name = "entryId"];`
+     * `string entry_id = 2 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public var entryId: kotlin.String
       @kotlin.jvm.JvmName("getEntryId")
@@ -57,14 +57,14 @@ public object VoteKt {
         _builder.entryId = value
       }
     /**
-     * `string entry_id = 2 [json_name = "entryId"];`
+     * `string entry_id = 2 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public fun clearEntryId() {
       _builder.clearEntryId()
     }
 
     /**
-     * `string voter_id = 3 [json_name = "voterId"];`
+     * `string voter_id = 3 [json_name = "voterId", (.buf.validate.field) = { ... }`
      */
     public var voterId: kotlin.String
       @kotlin.jvm.JvmName("getVoterId")
@@ -74,18 +74,14 @@ public object VoteKt {
         _builder.voterId = value
       }
     /**
-     * `string voter_id = 3 [json_name = "voterId"];`
+     * `string voter_id = 3 [json_name = "voterId", (.buf.validate.field) = { ... }`
      */
     public fun clearVoterId() {
       _builder.clearVoterId()
     }
 
     /**
-     * ```
-     * 1-5 stars
-     * ```
-     *
-     * `int32 rating = 4 [json_name = "rating"];`
+     * `int32 rating = 4 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public var rating: kotlin.Int
       @kotlin.jvm.JvmName("getRating")
@@ -95,18 +91,14 @@ public object VoteKt {
         _builder.rating = value
       }
     /**
-     * ```
-     * 1-5 stars
-     * ```
-     *
-     * `int32 rating = 4 [json_name = "rating"];`
+     * `int32 rating = 4 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public fun clearRating() {
       _builder.clearRating()
     }
 
     /**
-     * `string comment = 5 [json_name = "comment"];`
+     * `string comment = 5 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public var comment: kotlin.String
       @kotlin.jvm.JvmName("getComment")
@@ -116,7 +108,7 @@ public object VoteKt {
         _builder.comment = value
       }
     /**
-     * `string comment = 5 [json_name = "comment"];`
+     * `string comment = 5 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public fun clearComment() {
       _builder.clearComment()

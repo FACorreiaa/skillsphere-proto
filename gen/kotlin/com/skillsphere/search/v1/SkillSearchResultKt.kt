@@ -57,7 +57,7 @@ public object SkillSearchResultKt {
       get() = _builder.skillOrNull
 
     /**
-     * `double relevance_score = 2 [json_name = "relevanceScore"];`
+     * `double relevance_score = 2 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public var relevanceScore: kotlin.Double
       @kotlin.jvm.JvmName("getRelevanceScore")
@@ -67,18 +67,14 @@ public object SkillSearchResultKt {
         _builder.relevanceScore = value
       }
     /**
-     * `double relevance_score = 2 [json_name = "relevanceScore"];`
+     * `double relevance_score = 2 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public fun clearRelevanceScore() {
       _builder.clearRelevanceScore()
     }
 
     /**
-     * ```
-     * How many users have this skill
-     * ```
-     *
-     * `int32 user_count = 3 [json_name = "userCount"];`
+     * `int32 user_count = 3 [json_name = "userCount", (.buf.validate.field) = { ... }`
      */
     public var userCount: kotlin.Int
       @kotlin.jvm.JvmName("getUserCount")
@@ -88,11 +84,7 @@ public object SkillSearchResultKt {
         _builder.userCount = value
       }
     /**
-     * ```
-     * How many users have this skill
-     * ```
-     *
-     * `int32 user_count = 3 [json_name = "userCount"];`
+     * `int32 user_count = 3 [json_name = "userCount", (.buf.validate.field) = { ... }`
      */
     public fun clearUserCount() {
       _builder.clearUserCount()

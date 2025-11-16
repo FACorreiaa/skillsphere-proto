@@ -30,7 +30,7 @@ public object UpdateWorkshopRequestKt {
     internal fun _build(): com.skillsphere.workshop.v1.UpdateWorkshopRequest = _builder.build()
 
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public var workshopId: kotlin.String
       @kotlin.jvm.JvmName("getWorkshopId")
@@ -40,14 +40,14 @@ public object UpdateWorkshopRequestKt {
         _builder.workshopId = value
       }
     /**
-     * `string workshop_id = 1 [json_name = "workshopId"];`
+     * `string workshop_id = 1 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public fun clearWorkshopId() {
       _builder.clearWorkshopId()
     }
 
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -57,14 +57,14 @@ public object UpdateWorkshopRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -74,7 +74,7 @@ public object UpdateWorkshopRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -108,7 +108,7 @@ public object UpdateWorkshopRequestKt {
       get() = _builder.scheduledStartOrNull
 
     /**
-     * `int32 max_participants = 5 [json_name = "maxParticipants"];`
+     * `int32 max_participants = 5 [json_name = "maxParticipants", (.buf.validate.field) = { ... }`
      */
     public var maxParticipants: kotlin.Int
       @kotlin.jvm.JvmName("getMaxParticipants")
@@ -118,7 +118,7 @@ public object UpdateWorkshopRequestKt {
         _builder.maxParticipants = value
       }
     /**
-     * `int32 max_participants = 5 [json_name = "maxParticipants"];`
+     * `int32 max_participants = 5 [json_name = "maxParticipants", (.buf.validate.field) = { ... }`
      */
     public fun clearMaxParticipants() {
       _builder.clearMaxParticipants()

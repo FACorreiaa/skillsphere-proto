@@ -36,7 +36,7 @@ public object GetRevenueAnalyticsResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class RevenueOverTimeProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime"];`
+     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime", (.buf.validate.field) = { ... }`
      */
      public val revenueOverTime: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.RevenueDataPoint, RevenueOverTimeProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetRevenueAnalyticsResponseKt {
         _builder.revenueOverTimeList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime"];`
+     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime", (.buf.validate.field) = { ... }`
      * @param value The revenueOverTime to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetRevenueAnalyticsResponseKt {
       _builder.addRevenueOverTime(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime"];`
+     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime", (.buf.validate.field) = { ... }`
      * @param value The revenueOverTime to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetRevenueAnalyticsResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime"];`
+     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime", (.buf.validate.field) = { ... }`
      * @param values The revenueOverTime to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetRevenueAnalyticsResponseKt {
       _builder.addAllRevenueOverTime(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime"];`
+     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime", (.buf.validate.field) = { ... }`
      * @param values The revenueOverTime to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetRevenueAnalyticsResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime"];`
+     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The revenueOverTime to set.
      */
@@ -92,7 +92,7 @@ public object GetRevenueAnalyticsResponseKt {
       _builder.setRevenueOverTime(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime"];`
+     * `repeated .skillsphere.analytics.v1.RevenueDataPoint revenue_over_time = 1 [json_name = "revenueOverTime", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearRevenueOverTime")
@@ -182,7 +182,7 @@ public object GetRevenueAnalyticsResponseKt {
       get() = _builder.averageRevenuePerUserOrNull
 
     /**
-     * `double month_over_month_growth = 5 [json_name = "monthOverMonthGrowth"];`
+     * `double month_over_month_growth = 5 [json_name = "monthOverMonthGrowth", (.buf.validate.field) = { ... }`
      */
     public var monthOverMonthGrowth: kotlin.Double
       @kotlin.jvm.JvmName("getMonthOverMonthGrowth")
@@ -192,7 +192,7 @@ public object GetRevenueAnalyticsResponseKt {
         _builder.monthOverMonthGrowth = value
       }
     /**
-     * `double month_over_month_growth = 5 [json_name = "monthOverMonthGrowth"];`
+     * `double month_over_month_growth = 5 [json_name = "monthOverMonthGrowth", (.buf.validate.field) = { ... }`
      */
     public fun clearMonthOverMonthGrowth() {
       _builder.clearMonthOverMonthGrowth()

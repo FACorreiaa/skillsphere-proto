@@ -30,7 +30,7 @@ public object AddPaymentMethodRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.AddPaymentMethodRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object AddPaymentMethodRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string stripe_payment_method_id = 2 [json_name = "stripePaymentMethodId"];`
+     * `string stripe_payment_method_id = 2 [json_name = "stripePaymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var stripePaymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getStripePaymentMethodId")
@@ -57,7 +57,7 @@ public object AddPaymentMethodRequestKt {
         _builder.stripePaymentMethodId = value
       }
     /**
-     * `string stripe_payment_method_id = 2 [json_name = "stripePaymentMethodId"];`
+     * `string stripe_payment_method_id = 2 [json_name = "stripePaymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearStripePaymentMethodId() {
       _builder.clearStripePaymentMethodId()

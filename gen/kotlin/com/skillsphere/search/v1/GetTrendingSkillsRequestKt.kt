@@ -30,11 +30,7 @@ public object GetTrendingSkillsRequestKt {
     internal fun _build(): com.skillsphere.search.v1.GetTrendingSkillsRequest = _builder.build()
 
     /**
-     * ```
-     * Default 10, max 50
-     * ```
-     *
-     * `int32 limit = 1 [json_name = "limit"];`
+     * `int32 limit = 1 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -44,11 +40,7 @@ public object GetTrendingSkillsRequestKt {
         _builder.limit = value
       }
     /**
-     * ```
-     * Default 10, max 50
-     * ```
-     *
-     * `int32 limit = 1 [json_name = "limit"];`
+     * `int32 limit = 1 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()
@@ -79,11 +71,7 @@ public object GetTrendingSkillsRequestKt {
     }
 
     /**
-     * ```
-     * Trending window (default 7)
-     * ```
-     *
-     * `int32 days = 3 [json_name = "days"];`
+     * `int32 days = 3 [json_name = "days", (.buf.validate.field) = { ... }`
      */
     public var days: kotlin.Int
       @kotlin.jvm.JvmName("getDays")
@@ -93,22 +81,14 @@ public object GetTrendingSkillsRequestKt {
         _builder.days = value
       }
     /**
-     * ```
-     * Trending window (default 7)
-     * ```
-     *
-     * `int32 days = 3 [json_name = "days"];`
+     * `int32 days = 3 [json_name = "days", (.buf.validate.field) = { ... }`
      */
     public fun clearDays() {
       _builder.clearDays()
     }
 
     /**
-     * ```
-     * Optional geographic filter
-     * ```
-     *
-     * `string region = 4 [json_name = "region"];`
+     * `string region = 4 [json_name = "region", (.buf.validate.field) = { ... }`
      */
     public var region: kotlin.String
       @kotlin.jvm.JvmName("getRegion")
@@ -118,11 +98,7 @@ public object GetTrendingSkillsRequestKt {
         _builder.region = value
       }
     /**
-     * ```
-     * Optional geographic filter
-     * ```
-     *
-     * `string region = 4 [json_name = "region"];`
+     * `string region = 4 [json_name = "region", (.buf.validate.field) = { ... }`
      */
     public fun clearRegion() {
       _builder.clearRegion()

@@ -30,7 +30,7 @@ public object StreamMentorChatRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.StreamMentorChatRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object StreamMentorChatRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public var message: kotlin.String
       @kotlin.jvm.JvmName("getMessage")
@@ -57,7 +57,7 @@ public object StreamMentorChatRequestKt {
         _builder.message = value
       }
     /**
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public fun clearMessage() {
       _builder.clearMessage()
@@ -70,7 +70,7 @@ public object StreamMentorChatRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class HistoryProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history", (.buf.validate.field) = { ... }`
      */
      public val history: com.google.protobuf.kotlin.DslList<com.skillsphere.ai.v1.ChatMessage, HistoryProxy>
       @kotlin.jvm.JvmSynthetic
@@ -78,7 +78,7 @@ public object StreamMentorChatRequestKt {
         _builder.historyList
       )
     /**
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param value The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -87,7 +87,7 @@ public object StreamMentorChatRequestKt {
       _builder.addHistory(value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param value The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -97,7 +97,7 @@ public object StreamMentorChatRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param values The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -106,7 +106,7 @@ public object StreamMentorChatRequestKt {
       _builder.addAllHistory(values)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param values The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -116,7 +116,7 @@ public object StreamMentorChatRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The history to set.
      */
@@ -126,7 +126,7 @@ public object StreamMentorChatRequestKt {
       _builder.setHistory(index, value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 3 [json_name = "history", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearHistory")

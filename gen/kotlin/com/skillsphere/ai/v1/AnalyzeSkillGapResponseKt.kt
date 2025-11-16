@@ -101,7 +101,7 @@ public object AnalyzeSkillGapResponseKt {
     }
 
     /**
-     * `string summary = 2 [json_name = "summary"];`
+     * `string summary = 2 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public var summary: kotlin.String
       @kotlin.jvm.JvmName("getSummary")
@@ -111,7 +111,7 @@ public object AnalyzeSkillGapResponseKt {
         _builder.summary = value
       }
     /**
-     * `string summary = 2 [json_name = "summary"];`
+     * `string summary = 2 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public fun clearSummary() {
       _builder.clearSummary()
@@ -124,7 +124,7 @@ public object AnalyzeSkillGapResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class RecommendationsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string recommendations = 3 [json_name = "recommendations"];`
+     * `repeated string recommendations = 3 [json_name = "recommendations", (.buf.validate.field) = { ... }`
      * @return A list containing the recommendations.
      */
     public val recommendations: com.google.protobuf.kotlin.DslList<kotlin.String, RecommendationsProxy>
@@ -133,7 +133,7 @@ public object AnalyzeSkillGapResponseKt {
         _builder.recommendationsList
       )
     /**
-     * `repeated string recommendations = 3 [json_name = "recommendations"];`
+     * `repeated string recommendations = 3 [json_name = "recommendations", (.buf.validate.field) = { ... }`
      * @param value The recommendations to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -142,7 +142,7 @@ public object AnalyzeSkillGapResponseKt {
       _builder.addRecommendations(value)
     }
     /**
-     * `repeated string recommendations = 3 [json_name = "recommendations"];`
+     * `repeated string recommendations = 3 [json_name = "recommendations", (.buf.validate.field) = { ... }`
      * @param value The recommendations to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -152,7 +152,7 @@ public object AnalyzeSkillGapResponseKt {
       add(value)
     }
     /**
-     * `repeated string recommendations = 3 [json_name = "recommendations"];`
+     * `repeated string recommendations = 3 [json_name = "recommendations", (.buf.validate.field) = { ... }`
      * @param values The recommendations to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -161,7 +161,7 @@ public object AnalyzeSkillGapResponseKt {
       _builder.addAllRecommendations(values)
     }
     /**
-     * `repeated string recommendations = 3 [json_name = "recommendations"];`
+     * `repeated string recommendations = 3 [json_name = "recommendations", (.buf.validate.field) = { ... }`
      * @param values The recommendations to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -171,7 +171,7 @@ public object AnalyzeSkillGapResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string recommendations = 3 [json_name = "recommendations"];`
+     * `repeated string recommendations = 3 [json_name = "recommendations", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The recommendations to set.
      */
@@ -180,7 +180,7 @@ public object AnalyzeSkillGapResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, RecommendationsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setRecommendations(index, value)
     }/**
-     * `repeated string recommendations = 3 [json_name = "recommendations"];`
+     * `repeated string recommendations = 3 [json_name = "recommendations", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setRecommendations")

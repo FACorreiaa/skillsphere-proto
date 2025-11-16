@@ -30,7 +30,7 @@ public object CompleteSessionRequestKt {
     internal fun _build(): com.skillsphere.session.v1.CompleteSessionRequest = _builder.build()
 
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -40,14 +40,14 @@ public object CompleteSessionRequestKt {
         _builder.sessionId = value
       }
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,18 +57,14 @@ public object CompleteSessionRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * Session summary
-     * ```
-     *
-     * `string summary = 3 [json_name = "summary"];`
+     * `string summary = 3 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public var summary: kotlin.String
       @kotlin.jvm.JvmName("getSummary")
@@ -78,11 +74,7 @@ public object CompleteSessionRequestKt {
         _builder.summary = value
       }
     /**
-     * ```
-     * Session summary
-     * ```
-     *
-     * `string summary = 3 [json_name = "summary"];`
+     * `string summary = 3 [json_name = "summary", (.buf.validate.field) = { ... }`
      */
     public fun clearSummary() {
       _builder.clearSummary()

@@ -101,7 +101,7 @@ public object GetReportsResponseKt {
     }
 
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public var nextPageToken: kotlin.String
       @kotlin.jvm.JvmName("getNextPageToken")
@@ -111,7 +111,7 @@ public object GetReportsResponseKt {
         _builder.nextPageToken = value
       }
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearNextPageToken() {
       _builder.clearNextPageToken()

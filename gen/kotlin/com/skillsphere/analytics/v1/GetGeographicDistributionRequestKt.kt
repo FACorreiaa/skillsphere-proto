@@ -30,11 +30,7 @@ public object GetGeographicDistributionRequestKt {
     internal fun _build(): com.skillsphere.analytics.v1.GetGeographicDistributionRequest = _builder.build()
 
     /**
-     * ```
-     * "users", "sessions", "revenue"
-     * ```
-     *
-     * `string metric = 1 [json_name = "metric"];`
+     * `string metric = 1 [json_name = "metric", (.buf.validate.field) = { ... }`
      */
     public var metric: kotlin.String
       @kotlin.jvm.JvmName("getMetric")
@@ -44,11 +40,7 @@ public object GetGeographicDistributionRequestKt {
         _builder.metric = value
       }
     /**
-     * ```
-     * "users", "sessions", "revenue"
-     * ```
-     *
-     * `string metric = 1 [json_name = "metric"];`
+     * `string metric = 1 [json_name = "metric", (.buf.validate.field) = { ... }`
      */
     public fun clearMetric() {
       _builder.clearMetric()

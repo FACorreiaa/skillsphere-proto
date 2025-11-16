@@ -30,7 +30,7 @@ public object BadgeTemplateKt {
     internal fun _build(): com.skillsphere.certification.v1.BadgeTemplate = _builder.build()
 
     /**
-     * `string template_id = 1 [json_name = "templateId"];`
+     * `string template_id = 1 [json_name = "templateId", (.buf.validate.field) = { ... }`
      */
     public var templateId: kotlin.String
       @kotlin.jvm.JvmName("getTemplateId")
@@ -40,14 +40,14 @@ public object BadgeTemplateKt {
         _builder.templateId = value
       }
     /**
-     * `string template_id = 1 [json_name = "templateId"];`
+     * `string template_id = 1 [json_name = "templateId", (.buf.validate.field) = { ... }`
      */
     public fun clearTemplateId() {
       _builder.clearTemplateId()
     }
 
     /**
-     * `string name = 2 [json_name = "name"];`
+     * `string name = 2 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public var name: kotlin.String
       @kotlin.jvm.JvmName("getName")
@@ -57,14 +57,14 @@ public object BadgeTemplateKt {
         _builder.name = value
       }
     /**
-     * `string name = 2 [json_name = "name"];`
+     * `string name = 2 [json_name = "name", (.buf.validate.field) = { ... }`
      */
     public fun clearName() {
       _builder.clearName()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -74,14 +74,14 @@ public object BadgeTemplateKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
     }
 
     /**
-     * `string image_url = 4 [json_name = "imageUrl"];`
+     * `string image_url = 4 [json_name = "imageUrl", (.buf.validate.field) = { ... }`
      */
     public var imageUrl: kotlin.String
       @kotlin.jvm.JvmName("getImageUrl")
@@ -91,14 +91,14 @@ public object BadgeTemplateKt {
         _builder.imageUrl = value
       }
     /**
-     * `string image_url = 4 [json_name = "imageUrl"];`
+     * `string image_url = 4 [json_name = "imageUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearImageUrl() {
       _builder.clearImageUrl()
     }
 
     /**
-     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type"];`
+     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.certification.v1.CertificationType
       @kotlin.jvm.JvmName("getType")
@@ -115,7 +115,7 @@ public object BadgeTemplateKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type"];`
+     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
@@ -128,11 +128,7 @@ public object BadgeTemplateKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class RequirementsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * What's needed to earn it
-     * ```
-     *
-     * `map<string, string> requirements = 6 [json_name = "requirements"];`
+     * `map<string, string> requirements = 6 [json_name = "requirements", (.buf.validate.field) = { ... }`
      */
      public val requirements: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, RequirementsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -141,11 +137,7 @@ public object BadgeTemplateKt {
         _builder.requirementsMap
       )
     /**
-     * ```
-     * What's needed to earn it
-     * ```
-     *
-     * `map<string, string> requirements = 6 [json_name = "requirements"];`
+     * `map<string, string> requirements = 6 [json_name = "requirements", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putRequirements")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, RequirementsProxy>
@@ -153,11 +145,7 @@ public object BadgeTemplateKt {
          _builder.putRequirements(key, value)
        }
     /**
-     * ```
-     * What's needed to earn it
-     * ```
-     *
-     * `map<string, string> requirements = 6 [json_name = "requirements"];`
+     * `map<string, string> requirements = 6 [json_name = "requirements", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setRequirements")
@@ -167,11 +155,7 @@ public object BadgeTemplateKt {
          put(key, value)
        }
     /**
-     * ```
-     * What's needed to earn it
-     * ```
-     *
-     * `map<string, string> requirements = 6 [json_name = "requirements"];`
+     * `map<string, string> requirements = 6 [json_name = "requirements", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeRequirements")
@@ -180,11 +164,7 @@ public object BadgeTemplateKt {
          _builder.removeRequirements(key)
        }
     /**
-     * ```
-     * What's needed to earn it
-     * ```
-     *
-     * `map<string, string> requirements = 6 [json_name = "requirements"];`
+     * `map<string, string> requirements = 6 [json_name = "requirements", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllRequirements")
@@ -193,11 +173,7 @@ public object BadgeTemplateKt {
          _builder.putAllRequirements(map)
        }
     /**
-     * ```
-     * What's needed to earn it
-     * ```
-     *
-     * `map<string, string> requirements = 6 [json_name = "requirements"];`
+     * `map<string, string> requirements = 6 [json_name = "requirements", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearRequirements")

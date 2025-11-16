@@ -57,7 +57,7 @@ public object CreateWorkshopResponseKt {
       get() = _builder.workshopOrNull
 
     /**
-     * `string shareable_url = 2 [json_name = "shareableUrl"];`
+     * `string shareable_url = 2 [json_name = "shareableUrl", (.buf.validate.field) = { ... }`
      */
     public var shareableUrl: kotlin.String
       @kotlin.jvm.JvmName("getShareableUrl")
@@ -67,7 +67,7 @@ public object CreateWorkshopResponseKt {
         _builder.shareableUrl = value
       }
     /**
-     * `string shareable_url = 2 [json_name = "shareableUrl"];`
+     * `string shareable_url = 2 [json_name = "shareableUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearShareableUrl() {
       _builder.clearShareableUrl()

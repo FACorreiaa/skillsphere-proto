@@ -30,7 +30,7 @@ public object GetUserStatsResponseKt {
     internal fun _build(): com.skillsphere.user.v1.GetUserStatsResponse = _builder.build()
 
     /**
-     * `int32 total_sessions = 1 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 1 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public var totalSessions: kotlin.Int
       @kotlin.jvm.JvmName("getTotalSessions")
@@ -40,14 +40,14 @@ public object GetUserStatsResponseKt {
         _builder.totalSessions = value
       }
     /**
-     * `int32 total_sessions = 1 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 1 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalSessions() {
       _builder.clearTotalSessions()
     }
 
     /**
-     * `int32 completed_sessions = 2 [json_name = "completedSessions"];`
+     * `int32 completed_sessions = 2 [json_name = "completedSessions", (.buf.validate.field) = { ... }`
      */
     public var completedSessions: kotlin.Int
       @kotlin.jvm.JvmName("getCompletedSessions")
@@ -57,14 +57,14 @@ public object GetUserStatsResponseKt {
         _builder.completedSessions = value
       }
     /**
-     * `int32 completed_sessions = 2 [json_name = "completedSessions"];`
+     * `int32 completed_sessions = 2 [json_name = "completedSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearCompletedSessions() {
       _builder.clearCompletedSessions()
     }
 
     /**
-     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions"];`
+     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions", (.buf.validate.field) = { ... }`
      */
     public var cancelledSessions: kotlin.Int
       @kotlin.jvm.JvmName("getCancelledSessions")
@@ -74,14 +74,14 @@ public object GetUserStatsResponseKt {
         _builder.cancelledSessions = value
       }
     /**
-     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions"];`
+     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearCancelledSessions() {
       _builder.clearCancelledSessions()
     }
 
     /**
-     * `int32 no_show_count = 4 [json_name = "noShowCount"];`
+     * `int32 no_show_count = 4 [json_name = "noShowCount", (.buf.validate.field) = { ... }`
      */
     public var noShowCount: kotlin.Int
       @kotlin.jvm.JvmName("getNoShowCount")
@@ -91,14 +91,14 @@ public object GetUserStatsResponseKt {
         _builder.noShowCount = value
       }
     /**
-     * `int32 no_show_count = 4 [json_name = "noShowCount"];`
+     * `int32 no_show_count = 4 [json_name = "noShowCount", (.buf.validate.field) = { ... }`
      */
     public fun clearNoShowCount() {
       _builder.clearNoShowCount()
     }
 
     /**
-     * `double average_rating = 5 [json_name = "averageRating"];`
+     * `double average_rating = 5 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public var averageRating: kotlin.Double
       @kotlin.jvm.JvmName("getAverageRating")
@@ -108,14 +108,14 @@ public object GetUserStatsResponseKt {
         _builder.averageRating = value
       }
     /**
-     * `double average_rating = 5 [json_name = "averageRating"];`
+     * `double average_rating = 5 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageRating() {
       _builder.clearAverageRating()
     }
 
     /**
-     * `int32 total_reviews = 6 [json_name = "totalReviews"];`
+     * `int32 total_reviews = 6 [json_name = "totalReviews", (.buf.validate.field) = { ... }`
      */
     public var totalReviews: kotlin.Int
       @kotlin.jvm.JvmName("getTotalReviews")
@@ -125,14 +125,14 @@ public object GetUserStatsResponseKt {
         _builder.totalReviews = value
       }
     /**
-     * `int32 total_reviews = 6 [json_name = "totalReviews"];`
+     * `int32 total_reviews = 6 [json_name = "totalReviews", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalReviews() {
       _builder.clearTotalReviews()
     }
 
     /**
-     * `int32 skills_offered_count = 7 [json_name = "skillsOfferedCount"];`
+     * `int32 skills_offered_count = 7 [json_name = "skillsOfferedCount", (.buf.validate.field) = { ... }`
      */
     public var skillsOfferedCount: kotlin.Int
       @kotlin.jvm.JvmName("getSkillsOfferedCount")
@@ -142,14 +142,14 @@ public object GetUserStatsResponseKt {
         _builder.skillsOfferedCount = value
       }
     /**
-     * `int32 skills_offered_count = 7 [json_name = "skillsOfferedCount"];`
+     * `int32 skills_offered_count = 7 [json_name = "skillsOfferedCount", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillsOfferedCount() {
       _builder.clearSkillsOfferedCount()
     }
 
     /**
-     * `int32 skills_wanted_count = 8 [json_name = "skillsWantedCount"];`
+     * `int32 skills_wanted_count = 8 [json_name = "skillsWantedCount", (.buf.validate.field) = { ... }`
      */
     public var skillsWantedCount: kotlin.Int
       @kotlin.jvm.JvmName("getSkillsWantedCount")
@@ -159,18 +159,14 @@ public object GetUserStatsResponseKt {
         _builder.skillsWantedCount = value
       }
     /**
-     * `int32 skills_wanted_count = 8 [json_name = "skillsWantedCount"];`
+     * `int32 skills_wanted_count = 8 [json_name = "skillsWantedCount", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillsWantedCount() {
       _builder.clearSkillsWantedCount()
     }
 
     /**
-     * ```
-     * Days since last activity
-     * ```
-     *
-     * `int32 active_days = 9 [json_name = "activeDays"];`
+     * `int32 active_days = 9 [json_name = "activeDays", (.buf.validate.field) = { ... }`
      */
     public var activeDays: kotlin.Int
       @kotlin.jvm.JvmName("getActiveDays")
@@ -180,11 +176,7 @@ public object GetUserStatsResponseKt {
         _builder.activeDays = value
       }
     /**
-     * ```
-     * Days since last activity
-     * ```
-     *
-     * `int32 active_days = 9 [json_name = "activeDays"];`
+     * `int32 active_days = 9 [json_name = "activeDays", (.buf.validate.field) = { ... }`
      */
     public fun clearActiveDays() {
       _builder.clearActiveDays()

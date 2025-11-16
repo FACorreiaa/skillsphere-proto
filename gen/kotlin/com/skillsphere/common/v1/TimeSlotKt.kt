@@ -34,7 +34,7 @@ public object TimeSlotKt {
     internal fun _build(): com.skillsphere.common.v1.TimeSlot = _builder.build()
 
     /**
-     * `.skillsphere.common.v1.DayOfWeek day = 1 [json_name = "day"];`
+     * `.skillsphere.common.v1.DayOfWeek day = 1 [json_name = "day", (.buf.validate.field) = { ... }`
      */
     public var day: com.skillsphere.common.v1.DayOfWeek
       @kotlin.jvm.JvmName("getDay")
@@ -51,7 +51,7 @@ public object TimeSlotKt {
         _builder.dayValue = value
       }
     /**
-     * `.skillsphere.common.v1.DayOfWeek day = 1 [json_name = "day"];`
+     * `.skillsphere.common.v1.DayOfWeek day = 1 [json_name = "day", (.buf.validate.field) = { ... }`
      */
     public fun clearDay() {
       _builder.clearDay()
@@ -62,7 +62,7 @@ public object TimeSlotKt {
      * Format: "HH:MM" (24-hour)
      * ```
      *
-     * `string start_time = 2 [json_name = "startTime"];`
+     * `string start_time = 2 [json_name = "startTime", (.buf.validate.field) = { ... }`
      */
     public var startTime: kotlin.String
       @kotlin.jvm.JvmName("getStartTime")
@@ -76,7 +76,7 @@ public object TimeSlotKt {
      * Format: "HH:MM" (24-hour)
      * ```
      *
-     * `string start_time = 2 [json_name = "startTime"];`
+     * `string start_time = 2 [json_name = "startTime", (.buf.validate.field) = { ... }`
      */
     public fun clearStartTime() {
       _builder.clearStartTime()
@@ -87,7 +87,7 @@ public object TimeSlotKt {
      * Format: "HH:MM" (24-hour)
      * ```
      *
-     * `string end_time = 3 [json_name = "endTime"];`
+     * `string end_time = 3 [json_name = "endTime", (.buf.validate.field) = { ... }`
      */
     public var endTime: kotlin.String
       @kotlin.jvm.JvmName("getEndTime")
@@ -101,7 +101,7 @@ public object TimeSlotKt {
      * Format: "HH:MM" (24-hour)
      * ```
      *
-     * `string end_time = 3 [json_name = "endTime"];`
+     * `string end_time = 3 [json_name = "endTime", (.buf.validate.field) = { ... }`
      */
     public fun clearEndTime() {
       _builder.clearEndTime()

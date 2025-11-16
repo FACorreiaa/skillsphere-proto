@@ -34,11 +34,7 @@ public object ErrorDetailKt {
     internal fun _build(): com.skillsphere.common.v1.ErrorDetail = _builder.build()
 
     /**
-     * ```
-     * Application-specific error code
-     * ```
-     *
-     * `string code = 1 [json_name = "code"];`
+     * `string code = 1 [json_name = "code", (.buf.validate.field) = { ... }`
      */
     public var code: kotlin.String
       @kotlin.jvm.JvmName("getCode")
@@ -48,18 +44,14 @@ public object ErrorDetailKt {
         _builder.code = value
       }
     /**
-     * ```
-     * Application-specific error code
-     * ```
-     *
-     * `string code = 1 [json_name = "code"];`
+     * `string code = 1 [json_name = "code", (.buf.validate.field) = { ... }`
      */
     public fun clearCode() {
       _builder.clearCode()
     }
 
     /**
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public var message: kotlin.String
       @kotlin.jvm.JvmName("getMessage")
@@ -69,7 +61,7 @@ public object ErrorDetailKt {
         _builder.message = value
       }
     /**
-     * `string message = 2 [json_name = "message"];`
+     * `string message = 2 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public fun clearMessage() {
       _builder.clearMessage()
@@ -82,11 +74,7 @@ public object ErrorDetailKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class MetadataProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Additional context
-     * ```
-     *
-     * `map<string, string> metadata = 3 [json_name = "metadata"];`
+     * `map<string, string> metadata = 3 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
      public val metadata: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, MetadataProxy>
       @kotlin.jvm.JvmSynthetic
@@ -95,11 +83,7 @@ public object ErrorDetailKt {
         _builder.metadataMap
       )
     /**
-     * ```
-     * Additional context
-     * ```
-     *
-     * `map<string, string> metadata = 3 [json_name = "metadata"];`
+     * `map<string, string> metadata = 3 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putMetadata")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, MetadataProxy>
@@ -107,11 +91,7 @@ public object ErrorDetailKt {
          _builder.putMetadata(key, value)
        }
     /**
-     * ```
-     * Additional context
-     * ```
-     *
-     * `map<string, string> metadata = 3 [json_name = "metadata"];`
+     * `map<string, string> metadata = 3 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setMetadata")
@@ -121,11 +101,7 @@ public object ErrorDetailKt {
          put(key, value)
        }
     /**
-     * ```
-     * Additional context
-     * ```
-     *
-     * `map<string, string> metadata = 3 [json_name = "metadata"];`
+     * `map<string, string> metadata = 3 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeMetadata")
@@ -134,11 +110,7 @@ public object ErrorDetailKt {
          _builder.removeMetadata(key)
        }
     /**
-     * ```
-     * Additional context
-     * ```
-     *
-     * `map<string, string> metadata = 3 [json_name = "metadata"];`
+     * `map<string, string> metadata = 3 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllMetadata")
@@ -147,11 +119,7 @@ public object ErrorDetailKt {
          _builder.putAllMetadata(map)
        }
     /**
-     * ```
-     * Additional context
-     * ```
-     *
-     * `map<string, string> metadata = 3 [json_name = "metadata"];`
+     * `map<string, string> metadata = 3 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearMetadata")

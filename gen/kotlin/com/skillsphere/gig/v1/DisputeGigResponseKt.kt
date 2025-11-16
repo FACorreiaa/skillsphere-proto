@@ -30,7 +30,7 @@ public object DisputeGigResponseKt {
     internal fun _build(): com.skillsphere.gig.v1.DisputeGigResponse = _builder.build()
 
     /**
-     * `string dispute_id = 1 [json_name = "disputeId"];`
+     * `string dispute_id = 1 [json_name = "disputeId", (.buf.validate.field) = { ... }`
      */
     public var disputeId: kotlin.String
       @kotlin.jvm.JvmName("getDisputeId")
@@ -40,18 +40,14 @@ public object DisputeGigResponseKt {
         _builder.disputeId = value
       }
     /**
-     * `string dispute_id = 1 [json_name = "disputeId"];`
+     * `string dispute_id = 1 [json_name = "disputeId", (.buf.validate.field) = { ... }`
      */
     public fun clearDisputeId() {
       _builder.clearDisputeId()
     }
 
     /**
-     * ```
-     * "pending", "under_review"
-     * ```
-     *
-     * `string status = 2 [json_name = "status"];`
+     * `string status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: kotlin.String
       @kotlin.jvm.JvmName("getStatus")
@@ -61,11 +57,7 @@ public object DisputeGigResponseKt {
         _builder.status = value
       }
     /**
-     * ```
-     * "pending", "under_review"
-     * ```
-     *
-     * `string status = 2 [json_name = "status"];`
+     * `string status = 2 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

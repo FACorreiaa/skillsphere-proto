@@ -30,7 +30,7 @@ public object RequestPasswordResetRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.RequestPasswordResetRequest = _builder.build()
 
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public var email: kotlin.String
       @kotlin.jvm.JvmName("getEmail")
@@ -40,7 +40,7 @@ public object RequestPasswordResetRequestKt {
         _builder.email = value
       }
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public fun clearEmail() {
       _builder.clearEmail()

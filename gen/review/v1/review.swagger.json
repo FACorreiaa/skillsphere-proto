@@ -1,0 +1,678 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "review/v1/review.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ReviewService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "commonv1Location": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "ISO 3166-1 alpha-2 (e.g., \"US\", \"BR\")"
+        },
+        "timezone": {
+          "type": "string",
+          "title": "IANA timezone (e.g., \"America/New_York\")"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Geographic location for user matching"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "skillspherereviewv1RequestRevisionResponse": {
+      "type": "object",
+      "properties": {
+        "review": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "newDeadline": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1AcceptReviewRequestResponse": {
+      "type": "object",
+      "properties": {
+        "review": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1Attachment": {
+      "type": "object",
+      "properties": {
+        "attachmentId": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/definitions/v1ContentType"
+        },
+        "fileSizeBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "File attachment (for reviews, workshops, etc.)"
+    },
+    "v1Availability": {
+      "type": "object",
+      "properties": {
+        "timeSlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TimeSlot"
+          }
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "title": "User availability schedule"
+    },
+    "v1ContentType": {
+      "type": "string",
+      "enum": [
+        "CONTENT_TYPE_UNSPECIFIED",
+        "CONTENT_TYPE_CODE",
+        "CONTENT_TYPE_DESIGN",
+        "CONTENT_TYPE_VIDEO",
+        "CONTENT_TYPE_DOCUMENT",
+        "CONTENT_TYPE_AUDIO"
+      ],
+      "default": "CONTENT_TYPE_UNSPECIFIED",
+      "title": "Content type for reviews"
+    },
+    "v1DayOfWeek": {
+      "type": "string",
+      "enum": [
+        "DAY_OF_WEEK_UNSPECIFIED",
+        "DAY_OF_WEEK_MONDAY",
+        "DAY_OF_WEEK_TUESDAY",
+        "DAY_OF_WEEK_WEDNESDAY",
+        "DAY_OF_WEEK_THURSDAY",
+        "DAY_OF_WEEK_FRIDAY",
+        "DAY_OF_WEEK_SATURDAY",
+        "DAY_OF_WEEK_SUNDAY"
+      ],
+      "default": "DAY_OF_WEEK_UNSPECIFIED",
+      "title": "Days of the week for availability"
+    },
+    "v1DeclineReviewRequestResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "refundIssued": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1FeedbackSection": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "rating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "strengths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "improvements": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1GetPendingReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "pendingReviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Review"
+          }
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1GetReviewResponse": {
+      "type": "object",
+      "properties": {
+        "review": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "requester": {
+          "$ref": "#/definitions/v1User"
+        },
+        "reviewer": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1GetUserReviewsResponse": {
+      "type": "object",
+      "properties": {
+        "requestedReviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Review"
+          }
+        },
+        "providedReviews": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Review"
+          }
+        }
+      }
+    },
+    "v1ListReviewersResponse": {
+      "type": "object",
+      "properties": {
+        "reviewers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Reviewer"
+          }
+        }
+      }
+    },
+    "v1Money": {
+      "type": "object",
+      "properties": {
+        "currencyCode": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "Money amount for payments"
+    },
+    "v1ProficiencyLevel": {
+      "type": "string",
+      "enum": [
+        "PROFICIENCY_LEVEL_UNSPECIFIED",
+        "PROFICIENCY_LEVEL_BEGINNER",
+        "PROFICIENCY_LEVEL_INTERMEDIATE",
+        "PROFICIENCY_LEVEL_EXPERT"
+      ],
+      "default": "PROFICIENCY_LEVEL_UNSPECIFIED",
+      "description": "- PROFICIENCY_LEVEL_BEGINNER: 1-3\n - PROFICIENCY_LEVEL_INTERMEDIATE: 4-7\n - PROFICIENCY_LEVEL_EXPERT: 8-10",
+      "title": "Proficiency level for skills (1-10 scale)"
+    },
+    "v1RateReviewResponse": {
+      "type": "object",
+      "properties": {
+        "review": {
+          "$ref": "#/definitions/v1Review"
+        }
+      }
+    },
+    "v1RequestReviewResponse": {
+      "type": "object",
+      "properties": {
+        "review": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "totalPrice": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "escrowPaymentId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Review": {
+      "type": "object",
+      "properties": {
+        "reviewId": {
+          "type": "string"
+        },
+        "requesterId": {
+          "type": "string"
+        },
+        "reviewerId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/v1ReviewType",
+          "title": "Request details"
+        },
+        "depth": {
+          "$ref": "#/definitions/v1ReviewDepth"
+        },
+        "title": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Attachment"
+          }
+        },
+        "specificQuestions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "price": {
+          "$ref": "#/definitions/v1Money",
+          "title": "Pricing"
+        },
+        "paymentId": {
+          "type": "string"
+        },
+        "requestedAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Timeline"
+        },
+        "acceptedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "completedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "feedback": {
+          "type": "string",
+          "title": "Review content"
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FeedbackSection"
+          }
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Attachment"
+          }
+        },
+        "videoFeedbackUrl": {
+          "type": "string"
+        },
+        "requesterRating": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Ratings"
+        },
+        "requesterComment": {
+          "type": "string"
+        },
+        "reviewerRating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "reviewerComment": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ReviewStatus",
+          "title": "Status"
+        }
+      }
+    },
+    "v1ReviewDepth": {
+      "type": "string",
+      "enum": [
+        "REVIEW_DEPTH_UNSPECIFIED",
+        "REVIEW_DEPTH_QUICK",
+        "REVIEW_DEPTH_STANDARD",
+        "REVIEW_DEPTH_COMPREHENSIVE"
+      ],
+      "default": "REVIEW_DEPTH_UNSPECIFIED",
+      "title": "- REVIEW_DEPTH_QUICK: 15-30 min, high-level\n - REVIEW_DEPTH_STANDARD: 1-2 hours, detailed\n - REVIEW_DEPTH_COMPREHENSIVE: 3+ hours, in-depth"
+    },
+    "v1ReviewStatus": {
+      "type": "string",
+      "enum": [
+        "REVIEW_STATUS_UNSPECIFIED",
+        "REVIEW_STATUS_PENDING",
+        "REVIEW_STATUS_ACCEPTED",
+        "REVIEW_STATUS_IN_PROGRESS",
+        "REVIEW_STATUS_COMPLETED",
+        "REVIEW_STATUS_REVISION_REQUESTED",
+        "REVIEW_STATUS_DECLINED",
+        "REVIEW_STATUS_CANCELLED"
+      ],
+      "default": "REVIEW_STATUS_UNSPECIFIED",
+      "title": "- REVIEW_STATUS_PENDING: Awaiting reviewer acceptance\n - REVIEW_STATUS_ACCEPTED: Reviewer working on it"
+    },
+    "v1ReviewType": {
+      "type": "string",
+      "enum": [
+        "REVIEW_TYPE_UNSPECIFIED",
+        "REVIEW_TYPE_CODE_REVIEW",
+        "REVIEW_TYPE_DESIGN_REVIEW",
+        "REVIEW_TYPE_WRITING_REVIEW",
+        "REVIEW_TYPE_VIDEO_REVIEW",
+        "REVIEW_TYPE_PORTFOLIO_REVIEW",
+        "REVIEW_TYPE_RESUME_REVIEW"
+      ],
+      "default": "REVIEW_TYPE_UNSPECIFIED"
+    },
+    "v1Reviewer": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        },
+        "expertise": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "averageReviewRating": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalReviews": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "responseTimeHours": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "hourlyRate": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "reviewTypes": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/v1ReviewType"
+          }
+        },
+        "isAvailable": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SubmitReviewResponse": {
+      "type": "object",
+      "properties": {
+        "review": {
+          "$ref": "#/definitions/v1Review"
+        },
+        "paymentReleased": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1SubscriptionTier": {
+      "type": "string",
+      "enum": [
+        "SUBSCRIPTION_TIER_UNSPECIFIED",
+        "SUBSCRIPTION_TIER_FREE",
+        "SUBSCRIPTION_TIER_PREMIUM",
+        "SUBSCRIPTION_TIER_PROFESSIONAL"
+      ],
+      "default": "SUBSCRIPTION_TIER_UNSPECIFIED",
+      "description": "- SUBSCRIPTION_TIER_FREE: Basic free tier\n - SUBSCRIPTION_TIER_PREMIUM: $5-10/month\n - SUBSCRIPTION_TIER_PROFESSIONAL: $15-20/month",
+      "title": "Subscription tier"
+    },
+    "v1TimeSlot": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "$ref": "#/definitions/v1DayOfWeek"
+        },
+        "startTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        },
+        "endTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        }
+      },
+      "title": "Time slot for availability"
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location"
+        },
+        "availability": {
+          "$ref": "#/definitions/v1Availability"
+        },
+        "status": {
+          "$ref": "#/definitions/v1UserStatus"
+        },
+        "subscriptionTier": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "skillsOffered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          },
+          "title": "Skills"
+        },
+        "skillsWanted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double",
+          "title": "Stats"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalReviews": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Metadata"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastActiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isVerified": {
+          "type": "boolean",
+          "description": "Blue checkmark for trusted experts",
+          "title": "Premium features"
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "IDs of blockchain certifications"
+        }
+      },
+      "title": "User profile"
+    },
+    "v1UserSkill": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "proficiencyCategory": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "isOffered": {
+          "type": "boolean",
+          "title": "True if offering, false if wanting"
+        },
+        "acquiredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "experienceDescription": {
+          "type": "string"
+        }
+      },
+      "title": "User skill association (offered or wanted)"
+    },
+    "v1UserStatus": {
+      "type": "string",
+      "enum": [
+        "USER_STATUS_UNSPECIFIED",
+        "USER_STATUS_ACTIVE",
+        "USER_STATUS_SUSPENDED",
+        "USER_STATUS_BANNED",
+        "USER_STATUS_DELETED"
+      ],
+      "default": "USER_STATUS_UNSPECIFIED",
+      "title": "User account status"
+    }
+  }
+}

@@ -84,7 +84,7 @@ public object RequestReviewResponseKt {
       get() = _builder.totalPriceOrNull
 
     /**
-     * `string escrow_payment_id = 3 [json_name = "escrowPaymentId"];`
+     * `string escrow_payment_id = 3 [json_name = "escrowPaymentId", (.buf.validate.field) = { ... }`
      */
     public var escrowPaymentId: kotlin.String
       @kotlin.jvm.JvmName("getEscrowPaymentId")
@@ -94,7 +94,7 @@ public object RequestReviewResponseKt {
         _builder.escrowPaymentId = value
       }
     /**
-     * `string escrow_payment_id = 3 [json_name = "escrowPaymentId"];`
+     * `string escrow_payment_id = 3 [json_name = "escrowPaymentId", (.buf.validate.field) = { ... }`
      */
     public fun clearEscrowPaymentId() {
       _builder.clearEscrowPaymentId()

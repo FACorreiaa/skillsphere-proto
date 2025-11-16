@@ -30,7 +30,7 @@ public object RemovePaymentMethodRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.RemovePaymentMethodRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object RemovePaymentMethodRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string payment_method_id = 2 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 2 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var paymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentMethodId")
@@ -57,7 +57,7 @@ public object RemovePaymentMethodRequestKt {
         _builder.paymentMethodId = value
       }
     /**
-     * `string payment_method_id = 2 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 2 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethodId() {
       _builder.clearPaymentMethodId()

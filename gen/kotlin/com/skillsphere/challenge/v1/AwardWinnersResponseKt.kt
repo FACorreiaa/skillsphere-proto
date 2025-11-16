@@ -53,7 +53,7 @@ public object AwardWinnersResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class WinnerUserIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds"];`
+     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds", (.buf.validate.field) = { ... }`
      * @return A list containing the winnerUserIds.
      */
     public val winnerUserIds: com.google.protobuf.kotlin.DslList<kotlin.String, WinnerUserIdsProxy>
@@ -62,7 +62,7 @@ public object AwardWinnersResponseKt {
         _builder.winnerUserIdsList
       )
     /**
-     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds"];`
+     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds", (.buf.validate.field) = { ... }`
      * @param value The winnerUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -71,7 +71,7 @@ public object AwardWinnersResponseKt {
       _builder.addWinnerUserIds(value)
     }
     /**
-     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds"];`
+     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds", (.buf.validate.field) = { ... }`
      * @param value The winnerUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -81,7 +81,7 @@ public object AwardWinnersResponseKt {
       add(value)
     }
     /**
-     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds"];`
+     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds", (.buf.validate.field) = { ... }`
      * @param values The winnerUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,7 +90,7 @@ public object AwardWinnersResponseKt {
       _builder.addAllWinnerUserIds(values)
     }
     /**
-     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds"];`
+     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds", (.buf.validate.field) = { ... }`
      * @param values The winnerUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -100,7 +100,7 @@ public object AwardWinnersResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds"];`
+     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The winnerUserIds to set.
      */
@@ -109,7 +109,7 @@ public object AwardWinnersResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, WinnerUserIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setWinnerUserIds(index, value)
     }/**
-     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds"];`
+     * `repeated string winner_user_ids = 2 [json_name = "winnerUserIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setWinnerUserIds")

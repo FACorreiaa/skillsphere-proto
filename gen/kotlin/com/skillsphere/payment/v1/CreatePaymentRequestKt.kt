@@ -30,7 +30,7 @@ public object CreatePaymentRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.CreatePaymentRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object CreatePaymentRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -74,7 +74,7 @@ public object CreatePaymentRequestKt {
       get() = _builder.amountOrNull
 
     /**
-     * `.skillsphere.payment.v1.PaymentPurpose purpose = 3 [json_name = "purpose"];`
+     * `.skillsphere.payment.v1.PaymentPurpose purpose = 3 [json_name = "purpose", (.buf.validate.field) = { ... }`
      */
     public var purpose: com.skillsphere.payment.v1.PaymentPurpose
       @kotlin.jvm.JvmName("getPurpose")
@@ -91,14 +91,14 @@ public object CreatePaymentRequestKt {
         _builder.purposeValue = value
       }
     /**
-     * `.skillsphere.payment.v1.PaymentPurpose purpose = 3 [json_name = "purpose"];`
+     * `.skillsphere.payment.v1.PaymentPurpose purpose = 3 [json_name = "purpose", (.buf.validate.field) = { ... }`
      */
     public fun clearPurpose() {
       _builder.clearPurpose()
     }
 
     /**
-     * `string payment_method_id = 4 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 4 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var paymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentMethodId")
@@ -108,14 +108,14 @@ public object CreatePaymentRequestKt {
         _builder.paymentMethodId = value
       }
     /**
-     * `string payment_method_id = 4 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 4 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethodId() {
       _builder.clearPaymentMethodId()
     }
 
     /**
-     * `string description = 5 [json_name = "description"];`
+     * `string description = 5 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -125,7 +125,7 @@ public object CreatePaymentRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 5 [json_name = "description"];`
+     * `string description = 5 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -138,11 +138,7 @@ public object CreatePaymentRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class MetadataProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * e.g., workshop_id, cert_id
-     * ```
-     *
-     * `map<string, string> metadata = 6 [json_name = "metadata"];`
+     * `map<string, string> metadata = 6 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
      public val metadata: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, MetadataProxy>
       @kotlin.jvm.JvmSynthetic
@@ -151,11 +147,7 @@ public object CreatePaymentRequestKt {
         _builder.metadataMap
       )
     /**
-     * ```
-     * e.g., workshop_id, cert_id
-     * ```
-     *
-     * `map<string, string> metadata = 6 [json_name = "metadata"];`
+     * `map<string, string> metadata = 6 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putMetadata")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, MetadataProxy>
@@ -163,11 +155,7 @@ public object CreatePaymentRequestKt {
          _builder.putMetadata(key, value)
        }
     /**
-     * ```
-     * e.g., workshop_id, cert_id
-     * ```
-     *
-     * `map<string, string> metadata = 6 [json_name = "metadata"];`
+     * `map<string, string> metadata = 6 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setMetadata")
@@ -177,11 +165,7 @@ public object CreatePaymentRequestKt {
          put(key, value)
        }
     /**
-     * ```
-     * e.g., workshop_id, cert_id
-     * ```
-     *
-     * `map<string, string> metadata = 6 [json_name = "metadata"];`
+     * `map<string, string> metadata = 6 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeMetadata")
@@ -190,11 +174,7 @@ public object CreatePaymentRequestKt {
          _builder.removeMetadata(key)
        }
     /**
-     * ```
-     * e.g., workshop_id, cert_id
-     * ```
-     *
-     * `map<string, string> metadata = 6 [json_name = "metadata"];`
+     * `map<string, string> metadata = 6 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllMetadata")
@@ -203,11 +183,7 @@ public object CreatePaymentRequestKt {
          _builder.putAllMetadata(map)
        }
     /**
-     * ```
-     * e.g., workshop_id, cert_id
-     * ```
-     *
-     * `map<string, string> metadata = 6 [json_name = "metadata"];`
+     * `map<string, string> metadata = 6 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearMetadata")

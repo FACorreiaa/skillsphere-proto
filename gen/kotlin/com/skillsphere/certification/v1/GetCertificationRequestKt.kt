@@ -30,7 +30,7 @@ public object GetCertificationRequestKt {
     internal fun _build(): com.skillsphere.certification.v1.GetCertificationRequest = _builder.build()
 
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public var certificationId: kotlin.String
       @kotlin.jvm.JvmName("getCertificationId")
@@ -40,7 +40,7 @@ public object GetCertificationRequestKt {
         _builder.certificationId = value
       }
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public fun clearCertificationId() {
       _builder.clearCertificationId()

@@ -30,7 +30,7 @@ public object GetSearchSuggestionsRequestKt {
     internal fun _build(): com.skillsphere.search.v1.GetSearchSuggestionsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,18 +40,14 @@ public object GetSearchSuggestionsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * Autocomplete query
-     * ```
-     *
-     * `string partial_query = 2 [json_name = "partialQuery"];`
+     * `string partial_query = 2 [json_name = "partialQuery", (.buf.validate.field) = { ... }`
      */
     public var partialQuery: kotlin.String
       @kotlin.jvm.JvmName("getPartialQuery")
@@ -61,18 +57,14 @@ public object GetSearchSuggestionsRequestKt {
         _builder.partialQuery = value
       }
     /**
-     * ```
-     * Autocomplete query
-     * ```
-     *
-     * `string partial_query = 2 [json_name = "partialQuery"];`
+     * `string partial_query = 2 [json_name = "partialQuery", (.buf.validate.field) = { ... }`
      */
     public fun clearPartialQuery() {
       _builder.clearPartialQuery()
     }
 
     /**
-     * `int32 limit = 3 [json_name = "limit"];`
+     * `int32 limit = 3 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -82,7 +74,7 @@ public object GetSearchSuggestionsRequestKt {
         _builder.limit = value
       }
     /**
-     * `int32 limit = 3 [json_name = "limit"];`
+     * `int32 limit = 3 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()

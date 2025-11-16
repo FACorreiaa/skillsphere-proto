@@ -34,7 +34,7 @@ public object PageInfoKt {
     internal fun _build(): com.skillsphere.common.v1.PageInfo = _builder.build()
 
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -44,14 +44,14 @@ public object PageInfoKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public var nextPageToken: kotlin.String
       @kotlin.jvm.JvmName("getNextPageToken")
@@ -61,14 +61,14 @@ public object PageInfoKt {
         _builder.nextPageToken = value
       }
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearNextPageToken() {
       _builder.clearNextPageToken()
     }
 
     /**
-     * `string previous_page_token = 3 [json_name = "previousPageToken"];`
+     * `string previous_page_token = 3 [json_name = "previousPageToken", (.buf.validate.field) = { ... }`
      */
     public var previousPageToken: kotlin.String
       @kotlin.jvm.JvmName("getPreviousPageToken")
@@ -78,18 +78,14 @@ public object PageInfoKt {
         _builder.previousPageToken = value
       }
     /**
-     * `string previous_page_token = 3 [json_name = "previousPageToken"];`
+     * `string previous_page_token = 3 [json_name = "previousPageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPreviousPageToken() {
       _builder.clearPreviousPageToken()
     }
 
     /**
-     * ```
-     * Optional total count
-     * ```
-     *
-     * `int32 total_count = 4 [json_name = "totalCount"];`
+     * `int32 total_count = 4 [json_name = "totalCount", (.buf.validate.field) = { ... }`
      */
     public var totalCount: kotlin.Int
       @kotlin.jvm.JvmName("getTotalCount")
@@ -99,11 +95,7 @@ public object PageInfoKt {
         _builder.totalCount = value
       }
     /**
-     * ```
-     * Optional total count
-     * ```
-     *
-     * `int32 total_count = 4 [json_name = "totalCount"];`
+     * `int32 total_count = 4 [json_name = "totalCount", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalCount() {
       _builder.clearTotalCount()

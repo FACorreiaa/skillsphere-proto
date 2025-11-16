@@ -30,7 +30,7 @@ public object CloseReportRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.CloseReportRequest = _builder.build()
 
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public var reportId: kotlin.String
       @kotlin.jvm.JvmName("getReportId")
@@ -40,14 +40,14 @@ public object CloseReportRequestKt {
         _builder.reportId = value
       }
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public fun clearReportId() {
       _builder.clearReportId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,14 +57,14 @@ public object CloseReportRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `.skillsphere.admin.v1.ModerationAction action_taken = 3 [json_name = "actionTaken"];`
+     * `.skillsphere.admin.v1.ModerationAction action_taken = 3 [json_name = "actionTaken", (.buf.validate.field) = { ... }`
      */
     public var actionTaken: com.skillsphere.admin.v1.ModerationAction
       @kotlin.jvm.JvmName("getActionTaken")
@@ -81,14 +81,14 @@ public object CloseReportRequestKt {
         _builder.actionTakenValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ModerationAction action_taken = 3 [json_name = "actionTaken"];`
+     * `.skillsphere.admin.v1.ModerationAction action_taken = 3 [json_name = "actionTaken", (.buf.validate.field) = { ... }`
      */
     public fun clearActionTaken() {
       _builder.clearActionTaken()
     }
 
     /**
-     * `string resolution_notes = 4 [json_name = "resolutionNotes"];`
+     * `string resolution_notes = 4 [json_name = "resolutionNotes", (.buf.validate.field) = { ... }`
      */
     public var resolutionNotes: kotlin.String
       @kotlin.jvm.JvmName("getResolutionNotes")
@@ -98,7 +98,7 @@ public object CloseReportRequestKt {
         _builder.resolutionNotes = value
       }
     /**
-     * `string resolution_notes = 4 [json_name = "resolutionNotes"];`
+     * `string resolution_notes = 4 [json_name = "resolutionNotes", (.buf.validate.field) = { ... }`
      */
     public fun clearResolutionNotes() {
       _builder.clearResolutionNotes()

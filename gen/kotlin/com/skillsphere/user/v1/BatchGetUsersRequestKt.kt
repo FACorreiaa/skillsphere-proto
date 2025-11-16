@@ -36,11 +36,7 @@ public object BatchGetUsersRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class UserIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Max 100
-     * ```
-     *
-     * `repeated string user_ids = 1 [json_name = "userIds"];`
+     * `repeated string user_ids = 1 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @return A list containing the userIds.
      */
     public val userIds: com.google.protobuf.kotlin.DslList<kotlin.String, UserIdsProxy>
@@ -49,11 +45,7 @@ public object BatchGetUsersRequestKt {
         _builder.userIdsList
       )
     /**
-     * ```
-     * Max 100
-     * ```
-     *
-     * `repeated string user_ids = 1 [json_name = "userIds"];`
+     * `repeated string user_ids = 1 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param value The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -62,11 +54,7 @@ public object BatchGetUsersRequestKt {
       _builder.addUserIds(value)
     }
     /**
-     * ```
-     * Max 100
-     * ```
-     *
-     * `repeated string user_ids = 1 [json_name = "userIds"];`
+     * `repeated string user_ids = 1 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param value The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -76,11 +64,7 @@ public object BatchGetUsersRequestKt {
       add(value)
     }
     /**
-     * ```
-     * Max 100
-     * ```
-     *
-     * `repeated string user_ids = 1 [json_name = "userIds"];`
+     * `repeated string user_ids = 1 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param values The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -89,11 +73,7 @@ public object BatchGetUsersRequestKt {
       _builder.addAllUserIds(values)
     }
     /**
-     * ```
-     * Max 100
-     * ```
-     *
-     * `repeated string user_ids = 1 [json_name = "userIds"];`
+     * `repeated string user_ids = 1 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param values The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -103,11 +83,7 @@ public object BatchGetUsersRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * Max 100
-     * ```
-     *
-     * `repeated string user_ids = 1 [json_name = "userIds"];`
+     * `repeated string user_ids = 1 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The userIds to set.
      */
@@ -116,11 +92,7 @@ public object BatchGetUsersRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, UserIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setUserIds(index, value)
     }/**
-     * ```
-     * Max 100
-     * ```
-     *
-     * `repeated string user_ids = 1 [json_name = "userIds"];`
+     * `repeated string user_ids = 1 [json_name = "userIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setUserIds")

@@ -30,11 +30,7 @@ public object ListUsersRequestKt {
     internal fun _build(): com.skillsphere.user.v1.ListUsersRequest = _builder.build()
 
     /**
-     * ```
-     * Default 20, max 100
-     * ```
-     *
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -44,22 +40,14 @@ public object ListUsersRequestKt {
         _builder.pageSize = value
       }
     /**
-     * ```
-     * Default 20, max 100
-     * ```
-     *
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * ```
-     * Opaque cursor for pagination
-     * ```
-     *
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -69,11 +57,7 @@ public object ListUsersRequestKt {
         _builder.pageToken = value
       }
     /**
-     * ```
-     * Opaque cursor for pagination
-     * ```
-     *
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()
@@ -107,11 +91,7 @@ public object ListUsersRequestKt {
       get() = _builder.filtersOrNull
 
     /**
-     * ```
-     * e.g., "created_at", "rating", "sessions"
-     * ```
-     *
-     * `string sort_by = 4 [json_name = "sortBy"];`
+     * `string sort_by = 4 [json_name = "sortBy", (.buf.validate.field) = { ... }`
      */
     public var sortBy: kotlin.String
       @kotlin.jvm.JvmName("getSortBy")
@@ -121,11 +101,7 @@ public object ListUsersRequestKt {
         _builder.sortBy = value
       }
     /**
-     * ```
-     * e.g., "created_at", "rating", "sessions"
-     * ```
-     *
-     * `string sort_by = 4 [json_name = "sortBy"];`
+     * `string sort_by = 4 [json_name = "sortBy", (.buf.validate.field) = { ... }`
      */
     public fun clearSortBy() {
       _builder.clearSortBy()

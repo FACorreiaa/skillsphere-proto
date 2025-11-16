@@ -57,7 +57,7 @@ public object SubmitEntryResponseKt {
       get() = _builder.entryOrNull
 
     /**
-     * `string confirmation_message = 2 [json_name = "confirmationMessage"];`
+     * `string confirmation_message = 2 [json_name = "confirmationMessage", (.buf.validate.field) = { ... }`
      */
     public var confirmationMessage: kotlin.String
       @kotlin.jvm.JvmName("getConfirmationMessage")
@@ -67,7 +67,7 @@ public object SubmitEntryResponseKt {
         _builder.confirmationMessage = value
       }
     /**
-     * `string confirmation_message = 2 [json_name = "confirmationMessage"];`
+     * `string confirmation_message = 2 [json_name = "confirmationMessage", (.buf.validate.field) = { ... }`
      */
     public fun clearConfirmationMessage() {
       _builder.clearConfirmationMessage()

@@ -30,7 +30,7 @@ public object ToggleFeatureFlagRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.ToggleFeatureFlagRequest = _builder.build()
 
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -40,14 +40,14 @@ public object ToggleFeatureFlagRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string feature_name = 2 [json_name = "featureName"];`
+     * `string feature_name = 2 [json_name = "featureName", (.buf.validate.field) = { ... }`
      */
     public var featureName: kotlin.String
       @kotlin.jvm.JvmName("getFeatureName")
@@ -57,7 +57,7 @@ public object ToggleFeatureFlagRequestKt {
         _builder.featureName = value
       }
     /**
-     * `string feature_name = 2 [json_name = "featureName"];`
+     * `string feature_name = 2 [json_name = "featureName", (.buf.validate.field) = { ... }`
      */
     public fun clearFeatureName() {
       _builder.clearFeatureName()
@@ -87,11 +87,7 @@ public object ToggleFeatureFlagRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class UserIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Optional: enable for specific users
-     * ```
-     *
-     * `repeated string user_ids = 4 [json_name = "userIds"];`
+     * `repeated string user_ids = 4 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @return A list containing the userIds.
      */
     public val userIds: com.google.protobuf.kotlin.DslList<kotlin.String, UserIdsProxy>
@@ -100,11 +96,7 @@ public object ToggleFeatureFlagRequestKt {
         _builder.userIdsList
       )
     /**
-     * ```
-     * Optional: enable for specific users
-     * ```
-     *
-     * `repeated string user_ids = 4 [json_name = "userIds"];`
+     * `repeated string user_ids = 4 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param value The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -113,11 +105,7 @@ public object ToggleFeatureFlagRequestKt {
       _builder.addUserIds(value)
     }
     /**
-     * ```
-     * Optional: enable for specific users
-     * ```
-     *
-     * `repeated string user_ids = 4 [json_name = "userIds"];`
+     * `repeated string user_ids = 4 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param value The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -127,11 +115,7 @@ public object ToggleFeatureFlagRequestKt {
       add(value)
     }
     /**
-     * ```
-     * Optional: enable for specific users
-     * ```
-     *
-     * `repeated string user_ids = 4 [json_name = "userIds"];`
+     * `repeated string user_ids = 4 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param values The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -140,11 +124,7 @@ public object ToggleFeatureFlagRequestKt {
       _builder.addAllUserIds(values)
     }
     /**
-     * ```
-     * Optional: enable for specific users
-     * ```
-     *
-     * `repeated string user_ids = 4 [json_name = "userIds"];`
+     * `repeated string user_ids = 4 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param values The userIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -154,11 +134,7 @@ public object ToggleFeatureFlagRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * Optional: enable for specific users
-     * ```
-     *
-     * `repeated string user_ids = 4 [json_name = "userIds"];`
+     * `repeated string user_ids = 4 [json_name = "userIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The userIds to set.
      */
@@ -167,11 +143,7 @@ public object ToggleFeatureFlagRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, UserIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setUserIds(index, value)
     }/**
-     * ```
-     * Optional: enable for specific users
-     * ```
-     *
-     * `repeated string user_ids = 4 [json_name = "userIds"];`
+     * `repeated string user_ids = 4 [json_name = "userIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setUserIds")

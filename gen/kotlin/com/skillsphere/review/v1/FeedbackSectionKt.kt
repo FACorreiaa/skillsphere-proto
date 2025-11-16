@@ -30,11 +30,7 @@ public object FeedbackSectionKt {
     internal fun _build(): com.skillsphere.review.v1.FeedbackSection = _builder.build()
 
     /**
-     * ```
-     * e.g., "Code Quality", "Architecture"
-     * ```
-     *
-     * `string title = 1 [json_name = "title"];`
+     * `string title = 1 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -44,18 +40,14 @@ public object FeedbackSectionKt {
         _builder.title = value
       }
     /**
-     * ```
-     * e.g., "Code Quality", "Architecture"
-     * ```
-     *
-     * `string title = 1 [json_name = "title"];`
+     * `string title = 1 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string content = 2 [json_name = "content"];`
+     * `string content = 2 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public var content: kotlin.String
       @kotlin.jvm.JvmName("getContent")
@@ -65,18 +57,14 @@ public object FeedbackSectionKt {
         _builder.content = value
       }
     /**
-     * `string content = 2 [json_name = "content"];`
+     * `string content = 2 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public fun clearContent() {
       _builder.clearContent()
     }
 
     /**
-     * ```
-     * 1-5 stars for this aspect
-     * ```
-     *
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public var rating: kotlin.Int
       @kotlin.jvm.JvmName("getRating")
@@ -86,11 +74,7 @@ public object FeedbackSectionKt {
         _builder.rating = value
       }
     /**
-     * ```
-     * 1-5 stars for this aspect
-     * ```
-     *
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public fun clearRating() {
       _builder.clearRating()
@@ -103,7 +87,7 @@ public object FeedbackSectionKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class StrengthsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @return A list containing the strengths.
      */
     public val strengths: com.google.protobuf.kotlin.DslList<kotlin.String, StrengthsProxy>
@@ -112,7 +96,7 @@ public object FeedbackSectionKt {
         _builder.strengthsList
       )
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param value The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -121,7 +105,7 @@ public object FeedbackSectionKt {
       _builder.addStrengths(value)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param value The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -131,7 +115,7 @@ public object FeedbackSectionKt {
       add(value)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param values The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -140,7 +124,7 @@ public object FeedbackSectionKt {
       _builder.addAllStrengths(values)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param values The strengths to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -150,7 +134,7 @@ public object FeedbackSectionKt {
       addAll(values)
     }
     /**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The strengths to set.
      */
@@ -159,7 +143,7 @@ public object FeedbackSectionKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, StrengthsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setStrengths(index, value)
     }/**
-     * `repeated string strengths = 4 [json_name = "strengths"];`
+     * `repeated string strengths = 4 [json_name = "strengths", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setStrengths")
@@ -173,7 +157,7 @@ public object FeedbackSectionKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ImprovementsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string improvements = 5 [json_name = "improvements"];`
+     * `repeated string improvements = 5 [json_name = "improvements", (.buf.validate.field) = { ... }`
      * @return A list containing the improvements.
      */
     public val improvements: com.google.protobuf.kotlin.DslList<kotlin.String, ImprovementsProxy>
@@ -182,7 +166,7 @@ public object FeedbackSectionKt {
         _builder.improvementsList
       )
     /**
-     * `repeated string improvements = 5 [json_name = "improvements"];`
+     * `repeated string improvements = 5 [json_name = "improvements", (.buf.validate.field) = { ... }`
      * @param value The improvements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -191,7 +175,7 @@ public object FeedbackSectionKt {
       _builder.addImprovements(value)
     }
     /**
-     * `repeated string improvements = 5 [json_name = "improvements"];`
+     * `repeated string improvements = 5 [json_name = "improvements", (.buf.validate.field) = { ... }`
      * @param value The improvements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -201,7 +185,7 @@ public object FeedbackSectionKt {
       add(value)
     }
     /**
-     * `repeated string improvements = 5 [json_name = "improvements"];`
+     * `repeated string improvements = 5 [json_name = "improvements", (.buf.validate.field) = { ... }`
      * @param values The improvements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -210,7 +194,7 @@ public object FeedbackSectionKt {
       _builder.addAllImprovements(values)
     }
     /**
-     * `repeated string improvements = 5 [json_name = "improvements"];`
+     * `repeated string improvements = 5 [json_name = "improvements", (.buf.validate.field) = { ... }`
      * @param values The improvements to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -220,7 +204,7 @@ public object FeedbackSectionKt {
       addAll(values)
     }
     /**
-     * `repeated string improvements = 5 [json_name = "improvements"];`
+     * `repeated string improvements = 5 [json_name = "improvements", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The improvements to set.
      */
@@ -229,7 +213,7 @@ public object FeedbackSectionKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ImprovementsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setImprovements(index, value)
     }/**
-     * `repeated string improvements = 5 [json_name = "improvements"];`
+     * `repeated string improvements = 5 [json_name = "improvements", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setImprovements")
@@ -243,11 +227,7 @@ public object FeedbackSectionKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ResourcesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Recommended learning resources
-     * ```
-     *
-     * `repeated string resources = 6 [json_name = "resources"];`
+     * `repeated string resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @return A list containing the resources.
      */
     public val resources: com.google.protobuf.kotlin.DslList<kotlin.String, ResourcesProxy>
@@ -256,11 +236,7 @@ public object FeedbackSectionKt {
         _builder.resourcesList
       )
     /**
-     * ```
-     * Recommended learning resources
-     * ```
-     *
-     * `repeated string resources = 6 [json_name = "resources"];`
+     * `repeated string resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param value The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -269,11 +245,7 @@ public object FeedbackSectionKt {
       _builder.addResources(value)
     }
     /**
-     * ```
-     * Recommended learning resources
-     * ```
-     *
-     * `repeated string resources = 6 [json_name = "resources"];`
+     * `repeated string resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param value The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -283,11 +255,7 @@ public object FeedbackSectionKt {
       add(value)
     }
     /**
-     * ```
-     * Recommended learning resources
-     * ```
-     *
-     * `repeated string resources = 6 [json_name = "resources"];`
+     * `repeated string resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param values The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -296,11 +264,7 @@ public object FeedbackSectionKt {
       _builder.addAllResources(values)
     }
     /**
-     * ```
-     * Recommended learning resources
-     * ```
-     *
-     * `repeated string resources = 6 [json_name = "resources"];`
+     * `repeated string resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param values The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -310,11 +274,7 @@ public object FeedbackSectionKt {
       addAll(values)
     }
     /**
-     * ```
-     * Recommended learning resources
-     * ```
-     *
-     * `repeated string resources = 6 [json_name = "resources"];`
+     * `repeated string resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The resources to set.
      */
@@ -323,11 +283,7 @@ public object FeedbackSectionKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ResourcesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setResources(index, value)
     }/**
-     * ```
-     * Recommended learning resources
-     * ```
-     *
-     * `repeated string resources = 6 [json_name = "resources"];`
+     * `repeated string resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setResources")

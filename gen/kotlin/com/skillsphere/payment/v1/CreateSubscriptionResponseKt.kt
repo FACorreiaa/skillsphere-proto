@@ -57,11 +57,7 @@ public object CreateSubscriptionResponseKt {
       get() = _builder.subscriptionOrNull
 
     /**
-     * ```
-     * For 3D Secure confirmation
-     * ```
-     *
-     * `string client_secret = 2 [json_name = "clientSecret"];`
+     * `string client_secret = 2 [json_name = "clientSecret", (.buf.validate.field) = { ... }`
      */
     public var clientSecret: kotlin.String
       @kotlin.jvm.JvmName("getClientSecret")
@@ -71,11 +67,7 @@ public object CreateSubscriptionResponseKt {
         _builder.clientSecret = value
       }
     /**
-     * ```
-     * For 3D Secure confirmation
-     * ```
-     *
-     * `string client_secret = 2 [json_name = "clientSecret"];`
+     * `string client_secret = 2 [json_name = "clientSecret", (.buf.validate.field) = { ... }`
      */
     public fun clearClientSecret() {
       _builder.clearClientSecret()

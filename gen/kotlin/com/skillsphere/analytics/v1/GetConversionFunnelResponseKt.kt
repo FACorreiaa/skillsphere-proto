@@ -36,7 +36,7 @@ public object GetConversionFunnelResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class StagesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages"];`
+     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages", (.buf.validate.field) = { ... }`
      */
      public val stages: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.FunnelStage, StagesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetConversionFunnelResponseKt {
         _builder.stagesList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages"];`
+     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages", (.buf.validate.field) = { ... }`
      * @param value The stages to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetConversionFunnelResponseKt {
       _builder.addStages(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages"];`
+     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages", (.buf.validate.field) = { ... }`
      * @param value The stages to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetConversionFunnelResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages"];`
+     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages", (.buf.validate.field) = { ... }`
      * @param values The stages to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetConversionFunnelResponseKt {
       _builder.addAllStages(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages"];`
+     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages", (.buf.validate.field) = { ... }`
      * @param values The stages to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetConversionFunnelResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages"];`
+     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The stages to set.
      */
@@ -92,7 +92,7 @@ public object GetConversionFunnelResponseKt {
       _builder.setStages(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages"];`
+     * `repeated .skillsphere.analytics.v1.FunnelStage stages = 1 [json_name = "stages", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearStages")
@@ -101,7 +101,7 @@ public object GetConversionFunnelResponseKt {
     }
 
     /**
-     * `double overall_conversion_rate = 2 [json_name = "overallConversionRate"];`
+     * `double overall_conversion_rate = 2 [json_name = "overallConversionRate", (.buf.validate.field) = { ... }`
      */
     public var overallConversionRate: kotlin.Double
       @kotlin.jvm.JvmName("getOverallConversionRate")
@@ -111,7 +111,7 @@ public object GetConversionFunnelResponseKt {
         _builder.overallConversionRate = value
       }
     /**
-     * `double overall_conversion_rate = 2 [json_name = "overallConversionRate"];`
+     * `double overall_conversion_rate = 2 [json_name = "overallConversionRate", (.buf.validate.field) = { ... }`
      */
     public fun clearOverallConversionRate() {
       _builder.clearOverallConversionRate()

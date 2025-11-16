@@ -30,7 +30,7 @@ public object CreateUserRequestKt {
     internal fun _build(): com.skillsphere.user.v1.CreateUserRequest = _builder.build()
 
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public var email: kotlin.String
       @kotlin.jvm.JvmName("getEmail")
@@ -40,14 +40,14 @@ public object CreateUserRequestKt {
         _builder.email = value
       }
     /**
-     * `string email = 1 [json_name = "email"];`
+     * `string email = 1 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public fun clearEmail() {
       _builder.clearEmail()
     }
 
     /**
-     * `string username = 2 [json_name = "username"];`
+     * `string username = 2 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public var username: kotlin.String
       @kotlin.jvm.JvmName("getUsername")
@@ -57,18 +57,14 @@ public object CreateUserRequestKt {
         _builder.username = value
       }
     /**
-     * `string username = 2 [json_name = "username"];`
+     * `string username = 2 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public fun clearUsername() {
       _builder.clearUsername()
     }
 
     /**
-     * ```
-     * Will be hashed on server
-     * ```
-     *
-     * `string password = 3 [json_name = "password"];`
+     * `string password = 3 [json_name = "password", (.buf.validate.field) = { ... }`
      */
     public var password: kotlin.String
       @kotlin.jvm.JvmName("getPassword")
@@ -78,18 +74,14 @@ public object CreateUserRequestKt {
         _builder.password = value
       }
     /**
-     * ```
-     * Will be hashed on server
-     * ```
-     *
-     * `string password = 3 [json_name = "password"];`
+     * `string password = 3 [json_name = "password", (.buf.validate.field) = { ... }`
      */
     public fun clearPassword() {
       _builder.clearPassword()
     }
 
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public var displayName: kotlin.String
       @kotlin.jvm.JvmName("getDisplayName")
@@ -99,14 +91,14 @@ public object CreateUserRequestKt {
         _builder.displayName = value
       }
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public fun clearDisplayName() {
       _builder.clearDisplayName()
     }
 
     /**
-     * `string bio = 5 [json_name = "bio"];`
+     * `string bio = 5 [json_name = "bio", (.buf.validate.field) = { ... }`
      */
     public var bio: kotlin.String
       @kotlin.jvm.JvmName("getBio")
@@ -116,7 +108,7 @@ public object CreateUserRequestKt {
         _builder.bio = value
       }
     /**
-     * `string bio = 5 [json_name = "bio"];`
+     * `string bio = 5 [json_name = "bio", (.buf.validate.field) = { ... }`
      */
     public fun clearBio() {
       _builder.clearBio()

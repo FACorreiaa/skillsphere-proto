@@ -30,11 +30,7 @@ public object PrizeKt {
     internal fun _build(): com.skillsphere.challenge.v1.Prize = _builder.build()
 
     /**
-     * ```
-     * 1st, 2nd, 3rd place
-     * ```
-     *
-     * `int32 rank = 1 [json_name = "rank"];`
+     * `int32 rank = 1 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public var rank: kotlin.Int
       @kotlin.jvm.JvmName("getRank")
@@ -44,22 +40,14 @@ public object PrizeKt {
         _builder.rank = value
       }
     /**
-     * ```
-     * 1st, 2nd, 3rd place
-     * ```
-     *
-     * `int32 rank = 1 [json_name = "rank"];`
+     * `int32 rank = 1 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public fun clearRank() {
       _builder.clearRank()
     }
 
     /**
-     * ```
-     * e.g., "First Place"
-     * ```
-     *
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -69,18 +57,14 @@ public object PrizeKt {
         _builder.title = value
       }
     /**
-     * ```
-     * e.g., "First Place"
-     * ```
-     *
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -90,7 +74,7 @@ public object PrizeKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -130,11 +114,7 @@ public object PrizeKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PerksProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * e.g., "Premium subscription", "Certification"
-     * ```
-     *
-     * `repeated string perks = 5 [json_name = "perks"];`
+     * `repeated string perks = 5 [json_name = "perks", (.buf.validate.field) = { ... }`
      * @return A list containing the perks.
      */
     public val perks: com.google.protobuf.kotlin.DslList<kotlin.String, PerksProxy>
@@ -143,11 +123,7 @@ public object PrizeKt {
         _builder.perksList
       )
     /**
-     * ```
-     * e.g., "Premium subscription", "Certification"
-     * ```
-     *
-     * `repeated string perks = 5 [json_name = "perks"];`
+     * `repeated string perks = 5 [json_name = "perks", (.buf.validate.field) = { ... }`
      * @param value The perks to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -156,11 +132,7 @@ public object PrizeKt {
       _builder.addPerks(value)
     }
     /**
-     * ```
-     * e.g., "Premium subscription", "Certification"
-     * ```
-     *
-     * `repeated string perks = 5 [json_name = "perks"];`
+     * `repeated string perks = 5 [json_name = "perks", (.buf.validate.field) = { ... }`
      * @param value The perks to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -170,11 +142,7 @@ public object PrizeKt {
       add(value)
     }
     /**
-     * ```
-     * e.g., "Premium subscription", "Certification"
-     * ```
-     *
-     * `repeated string perks = 5 [json_name = "perks"];`
+     * `repeated string perks = 5 [json_name = "perks", (.buf.validate.field) = { ... }`
      * @param values The perks to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -183,11 +151,7 @@ public object PrizeKt {
       _builder.addAllPerks(values)
     }
     /**
-     * ```
-     * e.g., "Premium subscription", "Certification"
-     * ```
-     *
-     * `repeated string perks = 5 [json_name = "perks"];`
+     * `repeated string perks = 5 [json_name = "perks", (.buf.validate.field) = { ... }`
      * @param values The perks to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -197,11 +161,7 @@ public object PrizeKt {
       addAll(values)
     }
     /**
-     * ```
-     * e.g., "Premium subscription", "Certification"
-     * ```
-     *
-     * `repeated string perks = 5 [json_name = "perks"];`
+     * `repeated string perks = 5 [json_name = "perks", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The perks to set.
      */
@@ -210,11 +170,7 @@ public object PrizeKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PerksProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPerks(index, value)
     }/**
-     * ```
-     * e.g., "Premium subscription", "Certification"
-     * ```
-     *
-     * `repeated string perks = 5 [json_name = "perks"];`
+     * `repeated string perks = 5 [json_name = "perks", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPerks")

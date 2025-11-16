@@ -30,7 +30,7 @@ public object GetUserSessionsRequestKt {
     internal fun _build(): com.skillsphere.user.v1.GetUserSessionsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetUserSessionsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -57,14 +57,14 @@ public object GetUserSessionsRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 2 [json_name = "pageSize"];`
+     * `int32 page_size = 2 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -74,14 +74,14 @@ public object GetUserSessionsRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 3 [json_name = "pageToken"];`
+     * `string page_token = 3 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()
     }
 
     /**
-     * `.skillsphere.common.v1.SessionStatus status_filter = 4 [json_name = "statusFilter"];`
+     * `.skillsphere.common.v1.SessionStatus status_filter = 4 [json_name = "statusFilter", (.buf.validate.field) = { ... }`
      */
     public var statusFilter: com.skillsphere.common.v1.SessionStatus
       @kotlin.jvm.JvmName("getStatusFilter")
@@ -98,7 +98,7 @@ public object GetUserSessionsRequestKt {
         _builder.statusFilterValue = value
       }
     /**
-     * `.skillsphere.common.v1.SessionStatus status_filter = 4 [json_name = "statusFilter"];`
+     * `.skillsphere.common.v1.SessionStatus status_filter = 4 [json_name = "statusFilter", (.buf.validate.field) = { ... }`
      */
     public fun clearStatusFilter() {
       _builder.clearStatusFilter()

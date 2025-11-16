@@ -34,7 +34,7 @@ public object AttachmentKt {
     internal fun _build(): com.skillsphere.common.v1.Attachment = _builder.build()
 
     /**
-     * `string attachment_id = 1 [json_name = "attachmentId"];`
+     * `string attachment_id = 1 [json_name = "attachmentId", (.buf.validate.field) = { ... }`
      */
     public var attachmentId: kotlin.String
       @kotlin.jvm.JvmName("getAttachmentId")
@@ -44,14 +44,14 @@ public object AttachmentKt {
         _builder.attachmentId = value
       }
     /**
-     * `string attachment_id = 1 [json_name = "attachmentId"];`
+     * `string attachment_id = 1 [json_name = "attachmentId", (.buf.validate.field) = { ... }`
      */
     public fun clearAttachmentId() {
       _builder.clearAttachmentId()
     }
 
     /**
-     * `string file_name = 2 [json_name = "fileName"];`
+     * `string file_name = 2 [json_name = "fileName", (.buf.validate.field) = { ... }`
      */
     public var fileName: kotlin.String
       @kotlin.jvm.JvmName("getFileName")
@@ -61,14 +61,14 @@ public object AttachmentKt {
         _builder.fileName = value
       }
     /**
-     * `string file_name = 2 [json_name = "fileName"];`
+     * `string file_name = 2 [json_name = "fileName", (.buf.validate.field) = { ... }`
      */
     public fun clearFileName() {
       _builder.clearFileName()
     }
 
     /**
-     * `string file_url = 3 [json_name = "fileUrl"];`
+     * `string file_url = 3 [json_name = "fileUrl", (.buf.validate.field) = { ... }`
      */
     public var fileUrl: kotlin.String
       @kotlin.jvm.JvmName("getFileUrl")
@@ -78,14 +78,14 @@ public object AttachmentKt {
         _builder.fileUrl = value
       }
     /**
-     * `string file_url = 3 [json_name = "fileUrl"];`
+     * `string file_url = 3 [json_name = "fileUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearFileUrl() {
       _builder.clearFileUrl()
     }
 
     /**
-     * `.skillsphere.common.v1.ContentType content_type = 4 [json_name = "contentType"];`
+     * `.skillsphere.common.v1.ContentType content_type = 4 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public var contentType: com.skillsphere.common.v1.ContentType
       @kotlin.jvm.JvmName("getContentType")
@@ -102,14 +102,14 @@ public object AttachmentKt {
         _builder.contentTypeValue = value
       }
     /**
-     * `.skillsphere.common.v1.ContentType content_type = 4 [json_name = "contentType"];`
+     * `.skillsphere.common.v1.ContentType content_type = 4 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public fun clearContentType() {
       _builder.clearContentType()
     }
 
     /**
-     * `int64 file_size_bytes = 5 [json_name = "fileSizeBytes"];`
+     * `int64 file_size_bytes = 5 [json_name = "fileSizeBytes", (.buf.validate.field) = { ... }`
      */
     public var fileSizeBytes: kotlin.Long
       @kotlin.jvm.JvmName("getFileSizeBytes")
@@ -119,7 +119,7 @@ public object AttachmentKt {
         _builder.fileSizeBytes = value
       }
     /**
-     * `int64 file_size_bytes = 5 [json_name = "fileSizeBytes"];`
+     * `int64 file_size_bytes = 5 [json_name = "fileSizeBytes", (.buf.validate.field) = { ... }`
      */
     public fun clearFileSizeBytes() {
       _builder.clearFileSizeBytes()

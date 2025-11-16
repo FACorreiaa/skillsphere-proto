@@ -36,7 +36,7 @@ public object GetUserJourneyResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class EventsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events"];`
+     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events", (.buf.validate.field) = { ... }`
      */
      public val events: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.UserEvent, EventsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetUserJourneyResponseKt {
         _builder.eventsList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events"];`
+     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events", (.buf.validate.field) = { ... }`
      * @param value The events to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetUserJourneyResponseKt {
       _builder.addEvents(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events"];`
+     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events", (.buf.validate.field) = { ... }`
      * @param value The events to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetUserJourneyResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events"];`
+     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events", (.buf.validate.field) = { ... }`
      * @param values The events to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetUserJourneyResponseKt {
       _builder.addAllEvents(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events"];`
+     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events", (.buf.validate.field) = { ... }`
      * @param values The events to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetUserJourneyResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events"];`
+     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The events to set.
      */
@@ -92,7 +92,7 @@ public object GetUserJourneyResponseKt {
       _builder.setEvents(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events"];`
+     * `repeated .skillsphere.analytics.v1.UserEvent events = 1 [json_name = "events", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearEvents")
@@ -101,7 +101,7 @@ public object GetUserJourneyResponseKt {
     }
 
     /**
-     * `string journey_summary = 2 [json_name = "journeySummary"];`
+     * `string journey_summary = 2 [json_name = "journeySummary", (.buf.validate.field) = { ... }`
      */
     public var journeySummary: kotlin.String
       @kotlin.jvm.JvmName("getJourneySummary")
@@ -111,7 +111,7 @@ public object GetUserJourneyResponseKt {
         _builder.journeySummary = value
       }
     /**
-     * `string journey_summary = 2 [json_name = "journeySummary"];`
+     * `string journey_summary = 2 [json_name = "journeySummary", (.buf.validate.field) = { ... }`
      */
     public fun clearJourneySummary() {
       _builder.clearJourneySummary()
@@ -124,7 +124,7 @@ public object GetUserJourneyResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class KeyMilestonesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string key_milestones = 3 [json_name = "keyMilestones"];`
+     * `repeated string key_milestones = 3 [json_name = "keyMilestones", (.buf.validate.field) = { ... }`
      * @return A list containing the keyMilestones.
      */
     public val keyMilestones: com.google.protobuf.kotlin.DslList<kotlin.String, KeyMilestonesProxy>
@@ -133,7 +133,7 @@ public object GetUserJourneyResponseKt {
         _builder.keyMilestonesList
       )
     /**
-     * `repeated string key_milestones = 3 [json_name = "keyMilestones"];`
+     * `repeated string key_milestones = 3 [json_name = "keyMilestones", (.buf.validate.field) = { ... }`
      * @param value The keyMilestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -142,7 +142,7 @@ public object GetUserJourneyResponseKt {
       _builder.addKeyMilestones(value)
     }
     /**
-     * `repeated string key_milestones = 3 [json_name = "keyMilestones"];`
+     * `repeated string key_milestones = 3 [json_name = "keyMilestones", (.buf.validate.field) = { ... }`
      * @param value The keyMilestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -152,7 +152,7 @@ public object GetUserJourneyResponseKt {
       add(value)
     }
     /**
-     * `repeated string key_milestones = 3 [json_name = "keyMilestones"];`
+     * `repeated string key_milestones = 3 [json_name = "keyMilestones", (.buf.validate.field) = { ... }`
      * @param values The keyMilestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -161,7 +161,7 @@ public object GetUserJourneyResponseKt {
       _builder.addAllKeyMilestones(values)
     }
     /**
-     * `repeated string key_milestones = 3 [json_name = "keyMilestones"];`
+     * `repeated string key_milestones = 3 [json_name = "keyMilestones", (.buf.validate.field) = { ... }`
      * @param values The keyMilestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -171,7 +171,7 @@ public object GetUserJourneyResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string key_milestones = 3 [json_name = "keyMilestones"];`
+     * `repeated string key_milestones = 3 [json_name = "keyMilestones", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The keyMilestones to set.
      */
@@ -180,7 +180,7 @@ public object GetUserJourneyResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyMilestonesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setKeyMilestones(index, value)
     }/**
-     * `repeated string key_milestones = 3 [json_name = "keyMilestones"];`
+     * `repeated string key_milestones = 3 [json_name = "keyMilestones", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setKeyMilestones")

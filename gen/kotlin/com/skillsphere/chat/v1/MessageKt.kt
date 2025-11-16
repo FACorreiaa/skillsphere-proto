@@ -30,7 +30,7 @@ public object MessageKt {
     internal fun _build(): com.skillsphere.chat.v1.Message = _builder.build()
 
     /**
-     * `string message_id = 1 [json_name = "messageId"];`
+     * `string message_id = 1 [json_name = "messageId", (.buf.validate.field) = { ... }`
      */
     public var messageId: kotlin.String
       @kotlin.jvm.JvmName("getMessageId")
@@ -40,14 +40,14 @@ public object MessageKt {
         _builder.messageId = value
       }
     /**
-     * `string message_id = 1 [json_name = "messageId"];`
+     * `string message_id = 1 [json_name = "messageId", (.buf.validate.field) = { ... }`
      */
     public fun clearMessageId() {
       _builder.clearMessageId()
     }
 
     /**
-     * `string conversation_id = 2 [json_name = "conversationId"];`
+     * `string conversation_id = 2 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public var conversationId: kotlin.String
       @kotlin.jvm.JvmName("getConversationId")
@@ -57,14 +57,14 @@ public object MessageKt {
         _builder.conversationId = value
       }
     /**
-     * `string conversation_id = 2 [json_name = "conversationId"];`
+     * `string conversation_id = 2 [json_name = "conversationId", (.buf.validate.field) = { ... }`
      */
     public fun clearConversationId() {
       _builder.clearConversationId()
     }
 
     /**
-     * `string sender_id = 3 [json_name = "senderId"];`
+     * `string sender_id = 3 [json_name = "senderId", (.buf.validate.field) = { ... }`
      */
     public var senderId: kotlin.String
       @kotlin.jvm.JvmName("getSenderId")
@@ -74,14 +74,14 @@ public object MessageKt {
         _builder.senderId = value
       }
     /**
-     * `string sender_id = 3 [json_name = "senderId"];`
+     * `string sender_id = 3 [json_name = "senderId", (.buf.validate.field) = { ... }`
      */
     public fun clearSenderId() {
       _builder.clearSenderId()
     }
 
     /**
-     * `string recipient_id = 4 [json_name = "recipientId"];`
+     * `string recipient_id = 4 [json_name = "recipientId", (.buf.validate.field) = { ... }`
      */
     public var recipientId: kotlin.String
       @kotlin.jvm.JvmName("getRecipientId")
@@ -91,14 +91,14 @@ public object MessageKt {
         _builder.recipientId = value
       }
     /**
-     * `string recipient_id = 4 [json_name = "recipientId"];`
+     * `string recipient_id = 4 [json_name = "recipientId", (.buf.validate.field) = { ... }`
      */
     public fun clearRecipientId() {
       _builder.clearRecipientId()
     }
 
     /**
-     * `.skillsphere.chat.v1.MessageType type = 5 [json_name = "type"];`
+     * `.skillsphere.chat.v1.MessageType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.chat.v1.MessageType
       @kotlin.jvm.JvmName("getType")
@@ -115,18 +115,14 @@ public object MessageKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.chat.v1.MessageType type = 5 [json_name = "type"];`
+     * `.skillsphere.chat.v1.MessageType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * ```
-     * Text or file URL
-     * ```
-     *
-     * `string content = 6 [json_name = "content"];`
+     * `string content = 6 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public var content: kotlin.String
       @kotlin.jvm.JvmName("getContent")
@@ -136,11 +132,7 @@ public object MessageKt {
         _builder.content = value
       }
     /**
-     * ```
-     * Text or file URL
-     * ```
-     *
-     * `string content = 6 [json_name = "content"];`
+     * `string content = 6 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public fun clearContent() {
       _builder.clearContent()
@@ -153,7 +145,7 @@ public object MessageKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AttachmentsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
      public val attachments: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, AttachmentsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -161,7 +153,7 @@ public object MessageKt {
         _builder.attachmentsList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -170,7 +162,7 @@ public object MessageKt {
       _builder.addAttachments(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -180,7 +172,7 @@ public object MessageKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -189,7 +181,7 @@ public object MessageKt {
       _builder.addAllAttachments(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -199,7 +191,7 @@ public object MessageKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The attachments to set.
      */
@@ -209,7 +201,7 @@ public object MessageKt {
       _builder.setAttachments(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 7 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearAttachments")
@@ -312,7 +304,7 @@ public object MessageKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ReactionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions"];`
+     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions", (.buf.validate.field) = { ... }`
      */
      public val reactions: com.google.protobuf.kotlin.DslList<com.skillsphere.chat.v1.Reaction, ReactionsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -320,7 +312,7 @@ public object MessageKt {
         _builder.reactionsList
       )
     /**
-     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions"];`
+     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions", (.buf.validate.field) = { ... }`
      * @param value The reactions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -329,7 +321,7 @@ public object MessageKt {
       _builder.addReactions(value)
     }
     /**
-     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions"];`
+     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions", (.buf.validate.field) = { ... }`
      * @param value The reactions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -339,7 +331,7 @@ public object MessageKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions"];`
+     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions", (.buf.validate.field) = { ... }`
      * @param values The reactions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -348,7 +340,7 @@ public object MessageKt {
       _builder.addAllReactions(values)
     }
     /**
-     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions"];`
+     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions", (.buf.validate.field) = { ... }`
      * @param values The reactions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -358,7 +350,7 @@ public object MessageKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions"];`
+     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The reactions to set.
      */
@@ -368,7 +360,7 @@ public object MessageKt {
       _builder.setReactions(index, value)
     }
     /**
-     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions"];`
+     * `repeated .skillsphere.chat.v1.Reaction reactions = 12 [json_name = "reactions", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearReactions")

@@ -30,7 +30,7 @@ public object CreateSessionRequestKt {
     internal fun _build(): com.skillsphere.session.v1.CreateSessionRequest = _builder.build()
 
     /**
-     * `string initiator_id = 1 [json_name = "initiatorId"];`
+     * `string initiator_id = 1 [json_name = "initiatorId", (.buf.validate.field) = { ... }`
      */
     public var initiatorId: kotlin.String
       @kotlin.jvm.JvmName("getInitiatorId")
@@ -40,14 +40,14 @@ public object CreateSessionRequestKt {
         _builder.initiatorId = value
       }
     /**
-     * `string initiator_id = 1 [json_name = "initiatorId"];`
+     * `string initiator_id = 1 [json_name = "initiatorId", (.buf.validate.field) = { ... }`
      */
     public fun clearInitiatorId() {
       _builder.clearInitiatorId()
     }
 
     /**
-     * `string partner_id = 2 [json_name = "partnerId"];`
+     * `string partner_id = 2 [json_name = "partnerId", (.buf.validate.field) = { ... }`
      */
     public var partnerId: kotlin.String
       @kotlin.jvm.JvmName("getPartnerId")
@@ -57,7 +57,7 @@ public object CreateSessionRequestKt {
         _builder.partnerId = value
       }
     /**
-     * `string partner_id = 2 [json_name = "partnerId"];`
+     * `string partner_id = 2 [json_name = "partnerId", (.buf.validate.field) = { ... }`
      */
     public fun clearPartnerId() {
       _builder.clearPartnerId()
@@ -70,7 +70,7 @@ public object CreateSessionRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class InitiatorOffersProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @return A list containing the initiatorOffers.
      */
     public val initiatorOffers: com.google.protobuf.kotlin.DslList<kotlin.String, InitiatorOffersProxy>
@@ -79,7 +79,7 @@ public object CreateSessionRequestKt {
         _builder.initiatorOffersList
       )
     /**
-     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param value The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -88,7 +88,7 @@ public object CreateSessionRequestKt {
       _builder.addInitiatorOffers(value)
     }
     /**
-     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param value The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -98,7 +98,7 @@ public object CreateSessionRequestKt {
       add(value)
     }
     /**
-     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param values The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -107,7 +107,7 @@ public object CreateSessionRequestKt {
       _builder.addAllInitiatorOffers(values)
     }
     /**
-     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param values The initiatorOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -117,7 +117,7 @@ public object CreateSessionRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The initiatorOffers to set.
      */
@@ -126,7 +126,7 @@ public object CreateSessionRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, InitiatorOffersProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setInitiatorOffers(index, value)
     }/**
-     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers"];`
+     * `repeated string initiator_offers = 3 [json_name = "initiatorOffers", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setInitiatorOffers")
@@ -140,7 +140,7 @@ public object CreateSessionRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PartnerOffersProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string partner_offers = 4 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 4 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @return A list containing the partnerOffers.
      */
     public val partnerOffers: com.google.protobuf.kotlin.DslList<kotlin.String, PartnerOffersProxy>
@@ -149,7 +149,7 @@ public object CreateSessionRequestKt {
         _builder.partnerOffersList
       )
     /**
-     * `repeated string partner_offers = 4 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 4 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param value The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -158,7 +158,7 @@ public object CreateSessionRequestKt {
       _builder.addPartnerOffers(value)
     }
     /**
-     * `repeated string partner_offers = 4 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 4 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param value The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -168,7 +168,7 @@ public object CreateSessionRequestKt {
       add(value)
     }
     /**
-     * `repeated string partner_offers = 4 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 4 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param values The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -177,7 +177,7 @@ public object CreateSessionRequestKt {
       _builder.addAllPartnerOffers(values)
     }
     /**
-     * `repeated string partner_offers = 4 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 4 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param values The partnerOffers to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -187,7 +187,7 @@ public object CreateSessionRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string partner_offers = 4 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 4 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The partnerOffers to set.
      */
@@ -196,7 +196,7 @@ public object CreateSessionRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PartnerOffersProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPartnerOffers(index, value)
     }/**
-     * `repeated string partner_offers = 4 [json_name = "partnerOffers"];`
+     * `repeated string partner_offers = 4 [json_name = "partnerOffers", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPartnerOffers")
@@ -258,7 +258,7 @@ public object CreateSessionRequestKt {
       get() = _builder.scheduledEndOrNull
 
     /**
-     * `string notes = 7 [json_name = "notes"];`
+     * `string notes = 7 [json_name = "notes", (.buf.validate.field) = { ... }`
      */
     public var notes: kotlin.String
       @kotlin.jvm.JvmName("getNotes")
@@ -268,7 +268,7 @@ public object CreateSessionRequestKt {
         _builder.notes = value
       }
     /**
-     * `string notes = 7 [json_name = "notes"];`
+     * `string notes = 7 [json_name = "notes", (.buf.validate.field) = { ... }`
      */
     public fun clearNotes() {
       _builder.clearNotes()

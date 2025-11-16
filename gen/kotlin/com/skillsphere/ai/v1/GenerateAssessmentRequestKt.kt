@@ -30,7 +30,7 @@ public object GenerateAssessmentRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.GenerateAssessmentRequest = _builder.build()
 
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -40,14 +40,14 @@ public object GenerateAssessmentRequestKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 1 [json_name = "skillName"];`
+     * `string skill_name = 1 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
     }
 
     /**
-     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level"];`
+     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level", (.buf.validate.field) = { ... }`
      */
     public var level: com.skillsphere.ai.v1.DifficultyLevel
       @kotlin.jvm.JvmName("getLevel")
@@ -64,18 +64,14 @@ public object GenerateAssessmentRequestKt {
         _builder.levelValue = value
       }
     /**
-     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level"];`
+     * `.skillsphere.ai.v1.DifficultyLevel level = 2 [json_name = "level", (.buf.validate.field) = { ... }`
      */
     public fun clearLevel() {
       _builder.clearLevel()
     }
 
     /**
-     * ```
-     * Default 10
-     * ```
-     *
-     * `int32 question_count = 3 [json_name = "questionCount"];`
+     * `int32 question_count = 3 [json_name = "questionCount", (.buf.validate.field) = { ... }`
      */
     public var questionCount: kotlin.Int
       @kotlin.jvm.JvmName("getQuestionCount")
@@ -85,22 +81,14 @@ public object GenerateAssessmentRequestKt {
         _builder.questionCount = value
       }
     /**
-     * ```
-     * Default 10
-     * ```
-     *
-     * `int32 question_count = 3 [json_name = "questionCount"];`
+     * `int32 question_count = 3 [json_name = "questionCount", (.buf.validate.field) = { ... }`
      */
     public fun clearQuestionCount() {
       _builder.clearQuestionCount()
     }
 
     /**
-     * ```
-     * "multiple_choice", "coding", "essay"
-     * ```
-     *
-     * `string format = 4 [json_name = "format"];`
+     * `string format = 4 [json_name = "format", (.buf.validate.field) = { ... }`
      */
     public var format: kotlin.String
       @kotlin.jvm.JvmName("getFormat")
@@ -110,11 +98,7 @@ public object GenerateAssessmentRequestKt {
         _builder.format = value
       }
     /**
-     * ```
-     * "multiple_choice", "coding", "essay"
-     * ```
-     *
-     * `string format = 4 [json_name = "format"];`
+     * `string format = 4 [json_name = "format", (.buf.validate.field) = { ... }`
      */
     public fun clearFormat() {
       _builder.clearFormat()

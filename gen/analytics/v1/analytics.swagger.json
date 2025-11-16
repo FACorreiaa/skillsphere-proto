@@ -1,0 +1,592 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "analytics/v1/analytics.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AnalyticsService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1DataPoint": {
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "value": {
+          "type": "number",
+          "format": "double"
+        },
+        "metricType": {
+          "$ref": "#/definitions/v1MetricType"
+        }
+      }
+    },
+    "v1EngagementMetrics": {
+      "type": "object",
+      "properties": {
+        "dailyActiveUsers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "weeklyActiveUsers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "monthlyActiveUsers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "averageSessionDurationMinutes": {
+          "type": "number",
+          "format": "double"
+        },
+        "sessionsPerUser": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalMessagesSent": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalSearches": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "topFeatures": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TopFeature"
+          }
+        },
+        "stickiness": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1FunnelStage": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "userCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "conversionRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "dropOffRate": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1GeographicData": {
+      "type": "object",
+      "properties": {
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string"
+        },
+        "userCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sessionCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "revenue": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "percentage": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1GetConversionFunnelResponse": {
+      "type": "object",
+      "properties": {
+        "stages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FunnelStage"
+          }
+        },
+        "overallConversionRate": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1GetGeographicDistributionResponse": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1GeographicData"
+          }
+        }
+      }
+    },
+    "v1GetPlatformStatsResponse": {
+      "type": "object",
+      "properties": {
+        "stats": {
+          "$ref": "#/definitions/v1PlatformStats"
+        },
+        "computedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1GetRetentionMetricsResponse": {
+      "type": "object",
+      "properties": {
+        "cohorts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1RetentionCohort"
+          }
+        },
+        "overallRetentionRate": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1GetRevenueAnalyticsResponse": {
+      "type": "object",
+      "properties": {
+        "revenueOverTime": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1RevenueDataPoint"
+          }
+        },
+        "breakdown": {
+          "$ref": "#/definitions/v1RevenueBreakdown"
+        },
+        "totalRevenue": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "averageRevenuePerUser": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "monthOverMonthGrowth": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1GetSessionAnalyticsResponse": {
+      "type": "object",
+      "properties": {
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "cancelledSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "noShowSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completionRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double"
+        },
+        "averageDurationMinutes": {
+          "type": "number",
+          "format": "double"
+        },
+        "mostExchangedSkills": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "peakHours": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TimeSlotPopularity"
+          }
+        }
+      }
+    },
+    "v1GetSkillTrendsResponse": {
+      "type": "object",
+      "properties": {
+        "trends": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SkillTrend"
+          }
+        }
+      }
+    },
+    "v1GetUserEngagementResponse": {
+      "type": "object",
+      "properties": {
+        "metrics": {
+          "$ref": "#/definitions/v1EngagementMetrics"
+        }
+      }
+    },
+    "v1GetUserGrowthResponse": {
+      "type": "object",
+      "properties": {
+        "growthData": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1DataPoint"
+          }
+        },
+        "totalSignups": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "growthRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "churnedUsers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "churnRate": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1GetUserJourneyResponse": {
+      "type": "object",
+      "properties": {
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserEvent"
+          }
+        },
+        "journeySummary": {
+          "type": "string"
+        },
+        "keyMilestones": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1MetricType": {
+      "type": "string",
+      "enum": [
+        "METRIC_TYPE_UNSPECIFIED",
+        "METRIC_TYPE_COUNT",
+        "METRIC_TYPE_SUM",
+        "METRIC_TYPE_AVERAGE",
+        "METRIC_TYPE_PERCENTAGE"
+      ],
+      "default": "METRIC_TYPE_UNSPECIFIED"
+    },
+    "v1Money": {
+      "type": "object",
+      "properties": {
+        "currencyCode": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "Money amount for payments"
+    },
+    "v1PlatformStats": {
+      "type": "object",
+      "properties": {
+        "totalUsers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "activeUsers": {
+          "type": "integer",
+          "format": "int32",
+          "title": "Last 30 days"
+        },
+        "newUsers": {
+          "type": "integer",
+          "format": "int32",
+          "title": "In date range"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalSkills": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "averageSessionRating": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalRevenue": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "premiumSubscribers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "conversionRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalCertifications": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalWorkshops": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalGigs": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "userSatisfaction": {
+          "type": "number",
+          "format": "double",
+          "title": "0-100"
+        }
+      }
+    },
+    "v1RetentionCohort": {
+      "type": "object",
+      "properties": {
+        "cohortDate": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "initialUsers": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "retentionByPeriod": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "format": "double"
+          }
+        }
+      }
+    },
+    "v1RevenueBreakdown": {
+      "type": "object",
+      "properties": {
+        "subscriptions": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "workshops": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "gigs": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "certifications": {
+          "$ref": "#/definitions/v1Money"
+        },
+        "reviews": {
+          "$ref": "#/definitions/v1Money"
+        }
+      }
+    },
+    "v1RevenueDataPoint": {
+      "type": "object",
+      "properties": {
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "amount": {
+          "$ref": "#/definitions/v1Money"
+        }
+      }
+    },
+    "v1SkillTrend": {
+      "type": "object",
+      "properties": {
+        "skillId": {
+          "type": "string"
+        },
+        "skillName": {
+          "type": "string"
+        },
+        "dataPoints": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1DataPoint"
+          }
+        },
+        "growthRate": {
+          "type": "number",
+          "format": "double"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalUsers": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1TimeGranularity": {
+      "type": "string",
+      "enum": [
+        "TIME_GRANULARITY_UNSPECIFIED",
+        "TIME_GRANULARITY_HOURLY",
+        "TIME_GRANULARITY_DAILY",
+        "TIME_GRANULARITY_WEEKLY",
+        "TIME_GRANULARITY_MONTHLY"
+      ],
+      "default": "TIME_GRANULARITY_UNSPECIFIED"
+    },
+    "v1TimeSlotPopularity": {
+      "type": "object",
+      "properties": {
+        "hour": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sessionCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1TopFeature": {
+      "type": "object",
+      "properties": {
+        "featureName": {
+          "type": "string"
+        },
+        "usageCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "percentage": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1TrackEventResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "eventId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1UserEvent": {
+      "type": "object",
+      "properties": {
+        "eventName": {
+          "type": "string"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "properties": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "page": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

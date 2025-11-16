@@ -3,6 +3,7 @@ syntax = "proto3";
 package skillsphere.common.v1;
 
 import "google/protobuf/timestamp.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/common/v1;commonv1";
 
@@ -104,70 +105,176 @@ enum DayOfWeek {
 
 // Geographic location for user matching
 message Location {
-  string city = 1;
-  string country = 2;
-  string country_code = 3;              // ISO 3166-1 alpha-2 (e.g., "US", "BR")
-  string timezone = 4;                  // IANA timezone (e.g., "America/New_York")
-  double latitude = 5;                  // Optional for distance-based matching
-  double longitude = 6;
+  string city = 1 [(buf.validate.field).string.max_len = 100];
+  string country = 2 [(buf.validate.field).string.max_len = 100];
+  // ISO 3166-1 alpha-2 (e.g., "US", "BR")
+  string country_code = 3 [
+    (buf.validate.field).string.pattern = "^[A-Za-z]{2}$"
+  ];
+  // IANA timezone (e.g., "America/New_York")
+  string timezone = 4 [
+    (buf.validate.field).string.max_len = 100
+  ];
+  double latitude = 5 [                 // Optional for distance-based matching
+    (buf.validate.field).double = {
+      gte: -90
+      lte: 90
+    }
+  ];
+  double longitude = 6 [
+    (buf.validate.field).double = {
+      gte: -180
+      lte: 180
+    }
+  ];
 }
 
 // Time slot for availability
 message TimeSlot {
-  DayOfWeek day = 1;
-  string start_time = 2;                // Format: "HH:MM" (24-hour)
-  string end_time = 3;                  // Format: "HH:MM" (24-hour)
+  DayOfWeek day = 1 [(buf.validate.field).enum.defined_only = true];
+  // Format: "HH:MM" (24-hour)
+  string start_time = 2 [
+    (buf.validate.field).string.pattern = "^(?:[01]\\d|2[0-3]):[0-5]\\d$"
+  ];
+  // Format: "HH:MM" (24-hour)
+  string end_time = 3 [
+    (buf.validate.field).string.pattern = "^(?:[01]\\d|2[0-3]):[0-5]\\d$"
+  ];
 }
 
 // User availability schedule
 message Availability {
-  repeated TimeSlot time_slots = 1;
-  string timezone = 2;                  // User's timezone
+  repeated TimeSlot time_slots = 1 [
+    (buf.validate.field).repeated.max_items = 168
+  ];
+  string timezone = 2 [                 // User's timezone
+    (buf.validate.field).string.max_len = 100
+  ];
 }
 
 // Skill definition
 message Skill {
-  string skill_id = 1;
-  string name = 2;                      // e.g., "Python Programming"
-  SkillCategory category = 3;
-  string description = 4;               // Optional detailed description
-  repeated string tags = 5;             // Keywords for search (e.g., ["backend", "django"])
-  int32 popularity_score = 6;           // For trending skills
+  string skill_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string name = 2 [                     // e.g., "Python Programming"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  SkillCategory category = 3 [(buf.validate.field).enum.defined_only = true];
+  string description = 4 [              // Optional detailed description
+    (buf.validate.field).string.max_len = 2000
+  ];
+  // Keywords for search (e.g., ["backend", "django"])
+  repeated string tags = 5 [
+    (buf.validate.field).repeated.max_items = 25,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    }
+  ];
+  int32 popularity_score = 6 [          // For trending skills
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // User skill association (offered or wanted)
 message UserSkill {
-  string user_id = 1;
-  string skill_id = 2;
-  int32 proficiency_level = 3;          // 1-10 scale
-  ProficiencyLevel proficiency_category = 4;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 proficiency_level = 3 [         // 1-10 scale
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 10
+    }
+  ];
+  ProficiencyLevel proficiency_category = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   bool is_offered = 5;                  // True if offering, false if wanting
   google.protobuf.Timestamp acquired_at = 6;
-  string experience_description = 7;    // Optional narrative (e.g., "5 years in ML")
+  string experience_description = 7 [   // Optional narrative (e.g., "5 years in ML")
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 // User profile
 message User {
-  string user_id = 1;
-  string email = 2;
-  string username = 3;
-  string display_name = 4;
-  string bio = 5;
-  string avatar_url = 6;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string email = 2 [
+    (buf.validate.field).string = {
+      email: true
+      max_len: 254
+    }
+  ];
+  string username = 3 [
+    (buf.validate.field).string = {
+      min_len: 3
+      max_len: 30
+    }
+  ];
+  string display_name = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  string bio = 5 [
+    (buf.validate.field).string.max_len = 1000
+  ];
+  string avatar_url = 6 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
   Location location = 7;
   Availability availability = 8;
-  UserStatus status = 9;
-  SubscriptionTier subscription_tier = 10;
+  UserStatus status = 9 [(buf.validate.field).enum.defined_only = true];
+  SubscriptionTier subscription_tier = 10 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 
   // Skills
-  repeated UserSkill skills_offered = 11;
-  repeated UserSkill skills_wanted = 12;
+  repeated UserSkill skills_offered = 11 [
+    (buf.validate.field).repeated.max_items = 100
+  ];
+  repeated UserSkill skills_wanted = 12 [
+    (buf.validate.field).repeated.max_items = 100
+  ];
 
   // Stats
-  double average_rating = 13;           // 1.0-5.0
-  int32 total_sessions = 14;
-  int32 completed_sessions = 15;
-  int32 total_reviews = 16;
+  double average_rating = 13 [          // 1.0-5.0
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
+  int32 total_sessions = 14 [(buf.validate.field).int32.gte = 0];
+  int32 completed_sessions = 15 [(buf.validate.field).int32.gte = 0];
+  int32 total_reviews = 16 [(buf.validate.field).int32.gte = 0];
 
   // Metadata
   google.protobuf.Timestamp created_at = 17;
@@ -176,49 +283,140 @@ message User {
 
   // Premium features
   bool is_verified = 20;                // Blue checkmark for trusted experts
-  repeated string certifications = 21;  // IDs of blockchain certifications
+  // IDs of blockchain certifications
+  repeated string certifications = 21 [
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
 }
 
 // Rating and review
 message Rating {
-  string rating_id = 1;
-  string session_id = 2;
-  string reviewer_id = 3;               // User who gave the rating
-  string reviewee_id = 4;               // User who received the rating
-  int32 score = 5;                      // 1-5 stars
-  string comment = 6;
+  string rating_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string session_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewer_id = 3 [              // User who gave the rating
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reviewee_id = 4 [              // User who received the rating
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 score = 5 [                     // 1-5 stars
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string comment = 6 [
+    (buf.validate.field).string.max_len = 2000
+  ];
   google.protobuf.Timestamp created_at = 7;
 }
 
 // File attachment (for reviews, workshops, etc.)
 message Attachment {
-  string attachment_id = 1;
-  string file_name = 2;
-  string file_url = 3;
-  ContentType content_type = 4;
-  int64 file_size_bytes = 5;
+  string attachment_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string file_name = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 255
+    }
+  ];
+  string file_url = 3 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  ContentType content_type = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int64 file_size_bytes = 5 [
+    (buf.validate.field).int64.gte = 0
+  ];
   google.protobuf.Timestamp uploaded_at = 6;
 }
 
 // Pagination metadata
 message PageInfo {
-  int32 page_size = 1;
-  string next_page_token = 2;
-  string previous_page_token = 3;
-  int32 total_count = 4;                // Optional total count
+  int32 page_size = 1 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  string previous_page_token = 3 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  int32 total_count = 4 [               // Optional total count
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // Error detail for rich error responses
 message ErrorDetail {
-  string code = 1;                      // Application-specific error code
-  string message = 2;
-  map<string, string> metadata = 3;    // Additional context
+  string code = 1 [                     // Application-specific error code
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 64
+    }
+  ];
+  string message = 2 [
+    (buf.validate.field).string.max_len = 500
+  ];
+  map<string, string> metadata = 3 [   // Additional context
+    (buf.validate.field).map.max_pairs = 20,
+    (buf.validate.field).map.keys = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    },
+    (buf.validate.field).map.values = {
+      string: {
+        min_len: 1
+        max_len: 256
+      }
+    }
+  ];
 }
 
 // Money amount for payments
 message Money {
-  string currency_code = 1;             // ISO 4217 (e.g., "USD", "BRL")
-  int64 amount = 2;                     // Amount in smallest currency unit (cents)
+  string currency_code = 1 [            // ISO 4217 (e.g., "USD", "BRL")
+    (buf.validate.field).string.pattern = "^[A-Z]{3}$"
+  ];
+  int64 amount = 2 [                    // Amount in smallest currency unit (cents)
+    (buf.validate.field).int64.gte = 0
+  ];
 }
 
 // Notification preferences
@@ -234,12 +432,36 @@ message NotificationPreferences {
 
 // Search filters (reusable across services)
 message SearchFilters {
-  repeated SkillCategory categories = 1;
-  repeated string skill_ids = 2;
+  repeated SkillCategory categories = 1 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  repeated string skill_ids = 2 [
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
   Location location = 3;
-  int32 max_distance_km = 4;            // For geo-based search
-  ProficiencyLevel min_proficiency = 5;
-  SubscriptionTier min_subscription = 6;
+  int32 max_distance_km = 4 [           // For geo-based search
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 20000
+    }
+  ];
+  ProficiencyLevel min_proficiency = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  SubscriptionTier min_subscription = 6 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   bool verified_only = 7;
-  double min_rating = 8;
+  double min_rating = 8 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
 }

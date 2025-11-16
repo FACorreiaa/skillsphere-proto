@@ -30,7 +30,7 @@ public object ReportKt {
     internal fun _build(): com.skillsphere.admin.v1.Report = _builder.build()
 
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public var reportId: kotlin.String
       @kotlin.jvm.JvmName("getReportId")
@@ -40,14 +40,14 @@ public object ReportKt {
         _builder.reportId = value
       }
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public fun clearReportId() {
       _builder.clearReportId()
     }
 
     /**
-     * `string reporter_id = 2 [json_name = "reporterId"];`
+     * `string reporter_id = 2 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public var reporterId: kotlin.String
       @kotlin.jvm.JvmName("getReporterId")
@@ -57,14 +57,14 @@ public object ReportKt {
         _builder.reporterId = value
       }
     /**
-     * `string reporter_id = 2 [json_name = "reporterId"];`
+     * `string reporter_id = 2 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public fun clearReporterId() {
       _builder.clearReporterId()
     }
 
     /**
-     * `string reported_user_id = 3 [json_name = "reportedUserId"];`
+     * `string reported_user_id = 3 [json_name = "reportedUserId", (.buf.validate.field) = { ... }`
      */
     public var reportedUserId: kotlin.String
       @kotlin.jvm.JvmName("getReportedUserId")
@@ -74,14 +74,14 @@ public object ReportKt {
         _builder.reportedUserId = value
       }
     /**
-     * `string reported_user_id = 3 [json_name = "reportedUserId"];`
+     * `string reported_user_id = 3 [json_name = "reportedUserId", (.buf.validate.field) = { ... }`
      */
     public fun clearReportedUserId() {
       _builder.clearReportedUserId()
     }
 
     /**
-     * `string related_id = 4 [json_name = "relatedId"];`
+     * `string related_id = 4 [json_name = "relatedId", (.buf.validate.field) = { ... }`
      */
     public var relatedId: kotlin.String
       @kotlin.jvm.JvmName("getRelatedId")
@@ -91,14 +91,14 @@ public object ReportKt {
         _builder.relatedId = value
       }
     /**
-     * `string related_id = 4 [json_name = "relatedId"];`
+     * `string related_id = 4 [json_name = "relatedId", (.buf.validate.field) = { ... }`
      */
     public fun clearRelatedId() {
       _builder.clearRelatedId()
     }
 
     /**
-     * `.skillsphere.admin.v1.ReportType type = 5 [json_name = "type"];`
+     * `.skillsphere.admin.v1.ReportType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.admin.v1.ReportType
       @kotlin.jvm.JvmName("getType")
@@ -115,14 +115,14 @@ public object ReportKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportType type = 5 [json_name = "type"];`
+     * `.skillsphere.admin.v1.ReportType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `string description = 6 [json_name = "description"];`
+     * `string description = 6 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -132,14 +132,14 @@ public object ReportKt {
         _builder.description = value
       }
     /**
-     * `string description = 6 [json_name = "description"];`
+     * `string description = 6 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
     }
 
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 7 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 7 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.admin.v1.ReportStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -156,14 +156,14 @@ public object ReportKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportStatus status = 7 [json_name = "status"];`
+     * `.skillsphere.admin.v1.ReportStatus status = 7 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
     }
 
     /**
-     * `string assigned_admin_id = 8 [json_name = "assignedAdminId"];`
+     * `string assigned_admin_id = 8 [json_name = "assignedAdminId", (.buf.validate.field) = { ... }`
      */
     public var assignedAdminId: kotlin.String
       @kotlin.jvm.JvmName("getAssignedAdminId")
@@ -173,7 +173,7 @@ public object ReportKt {
         _builder.assignedAdminId = value
       }
     /**
-     * `string assigned_admin_id = 8 [json_name = "assignedAdminId"];`
+     * `string assigned_admin_id = 8 [json_name = "assignedAdminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAssignedAdminId() {
       _builder.clearAssignedAdminId()

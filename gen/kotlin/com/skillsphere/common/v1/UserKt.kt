@@ -34,7 +34,7 @@ public object UserKt {
     internal fun _build(): com.skillsphere.common.v1.User = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -44,14 +44,14 @@ public object UserKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string email = 2 [json_name = "email"];`
+     * `string email = 2 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public var email: kotlin.String
       @kotlin.jvm.JvmName("getEmail")
@@ -61,14 +61,14 @@ public object UserKt {
         _builder.email = value
       }
     /**
-     * `string email = 2 [json_name = "email"];`
+     * `string email = 2 [json_name = "email", (.buf.validate.field) = { ... }`
      */
     public fun clearEmail() {
       _builder.clearEmail()
     }
 
     /**
-     * `string username = 3 [json_name = "username"];`
+     * `string username = 3 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public var username: kotlin.String
       @kotlin.jvm.JvmName("getUsername")
@@ -78,14 +78,14 @@ public object UserKt {
         _builder.username = value
       }
     /**
-     * `string username = 3 [json_name = "username"];`
+     * `string username = 3 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public fun clearUsername() {
       _builder.clearUsername()
     }
 
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public var displayName: kotlin.String
       @kotlin.jvm.JvmName("getDisplayName")
@@ -95,14 +95,14 @@ public object UserKt {
         _builder.displayName = value
       }
     /**
-     * `string display_name = 4 [json_name = "displayName"];`
+     * `string display_name = 4 [json_name = "displayName", (.buf.validate.field) = { ... }`
      */
     public fun clearDisplayName() {
       _builder.clearDisplayName()
     }
 
     /**
-     * `string bio = 5 [json_name = "bio"];`
+     * `string bio = 5 [json_name = "bio", (.buf.validate.field) = { ... }`
      */
     public var bio: kotlin.String
       @kotlin.jvm.JvmName("getBio")
@@ -112,14 +112,14 @@ public object UserKt {
         _builder.bio = value
       }
     /**
-     * `string bio = 5 [json_name = "bio"];`
+     * `string bio = 5 [json_name = "bio", (.buf.validate.field) = { ... }`
      */
     public fun clearBio() {
       _builder.clearBio()
     }
 
     /**
-     * `string avatar_url = 6 [json_name = "avatarUrl"];`
+     * `string avatar_url = 6 [json_name = "avatarUrl", (.buf.validate.field) = { ... }`
      */
     public var avatarUrl: kotlin.String
       @kotlin.jvm.JvmName("getAvatarUrl")
@@ -129,7 +129,7 @@ public object UserKt {
         _builder.avatarUrl = value
       }
     /**
-     * `string avatar_url = 6 [json_name = "avatarUrl"];`
+     * `string avatar_url = 6 [json_name = "avatarUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearAvatarUrl() {
       _builder.clearAvatarUrl()
@@ -190,7 +190,7 @@ public object UserKt {
       get() = _builder.availabilityOrNull
 
     /**
-     * `.skillsphere.common.v1.UserStatus status = 9 [json_name = "status"];`
+     * `.skillsphere.common.v1.UserStatus status = 9 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.common.v1.UserStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -207,14 +207,14 @@ public object UserKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.common.v1.UserStatus status = 9 [json_name = "status"];`
+     * `.skillsphere.common.v1.UserStatus status = 9 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
     }
 
     /**
-     * `.skillsphere.common.v1.SubscriptionTier subscription_tier = 10 [json_name = "subscriptionTier"];`
+     * `.skillsphere.common.v1.SubscriptionTier subscription_tier = 10 [json_name = "subscriptionTier", (.buf.validate.field) = { ... }`
      */
     public var subscriptionTier: com.skillsphere.common.v1.SubscriptionTier
       @kotlin.jvm.JvmName("getSubscriptionTier")
@@ -231,7 +231,7 @@ public object UserKt {
         _builder.subscriptionTierValue = value
       }
     /**
-     * `.skillsphere.common.v1.SubscriptionTier subscription_tier = 10 [json_name = "subscriptionTier"];`
+     * `.skillsphere.common.v1.SubscriptionTier subscription_tier = 10 [json_name = "subscriptionTier", (.buf.validate.field) = { ... }`
      */
     public fun clearSubscriptionTier() {
       _builder.clearSubscriptionTier()
@@ -248,7 +248,7 @@ public object UserKt {
      * Skills
      * ```
      *
-     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered", (.buf.validate.field) = { ... }`
      */
      public val skillsOffered: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.UserSkill, SkillsOfferedProxy>
       @kotlin.jvm.JvmSynthetic
@@ -260,7 +260,7 @@ public object UserKt {
      * Skills
      * ```
      *
-     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered", (.buf.validate.field) = { ... }`
      * @param value The skillsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -273,7 +273,7 @@ public object UserKt {
      * Skills
      * ```
      *
-     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered", (.buf.validate.field) = { ... }`
      * @param value The skillsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -287,7 +287,7 @@ public object UserKt {
      * Skills
      * ```
      *
-     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered", (.buf.validate.field) = { ... }`
      * @param values The skillsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -300,7 +300,7 @@ public object UserKt {
      * Skills
      * ```
      *
-     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered", (.buf.validate.field) = { ... }`
      * @param values The skillsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -314,7 +314,7 @@ public object UserKt {
      * Skills
      * ```
      *
-     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillsOffered to set.
      */
@@ -328,7 +328,7 @@ public object UserKt {
      * Skills
      * ```
      *
-     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_offered = 11 [json_name = "skillsOffered", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearSkillsOffered")
@@ -343,7 +343,7 @@ public object UserKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillsWantedProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted", (.buf.validate.field) = { ... }`
      */
      public val skillsWanted: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.UserSkill, SkillsWantedProxy>
       @kotlin.jvm.JvmSynthetic
@@ -351,7 +351,7 @@ public object UserKt {
         _builder.skillsWantedList
       )
     /**
-     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted", (.buf.validate.field) = { ... }`
      * @param value The skillsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -360,7 +360,7 @@ public object UserKt {
       _builder.addSkillsWanted(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted", (.buf.validate.field) = { ... }`
      * @param value The skillsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -370,7 +370,7 @@ public object UserKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted", (.buf.validate.field) = { ... }`
      * @param values The skillsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -379,7 +379,7 @@ public object UserKt {
       _builder.addAllSkillsWanted(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted", (.buf.validate.field) = { ... }`
      * @param values The skillsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -389,7 +389,7 @@ public object UserKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillsWanted to set.
      */
@@ -399,7 +399,7 @@ public object UserKt {
       _builder.setSkillsWanted(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted"];`
+     * `repeated .skillsphere.common.v1.UserSkill skills_wanted = 12 [json_name = "skillsWanted", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearSkillsWanted")
@@ -412,7 +412,7 @@ public object UserKt {
      * Stats
      * ```
      *
-     * `double average_rating = 13 [json_name = "averageRating"];`
+     * `double average_rating = 13 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public var averageRating: kotlin.Double
       @kotlin.jvm.JvmName("getAverageRating")
@@ -426,14 +426,14 @@ public object UserKt {
      * Stats
      * ```
      *
-     * `double average_rating = 13 [json_name = "averageRating"];`
+     * `double average_rating = 13 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageRating() {
       _builder.clearAverageRating()
     }
 
     /**
-     * `int32 total_sessions = 14 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 14 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public var totalSessions: kotlin.Int
       @kotlin.jvm.JvmName("getTotalSessions")
@@ -443,14 +443,14 @@ public object UserKt {
         _builder.totalSessions = value
       }
     /**
-     * `int32 total_sessions = 14 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 14 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalSessions() {
       _builder.clearTotalSessions()
     }
 
     /**
-     * `int32 completed_sessions = 15 [json_name = "completedSessions"];`
+     * `int32 completed_sessions = 15 [json_name = "completedSessions", (.buf.validate.field) = { ... }`
      */
     public var completedSessions: kotlin.Int
       @kotlin.jvm.JvmName("getCompletedSessions")
@@ -460,14 +460,14 @@ public object UserKt {
         _builder.completedSessions = value
       }
     /**
-     * `int32 completed_sessions = 15 [json_name = "completedSessions"];`
+     * `int32 completed_sessions = 15 [json_name = "completedSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearCompletedSessions() {
       _builder.clearCompletedSessions()
     }
 
     /**
-     * `int32 total_reviews = 16 [json_name = "totalReviews"];`
+     * `int32 total_reviews = 16 [json_name = "totalReviews", (.buf.validate.field) = { ... }`
      */
     public var totalReviews: kotlin.Int
       @kotlin.jvm.JvmName("getTotalReviews")
@@ -477,7 +477,7 @@ public object UserKt {
         _builder.totalReviews = value
       }
     /**
-     * `int32 total_reviews = 16 [json_name = "totalReviews"];`
+     * `int32 total_reviews = 16 [json_name = "totalReviews", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalReviews() {
       _builder.clearTotalReviews()
@@ -612,7 +612,7 @@ public object UserKt {
      * IDs of blockchain certifications
      * ```
      *
-     * `repeated string certifications = 21 [json_name = "certifications"];`
+     * `repeated string certifications = 21 [json_name = "certifications", (.buf.validate.field) = { ... }`
      * @return A list containing the certifications.
      */
     public val certifications: com.google.protobuf.kotlin.DslList<kotlin.String, CertificationsProxy>
@@ -625,7 +625,7 @@ public object UserKt {
      * IDs of blockchain certifications
      * ```
      *
-     * `repeated string certifications = 21 [json_name = "certifications"];`
+     * `repeated string certifications = 21 [json_name = "certifications", (.buf.validate.field) = { ... }`
      * @param value The certifications to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -638,7 +638,7 @@ public object UserKt {
      * IDs of blockchain certifications
      * ```
      *
-     * `repeated string certifications = 21 [json_name = "certifications"];`
+     * `repeated string certifications = 21 [json_name = "certifications", (.buf.validate.field) = { ... }`
      * @param value The certifications to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -652,7 +652,7 @@ public object UserKt {
      * IDs of blockchain certifications
      * ```
      *
-     * `repeated string certifications = 21 [json_name = "certifications"];`
+     * `repeated string certifications = 21 [json_name = "certifications", (.buf.validate.field) = { ... }`
      * @param values The certifications to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -665,7 +665,7 @@ public object UserKt {
      * IDs of blockchain certifications
      * ```
      *
-     * `repeated string certifications = 21 [json_name = "certifications"];`
+     * `repeated string certifications = 21 [json_name = "certifications", (.buf.validate.field) = { ... }`
      * @param values The certifications to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -679,7 +679,7 @@ public object UserKt {
      * IDs of blockchain certifications
      * ```
      *
-     * `repeated string certifications = 21 [json_name = "certifications"];`
+     * `repeated string certifications = 21 [json_name = "certifications", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The certifications to set.
      */
@@ -692,7 +692,7 @@ public object UserKt {
      * IDs of blockchain certifications
      * ```
      *
-     * `repeated string certifications = 21 [json_name = "certifications"];`
+     * `repeated string certifications = 21 [json_name = "certifications", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setCertifications")

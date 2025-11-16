@@ -63,11 +63,7 @@ public object ReviewerKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ExpertiseProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Skill IDs
-     * ```
-     *
-     * `repeated string expertise = 2 [json_name = "expertise"];`
+     * `repeated string expertise = 2 [json_name = "expertise", (.buf.validate.field) = { ... }`
      * @return A list containing the expertise.
      */
     public val expertise: com.google.protobuf.kotlin.DslList<kotlin.String, ExpertiseProxy>
@@ -76,11 +72,7 @@ public object ReviewerKt {
         _builder.expertiseList
       )
     /**
-     * ```
-     * Skill IDs
-     * ```
-     *
-     * `repeated string expertise = 2 [json_name = "expertise"];`
+     * `repeated string expertise = 2 [json_name = "expertise", (.buf.validate.field) = { ... }`
      * @param value The expertise to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -89,11 +81,7 @@ public object ReviewerKt {
       _builder.addExpertise(value)
     }
     /**
-     * ```
-     * Skill IDs
-     * ```
-     *
-     * `repeated string expertise = 2 [json_name = "expertise"];`
+     * `repeated string expertise = 2 [json_name = "expertise", (.buf.validate.field) = { ... }`
      * @param value The expertise to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -103,11 +91,7 @@ public object ReviewerKt {
       add(value)
     }
     /**
-     * ```
-     * Skill IDs
-     * ```
-     *
-     * `repeated string expertise = 2 [json_name = "expertise"];`
+     * `repeated string expertise = 2 [json_name = "expertise", (.buf.validate.field) = { ... }`
      * @param values The expertise to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -116,11 +100,7 @@ public object ReviewerKt {
       _builder.addAllExpertise(values)
     }
     /**
-     * ```
-     * Skill IDs
-     * ```
-     *
-     * `repeated string expertise = 2 [json_name = "expertise"];`
+     * `repeated string expertise = 2 [json_name = "expertise", (.buf.validate.field) = { ... }`
      * @param values The expertise to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -130,11 +110,7 @@ public object ReviewerKt {
       addAll(values)
     }
     /**
-     * ```
-     * Skill IDs
-     * ```
-     *
-     * `repeated string expertise = 2 [json_name = "expertise"];`
+     * `repeated string expertise = 2 [json_name = "expertise", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The expertise to set.
      */
@@ -143,11 +119,7 @@ public object ReviewerKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ExpertiseProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setExpertise(index, value)
     }/**
-     * ```
-     * Skill IDs
-     * ```
-     *
-     * `repeated string expertise = 2 [json_name = "expertise"];`
+     * `repeated string expertise = 2 [json_name = "expertise", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setExpertise")
@@ -155,7 +127,7 @@ public object ReviewerKt {
       _builder.clearExpertise()
     }
     /**
-     * `double average_review_rating = 3 [json_name = "averageReviewRating"];`
+     * `double average_review_rating = 3 [json_name = "averageReviewRating", (.buf.validate.field) = { ... }`
      */
     public var averageReviewRating: kotlin.Double
       @kotlin.jvm.JvmName("getAverageReviewRating")
@@ -165,14 +137,14 @@ public object ReviewerKt {
         _builder.averageReviewRating = value
       }
     /**
-     * `double average_review_rating = 3 [json_name = "averageReviewRating"];`
+     * `double average_review_rating = 3 [json_name = "averageReviewRating", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageReviewRating() {
       _builder.clearAverageReviewRating()
     }
 
     /**
-     * `int32 total_reviews = 4 [json_name = "totalReviews"];`
+     * `int32 total_reviews = 4 [json_name = "totalReviews", (.buf.validate.field) = { ... }`
      */
     public var totalReviews: kotlin.Int
       @kotlin.jvm.JvmName("getTotalReviews")
@@ -182,18 +154,14 @@ public object ReviewerKt {
         _builder.totalReviews = value
       }
     /**
-     * `int32 total_reviews = 4 [json_name = "totalReviews"];`
+     * `int32 total_reviews = 4 [json_name = "totalReviews", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalReviews() {
       _builder.clearTotalReviews()
     }
 
     /**
-     * ```
-     * Average time to accept
-     * ```
-     *
-     * `int32 response_time_hours = 5 [json_name = "responseTimeHours"];`
+     * `int32 response_time_hours = 5 [json_name = "responseTimeHours", (.buf.validate.field) = { ... }`
      */
     public var responseTimeHours: kotlin.Int
       @kotlin.jvm.JvmName("getResponseTimeHours")
@@ -203,11 +171,7 @@ public object ReviewerKt {
         _builder.responseTimeHours = value
       }
     /**
-     * ```
-     * Average time to accept
-     * ```
-     *
-     * `int32 response_time_hours = 5 [json_name = "responseTimeHours"];`
+     * `int32 response_time_hours = 5 [json_name = "responseTimeHours", (.buf.validate.field) = { ... }`
      */
     public fun clearResponseTimeHours() {
       _builder.clearResponseTimeHours()
@@ -247,7 +211,7 @@ public object ReviewerKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ReviewTypesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes"];`
+     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes", (.buf.validate.field) = { ... }`
      */
      public val reviewTypes: com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.ReviewType, ReviewTypesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -255,7 +219,7 @@ public object ReviewerKt {
         _builder.reviewTypesList
       )
     /**
-     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes"];`
+     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes", (.buf.validate.field) = { ... }`
      * @param value The reviewTypes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -263,7 +227,7 @@ public object ReviewerKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.ReviewType, ReviewTypesProxy>.add(value: com.skillsphere.review.v1.ReviewType) {
       _builder.addReviewTypes(value)
     }/**
-     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes"];`
+     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes", (.buf.validate.field) = { ... }`
      * @param value The reviewTypes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -272,7 +236,7 @@ public object ReviewerKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.ReviewType, ReviewTypesProxy>.plusAssign(value: com.skillsphere.review.v1.ReviewType) {
       add(value)
     }/**
-     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes"];`
+     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes", (.buf.validate.field) = { ... }`
      * @param values The reviewTypes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -280,7 +244,7 @@ public object ReviewerKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.ReviewType, ReviewTypesProxy>.addAll(values: kotlin.collections.Iterable<com.skillsphere.review.v1.ReviewType>) {
       _builder.addAllReviewTypes(values)
     }/**
-     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes"];`
+     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes", (.buf.validate.field) = { ... }`
      * @param values The reviewTypes to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -289,7 +253,7 @@ public object ReviewerKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.ReviewType, ReviewTypesProxy>.plusAssign(values: kotlin.collections.Iterable<com.skillsphere.review.v1.ReviewType>) {
       addAll(values)
     }/**
-     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes"];`
+     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The reviewTypes to set.
      */
@@ -298,7 +262,7 @@ public object ReviewerKt {
     public operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.ReviewType, ReviewTypesProxy>.set(index: kotlin.Int, value: com.skillsphere.review.v1.ReviewType) {
       _builder.setReviewTypes(index, value)
     }/**
-     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes"];`
+     * `repeated .skillsphere.review.v1.ReviewType review_types = 7 [json_name = "reviewTypes", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearReviewTypes")

@@ -30,7 +30,7 @@ public object SubmitEntryRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.SubmitEntryRequest = _builder.build()
 
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public var challengeId: kotlin.String
       @kotlin.jvm.JvmName("getChallengeId")
@@ -40,14 +40,14 @@ public object SubmitEntryRequestKt {
         _builder.challengeId = value
       }
     /**
-     * `string challenge_id = 1 [json_name = "challengeId"];`
+     * `string challenge_id = 1 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public fun clearChallengeId() {
       _builder.clearChallengeId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,14 +57,14 @@ public object SubmitEntryRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string title = 3 [json_name = "title"];`
+     * `string title = 3 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -74,14 +74,14 @@ public object SubmitEntryRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 3 [json_name = "title"];`
+     * `string title = 3 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -91,7 +91,7 @@ public object SubmitEntryRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -104,7 +104,7 @@ public object SubmitEntryRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AttachmentsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
      public val attachments: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, AttachmentsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -112,7 +112,7 @@ public object SubmitEntryRequestKt {
         _builder.attachmentsList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -121,7 +121,7 @@ public object SubmitEntryRequestKt {
       _builder.addAttachments(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -131,7 +131,7 @@ public object SubmitEntryRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -140,7 +140,7 @@ public object SubmitEntryRequestKt {
       _builder.addAllAttachments(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -150,7 +150,7 @@ public object SubmitEntryRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The attachments to set.
      */
@@ -160,7 +160,7 @@ public object SubmitEntryRequestKt {
       _builder.setAttachments(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearAttachments")
@@ -169,7 +169,7 @@ public object SubmitEntryRequestKt {
     }
 
     /**
-     * `string demo_url = 6 [json_name = "demoUrl"];`
+     * `string demo_url = 6 [json_name = "demoUrl", (.buf.validate.field) = { ... }`
      */
     public var demoUrl: kotlin.String
       @kotlin.jvm.JvmName("getDemoUrl")
@@ -179,14 +179,14 @@ public object SubmitEntryRequestKt {
         _builder.demoUrl = value
       }
     /**
-     * `string demo_url = 6 [json_name = "demoUrl"];`
+     * `string demo_url = 6 [json_name = "demoUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearDemoUrl() {
       _builder.clearDemoUrl()
     }
 
     /**
-     * `string source_url = 7 [json_name = "sourceUrl"];`
+     * `string source_url = 7 [json_name = "sourceUrl", (.buf.validate.field) = { ... }`
      */
     public var sourceUrl: kotlin.String
       @kotlin.jvm.JvmName("getSourceUrl")
@@ -196,7 +196,7 @@ public object SubmitEntryRequestKt {
         _builder.sourceUrl = value
       }
     /**
-     * `string source_url = 7 [json_name = "sourceUrl"];`
+     * `string source_url = 7 [json_name = "sourceUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearSourceUrl() {
       _builder.clearSourceUrl()
@@ -209,7 +209,7 @@ public object SubmitEntryRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TagsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string tags = 8 [json_name = "tags"];`
+     * `repeated string tags = 8 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @return A list containing the tags.
      */
     public val tags: com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>
@@ -218,7 +218,7 @@ public object SubmitEntryRequestKt {
         _builder.tagsList
       )
     /**
-     * `repeated string tags = 8 [json_name = "tags"];`
+     * `repeated string tags = 8 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -227,7 +227,7 @@ public object SubmitEntryRequestKt {
       _builder.addTags(value)
     }
     /**
-     * `repeated string tags = 8 [json_name = "tags"];`
+     * `repeated string tags = 8 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -237,7 +237,7 @@ public object SubmitEntryRequestKt {
       add(value)
     }
     /**
-     * `repeated string tags = 8 [json_name = "tags"];`
+     * `repeated string tags = 8 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -246,7 +246,7 @@ public object SubmitEntryRequestKt {
       _builder.addAllTags(values)
     }
     /**
-     * `repeated string tags = 8 [json_name = "tags"];`
+     * `repeated string tags = 8 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -256,7 +256,7 @@ public object SubmitEntryRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string tags = 8 [json_name = "tags"];`
+     * `repeated string tags = 8 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The tags to set.
      */
@@ -265,7 +265,7 @@ public object SubmitEntryRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setTags(index, value)
     }/**
-     * `repeated string tags = 8 [json_name = "tags"];`
+     * `repeated string tags = 8 [json_name = "tags", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTags")

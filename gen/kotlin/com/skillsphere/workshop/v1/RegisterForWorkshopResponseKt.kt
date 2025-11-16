@@ -57,7 +57,7 @@ public object RegisterForWorkshopResponseKt {
       get() = _builder.registrationOrNull
 
     /**
-     * `string confirmation_email = 2 [json_name = "confirmationEmail"];`
+     * `string confirmation_email = 2 [json_name = "confirmationEmail", (.buf.validate.field) = { ... }`
      */
     public var confirmationEmail: kotlin.String
       @kotlin.jvm.JvmName("getConfirmationEmail")
@@ -67,18 +67,14 @@ public object RegisterForWorkshopResponseKt {
         _builder.confirmationEmail = value
       }
     /**
-     * `string confirmation_email = 2 [json_name = "confirmationEmail"];`
+     * `string confirmation_email = 2 [json_name = "confirmationEmail", (.buf.validate.field) = { ... }`
      */
     public fun clearConfirmationEmail() {
       _builder.clearConfirmationEmail()
     }
 
     /**
-     * ```
-     * ICS file URL
-     * ```
-     *
-     * `string calendar_invite = 3 [json_name = "calendarInvite"];`
+     * `string calendar_invite = 3 [json_name = "calendarInvite", (.buf.validate.field) = { ... }`
      */
     public var calendarInvite: kotlin.String
       @kotlin.jvm.JvmName("getCalendarInvite")
@@ -88,11 +84,7 @@ public object RegisterForWorkshopResponseKt {
         _builder.calendarInvite = value
       }
     /**
-     * ```
-     * ICS file URL
-     * ```
-     *
-     * `string calendar_invite = 3 [json_name = "calendarInvite"];`
+     * `string calendar_invite = 3 [json_name = "calendarInvite", (.buf.validate.field) = { ... }`
      */
     public fun clearCalendarInvite() {
       _builder.clearCalendarInvite()

@@ -30,7 +30,7 @@ public object GetSkillSuggestionsRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.GetSkillSuggestionsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,18 +40,14 @@ public object GetSkillSuggestionsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * Default 10
-     * ```
-     *
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -61,11 +57,7 @@ public object GetSkillSuggestionsRequestKt {
         _builder.limit = value
       }
     /**
-     * ```
-     * Default 10
-     * ```
-     *
-     * `int32 limit = 2 [json_name = "limit"];`
+     * `int32 limit = 2 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()

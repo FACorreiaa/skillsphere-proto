@@ -30,7 +30,7 @@ public object ChallengeEntryKt {
     internal fun _build(): com.skillsphere.challenge.v1.ChallengeEntry = _builder.build()
 
     /**
-     * `string entry_id = 1 [json_name = "entryId"];`
+     * `string entry_id = 1 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public var entryId: kotlin.String
       @kotlin.jvm.JvmName("getEntryId")
@@ -40,14 +40,14 @@ public object ChallengeEntryKt {
         _builder.entryId = value
       }
     /**
-     * `string entry_id = 1 [json_name = "entryId"];`
+     * `string entry_id = 1 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public fun clearEntryId() {
       _builder.clearEntryId()
     }
 
     /**
-     * `string challenge_id = 2 [json_name = "challengeId"];`
+     * `string challenge_id = 2 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public var challengeId: kotlin.String
       @kotlin.jvm.JvmName("getChallengeId")
@@ -57,14 +57,14 @@ public object ChallengeEntryKt {
         _builder.challengeId = value
       }
     /**
-     * `string challenge_id = 2 [json_name = "challengeId"];`
+     * `string challenge_id = 2 [json_name = "challengeId", (.buf.validate.field) = { ... }`
      */
     public fun clearChallengeId() {
       _builder.clearChallengeId()
     }
 
     /**
-     * `string user_id = 3 [json_name = "userId"];`
+     * `string user_id = 3 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -74,14 +74,14 @@ public object ChallengeEntryKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 3 [json_name = "userId"];`
+     * `string user_id = 3 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string title = 4 [json_name = "title"];`
+     * `string title = 4 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -91,14 +91,14 @@ public object ChallengeEntryKt {
         _builder.title = value
       }
     /**
-     * `string title = 4 [json_name = "title"];`
+     * `string title = 4 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 5 [json_name = "description"];`
+     * `string description = 5 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -108,7 +108,7 @@ public object ChallengeEntryKt {
         _builder.description = value
       }
     /**
-     * `string description = 5 [json_name = "description"];`
+     * `string description = 5 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -121,7 +121,7 @@ public object ChallengeEntryKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AttachmentsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
      public val attachments: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, AttachmentsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -129,7 +129,7 @@ public object ChallengeEntryKt {
         _builder.attachmentsList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -138,7 +138,7 @@ public object ChallengeEntryKt {
       _builder.addAttachments(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -148,7 +148,7 @@ public object ChallengeEntryKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -157,7 +157,7 @@ public object ChallengeEntryKt {
       _builder.addAllAttachments(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -167,7 +167,7 @@ public object ChallengeEntryKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The attachments to set.
      */
@@ -177,7 +177,7 @@ public object ChallengeEntryKt {
       _builder.setAttachments(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 6 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearAttachments")
@@ -186,11 +186,7 @@ public object ChallengeEntryKt {
     }
 
     /**
-     * ```
-     * Live demo or video
-     * ```
-     *
-     * `string demo_url = 7 [json_name = "demoUrl"];`
+     * `string demo_url = 7 [json_name = "demoUrl", (.buf.validate.field) = { ... }`
      */
     public var demoUrl: kotlin.String
       @kotlin.jvm.JvmName("getDemoUrl")
@@ -200,22 +196,14 @@ public object ChallengeEntryKt {
         _builder.demoUrl = value
       }
     /**
-     * ```
-     * Live demo or video
-     * ```
-     *
-     * `string demo_url = 7 [json_name = "demoUrl"];`
+     * `string demo_url = 7 [json_name = "demoUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearDemoUrl() {
       _builder.clearDemoUrl()
     }
 
     /**
-     * ```
-     * GitHub repo, etc.
-     * ```
-     *
-     * `string source_url = 8 [json_name = "sourceUrl"];`
+     * `string source_url = 8 [json_name = "sourceUrl", (.buf.validate.field) = { ... }`
      */
     public var sourceUrl: kotlin.String
       @kotlin.jvm.JvmName("getSourceUrl")
@@ -225,11 +213,7 @@ public object ChallengeEntryKt {
         _builder.sourceUrl = value
       }
     /**
-     * ```
-     * GitHub repo, etc.
-     * ```
-     *
-     * `string source_url = 8 [json_name = "sourceUrl"];`
+     * `string source_url = 8 [json_name = "sourceUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearSourceUrl() {
       _builder.clearSourceUrl()
@@ -240,7 +224,7 @@ public object ChallengeEntryKt {
      * Voting
      * ```
      *
-     * `int32 vote_count = 9 [json_name = "voteCount"];`
+     * `int32 vote_count = 9 [json_name = "voteCount", (.buf.validate.field) = { ... }`
      */
     public var voteCount: kotlin.Int
       @kotlin.jvm.JvmName("getVoteCount")
@@ -254,14 +238,14 @@ public object ChallengeEntryKt {
      * Voting
      * ```
      *
-     * `int32 vote_count = 9 [json_name = "voteCount"];`
+     * `int32 vote_count = 9 [json_name = "voteCount", (.buf.validate.field) = { ... }`
      */
     public fun clearVoteCount() {
       _builder.clearVoteCount()
     }
 
     /**
-     * `double average_rating = 10 [json_name = "averageRating"];`
+     * `double average_rating = 10 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public var averageRating: kotlin.Double
       @kotlin.jvm.JvmName("getAverageRating")
@@ -271,7 +255,7 @@ public object ChallengeEntryKt {
         _builder.averageRating = value
       }
     /**
-     * `double average_rating = 10 [json_name = "averageRating"];`
+     * `double average_rating = 10 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageRating() {
       _builder.clearAverageRating()
@@ -284,7 +268,7 @@ public object ChallengeEntryKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TagsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string tags = 11 [json_name = "tags"];`
+     * `repeated string tags = 11 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @return A list containing the tags.
      */
     public val tags: com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>
@@ -293,7 +277,7 @@ public object ChallengeEntryKt {
         _builder.tagsList
       )
     /**
-     * `repeated string tags = 11 [json_name = "tags"];`
+     * `repeated string tags = 11 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -302,7 +286,7 @@ public object ChallengeEntryKt {
       _builder.addTags(value)
     }
     /**
-     * `repeated string tags = 11 [json_name = "tags"];`
+     * `repeated string tags = 11 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -312,7 +296,7 @@ public object ChallengeEntryKt {
       add(value)
     }
     /**
-     * `repeated string tags = 11 [json_name = "tags"];`
+     * `repeated string tags = 11 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -321,7 +305,7 @@ public object ChallengeEntryKt {
       _builder.addAllTags(values)
     }
     /**
-     * `repeated string tags = 11 [json_name = "tags"];`
+     * `repeated string tags = 11 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -331,7 +315,7 @@ public object ChallengeEntryKt {
       addAll(values)
     }
     /**
-     * `repeated string tags = 11 [json_name = "tags"];`
+     * `repeated string tags = 11 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The tags to set.
      */
@@ -340,7 +324,7 @@ public object ChallengeEntryKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setTags(index, value)
     }/**
-     * `repeated string tags = 11 [json_name = "tags"];`
+     * `repeated string tags = 11 [json_name = "tags", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTags")
@@ -352,7 +336,7 @@ public object ChallengeEntryKt {
      * Status
      * ```
      *
-     * `.skillsphere.challenge.v1.EntryStatus status = 12 [json_name = "status"];`
+     * `.skillsphere.challenge.v1.EntryStatus status = 12 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.challenge.v1.EntryStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -373,7 +357,7 @@ public object ChallengeEntryKt {
      * Status
      * ```
      *
-     * `.skillsphere.challenge.v1.EntryStatus status = 12 [json_name = "status"];`
+     * `.skillsphere.challenge.v1.EntryStatus status = 12 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
@@ -407,11 +391,7 @@ public object ChallengeEntryKt {
       get() = _builder.submittedAtOrNull
 
     /**
-     * ```
-     * Final rank (if winner)
-     * ```
-     *
-     * `int32 rank = 14 [json_name = "rank"];`
+     * `int32 rank = 14 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public var rank: kotlin.Int
       @kotlin.jvm.JvmName("getRank")
@@ -421,11 +401,7 @@ public object ChallengeEntryKt {
         _builder.rank = value
       }
     /**
-     * ```
-     * Final rank (if winner)
-     * ```
-     *
-     * `int32 rank = 14 [json_name = "rank"];`
+     * `int32 rank = 14 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public fun clearRank() {
       _builder.clearRank()

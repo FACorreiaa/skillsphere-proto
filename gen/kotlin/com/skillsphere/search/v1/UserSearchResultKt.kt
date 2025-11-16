@@ -57,11 +57,7 @@ public object UserSearchResultKt {
       get() = _builder.userOrNull
 
     /**
-     * ```
-     * 0.0-1.0
-     * ```
-     *
-     * `double relevance_score = 2 [json_name = "relevanceScore"];`
+     * `double relevance_score = 2 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public var relevanceScore: kotlin.Double
       @kotlin.jvm.JvmName("getRelevanceScore")
@@ -71,11 +67,7 @@ public object UserSearchResultKt {
         _builder.relevanceScore = value
       }
     /**
-     * ```
-     * 0.0-1.0
-     * ```
-     *
-     * `double relevance_score = 2 [json_name = "relevanceScore"];`
+     * `double relevance_score = 2 [json_name = "relevanceScore", (.buf.validate.field) = { ... }`
      */
     public fun clearRelevanceScore() {
       _builder.clearRelevanceScore()
@@ -88,7 +80,7 @@ public object UserSearchResultKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class MatchedSkillsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string matched_skills = 3 [json_name = "matchedSkills"];`
+     * `repeated string matched_skills = 3 [json_name = "matchedSkills", (.buf.validate.field) = { ... }`
      * @return A list containing the matchedSkills.
      */
     public val matchedSkills: com.google.protobuf.kotlin.DslList<kotlin.String, MatchedSkillsProxy>
@@ -97,7 +89,7 @@ public object UserSearchResultKt {
         _builder.matchedSkillsList
       )
     /**
-     * `repeated string matched_skills = 3 [json_name = "matchedSkills"];`
+     * `repeated string matched_skills = 3 [json_name = "matchedSkills", (.buf.validate.field) = { ... }`
      * @param value The matchedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -106,7 +98,7 @@ public object UserSearchResultKt {
       _builder.addMatchedSkills(value)
     }
     /**
-     * `repeated string matched_skills = 3 [json_name = "matchedSkills"];`
+     * `repeated string matched_skills = 3 [json_name = "matchedSkills", (.buf.validate.field) = { ... }`
      * @param value The matchedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -116,7 +108,7 @@ public object UserSearchResultKt {
       add(value)
     }
     /**
-     * `repeated string matched_skills = 3 [json_name = "matchedSkills"];`
+     * `repeated string matched_skills = 3 [json_name = "matchedSkills", (.buf.validate.field) = { ... }`
      * @param values The matchedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -125,7 +117,7 @@ public object UserSearchResultKt {
       _builder.addAllMatchedSkills(values)
     }
     /**
-     * `repeated string matched_skills = 3 [json_name = "matchedSkills"];`
+     * `repeated string matched_skills = 3 [json_name = "matchedSkills", (.buf.validate.field) = { ... }`
      * @param values The matchedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -135,7 +127,7 @@ public object UserSearchResultKt {
       addAll(values)
     }
     /**
-     * `repeated string matched_skills = 3 [json_name = "matchedSkills"];`
+     * `repeated string matched_skills = 3 [json_name = "matchedSkills", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The matchedSkills to set.
      */
@@ -144,7 +136,7 @@ public object UserSearchResultKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, MatchedSkillsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setMatchedSkills(index, value)
     }/**
-     * `repeated string matched_skills = 3 [json_name = "matchedSkills"];`
+     * `repeated string matched_skills = 3 [json_name = "matchedSkills", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setMatchedSkills")
@@ -152,11 +144,7 @@ public object UserSearchResultKt {
       _builder.clearMatchedSkills()
     }
     /**
-     * ```
-     * Highlighted text snippet
-     * ```
-     *
-     * `string snippet = 4 [json_name = "snippet"];`
+     * `string snippet = 4 [json_name = "snippet", (.buf.validate.field) = { ... }`
      */
     public var snippet: kotlin.String
       @kotlin.jvm.JvmName("getSnippet")
@@ -166,22 +154,14 @@ public object UserSearchResultKt {
         _builder.snippet = value
       }
     /**
-     * ```
-     * Highlighted text snippet
-     * ```
-     *
-     * `string snippet = 4 [json_name = "snippet"];`
+     * `string snippet = 4 [json_name = "snippet", (.buf.validate.field) = { ... }`
      */
     public fun clearSnippet() {
       _builder.clearSnippet()
     }
 
     /**
-     * ```
-     * If geo-search enabled
-     * ```
-     *
-     * `double distance_km = 5 [json_name = "distanceKm"];`
+     * `double distance_km = 5 [json_name = "distanceKm", (.buf.validate.field) = { ... }`
      */
     public var distanceKm: kotlin.Double
       @kotlin.jvm.JvmName("getDistanceKm")
@@ -191,11 +171,7 @@ public object UserSearchResultKt {
         _builder.distanceKm = value
       }
     /**
-     * ```
-     * If geo-search enabled
-     * ```
-     *
-     * `double distance_km = 5 [json_name = "distanceKm"];`
+     * `double distance_km = 5 [json_name = "distanceKm", (.buf.validate.field) = { ... }`
      */
     public fun clearDistanceKm() {
       _builder.clearDistanceKm()

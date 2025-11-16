@@ -57,7 +57,7 @@ public object TrendingSkillKt {
       get() = _builder.skillOrNull
 
     /**
-     * `int32 popularity_score = 2 [json_name = "popularityScore"];`
+     * `int32 popularity_score = 2 [json_name = "popularityScore", (.buf.validate.field) = { ... }`
      */
     public var popularityScore: kotlin.Int
       @kotlin.jvm.JvmName("getPopularityScore")
@@ -67,14 +67,14 @@ public object TrendingSkillKt {
         _builder.popularityScore = value
       }
     /**
-     * `int32 popularity_score = 2 [json_name = "popularityScore"];`
+     * `int32 popularity_score = 2 [json_name = "popularityScore", (.buf.validate.field) = { ... }`
      */
     public fun clearPopularityScore() {
       _builder.clearPopularityScore()
     }
 
     /**
-     * `int32 sessions_last_period = 3 [json_name = "sessionsLastPeriod"];`
+     * `int32 sessions_last_period = 3 [json_name = "sessionsLastPeriod", (.buf.validate.field) = { ... }`
      */
     public var sessionsLastPeriod: kotlin.Int
       @kotlin.jvm.JvmName("getSessionsLastPeriod")
@@ -84,18 +84,14 @@ public object TrendingSkillKt {
         _builder.sessionsLastPeriod = value
       }
     /**
-     * `int32 sessions_last_period = 3 [json_name = "sessionsLastPeriod"];`
+     * `int32 sessions_last_period = 3 [json_name = "sessionsLastPeriod", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionsLastPeriod() {
       _builder.clearSessionsLastPeriod()
     }
 
     /**
-     * ```
-     * Percentage growth
-     * ```
-     *
-     * `double growth_rate = 4 [json_name = "growthRate"];`
+     * `double growth_rate = 4 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public var growthRate: kotlin.Double
       @kotlin.jvm.JvmName("getGrowthRate")
@@ -105,11 +101,7 @@ public object TrendingSkillKt {
         _builder.growthRate = value
       }
     /**
-     * ```
-     * Percentage growth
-     * ```
-     *
-     * `double growth_rate = 4 [json_name = "growthRate"];`
+     * `double growth_rate = 4 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public fun clearGrowthRate() {
       _builder.clearGrowthRate()

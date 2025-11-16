@@ -30,7 +30,7 @@ public object MintNFTBadgeRequestKt {
     internal fun _build(): com.skillsphere.certification.v1.MintNFTBadgeRequest = _builder.build()
 
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public var certificationId: kotlin.String
       @kotlin.jvm.JvmName("getCertificationId")
@@ -40,14 +40,14 @@ public object MintNFTBadgeRequestKt {
         _builder.certificationId = value
       }
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public fun clearCertificationId() {
       _builder.clearCertificationId()
     }
 
     /**
-     * `string user_wallet_address = 2 [json_name = "userWalletAddress"];`
+     * `string user_wallet_address = 2 [json_name = "userWalletAddress", (.buf.validate.field) = { ... }`
      */
     public var userWalletAddress: kotlin.String
       @kotlin.jvm.JvmName("getUserWalletAddress")
@@ -57,14 +57,14 @@ public object MintNFTBadgeRequestKt {
         _builder.userWalletAddress = value
       }
     /**
-     * `string user_wallet_address = 2 [json_name = "userWalletAddress"];`
+     * `string user_wallet_address = 2 [json_name = "userWalletAddress", (.buf.validate.field) = { ... }`
      */
     public fun clearUserWalletAddress() {
       _builder.clearUserWalletAddress()
     }
 
     /**
-     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 3 [json_name = "blockchain"];`
+     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 3 [json_name = "blockchain", (.buf.validate.field) = { ... }`
      */
     public var blockchain: com.skillsphere.certification.v1.BlockchainNetwork
       @kotlin.jvm.JvmName("getBlockchain")
@@ -81,7 +81,7 @@ public object MintNFTBadgeRequestKt {
         _builder.blockchainValue = value
       }
     /**
-     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 3 [json_name = "blockchain"];`
+     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 3 [json_name = "blockchain", (.buf.validate.field) = { ... }`
      */
     public fun clearBlockchain() {
       _builder.clearBlockchain()

@@ -30,7 +30,7 @@ public object WorkSubmissionKt {
     internal fun _build(): com.skillsphere.gig.v1.WorkSubmission = _builder.build()
 
     /**
-     * `string submission_id = 1 [json_name = "submissionId"];`
+     * `string submission_id = 1 [json_name = "submissionId", (.buf.validate.field) = { ... }`
      */
     public var submissionId: kotlin.String
       @kotlin.jvm.JvmName("getSubmissionId")
@@ -40,14 +40,14 @@ public object WorkSubmissionKt {
         _builder.submissionId = value
       }
     /**
-     * `string submission_id = 1 [json_name = "submissionId"];`
+     * `string submission_id = 1 [json_name = "submissionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSubmissionId() {
       _builder.clearSubmissionId()
     }
 
     /**
-     * `string gig_id = 2 [json_name = "gigId"];`
+     * `string gig_id = 2 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -57,14 +57,14 @@ public object WorkSubmissionKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 2 [json_name = "gigId"];`
+     * `string gig_id = 2 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
     }
 
     /**
-     * `string freelancer_id = 3 [json_name = "freelancerId"];`
+     * `string freelancer_id = 3 [json_name = "freelancerId", (.buf.validate.field) = { ... }`
      */
     public var freelancerId: kotlin.String
       @kotlin.jvm.JvmName("getFreelancerId")
@@ -74,14 +74,14 @@ public object WorkSubmissionKt {
         _builder.freelancerId = value
       }
     /**
-     * `string freelancer_id = 3 [json_name = "freelancerId"];`
+     * `string freelancer_id = 3 [json_name = "freelancerId", (.buf.validate.field) = { ... }`
      */
     public fun clearFreelancerId() {
       _builder.clearFreelancerId()
     }
 
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -91,7 +91,7 @@ public object WorkSubmissionKt {
         _builder.description = value
       }
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -104,7 +104,7 @@ public object WorkSubmissionKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class DeliverablesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables"];`
+     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables", (.buf.validate.field) = { ... }`
      */
      public val deliverables: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, DeliverablesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -112,7 +112,7 @@ public object WorkSubmissionKt {
         _builder.deliverablesList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables"];`
+     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables", (.buf.validate.field) = { ... }`
      * @param value The deliverables to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -121,7 +121,7 @@ public object WorkSubmissionKt {
       _builder.addDeliverables(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables"];`
+     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables", (.buf.validate.field) = { ... }`
      * @param value The deliverables to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -131,7 +131,7 @@ public object WorkSubmissionKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables"];`
+     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables", (.buf.validate.field) = { ... }`
      * @param values The deliverables to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -140,7 +140,7 @@ public object WorkSubmissionKt {
       _builder.addAllDeliverables(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables"];`
+     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables", (.buf.validate.field) = { ... }`
      * @param values The deliverables to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -150,7 +150,7 @@ public object WorkSubmissionKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables"];`
+     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The deliverables to set.
      */
@@ -160,7 +160,7 @@ public object WorkSubmissionKt {
       _builder.setDeliverables(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables"];`
+     * `repeated .skillsphere.common.v1.Attachment deliverables = 5 [json_name = "deliverables", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearDeliverables")
@@ -196,7 +196,7 @@ public object WorkSubmissionKt {
       get() = _builder.submittedAtOrNull
 
     /**
-     * `int32 revision_number = 7 [json_name = "revisionNumber"];`
+     * `int32 revision_number = 7 [json_name = "revisionNumber", (.buf.validate.field) = { ... }`
      */
     public var revisionNumber: kotlin.Int
       @kotlin.jvm.JvmName("getRevisionNumber")
@@ -206,7 +206,7 @@ public object WorkSubmissionKt {
         _builder.revisionNumber = value
       }
     /**
-     * `int32 revision_number = 7 [json_name = "revisionNumber"];`
+     * `int32 revision_number = 7 [json_name = "revisionNumber", (.buf.validate.field) = { ... }`
      */
     public fun clearRevisionNumber() {
       _builder.clearRevisionNumber()

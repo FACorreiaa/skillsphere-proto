@@ -30,7 +30,7 @@ public object SubmitReviewRequestKt {
     internal fun _build(): com.skillsphere.review.v1.SubmitReviewRequest = _builder.build()
 
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public var reviewId: kotlin.String
       @kotlin.jvm.JvmName("getReviewId")
@@ -40,14 +40,14 @@ public object SubmitReviewRequestKt {
         _builder.reviewId = value
       }
     /**
-     * `string review_id = 1 [json_name = "reviewId"];`
+     * `string review_id = 1 [json_name = "reviewId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewId() {
       _builder.clearReviewId()
     }
 
     /**
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public var reviewerId: kotlin.String
       @kotlin.jvm.JvmName("getReviewerId")
@@ -57,14 +57,14 @@ public object SubmitReviewRequestKt {
         _builder.reviewerId = value
       }
     /**
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerId() {
       _builder.clearReviewerId()
     }
 
     /**
-     * `string feedback = 3 [json_name = "feedback"];`
+     * `string feedback = 3 [json_name = "feedback", (.buf.validate.field) = { ... }`
      */
     public var feedback: kotlin.String
       @kotlin.jvm.JvmName("getFeedback")
@@ -74,7 +74,7 @@ public object SubmitReviewRequestKt {
         _builder.feedback = value
       }
     /**
-     * `string feedback = 3 [json_name = "feedback"];`
+     * `string feedback = 3 [json_name = "feedback", (.buf.validate.field) = { ... }`
      */
     public fun clearFeedback() {
       _builder.clearFeedback()
@@ -87,7 +87,7 @@ public object SubmitReviewRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SectionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections", (.buf.validate.field) = { ... }`
      */
      public val sections: com.google.protobuf.kotlin.DslList<com.skillsphere.review.v1.FeedbackSection, SectionsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -95,7 +95,7 @@ public object SubmitReviewRequestKt {
         _builder.sectionsList
       )
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param value The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -104,7 +104,7 @@ public object SubmitReviewRequestKt {
       _builder.addSections(value)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param value The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -114,7 +114,7 @@ public object SubmitReviewRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param values The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -123,7 +123,7 @@ public object SubmitReviewRequestKt {
       _builder.addAllSections(values)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param values The sections to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -133,7 +133,7 @@ public object SubmitReviewRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The sections to set.
      */
@@ -143,7 +143,7 @@ public object SubmitReviewRequestKt {
       _builder.setSections(index, value)
     }
     /**
-     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections"];`
+     * `repeated .skillsphere.review.v1.FeedbackSection sections = 4 [json_name = "sections", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearSections")
@@ -158,7 +158,7 @@ public object SubmitReviewRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class AttachmentsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
      public val attachments: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, AttachmentsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -166,7 +166,7 @@ public object SubmitReviewRequestKt {
         _builder.attachmentsList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -175,7 +175,7 @@ public object SubmitReviewRequestKt {
       _builder.addAttachments(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param value The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -185,7 +185,7 @@ public object SubmitReviewRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -194,7 +194,7 @@ public object SubmitReviewRequestKt {
       _builder.addAllAttachments(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param values The attachments to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -204,7 +204,7 @@ public object SubmitReviewRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The attachments to set.
      */
@@ -214,7 +214,7 @@ public object SubmitReviewRequestKt {
       _builder.setAttachments(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments"];`
+     * `repeated .skillsphere.common.v1.Attachment attachments = 5 [json_name = "attachments", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearAttachments")
@@ -223,7 +223,7 @@ public object SubmitReviewRequestKt {
     }
 
     /**
-     * `string video_feedback_url = 6 [json_name = "videoFeedbackUrl"];`
+     * `string video_feedback_url = 6 [json_name = "videoFeedbackUrl", (.buf.validate.field) = { ... }`
      */
     public var videoFeedbackUrl: kotlin.String
       @kotlin.jvm.JvmName("getVideoFeedbackUrl")
@@ -233,7 +233,7 @@ public object SubmitReviewRequestKt {
         _builder.videoFeedbackUrl = value
       }
     /**
-     * `string video_feedback_url = 6 [json_name = "videoFeedbackUrl"];`
+     * `string video_feedback_url = 6 [json_name = "videoFeedbackUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearVideoFeedbackUrl() {
       _builder.clearVideoFeedbackUrl()

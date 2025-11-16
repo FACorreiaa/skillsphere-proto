@@ -30,7 +30,7 @@ public object GetSkillRoadmapRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.GetSkillRoadmapRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetSkillRoadmapRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string target_skill = 2 [json_name = "targetSkill"];`
+     * `string target_skill = 2 [json_name = "targetSkill", (.buf.validate.field) = { ... }`
      */
     public var targetSkill: kotlin.String
       @kotlin.jvm.JvmName("getTargetSkill")
@@ -57,7 +57,7 @@ public object GetSkillRoadmapRequestKt {
         _builder.targetSkill = value
       }
     /**
-     * `string target_skill = 2 [json_name = "targetSkill"];`
+     * `string target_skill = 2 [json_name = "targetSkill", (.buf.validate.field) = { ... }`
      */
     public fun clearTargetSkill() {
       _builder.clearTargetSkill()
@@ -70,11 +70,7 @@ public object GetSkillRoadmapRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CurrentSkillsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * User's existing skills
-     * ```
-     *
-     * `repeated string current_skills = 3 [json_name = "currentSkills"];`
+     * `repeated string current_skills = 3 [json_name = "currentSkills", (.buf.validate.field) = { ... }`
      * @return A list containing the currentSkills.
      */
     public val currentSkills: com.google.protobuf.kotlin.DslList<kotlin.String, CurrentSkillsProxy>
@@ -83,11 +79,7 @@ public object GetSkillRoadmapRequestKt {
         _builder.currentSkillsList
       )
     /**
-     * ```
-     * User's existing skills
-     * ```
-     *
-     * `repeated string current_skills = 3 [json_name = "currentSkills"];`
+     * `repeated string current_skills = 3 [json_name = "currentSkills", (.buf.validate.field) = { ... }`
      * @param value The currentSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -96,11 +88,7 @@ public object GetSkillRoadmapRequestKt {
       _builder.addCurrentSkills(value)
     }
     /**
-     * ```
-     * User's existing skills
-     * ```
-     *
-     * `repeated string current_skills = 3 [json_name = "currentSkills"];`
+     * `repeated string current_skills = 3 [json_name = "currentSkills", (.buf.validate.field) = { ... }`
      * @param value The currentSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -110,11 +98,7 @@ public object GetSkillRoadmapRequestKt {
       add(value)
     }
     /**
-     * ```
-     * User's existing skills
-     * ```
-     *
-     * `repeated string current_skills = 3 [json_name = "currentSkills"];`
+     * `repeated string current_skills = 3 [json_name = "currentSkills", (.buf.validate.field) = { ... }`
      * @param values The currentSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -123,11 +107,7 @@ public object GetSkillRoadmapRequestKt {
       _builder.addAllCurrentSkills(values)
     }
     /**
-     * ```
-     * User's existing skills
-     * ```
-     *
-     * `repeated string current_skills = 3 [json_name = "currentSkills"];`
+     * `repeated string current_skills = 3 [json_name = "currentSkills", (.buf.validate.field) = { ... }`
      * @param values The currentSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -137,11 +117,7 @@ public object GetSkillRoadmapRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * User's existing skills
-     * ```
-     *
-     * `repeated string current_skills = 3 [json_name = "currentSkills"];`
+     * `repeated string current_skills = 3 [json_name = "currentSkills", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The currentSkills to set.
      */
@@ -150,11 +126,7 @@ public object GetSkillRoadmapRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, CurrentSkillsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setCurrentSkills(index, value)
     }/**
-     * ```
-     * User's existing skills
-     * ```
-     *
-     * `repeated string current_skills = 3 [json_name = "currentSkills"];`
+     * `repeated string current_skills = 3 [json_name = "currentSkills", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setCurrentSkills")
@@ -162,7 +134,7 @@ public object GetSkillRoadmapRequestKt {
       _builder.clearCurrentSkills()
     }
     /**
-     * `.skillsphere.ai.v1.DifficultyLevel target_level = 4 [json_name = "targetLevel"];`
+     * `.skillsphere.ai.v1.DifficultyLevel target_level = 4 [json_name = "targetLevel", (.buf.validate.field) = { ... }`
      */
     public var targetLevel: com.skillsphere.ai.v1.DifficultyLevel
       @kotlin.jvm.JvmName("getTargetLevel")
@@ -179,18 +151,14 @@ public object GetSkillRoadmapRequestKt {
         _builder.targetLevelValue = value
       }
     /**
-     * `.skillsphere.ai.v1.DifficultyLevel target_level = 4 [json_name = "targetLevel"];`
+     * `.skillsphere.ai.v1.DifficultyLevel target_level = 4 [json_name = "targetLevel", (.buf.validate.field) = { ... }`
      */
     public fun clearTargetLevel() {
       _builder.clearTargetLevel()
     }
 
     /**
-     * ```
-     * Desired timeline
-     * ```
-     *
-     * `int32 timeline_weeks = 5 [json_name = "timelineWeeks"];`
+     * `int32 timeline_weeks = 5 [json_name = "timelineWeeks", (.buf.validate.field) = { ... }`
      */
     public var timelineWeeks: kotlin.Int
       @kotlin.jvm.JvmName("getTimelineWeeks")
@@ -200,11 +168,7 @@ public object GetSkillRoadmapRequestKt {
         _builder.timelineWeeks = value
       }
     /**
-     * ```
-     * Desired timeline
-     * ```
-     *
-     * `int32 timeline_weeks = 5 [json_name = "timelineWeeks"];`
+     * `int32 timeline_weeks = 5 [json_name = "timelineWeeks", (.buf.validate.field) = { ... }`
      */
     public fun clearTimelineWeeks() {
       _builder.clearTimelineWeeks()

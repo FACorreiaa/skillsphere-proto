@@ -84,11 +84,7 @@ public object GetConversionFunnelRequestKt {
       get() = _builder.endDateOrNull
 
     /**
-     * ```
-     * e.g., "signup", "subscription"
-     * ```
-     *
-     * `string funnel_name = 3 [json_name = "funnelName"];`
+     * `string funnel_name = 3 [json_name = "funnelName", (.buf.validate.field) = { ... }`
      */
     public var funnelName: kotlin.String
       @kotlin.jvm.JvmName("getFunnelName")
@@ -98,11 +94,7 @@ public object GetConversionFunnelRequestKt {
         _builder.funnelName = value
       }
     /**
-     * ```
-     * e.g., "signup", "subscription"
-     * ```
-     *
-     * `string funnel_name = 3 [json_name = "funnelName"];`
+     * `string funnel_name = 3 [json_name = "funnelName", (.buf.validate.field) = { ... }`
      */
     public fun clearFunnelName() {
       _builder.clearFunnelName()

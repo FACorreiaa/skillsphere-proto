@@ -1,0 +1,326 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "skill/v1/skill.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "SkillService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "skillsphereskillv1GetTrendingSkillsResponse": {
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/skillsphereskillv1TrendingSkill"
+          }
+        }
+      }
+    },
+    "skillsphereskillv1SearchSkillsResponse": {
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Skill"
+          }
+        }
+      }
+    },
+    "skillsphereskillv1TrendingSkill": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "$ref": "#/definitions/v1Skill"
+        },
+        "popularityScore": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "sessionsLastPeriod": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "growthRate": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1AddUserSkillResponse": {
+      "type": "object",
+      "properties": {
+        "userSkill": {
+          "$ref": "#/definitions/v1UserSkill"
+        }
+      }
+    },
+    "v1CreateSkillResponse": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "$ref": "#/definitions/v1Skill"
+        }
+      }
+    },
+    "v1DeleteSkillResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetSkillResponse": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "$ref": "#/definitions/v1Skill"
+        },
+        "stats": {
+          "$ref": "#/definitions/v1SkillStats"
+        }
+      }
+    },
+    "v1GetSkillSuggestionsResponse": {
+      "type": "object",
+      "properties": {
+        "suggestions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1SkillSuggestion"
+          }
+        }
+      }
+    },
+    "v1GetUserSkillsResponse": {
+      "type": "object",
+      "properties": {
+        "skillsOffered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        },
+        "skillsWanted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        }
+      }
+    },
+    "v1ListSkillsResponse": {
+      "type": "object",
+      "properties": {
+        "skills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Skill"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        },
+        "totalCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1ProficiencyLevel": {
+      "type": "string",
+      "enum": [
+        "PROFICIENCY_LEVEL_UNSPECIFIED",
+        "PROFICIENCY_LEVEL_BEGINNER",
+        "PROFICIENCY_LEVEL_INTERMEDIATE",
+        "PROFICIENCY_LEVEL_EXPERT"
+      ],
+      "default": "PROFICIENCY_LEVEL_UNSPECIFIED",
+      "description": "- PROFICIENCY_LEVEL_BEGINNER: 1-3\n - PROFICIENCY_LEVEL_INTERMEDIATE: 4-7\n - PROFICIENCY_LEVEL_EXPERT: 8-10",
+      "title": "Proficiency level for skills (1-10 scale)"
+    },
+    "v1RemoveUserSkillResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Skill": {
+      "type": "object",
+      "properties": {
+        "skillId": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "category": {
+          "$ref": "#/definitions/v1SkillCategory"
+        },
+        "description": {
+          "type": "string"
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "Keywords for search (e.g., [\"backend\", \"django\"])"
+        },
+        "popularityScore": {
+          "type": "integer",
+          "format": "int32"
+        }
+      },
+      "title": "Skill definition"
+    },
+    "v1SkillCategory": {
+      "type": "string",
+      "enum": [
+        "SKILL_CATEGORY_UNSPECIFIED",
+        "SKILL_CATEGORY_TECH",
+        "SKILL_CATEGORY_LANGUAGES",
+        "SKILL_CATEGORY_CREATIVE",
+        "SKILL_CATEGORY_PROFESSIONAL",
+        "SKILL_CATEGORY_HOBBIES",
+        "SKILL_CATEGORY_FITNESS",
+        "SKILL_CATEGORY_ACADEMICS",
+        "SKILL_CATEGORY_LIFE_SKILLS"
+      ],
+      "default": "SKILL_CATEGORY_UNSPECIFIED",
+      "description": "- SKILL_CATEGORY_TECH: Programming, DevOps, Data Science\n - SKILL_CATEGORY_LANGUAGES: English, Spanish, Mandarin\n - SKILL_CATEGORY_CREATIVE: Design, Music, Writing\n - SKILL_CATEGORY_PROFESSIONAL: Business, Finance, Marketing\n - SKILL_CATEGORY_HOBBIES: Cooking, Gaming, Gardening\n - SKILL_CATEGORY_FITNESS: Yoga, Weightlifting, Running\n - SKILL_CATEGORY_ACADEMICS: Math, Science, History\n - SKILL_CATEGORY_LIFE_SKILLS: Time management, Communication",
+      "title": "Skill categories for organizing skills"
+    },
+    "v1SkillStats": {
+      "type": "object",
+      "properties": {
+        "totalUsersOffering": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalUsersWanting": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "averageProficiency": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1SkillSuggestion": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "$ref": "#/definitions/v1Skill"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "relevanceScore": {
+          "type": "number",
+          "format": "double"
+        }
+      }
+    },
+    "v1UpdateSkillResponse": {
+      "type": "object",
+      "properties": {
+        "skill": {
+          "$ref": "#/definitions/v1Skill"
+        }
+      }
+    },
+    "v1UpdateUserSkillResponse": {
+      "type": "object",
+      "properties": {
+        "userSkill": {
+          "$ref": "#/definitions/v1UserSkill"
+        }
+      }
+    },
+    "v1UserSkill": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "proficiencyCategory": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "isOffered": {
+          "type": "boolean",
+          "title": "True if offering, false if wanting"
+        },
+        "acquiredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "experienceDescription": {
+          "type": "string"
+        }
+      },
+      "title": "User skill association (offered or wanted)"
+    }
+  }
+}

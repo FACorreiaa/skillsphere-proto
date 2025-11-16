@@ -101,7 +101,7 @@ public object ListUsersResponseKt {
     }
 
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public var nextPageToken: kotlin.String
       @kotlin.jvm.JvmName("getNextPageToken")
@@ -111,14 +111,14 @@ public object ListUsersResponseKt {
         _builder.nextPageToken = value
       }
     /**
-     * `string next_page_token = 2 [json_name = "nextPageToken"];`
+     * `string next_page_token = 2 [json_name = "nextPageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearNextPageToken() {
       _builder.clearNextPageToken()
     }
 
     /**
-     * `int32 total_count = 3 [json_name = "totalCount"];`
+     * `int32 total_count = 3 [json_name = "totalCount", (.buf.validate.field) = { ... }`
      */
     public var totalCount: kotlin.Int
       @kotlin.jvm.JvmName("getTotalCount")
@@ -128,7 +128,7 @@ public object ListUsersResponseKt {
         _builder.totalCount = value
       }
     /**
-     * `int32 total_count = 3 [json_name = "totalCount"];`
+     * `int32 total_count = 3 [json_name = "totalCount", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalCount() {
       _builder.clearTotalCount()

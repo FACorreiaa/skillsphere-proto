@@ -30,11 +30,7 @@ public object ProgressInsightKt {
     internal fun _build(): com.skillsphere.ai.v1.ProgressInsight = _builder.build()
 
     /**
-     * ```
-     * "sessions", "practice", "consistency"
-     * ```
-     *
-     * `string category = 1 [json_name = "category"];`
+     * `string category = 1 [json_name = "category", (.buf.validate.field) = { ... }`
      */
     public var category: kotlin.String
       @kotlin.jvm.JvmName("getCategory")
@@ -44,18 +40,14 @@ public object ProgressInsightKt {
         _builder.category = value
       }
     /**
-     * ```
-     * "sessions", "practice", "consistency"
-     * ```
-     *
-     * `string category = 1 [json_name = "category"];`
+     * `string category = 1 [json_name = "category", (.buf.validate.field) = { ... }`
      */
     public fun clearCategory() {
       _builder.clearCategory()
     }
 
     /**
-     * `string metric = 2 [json_name = "metric"];`
+     * `string metric = 2 [json_name = "metric", (.buf.validate.field) = { ... }`
      */
     public var metric: kotlin.String
       @kotlin.jvm.JvmName("getMetric")
@@ -65,18 +57,14 @@ public object ProgressInsightKt {
         _builder.metric = value
       }
     /**
-     * `string metric = 2 [json_name = "metric"];`
+     * `string metric = 2 [json_name = "metric", (.buf.validate.field) = { ... }`
      */
     public fun clearMetric() {
       _builder.clearMetric()
     }
 
     /**
-     * ```
-     * "improving", "declining", "stable"
-     * ```
-     *
-     * `string trend = 3 [json_name = "trend"];`
+     * `string trend = 3 [json_name = "trend", (.buf.validate.field) = { ... }`
      */
     public var trend: kotlin.String
       @kotlin.jvm.JvmName("getTrend")
@@ -86,18 +74,14 @@ public object ProgressInsightKt {
         _builder.trend = value
       }
     /**
-     * ```
-     * "improving", "declining", "stable"
-     * ```
-     *
-     * `string trend = 3 [json_name = "trend"];`
+     * `string trend = 3 [json_name = "trend", (.buf.validate.field) = { ... }`
      */
     public fun clearTrend() {
       _builder.clearTrend()
     }
 
     /**
-     * `string explanation = 4 [json_name = "explanation"];`
+     * `string explanation = 4 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public var explanation: kotlin.String
       @kotlin.jvm.JvmName("getExplanation")
@@ -107,7 +91,7 @@ public object ProgressInsightKt {
         _builder.explanation = value
       }
     /**
-     * `string explanation = 4 [json_name = "explanation"];`
+     * `string explanation = 4 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public fun clearExplanation() {
       _builder.clearExplanation()

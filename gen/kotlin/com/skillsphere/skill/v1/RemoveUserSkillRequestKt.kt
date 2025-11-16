@@ -30,7 +30,7 @@ public object RemoveUserSkillRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.RemoveUserSkillRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object RemoveUserSkillRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -57,7 +57,7 @@ public object RemoveUserSkillRequestKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()

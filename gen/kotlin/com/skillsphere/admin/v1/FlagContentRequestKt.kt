@@ -30,7 +30,7 @@ public object FlagContentRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.FlagContentRequest = _builder.build()
 
     /**
-     * `string content_id = 1 [json_name = "contentId"];`
+     * `string content_id = 1 [json_name = "contentId", (.buf.validate.field) = { ... }`
      */
     public var contentId: kotlin.String
       @kotlin.jvm.JvmName("getContentId")
@@ -40,18 +40,14 @@ public object FlagContentRequestKt {
         _builder.contentId = value
       }
     /**
-     * `string content_id = 1 [json_name = "contentId"];`
+     * `string content_id = 1 [json_name = "contentId", (.buf.validate.field) = { ... }`
      */
     public fun clearContentId() {
       _builder.clearContentId()
     }
 
     /**
-     * ```
-     * "message", "profile", "workshop", etc.
-     * ```
-     *
-     * `string content_type = 2 [json_name = "contentType"];`
+     * `string content_type = 2 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public var contentType: kotlin.String
       @kotlin.jvm.JvmName("getContentType")
@@ -61,18 +57,14 @@ public object FlagContentRequestKt {
         _builder.contentType = value
       }
     /**
-     * ```
-     * "message", "profile", "workshop", etc.
-     * ```
-     *
-     * `string content_type = 2 [json_name = "contentType"];`
+     * `string content_type = 2 [json_name = "contentType", (.buf.validate.field) = { ... }`
      */
     public fun clearContentType() {
       _builder.clearContentType()
     }
 
     /**
-     * `string reporter_id = 3 [json_name = "reporterId"];`
+     * `string reporter_id = 3 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public var reporterId: kotlin.String
       @kotlin.jvm.JvmName("getReporterId")
@@ -82,14 +74,14 @@ public object FlagContentRequestKt {
         _builder.reporterId = value
       }
     /**
-     * `string reporter_id = 3 [json_name = "reporterId"];`
+     * `string reporter_id = 3 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public fun clearReporterId() {
       _builder.clearReporterId()
     }
 
     /**
-     * `.skillsphere.admin.v1.ReportType report_type = 4 [json_name = "reportType"];`
+     * `.skillsphere.admin.v1.ReportType report_type = 4 [json_name = "reportType", (.buf.validate.field) = { ... }`
      */
     public var reportType: com.skillsphere.admin.v1.ReportType
       @kotlin.jvm.JvmName("getReportType")
@@ -106,14 +98,14 @@ public object FlagContentRequestKt {
         _builder.reportTypeValue = value
       }
     /**
-     * `.skillsphere.admin.v1.ReportType report_type = 4 [json_name = "reportType"];`
+     * `.skillsphere.admin.v1.ReportType report_type = 4 [json_name = "reportType", (.buf.validate.field) = { ... }`
      */
     public fun clearReportType() {
       _builder.clearReportType()
     }
 
     /**
-     * `string description = 5 [json_name = "description"];`
+     * `string description = 5 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -123,7 +115,7 @@ public object FlagContentRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 5 [json_name = "description"];`
+     * `string description = 5 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -136,7 +128,7 @@ public object FlagContentRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class EvidenceProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence", (.buf.validate.field) = { ... }`
      */
      public val evidence: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, EvidenceProxy>
       @kotlin.jvm.JvmSynthetic
@@ -144,7 +136,7 @@ public object FlagContentRequestKt {
         _builder.evidenceList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param value The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -153,7 +145,7 @@ public object FlagContentRequestKt {
       _builder.addEvidence(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param value The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -163,7 +155,7 @@ public object FlagContentRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param values The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -172,7 +164,7 @@ public object FlagContentRequestKt {
       _builder.addAllEvidence(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param values The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -182,7 +174,7 @@ public object FlagContentRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The evidence to set.
      */
@@ -192,7 +184,7 @@ public object FlagContentRequestKt {
       _builder.setEvidence(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 6 [json_name = "evidence", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearEvidence")

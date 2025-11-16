@@ -30,7 +30,7 @@ public object SkillStatsKt {
     internal fun _build(): com.skillsphere.skill.v1.SkillStats = _builder.build()
 
     /**
-     * `int32 total_users_offering = 1 [json_name = "totalUsersOffering"];`
+     * `int32 total_users_offering = 1 [json_name = "totalUsersOffering", (.buf.validate.field) = { ... }`
      */
     public var totalUsersOffering: kotlin.Int
       @kotlin.jvm.JvmName("getTotalUsersOffering")
@@ -40,14 +40,14 @@ public object SkillStatsKt {
         _builder.totalUsersOffering = value
       }
     /**
-     * `int32 total_users_offering = 1 [json_name = "totalUsersOffering"];`
+     * `int32 total_users_offering = 1 [json_name = "totalUsersOffering", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalUsersOffering() {
       _builder.clearTotalUsersOffering()
     }
 
     /**
-     * `int32 total_users_wanting = 2 [json_name = "totalUsersWanting"];`
+     * `int32 total_users_wanting = 2 [json_name = "totalUsersWanting", (.buf.validate.field) = { ... }`
      */
     public var totalUsersWanting: kotlin.Int
       @kotlin.jvm.JvmName("getTotalUsersWanting")
@@ -57,14 +57,14 @@ public object SkillStatsKt {
         _builder.totalUsersWanting = value
       }
     /**
-     * `int32 total_users_wanting = 2 [json_name = "totalUsersWanting"];`
+     * `int32 total_users_wanting = 2 [json_name = "totalUsersWanting", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalUsersWanting() {
       _builder.clearTotalUsersWanting()
     }
 
     /**
-     * `int32 total_sessions = 3 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 3 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public var totalSessions: kotlin.Int
       @kotlin.jvm.JvmName("getTotalSessions")
@@ -74,14 +74,14 @@ public object SkillStatsKt {
         _builder.totalSessions = value
       }
     /**
-     * `int32 total_sessions = 3 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 3 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalSessions() {
       _builder.clearTotalSessions()
     }
 
     /**
-     * `double average_proficiency = 4 [json_name = "averageProficiency"];`
+     * `double average_proficiency = 4 [json_name = "averageProficiency", (.buf.validate.field) = { ... }`
      */
     public var averageProficiency: kotlin.Double
       @kotlin.jvm.JvmName("getAverageProficiency")
@@ -91,7 +91,7 @@ public object SkillStatsKt {
         _builder.averageProficiency = value
       }
     /**
-     * `double average_proficiency = 4 [json_name = "averageProficiency"];`
+     * `double average_proficiency = 4 [json_name = "averageProficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageProficiency() {
       _builder.clearAverageProficiency()

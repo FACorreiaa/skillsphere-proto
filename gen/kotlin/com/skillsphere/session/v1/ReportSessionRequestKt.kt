@@ -30,7 +30,7 @@ public object ReportSessionRequestKt {
     internal fun _build(): com.skillsphere.session.v1.ReportSessionRequest = _builder.build()
 
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -40,14 +40,14 @@ public object ReportSessionRequestKt {
         _builder.sessionId = value
       }
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * `string reporter_id = 2 [json_name = "reporterId"];`
+     * `string reporter_id = 2 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public var reporterId: kotlin.String
       @kotlin.jvm.JvmName("getReporterId")
@@ -57,14 +57,14 @@ public object ReportSessionRequestKt {
         _builder.reporterId = value
       }
     /**
-     * `string reporter_id = 2 [json_name = "reporterId"];`
+     * `string reporter_id = 2 [json_name = "reporterId", (.buf.validate.field) = { ... }`
      */
     public fun clearReporterId() {
       _builder.clearReporterId()
     }
 
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -74,14 +74,14 @@ public object ReportSessionRequestKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()
     }
 
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -91,7 +91,7 @@ public object ReportSessionRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()

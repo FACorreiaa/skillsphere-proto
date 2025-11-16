@@ -30,7 +30,7 @@ public object RegisterResponseKt {
     internal fun _build(): com.skillsphere.auth.v1.RegisterResponse = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object RegisterResponseKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string access_token = 2 [json_name = "accessToken"];`
+     * `string access_token = 2 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public var accessToken: kotlin.String
       @kotlin.jvm.JvmName("getAccessToken")
@@ -57,14 +57,14 @@ public object RegisterResponseKt {
         _builder.accessToken = value
       }
     /**
-     * `string access_token = 2 [json_name = "accessToken"];`
+     * `string access_token = 2 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public fun clearAccessToken() {
       _builder.clearAccessToken()
     }
 
     /**
-     * `string refresh_token = 3 [json_name = "refreshToken"];`
+     * `string refresh_token = 3 [json_name = "refreshToken", (.buf.validate.field) = { ... }`
      */
     public var refreshToken: kotlin.String
       @kotlin.jvm.JvmName("getRefreshToken")
@@ -74,7 +74,7 @@ public object RegisterResponseKt {
         _builder.refreshToken = value
       }
     /**
-     * `string refresh_token = 3 [json_name = "refreshToken"];`
+     * `string refresh_token = 3 [json_name = "refreshToken", (.buf.validate.field) = { ... }`
      */
     public fun clearRefreshToken() {
       _builder.clearRefreshToken()
@@ -125,7 +125,7 @@ public object RegisterResponseKt {
     }
 
     /**
-     * `.skillsphere.auth.v1.Role role = 6 [json_name = "role"];`
+     * `.skillsphere.auth.v1.Role role = 6 [json_name = "role", (.buf.validate.field) = { ... }`
      */
     public var role: com.skillsphere.auth.v1.Role
       @kotlin.jvm.JvmName("getRole")
@@ -142,7 +142,7 @@ public object RegisterResponseKt {
         _builder.roleValue = value
       }
     /**
-     * `.skillsphere.auth.v1.Role role = 6 [json_name = "role"];`
+     * `.skillsphere.auth.v1.Role role = 6 [json_name = "role", (.buf.validate.field) = { ... }`
      */
     public fun clearRole() {
       _builder.clearRole()

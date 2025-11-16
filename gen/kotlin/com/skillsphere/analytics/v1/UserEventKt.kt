@@ -30,7 +30,7 @@ public object UserEventKt {
     internal fun _build(): com.skillsphere.analytics.v1.UserEvent = _builder.build()
 
     /**
-     * `string event_name = 1 [json_name = "eventName"];`
+     * `string event_name = 1 [json_name = "eventName", (.buf.validate.field) = { ... }`
      */
     public var eventName: kotlin.String
       @kotlin.jvm.JvmName("getEventName")
@@ -40,7 +40,7 @@ public object UserEventKt {
         _builder.eventName = value
       }
     /**
-     * `string event_name = 1 [json_name = "eventName"];`
+     * `string event_name = 1 [json_name = "eventName", (.buf.validate.field) = { ... }`
      */
     public fun clearEventName() {
       _builder.clearEventName()
@@ -80,7 +80,7 @@ public object UserEventKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PropertiesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
      public val properties: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, PropertiesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -89,7 +89,7 @@ public object UserEventKt {
         _builder.propertiesMap
       )
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putProperties")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, PropertiesProxy>
@@ -97,7 +97,7 @@ public object UserEventKt {
          _builder.putProperties(key, value)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setProperties")
@@ -107,7 +107,7 @@ public object UserEventKt {
          put(key, value)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeProperties")
@@ -116,7 +116,7 @@ public object UserEventKt {
          _builder.removeProperties(key)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllProperties")
@@ -125,7 +125,7 @@ public object UserEventKt {
          _builder.putAllProperties(map)
        }
     /**
-     * `map<string, string> properties = 3 [json_name = "properties"];`
+     * `map<string, string> properties = 3 [json_name = "properties", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearProperties")
@@ -135,7 +135,7 @@ public object UserEventKt {
        }
 
     /**
-     * `string page = 4 [json_name = "page"];`
+     * `string page = 4 [json_name = "page", (.buf.validate.field) = { ... }`
      */
     public var page: kotlin.String
       @kotlin.jvm.JvmName("getPage")
@@ -145,7 +145,7 @@ public object UserEventKt {
         _builder.page = value
       }
     /**
-     * `string page = 4 [json_name = "page"];`
+     * `string page = 4 [json_name = "page", (.buf.validate.field) = { ... }`
      */
     public fun clearPage() {
       _builder.clearPage()

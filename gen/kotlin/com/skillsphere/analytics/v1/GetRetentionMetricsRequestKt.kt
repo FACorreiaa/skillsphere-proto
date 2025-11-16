@@ -57,11 +57,7 @@ public object GetRetentionMetricsRequestKt {
       get() = _builder.cohortStartOrNull
 
     /**
-     * ```
-     * Number of periods to track
-     * ```
-     *
-     * `int32 periods = 2 [json_name = "periods"];`
+     * `int32 periods = 2 [json_name = "periods", (.buf.validate.field) = { ... }`
      */
     public var periods: kotlin.Int
       @kotlin.jvm.JvmName("getPeriods")
@@ -71,22 +67,14 @@ public object GetRetentionMetricsRequestKt {
         _builder.periods = value
       }
     /**
-     * ```
-     * Number of periods to track
-     * ```
-     *
-     * `int32 periods = 2 [json_name = "periods"];`
+     * `int32 periods = 2 [json_name = "periods", (.buf.validate.field) = { ... }`
      */
     public fun clearPeriods() {
       _builder.clearPeriods()
     }
 
     /**
-     * ```
-     * "day", "week", "month"
-     * ```
-     *
-     * `string period_type = 3 [json_name = "periodType"];`
+     * `string period_type = 3 [json_name = "periodType", (.buf.validate.field) = { ... }`
      */
     public var periodType: kotlin.String
       @kotlin.jvm.JvmName("getPeriodType")
@@ -96,11 +84,7 @@ public object GetRetentionMetricsRequestKt {
         _builder.periodType = value
       }
     /**
-     * ```
-     * "day", "week", "month"
-     * ```
-     *
-     * `string period_type = 3 [json_name = "periodType"];`
+     * `string period_type = 3 [json_name = "periodType", (.buf.validate.field) = { ... }`
      */
     public fun clearPeriodType() {
       _builder.clearPeriodType()

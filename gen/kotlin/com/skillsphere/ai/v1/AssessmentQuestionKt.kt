@@ -30,7 +30,7 @@ public object AssessmentQuestionKt {
     internal fun _build(): com.skillsphere.ai.v1.AssessmentQuestion = _builder.build()
 
     /**
-     * `int32 question_number = 1 [json_name = "questionNumber"];`
+     * `int32 question_number = 1 [json_name = "questionNumber", (.buf.validate.field) = { ... }`
      */
     public var questionNumber: kotlin.Int
       @kotlin.jvm.JvmName("getQuestionNumber")
@@ -40,14 +40,14 @@ public object AssessmentQuestionKt {
         _builder.questionNumber = value
       }
     /**
-     * `int32 question_number = 1 [json_name = "questionNumber"];`
+     * `int32 question_number = 1 [json_name = "questionNumber", (.buf.validate.field) = { ... }`
      */
     public fun clearQuestionNumber() {
       _builder.clearQuestionNumber()
     }
 
     /**
-     * `string question = 2 [json_name = "question"];`
+     * `string question = 2 [json_name = "question", (.buf.validate.field) = { ... }`
      */
     public var question: kotlin.String
       @kotlin.jvm.JvmName("getQuestion")
@@ -57,7 +57,7 @@ public object AssessmentQuestionKt {
         _builder.question = value
       }
     /**
-     * `string question = 2 [json_name = "question"];`
+     * `string question = 2 [json_name = "question", (.buf.validate.field) = { ... }`
      */
     public fun clearQuestion() {
       _builder.clearQuestion()
@@ -70,11 +70,7 @@ public object AssessmentQuestionKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class OptionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * For multiple choice
-     * ```
-     *
-     * `repeated string options = 3 [json_name = "options"];`
+     * `repeated string options = 3 [json_name = "options", (.buf.validate.field) = { ... }`
      * @return A list containing the options.
      */
     public val options: com.google.protobuf.kotlin.DslList<kotlin.String, OptionsProxy>
@@ -83,11 +79,7 @@ public object AssessmentQuestionKt {
         _builder.optionsList
       )
     /**
-     * ```
-     * For multiple choice
-     * ```
-     *
-     * `repeated string options = 3 [json_name = "options"];`
+     * `repeated string options = 3 [json_name = "options", (.buf.validate.field) = { ... }`
      * @param value The options to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -96,11 +88,7 @@ public object AssessmentQuestionKt {
       _builder.addOptions(value)
     }
     /**
-     * ```
-     * For multiple choice
-     * ```
-     *
-     * `repeated string options = 3 [json_name = "options"];`
+     * `repeated string options = 3 [json_name = "options", (.buf.validate.field) = { ... }`
      * @param value The options to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -110,11 +98,7 @@ public object AssessmentQuestionKt {
       add(value)
     }
     /**
-     * ```
-     * For multiple choice
-     * ```
-     *
-     * `repeated string options = 3 [json_name = "options"];`
+     * `repeated string options = 3 [json_name = "options", (.buf.validate.field) = { ... }`
      * @param values The options to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -123,11 +107,7 @@ public object AssessmentQuestionKt {
       _builder.addAllOptions(values)
     }
     /**
-     * ```
-     * For multiple choice
-     * ```
-     *
-     * `repeated string options = 3 [json_name = "options"];`
+     * `repeated string options = 3 [json_name = "options", (.buf.validate.field) = { ... }`
      * @param values The options to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -137,11 +117,7 @@ public object AssessmentQuestionKt {
       addAll(values)
     }
     /**
-     * ```
-     * For multiple choice
-     * ```
-     *
-     * `repeated string options = 3 [json_name = "options"];`
+     * `repeated string options = 3 [json_name = "options", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The options to set.
      */
@@ -150,11 +126,7 @@ public object AssessmentQuestionKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, OptionsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setOptions(index, value)
     }/**
-     * ```
-     * For multiple choice
-     * ```
-     *
-     * `repeated string options = 3 [json_name = "options"];`
+     * `repeated string options = 3 [json_name = "options", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setOptions")
@@ -162,7 +134,7 @@ public object AssessmentQuestionKt {
       _builder.clearOptions()
     }
     /**
-     * `string correct_answer = 4 [json_name = "correctAnswer"];`
+     * `string correct_answer = 4 [json_name = "correctAnswer", (.buf.validate.field) = { ... }`
      */
     public var correctAnswer: kotlin.String
       @kotlin.jvm.JvmName("getCorrectAnswer")
@@ -172,14 +144,14 @@ public object AssessmentQuestionKt {
         _builder.correctAnswer = value
       }
     /**
-     * `string correct_answer = 4 [json_name = "correctAnswer"];`
+     * `string correct_answer = 4 [json_name = "correctAnswer", (.buf.validate.field) = { ... }`
      */
     public fun clearCorrectAnswer() {
       _builder.clearCorrectAnswer()
     }
 
     /**
-     * `string explanation = 5 [json_name = "explanation"];`
+     * `string explanation = 5 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public var explanation: kotlin.String
       @kotlin.jvm.JvmName("getExplanation")
@@ -189,18 +161,14 @@ public object AssessmentQuestionKt {
         _builder.explanation = value
       }
     /**
-     * `string explanation = 5 [json_name = "explanation"];`
+     * `string explanation = 5 [json_name = "explanation", (.buf.validate.field) = { ... }`
      */
     public fun clearExplanation() {
       _builder.clearExplanation()
     }
 
     /**
-     * ```
-     * 1-10
-     * ```
-     *
-     * `int32 difficulty_score = 6 [json_name = "difficultyScore"];`
+     * `int32 difficulty_score = 6 [json_name = "difficultyScore", (.buf.validate.field) = { ... }`
      */
     public var difficultyScore: kotlin.Int
       @kotlin.jvm.JvmName("getDifficultyScore")
@@ -210,11 +178,7 @@ public object AssessmentQuestionKt {
         _builder.difficultyScore = value
       }
     /**
-     * ```
-     * 1-10
-     * ```
-     *
-     * `int32 difficulty_score = 6 [json_name = "difficultyScore"];`
+     * `int32 difficulty_score = 6 [json_name = "difficultyScore", (.buf.validate.field) = { ... }`
      */
     public fun clearDifficultyScore() {
       _builder.clearDifficultyScore()

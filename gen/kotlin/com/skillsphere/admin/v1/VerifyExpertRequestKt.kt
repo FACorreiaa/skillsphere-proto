@@ -30,7 +30,7 @@ public object VerifyExpertRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.VerifyExpertRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object VerifyExpertRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,7 +57,7 @@ public object VerifyExpertRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
@@ -70,7 +70,7 @@ public object VerifyExpertRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @return A list containing the skillIds.
      */
     public val skillIds: com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>
@@ -79,7 +79,7 @@ public object VerifyExpertRequestKt {
         _builder.skillIdsList
       )
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -88,7 +88,7 @@ public object VerifyExpertRequestKt {
       _builder.addSkillIds(value)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param value The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -98,7 +98,7 @@ public object VerifyExpertRequestKt {
       add(value)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -107,7 +107,7 @@ public object VerifyExpertRequestKt {
       _builder.addAllSkillIds(values)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param values The skillIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -117,7 +117,7 @@ public object VerifyExpertRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillIds to set.
      */
@@ -126,7 +126,7 @@ public object VerifyExpertRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillIds(index, value)
     }/**
-     * `repeated string skill_ids = 3 [json_name = "skillIds"];`
+     * `repeated string skill_ids = 3 [json_name = "skillIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillIds")
@@ -134,7 +134,7 @@ public object VerifyExpertRequestKt {
       _builder.clearSkillIds()
     }
     /**
-     * `string verification_notes = 4 [json_name = "verificationNotes"];`
+     * `string verification_notes = 4 [json_name = "verificationNotes", (.buf.validate.field) = { ... }`
      */
     public var verificationNotes: kotlin.String
       @kotlin.jvm.JvmName("getVerificationNotes")
@@ -144,7 +144,7 @@ public object VerifyExpertRequestKt {
         _builder.verificationNotes = value
       }
     /**
-     * `string verification_notes = 4 [json_name = "verificationNotes"];`
+     * `string verification_notes = 4 [json_name = "verificationNotes", (.buf.validate.field) = { ... }`
      */
     public fun clearVerificationNotes() {
       _builder.clearVerificationNotes()

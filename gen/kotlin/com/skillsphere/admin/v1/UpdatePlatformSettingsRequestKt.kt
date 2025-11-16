@@ -30,7 +30,7 @@ public object UpdatePlatformSettingsRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.UpdatePlatformSettingsRequest = _builder.build()
 
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -40,14 +40,14 @@ public object UpdatePlatformSettingsRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `.skillsphere.admin.v1.PlatformSettings settings = 2 [json_name = "settings"];`
+     * `.skillsphere.admin.v1.PlatformSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }`
      */
     public var settings: com.skillsphere.admin.v1.PlatformSettings
       @kotlin.jvm.JvmName("getSettings")
@@ -57,13 +57,13 @@ public object UpdatePlatformSettingsRequestKt {
         _builder.settings = value
       }
     /**
-     * `.skillsphere.admin.v1.PlatformSettings settings = 2 [json_name = "settings"];`
+     * `.skillsphere.admin.v1.PlatformSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }`
      */
     public fun clearSettings() {
       _builder.clearSettings()
     }
     /**
-     * `.skillsphere.admin.v1.PlatformSettings settings = 2 [json_name = "settings"];`
+     * `.skillsphere.admin.v1.PlatformSettings settings = 2 [json_name = "settings", (.buf.validate.field) = { ... }`
      * @return Whether the settings field is set.
      */
     public fun hasSettings(): kotlin.Boolean {

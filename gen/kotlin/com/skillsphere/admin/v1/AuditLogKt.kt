@@ -30,7 +30,7 @@ public object AuditLogKt {
     internal fun _build(): com.skillsphere.admin.v1.AuditLog = _builder.build()
 
     /**
-     * `string log_id = 1 [json_name = "logId"];`
+     * `string log_id = 1 [json_name = "logId", (.buf.validate.field) = { ... }`
      */
     public var logId: kotlin.String
       @kotlin.jvm.JvmName("getLogId")
@@ -40,14 +40,14 @@ public object AuditLogKt {
         _builder.logId = value
       }
     /**
-     * `string log_id = 1 [json_name = "logId"];`
+     * `string log_id = 1 [json_name = "logId", (.buf.validate.field) = { ... }`
      */
     public fun clearLogId() {
       _builder.clearLogId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,14 +57,14 @@ public object AuditLogKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string action = 3 [json_name = "action"];`
+     * `string action = 3 [json_name = "action", (.buf.validate.field) = { ... }`
      */
     public var action: kotlin.String
       @kotlin.jvm.JvmName("getAction")
@@ -74,18 +74,14 @@ public object AuditLogKt {
         _builder.action = value
       }
     /**
-     * `string action = 3 [json_name = "action"];`
+     * `string action = 3 [json_name = "action", (.buf.validate.field) = { ... }`
      */
     public fun clearAction() {
       _builder.clearAction()
     }
 
     /**
-     * ```
-     * "user", "content", "dispute"
-     * ```
-     *
-     * `string target_type = 4 [json_name = "targetType"];`
+     * `string target_type = 4 [json_name = "targetType", (.buf.validate.field) = { ... }`
      */
     public var targetType: kotlin.String
       @kotlin.jvm.JvmName("getTargetType")
@@ -95,18 +91,14 @@ public object AuditLogKt {
         _builder.targetType = value
       }
     /**
-     * ```
-     * "user", "content", "dispute"
-     * ```
-     *
-     * `string target_type = 4 [json_name = "targetType"];`
+     * `string target_type = 4 [json_name = "targetType", (.buf.validate.field) = { ... }`
      */
     public fun clearTargetType() {
       _builder.clearTargetType()
     }
 
     /**
-     * `string target_id = 5 [json_name = "targetId"];`
+     * `string target_id = 5 [json_name = "targetId", (.buf.validate.field) = { ... }`
      */
     public var targetId: kotlin.String
       @kotlin.jvm.JvmName("getTargetId")
@@ -116,7 +108,7 @@ public object AuditLogKt {
         _builder.targetId = value
       }
     /**
-     * `string target_id = 5 [json_name = "targetId"];`
+     * `string target_id = 5 [json_name = "targetId", (.buf.validate.field) = { ... }`
      */
     public fun clearTargetId() {
       _builder.clearTargetId()
@@ -129,7 +121,7 @@ public object AuditLogKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class DetailsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `map<string, string> details = 6 [json_name = "details"];`
+     * `map<string, string> details = 6 [json_name = "details", (.buf.validate.field) = { ... }`
      */
      public val details: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, DetailsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -138,7 +130,7 @@ public object AuditLogKt {
         _builder.detailsMap
       )
     /**
-     * `map<string, string> details = 6 [json_name = "details"];`
+     * `map<string, string> details = 6 [json_name = "details", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putDetails")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, DetailsProxy>
@@ -146,7 +138,7 @@ public object AuditLogKt {
          _builder.putDetails(key, value)
        }
     /**
-     * `map<string, string> details = 6 [json_name = "details"];`
+     * `map<string, string> details = 6 [json_name = "details", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setDetails")
@@ -156,7 +148,7 @@ public object AuditLogKt {
          put(key, value)
        }
     /**
-     * `map<string, string> details = 6 [json_name = "details"];`
+     * `map<string, string> details = 6 [json_name = "details", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeDetails")
@@ -165,7 +157,7 @@ public object AuditLogKt {
          _builder.removeDetails(key)
        }
     /**
-     * `map<string, string> details = 6 [json_name = "details"];`
+     * `map<string, string> details = 6 [json_name = "details", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllDetails")
@@ -174,7 +166,7 @@ public object AuditLogKt {
          _builder.putAllDetails(map)
        }
     /**
-     * `map<string, string> details = 6 [json_name = "details"];`
+     * `map<string, string> details = 6 [json_name = "details", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearDetails")

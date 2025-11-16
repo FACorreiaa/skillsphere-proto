@@ -30,7 +30,7 @@ public object ListSkillsRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.ListSkillsRequest = _builder.build()
 
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -40,14 +40,14 @@ public object ListSkillsRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 1 [json_name = "pageSize"];`
+     * `int32 page_size = 1 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -57,7 +57,7 @@ public object ListSkillsRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 2 [json_name = "pageToken"];`
+     * `string page_token = 2 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()
@@ -70,7 +70,7 @@ public object ListSkillsRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CategoriesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
      public val categories: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -78,7 +78,7 @@ public object ListSkillsRequestKt {
         _builder.categoriesList
       )
     /**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -86,7 +86,7 @@ public object ListSkillsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.add(value: com.skillsphere.common.v1.SkillCategory) {
       _builder.addCategories(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param value The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -95,7 +95,7 @@ public object ListSkillsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(value: com.skillsphere.common.v1.SkillCategory) {
       add(value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -103,7 +103,7 @@ public object ListSkillsRequestKt {
     public fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.addAll(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       _builder.addAllCategories(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param values The categories to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -112,7 +112,7 @@ public object ListSkillsRequestKt {
     public inline operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.plusAssign(values: kotlin.collections.Iterable<com.skillsphere.common.v1.SkillCategory>) {
       addAll(values)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The categories to set.
      */
@@ -121,7 +121,7 @@ public object ListSkillsRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.SkillCategory, CategoriesProxy>.set(index: kotlin.Int, value: com.skillsphere.common.v1.SkillCategory) {
       _builder.setCategories(index, value)
     }/**
-     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories"];`
+     * `repeated .skillsphere.common.v1.SkillCategory categories = 3 [json_name = "categories", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearCategories")
@@ -129,11 +129,7 @@ public object ListSkillsRequestKt {
       _builder.clearCategories()
     }
     /**
-     * ```
-     * "name", "popularity", "created_at"
-     * ```
-     *
-     * `string sort_by = 4 [json_name = "sortBy"];`
+     * `string sort_by = 4 [json_name = "sortBy", (.buf.validate.field) = { ... }`
      */
     public var sortBy: kotlin.String
       @kotlin.jvm.JvmName("getSortBy")
@@ -143,11 +139,7 @@ public object ListSkillsRequestKt {
         _builder.sortBy = value
       }
     /**
-     * ```
-     * "name", "popularity", "created_at"
-     * ```
-     *
-     * `string sort_by = 4 [json_name = "sortBy"];`
+     * `string sort_by = 4 [json_name = "sortBy", (.buf.validate.field) = { ... }`
      */
     public fun clearSortBy() {
       _builder.clearSortBy()

@@ -57,7 +57,7 @@ public object TrendingSkillKt {
       get() = _builder.skillOrNull
 
     /**
-     * `int32 trend_score = 2 [json_name = "trendScore"];`
+     * `int32 trend_score = 2 [json_name = "trendScore", (.buf.validate.field) = { ... }`
      */
     public var trendScore: kotlin.Int
       @kotlin.jvm.JvmName("getTrendScore")
@@ -67,14 +67,14 @@ public object TrendingSkillKt {
         _builder.trendScore = value
       }
     /**
-     * `int32 trend_score = 2 [json_name = "trendScore"];`
+     * `int32 trend_score = 2 [json_name = "trendScore", (.buf.validate.field) = { ... }`
      */
     public fun clearTrendScore() {
       _builder.clearTrendScore()
     }
 
     /**
-     * `int32 sessions_count = 3 [json_name = "sessionsCount"];`
+     * `int32 sessions_count = 3 [json_name = "sessionsCount", (.buf.validate.field) = { ... }`
      */
     public var sessionsCount: kotlin.Int
       @kotlin.jvm.JvmName("getSessionsCount")
@@ -84,18 +84,14 @@ public object TrendingSkillKt {
         _builder.sessionsCount = value
       }
     /**
-     * `int32 sessions_count = 3 [json_name = "sessionsCount"];`
+     * `int32 sessions_count = 3 [json_name = "sessionsCount", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionsCount() {
       _builder.clearSessionsCount()
     }
 
     /**
-     * ```
-     * Percentage
-     * ```
-     *
-     * `double growth_rate = 4 [json_name = "growthRate"];`
+     * `double growth_rate = 4 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public var growthRate: kotlin.Double
       @kotlin.jvm.JvmName("getGrowthRate")
@@ -105,22 +101,14 @@ public object TrendingSkillKt {
         _builder.growthRate = value
       }
     /**
-     * ```
-     * Percentage
-     * ```
-     *
-     * `double growth_rate = 4 [json_name = "growthRate"];`
+     * `double growth_rate = 4 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public fun clearGrowthRate() {
       _builder.clearGrowthRate()
     }
 
     /**
-     * ```
-     * Position in trending list
-     * ```
-     *
-     * `int32 rank = 5 [json_name = "rank"];`
+     * `int32 rank = 5 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public var rank: kotlin.Int
       @kotlin.jvm.JvmName("getRank")
@@ -130,11 +118,7 @@ public object TrendingSkillKt {
         _builder.rank = value
       }
     /**
-     * ```
-     * Position in trending list
-     * ```
-     *
-     * `int32 rank = 5 [json_name = "rank"];`
+     * `int32 rank = 5 [json_name = "rank", (.buf.validate.field) = { ... }`
      */
     public fun clearRank() {
       _builder.clearRank()

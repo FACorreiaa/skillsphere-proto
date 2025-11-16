@@ -30,7 +30,7 @@ public object RequestReviewRequestKt {
     internal fun _build(): com.skillsphere.review.v1.RequestReviewRequest = _builder.build()
 
     /**
-     * `string requester_id = 1 [json_name = "requesterId"];`
+     * `string requester_id = 1 [json_name = "requesterId", (.buf.validate.field) = { ... }`
      */
     public var requesterId: kotlin.String
       @kotlin.jvm.JvmName("getRequesterId")
@@ -40,18 +40,14 @@ public object RequestReviewRequestKt {
         _builder.requesterId = value
       }
     /**
-     * `string requester_id = 1 [json_name = "requesterId"];`
+     * `string requester_id = 1 [json_name = "requesterId", (.buf.validate.field) = { ... }`
      */
     public fun clearRequesterId() {
       _builder.clearRequesterId()
     }
 
     /**
-     * ```
-     * Specific reviewer or empty for matching
-     * ```
-     *
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public var reviewerId: kotlin.String
       @kotlin.jvm.JvmName("getReviewerId")
@@ -61,18 +57,14 @@ public object RequestReviewRequestKt {
         _builder.reviewerId = value
       }
     /**
-     * ```
-     * Specific reviewer or empty for matching
-     * ```
-     *
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerId() {
       _builder.clearReviewerId()
     }
 
     /**
-     * `string skill_id = 3 [json_name = "skillId"];`
+     * `string skill_id = 3 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -82,14 +74,14 @@ public object RequestReviewRequestKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 3 [json_name = "skillId"];`
+     * `string skill_id = 3 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * `.skillsphere.review.v1.ReviewType type = 4 [json_name = "type"];`
+     * `.skillsphere.review.v1.ReviewType type = 4 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.review.v1.ReviewType
       @kotlin.jvm.JvmName("getType")
@@ -106,14 +98,14 @@ public object RequestReviewRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.review.v1.ReviewType type = 4 [json_name = "type"];`
+     * `.skillsphere.review.v1.ReviewType type = 4 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `.skillsphere.review.v1.ReviewDepth depth = 5 [json_name = "depth"];`
+     * `.skillsphere.review.v1.ReviewDepth depth = 5 [json_name = "depth", (.buf.validate.field) = { ... }`
      */
     public var depth: com.skillsphere.review.v1.ReviewDepth
       @kotlin.jvm.JvmName("getDepth")
@@ -130,14 +122,14 @@ public object RequestReviewRequestKt {
         _builder.depthValue = value
       }
     /**
-     * `.skillsphere.review.v1.ReviewDepth depth = 5 [json_name = "depth"];`
+     * `.skillsphere.review.v1.ReviewDepth depth = 5 [json_name = "depth", (.buf.validate.field) = { ... }`
      */
     public fun clearDepth() {
       _builder.clearDepth()
     }
 
     /**
-     * `string title = 6 [json_name = "title"];`
+     * `string title = 6 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -147,14 +139,14 @@ public object RequestReviewRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 6 [json_name = "title"];`
+     * `string title = 6 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 7 [json_name = "description"];`
+     * `string description = 7 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -164,7 +156,7 @@ public object RequestReviewRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 7 [json_name = "description"];`
+     * `string description = 7 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -177,7 +169,7 @@ public object RequestReviewRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ContentProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content", (.buf.validate.field) = { ... }`
      */
      public val content: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, ContentProxy>
       @kotlin.jvm.JvmSynthetic
@@ -185,7 +177,7 @@ public object RequestReviewRequestKt {
         _builder.contentList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param value The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -194,7 +186,7 @@ public object RequestReviewRequestKt {
       _builder.addContent(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param value The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -204,7 +196,7 @@ public object RequestReviewRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param values The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -213,7 +205,7 @@ public object RequestReviewRequestKt {
       _builder.addAllContent(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param values The content to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -223,7 +215,7 @@ public object RequestReviewRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The content to set.
      */
@@ -233,7 +225,7 @@ public object RequestReviewRequestKt {
       _builder.setContent(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content"];`
+     * `repeated .skillsphere.common.v1.Attachment content = 8 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearContent")
@@ -248,7 +240,7 @@ public object RequestReviewRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SpecificQuestionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string specific_questions = 9 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 9 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @return A list containing the specificQuestions.
      */
     public val specificQuestions: com.google.protobuf.kotlin.DslList<kotlin.String, SpecificQuestionsProxy>
@@ -257,7 +249,7 @@ public object RequestReviewRequestKt {
         _builder.specificQuestionsList
       )
     /**
-     * `repeated string specific_questions = 9 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 9 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param value The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -266,7 +258,7 @@ public object RequestReviewRequestKt {
       _builder.addSpecificQuestions(value)
     }
     /**
-     * `repeated string specific_questions = 9 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 9 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param value The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -276,7 +268,7 @@ public object RequestReviewRequestKt {
       add(value)
     }
     /**
-     * `repeated string specific_questions = 9 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 9 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param values The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -285,7 +277,7 @@ public object RequestReviewRequestKt {
       _builder.addAllSpecificQuestions(values)
     }
     /**
-     * `repeated string specific_questions = 9 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 9 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param values The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -295,7 +287,7 @@ public object RequestReviewRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string specific_questions = 9 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 9 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The specificQuestions to set.
      */
@@ -304,7 +296,7 @@ public object RequestReviewRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SpecificQuestionsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSpecificQuestions(index, value)
     }/**
-     * `repeated string specific_questions = 9 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 9 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSpecificQuestions")
@@ -339,7 +331,7 @@ public object RequestReviewRequestKt {
       get() = _builder.deadlineOrNull
 
     /**
-     * `string payment_method_id = 11 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 11 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var paymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentMethodId")
@@ -349,7 +341,7 @@ public object RequestReviewRequestKt {
         _builder.paymentMethodId = value
       }
     /**
-     * `string payment_method_id = 11 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 11 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethodId() {
       _builder.clearPaymentMethodId()

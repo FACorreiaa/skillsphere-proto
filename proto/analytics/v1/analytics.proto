@@ -4,6 +4,7 @@ package skillsphere.analytics.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/analytics/v1;analyticsv1";
 
@@ -78,20 +79,35 @@ message GetPlatformStatsResponse {
 }
 
 message PlatformStats {
-  int32 total_users = 1;
-  int32 active_users = 2;                    // Last 30 days
-  int32 new_users = 3;                       // In date range
-  int32 total_sessions = 4;
-  int32 completed_sessions = 5;
-  int32 total_skills = 6;
-  double average_session_rating = 7;
+  int32 total_users = 1 [(buf.validate.field).int32.gte = 0];
+  int32 active_users = 2 [(buf.validate.field).int32.gte = 0];                    // Last 30 days
+  int32 new_users = 3 [(buf.validate.field).int32.gte = 0];                       // In date range
+  int32 total_sessions = 4 [(buf.validate.field).int32.gte = 0];
+  int32 completed_sessions = 5 [(buf.validate.field).int32.gte = 0];
+  int32 total_skills = 6 [(buf.validate.field).int32.gte = 0];
+  double average_session_rating = 7 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
   skillsphere.common.v1.Money total_revenue = 8;
-  int32 premium_subscribers = 9;
-  double conversion_rate = 10;               // Free to premium
-  int32 total_certifications = 11;
-  int32 total_workshops = 12;
-  int32 total_gigs = 13;
-  double user_satisfaction = 14;             // 0-100
+  int32 premium_subscribers = 9 [(buf.validate.field).int32.gte = 0];
+  double conversion_rate = 10 [              // Free to premium
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
+  int32 total_certifications = 11 [(buf.validate.field).int32.gte = 0];
+  int32 total_workshops = 12 [(buf.validate.field).int32.gte = 0];
+  int32 total_gigs = 13 [(buf.validate.field).int32.gte = 0];
+  double user_satisfaction = 14 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];             // 0-100
 }
 
 // ============================================================================
@@ -101,8 +117,15 @@ message PlatformStats {
 message GetSkillTrendsRequest {
   google.protobuf.Timestamp start_date = 1;
   google.protobuf.Timestamp end_date = 2;
-  TimeGranularity granularity = 3;
-  int32 top_n = 4;                           // Top N skills
+  TimeGranularity granularity = 3 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 top_n = 4 [                          // Top N skills
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
 }
 
 message GetSkillTrendsResponse {
@@ -110,18 +133,35 @@ message GetSkillTrendsResponse {
 }
 
 message SkillTrend {
-  string skill_id = 1;
-  string skill_name = 2;
-  repeated DataPoint data_points = 3;
-  double growth_rate = 4;                    // Percentage
-  int32 total_sessions = 5;
-  int32 total_users = 6;
+  string skill_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string skill_name = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  repeated DataPoint data_points = 3 [
+    (buf.validate.field).repeated.max_items = 500
+  ];
+  double growth_rate = 4 [                   // Percentage
+    (buf.validate.field).double = {
+      gte: -100
+      lte: 100
+    }
+  ];
+  int32 total_sessions = 5 [(buf.validate.field).int32.gte = 0];
+  int32 total_users = 6 [(buf.validate.field).int32.gte = 0];
 }
 
 message DataPoint {
   google.protobuf.Timestamp timestamp = 1;
   double value = 2;
-  MetricType metric_type = 3;
+  MetricType metric_type = 3 [(buf.validate.field).enum.defined_only = true];
 }
 
 // ============================================================================
@@ -131,7 +171,9 @@ message DataPoint {
 message GetUserEngagementRequest {
   google.protobuf.Timestamp start_date = 1;
   google.protobuf.Timestamp end_date = 2;
-  string user_id = 3;                        // Optional for specific user
+  string user_id = 3 [                       // Optional for specific user
+    (buf.validate.field).string.max_len = 50
+  ];
 }
 
 message GetUserEngagementResponse {
@@ -139,21 +181,48 @@ message GetUserEngagementResponse {
 }
 
 message EngagementMetrics {
-  int32 daily_active_users = 1;
-  int32 weekly_active_users = 2;
-  int32 monthly_active_users = 3;
-  double average_session_duration_minutes = 4;
-  double sessions_per_user = 5;
-  int32 total_messages_sent = 6;
-  int32 total_searches = 7;
-  repeated TopFeature top_features = 8;
-  double stickiness = 9;                     // DAU/MAU ratio
+  int32 daily_active_users = 1 [(buf.validate.field).int32.gte = 0];
+  int32 weekly_active_users = 2 [(buf.validate.field).int32.gte = 0];
+  int32 monthly_active_users = 3 [(buf.validate.field).int32.gte = 0];
+  double average_session_duration_minutes = 4 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 1440
+    }
+  ];
+  double sessions_per_user = 5 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
+  int32 total_messages_sent = 6 [(buf.validate.field).int32.gte = 0];
+  int32 total_searches = 7 [(buf.validate.field).int32.gte = 0];
+  repeated TopFeature top_features = 8 [
+    (buf.validate.field).repeated.max_items = 20
+  ];
+  double stickiness = 9 [                    // DAU/MAU ratio
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 1
+    }
+  ];
 }
 
 message TopFeature {
-  string feature_name = 1;
-  int32 usage_count = 2;
-  double percentage = 3;
+  string feature_name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  int32 usage_count = 2 [(buf.validate.field).int32.gte = 0];
+  double percentage = 3 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
 }
 
 // ============================================================================
@@ -163,15 +232,24 @@ message TopFeature {
 message GetRevenueAnalyticsRequest {
   google.protobuf.Timestamp start_date = 1;
   google.protobuf.Timestamp end_date = 2;
-  TimeGranularity granularity = 3;
+  TimeGranularity granularity = 3 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message GetRevenueAnalyticsResponse {
-  repeated RevenueDataPoint revenue_over_time = 1;
+  repeated RevenueDataPoint revenue_over_time = 1 [
+    (buf.validate.field).repeated.max_items = 500
+  ];
   RevenueBreakdown breakdown = 2;
   skillsphere.common.v1.Money total_revenue = 3;
   skillsphere.common.v1.Money average_revenue_per_user = 4;
-  double month_over_month_growth = 5;
+  double month_over_month_growth = 5 [
+    (buf.validate.field).double = {
+      gte: -100
+      lte: 100
+    }
+  ];
 }
 
 message RevenueDataPoint {
@@ -197,20 +275,50 @@ message GetSessionAnalyticsRequest {
 }
 
 message GetSessionAnalyticsResponse {
-  int32 total_sessions = 1;
-  int32 completed_sessions = 2;
-  int32 cancelled_sessions = 3;
-  int32 no_show_sessions = 4;
-  double completion_rate = 5;
-  double average_rating = 6;
-  double average_duration_minutes = 7;
-  repeated string most_exchanged_skills = 8;
-  repeated TimeSlotPopularity peak_hours = 9;
+  int32 total_sessions = 1 [(buf.validate.field).int32.gte = 0];
+  int32 completed_sessions = 2 [(buf.validate.field).int32.gte = 0];
+  int32 cancelled_sessions = 3 [(buf.validate.field).int32.gte = 0];
+  int32 no_show_sessions = 4 [(buf.validate.field).int32.gte = 0];
+  double completion_rate = 5 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
+  double average_rating = 6 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
+  double average_duration_minutes = 7 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 1440
+    }
+  ];
+  repeated string most_exchanged_skills = 8 [
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 100
+      }
+    }
+  ];
+  repeated TimeSlotPopularity peak_hours = 9 [
+    (buf.validate.field).repeated.max_items = 24
+  ];
 }
 
 message TimeSlotPopularity {
-  int32 hour = 1;                            // 0-23
-  int32 session_count = 2;
+  int32 hour = 1 [                           // 0-23
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 23
+    }
+  ];
+  int32 session_count = 2 [(buf.validate.field).int32.gte = 0];
 }
 
 // ============================================================================
@@ -220,15 +328,29 @@ message TimeSlotPopularity {
 message GetUserGrowthRequest {
   google.protobuf.Timestamp start_date = 1;
   google.protobuf.Timestamp end_date = 2;
-  TimeGranularity granularity = 3;
+  TimeGranularity granularity = 3 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message GetUserGrowthResponse {
-  repeated DataPoint growth_data = 1;
-  int32 total_signups = 2;
-  double growth_rate = 3;
-  int32 churned_users = 4;
-  double churn_rate = 5;
+  repeated DataPoint growth_data = 1 [
+    (buf.validate.field).repeated.max_items = 500
+  ];
+  int32 total_signups = 2 [(buf.validate.field).int32.gte = 0];
+  double growth_rate = 3 [
+    (buf.validate.field).double = {
+      gte: -100
+      lte: 100
+    }
+  ];
+  int32 churned_users = 4 [(buf.validate.field).int32.gte = 0];
+  double churn_rate = 5 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
 }
 
 // ============================================================================
@@ -236,20 +358,36 @@ message GetUserGrowthResponse {
 // ============================================================================
 
 message GetGeographicDistributionRequest {
-  string metric = 1;                         // "users", "sessions", "revenue"
+  string metric = 1 [                        // "users", "sessions", "revenue"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 32
+    }
+  ];
 }
 
 message GetGeographicDistributionResponse {
-  repeated GeographicData data = 1;
+  repeated GeographicData data = 1 [
+    (buf.validate.field).repeated.max_items = 300
+  ];
 }
 
 message GeographicData {
-  string country = 1;
-  string country_code = 2;
-  int32 user_count = 3;
-  int32 session_count = 4;
+  string country = 1 [
+    (buf.validate.field).string.max_len = 100
+  ];
+  string country_code = 2 [
+    (buf.validate.field).string.pattern = "^[A-Z]{2}$"
+  ];
+  int32 user_count = 3 [(buf.validate.field).int32.gte = 0];
+  int32 session_count = 4 [(buf.validate.field).int32.gte = 0];
   skillsphere.common.v1.Money revenue = 5;
-  double percentage = 6;
+  double percentage = 6 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
 }
 
 // ============================================================================
@@ -258,19 +396,38 @@ message GeographicData {
 
 message GetRetentionMetricsRequest {
   google.protobuf.Timestamp cohort_start = 1;
-  int32 periods = 2;                         // Number of periods to track
-  string period_type = 3;                    // "day", "week", "month"
+  int32 periods = 2 [                        // Number of periods to track
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 52
+    }
+  ];
+  string period_type = 3 [                   // "day", "week", "month"
+    (buf.validate.field).string = {
+      min_len: 3
+      max_len: 10
+    }
+  ];
 }
 
 message GetRetentionMetricsResponse {
-  repeated RetentionCohort cohorts = 1;
-  double overall_retention_rate = 2;
+  repeated RetentionCohort cohorts = 1 [
+    (buf.validate.field).repeated.max_items = 52
+  ];
+  double overall_retention_rate = 2 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
 }
 
 message RetentionCohort {
   google.protobuf.Timestamp cohort_date = 1;
-  int32 initial_users = 2;
-  repeated double retention_by_period = 3;   // Percentage retained each period
+  int32 initial_users = 2 [(buf.validate.field).int32.gte = 0];
+  repeated double retention_by_period = 3 [  // Percentage retained each period
+    (buf.validate.field).repeated.max_items = 52
+  ];
 }
 
 // ============================================================================
@@ -280,19 +437,46 @@ message RetentionCohort {
 message GetConversionFunnelRequest {
   google.protobuf.Timestamp start_date = 1;
   google.protobuf.Timestamp end_date = 2;
-  string funnel_name = 3;                    // e.g., "signup", "subscription"
+  string funnel_name = 3 [                   // e.g., "signup", "subscription"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetConversionFunnelResponse {
-  repeated FunnelStage stages = 1;
-  double overall_conversion_rate = 2;
+  repeated FunnelStage stages = 1 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  double overall_conversion_rate = 2 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
 }
 
 message FunnelStage {
-  string name = 1;
-  int32 user_count = 2;
-  double conversion_rate = 3;                // To next stage
-  double drop_off_rate = 4;
+  string name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 user_count = 2 [(buf.validate.field).int32.gte = 0];
+  double conversion_rate = 3 [               // To next stage
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
+  double drop_off_rate = 4 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 100
+    }
+  ];
 }
 
 // ============================================================================
@@ -300,16 +484,46 @@ message FunnelStage {
 // ============================================================================
 
 message TrackEventRequest {
-  string user_id = 1;
-  string event_name = 2;
-  map<string, string> properties = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string event_name = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  map<string, string> properties = 3 [
+    (buf.validate.field).map.max_pairs = 50,
+    (buf.validate.field).map.keys = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    },
+    (buf.validate.field).map.values = {
+      string: {
+        max_len: 200
+      }
+    }
+  ];
   google.protobuf.Timestamp timestamp = 4;
-  string session_id = 5;                     // Optional session context
+  string session_id = 5 [                    // Optional session context
+    (buf.validate.field).string.max_len = 50
+  ];
 }
 
 message TrackEventResponse {
   bool success = 1;
-  string event_id = 2;
+  string event_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 // ============================================================================
@@ -317,20 +531,57 @@ message TrackEventResponse {
 // ============================================================================
 
 message GetUserJourneyRequest {
-  string user_id = 1;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   google.protobuf.Timestamp start_date = 2;
   google.protobuf.Timestamp end_date = 3;
 }
 
 message GetUserJourneyResponse {
-  repeated UserEvent events = 1;
-  string journey_summary = 2;
-  repeated string key_milestones = 3;
+  repeated UserEvent events = 1 [
+    (buf.validate.field).repeated.max_items = 500
+  ];
+  string journey_summary = 2 [
+    (buf.validate.field).string.max_len = 4000
+  ];
+  repeated string key_milestones = 3 [
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 }
 
 message UserEvent {
-  string event_name = 1;
+  string event_name = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
   google.protobuf.Timestamp timestamp = 2;
-  map<string, string> properties = 3;
-  string page = 4;
+  map<string, string> properties = 3 [
+    (buf.validate.field).map.max_pairs = 20,
+    (buf.validate.field).map.keys = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    },
+    (buf.validate.field).map.values = {
+      string: {
+        max_len: 200
+      }
+    }
+  ];
+  string page = 4 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }

@@ -101,11 +101,7 @@ public object GenerateLearningResourcesResponseKt {
     }
 
     /**
-     * ```
-     * Suggested order
-     * ```
-     *
-     * `string learning_path = 2 [json_name = "learningPath"];`
+     * `string learning_path = 2 [json_name = "learningPath", (.buf.validate.field) = { ... }`
      */
     public var learningPath: kotlin.String
       @kotlin.jvm.JvmName("getLearningPath")
@@ -115,11 +111,7 @@ public object GenerateLearningResourcesResponseKt {
         _builder.learningPath = value
       }
     /**
-     * ```
-     * Suggested order
-     * ```
-     *
-     * `string learning_path = 2 [json_name = "learningPath"];`
+     * `string learning_path = 2 [json_name = "learningPath", (.buf.validate.field) = { ... }`
      */
     public fun clearLearningPath() {
       _builder.clearLearningPath()

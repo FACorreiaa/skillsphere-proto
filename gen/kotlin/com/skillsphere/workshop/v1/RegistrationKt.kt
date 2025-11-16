@@ -30,7 +30,7 @@ public object RegistrationKt {
     internal fun _build(): com.skillsphere.workshop.v1.Registration = _builder.build()
 
     /**
-     * `string registration_id = 1 [json_name = "registrationId"];`
+     * `string registration_id = 1 [json_name = "registrationId", (.buf.validate.field) = { ... }`
      */
     public var registrationId: kotlin.String
       @kotlin.jvm.JvmName("getRegistrationId")
@@ -40,14 +40,14 @@ public object RegistrationKt {
         _builder.registrationId = value
       }
     /**
-     * `string registration_id = 1 [json_name = "registrationId"];`
+     * `string registration_id = 1 [json_name = "registrationId", (.buf.validate.field) = { ... }`
      */
     public fun clearRegistrationId() {
       _builder.clearRegistrationId()
     }
 
     /**
-     * `string workshop_id = 2 [json_name = "workshopId"];`
+     * `string workshop_id = 2 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public var workshopId: kotlin.String
       @kotlin.jvm.JvmName("getWorkshopId")
@@ -57,14 +57,14 @@ public object RegistrationKt {
         _builder.workshopId = value
       }
     /**
-     * `string workshop_id = 2 [json_name = "workshopId"];`
+     * `string workshop_id = 2 [json_name = "workshopId", (.buf.validate.field) = { ... }`
      */
     public fun clearWorkshopId() {
       _builder.clearWorkshopId()
     }
 
     /**
-     * `string user_id = 3 [json_name = "userId"];`
+     * `string user_id = 3 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -74,14 +74,14 @@ public object RegistrationKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 3 [json_name = "userId"];`
+     * `string user_id = 3 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string payment_id = 4 [json_name = "paymentId"];`
+     * `string payment_id = 4 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public var paymentId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentId")
@@ -91,7 +91,7 @@ public object RegistrationKt {
         _builder.paymentId = value
       }
     /**
-     * `string payment_id = 4 [json_name = "paymentId"];`
+     * `string payment_id = 4 [json_name = "paymentId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentId() {
       _builder.clearPaymentId()

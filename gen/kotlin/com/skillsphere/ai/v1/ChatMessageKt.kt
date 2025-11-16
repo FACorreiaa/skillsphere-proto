@@ -30,11 +30,7 @@ public object ChatMessageKt {
     internal fun _build(): com.skillsphere.ai.v1.ChatMessage = _builder.build()
 
     /**
-     * ```
-     * "user" or "assistant"
-     * ```
-     *
-     * `string role = 1 [json_name = "role"];`
+     * `string role = 1 [json_name = "role", (.buf.validate.field) = { ... }`
      */
     public var role: kotlin.String
       @kotlin.jvm.JvmName("getRole")
@@ -44,18 +40,14 @@ public object ChatMessageKt {
         _builder.role = value
       }
     /**
-     * ```
-     * "user" or "assistant"
-     * ```
-     *
-     * `string role = 1 [json_name = "role"];`
+     * `string role = 1 [json_name = "role", (.buf.validate.field) = { ... }`
      */
     public fun clearRole() {
       _builder.clearRole()
     }
 
     /**
-     * `string content = 2 [json_name = "content"];`
+     * `string content = 2 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public var content: kotlin.String
       @kotlin.jvm.JvmName("getContent")
@@ -65,7 +57,7 @@ public object ChatMessageKt {
         _builder.content = value
       }
     /**
-     * `string content = 2 [json_name = "content"];`
+     * `string content = 2 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public fun clearContent() {
       _builder.clearContent()

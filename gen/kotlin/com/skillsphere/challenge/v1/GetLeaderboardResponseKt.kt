@@ -36,7 +36,7 @@ public object GetLeaderboardResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class EntriesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries"];`
+     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries", (.buf.validate.field) = { ... }`
      */
      public val entries: com.google.protobuf.kotlin.DslList<com.skillsphere.challenge.v1.LeaderboardEntry, EntriesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetLeaderboardResponseKt {
         _builder.entriesList
       )
     /**
-     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries"];`
+     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries", (.buf.validate.field) = { ... }`
      * @param value The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetLeaderboardResponseKt {
       _builder.addEntries(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries"];`
+     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries", (.buf.validate.field) = { ... }`
      * @param value The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetLeaderboardResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries"];`
+     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries", (.buf.validate.field) = { ... }`
      * @param values The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetLeaderboardResponseKt {
       _builder.addAllEntries(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries"];`
+     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries", (.buf.validate.field) = { ... }`
      * @param values The entries to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetLeaderboardResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries"];`
+     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The entries to set.
      */
@@ -92,7 +92,7 @@ public object GetLeaderboardResponseKt {
       _builder.setEntries(index, value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries"];`
+     * `repeated .skillsphere.challenge.v1.LeaderboardEntry entries = 1 [json_name = "entries", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearEntries")

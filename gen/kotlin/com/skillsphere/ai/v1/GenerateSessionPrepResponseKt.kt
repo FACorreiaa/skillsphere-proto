@@ -30,7 +30,7 @@ public object GenerateSessionPrepResponseKt {
     internal fun _build(): com.skillsphere.ai.v1.GenerateSessionPrepResponse = _builder.build()
 
     /**
-     * `string agenda = 1 [json_name = "agenda"];`
+     * `string agenda = 1 [json_name = "agenda", (.buf.validate.field) = { ... }`
      */
     public var agenda: kotlin.String
       @kotlin.jvm.JvmName("getAgenda")
@@ -40,7 +40,7 @@ public object GenerateSessionPrepResponseKt {
         _builder.agenda = value
       }
     /**
-     * `string agenda = 1 [json_name = "agenda"];`
+     * `string agenda = 1 [json_name = "agenda", (.buf.validate.field) = { ... }`
      */
     public fun clearAgenda() {
       _builder.clearAgenda()
@@ -53,7 +53,7 @@ public object GenerateSessionPrepResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TeachingTipsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string teaching_tips = 2 [json_name = "teachingTips"];`
+     * `repeated string teaching_tips = 2 [json_name = "teachingTips", (.buf.validate.field) = { ... }`
      * @return A list containing the teachingTips.
      */
     public val teachingTips: com.google.protobuf.kotlin.DslList<kotlin.String, TeachingTipsProxy>
@@ -62,7 +62,7 @@ public object GenerateSessionPrepResponseKt {
         _builder.teachingTipsList
       )
     /**
-     * `repeated string teaching_tips = 2 [json_name = "teachingTips"];`
+     * `repeated string teaching_tips = 2 [json_name = "teachingTips", (.buf.validate.field) = { ... }`
      * @param value The teachingTips to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -71,7 +71,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addTeachingTips(value)
     }
     /**
-     * `repeated string teaching_tips = 2 [json_name = "teachingTips"];`
+     * `repeated string teaching_tips = 2 [json_name = "teachingTips", (.buf.validate.field) = { ... }`
      * @param value The teachingTips to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -81,7 +81,7 @@ public object GenerateSessionPrepResponseKt {
       add(value)
     }
     /**
-     * `repeated string teaching_tips = 2 [json_name = "teachingTips"];`
+     * `repeated string teaching_tips = 2 [json_name = "teachingTips", (.buf.validate.field) = { ... }`
      * @param values The teachingTips to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,7 +90,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addAllTeachingTips(values)
     }
     /**
-     * `repeated string teaching_tips = 2 [json_name = "teachingTips"];`
+     * `repeated string teaching_tips = 2 [json_name = "teachingTips", (.buf.validate.field) = { ... }`
      * @param values The teachingTips to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -100,7 +100,7 @@ public object GenerateSessionPrepResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string teaching_tips = 2 [json_name = "teachingTips"];`
+     * `repeated string teaching_tips = 2 [json_name = "teachingTips", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The teachingTips to set.
      */
@@ -109,7 +109,7 @@ public object GenerateSessionPrepResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, TeachingTipsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setTeachingTips(index, value)
     }/**
-     * `repeated string teaching_tips = 2 [json_name = "teachingTips"];`
+     * `repeated string teaching_tips = 2 [json_name = "teachingTips", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTeachingTips")
@@ -123,7 +123,7 @@ public object GenerateSessionPrepResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class LearningGoalsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string learning_goals = 3 [json_name = "learningGoals"];`
+     * `repeated string learning_goals = 3 [json_name = "learningGoals", (.buf.validate.field) = { ... }`
      * @return A list containing the learningGoals.
      */
     public val learningGoals: com.google.protobuf.kotlin.DslList<kotlin.String, LearningGoalsProxy>
@@ -132,7 +132,7 @@ public object GenerateSessionPrepResponseKt {
         _builder.learningGoalsList
       )
     /**
-     * `repeated string learning_goals = 3 [json_name = "learningGoals"];`
+     * `repeated string learning_goals = 3 [json_name = "learningGoals", (.buf.validate.field) = { ... }`
      * @param value The learningGoals to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -141,7 +141,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addLearningGoals(value)
     }
     /**
-     * `repeated string learning_goals = 3 [json_name = "learningGoals"];`
+     * `repeated string learning_goals = 3 [json_name = "learningGoals", (.buf.validate.field) = { ... }`
      * @param value The learningGoals to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -151,7 +151,7 @@ public object GenerateSessionPrepResponseKt {
       add(value)
     }
     /**
-     * `repeated string learning_goals = 3 [json_name = "learningGoals"];`
+     * `repeated string learning_goals = 3 [json_name = "learningGoals", (.buf.validate.field) = { ... }`
      * @param values The learningGoals to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -160,7 +160,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addAllLearningGoals(values)
     }
     /**
-     * `repeated string learning_goals = 3 [json_name = "learningGoals"];`
+     * `repeated string learning_goals = 3 [json_name = "learningGoals", (.buf.validate.field) = { ... }`
      * @param values The learningGoals to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -170,7 +170,7 @@ public object GenerateSessionPrepResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string learning_goals = 3 [json_name = "learningGoals"];`
+     * `repeated string learning_goals = 3 [json_name = "learningGoals", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The learningGoals to set.
      */
@@ -179,7 +179,7 @@ public object GenerateSessionPrepResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, LearningGoalsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setLearningGoals(index, value)
     }/**
-     * `repeated string learning_goals = 3 [json_name = "learningGoals"];`
+     * `repeated string learning_goals = 3 [json_name = "learningGoals", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setLearningGoals")
@@ -193,7 +193,7 @@ public object GenerateSessionPrepResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class DiscussionTopicsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string discussion_topics = 4 [json_name = "discussionTopics"];`
+     * `repeated string discussion_topics = 4 [json_name = "discussionTopics", (.buf.validate.field) = { ... }`
      * @return A list containing the discussionTopics.
      */
     public val discussionTopics: com.google.protobuf.kotlin.DslList<kotlin.String, DiscussionTopicsProxy>
@@ -202,7 +202,7 @@ public object GenerateSessionPrepResponseKt {
         _builder.discussionTopicsList
       )
     /**
-     * `repeated string discussion_topics = 4 [json_name = "discussionTopics"];`
+     * `repeated string discussion_topics = 4 [json_name = "discussionTopics", (.buf.validate.field) = { ... }`
      * @param value The discussionTopics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -211,7 +211,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addDiscussionTopics(value)
     }
     /**
-     * `repeated string discussion_topics = 4 [json_name = "discussionTopics"];`
+     * `repeated string discussion_topics = 4 [json_name = "discussionTopics", (.buf.validate.field) = { ... }`
      * @param value The discussionTopics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -221,7 +221,7 @@ public object GenerateSessionPrepResponseKt {
       add(value)
     }
     /**
-     * `repeated string discussion_topics = 4 [json_name = "discussionTopics"];`
+     * `repeated string discussion_topics = 4 [json_name = "discussionTopics", (.buf.validate.field) = { ... }`
      * @param values The discussionTopics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -230,7 +230,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addAllDiscussionTopics(values)
     }
     /**
-     * `repeated string discussion_topics = 4 [json_name = "discussionTopics"];`
+     * `repeated string discussion_topics = 4 [json_name = "discussionTopics", (.buf.validate.field) = { ... }`
      * @param values The discussionTopics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -240,7 +240,7 @@ public object GenerateSessionPrepResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string discussion_topics = 4 [json_name = "discussionTopics"];`
+     * `repeated string discussion_topics = 4 [json_name = "discussionTopics", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The discussionTopics to set.
      */
@@ -249,7 +249,7 @@ public object GenerateSessionPrepResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DiscussionTopicsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setDiscussionTopics(index, value)
     }/**
-     * `repeated string discussion_topics = 4 [json_name = "discussionTopics"];`
+     * `repeated string discussion_topics = 4 [json_name = "discussionTopics", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setDiscussionTopics")
@@ -263,7 +263,7 @@ public object GenerateSessionPrepResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PracticeExercisesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string practice_exercises = 5 [json_name = "practiceExercises"];`
+     * `repeated string practice_exercises = 5 [json_name = "practiceExercises", (.buf.validate.field) = { ... }`
      * @return A list containing the practiceExercises.
      */
     public val practiceExercises: com.google.protobuf.kotlin.DslList<kotlin.String, PracticeExercisesProxy>
@@ -272,7 +272,7 @@ public object GenerateSessionPrepResponseKt {
         _builder.practiceExercisesList
       )
     /**
-     * `repeated string practice_exercises = 5 [json_name = "practiceExercises"];`
+     * `repeated string practice_exercises = 5 [json_name = "practiceExercises", (.buf.validate.field) = { ... }`
      * @param value The practiceExercises to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -281,7 +281,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addPracticeExercises(value)
     }
     /**
-     * `repeated string practice_exercises = 5 [json_name = "practiceExercises"];`
+     * `repeated string practice_exercises = 5 [json_name = "practiceExercises", (.buf.validate.field) = { ... }`
      * @param value The practiceExercises to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -291,7 +291,7 @@ public object GenerateSessionPrepResponseKt {
       add(value)
     }
     /**
-     * `repeated string practice_exercises = 5 [json_name = "practiceExercises"];`
+     * `repeated string practice_exercises = 5 [json_name = "practiceExercises", (.buf.validate.field) = { ... }`
      * @param values The practiceExercises to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -300,7 +300,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.addAllPracticeExercises(values)
     }
     /**
-     * `repeated string practice_exercises = 5 [json_name = "practiceExercises"];`
+     * `repeated string practice_exercises = 5 [json_name = "practiceExercises", (.buf.validate.field) = { ... }`
      * @param values The practiceExercises to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -310,7 +310,7 @@ public object GenerateSessionPrepResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string practice_exercises = 5 [json_name = "practiceExercises"];`
+     * `repeated string practice_exercises = 5 [json_name = "practiceExercises", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The practiceExercises to set.
      */
@@ -319,7 +319,7 @@ public object GenerateSessionPrepResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PracticeExercisesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPracticeExercises(index, value)
     }/**
-     * `repeated string practice_exercises = 5 [json_name = "practiceExercises"];`
+     * `repeated string practice_exercises = 5 [json_name = "practiceExercises", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPracticeExercises")
@@ -327,11 +327,7 @@ public object GenerateSessionPrepResponseKt {
       _builder.clearPracticeExercises()
     }
     /**
-     * ```
-     * Conversation starter
-     * ```
-     *
-     * `string icebreaker = 6 [json_name = "icebreaker"];`
+     * `string icebreaker = 6 [json_name = "icebreaker", (.buf.validate.field) = { ... }`
      */
     public var icebreaker: kotlin.String
       @kotlin.jvm.JvmName("getIcebreaker")
@@ -341,11 +337,7 @@ public object GenerateSessionPrepResponseKt {
         _builder.icebreaker = value
       }
     /**
-     * ```
-     * Conversation starter
-     * ```
-     *
-     * `string icebreaker = 6 [json_name = "icebreaker"];`
+     * `string icebreaker = 6 [json_name = "icebreaker", (.buf.validate.field) = { ... }`
      */
     public fun clearIcebreaker() {
       _builder.clearIcebreaker()

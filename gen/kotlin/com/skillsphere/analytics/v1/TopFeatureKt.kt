@@ -30,7 +30,7 @@ public object TopFeatureKt {
     internal fun _build(): com.skillsphere.analytics.v1.TopFeature = _builder.build()
 
     /**
-     * `string feature_name = 1 [json_name = "featureName"];`
+     * `string feature_name = 1 [json_name = "featureName", (.buf.validate.field) = { ... }`
      */
     public var featureName: kotlin.String
       @kotlin.jvm.JvmName("getFeatureName")
@@ -40,14 +40,14 @@ public object TopFeatureKt {
         _builder.featureName = value
       }
     /**
-     * `string feature_name = 1 [json_name = "featureName"];`
+     * `string feature_name = 1 [json_name = "featureName", (.buf.validate.field) = { ... }`
      */
     public fun clearFeatureName() {
       _builder.clearFeatureName()
     }
 
     /**
-     * `int32 usage_count = 2 [json_name = "usageCount"];`
+     * `int32 usage_count = 2 [json_name = "usageCount", (.buf.validate.field) = { ... }`
      */
     public var usageCount: kotlin.Int
       @kotlin.jvm.JvmName("getUsageCount")
@@ -57,14 +57,14 @@ public object TopFeatureKt {
         _builder.usageCount = value
       }
     /**
-     * `int32 usage_count = 2 [json_name = "usageCount"];`
+     * `int32 usage_count = 2 [json_name = "usageCount", (.buf.validate.field) = { ... }`
      */
     public fun clearUsageCount() {
       _builder.clearUsageCount()
     }
 
     /**
-     * `double percentage = 3 [json_name = "percentage"];`
+     * `double percentage = 3 [json_name = "percentage", (.buf.validate.field) = { ... }`
      */
     public var percentage: kotlin.Double
       @kotlin.jvm.JvmName("getPercentage")
@@ -74,7 +74,7 @@ public object TopFeatureKt {
         _builder.percentage = value
       }
     /**
-     * `double percentage = 3 [json_name = "percentage"];`
+     * `double percentage = 3 [json_name = "percentage", (.buf.validate.field) = { ... }`
      */
     public fun clearPercentage() {
       _builder.clearPercentage()

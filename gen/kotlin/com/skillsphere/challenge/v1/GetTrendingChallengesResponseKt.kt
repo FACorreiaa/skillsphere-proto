@@ -36,7 +36,7 @@ public object GetTrendingChallengesResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ChallengesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges"];`
+     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges", (.buf.validate.field) = { ... }`
      */
      public val challenges: com.google.protobuf.kotlin.DslList<com.skillsphere.challenge.v1.Challenge, ChallengesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetTrendingChallengesResponseKt {
         _builder.challengesList
       )
     /**
-     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges"];`
+     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges", (.buf.validate.field) = { ... }`
      * @param value The challenges to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetTrendingChallengesResponseKt {
       _builder.addChallenges(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges"];`
+     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges", (.buf.validate.field) = { ... }`
      * @param value The challenges to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetTrendingChallengesResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges"];`
+     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges", (.buf.validate.field) = { ... }`
      * @param values The challenges to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetTrendingChallengesResponseKt {
       _builder.addAllChallenges(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges"];`
+     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges", (.buf.validate.field) = { ... }`
      * @param values The challenges to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetTrendingChallengesResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges"];`
+     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The challenges to set.
      */
@@ -92,7 +92,7 @@ public object GetTrendingChallengesResponseKt {
       _builder.setChallenges(index, value)
     }
     /**
-     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges"];`
+     * `repeated .skillsphere.challenge.v1.Challenge challenges = 1 [json_name = "challenges", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearChallenges")

@@ -30,7 +30,7 @@ public object GetTrendingChallengesRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.GetTrendingChallengesRequest = _builder.build()
 
     /**
-     * `int32 limit = 1 [json_name = "limit"];`
+     * `int32 limit = 1 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -40,7 +40,7 @@ public object GetTrendingChallengesRequestKt {
         _builder.limit = value
       }
     /**
-     * `int32 limit = 1 [json_name = "limit"];`
+     * `int32 limit = 1 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()

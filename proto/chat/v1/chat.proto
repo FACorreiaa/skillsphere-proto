@@ -4,6 +4,7 @@ package skillsphere.chat.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/chat/v1;chatv1";
 
@@ -47,31 +48,84 @@ enum MessageType {
 }
 
 message Message {
-  string message_id = 1;
-  string conversation_id = 2;
-  string sender_id = 3;
-  string recipient_id = 4;
-  MessageType type = 5;
-  string content = 6;                   // Text or file URL
-  repeated skillsphere.common.v1.Attachment attachments = 7;
+  string message_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string conversation_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string sender_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string recipient_id = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  MessageType type = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string content = 6 [                  // Text or file URL
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment attachments = 7 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
   google.protobuf.Timestamp sent_at = 8;
   google.protobuf.Timestamp read_at = 9;
   bool is_read = 10;
   bool is_deleted = 11;
-  repeated Reaction reactions = 12;
+  repeated Reaction reactions = 12 [
+    (buf.validate.field).repeated.max_items = 100
+  ];
 }
 
 message Reaction {
-  string user_id = 1;
-  string emoji = 2;                     // Unicode emoji
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string emoji = 2 [                    // Unicode emoji
+    (buf.validate.field).string.max_len = 8
+  ];
   google.protobuf.Timestamp created_at = 3;
 }
 
 message Conversation {
-  string conversation_id = 1;
-  repeated string participant_ids = 2;
+  string conversation_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated string participant_ids = 2 [
+    (buf.validate.field).repeated = {
+      min_items: 2
+      max_items: 20
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
   Message last_message = 3;
-  int32 unread_count = 4;
+  int32 unread_count = 4 [
+    (buf.validate.field).int32.gte = 0
+  ];
   google.protobuf.Timestamp created_at = 5;
   google.protobuf.Timestamp updated_at = 6;
   bool is_archived = 7;
@@ -82,17 +136,40 @@ message Conversation {
 // ============================================================================
 
 message SendMessageRequest {
-  string sender_id = 1;
-  string recipient_id = 2;
-  string conversation_id = 3;           // Optional for new conversations
-  MessageType type = 4;
-  string content = 5;
-  repeated skillsphere.common.v1.Attachment attachments = 6;
+  string sender_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string recipient_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string conversation_id = 3 [          // Optional for new conversations
+    (buf.validate.field).string.max_len = 50
+  ];
+  MessageType type = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string content = 5 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment attachments = 6 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
 }
 
 message SendMessageResponse {
   Message message = 1;
-  string conversation_id = 2;
+  string conversation_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 // ============================================================================
@@ -100,15 +177,29 @@ message SendMessageResponse {
 // ============================================================================
 
 message GetMessagesRequest {
-  string conversation_id = 1;
-  int32 page_size = 2;
-  string page_token = 3;
+  string conversation_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 page_size = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 200
+    }
+  ];
+  string page_token = 3 [
+    (buf.validate.field).string.max_len = 256
+  ];
   google.protobuf.Timestamp since = 4;  // Get messages after this time
 }
 
 message GetMessagesResponse {
   repeated Message messages = 1;
-  string next_page_token = 2;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 // ============================================================================
@@ -116,19 +207,47 @@ message GetMessagesResponse {
 // ============================================================================
 
 message StreamMessagesRequest {
-  string user_id = 1;
-  repeated string conversation_ids = 2;  // Empty for all conversations
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated string conversation_ids = 2 [ // Empty for all conversations
+    (buf.validate.field).repeated.max_items = 50,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 }
 
 message StreamMessagesResponse {
   Message message = 1;
-  string event_type = 2;                // "new_message", "message_read", "typing"
+  string event_type = 2 [               // "new_message", "message_read", "typing"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 32
+    }
+  ];
   TypingIndicator typing = 3;           // Optional
 }
 
 message TypingIndicator {
-  string user_id = 1;
-  string conversation_id = 2;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string conversation_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   bool is_typing = 3;
 }
 
@@ -137,13 +256,30 @@ message TypingIndicator {
 // ============================================================================
 
 message MarkAsReadRequest {
-  string user_id = 1;
-  repeated string message_ids = 2;
-  string conversation_id = 3;           // Mark all in conversation
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated string message_ids = 2 [
+    (buf.validate.field).repeated.max_items = 200,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  string conversation_id = 3 [          // Mark all in conversation
+    (buf.validate.field).string.max_len = 50
+  ];
 }
 
 message MarkAsReadResponse {
-  int32 marked_count = 1;
+  int32 marked_count = 1 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // ============================================================================
@@ -151,15 +287,29 @@ message MarkAsReadResponse {
 // ============================================================================
 
 message ListConversationsRequest {
-  string user_id = 1;
-  int32 page_size = 2;
-  string page_token = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 page_size = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 3 [
+    (buf.validate.field).string.max_len = 256
+  ];
   bool unread_only = 4;
 }
 
 message ListConversationsResponse {
   repeated Conversation conversations = 1;
-  string next_page_token = 2;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 // ============================================================================
@@ -167,8 +317,18 @@ message ListConversationsResponse {
 // ============================================================================
 
 message DeleteMessageRequest {
-  string message_id = 1;
-  string user_id = 2;                   // For authorization
+  string message_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [                  // For authorization
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message DeleteMessageResponse {
@@ -180,9 +340,21 @@ message DeleteMessageResponse {
 // ============================================================================
 
 message ReactToMessageRequest {
-  string message_id = 1;
-  string user_id = 2;
-  string emoji = 3;
+  string message_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string emoji = 3 [
+    (buf.validate.field).string.max_len = 8
+  ];
 }
 
 message ReactToMessageResponse {
@@ -194,13 +366,37 @@ message ReactToMessageResponse {
 // ============================================================================
 
 message ReportMessageRequest {
-  string message_id = 1;
-  string reporter_id = 2;
-  string reason = 3;
-  string description = 4;
+  string message_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reporter_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 200
+  ];
+  string description = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message ReportMessageResponse {
-  string report_id = 1;
-  string status = 2;
+  string report_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string status = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 32
+    }
+  ];
 }

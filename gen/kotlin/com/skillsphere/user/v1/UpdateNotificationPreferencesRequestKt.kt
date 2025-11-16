@@ -30,7 +30,7 @@ public object UpdateNotificationPreferencesRequestKt {
     internal fun _build(): com.skillsphere.user.v1.UpdateNotificationPreferencesRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object UpdateNotificationPreferencesRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `.skillsphere.common.v1.NotificationPreferences preferences = 2 [json_name = "preferences"];`
+     * `.skillsphere.common.v1.NotificationPreferences preferences = 2 [json_name = "preferences", (.buf.validate.field) = { ... }`
      */
     public var preferences: com.skillsphere.common.v1.NotificationPreferences
       @kotlin.jvm.JvmName("getPreferences")
@@ -57,13 +57,13 @@ public object UpdateNotificationPreferencesRequestKt {
         _builder.preferences = value
       }
     /**
-     * `.skillsphere.common.v1.NotificationPreferences preferences = 2 [json_name = "preferences"];`
+     * `.skillsphere.common.v1.NotificationPreferences preferences = 2 [json_name = "preferences", (.buf.validate.field) = { ... }`
      */
     public fun clearPreferences() {
       _builder.clearPreferences()
     }
     /**
-     * `.skillsphere.common.v1.NotificationPreferences preferences = 2 [json_name = "preferences"];`
+     * `.skillsphere.common.v1.NotificationPreferences preferences = 2 [json_name = "preferences", (.buf.validate.field) = { ... }`
      * @return Whether the preferences field is set.
      */
     public fun hasPreferences(): kotlin.Boolean {

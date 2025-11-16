@@ -57,11 +57,7 @@ public object StreamMessagesResponseKt {
       get() = _builder.messageOrNull
 
     /**
-     * ```
-     * "new_message", "message_read", "typing"
-     * ```
-     *
-     * `string event_type = 2 [json_name = "eventType"];`
+     * `string event_type = 2 [json_name = "eventType", (.buf.validate.field) = { ... }`
      */
     public var eventType: kotlin.String
       @kotlin.jvm.JvmName("getEventType")
@@ -71,11 +67,7 @@ public object StreamMessagesResponseKt {
         _builder.eventType = value
       }
     /**
-     * ```
-     * "new_message", "message_read", "typing"
-     * ```
-     *
-     * `string event_type = 2 [json_name = "eventType"];`
+     * `string event_type = 2 [json_name = "eventType", (.buf.validate.field) = { ... }`
      */
     public fun clearEventType() {
       _builder.clearEventType()

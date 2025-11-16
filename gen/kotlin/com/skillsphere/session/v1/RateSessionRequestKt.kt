@@ -30,7 +30,7 @@ public object RateSessionRequestKt {
     internal fun _build(): com.skillsphere.session.v1.RateSessionRequest = _builder.build()
 
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -40,18 +40,14 @@ public object RateSessionRequestKt {
         _builder.sessionId = value
       }
     /**
-     * `string session_id = 1 [json_name = "sessionId"];`
+     * `string session_id = 1 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * ```
-     * User giving the rating
-     * ```
-     *
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public var reviewerId: kotlin.String
       @kotlin.jvm.JvmName("getReviewerId")
@@ -61,22 +57,14 @@ public object RateSessionRequestKt {
         _builder.reviewerId = value
       }
     /**
-     * ```
-     * User giving the rating
-     * ```
-     *
-     * `string reviewer_id = 2 [json_name = "reviewerId"];`
+     * `string reviewer_id = 2 [json_name = "reviewerId", (.buf.validate.field) = { ... }`
      */
     public fun clearReviewerId() {
       _builder.clearReviewerId()
     }
 
     /**
-     * ```
-     * 1-5 stars
-     * ```
-     *
-     * `int32 score = 3 [json_name = "score"];`
+     * `int32 score = 3 [json_name = "score", (.buf.validate.field) = { ... }`
      */
     public var score: kotlin.Int
       @kotlin.jvm.JvmName("getScore")
@@ -86,18 +74,14 @@ public object RateSessionRequestKt {
         _builder.score = value
       }
     /**
-     * ```
-     * 1-5 stars
-     * ```
-     *
-     * `int32 score = 3 [json_name = "score"];`
+     * `int32 score = 3 [json_name = "score", (.buf.validate.field) = { ... }`
      */
     public fun clearScore() {
       _builder.clearScore()
     }
 
     /**
-     * `string comment = 4 [json_name = "comment"];`
+     * `string comment = 4 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public var comment: kotlin.String
       @kotlin.jvm.JvmName("getComment")
@@ -107,7 +91,7 @@ public object RateSessionRequestKt {
         _builder.comment = value
       }
     /**
-     * `string comment = 4 [json_name = "comment"];`
+     * `string comment = 4 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public fun clearComment() {
       _builder.clearComment()
@@ -120,11 +104,7 @@ public object RateSessionRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TagsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * e.g., "helpful", "punctual", "knowledgeable"
-     * ```
-     *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @return A list containing the tags.
      */
     public val tags: com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>
@@ -133,11 +113,7 @@ public object RateSessionRequestKt {
         _builder.tagsList
       )
     /**
-     * ```
-     * e.g., "helpful", "punctual", "knowledgeable"
-     * ```
-     *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -146,11 +122,7 @@ public object RateSessionRequestKt {
       _builder.addTags(value)
     }
     /**
-     * ```
-     * e.g., "helpful", "punctual", "knowledgeable"
-     * ```
-     *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param value The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -160,11 +132,7 @@ public object RateSessionRequestKt {
       add(value)
     }
     /**
-     * ```
-     * e.g., "helpful", "punctual", "knowledgeable"
-     * ```
-     *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -173,11 +141,7 @@ public object RateSessionRequestKt {
       _builder.addAllTags(values)
     }
     /**
-     * ```
-     * e.g., "helpful", "punctual", "knowledgeable"
-     * ```
-     *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param values The tags to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -187,11 +151,7 @@ public object RateSessionRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * e.g., "helpful", "punctual", "knowledgeable"
-     * ```
-     *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The tags to set.
      */
@@ -200,11 +160,7 @@ public object RateSessionRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, TagsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setTags(index, value)
     }/**
-     * ```
-     * e.g., "helpful", "punctual", "knowledgeable"
-     * ```
-     *
-     * `repeated string tags = 5 [json_name = "tags"];`
+     * `repeated string tags = 5 [json_name = "tags", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTags")

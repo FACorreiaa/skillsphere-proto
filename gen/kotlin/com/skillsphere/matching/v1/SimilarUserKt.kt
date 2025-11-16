@@ -57,7 +57,7 @@ public object SimilarUserKt {
       get() = _builder.userOrNull
 
     /**
-     * `double similarity_score = 2 [json_name = "similarityScore"];`
+     * `double similarity_score = 2 [json_name = "similarityScore", (.buf.validate.field) = { ... }`
      */
     public var similarityScore: kotlin.Double
       @kotlin.jvm.JvmName("getSimilarityScore")
@@ -67,7 +67,7 @@ public object SimilarUserKt {
         _builder.similarityScore = value
       }
     /**
-     * `double similarity_score = 2 [json_name = "similarityScore"];`
+     * `double similarity_score = 2 [json_name = "similarityScore", (.buf.validate.field) = { ... }`
      */
     public fun clearSimilarityScore() {
       _builder.clearSimilarityScore()
@@ -80,7 +80,7 @@ public object SimilarUserKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class CommonSkillsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string common_skills = 3 [json_name = "commonSkills"];`
+     * `repeated string common_skills = 3 [json_name = "commonSkills", (.buf.validate.field) = { ... }`
      * @return A list containing the commonSkills.
      */
     public val commonSkills: com.google.protobuf.kotlin.DslList<kotlin.String, CommonSkillsProxy>
@@ -89,7 +89,7 @@ public object SimilarUserKt {
         _builder.commonSkillsList
       )
     /**
-     * `repeated string common_skills = 3 [json_name = "commonSkills"];`
+     * `repeated string common_skills = 3 [json_name = "commonSkills", (.buf.validate.field) = { ... }`
      * @param value The commonSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -98,7 +98,7 @@ public object SimilarUserKt {
       _builder.addCommonSkills(value)
     }
     /**
-     * `repeated string common_skills = 3 [json_name = "commonSkills"];`
+     * `repeated string common_skills = 3 [json_name = "commonSkills", (.buf.validate.field) = { ... }`
      * @param value The commonSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -108,7 +108,7 @@ public object SimilarUserKt {
       add(value)
     }
     /**
-     * `repeated string common_skills = 3 [json_name = "commonSkills"];`
+     * `repeated string common_skills = 3 [json_name = "commonSkills", (.buf.validate.field) = { ... }`
      * @param values The commonSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -117,7 +117,7 @@ public object SimilarUserKt {
       _builder.addAllCommonSkills(values)
     }
     /**
-     * `repeated string common_skills = 3 [json_name = "commonSkills"];`
+     * `repeated string common_skills = 3 [json_name = "commonSkills", (.buf.validate.field) = { ... }`
      * @param values The commonSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -127,7 +127,7 @@ public object SimilarUserKt {
       addAll(values)
     }
     /**
-     * `repeated string common_skills = 3 [json_name = "commonSkills"];`
+     * `repeated string common_skills = 3 [json_name = "commonSkills", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The commonSkills to set.
      */
@@ -136,7 +136,7 @@ public object SimilarUserKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, CommonSkillsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setCommonSkills(index, value)
     }/**
-     * `repeated string common_skills = 3 [json_name = "commonSkills"];`
+     * `repeated string common_skills = 3 [json_name = "commonSkills", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setCommonSkills")

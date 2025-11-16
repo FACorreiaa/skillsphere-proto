@@ -30,7 +30,7 @@ public object GetUserReviewsRequestKt {
     internal fun _build(): com.skillsphere.review.v1.GetUserReviewsRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object GetUserReviewsRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -81,7 +81,7 @@ public object GetUserReviewsRequestKt {
     }
 
     /**
-     * `.skillsphere.review.v1.ReviewStatus status = 4 [json_name = "status"];`
+     * `.skillsphere.review.v1.ReviewStatus status = 4 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.review.v1.ReviewStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -98,7 +98,7 @@ public object GetUserReviewsRequestKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.review.v1.ReviewStatus status = 4 [json_name = "status"];`
+     * `.skillsphere.review.v1.ReviewStatus status = 4 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

@@ -30,7 +30,7 @@ public object CreateSubscriptionRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.CreateSubscriptionRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object CreateSubscriptionRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `.skillsphere.common.v1.SubscriptionTier tier = 2 [json_name = "tier"];`
+     * `.skillsphere.common.v1.SubscriptionTier tier = 2 [json_name = "tier", (.buf.validate.field) = { ... }`
      */
     public var tier: com.skillsphere.common.v1.SubscriptionTier
       @kotlin.jvm.JvmName("getTier")
@@ -64,18 +64,14 @@ public object CreateSubscriptionRequestKt {
         _builder.tierValue = value
       }
     /**
-     * `.skillsphere.common.v1.SubscriptionTier tier = 2 [json_name = "tier"];`
+     * `.skillsphere.common.v1.SubscriptionTier tier = 2 [json_name = "tier", (.buf.validate.field) = { ... }`
      */
     public fun clearTier() {
       _builder.clearTier()
     }
 
     /**
-     * ```
-     * Stripe payment method ID
-     * ```
-     *
-     * `string payment_method_id = 3 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 3 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var paymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentMethodId")
@@ -85,22 +81,14 @@ public object CreateSubscriptionRequestKt {
         _builder.paymentMethodId = value
       }
     /**
-     * ```
-     * Stripe payment method ID
-     * ```
-     *
-     * `string payment_method_id = 3 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 3 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethodId() {
       _builder.clearPaymentMethodId()
     }
 
     /**
-     * ```
-     * Optional discount code
-     * ```
-     *
-     * `string promo_code = 4 [json_name = "promoCode"];`
+     * `string promo_code = 4 [json_name = "promoCode", (.buf.validate.field) = { ... }`
      */
     public var promoCode: kotlin.String
       @kotlin.jvm.JvmName("getPromoCode")
@@ -110,11 +98,7 @@ public object CreateSubscriptionRequestKt {
         _builder.promoCode = value
       }
     /**
-     * ```
-     * Optional discount code
-     * ```
-     *
-     * `string promo_code = 4 [json_name = "promoCode"];`
+     * `string promo_code = 4 [json_name = "promoCode", (.buf.validate.field) = { ... }`
      */
     public fun clearPromoCode() {
       _builder.clearPromoCode()

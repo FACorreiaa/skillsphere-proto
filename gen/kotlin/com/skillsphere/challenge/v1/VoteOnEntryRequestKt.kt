@@ -30,7 +30,7 @@ public object VoteOnEntryRequestKt {
     internal fun _build(): com.skillsphere.challenge.v1.VoteOnEntryRequest = _builder.build()
 
     /**
-     * `string entry_id = 1 [json_name = "entryId"];`
+     * `string entry_id = 1 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public var entryId: kotlin.String
       @kotlin.jvm.JvmName("getEntryId")
@@ -40,14 +40,14 @@ public object VoteOnEntryRequestKt {
         _builder.entryId = value
       }
     /**
-     * `string entry_id = 1 [json_name = "entryId"];`
+     * `string entry_id = 1 [json_name = "entryId", (.buf.validate.field) = { ... }`
      */
     public fun clearEntryId() {
       _builder.clearEntryId()
     }
 
     /**
-     * `string voter_id = 2 [json_name = "voterId"];`
+     * `string voter_id = 2 [json_name = "voterId", (.buf.validate.field) = { ... }`
      */
     public var voterId: kotlin.String
       @kotlin.jvm.JvmName("getVoterId")
@@ -57,14 +57,14 @@ public object VoteOnEntryRequestKt {
         _builder.voterId = value
       }
     /**
-     * `string voter_id = 2 [json_name = "voterId"];`
+     * `string voter_id = 2 [json_name = "voterId", (.buf.validate.field) = { ... }`
      */
     public fun clearVoterId() {
       _builder.clearVoterId()
     }
 
     /**
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public var rating: kotlin.Int
       @kotlin.jvm.JvmName("getRating")
@@ -74,14 +74,14 @@ public object VoteOnEntryRequestKt {
         _builder.rating = value
       }
     /**
-     * `int32 rating = 3 [json_name = "rating"];`
+     * `int32 rating = 3 [json_name = "rating", (.buf.validate.field) = { ... }`
      */
     public fun clearRating() {
       _builder.clearRating()
     }
 
     /**
-     * `string comment = 4 [json_name = "comment"];`
+     * `string comment = 4 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public var comment: kotlin.String
       @kotlin.jvm.JvmName("getComment")
@@ -91,7 +91,7 @@ public object VoteOnEntryRequestKt {
         _builder.comment = value
       }
     /**
-     * `string comment = 4 [json_name = "comment"];`
+     * `string comment = 4 [json_name = "comment", (.buf.validate.field) = { ... }`
      */
     public fun clearComment() {
       _builder.clearComment()

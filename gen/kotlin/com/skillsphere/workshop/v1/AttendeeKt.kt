@@ -30,7 +30,7 @@ public object AttendeeKt {
     internal fun _build(): com.skillsphere.workshop.v1.Attendee = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object AttendeeKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string username = 2 [json_name = "username"];`
+     * `string username = 2 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public var username: kotlin.String
       @kotlin.jvm.JvmName("getUsername")
@@ -57,14 +57,14 @@ public object AttendeeKt {
         _builder.username = value
       }
     /**
-     * `string username = 2 [json_name = "username"];`
+     * `string username = 2 [json_name = "username", (.buf.validate.field) = { ... }`
      */
     public fun clearUsername() {
       _builder.clearUsername()
     }
 
     /**
-     * `string avatar_url = 3 [json_name = "avatarUrl"];`
+     * `string avatar_url = 3 [json_name = "avatarUrl", (.buf.validate.field) = { ... }`
      */
     public var avatarUrl: kotlin.String
       @kotlin.jvm.JvmName("getAvatarUrl")
@@ -74,7 +74,7 @@ public object AttendeeKt {
         _builder.avatarUrl = value
       }
     /**
-     * `string avatar_url = 3 [json_name = "avatarUrl"];`
+     * `string avatar_url = 3 [json_name = "avatarUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearAvatarUrl() {
       _builder.clearAvatarUrl()

@@ -30,7 +30,7 @@ public object GetWorkshopRecordingResponseKt {
     internal fun _build(): com.skillsphere.workshop.v1.GetWorkshopRecordingResponse = _builder.build()
 
     /**
-     * `string recording_url = 1 [json_name = "recordingUrl"];`
+     * `string recording_url = 1 [json_name = "recordingUrl", (.buf.validate.field) = { ... }`
      */
     public var recordingUrl: kotlin.String
       @kotlin.jvm.JvmName("getRecordingUrl")
@@ -40,7 +40,7 @@ public object GetWorkshopRecordingResponseKt {
         _builder.recordingUrl = value
       }
     /**
-     * `string recording_url = 1 [json_name = "recordingUrl"];`
+     * `string recording_url = 1 [json_name = "recordingUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearRecordingUrl() {
       _builder.clearRecordingUrl()

@@ -30,7 +30,7 @@ public object GetAuditLogsRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.GetAuditLogsRequest = _builder.build()
 
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -40,7 +40,7 @@ public object GetAuditLogsRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
@@ -101,11 +101,7 @@ public object GetAuditLogsRequestKt {
       get() = _builder.endDateOrNull
 
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `string action_type = 4 [json_name = "actionType"];`
+     * `string action_type = 4 [json_name = "actionType", (.buf.validate.field) = { ... }`
      */
     public var actionType: kotlin.String
       @kotlin.jvm.JvmName("getActionType")
@@ -115,22 +111,14 @@ public object GetAuditLogsRequestKt {
         _builder.actionType = value
       }
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `string action_type = 4 [json_name = "actionType"];`
+     * `string action_type = 4 [json_name = "actionType", (.buf.validate.field) = { ... }`
      */
     public fun clearActionType() {
       _builder.clearActionType()
     }
 
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `string target_user_id = 5 [json_name = "targetUserId"];`
+     * `string target_user_id = 5 [json_name = "targetUserId", (.buf.validate.field) = { ... }`
      */
     public var targetUserId: kotlin.String
       @kotlin.jvm.JvmName("getTargetUserId")
@@ -140,18 +128,14 @@ public object GetAuditLogsRequestKt {
         _builder.targetUserId = value
       }
     /**
-     * ```
-     * Optional filter
-     * ```
-     *
-     * `string target_user_id = 5 [json_name = "targetUserId"];`
+     * `string target_user_id = 5 [json_name = "targetUserId", (.buf.validate.field) = { ... }`
      */
     public fun clearTargetUserId() {
       _builder.clearTargetUserId()
     }
 
     /**
-     * `int32 page_size = 6 [json_name = "pageSize"];`
+     * `int32 page_size = 6 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public var pageSize: kotlin.Int
       @kotlin.jvm.JvmName("getPageSize")
@@ -161,14 +145,14 @@ public object GetAuditLogsRequestKt {
         _builder.pageSize = value
       }
     /**
-     * `int32 page_size = 6 [json_name = "pageSize"];`
+     * `int32 page_size = 6 [json_name = "pageSize", (.buf.validate.field) = { ... }`
      */
     public fun clearPageSize() {
       _builder.clearPageSize()
     }
 
     /**
-     * `string page_token = 7 [json_name = "pageToken"];`
+     * `string page_token = 7 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public var pageToken: kotlin.String
       @kotlin.jvm.JvmName("getPageToken")
@@ -178,7 +162,7 @@ public object GetAuditLogsRequestKt {
         _builder.pageToken = value
       }
     /**
-     * `string page_token = 7 [json_name = "pageToken"];`
+     * `string page_token = 7 [json_name = "pageToken", (.buf.validate.field) = { ... }`
      */
     public fun clearPageToken() {
       _builder.clearPageToken()

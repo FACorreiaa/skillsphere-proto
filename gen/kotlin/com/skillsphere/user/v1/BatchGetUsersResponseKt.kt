@@ -107,11 +107,7 @@ public object BatchGetUsersResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class NotFoundIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * IDs that don't exist
-     * ```
-     *
-     * `repeated string not_found_ids = 2 [json_name = "notFoundIds"];`
+     * `repeated string not_found_ids = 2 [json_name = "notFoundIds", (.buf.validate.field) = { ... }`
      * @return A list containing the notFoundIds.
      */
     public val notFoundIds: com.google.protobuf.kotlin.DslList<kotlin.String, NotFoundIdsProxy>
@@ -120,11 +116,7 @@ public object BatchGetUsersResponseKt {
         _builder.notFoundIdsList
       )
     /**
-     * ```
-     * IDs that don't exist
-     * ```
-     *
-     * `repeated string not_found_ids = 2 [json_name = "notFoundIds"];`
+     * `repeated string not_found_ids = 2 [json_name = "notFoundIds", (.buf.validate.field) = { ... }`
      * @param value The notFoundIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -133,11 +125,7 @@ public object BatchGetUsersResponseKt {
       _builder.addNotFoundIds(value)
     }
     /**
-     * ```
-     * IDs that don't exist
-     * ```
-     *
-     * `repeated string not_found_ids = 2 [json_name = "notFoundIds"];`
+     * `repeated string not_found_ids = 2 [json_name = "notFoundIds", (.buf.validate.field) = { ... }`
      * @param value The notFoundIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -147,11 +135,7 @@ public object BatchGetUsersResponseKt {
       add(value)
     }
     /**
-     * ```
-     * IDs that don't exist
-     * ```
-     *
-     * `repeated string not_found_ids = 2 [json_name = "notFoundIds"];`
+     * `repeated string not_found_ids = 2 [json_name = "notFoundIds", (.buf.validate.field) = { ... }`
      * @param values The notFoundIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -160,11 +144,7 @@ public object BatchGetUsersResponseKt {
       _builder.addAllNotFoundIds(values)
     }
     /**
-     * ```
-     * IDs that don't exist
-     * ```
-     *
-     * `repeated string not_found_ids = 2 [json_name = "notFoundIds"];`
+     * `repeated string not_found_ids = 2 [json_name = "notFoundIds", (.buf.validate.field) = { ... }`
      * @param values The notFoundIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -174,11 +154,7 @@ public object BatchGetUsersResponseKt {
       addAll(values)
     }
     /**
-     * ```
-     * IDs that don't exist
-     * ```
-     *
-     * `repeated string not_found_ids = 2 [json_name = "notFoundIds"];`
+     * `repeated string not_found_ids = 2 [json_name = "notFoundIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The notFoundIds to set.
      */
@@ -187,11 +163,7 @@ public object BatchGetUsersResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, NotFoundIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setNotFoundIds(index, value)
     }/**
-     * ```
-     * IDs that don't exist
-     * ```
-     *
-     * `repeated string not_found_ids = 2 [json_name = "notFoundIds"];`
+     * `repeated string not_found_ids = 2 [json_name = "notFoundIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setNotFoundIds")

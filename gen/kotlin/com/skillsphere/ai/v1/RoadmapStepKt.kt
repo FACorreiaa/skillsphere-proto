@@ -30,7 +30,7 @@ public object RoadmapStepKt {
     internal fun _build(): com.skillsphere.ai.v1.RoadmapStep = _builder.build()
 
     /**
-     * `int32 order = 1 [json_name = "order"];`
+     * `int32 order = 1 [json_name = "order", (.buf.validate.field) = { ... }`
      */
     public var order: kotlin.Int
       @kotlin.jvm.JvmName("getOrder")
@@ -40,14 +40,14 @@ public object RoadmapStepKt {
         _builder.order = value
       }
     /**
-     * `int32 order = 1 [json_name = "order"];`
+     * `int32 order = 1 [json_name = "order", (.buf.validate.field) = { ... }`
      */
     public fun clearOrder() {
       _builder.clearOrder()
     }
 
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -57,14 +57,14 @@ public object RoadmapStepKt {
         _builder.title = value
       }
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -74,7 +74,7 @@ public object RoadmapStepKt {
         _builder.description = value
       }
     /**
-     * `string description = 3 [json_name = "description"];`
+     * `string description = 3 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -87,7 +87,7 @@ public object RoadmapStepKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TopicsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string topics = 4 [json_name = "topics"];`
+     * `repeated string topics = 4 [json_name = "topics", (.buf.validate.field) = { ... }`
      * @return A list containing the topics.
      */
     public val topics: com.google.protobuf.kotlin.DslList<kotlin.String, TopicsProxy>
@@ -96,7 +96,7 @@ public object RoadmapStepKt {
         _builder.topicsList
       )
     /**
-     * `repeated string topics = 4 [json_name = "topics"];`
+     * `repeated string topics = 4 [json_name = "topics", (.buf.validate.field) = { ... }`
      * @param value The topics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -105,7 +105,7 @@ public object RoadmapStepKt {
       _builder.addTopics(value)
     }
     /**
-     * `repeated string topics = 4 [json_name = "topics"];`
+     * `repeated string topics = 4 [json_name = "topics", (.buf.validate.field) = { ... }`
      * @param value The topics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -115,7 +115,7 @@ public object RoadmapStepKt {
       add(value)
     }
     /**
-     * `repeated string topics = 4 [json_name = "topics"];`
+     * `repeated string topics = 4 [json_name = "topics", (.buf.validate.field) = { ... }`
      * @param values The topics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -124,7 +124,7 @@ public object RoadmapStepKt {
       _builder.addAllTopics(values)
     }
     /**
-     * `repeated string topics = 4 [json_name = "topics"];`
+     * `repeated string topics = 4 [json_name = "topics", (.buf.validate.field) = { ... }`
      * @param values The topics to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,7 +134,7 @@ public object RoadmapStepKt {
       addAll(values)
     }
     /**
-     * `repeated string topics = 4 [json_name = "topics"];`
+     * `repeated string topics = 4 [json_name = "topics", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The topics to set.
      */
@@ -143,7 +143,7 @@ public object RoadmapStepKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, TopicsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setTopics(index, value)
     }/**
-     * `repeated string topics = 4 [json_name = "topics"];`
+     * `repeated string topics = 4 [json_name = "topics", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTopics")
@@ -151,7 +151,7 @@ public object RoadmapStepKt {
       _builder.clearTopics()
     }
     /**
-     * `int32 estimated_hours = 5 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 5 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public var estimatedHours: kotlin.Int
       @kotlin.jvm.JvmName("getEstimatedHours")
@@ -161,7 +161,7 @@ public object RoadmapStepKt {
         _builder.estimatedHours = value
       }
     /**
-     * `int32 estimated_hours = 5 [json_name = "estimatedHours"];`
+     * `int32 estimated_hours = 5 [json_name = "estimatedHours", (.buf.validate.field) = { ... }`
      */
     public fun clearEstimatedHours() {
       _builder.clearEstimatedHours()
@@ -174,7 +174,7 @@ public object RoadmapStepKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ResourcesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources"];`
+     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      */
      public val resources: com.google.protobuf.kotlin.DslList<com.skillsphere.ai.v1.LearningResource, ResourcesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -182,7 +182,7 @@ public object RoadmapStepKt {
         _builder.resourcesList
       )
     /**
-     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources"];`
+     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param value The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -191,7 +191,7 @@ public object RoadmapStepKt {
       _builder.addResources(value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources"];`
+     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param value The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -201,7 +201,7 @@ public object RoadmapStepKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources"];`
+     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param values The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -210,7 +210,7 @@ public object RoadmapStepKt {
       _builder.addAllResources(values)
     }
     /**
-     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources"];`
+     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param values The resources to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -220,7 +220,7 @@ public object RoadmapStepKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources"];`
+     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The resources to set.
      */
@@ -230,7 +230,7 @@ public object RoadmapStepKt {
       _builder.setResources(index, value)
     }
     /**
-     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources"];`
+     * `repeated .skillsphere.ai.v1.LearningResource resources = 6 [json_name = "resources", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearResources")
@@ -245,7 +245,7 @@ public object RoadmapStepKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class MilestonesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string milestones = 7 [json_name = "milestones"];`
+     * `repeated string milestones = 7 [json_name = "milestones", (.buf.validate.field) = { ... }`
      * @return A list containing the milestones.
      */
     public val milestones: com.google.protobuf.kotlin.DslList<kotlin.String, MilestonesProxy>
@@ -254,7 +254,7 @@ public object RoadmapStepKt {
         _builder.milestonesList
       )
     /**
-     * `repeated string milestones = 7 [json_name = "milestones"];`
+     * `repeated string milestones = 7 [json_name = "milestones", (.buf.validate.field) = { ... }`
      * @param value The milestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -263,7 +263,7 @@ public object RoadmapStepKt {
       _builder.addMilestones(value)
     }
     /**
-     * `repeated string milestones = 7 [json_name = "milestones"];`
+     * `repeated string milestones = 7 [json_name = "milestones", (.buf.validate.field) = { ... }`
      * @param value The milestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -273,7 +273,7 @@ public object RoadmapStepKt {
       add(value)
     }
     /**
-     * `repeated string milestones = 7 [json_name = "milestones"];`
+     * `repeated string milestones = 7 [json_name = "milestones", (.buf.validate.field) = { ... }`
      * @param values The milestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -282,7 +282,7 @@ public object RoadmapStepKt {
       _builder.addAllMilestones(values)
     }
     /**
-     * `repeated string milestones = 7 [json_name = "milestones"];`
+     * `repeated string milestones = 7 [json_name = "milestones", (.buf.validate.field) = { ... }`
      * @param values The milestones to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -292,7 +292,7 @@ public object RoadmapStepKt {
       addAll(values)
     }
     /**
-     * `repeated string milestones = 7 [json_name = "milestones"];`
+     * `repeated string milestones = 7 [json_name = "milestones", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The milestones to set.
      */
@@ -301,7 +301,7 @@ public object RoadmapStepKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, MilestonesProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setMilestones(index, value)
     }/**
-     * `repeated string milestones = 7 [json_name = "milestones"];`
+     * `repeated string milestones = 7 [json_name = "milestones", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setMilestones")

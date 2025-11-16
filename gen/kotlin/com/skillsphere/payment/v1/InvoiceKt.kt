@@ -30,7 +30,7 @@ public object InvoiceKt {
     internal fun _build(): com.skillsphere.payment.v1.Invoice = _builder.build()
 
     /**
-     * `string invoice_id = 1 [json_name = "invoiceId"];`
+     * `string invoice_id = 1 [json_name = "invoiceId", (.buf.validate.field) = { ... }`
      */
     public var invoiceId: kotlin.String
       @kotlin.jvm.JvmName("getInvoiceId")
@@ -40,14 +40,14 @@ public object InvoiceKt {
         _builder.invoiceId = value
       }
     /**
-     * `string invoice_id = 1 [json_name = "invoiceId"];`
+     * `string invoice_id = 1 [json_name = "invoiceId", (.buf.validate.field) = { ... }`
      */
     public fun clearInvoiceId() {
       _builder.clearInvoiceId()
     }
 
     /**
-     * `string stripe_invoice_id = 2 [json_name = "stripeInvoiceId"];`
+     * `string stripe_invoice_id = 2 [json_name = "stripeInvoiceId", (.buf.validate.field) = { ... }`
      */
     public var stripeInvoiceId: kotlin.String
       @kotlin.jvm.JvmName("getStripeInvoiceId")
@@ -57,7 +57,7 @@ public object InvoiceKt {
         _builder.stripeInvoiceId = value
       }
     /**
-     * `string stripe_invoice_id = 2 [json_name = "stripeInvoiceId"];`
+     * `string stripe_invoice_id = 2 [json_name = "stripeInvoiceId", (.buf.validate.field) = { ... }`
      */
     public fun clearStripeInvoiceId() {
       _builder.clearStripeInvoiceId()
@@ -162,11 +162,7 @@ public object InvoiceKt {
     }
 
     /**
-     * ```
-     * PDF download URL
-     * ```
-     *
-     * `string invoice_url = 7 [json_name = "invoiceUrl"];`
+     * `string invoice_url = 7 [json_name = "invoiceUrl", (.buf.validate.field) = { ... }`
      */
     public var invoiceUrl: kotlin.String
       @kotlin.jvm.JvmName("getInvoiceUrl")
@@ -176,11 +172,7 @@ public object InvoiceKt {
         _builder.invoiceUrl = value
       }
     /**
-     * ```
-     * PDF download URL
-     * ```
-     *
-     * `string invoice_url = 7 [json_name = "invoiceUrl"];`
+     * `string invoice_url = 7 [json_name = "invoiceUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearInvoiceUrl() {
       _builder.clearInvoiceUrl()

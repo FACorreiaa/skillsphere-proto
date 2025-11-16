@@ -47,7 +47,7 @@ public object ValidateTokenResponseKt {
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,7 +57,7 @@ public object ValidateTokenResponseKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -97,11 +97,7 @@ public object ValidateTokenResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PermissionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * e.g., "user:read", "session:create"
-     * ```
-     *
-     * `repeated string permissions = 4 [json_name = "permissions"];`
+     * `repeated string permissions = 4 [json_name = "permissions", (.buf.validate.field) = { ... }`
      * @return A list containing the permissions.
      */
     public val permissions: com.google.protobuf.kotlin.DslList<kotlin.String, PermissionsProxy>
@@ -110,11 +106,7 @@ public object ValidateTokenResponseKt {
         _builder.permissionsList
       )
     /**
-     * ```
-     * e.g., "user:read", "session:create"
-     * ```
-     *
-     * `repeated string permissions = 4 [json_name = "permissions"];`
+     * `repeated string permissions = 4 [json_name = "permissions", (.buf.validate.field) = { ... }`
      * @param value The permissions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -123,11 +115,7 @@ public object ValidateTokenResponseKt {
       _builder.addPermissions(value)
     }
     /**
-     * ```
-     * e.g., "user:read", "session:create"
-     * ```
-     *
-     * `repeated string permissions = 4 [json_name = "permissions"];`
+     * `repeated string permissions = 4 [json_name = "permissions", (.buf.validate.field) = { ... }`
      * @param value The permissions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -137,11 +125,7 @@ public object ValidateTokenResponseKt {
       add(value)
     }
     /**
-     * ```
-     * e.g., "user:read", "session:create"
-     * ```
-     *
-     * `repeated string permissions = 4 [json_name = "permissions"];`
+     * `repeated string permissions = 4 [json_name = "permissions", (.buf.validate.field) = { ... }`
      * @param values The permissions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -150,11 +134,7 @@ public object ValidateTokenResponseKt {
       _builder.addAllPermissions(values)
     }
     /**
-     * ```
-     * e.g., "user:read", "session:create"
-     * ```
-     *
-     * `repeated string permissions = 4 [json_name = "permissions"];`
+     * `repeated string permissions = 4 [json_name = "permissions", (.buf.validate.field) = { ... }`
      * @param values The permissions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -164,11 +144,7 @@ public object ValidateTokenResponseKt {
       addAll(values)
     }
     /**
-     * ```
-     * e.g., "user:read", "session:create"
-     * ```
-     *
-     * `repeated string permissions = 4 [json_name = "permissions"];`
+     * `repeated string permissions = 4 [json_name = "permissions", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The permissions to set.
      */
@@ -177,11 +153,7 @@ public object ValidateTokenResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, PermissionsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setPermissions(index, value)
     }/**
-     * ```
-     * e.g., "user:read", "session:create"
-     * ```
-     *
-     * `repeated string permissions = 4 [json_name = "permissions"];`
+     * `repeated string permissions = 4 [json_name = "permissions", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setPermissions")

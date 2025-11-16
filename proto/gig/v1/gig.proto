@@ -4,6 +4,7 @@ package skillsphere.gig.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/gig/v1;gigv1";
 
@@ -88,22 +89,67 @@ enum ApplicationStatus {
 // ============================================================================
 
 message Gig {
-  string gig_id = 1;
-  string creator_id = 2;
-  string title = 3;
-  string description = 4;
-  repeated string skill_ids = 5;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string creator_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 4 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated string skill_ids = 5 [
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 20
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 
   // Pricing
   GigType type = 6;
   skillsphere.common.v1.Money budget = 7;
   bool is_hourly = 8;                        // Hourly vs. fixed price
-  int32 estimated_hours = 9;
+  int32 estimated_hours = 9 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 1000
+    }
+  ];
 
   // Requirements
-  skillsphere.common.v1.ProficiencyLevel required_proficiency = 10;
-  repeated string requirements = 11;
-  repeated skillsphere.common.v1.Attachment attachments = 12;
+  skillsphere.common.v1.ProficiencyLevel required_proficiency = 10 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated string requirements = 11 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
+  repeated skillsphere.common.v1.Attachment attachments = 12 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
 
   // Timeline
   google.protobuf.Timestamp deadline = 13;
@@ -111,36 +157,94 @@ message Gig {
   google.protobuf.Timestamp updated_at = 15;
 
   // Status
-  GigStatus status = 16;
-  string assigned_to = 17;                   // Freelancer user ID
-  int32 application_count = 18;
+  GigStatus status = 16 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  string assigned_to = 17 [                  // Freelancer user ID
+    (buf.validate.field).string.max_len = 50
+  ];
+  int32 application_count = 18 [
+    (buf.validate.field).int32.gte = 0
+  ];
 
   // Completion
   google.protobuf.Timestamp completed_at = 19;
-  double rating = 20;
-  string review = 21;
+  double rating = 20 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
+  string review = 21 [
+    (buf.validate.field).string.max_len = 2000
+  ];
 }
 
 message Application {
-  string application_id = 1;
-  string gig_id = 2;
-  string freelancer_id = 3;
-  string cover_letter = 4;
+  string application_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string gig_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string freelancer_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string cover_letter = 4 [
+    (buf.validate.field).string.max_len = 5000
+  ];
   skillsphere.common.v1.Money proposed_amount = 5;
-  int32 estimated_hours = 6;
-  ApplicationStatus status = 7;
+  int32 estimated_hours = 6 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 1000
+    }
+  ];
+  ApplicationStatus status = 7 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp applied_at = 8;
   google.protobuf.Timestamp responded_at = 9;
 }
 
 message WorkSubmission {
-  string submission_id = 1;
-  string gig_id = 2;
-  string freelancer_id = 3;
-  string description = 4;
-  repeated skillsphere.common.v1.Attachment deliverables = 5;
+  string submission_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string gig_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string freelancer_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string description = 4 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment deliverables = 5 [
+    (buf.validate.field).repeated.max_items = 20
+  ];
   google.protobuf.Timestamp submitted_at = 6;
-  int32 revision_number = 7;
+  int32 revision_number = 7 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // ============================================================================
@@ -148,22 +252,64 @@ message WorkSubmission {
 // ============================================================================
 
 message CreateGigRequest {
-  string creator_id = 1;
-  string title = 2;
-  string description = 3;
-  repeated string skill_ids = 4;
-  GigType type = 5;
+  string creator_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated string skill_ids = 4 [
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 20
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  GigType type = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   skillsphere.common.v1.Money budget = 6;
   bool is_hourly = 7;
-  int32 estimated_hours = 8;
-  skillsphere.common.v1.ProficiencyLevel required_proficiency = 9;
-  repeated string requirements = 10;
+  int32 estimated_hours = 8 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 1000
+    }
+  ];
+  skillsphere.common.v1.ProficiencyLevel required_proficiency = 9 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated string requirements = 10 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
   google.protobuf.Timestamp deadline = 11;
 }
 
 message CreateGigResponse {
   Gig gig = 1;
-  string escrow_payment_id = 2;              // Payment held in escrow
+  string escrow_payment_id = 2 [             // Payment held in escrow
+    (buf.validate.field).string.max_len = 50
+  ];
 }
 
 // ============================================================================
@@ -171,7 +317,12 @@ message CreateGigResponse {
 // ============================================================================
 
 message GetGigRequest {
-  string gig_id = 1;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetGigResponse {
@@ -185,9 +336,21 @@ message GetGigResponse {
 // ============================================================================
 
 message UpdateGigRequest {
-  string gig_id = 1;
-  string title = 2;
-  string description = 3;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
   skillsphere.common.v1.Money budget = 4;
   google.protobuf.Timestamp deadline = 5;
 }
@@ -201,8 +364,18 @@ message UpdateGigResponse {
 // ============================================================================
 
 message DeleteGigRequest {
-  string gig_id = 1;
-  string creator_id = 2;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string creator_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message DeleteGigResponse {
@@ -215,19 +388,36 @@ message DeleteGigResponse {
 // ============================================================================
 
 message ListGigsRequest {
-  int32 page_size = 1;
-  string page_token = 2;
-  repeated skillsphere.common.v1.SkillCategory categories = 3;
-  GigType type = 4;
+  int32 page_size = 1 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  repeated skillsphere.common.v1.SkillCategory categories = 3 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  GigType type = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   skillsphere.common.v1.Money min_budget = 5;
   skillsphere.common.v1.Money max_budget = 6;
-  GigStatus status = 7;
+  GigStatus status = 7 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message ListGigsResponse {
   repeated Gig gigs = 1;
-  string next_page_token = 2;
-  int32 total_count = 3;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  int32 total_count = 3 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // ============================================================================
@@ -235,9 +425,21 @@ message ListGigsResponse {
 // ============================================================================
 
 message SearchGigsRequest {
-  string query = 1;
-  int32 limit = 2;
-  repeated skillsphere.common.v1.SkillCategory categories = 3;
+  string query = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 200
+    }
+  ];
+  int32 limit = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  repeated skillsphere.common.v1.SkillCategory categories = 3 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
 }
 
 message SearchGigsResponse {
@@ -249,11 +451,28 @@ message SearchGigsResponse {
 // ============================================================================
 
 message ApplyToGigRequest {
-  string gig_id = 1;
-  string freelancer_id = 2;
-  string cover_letter = 3;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string freelancer_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string cover_letter = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
   skillsphere.common.v1.Money proposed_amount = 4;
-  int32 estimated_hours = 5;
+  int32 estimated_hours = 5 [
+    (buf.validate.field).int32 = {
+      gte: 0
+      lte: 1000
+    }
+  ];
 }
 
 message ApplyToGigResponse {
@@ -265,8 +484,18 @@ message ApplyToGigResponse {
 // ============================================================================
 
 message AcceptApplicationRequest {
-  string application_id = 1;
-  string creator_id = 2;
+  string application_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string creator_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message AcceptApplicationResponse {
@@ -279,9 +508,21 @@ message AcceptApplicationResponse {
 // ============================================================================
 
 message RejectApplicationRequest {
-  string application_id = 1;
-  string creator_id = 2;
-  string reason = 3;
+  string application_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string creator_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message RejectApplicationResponse {
@@ -293,15 +534,31 @@ message RejectApplicationResponse {
 // ============================================================================
 
 message SubmitWorkRequest {
-  string gig_id = 1;
-  string freelancer_id = 2;
-  string description = 3;
-  repeated skillsphere.common.v1.Attachment deliverables = 4;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string freelancer_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment deliverables = 4 [
+    (buf.validate.field).repeated.max_items = 20
+  ];
 }
 
 message SubmitWorkResponse {
   WorkSubmission submission = 1;
-  string notification_sent = 2;
+  string notification_sent = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }
 
 // ============================================================================
@@ -309,10 +566,27 @@ message SubmitWorkResponse {
 // ============================================================================
 
 message ApproveWorkRequest {
-  string gig_id = 1;
-  string creator_id = 2;
-  int32 rating = 3;                          // 1-5 stars
-  string review = 4;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string creator_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 rating = 3 [                         // 1-5 stars
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string review = 4 [
+    (buf.validate.field).string.max_len = 2000
+  ];
 }
 
 message ApproveWorkResponse {
@@ -326,10 +600,30 @@ message ApproveWorkResponse {
 // ============================================================================
 
 message RequestRevisionRequest {
-  string gig_id = 1;
-  string creator_id = 2;
-  string feedback = 3;
-  repeated string revision_points = 4;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string creator_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string feedback = 3 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated string revision_points = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
 }
 
 message RequestRevisionResponse {
@@ -342,16 +636,42 @@ message RequestRevisionResponse {
 // ============================================================================
 
 message DisputeGigRequest {
-  string gig_id = 1;
-  string disputing_user_id = 2;
-  string reason = 3;
-  string description = 4;
-  repeated skillsphere.common.v1.Attachment evidence = 5;
+  string gig_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string disputing_user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 3 [
+    (buf.validate.field).string.max_len = 200
+  ];
+  string description = 4 [
+    (buf.validate.field).string.max_len = 2000
+  ];
+  repeated skillsphere.common.v1.Attachment evidence = 5 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
 }
 
 message DisputeGigResponse {
-  string dispute_id = 1;
-  string status = 2;                         // "pending", "under_review"
+  string dispute_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string status = 2 [                        // "pending", "under_review"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 32
+    }
+  ];
 }
 
 // ============================================================================
@@ -359,10 +679,17 @@ message DisputeGigResponse {
 // ============================================================================
 
 message GetUserGigsRequest {
-  string user_id = 1;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
   bool as_creator = 2;
   bool as_freelancer = 3;
-  GigStatus status_filter = 4;
+  GigStatus status_filter = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message GetUserGigsResponse {

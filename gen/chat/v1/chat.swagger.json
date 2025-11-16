@@ -1,0 +1,304 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "chat/v1/chat.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "ChatService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1Attachment": {
+      "type": "object",
+      "properties": {
+        "attachmentId": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/definitions/v1ContentType"
+        },
+        "fileSizeBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "File attachment (for reviews, workshops, etc.)"
+    },
+    "v1ContentType": {
+      "type": "string",
+      "enum": [
+        "CONTENT_TYPE_UNSPECIFIED",
+        "CONTENT_TYPE_CODE",
+        "CONTENT_TYPE_DESIGN",
+        "CONTENT_TYPE_VIDEO",
+        "CONTENT_TYPE_DOCUMENT",
+        "CONTENT_TYPE_AUDIO"
+      ],
+      "default": "CONTENT_TYPE_UNSPECIFIED",
+      "title": "Content type for reviews"
+    },
+    "v1Conversation": {
+      "type": "object",
+      "properties": {
+        "conversationId": {
+          "type": "string"
+        },
+        "participantIds": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "lastMessage": {
+          "$ref": "#/definitions/v1Message"
+        },
+        "unreadCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isArchived": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1DeleteMessageResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1GetMessagesResponse": {
+      "type": "object",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Message"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1ListConversationsResponse": {
+      "type": "object",
+      "properties": {
+        "conversations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Conversation"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1MarkAsReadResponse": {
+      "type": "object",
+      "properties": {
+        "markedCount": {
+          "type": "integer",
+          "format": "int32"
+        }
+      }
+    },
+    "v1Message": {
+      "type": "object",
+      "properties": {
+        "messageId": {
+          "type": "string"
+        },
+        "conversationId": {
+          "type": "string"
+        },
+        "senderId": {
+          "type": "string"
+        },
+        "recipientId": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/v1MessageType"
+        },
+        "content": {
+          "type": "string"
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Attachment"
+          }
+        },
+        "sentAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "readAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isRead": {
+          "type": "boolean"
+        },
+        "isDeleted": {
+          "type": "boolean"
+        },
+        "reactions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Reaction"
+          }
+        }
+      }
+    },
+    "v1MessageType": {
+      "type": "string",
+      "enum": [
+        "MESSAGE_TYPE_UNSPECIFIED",
+        "MESSAGE_TYPE_TEXT",
+        "MESSAGE_TYPE_IMAGE",
+        "MESSAGE_TYPE_FILE",
+        "MESSAGE_TYPE_SYSTEM"
+      ],
+      "default": "MESSAGE_TYPE_UNSPECIFIED",
+      "title": "- MESSAGE_TYPE_SYSTEM: System notifications"
+    },
+    "v1ReactToMessageResponse": {
+      "type": "object",
+      "properties": {
+        "reaction": {
+          "$ref": "#/definitions/v1Reaction"
+        }
+      }
+    },
+    "v1Reaction": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "emoji": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1ReportMessageResponse": {
+      "type": "object",
+      "properties": {
+        "reportId": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        }
+      }
+    },
+    "v1SendMessageResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "$ref": "#/definitions/v1Message"
+        },
+        "conversationId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1StreamMessagesResponse": {
+      "type": "object",
+      "properties": {
+        "message": {
+          "$ref": "#/definitions/v1Message"
+        },
+        "eventType": {
+          "type": "string"
+        },
+        "typing": {
+          "$ref": "#/definitions/v1TypingIndicator",
+          "title": "Optional"
+        }
+      }
+    },
+    "v1TypingIndicator": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "conversationId": {
+          "type": "string"
+        },
+        "isTyping": {
+          "type": "boolean"
+        }
+      }
+    }
+  }
+}

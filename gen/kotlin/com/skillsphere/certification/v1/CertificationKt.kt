@@ -30,7 +30,7 @@ public object CertificationKt {
     internal fun _build(): com.skillsphere.certification.v1.Certification = _builder.build()
 
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public var certificationId: kotlin.String
       @kotlin.jvm.JvmName("getCertificationId")
@@ -40,14 +40,14 @@ public object CertificationKt {
         _builder.certificationId = value
       }
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public fun clearCertificationId() {
       _builder.clearCertificationId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,14 +57,14 @@ public object CertificationKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string skill_id = 3 [json_name = "skillId"];`
+     * `string skill_id = 3 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -74,14 +74,14 @@ public object CertificationKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 3 [json_name = "skillId"];`
+     * `string skill_id = 3 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * `string skill_name = 4 [json_name = "skillName"];`
+     * `string skill_name = 4 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -91,14 +91,14 @@ public object CertificationKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 4 [json_name = "skillName"];`
+     * `string skill_name = 4 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
     }
 
     /**
-     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type"];`
+     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.certification.v1.CertificationType
       @kotlin.jvm.JvmName("getType")
@@ -115,14 +115,14 @@ public object CertificationKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type"];`
+     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * `.skillsphere.certification.v1.CertificationStatus status = 6 [json_name = "status"];`
+     * `.skillsphere.certification.v1.CertificationStatus status = 6 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.certification.v1.CertificationStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -139,7 +139,7 @@ public object CertificationKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.certification.v1.CertificationStatus status = 6 [json_name = "status"];`
+     * `.skillsphere.certification.v1.CertificationStatus status = 6 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()
@@ -150,7 +150,7 @@ public object CertificationKt {
      * Blockchain info
      * ```
      *
-     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 7 [json_name = "blockchain"];`
+     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 7 [json_name = "blockchain", (.buf.validate.field) = { ... }`
      */
     public var blockchain: com.skillsphere.certification.v1.BlockchainNetwork
       @kotlin.jvm.JvmName("getBlockchain")
@@ -171,14 +171,14 @@ public object CertificationKt {
      * Blockchain info
      * ```
      *
-     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 7 [json_name = "blockchain"];`
+     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 7 [json_name = "blockchain", (.buf.validate.field) = { ... }`
      */
     public fun clearBlockchain() {
       _builder.clearBlockchain()
     }
 
     /**
-     * `string contract_address = 8 [json_name = "contractAddress"];`
+     * `string contract_address = 8 [json_name = "contractAddress", (.buf.validate.field) = { ... }`
      */
     public var contractAddress: kotlin.String
       @kotlin.jvm.JvmName("getContractAddress")
@@ -188,18 +188,14 @@ public object CertificationKt {
         _builder.contractAddress = value
       }
     /**
-     * `string contract_address = 8 [json_name = "contractAddress"];`
+     * `string contract_address = 8 [json_name = "contractAddress", (.buf.validate.field) = { ... }`
      */
     public fun clearContractAddress() {
       _builder.clearContractAddress()
     }
 
     /**
-     * ```
-     * NFT token ID
-     * ```
-     *
-     * `string token_id = 9 [json_name = "tokenId"];`
+     * `string token_id = 9 [json_name = "tokenId", (.buf.validate.field) = { ... }`
      */
     public var tokenId: kotlin.String
       @kotlin.jvm.JvmName("getTokenId")
@@ -209,18 +205,14 @@ public object CertificationKt {
         _builder.tokenId = value
       }
     /**
-     * ```
-     * NFT token ID
-     * ```
-     *
-     * `string token_id = 9 [json_name = "tokenId"];`
+     * `string token_id = 9 [json_name = "tokenId", (.buf.validate.field) = { ... }`
      */
     public fun clearTokenId() {
       _builder.clearTokenId()
     }
 
     /**
-     * `string transaction_hash = 10 [json_name = "transactionHash"];`
+     * `string transaction_hash = 10 [json_name = "transactionHash", (.buf.validate.field) = { ... }`
      */
     public var transactionHash: kotlin.String
       @kotlin.jvm.JvmName("getTransactionHash")
@@ -230,7 +222,7 @@ public object CertificationKt {
         _builder.transactionHash = value
       }
     /**
-     * `string transaction_hash = 10 [json_name = "transactionHash"];`
+     * `string transaction_hash = 10 [json_name = "transactionHash", (.buf.validate.field) = { ... }`
      */
     public fun clearTransactionHash() {
       _builder.clearTransactionHash()
@@ -241,7 +233,7 @@ public object CertificationKt {
      * Certificate details
      * ```
      *
-     * `string issuer_id = 11 [json_name = "issuerId"];`
+     * `string issuer_id = 11 [json_name = "issuerId", (.buf.validate.field) = { ... }`
      */
     public var issuerId: kotlin.String
       @kotlin.jvm.JvmName("getIssuerId")
@@ -255,14 +247,14 @@ public object CertificationKt {
      * Certificate details
      * ```
      *
-     * `string issuer_id = 11 [json_name = "issuerId"];`
+     * `string issuer_id = 11 [json_name = "issuerId", (.buf.validate.field) = { ... }`
      */
     public fun clearIssuerId() {
       _builder.clearIssuerId()
     }
 
     /**
-     * `string issuer_name = 12 [json_name = "issuerName"];`
+     * `string issuer_name = 12 [json_name = "issuerName", (.buf.validate.field) = { ... }`
      */
     public var issuerName: kotlin.String
       @kotlin.jvm.JvmName("getIssuerName")
@@ -272,14 +264,14 @@ public object CertificationKt {
         _builder.issuerName = value
       }
     /**
-     * `string issuer_name = 12 [json_name = "issuerName"];`
+     * `string issuer_name = 12 [json_name = "issuerName", (.buf.validate.field) = { ... }`
      */
     public fun clearIssuerName() {
       _builder.clearIssuerName()
     }
 
     /**
-     * `string badge_image_url = 13 [json_name = "badgeImageUrl"];`
+     * `string badge_image_url = 13 [json_name = "badgeImageUrl", (.buf.validate.field) = { ... }`
      */
     public var badgeImageUrl: kotlin.String
       @kotlin.jvm.JvmName("getBadgeImageUrl")
@@ -289,18 +281,14 @@ public object CertificationKt {
         _builder.badgeImageUrl = value
       }
     /**
-     * `string badge_image_url = 13 [json_name = "badgeImageUrl"];`
+     * `string badge_image_url = 13 [json_name = "badgeImageUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearBadgeImageUrl() {
       _builder.clearBadgeImageUrl()
     }
 
     /**
-     * ```
-     * Shareable certificate page
-     * ```
-     *
-     * `string certificate_url = 14 [json_name = "certificateUrl"];`
+     * `string certificate_url = 14 [json_name = "certificateUrl", (.buf.validate.field) = { ... }`
      */
     public var certificateUrl: kotlin.String
       @kotlin.jvm.JvmName("getCertificateUrl")
@@ -310,11 +298,7 @@ public object CertificationKt {
         _builder.certificateUrl = value
       }
     /**
-     * ```
-     * Shareable certificate page
-     * ```
-     *
-     * `string certificate_url = 14 [json_name = "certificateUrl"];`
+     * `string certificate_url = 14 [json_name = "certificateUrl", (.buf.validate.field) = { ... }`
      */
     public fun clearCertificateUrl() {
       _builder.clearCertificateUrl()
@@ -327,11 +311,7 @@ public object CertificationKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class MetadataProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Additional data
-     * ```
-     *
-     * `map<string, string> metadata = 15 [json_name = "metadata"];`
+     * `map<string, string> metadata = 15 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
      public val metadata: com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, MetadataProxy>
       @kotlin.jvm.JvmSynthetic
@@ -340,11 +320,7 @@ public object CertificationKt {
         _builder.metadataMap
       )
     /**
-     * ```
-     * Additional data
-     * ```
-     *
-     * `map<string, string> metadata = 15 [json_name = "metadata"];`
+     * `map<string, string> metadata = 15 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmName("putMetadata")
     public fun com.google.protobuf.kotlin.DslMap<kotlin.String, kotlin.String, MetadataProxy>
@@ -352,11 +328,7 @@ public object CertificationKt {
          _builder.putMetadata(key, value)
        }
     /**
-     * ```
-     * Additional data
-     * ```
-     *
-     * `map<string, string> metadata = 15 [json_name = "metadata"];`
+     * `map<string, string> metadata = 15 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setMetadata")
@@ -366,11 +338,7 @@ public object CertificationKt {
          put(key, value)
        }
     /**
-     * ```
-     * Additional data
-     * ```
-     *
-     * `map<string, string> metadata = 15 [json_name = "metadata"];`
+     * `map<string, string> metadata = 15 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("removeMetadata")
@@ -379,11 +347,7 @@ public object CertificationKt {
          _builder.removeMetadata(key)
        }
     /**
-     * ```
-     * Additional data
-     * ```
-     *
-     * `map<string, string> metadata = 15 [json_name = "metadata"];`
+     * `map<string, string> metadata = 15 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("putAllMetadata")
@@ -392,11 +356,7 @@ public object CertificationKt {
          _builder.putAllMetadata(map)
        }
     /**
-     * ```
-     * Additional data
-     * ```
-     *
-     * `map<string, string> metadata = 15 [json_name = "metadata"];`
+     * `map<string, string> metadata = 15 [json_name = "metadata", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearMetadata")

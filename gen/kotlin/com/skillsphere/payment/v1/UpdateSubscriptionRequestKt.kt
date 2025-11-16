@@ -30,7 +30,7 @@ public object UpdateSubscriptionRequestKt {
     internal fun _build(): com.skillsphere.payment.v1.UpdateSubscriptionRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object UpdateSubscriptionRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `.skillsphere.common.v1.SubscriptionTier new_tier = 2 [json_name = "newTier"];`
+     * `.skillsphere.common.v1.SubscriptionTier new_tier = 2 [json_name = "newTier", (.buf.validate.field) = { ... }`
      */
     public var newTier: com.skillsphere.common.v1.SubscriptionTier
       @kotlin.jvm.JvmName("getNewTier")
@@ -64,7 +64,7 @@ public object UpdateSubscriptionRequestKt {
         _builder.newTierValue = value
       }
     /**
-     * `.skillsphere.common.v1.SubscriptionTier new_tier = 2 [json_name = "newTier"];`
+     * `.skillsphere.common.v1.SubscriptionTier new_tier = 2 [json_name = "newTier", (.buf.validate.field) = { ... }`
      */
     public fun clearNewTier() {
       _builder.clearNewTier()

@@ -4,6 +4,7 @@ package skillsphere.challenge.v1;
 
 import "google/protobuf/timestamp.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/challenge/v1;challengev1";
 
@@ -74,11 +75,33 @@ enum EntryStatus {
 // ============================================================================
 
 message Challenge {
-  string challenge_id = 1;
-  string title = 2;
-  string description = 3;
-  repeated string skill_ids = 4;
-  skillsphere.common.v1.ChallengeDifficulty difficulty = 5;
+  string challenge_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated string skill_ids = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  skillsphere.common.v1.ChallengeDifficulty difficulty = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 
   // Timeline
   google.protobuf.Timestamp start_date = 6;
@@ -86,64 +109,205 @@ message Challenge {
   google.protobuf.Timestamp voting_end_date = 8;
 
   // Rules
-  repeated string rules = 9;
-  repeated string judging_criteria = 10;
-  int32 max_participants = 11;
+  repeated string rules = 9 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
+  repeated string judging_criteria = 10 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
+  int32 max_participants = 11 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100000
+    }
+  ];
   bool requires_verification = 12;
 
   // Rewards
-  repeated Prize prizes = 13;
+  repeated Prize prizes = 13 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
   bool has_sponsor = 14;
-  string sponsor_name = 15;
-  string sponsor_logo_url = 16;
+  string sponsor_name = 15 [
+    (buf.validate.field).string.max_len = 100
+  ];
+  string sponsor_logo_url = 16 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 
   // Status
-  ChallengeStatus status = 17;
-  ChallengeType type = 18;
-  int32 participant_count = 19;
-  int32 entry_count = 20;
+  ChallengeStatus status = 17 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  ChallengeType type = 18 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  int32 participant_count = 19 [(buf.validate.field).int32.gte = 0];
+  int32 entry_count = 20 [(buf.validate.field).int32.gte = 0];
 
   // Metadata
-  string banner_image_url = 21;
-  repeated string tags = 22;
+  string banner_image_url = 21 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  repeated string tags = 22 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    }
+  ];
   google.protobuf.Timestamp created_at = 23;
 }
 
 message Prize {
-  int32 rank = 1;                            // 1st, 2nd, 3rd place
-  string title = 2;                          // e.g., "First Place"
-  string description = 3;
+  int32 rank = 1 [                           // 1st, 2nd, 3rd place
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string title = 2 [                         // e.g., "First Place"
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  string description = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
   skillsphere.common.v1.Money cash_prize = 4;
-  repeated string perks = 5;                 // e.g., "Premium subscription", "Certification"
+  repeated string perks = 5 [                // e.g., "Premium subscription", "Certification"
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 200
+      }
+    }
+  ];
 }
 
 message ChallengeEntry {
-  string entry_id = 1;
-  string challenge_id = 2;
-  string user_id = 3;
-  string title = 4;
-  string description = 5;
-  repeated skillsphere.common.v1.Attachment attachments = 6;
-  string demo_url = 7;                       // Live demo or video
-  string source_url = 8;                     // GitHub repo, etc.
+  string entry_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string challenge_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 5 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment attachments = 6 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  string demo_url = 7 [                      // Live demo or video
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  string source_url = 8 [                    // GitHub repo, etc.
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 
   // Voting
-  int32 vote_count = 9;
-  double average_rating = 10;
-  repeated string tags = 11;
+  int32 vote_count = 9 [(buf.validate.field).int32.gte = 0];
+  double average_rating = 10 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
+  repeated string tags = 11 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    }
+  ];
 
   // Status
-  EntryStatus status = 12;
+  EntryStatus status = 12 [(buf.validate.field).enum.defined_only = true];
   google.protobuf.Timestamp submitted_at = 13;
-  int32 rank = 14;                           // Final rank (if winner)
+  int32 rank = 14 [                          // Final rank (if winner)
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
 }
 
 message Vote {
-  string vote_id = 1;
-  string entry_id = 2;
-  string voter_id = 3;
-  int32 rating = 4;                          // 1-5 stars
-  string comment = 5;
+  string vote_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string entry_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string voter_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 rating = 4 [                         // 1-5 stars
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string comment = 5 [
+    (buf.validate.field).string.max_len = 1000
+  ];
   google.protobuf.Timestamp voted_at = 6;
 }
 
@@ -160,20 +324,57 @@ message LeaderboardEntry {
 // ============================================================================
 
 message CreateChallengeRequest {
-  string title = 1;
-  string description = 2;
-  repeated string skill_ids = 3;
-  skillsphere.common.v1.ChallengeDifficulty difficulty = 4;
+  string title = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 2 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated string skill_ids = 3 [
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 20
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  skillsphere.common.v1.ChallengeDifficulty difficulty = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp start_date = 5;
   google.protobuf.Timestamp end_date = 6;
-  repeated string rules = 7;
-  repeated Prize prizes = 8;
-  ChallengeType type = 9;
+  repeated string rules = 7 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 500
+      }
+    }
+  ];
+  repeated Prize prizes = 8 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  ChallengeType type = 9 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message CreateChallengeResponse {
   Challenge challenge = 1;
-  string shareable_url = 2;
+  string shareable_url = 2 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }
 
 // ============================================================================
@@ -181,7 +382,12 @@ message CreateChallengeResponse {
 // ============================================================================
 
 message GetChallengeRequest {
-  string challenge_id = 1;
+  string challenge_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetChallengeResponse {
@@ -195,16 +401,31 @@ message GetChallengeResponse {
 // ============================================================================
 
 message ListChallengesRequest {
-  int32 page_size = 1;
-  string page_token = 2;
-  ChallengeStatus status = 3;
-  repeated skillsphere.common.v1.SkillCategory categories = 4;
-  skillsphere.common.v1.ChallengeDifficulty difficulty = 5;
+  int32 page_size = 1 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  ChallengeStatus status = 3 [
+    (buf.validate.field).enum.defined_only = true
+  ];
+  repeated skillsphere.common.v1.SkillCategory categories = 4 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  skillsphere.common.v1.ChallengeDifficulty difficulty = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message ListChallengesResponse {
   repeated Challenge challenges = 1;
-  string next_page_token = 2;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 // ============================================================================
@@ -212,13 +433,25 @@ message ListChallengesResponse {
 // ============================================================================
 
 message JoinChallengeRequest {
-  string challenge_id = 1;
-  string user_id = 2;
+  string challenge_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message JoinChallengeResponse {
   bool success = 1;
-  string message = 2;
+  string message = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }
 
 // ============================================================================
@@ -226,19 +459,58 @@ message JoinChallengeResponse {
 // ============================================================================
 
 message SubmitEntryRequest {
-  string challenge_id = 1;
-  string user_id = 2;
-  string title = 3;
-  string description = 4;
-  repeated skillsphere.common.v1.Attachment attachments = 5;
-  string demo_url = 6;
-  string source_url = 7;
-  repeated string tags = 8;
+  string challenge_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string user_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string title = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 150
+    }
+  ];
+  string description = 4 [
+    (buf.validate.field).string.max_len = 5000
+  ];
+  repeated skillsphere.common.v1.Attachment attachments = 5 [
+    (buf.validate.field).repeated.max_items = 10
+  ];
+  string demo_url = 6 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  string source_url = 7 [
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
+  repeated string tags = 8 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 32
+      }
+    }
+  ];
 }
 
 message SubmitEntryResponse {
   ChallengeEntry entry = 1;
-  string confirmation_message = 2;
+  string confirmation_message = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }
 
 // ============================================================================
@@ -246,10 +518,27 @@ message SubmitEntryResponse {
 // ============================================================================
 
 message VoteOnEntryRequest {
-  string entry_id = 1;
-  string voter_id = 2;
-  int32 rating = 3;
-  string comment = 4;
+  string entry_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string voter_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 rating = 3 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 5
+    }
+  ];
+  string comment = 4 [
+    (buf.validate.field).string.max_len = 1000
+  ];
 }
 
 message VoteOnEntryResponse {
@@ -262,12 +551,24 @@ message VoteOnEntryResponse {
 // ============================================================================
 
 message GetLeaderboardRequest {
-  string challenge_id = 1;
-  int32 limit = 2;                           // Top N entries
+  string challenge_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 limit = 2 [                          // Top N entries
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
 }
 
 message GetLeaderboardResponse {
-  repeated LeaderboardEntry entries = 1;
+  repeated LeaderboardEntry entries = 1 [
+    (buf.validate.field).repeated.max_items = 100
+  ];
   google.protobuf.Timestamp last_updated = 2;
 }
 
@@ -276,8 +577,15 @@ message GetLeaderboardResponse {
 // ============================================================================
 
 message GetUserChallengesRequest {
-  string user_id = 1;
-  ChallengeStatus status = 2;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  ChallengeStatus status = 2 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message GetUserChallengesResponse {
@@ -287,7 +595,12 @@ message GetUserChallengesResponse {
 message UserChallenge {
   Challenge challenge = 1;
   ChallengeEntry user_entry = 2;
-  int32 user_rank = 3;
+  int32 user_rank = 3 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100000
+    }
+  ];
   bool has_won = 4;
 }
 
@@ -296,20 +609,52 @@ message UserChallenge {
 // ============================================================================
 
 message AwardWinnersRequest {
-  string challenge_id = 1;
-  repeated Winner winners = 2;
-  string admin_id = 3;
+  string challenge_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  repeated Winner winners = 2 [
+    (buf.validate.field).repeated.max_items = 100
+  ];
+  string admin_id = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message Winner {
-  string entry_id = 1;
-  int32 rank = 2;
-  string prize_description = 3;
+  string entry_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 rank = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string prize_description = 3 [
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message AwardWinnersResponse {
   bool success = 1;
-  repeated string winner_user_ids = 2;
+  repeated string winner_user_ids = 2 [
+    (buf.validate.field).repeated.max_items = 100,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 }
 
 // ============================================================================
@@ -317,9 +662,16 @@ message AwardWinnersResponse {
 // ============================================================================
 
 message GetTrendingChallengesRequest {
-  int32 limit = 1;
+  int32 limit = 1 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 50
+    }
+  ];
 }
 
 message GetTrendingChallengesResponse {
-  repeated Challenge challenges = 1;
+  repeated Challenge challenges = 1 [
+    (buf.validate.field).repeated.max_items = 50
+  ];
 }

@@ -30,7 +30,7 @@ public object GetMentorAdviceResponseKt {
     internal fun _build(): com.skillsphere.ai.v1.GetMentorAdviceResponse = _builder.build()
 
     /**
-     * `string advice = 1 [json_name = "advice"];`
+     * `string advice = 1 [json_name = "advice", (.buf.validate.field) = { ... }`
      */
     public var advice: kotlin.String
       @kotlin.jvm.JvmName("getAdvice")
@@ -40,7 +40,7 @@ public object GetMentorAdviceResponseKt {
         _builder.advice = value
       }
     /**
-     * `string advice = 1 [json_name = "advice"];`
+     * `string advice = 1 [json_name = "advice", (.buf.validate.field) = { ... }`
      */
     public fun clearAdvice() {
       _builder.clearAdvice()
@@ -53,7 +53,7 @@ public object GetMentorAdviceResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class KeyPointsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string key_points = 2 [json_name = "keyPoints"];`
+     * `repeated string key_points = 2 [json_name = "keyPoints", (.buf.validate.field) = { ... }`
      * @return A list containing the keyPoints.
      */
     public val keyPoints: com.google.protobuf.kotlin.DslList<kotlin.String, KeyPointsProxy>
@@ -62,7 +62,7 @@ public object GetMentorAdviceResponseKt {
         _builder.keyPointsList
       )
     /**
-     * `repeated string key_points = 2 [json_name = "keyPoints"];`
+     * `repeated string key_points = 2 [json_name = "keyPoints", (.buf.validate.field) = { ... }`
      * @param value The keyPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -71,7 +71,7 @@ public object GetMentorAdviceResponseKt {
       _builder.addKeyPoints(value)
     }
     /**
-     * `repeated string key_points = 2 [json_name = "keyPoints"];`
+     * `repeated string key_points = 2 [json_name = "keyPoints", (.buf.validate.field) = { ... }`
      * @param value The keyPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -81,7 +81,7 @@ public object GetMentorAdviceResponseKt {
       add(value)
     }
     /**
-     * `repeated string key_points = 2 [json_name = "keyPoints"];`
+     * `repeated string key_points = 2 [json_name = "keyPoints", (.buf.validate.field) = { ... }`
      * @param values The keyPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -90,7 +90,7 @@ public object GetMentorAdviceResponseKt {
       _builder.addAllKeyPoints(values)
     }
     /**
-     * `repeated string key_points = 2 [json_name = "keyPoints"];`
+     * `repeated string key_points = 2 [json_name = "keyPoints", (.buf.validate.field) = { ... }`
      * @param values The keyPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -100,7 +100,7 @@ public object GetMentorAdviceResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string key_points = 2 [json_name = "keyPoints"];`
+     * `repeated string key_points = 2 [json_name = "keyPoints", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The keyPoints to set.
      */
@@ -109,7 +109,7 @@ public object GetMentorAdviceResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, KeyPointsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setKeyPoints(index, value)
     }/**
-     * `repeated string key_points = 2 [json_name = "keyPoints"];`
+     * `repeated string key_points = 2 [json_name = "keyPoints", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setKeyPoints")
@@ -123,11 +123,7 @@ public object GetMentorAdviceResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class DoListProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * What to do
-     * ```
-     *
-     * `repeated string do_list = 3 [json_name = "doList"];`
+     * `repeated string do_list = 3 [json_name = "doList", (.buf.validate.field) = { ... }`
      * @return A list containing the doList.
      */
     public val doList: com.google.protobuf.kotlin.DslList<kotlin.String, DoListProxy>
@@ -136,11 +132,7 @@ public object GetMentorAdviceResponseKt {
         _builder.doListList
       )
     /**
-     * ```
-     * What to do
-     * ```
-     *
-     * `repeated string do_list = 3 [json_name = "doList"];`
+     * `repeated string do_list = 3 [json_name = "doList", (.buf.validate.field) = { ... }`
      * @param value The doList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -149,11 +141,7 @@ public object GetMentorAdviceResponseKt {
       _builder.addDoList(value)
     }
     /**
-     * ```
-     * What to do
-     * ```
-     *
-     * `repeated string do_list = 3 [json_name = "doList"];`
+     * `repeated string do_list = 3 [json_name = "doList", (.buf.validate.field) = { ... }`
      * @param value The doList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -163,11 +151,7 @@ public object GetMentorAdviceResponseKt {
       add(value)
     }
     /**
-     * ```
-     * What to do
-     * ```
-     *
-     * `repeated string do_list = 3 [json_name = "doList"];`
+     * `repeated string do_list = 3 [json_name = "doList", (.buf.validate.field) = { ... }`
      * @param values The doList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -176,11 +160,7 @@ public object GetMentorAdviceResponseKt {
       _builder.addAllDoList(values)
     }
     /**
-     * ```
-     * What to do
-     * ```
-     *
-     * `repeated string do_list = 3 [json_name = "doList"];`
+     * `repeated string do_list = 3 [json_name = "doList", (.buf.validate.field) = { ... }`
      * @param values The doList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -190,11 +170,7 @@ public object GetMentorAdviceResponseKt {
       addAll(values)
     }
     /**
-     * ```
-     * What to do
-     * ```
-     *
-     * `repeated string do_list = 3 [json_name = "doList"];`
+     * `repeated string do_list = 3 [json_name = "doList", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The doList to set.
      */
@@ -203,11 +179,7 @@ public object GetMentorAdviceResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DoListProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setDoList(index, value)
     }/**
-     * ```
-     * What to do
-     * ```
-     *
-     * `repeated string do_list = 3 [json_name = "doList"];`
+     * `repeated string do_list = 3 [json_name = "doList", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setDoList")
@@ -221,11 +193,7 @@ public object GetMentorAdviceResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class DontListProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * What to avoid
-     * ```
-     *
-     * `repeated string dont_list = 4 [json_name = "dontList"];`
+     * `repeated string dont_list = 4 [json_name = "dontList", (.buf.validate.field) = { ... }`
      * @return A list containing the dontList.
      */
     public val dontList: com.google.protobuf.kotlin.DslList<kotlin.String, DontListProxy>
@@ -234,11 +202,7 @@ public object GetMentorAdviceResponseKt {
         _builder.dontListList
       )
     /**
-     * ```
-     * What to avoid
-     * ```
-     *
-     * `repeated string dont_list = 4 [json_name = "dontList"];`
+     * `repeated string dont_list = 4 [json_name = "dontList", (.buf.validate.field) = { ... }`
      * @param value The dontList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -247,11 +211,7 @@ public object GetMentorAdviceResponseKt {
       _builder.addDontList(value)
     }
     /**
-     * ```
-     * What to avoid
-     * ```
-     *
-     * `repeated string dont_list = 4 [json_name = "dontList"];`
+     * `repeated string dont_list = 4 [json_name = "dontList", (.buf.validate.field) = { ... }`
      * @param value The dontList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -261,11 +221,7 @@ public object GetMentorAdviceResponseKt {
       add(value)
     }
     /**
-     * ```
-     * What to avoid
-     * ```
-     *
-     * `repeated string dont_list = 4 [json_name = "dontList"];`
+     * `repeated string dont_list = 4 [json_name = "dontList", (.buf.validate.field) = { ... }`
      * @param values The dontList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -274,11 +230,7 @@ public object GetMentorAdviceResponseKt {
       _builder.addAllDontList(values)
     }
     /**
-     * ```
-     * What to avoid
-     * ```
-     *
-     * `repeated string dont_list = 4 [json_name = "dontList"];`
+     * `repeated string dont_list = 4 [json_name = "dontList", (.buf.validate.field) = { ... }`
      * @param values The dontList to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -288,11 +240,7 @@ public object GetMentorAdviceResponseKt {
       addAll(values)
     }
     /**
-     * ```
-     * What to avoid
-     * ```
-     *
-     * `repeated string dont_list = 4 [json_name = "dontList"];`
+     * `repeated string dont_list = 4 [json_name = "dontList", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The dontList to set.
      */
@@ -301,11 +249,7 @@ public object GetMentorAdviceResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, DontListProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setDontList(index, value)
     }/**
-     * ```
-     * What to avoid
-     * ```
-     *
-     * `repeated string dont_list = 4 [json_name = "dontList"];`
+     * `repeated string dont_list = 4 [json_name = "dontList", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setDontList")

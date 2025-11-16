@@ -30,7 +30,7 @@ public object RefundPaymentResponseKt {
     internal fun _build(): com.skillsphere.payment.v1.RefundPaymentResponse = _builder.build()
 
     /**
-     * `string refund_id = 1 [json_name = "refundId"];`
+     * `string refund_id = 1 [json_name = "refundId", (.buf.validate.field) = { ... }`
      */
     public var refundId: kotlin.String
       @kotlin.jvm.JvmName("getRefundId")
@@ -40,7 +40,7 @@ public object RefundPaymentResponseKt {
         _builder.refundId = value
       }
     /**
-     * `string refund_id = 1 [json_name = "refundId"];`
+     * `string refund_id = 1 [json_name = "refundId", (.buf.validate.field) = { ... }`
      */
     public fun clearRefundId() {
       _builder.clearRefundId()
@@ -74,7 +74,7 @@ public object RefundPaymentResponseKt {
       get() = _builder.refundedAmountOrNull
 
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public var status: com.skillsphere.common.v1.PaymentStatus
       @kotlin.jvm.JvmName("getStatus")
@@ -91,7 +91,7 @@ public object RefundPaymentResponseKt {
         _builder.statusValue = value
       }
     /**
-     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status"];`
+     * `.skillsphere.common.v1.PaymentStatus status = 3 [json_name = "status", (.buf.validate.field) = { ... }`
      */
     public fun clearStatus() {
       _builder.clearStatus()

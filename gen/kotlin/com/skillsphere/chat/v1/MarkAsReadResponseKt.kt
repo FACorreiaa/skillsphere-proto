@@ -30,7 +30,7 @@ public object MarkAsReadResponseKt {
     internal fun _build(): com.skillsphere.chat.v1.MarkAsReadResponse = _builder.build()
 
     /**
-     * `int32 marked_count = 1 [json_name = "markedCount"];`
+     * `int32 marked_count = 1 [json_name = "markedCount", (.buf.validate.field) = { ... }`
      */
     public var markedCount: kotlin.Int
       @kotlin.jvm.JvmName("getMarkedCount")
@@ -40,7 +40,7 @@ public object MarkAsReadResponseKt {
         _builder.markedCount = value
       }
     /**
-     * `int32 marked_count = 1 [json_name = "markedCount"];`
+     * `int32 marked_count = 1 [json_name = "markedCount", (.buf.validate.field) = { ... }`
      */
     public fun clearMarkedCount() {
       _builder.clearMarkedCount()

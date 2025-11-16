@@ -30,7 +30,7 @@ public object ReviewFlaggedContentRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.ReviewFlaggedContentRequest = _builder.build()
 
     /**
-     * `string flag_id = 1 [json_name = "flagId"];`
+     * `string flag_id = 1 [json_name = "flagId", (.buf.validate.field) = { ... }`
      */
     public var flagId: kotlin.String
       @kotlin.jvm.JvmName("getFlagId")
@@ -40,14 +40,14 @@ public object ReviewFlaggedContentRequestKt {
         _builder.flagId = value
       }
     /**
-     * `string flag_id = 1 [json_name = "flagId"];`
+     * `string flag_id = 1 [json_name = "flagId", (.buf.validate.field) = { ... }`
      */
     public fun clearFlagId() {
       _builder.clearFlagId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,7 +57,7 @@ public object ReviewFlaggedContentRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()

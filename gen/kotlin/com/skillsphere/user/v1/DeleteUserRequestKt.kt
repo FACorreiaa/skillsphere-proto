@@ -30,7 +30,7 @@ public object DeleteUserRequestKt {
     internal fun _build(): com.skillsphere.user.v1.DeleteUserRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,18 +40,14 @@ public object DeleteUserRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * Optional reason for deletion
-     * ```
-     *
-     * `string reason = 2 [json_name = "reason"];`
+     * `string reason = 2 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -61,11 +57,7 @@ public object DeleteUserRequestKt {
         _builder.reason = value
       }
     /**
-     * ```
-     * Optional reason for deletion
-     * ```
-     *
-     * `string reason = 2 [json_name = "reason"];`
+     * `string reason = 2 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()

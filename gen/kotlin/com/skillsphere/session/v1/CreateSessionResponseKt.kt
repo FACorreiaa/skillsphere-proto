@@ -57,11 +57,7 @@ public object CreateSessionResponseKt {
       get() = _builder.sessionOrNull
 
     /**
-     * ```
-     * Pre-formatted message to send partner
-     * ```
-     *
-     * `string invitation_message = 2 [json_name = "invitationMessage"];`
+     * `string invitation_message = 2 [json_name = "invitationMessage", (.buf.validate.field) = { ... }`
      */
     public var invitationMessage: kotlin.String
       @kotlin.jvm.JvmName("getInvitationMessage")
@@ -71,11 +67,7 @@ public object CreateSessionResponseKt {
         _builder.invitationMessage = value
       }
     /**
-     * ```
-     * Pre-formatted message to send partner
-     * ```
-     *
-     * `string invitation_message = 2 [json_name = "invitationMessage"];`
+     * `string invitation_message = 2 [json_name = "invitationMessage", (.buf.validate.field) = { ... }`
      */
     public fun clearInvitationMessage() {
       _builder.clearInvitationMessage()

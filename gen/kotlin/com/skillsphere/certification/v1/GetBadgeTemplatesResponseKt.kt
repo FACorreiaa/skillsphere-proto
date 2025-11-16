@@ -36,7 +36,7 @@ public object GetBadgeTemplatesResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TemplatesProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates"];`
+     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates", (.buf.validate.field) = { ... }`
      */
      public val templates: com.google.protobuf.kotlin.DslList<com.skillsphere.certification.v1.BadgeTemplate, TemplatesProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetBadgeTemplatesResponseKt {
         _builder.templatesList
       )
     /**
-     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates"];`
+     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates", (.buf.validate.field) = { ... }`
      * @param value The templates to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetBadgeTemplatesResponseKt {
       _builder.addTemplates(value)
     }
     /**
-     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates"];`
+     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates", (.buf.validate.field) = { ... }`
      * @param value The templates to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetBadgeTemplatesResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates"];`
+     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates", (.buf.validate.field) = { ... }`
      * @param values The templates to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetBadgeTemplatesResponseKt {
       _builder.addAllTemplates(values)
     }
     /**
-     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates"];`
+     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates", (.buf.validate.field) = { ... }`
      * @param values The templates to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetBadgeTemplatesResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates"];`
+     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The templates to set.
      */
@@ -92,7 +92,7 @@ public object GetBadgeTemplatesResponseKt {
       _builder.setTemplates(index, value)
     }
     /**
-     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates"];`
+     * `repeated .skillsphere.certification.v1.BadgeTemplate templates = 1 [json_name = "templates", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearTemplates")

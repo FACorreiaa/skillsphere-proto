@@ -30,7 +30,7 @@ public object VerifyCertificationRequestKt {
     internal fun _build(): com.skillsphere.certification.v1.VerifyCertificationRequest = _builder.build()
 
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public var certificationId: kotlin.String
       @kotlin.jvm.JvmName("getCertificationId")
@@ -40,18 +40,14 @@ public object VerifyCertificationRequestKt {
         _builder.certificationId = value
       }
     /**
-     * `string certification_id = 1 [json_name = "certificationId"];`
+     * `string certification_id = 1 [json_name = "certificationId", (.buf.validate.field) = { ... }`
      */
     public fun clearCertificationId() {
       _builder.clearCertificationId()
     }
 
     /**
-     * ```
-     * Optional for QR code scans
-     * ```
-     *
-     * `string verification_code = 2 [json_name = "verificationCode"];`
+     * `string verification_code = 2 [json_name = "verificationCode", (.buf.validate.field) = { ... }`
      */
     public var verificationCode: kotlin.String
       @kotlin.jvm.JvmName("getVerificationCode")
@@ -61,11 +57,7 @@ public object VerifyCertificationRequestKt {
         _builder.verificationCode = value
       }
     /**
-     * ```
-     * Optional for QR code scans
-     * ```
-     *
-     * `string verification_code = 2 [json_name = "verificationCode"];`
+     * `string verification_code = 2 [json_name = "verificationCode", (.buf.validate.field) = { ... }`
      */
     public fun clearVerificationCode() {
       _builder.clearVerificationCode()

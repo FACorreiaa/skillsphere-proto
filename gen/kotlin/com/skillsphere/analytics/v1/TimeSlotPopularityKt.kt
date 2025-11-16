@@ -30,11 +30,7 @@ public object TimeSlotPopularityKt {
     internal fun _build(): com.skillsphere.analytics.v1.TimeSlotPopularity = _builder.build()
 
     /**
-     * ```
-     * 0-23
-     * ```
-     *
-     * `int32 hour = 1 [json_name = "hour"];`
+     * `int32 hour = 1 [json_name = "hour", (.buf.validate.field) = { ... }`
      */
     public var hour: kotlin.Int
       @kotlin.jvm.JvmName("getHour")
@@ -44,18 +40,14 @@ public object TimeSlotPopularityKt {
         _builder.hour = value
       }
     /**
-     * ```
-     * 0-23
-     * ```
-     *
-     * `int32 hour = 1 [json_name = "hour"];`
+     * `int32 hour = 1 [json_name = "hour", (.buf.validate.field) = { ... }`
      */
     public fun clearHour() {
       _builder.clearHour()
     }
 
     /**
-     * `int32 session_count = 2 [json_name = "sessionCount"];`
+     * `int32 session_count = 2 [json_name = "sessionCount", (.buf.validate.field) = { ... }`
      */
     public var sessionCount: kotlin.Int
       @kotlin.jvm.JvmName("getSessionCount")
@@ -65,7 +57,7 @@ public object TimeSlotPopularityKt {
         _builder.sessionCount = value
       }
     /**
-     * `int32 session_count = 2 [json_name = "sessionCount"];`
+     * `int32 session_count = 2 [json_name = "sessionCount", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionCount() {
       _builder.clearSessionCount()

@@ -84,11 +84,7 @@ public object GetUserEngagementRequestKt {
       get() = _builder.endDateOrNull
 
     /**
-     * ```
-     * Optional for specific user
-     * ```
-     *
-     * `string user_id = 3 [json_name = "userId"];`
+     * `string user_id = 3 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -98,11 +94,7 @@ public object GetUserEngagementRequestKt {
         _builder.userId = value
       }
     /**
-     * ```
-     * Optional for specific user
-     * ```
-     *
-     * `string user_id = 3 [json_name = "userId"];`
+     * `string user_id = 3 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()

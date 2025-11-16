@@ -30,7 +30,7 @@ public object VerifyUserRequestKt {
     internal fun _build(): com.skillsphere.user.v1.VerifyUserRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,18 +40,14 @@ public object VerifyUserRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * e.g., "email", "phone", "document"
-     * ```
-     *
-     * `string verification_method = 2 [json_name = "verificationMethod"];`
+     * `string verification_method = 2 [json_name = "verificationMethod", (.buf.validate.field) = { ... }`
      */
     public var verificationMethod: kotlin.String
       @kotlin.jvm.JvmName("getVerificationMethod")
@@ -61,18 +57,14 @@ public object VerifyUserRequestKt {
         _builder.verificationMethod = value
       }
     /**
-     * ```
-     * e.g., "email", "phone", "document"
-     * ```
-     *
-     * `string verification_method = 2 [json_name = "verificationMethod"];`
+     * `string verification_method = 2 [json_name = "verificationMethod", (.buf.validate.field) = { ... }`
      */
     public fun clearVerificationMethod() {
       _builder.clearVerificationMethod()
     }
 
     /**
-     * `string verification_token = 3 [json_name = "verificationToken"];`
+     * `string verification_token = 3 [json_name = "verificationToken", (.buf.validate.field) = { ... }`
      */
     public var verificationToken: kotlin.String
       @kotlin.jvm.JvmName("getVerificationToken")
@@ -82,7 +74,7 @@ public object VerifyUserRequestKt {
         _builder.verificationToken = value
       }
     /**
-     * `string verification_token = 3 [json_name = "verificationToken"];`
+     * `string verification_token = 3 [json_name = "verificationToken", (.buf.validate.field) = { ... }`
      */
     public fun clearVerificationToken() {
       _builder.clearVerificationToken()

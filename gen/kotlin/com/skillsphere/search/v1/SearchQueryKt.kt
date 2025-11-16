@@ -40,7 +40,7 @@ public object SearchQueryKt {
      * User filters
      * ```
      *
-     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered"];`
+     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered", (.buf.validate.field) = { ... }`
      * @return A list containing the skillIdsOffered.
      */
     public val skillIdsOffered: com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsOfferedProxy>
@@ -53,7 +53,7 @@ public object SearchQueryKt {
      * User filters
      * ```
      *
-     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered"];`
+     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered", (.buf.validate.field) = { ... }`
      * @param value The skillIdsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -66,7 +66,7 @@ public object SearchQueryKt {
      * User filters
      * ```
      *
-     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered"];`
+     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered", (.buf.validate.field) = { ... }`
      * @param value The skillIdsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -80,7 +80,7 @@ public object SearchQueryKt {
      * User filters
      * ```
      *
-     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered"];`
+     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered", (.buf.validate.field) = { ... }`
      * @param values The skillIdsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -93,7 +93,7 @@ public object SearchQueryKt {
      * User filters
      * ```
      *
-     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered"];`
+     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered", (.buf.validate.field) = { ... }`
      * @param values The skillIdsOffered to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -107,7 +107,7 @@ public object SearchQueryKt {
      * User filters
      * ```
      *
-     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered"];`
+     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillIdsOffered to set.
      */
@@ -120,7 +120,7 @@ public object SearchQueryKt {
      * User filters
      * ```
      *
-     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered"];`
+     * `repeated string skill_ids_offered = 1 [json_name = "skillIdsOffered", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillIdsOffered")
@@ -134,7 +134,7 @@ public object SearchQueryKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SkillIdsWantedProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted"];`
+     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted", (.buf.validate.field) = { ... }`
      * @return A list containing the skillIdsWanted.
      */
     public val skillIdsWanted: com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsWantedProxy>
@@ -143,7 +143,7 @@ public object SearchQueryKt {
         _builder.skillIdsWantedList
       )
     /**
-     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted"];`
+     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted", (.buf.validate.field) = { ... }`
      * @param value The skillIdsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -152,7 +152,7 @@ public object SearchQueryKt {
       _builder.addSkillIdsWanted(value)
     }
     /**
-     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted"];`
+     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted", (.buf.validate.field) = { ... }`
      * @param value The skillIdsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -162,7 +162,7 @@ public object SearchQueryKt {
       add(value)
     }
     /**
-     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted"];`
+     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted", (.buf.validate.field) = { ... }`
      * @param values The skillIdsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -171,7 +171,7 @@ public object SearchQueryKt {
       _builder.addAllSkillIdsWanted(values)
     }
     /**
-     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted"];`
+     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted", (.buf.validate.field) = { ... }`
      * @param values The skillIdsWanted to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -181,7 +181,7 @@ public object SearchQueryKt {
       addAll(values)
     }
     /**
-     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted"];`
+     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The skillIdsWanted to set.
      */
@@ -190,7 +190,7 @@ public object SearchQueryKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SkillIdsWantedProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSkillIdsWanted(index, value)
     }/**
-     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted"];`
+     * `repeated string skill_ids_wanted = 2 [json_name = "skillIdsWanted", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSkillIdsWanted")
@@ -198,7 +198,7 @@ public object SearchQueryKt {
       _builder.clearSkillIdsWanted()
     }
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 3 [json_name = "minProficiency"];`
+     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 3 [json_name = "minProficiency", (.buf.validate.field) = { ... }`
      */
     public var minProficiency: com.skillsphere.common.v1.ProficiencyLevel
       @kotlin.jvm.JvmName("getMinProficiency")
@@ -215,7 +215,7 @@ public object SearchQueryKt {
         _builder.minProficiencyValue = value
       }
     /**
-     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 3 [json_name = "minProficiency"];`
+     * `.skillsphere.common.v1.ProficiencyLevel min_proficiency = 3 [json_name = "minProficiency", (.buf.validate.field) = { ... }`
      */
     public fun clearMinProficiency() {
       _builder.clearMinProficiency()
@@ -261,7 +261,7 @@ public object SearchQueryKt {
       get() = _builder.locationOrNull
 
     /**
-     * `int32 max_distance_km = 5 [json_name = "maxDistanceKm"];`
+     * `int32 max_distance_km = 5 [json_name = "maxDistanceKm", (.buf.validate.field) = { ... }`
      */
     public var maxDistanceKm: kotlin.Int
       @kotlin.jvm.JvmName("getMaxDistanceKm")
@@ -271,7 +271,7 @@ public object SearchQueryKt {
         _builder.maxDistanceKm = value
       }
     /**
-     * `int32 max_distance_km = 5 [json_name = "maxDistanceKm"];`
+     * `int32 max_distance_km = 5 [json_name = "maxDistanceKm", (.buf.validate.field) = { ... }`
      */
     public fun clearMaxDistanceKm() {
       _builder.clearMaxDistanceKm()
@@ -288,7 +288,7 @@ public object SearchQueryKt {
      * Availability filters
      * ```
      *
-     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays"];`
+     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays", (.buf.validate.field) = { ... }`
      */
      public val availableDays: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.DayOfWeek, AvailableDaysProxy>
       @kotlin.jvm.JvmSynthetic
@@ -300,7 +300,7 @@ public object SearchQueryKt {
      * Availability filters
      * ```
      *
-     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays"];`
+     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays", (.buf.validate.field) = { ... }`
      * @param value The availableDays to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -312,7 +312,7 @@ public object SearchQueryKt {
      * Availability filters
      * ```
      *
-     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays"];`
+     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays", (.buf.validate.field) = { ... }`
      * @param value The availableDays to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -325,7 +325,7 @@ public object SearchQueryKt {
      * Availability filters
      * ```
      *
-     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays"];`
+     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays", (.buf.validate.field) = { ... }`
      * @param values The availableDays to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -337,7 +337,7 @@ public object SearchQueryKt {
      * Availability filters
      * ```
      *
-     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays"];`
+     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays", (.buf.validate.field) = { ... }`
      * @param values The availableDays to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -350,7 +350,7 @@ public object SearchQueryKt {
      * Availability filters
      * ```
      *
-     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays"];`
+     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The availableDays to set.
      */
@@ -363,7 +363,7 @@ public object SearchQueryKt {
      * Availability filters
      * ```
      *
-     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays"];`
+     * `repeated .skillsphere.common.v1.DayOfWeek available_days = 6 [json_name = "availableDays", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearAvailableDays")
@@ -371,7 +371,7 @@ public object SearchQueryKt {
       _builder.clearAvailableDays()
     }
     /**
-     * `string timezone = 7 [json_name = "timezone"];`
+     * `string timezone = 7 [json_name = "timezone", (.buf.validate.field) = { ... }`
      */
     public var timezone: kotlin.String
       @kotlin.jvm.JvmName("getTimezone")
@@ -381,7 +381,7 @@ public object SearchQueryKt {
         _builder.timezone = value
       }
     /**
-     * `string timezone = 7 [json_name = "timezone"];`
+     * `string timezone = 7 [json_name = "timezone", (.buf.validate.field) = { ... }`
      */
     public fun clearTimezone() {
       _builder.clearTimezone()
@@ -392,7 +392,7 @@ public object SearchQueryKt {
      * Rating filters
      * ```
      *
-     * `double min_rating = 8 [json_name = "minRating"];`
+     * `double min_rating = 8 [json_name = "minRating", (.buf.validate.field) = { ... }`
      */
     public var minRating: kotlin.Double
       @kotlin.jvm.JvmName("getMinRating")
@@ -406,14 +406,14 @@ public object SearchQueryKt {
      * Rating filters
      * ```
      *
-     * `double min_rating = 8 [json_name = "minRating"];`
+     * `double min_rating = 8 [json_name = "minRating", (.buf.validate.field) = { ... }`
      */
     public fun clearMinRating() {
       _builder.clearMinRating()
     }
 
     /**
-     * `int32 min_sessions = 9 [json_name = "minSessions"];`
+     * `int32 min_sessions = 9 [json_name = "minSessions", (.buf.validate.field) = { ... }`
      */
     public var minSessions: kotlin.Int
       @kotlin.jvm.JvmName("getMinSessions")
@@ -423,7 +423,7 @@ public object SearchQueryKt {
         _builder.minSessions = value
       }
     /**
-     * `int32 min_sessions = 9 [json_name = "minSessions"];`
+     * `int32 min_sessions = 9 [json_name = "minSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearMinSessions() {
       _builder.clearMinSessions()
@@ -434,7 +434,7 @@ public object SearchQueryKt {
      * Subscription filters
      * ```
      *
-     * `.skillsphere.common.v1.SubscriptionTier min_tier = 10 [json_name = "minTier"];`
+     * `.skillsphere.common.v1.SubscriptionTier min_tier = 10 [json_name = "minTier", (.buf.validate.field) = { ... }`
      */
     public var minTier: com.skillsphere.common.v1.SubscriptionTier
       @kotlin.jvm.JvmName("getMinTier")
@@ -455,7 +455,7 @@ public object SearchQueryKt {
      * Subscription filters
      * ```
      *
-     * `.skillsphere.common.v1.SubscriptionTier min_tier = 10 [json_name = "minTier"];`
+     * `.skillsphere.common.v1.SubscriptionTier min_tier = 10 [json_name = "minTier", (.buf.validate.field) = { ... }`
      */
     public fun clearMinTier() {
       _builder.clearMinTier()

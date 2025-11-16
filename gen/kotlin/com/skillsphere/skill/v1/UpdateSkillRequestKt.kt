@@ -30,7 +30,7 @@ public object UpdateSkillRequestKt {
     internal fun _build(): com.skillsphere.skill.v1.UpdateSkillRequest = _builder.build()
 
     /**
-     * `.skillsphere.common.v1.Skill skill = 1 [json_name = "skill"];`
+     * `.skillsphere.common.v1.Skill skill = 1 [json_name = "skill", (.buf.validate.field) = { ... }`
      */
     public var skill: com.skillsphere.common.v1.Skill
       @kotlin.jvm.JvmName("getSkill")
@@ -40,13 +40,13 @@ public object UpdateSkillRequestKt {
         _builder.skill = value
       }
     /**
-     * `.skillsphere.common.v1.Skill skill = 1 [json_name = "skill"];`
+     * `.skillsphere.common.v1.Skill skill = 1 [json_name = "skill", (.buf.validate.field) = { ... }`
      */
     public fun clearSkill() {
       _builder.clearSkill()
     }
     /**
-     * `.skillsphere.common.v1.Skill skill = 1 [json_name = "skill"];`
+     * `.skillsphere.common.v1.Skill skill = 1 [json_name = "skill", (.buf.validate.field) = { ... }`
      * @return Whether the skill field is set.
      */
     public fun hasSkill(): kotlin.Boolean {

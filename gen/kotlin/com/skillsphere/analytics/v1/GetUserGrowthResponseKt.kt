@@ -36,7 +36,7 @@ public object GetUserGrowthResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class GrowthDataProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData", (.buf.validate.field) = { ... }`
      */
      public val growthData: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.DataPoint, GrowthDataProxy>
       @kotlin.jvm.JvmSynthetic
@@ -44,7 +44,7 @@ public object GetUserGrowthResponseKt {
         _builder.growthDataList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData", (.buf.validate.field) = { ... }`
      * @param value The growthData to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -53,7 +53,7 @@ public object GetUserGrowthResponseKt {
       _builder.addGrowthData(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData", (.buf.validate.field) = { ... }`
      * @param value The growthData to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -63,7 +63,7 @@ public object GetUserGrowthResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData", (.buf.validate.field) = { ... }`
      * @param values The growthData to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -72,7 +72,7 @@ public object GetUserGrowthResponseKt {
       _builder.addAllGrowthData(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData", (.buf.validate.field) = { ... }`
      * @param values The growthData to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -82,7 +82,7 @@ public object GetUserGrowthResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The growthData to set.
      */
@@ -92,7 +92,7 @@ public object GetUserGrowthResponseKt {
       _builder.setGrowthData(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint growth_data = 1 [json_name = "growthData", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearGrowthData")
@@ -101,7 +101,7 @@ public object GetUserGrowthResponseKt {
     }
 
     /**
-     * `int32 total_signups = 2 [json_name = "totalSignups"];`
+     * `int32 total_signups = 2 [json_name = "totalSignups", (.buf.validate.field) = { ... }`
      */
     public var totalSignups: kotlin.Int
       @kotlin.jvm.JvmName("getTotalSignups")
@@ -111,14 +111,14 @@ public object GetUserGrowthResponseKt {
         _builder.totalSignups = value
       }
     /**
-     * `int32 total_signups = 2 [json_name = "totalSignups"];`
+     * `int32 total_signups = 2 [json_name = "totalSignups", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalSignups() {
       _builder.clearTotalSignups()
     }
 
     /**
-     * `double growth_rate = 3 [json_name = "growthRate"];`
+     * `double growth_rate = 3 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public var growthRate: kotlin.Double
       @kotlin.jvm.JvmName("getGrowthRate")
@@ -128,14 +128,14 @@ public object GetUserGrowthResponseKt {
         _builder.growthRate = value
       }
     /**
-     * `double growth_rate = 3 [json_name = "growthRate"];`
+     * `double growth_rate = 3 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public fun clearGrowthRate() {
       _builder.clearGrowthRate()
     }
 
     /**
-     * `int32 churned_users = 4 [json_name = "churnedUsers"];`
+     * `int32 churned_users = 4 [json_name = "churnedUsers", (.buf.validate.field) = { ... }`
      */
     public var churnedUsers: kotlin.Int
       @kotlin.jvm.JvmName("getChurnedUsers")
@@ -145,14 +145,14 @@ public object GetUserGrowthResponseKt {
         _builder.churnedUsers = value
       }
     /**
-     * `int32 churned_users = 4 [json_name = "churnedUsers"];`
+     * `int32 churned_users = 4 [json_name = "churnedUsers", (.buf.validate.field) = { ... }`
      */
     public fun clearChurnedUsers() {
       _builder.clearChurnedUsers()
     }
 
     /**
-     * `double churn_rate = 5 [json_name = "churnRate"];`
+     * `double churn_rate = 5 [json_name = "churnRate", (.buf.validate.field) = { ... }`
      */
     public var churnRate: kotlin.Double
       @kotlin.jvm.JvmName("getChurnRate")
@@ -162,7 +162,7 @@ public object GetUserGrowthResponseKt {
         _builder.churnRate = value
       }
     /**
-     * `double churn_rate = 5 [json_name = "churnRate"];`
+     * `double churn_rate = 5 [json_name = "churnRate", (.buf.validate.field) = { ... }`
      */
     public fun clearChurnRate() {
       _builder.clearChurnRate()

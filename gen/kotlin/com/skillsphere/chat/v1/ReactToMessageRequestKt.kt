@@ -30,7 +30,7 @@ public object ReactToMessageRequestKt {
     internal fun _build(): com.skillsphere.chat.v1.ReactToMessageRequest = _builder.build()
 
     /**
-     * `string message_id = 1 [json_name = "messageId"];`
+     * `string message_id = 1 [json_name = "messageId", (.buf.validate.field) = { ... }`
      */
     public var messageId: kotlin.String
       @kotlin.jvm.JvmName("getMessageId")
@@ -40,14 +40,14 @@ public object ReactToMessageRequestKt {
         _builder.messageId = value
       }
     /**
-     * `string message_id = 1 [json_name = "messageId"];`
+     * `string message_id = 1 [json_name = "messageId", (.buf.validate.field) = { ... }`
      */
     public fun clearMessageId() {
       _builder.clearMessageId()
     }
 
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -57,14 +57,14 @@ public object ReactToMessageRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 2 [json_name = "userId"];`
+     * `string user_id = 2 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string emoji = 3 [json_name = "emoji"];`
+     * `string emoji = 3 [json_name = "emoji", (.buf.validate.field) = { ... }`
      */
     public var emoji: kotlin.String
       @kotlin.jvm.JvmName("getEmoji")
@@ -74,7 +74,7 @@ public object ReactToMessageRequestKt {
         _builder.emoji = value
       }
     /**
-     * `string emoji = 3 [json_name = "emoji"];`
+     * `string emoji = 3 [json_name = "emoji", (.buf.validate.field) = { ... }`
      */
     public fun clearEmoji() {
       _builder.clearEmoji()

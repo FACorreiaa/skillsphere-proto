@@ -30,7 +30,7 @@ public object FindMatchesRequestKt {
     internal fun _build(): com.skillsphere.matching.v1.FindMatchesRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object FindMatchesRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 2 [json_name = "algorithm"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 2 [json_name = "algorithm", (.buf.validate.field) = { ... }`
      */
     public var algorithm: com.skillsphere.matching.v1.MatchingAlgorithm
       @kotlin.jvm.JvmName("getAlgorithm")
@@ -64,18 +64,14 @@ public object FindMatchesRequestKt {
         _builder.algorithmValue = value
       }
     /**
-     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 2 [json_name = "algorithm"];`
+     * `.skillsphere.matching.v1.MatchingAlgorithm algorithm = 2 [json_name = "algorithm", (.buf.validate.field) = { ... }`
      */
     public fun clearAlgorithm() {
       _builder.clearAlgorithm()
     }
 
     /**
-     * ```
-     * Default 20, max 100
-     * ```
-     *
-     * `int32 limit = 3 [json_name = "limit"];`
+     * `int32 limit = 3 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public var limit: kotlin.Int
       @kotlin.jvm.JvmName("getLimit")
@@ -85,11 +81,7 @@ public object FindMatchesRequestKt {
         _builder.limit = value
       }
     /**
-     * ```
-     * Default 20, max 100
-     * ```
-     *
-     * `int32 limit = 3 [json_name = "limit"];`
+     * `int32 limit = 3 [json_name = "limit", (.buf.validate.field) = { ... }`
      */
     public fun clearLimit() {
       _builder.clearLimit()
@@ -123,11 +115,7 @@ public object FindMatchesRequestKt {
       get() = _builder.filtersOrNull
 
     /**
-     * ```
-     * Threshold 0.0-1.0 (default 0.5)
-     * ```
-     *
-     * `double min_match_score = 5 [json_name = "minMatchScore"];`
+     * `double min_match_score = 5 [json_name = "minMatchScore", (.buf.validate.field) = { ... }`
      */
     public var minMatchScore: kotlin.Double
       @kotlin.jvm.JvmName("getMinMatchScore")
@@ -137,11 +125,7 @@ public object FindMatchesRequestKt {
         _builder.minMatchScore = value
       }
     /**
-     * ```
-     * Threshold 0.0-1.0 (default 0.5)
-     * ```
-     *
-     * `double min_match_score = 5 [json_name = "minMatchScore"];`
+     * `double min_match_score = 5 [json_name = "minMatchScore", (.buf.validate.field) = { ... }`
      */
     public fun clearMinMatchScore() {
       _builder.clearMinMatchScore()

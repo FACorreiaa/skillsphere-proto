@@ -30,7 +30,7 @@ public object IssueCertificationRequestKt {
     internal fun _build(): com.skillsphere.certification.v1.IssueCertificationRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object IssueCertificationRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -57,18 +57,14 @@ public object IssueCertificationRequestKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 2 [json_name = "skillId"];`
+     * `string skill_id = 2 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * ```
-     * Optional reference
-     * ```
-     *
-     * `string session_id = 3 [json_name = "sessionId"];`
+     * `string session_id = 3 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -78,18 +74,14 @@ public object IssueCertificationRequestKt {
         _builder.sessionId = value
       }
     /**
-     * ```
-     * Optional reference
-     * ```
-     *
-     * `string session_id = 3 [json_name = "sessionId"];`
+     * `string session_id = 3 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * `string issuer_id = 4 [json_name = "issuerId"];`
+     * `string issuer_id = 4 [json_name = "issuerId", (.buf.validate.field) = { ... }`
      */
     public var issuerId: kotlin.String
       @kotlin.jvm.JvmName("getIssuerId")
@@ -99,14 +91,14 @@ public object IssueCertificationRequestKt {
         _builder.issuerId = value
       }
     /**
-     * `string issuer_id = 4 [json_name = "issuerId"];`
+     * `string issuer_id = 4 [json_name = "issuerId", (.buf.validate.field) = { ... }`
      */
     public fun clearIssuerId() {
       _builder.clearIssuerId()
     }
 
     /**
-     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type"];`
+     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.certification.v1.CertificationType
       @kotlin.jvm.JvmName("getType")
@@ -123,18 +115,14 @@ public object IssueCertificationRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type"];`
+     * `.skillsphere.certification.v1.CertificationType type = 5 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * ```
-     * Badge template
-     * ```
-     *
-     * `string template_id = 6 [json_name = "templateId"];`
+     * `string template_id = 6 [json_name = "templateId", (.buf.validate.field) = { ... }`
      */
     public var templateId: kotlin.String
       @kotlin.jvm.JvmName("getTemplateId")
@@ -144,11 +132,7 @@ public object IssueCertificationRequestKt {
         _builder.templateId = value
       }
     /**
-     * ```
-     * Badge template
-     * ```
-     *
-     * `string template_id = 6 [json_name = "templateId"];`
+     * `string template_id = 6 [json_name = "templateId", (.buf.validate.field) = { ... }`
      */
     public fun clearTemplateId() {
       _builder.clearTemplateId()
@@ -180,7 +164,7 @@ public object IssueCertificationRequestKt {
     }
 
     /**
-     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 8 [json_name = "blockchain"];`
+     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 8 [json_name = "blockchain", (.buf.validate.field) = { ... }`
      */
     public var blockchain: com.skillsphere.certification.v1.BlockchainNetwork
       @kotlin.jvm.JvmName("getBlockchain")
@@ -197,7 +181,7 @@ public object IssueCertificationRequestKt {
         _builder.blockchainValue = value
       }
     /**
-     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 8 [json_name = "blockchain"];`
+     * `.skillsphere.certification.v1.BlockchainNetwork blockchain = 8 [json_name = "blockchain", (.buf.validate.field) = { ... }`
      */
     public fun clearBlockchain() {
       _builder.clearBlockchain()

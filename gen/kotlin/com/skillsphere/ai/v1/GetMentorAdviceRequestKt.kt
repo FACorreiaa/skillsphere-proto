@@ -30,7 +30,7 @@ public object GetMentorAdviceRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.GetMentorAdviceRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,14 +40,14 @@ public object GetMentorAdviceRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * `string skill_name = 2 [json_name = "skillName"];`
+     * `string skill_name = 2 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -57,18 +57,14 @@ public object GetMentorAdviceRequestKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 2 [json_name = "skillName"];`
+     * `string skill_name = 2 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
     }
 
     /**
-     * ```
-     * e.g., "preparing for session on React hooks"
-     * ```
-     *
-     * `string context = 3 [json_name = "context"];`
+     * `string context = 3 [json_name = "context", (.buf.validate.field) = { ... }`
      */
     public var context: kotlin.String
       @kotlin.jvm.JvmName("getContext")
@@ -78,11 +74,7 @@ public object GetMentorAdviceRequestKt {
         _builder.context = value
       }
     /**
-     * ```
-     * e.g., "preparing for session on React hooks"
-     * ```
-     *
-     * `string context = 3 [json_name = "context"];`
+     * `string context = 3 [json_name = "context", (.buf.validate.field) = { ... }`
      */
     public fun clearContext() {
       _builder.clearContext()
@@ -95,7 +87,7 @@ public object GetMentorAdviceRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class SpecificQuestionsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string specific_questions = 4 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 4 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @return A list containing the specificQuestions.
      */
     public val specificQuestions: com.google.protobuf.kotlin.DslList<kotlin.String, SpecificQuestionsProxy>
@@ -104,7 +96,7 @@ public object GetMentorAdviceRequestKt {
         _builder.specificQuestionsList
       )
     /**
-     * `repeated string specific_questions = 4 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 4 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param value The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -113,7 +105,7 @@ public object GetMentorAdviceRequestKt {
       _builder.addSpecificQuestions(value)
     }
     /**
-     * `repeated string specific_questions = 4 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 4 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param value The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -123,7 +115,7 @@ public object GetMentorAdviceRequestKt {
       add(value)
     }
     /**
-     * `repeated string specific_questions = 4 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 4 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param values The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -132,7 +124,7 @@ public object GetMentorAdviceRequestKt {
       _builder.addAllSpecificQuestions(values)
     }
     /**
-     * `repeated string specific_questions = 4 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 4 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param values The specificQuestions to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -142,7 +134,7 @@ public object GetMentorAdviceRequestKt {
       addAll(values)
     }
     /**
-     * `repeated string specific_questions = 4 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 4 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The specificQuestions to set.
      */
@@ -151,7 +143,7 @@ public object GetMentorAdviceRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, SpecificQuestionsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setSpecificQuestions(index, value)
     }/**
-     * `repeated string specific_questions = 4 [json_name = "specificQuestions"];`
+     * `repeated string specific_questions = 4 [json_name = "specificQuestions", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setSpecificQuestions")

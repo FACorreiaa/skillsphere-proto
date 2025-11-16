@@ -5,6 +5,7 @@ package skillsphere.user.v1;
 import "google/protobuf/timestamp.proto";
 import "google/protobuf/field_mask.proto";
 import "common/v1/common.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/user/v1;userv1";
 
@@ -52,17 +53,44 @@ service UserService {
 // ============================================================================
 
 message CreateUserRequest {
-  string email = 1;
-  string username = 2;
-  string password = 3;                  // Will be hashed on server
-  string display_name = 4;
-  string bio = 5;
+  string email = 1 [
+    (buf.validate.field).string = {
+      email: true
+      max_len: 254
+    }
+  ];
+  string username = 2 [
+    (buf.validate.field).string = {
+      min_len: 3
+      max_len: 30
+    }
+  ];
+  string password = 3 [                 // Will be hashed on server
+    (buf.validate.field).string = {
+      min_len: 8
+      max_len: 128
+    }
+  ];
+  string display_name = 4 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  string bio = 5 [
+    (buf.validate.field).string.max_len = 1000
+  ];
   skillsphere.common.v1.Location location = 6;
 }
 
 message CreateUserResponse {
   skillsphere.common.v1.User user = 1;
-  string access_token = 2;              // JWT for immediate login
+  string access_token = 2 [             // JWT for immediate login
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 2048
+    }
+  ];
 }
 
 // ============================================================================
@@ -70,7 +98,12 @@ message CreateUserResponse {
 // ============================================================================
 
 message GetUserRequest {
-  string user_id = 1;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetUserResponse {
@@ -82,12 +115,31 @@ message GetUserResponse {
 // ============================================================================
 
 message BatchGetUsersRequest {
-  repeated string user_ids = 1;         // Max 100
+  repeated string user_ids = 1 [        // Max 100
+    (buf.validate.field).repeated = {
+      min_items: 1
+      max_items: 100
+    },
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 }
 
 message BatchGetUsersResponse {
   repeated skillsphere.common.v1.User users = 1;
-  repeated string not_found_ids = 2;    // IDs that don't exist
+  repeated string not_found_ids = 2 [   // IDs that don't exist
+    (buf.validate.field).repeated.max_items = 100,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
 }
 
 // ============================================================================
@@ -95,8 +147,10 @@ message BatchGetUsersResponse {
 // ============================================================================
 
 message UpdateUserRequest {
-  skillsphere.common.v1.User user = 1;
-  google.protobuf.FieldMask update_mask = 2;  // e.g., "bio,avatar_url,location"
+  skillsphere.common.v1.User user = 1 [(buf.validate.field).required = true];
+  google.protobuf.FieldMask update_mask = 2 [ // e.g., "bio,avatar_url,location"
+    (buf.validate.field).required = true
+  ];
 }
 
 message UpdateUserResponse {
@@ -108,13 +162,22 @@ message UpdateUserResponse {
 // ============================================================================
 
 message DeleteUserRequest {
-  string user_id = 1;
-  string reason = 2;                    // Optional reason for deletion
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string reason = 2 [                   // Optional reason for deletion
+    (buf.validate.field).string.max_len = 500
+  ];
 }
 
 message DeleteUserResponse {
   bool success = 1;
-  string message = 2;
+  string message = 2 [
+    (buf.validate.field).string.max_len = 200
+  ];
 }
 
 // ============================================================================
@@ -122,17 +185,30 @@ message DeleteUserResponse {
 // ============================================================================
 
 message ListUsersRequest {
-  int32 page_size = 1;                  // Default 20, max 100
-  string page_token = 2;                // Opaque cursor for pagination
+  int32 page_size = 1 [                 // Default 20, max 100
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 2 [               // Opaque cursor for pagination
+    (buf.validate.field).string.max_len = 256
+  ];
   skillsphere.common.v1.SearchFilters filters = 3;
-  string sort_by = 4;                   // e.g., "created_at", "rating", "sessions"
+  string sort_by = 4 [                  // e.g., "created_at", "rating", "sessions"
+    (buf.validate.field).string.max_len = 50
+  ];
   bool ascending = 5;                   // Default false (descending)
 }
 
 message ListUsersResponse {
   repeated skillsphere.common.v1.User users = 1;
-  string next_page_token = 2;
-  int32 total_count = 3;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  int32 total_count = 3 [
+    (buf.validate.field).int32.gte = 0
+  ];
 }
 
 // ============================================================================
@@ -140,19 +216,31 @@ message ListUsersResponse {
 // ============================================================================
 
 message GetUserStatsRequest {
-  string user_id = 1;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
 }
 
 message GetUserStatsResponse {
-  int32 total_sessions = 1;
-  int32 completed_sessions = 2;
-  int32 cancelled_sessions = 3;
-  int32 no_show_count = 4;
-  double average_rating = 5;
-  int32 total_reviews = 6;
-  int32 skills_offered_count = 7;
-  int32 skills_wanted_count = 8;
-  int32 active_days = 9;                // Days since last activity
+  int32 total_sessions = 1 [(buf.validate.field).int32.gte = 0];
+  int32 completed_sessions = 2 [(buf.validate.field).int32.gte = 0];
+  int32 cancelled_sessions = 3 [(buf.validate.field).int32.gte = 0];
+  int32 no_show_count = 4 [(buf.validate.field).int32.gte = 0];
+  double average_rating = 5 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
+  int32 total_reviews = 6 [(buf.validate.field).int32.gte = 0];
+  int32 skills_offered_count = 7 [(buf.validate.field).int32.gte = 0];
+  int32 skills_wanted_count = 8 [(buf.validate.field).int32.gte = 0];
+  int32 active_days = 9 [               // Days since last activity
+    (buf.validate.field).int32.gte = 0
+  ];
   google.protobuf.Timestamp member_since = 10;
 }
 
@@ -161,8 +249,15 @@ message GetUserStatsResponse {
 // ============================================================================
 
 message UpdateAvailabilityRequest {
-  string user_id = 1;
-  skillsphere.common.v1.Availability availability = 2;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  skillsphere.common.v1.Availability availability = 2 [
+    (buf.validate.field).required = true
+  ];
 }
 
 message UpdateAvailabilityResponse {
@@ -174,8 +269,15 @@ message UpdateAvailabilityResponse {
 // ============================================================================
 
 message UpdateNotificationPreferencesRequest {
-  string user_id = 1;
-  skillsphere.common.v1.NotificationPreferences preferences = 2;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  skillsphere.common.v1.NotificationPreferences preferences = 2 [
+    (buf.validate.field).required = true
+  ];
 }
 
 message UpdateNotificationPreferencesResponse {
@@ -187,23 +289,64 @@ message UpdateNotificationPreferencesResponse {
 // ============================================================================
 
 message GetUserSessionsRequest {
-  string user_id = 1;
-  int32 page_size = 2;
-  string page_token = 3;
-  skillsphere.common.v1.SessionStatus status_filter = 4;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 page_size = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 3 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  skillsphere.common.v1.SessionStatus status_filter = 4 [
+    (buf.validate.field).enum.defined_only = true
+  ];
 }
 
 message GetUserSessionsResponse {
   repeated Session sessions = 1;        // Simplified session for listing
-  string next_page_token = 2;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message Session {
-  string session_id = 1;
-  string partner_id = 2;
-  string partner_name = 3;
-  repeated string skills = 4;
-  skillsphere.common.v1.SessionStatus status = 5;
+  string session_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string partner_id = 2 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string partner_name = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 100
+    }
+  ];
+  repeated string skills = 4 [
+    (buf.validate.field).repeated.max_items = 20,
+    (buf.validate.field).repeated.items = {
+      string: {
+        min_len: 1
+        max_len: 50
+      }
+    }
+  ];
+  skillsphere.common.v1.SessionStatus status = 5 [
+    (buf.validate.field).enum.defined_only = true
+  ];
   google.protobuf.Timestamp scheduled_at = 6;
 }
 
@@ -212,15 +355,34 @@ message Session {
 // ============================================================================
 
 message GetUserRatingsRequest {
-  string user_id = 1;
-  int32 page_size = 2;
-  string page_token = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  int32 page_size = 2 [
+    (buf.validate.field).int32 = {
+      gte: 1
+      lte: 100
+    }
+  ];
+  string page_token = 3 [
+    (buf.validate.field).string.max_len = 256
+  ];
 }
 
 message GetUserRatingsResponse {
   repeated skillsphere.common.v1.Rating ratings = 1;
-  string next_page_token = 2;
-  double average_score = 3;
+  string next_page_token = 2 [
+    (buf.validate.field).string.max_len = 256
+  ];
+  double average_score = 3 [
+    (buf.validate.field).double = {
+      gte: 0
+      lte: 5
+    }
+  ];
 }
 
 // ============================================================================
@@ -228,12 +390,32 @@ message GetUserRatingsResponse {
 // ============================================================================
 
 message VerifyUserRequest {
-  string user_id = 1;
-  string verification_method = 2;       // e.g., "email", "phone", "document"
-  string verification_token = 3;
+  string user_id = 1 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 50
+    }
+  ];
+  string verification_method = 2 [      // e.g., "email", "phone", "document"
+    (buf.validate.field).string = {
+      min_len: 2
+      max_len: 32
+    }
+  ];
+  string verification_token = 3 [
+    (buf.validate.field).string = {
+      min_len: 1
+      max_len: 512
+    }
+  ];
 }
 
 message VerifyUserResponse {
   bool verified = 1;
-  string badge_url = 2;                 // URL to verification badge image
+  string badge_url = 2 [                // URL to verification badge image
+    (buf.validate.field).string = {
+      uri: true
+      max_len: 2048
+    }
+  ];
 }

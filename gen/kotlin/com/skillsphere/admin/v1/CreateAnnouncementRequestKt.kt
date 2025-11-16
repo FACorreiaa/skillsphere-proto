@@ -30,7 +30,7 @@ public object CreateAnnouncementRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.CreateAnnouncementRequest = _builder.build()
 
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -40,14 +40,14 @@ public object CreateAnnouncementRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 1 [json_name = "adminId"];`
+     * `string admin_id = 1 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()
     }
 
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public var title: kotlin.String
       @kotlin.jvm.JvmName("getTitle")
@@ -57,14 +57,14 @@ public object CreateAnnouncementRequestKt {
         _builder.title = value
       }
     /**
-     * `string title = 2 [json_name = "title"];`
+     * `string title = 2 [json_name = "title", (.buf.validate.field) = { ... }`
      */
     public fun clearTitle() {
       _builder.clearTitle()
     }
 
     /**
-     * `string content = 3 [json_name = "content"];`
+     * `string content = 3 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public var content: kotlin.String
       @kotlin.jvm.JvmName("getContent")
@@ -74,14 +74,14 @@ public object CreateAnnouncementRequestKt {
         _builder.content = value
       }
     /**
-     * `string content = 3 [json_name = "content"];`
+     * `string content = 3 [json_name = "content", (.buf.validate.field) = { ... }`
      */
     public fun clearContent() {
       _builder.clearContent()
     }
 
     /**
-     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority"];`
+     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority", (.buf.validate.field) = { ... }`
      */
     public var priority: com.skillsphere.admin.v1.AnnouncementPriority
       @kotlin.jvm.JvmName("getPriority")
@@ -98,7 +98,7 @@ public object CreateAnnouncementRequestKt {
         _builder.priorityValue = value
       }
     /**
-     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority"];`
+     * `.skillsphere.admin.v1.AnnouncementPriority priority = 4 [json_name = "priority", (.buf.validate.field) = { ... }`
      */
     public fun clearPriority() {
       _builder.clearPriority()
@@ -111,11 +111,7 @@ public object CreateAnnouncementRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class TargetUserIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Empty for all users
-     * ```
-     *
-     * `repeated string target_user_ids = 5 [json_name = "targetUserIds"];`
+     * `repeated string target_user_ids = 5 [json_name = "targetUserIds", (.buf.validate.field) = { ... }`
      * @return A list containing the targetUserIds.
      */
     public val targetUserIds: com.google.protobuf.kotlin.DslList<kotlin.String, TargetUserIdsProxy>
@@ -124,11 +120,7 @@ public object CreateAnnouncementRequestKt {
         _builder.targetUserIdsList
       )
     /**
-     * ```
-     * Empty for all users
-     * ```
-     *
-     * `repeated string target_user_ids = 5 [json_name = "targetUserIds"];`
+     * `repeated string target_user_ids = 5 [json_name = "targetUserIds", (.buf.validate.field) = { ... }`
      * @param value The targetUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -137,11 +129,7 @@ public object CreateAnnouncementRequestKt {
       _builder.addTargetUserIds(value)
     }
     /**
-     * ```
-     * Empty for all users
-     * ```
-     *
-     * `repeated string target_user_ids = 5 [json_name = "targetUserIds"];`
+     * `repeated string target_user_ids = 5 [json_name = "targetUserIds", (.buf.validate.field) = { ... }`
      * @param value The targetUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -151,11 +139,7 @@ public object CreateAnnouncementRequestKt {
       add(value)
     }
     /**
-     * ```
-     * Empty for all users
-     * ```
-     *
-     * `repeated string target_user_ids = 5 [json_name = "targetUserIds"];`
+     * `repeated string target_user_ids = 5 [json_name = "targetUserIds", (.buf.validate.field) = { ... }`
      * @param values The targetUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -164,11 +148,7 @@ public object CreateAnnouncementRequestKt {
       _builder.addAllTargetUserIds(values)
     }
     /**
-     * ```
-     * Empty for all users
-     * ```
-     *
-     * `repeated string target_user_ids = 5 [json_name = "targetUserIds"];`
+     * `repeated string target_user_ids = 5 [json_name = "targetUserIds", (.buf.validate.field) = { ... }`
      * @param values The targetUserIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -178,11 +158,7 @@ public object CreateAnnouncementRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * Empty for all users
-     * ```
-     *
-     * `repeated string target_user_ids = 5 [json_name = "targetUserIds"];`
+     * `repeated string target_user_ids = 5 [json_name = "targetUserIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The targetUserIds to set.
      */
@@ -191,11 +167,7 @@ public object CreateAnnouncementRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, TargetUserIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setTargetUserIds(index, value)
     }/**
-     * ```
-     * Empty for all users
-     * ```
-     *
-     * `repeated string target_user_ids = 5 [json_name = "targetUserIds"];`
+     * `repeated string target_user_ids = 5 [json_name = "targetUserIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setTargetUserIds")

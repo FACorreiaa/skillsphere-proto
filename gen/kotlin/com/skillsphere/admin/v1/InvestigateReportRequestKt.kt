@@ -30,7 +30,7 @@ public object InvestigateReportRequestKt {
     internal fun _build(): com.skillsphere.admin.v1.InvestigateReportRequest = _builder.build()
 
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public var reportId: kotlin.String
       @kotlin.jvm.JvmName("getReportId")
@@ -40,14 +40,14 @@ public object InvestigateReportRequestKt {
         _builder.reportId = value
       }
     /**
-     * `string report_id = 1 [json_name = "reportId"];`
+     * `string report_id = 1 [json_name = "reportId", (.buf.validate.field) = { ... }`
      */
     public fun clearReportId() {
       _builder.clearReportId()
     }
 
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public var adminId: kotlin.String
       @kotlin.jvm.JvmName("getAdminId")
@@ -57,7 +57,7 @@ public object InvestigateReportRequestKt {
         _builder.adminId = value
       }
     /**
-     * `string admin_id = 2 [json_name = "adminId"];`
+     * `string admin_id = 2 [json_name = "adminId", (.buf.validate.field) = { ... }`
      */
     public fun clearAdminId() {
       _builder.clearAdminId()

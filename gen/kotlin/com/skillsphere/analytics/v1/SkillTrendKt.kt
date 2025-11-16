@@ -30,7 +30,7 @@ public object SkillTrendKt {
     internal fun _build(): com.skillsphere.analytics.v1.SkillTrend = _builder.build()
 
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -40,14 +40,14 @@ public object SkillTrendKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * `string skill_name = 2 [json_name = "skillName"];`
+     * `string skill_name = 2 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public var skillName: kotlin.String
       @kotlin.jvm.JvmName("getSkillName")
@@ -57,7 +57,7 @@ public object SkillTrendKt {
         _builder.skillName = value
       }
     /**
-     * `string skill_name = 2 [json_name = "skillName"];`
+     * `string skill_name = 2 [json_name = "skillName", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillName() {
       _builder.clearSkillName()
@@ -70,7 +70,7 @@ public object SkillTrendKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class DataPointsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints", (.buf.validate.field) = { ... }`
      */
      public val dataPoints: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.DataPoint, DataPointsProxy>
       @kotlin.jvm.JvmSynthetic
@@ -78,7 +78,7 @@ public object SkillTrendKt {
         _builder.dataPointsList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints", (.buf.validate.field) = { ... }`
      * @param value The dataPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -87,7 +87,7 @@ public object SkillTrendKt {
       _builder.addDataPoints(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints", (.buf.validate.field) = { ... }`
      * @param value The dataPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -97,7 +97,7 @@ public object SkillTrendKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints", (.buf.validate.field) = { ... }`
      * @param values The dataPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -106,7 +106,7 @@ public object SkillTrendKt {
       _builder.addAllDataPoints(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints", (.buf.validate.field) = { ... }`
      * @param values The dataPoints to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -116,7 +116,7 @@ public object SkillTrendKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The dataPoints to set.
      */
@@ -126,7 +126,7 @@ public object SkillTrendKt {
       _builder.setDataPoints(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints"];`
+     * `repeated .skillsphere.analytics.v1.DataPoint data_points = 3 [json_name = "dataPoints", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearDataPoints")
@@ -135,11 +135,7 @@ public object SkillTrendKt {
     }
 
     /**
-     * ```
-     * Percentage
-     * ```
-     *
-     * `double growth_rate = 4 [json_name = "growthRate"];`
+     * `double growth_rate = 4 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public var growthRate: kotlin.Double
       @kotlin.jvm.JvmName("getGrowthRate")
@@ -149,18 +145,14 @@ public object SkillTrendKt {
         _builder.growthRate = value
       }
     /**
-     * ```
-     * Percentage
-     * ```
-     *
-     * `double growth_rate = 4 [json_name = "growthRate"];`
+     * `double growth_rate = 4 [json_name = "growthRate", (.buf.validate.field) = { ... }`
      */
     public fun clearGrowthRate() {
       _builder.clearGrowthRate()
     }
 
     /**
-     * `int32 total_sessions = 5 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 5 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public var totalSessions: kotlin.Int
       @kotlin.jvm.JvmName("getTotalSessions")
@@ -170,14 +162,14 @@ public object SkillTrendKt {
         _builder.totalSessions = value
       }
     /**
-     * `int32 total_sessions = 5 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 5 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalSessions() {
       _builder.clearTotalSessions()
     }
 
     /**
-     * `int32 total_users = 6 [json_name = "totalUsers"];`
+     * `int32 total_users = 6 [json_name = "totalUsers", (.buf.validate.field) = { ... }`
      */
     public var totalUsers: kotlin.Int
       @kotlin.jvm.JvmName("getTotalUsers")
@@ -187,7 +179,7 @@ public object SkillTrendKt {
         _builder.totalUsers = value
       }
     /**
-     * `int32 total_users = 6 [json_name = "totalUsers"];`
+     * `int32 total_users = 6 [json_name = "totalUsers", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalUsers() {
       _builder.clearTotalUsers()

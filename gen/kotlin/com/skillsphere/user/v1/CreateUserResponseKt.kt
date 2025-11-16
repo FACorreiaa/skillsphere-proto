@@ -57,11 +57,7 @@ public object CreateUserResponseKt {
       get() = _builder.userOrNull
 
     /**
-     * ```
-     * JWT for immediate login
-     * ```
-     *
-     * `string access_token = 2 [json_name = "accessToken"];`
+     * `string access_token = 2 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public var accessToken: kotlin.String
       @kotlin.jvm.JvmName("getAccessToken")
@@ -71,11 +67,7 @@ public object CreateUserResponseKt {
         _builder.accessToken = value
       }
     /**
-     * ```
-     * JWT for immediate login
-     * ```
-     *
-     * `string access_token = 2 [json_name = "accessToken"];`
+     * `string access_token = 2 [json_name = "accessToken", (.buf.validate.field) = { ... }`
      */
     public fun clearAccessToken() {
       _builder.clearAccessToken()

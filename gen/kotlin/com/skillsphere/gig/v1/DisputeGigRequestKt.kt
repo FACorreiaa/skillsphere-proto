@@ -30,7 +30,7 @@ public object DisputeGigRequestKt {
     internal fun _build(): com.skillsphere.gig.v1.DisputeGigRequest = _builder.build()
 
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public var gigId: kotlin.String
       @kotlin.jvm.JvmName("getGigId")
@@ -40,14 +40,14 @@ public object DisputeGigRequestKt {
         _builder.gigId = value
       }
     /**
-     * `string gig_id = 1 [json_name = "gigId"];`
+     * `string gig_id = 1 [json_name = "gigId", (.buf.validate.field) = { ... }`
      */
     public fun clearGigId() {
       _builder.clearGigId()
     }
 
     /**
-     * `string disputing_user_id = 2 [json_name = "disputingUserId"];`
+     * `string disputing_user_id = 2 [json_name = "disputingUserId", (.buf.validate.field) = { ... }`
      */
     public var disputingUserId: kotlin.String
       @kotlin.jvm.JvmName("getDisputingUserId")
@@ -57,14 +57,14 @@ public object DisputeGigRequestKt {
         _builder.disputingUserId = value
       }
     /**
-     * `string disputing_user_id = 2 [json_name = "disputingUserId"];`
+     * `string disputing_user_id = 2 [json_name = "disputingUserId", (.buf.validate.field) = { ... }`
      */
     public fun clearDisputingUserId() {
       _builder.clearDisputingUserId()
     }
 
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public var reason: kotlin.String
       @kotlin.jvm.JvmName("getReason")
@@ -74,14 +74,14 @@ public object DisputeGigRequestKt {
         _builder.reason = value
       }
     /**
-     * `string reason = 3 [json_name = "reason"];`
+     * `string reason = 3 [json_name = "reason", (.buf.validate.field) = { ... }`
      */
     public fun clearReason() {
       _builder.clearReason()
     }
 
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public var description: kotlin.String
       @kotlin.jvm.JvmName("getDescription")
@@ -91,7 +91,7 @@ public object DisputeGigRequestKt {
         _builder.description = value
       }
     /**
-     * `string description = 4 [json_name = "description"];`
+     * `string description = 4 [json_name = "description", (.buf.validate.field) = { ... }`
      */
     public fun clearDescription() {
       _builder.clearDescription()
@@ -104,7 +104,7 @@ public object DisputeGigRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class EvidenceProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence", (.buf.validate.field) = { ... }`
      */
      public val evidence: com.google.protobuf.kotlin.DslList<com.skillsphere.common.v1.Attachment, EvidenceProxy>
       @kotlin.jvm.JvmSynthetic
@@ -112,7 +112,7 @@ public object DisputeGigRequestKt {
         _builder.evidenceList
       )
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param value The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -121,7 +121,7 @@ public object DisputeGigRequestKt {
       _builder.addEvidence(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param value The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -131,7 +131,7 @@ public object DisputeGigRequestKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param values The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -140,7 +140,7 @@ public object DisputeGigRequestKt {
       _builder.addAllEvidence(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param values The evidence to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -150,7 +150,7 @@ public object DisputeGigRequestKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The evidence to set.
      */
@@ -160,7 +160,7 @@ public object DisputeGigRequestKt {
       _builder.setEvidence(index, value)
     }
     /**
-     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence"];`
+     * `repeated .skillsphere.common.v1.Attachment evidence = 5 [json_name = "evidence", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearEvidence")

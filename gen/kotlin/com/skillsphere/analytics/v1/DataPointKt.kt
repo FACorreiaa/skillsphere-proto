@@ -74,7 +74,7 @@ public object DataPointKt {
     }
 
     /**
-     * `.skillsphere.analytics.v1.MetricType metric_type = 3 [json_name = "metricType"];`
+     * `.skillsphere.analytics.v1.MetricType metric_type = 3 [json_name = "metricType", (.buf.validate.field) = { ... }`
      */
     public var metricType: com.skillsphere.analytics.v1.MetricType
       @kotlin.jvm.JvmName("getMetricType")
@@ -91,7 +91,7 @@ public object DataPointKt {
         _builder.metricTypeValue = value
       }
     /**
-     * `.skillsphere.analytics.v1.MetricType metric_type = 3 [json_name = "metricType"];`
+     * `.skillsphere.analytics.v1.MetricType metric_type = 3 [json_name = "metricType", (.buf.validate.field) = { ... }`
      */
     public fun clearMetricType() {
       _builder.clearMetricType()

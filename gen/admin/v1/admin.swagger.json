@@ -1,0 +1,875 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "admin/v1/admin.proto",
+    "version": "version not set"
+  },
+  "tags": [
+    {
+      "name": "AdminService"
+    }
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {},
+  "definitions": {
+    "commonv1Location": {
+      "type": "object",
+      "properties": {
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "countryCode": {
+          "type": "string",
+          "title": "ISO 3166-1 alpha-2 (e.g., \"US\", \"BR\")"
+        },
+        "timezone": {
+          "type": "string",
+          "title": "IANA timezone (e.g., \"America/New_York\")"
+        },
+        "latitude": {
+          "type": "number",
+          "format": "double"
+        },
+        "longitude": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Geographic location for user matching"
+    },
+    "protobufAny": {
+      "type": "object",
+      "properties": {
+        "@type": {
+          "type": "string"
+        }
+      },
+      "additionalProperties": {}
+    },
+    "rpcStatus": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        },
+        "details": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/protobufAny"
+          }
+        }
+      }
+    },
+    "v1AdminNote": {
+      "type": "object",
+      "properties": {
+        "noteId": {
+          "type": "string"
+        },
+        "adminId": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1Announcement": {
+      "type": "object",
+      "properties": {
+        "announcementId": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "string"
+        },
+        "priority": {
+          "$ref": "#/definitions/v1AnnouncementPriority"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expiresAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isActive": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1AnnouncementPriority": {
+      "type": "string",
+      "enum": [
+        "ANNOUNCEMENT_PRIORITY_UNSPECIFIED",
+        "ANNOUNCEMENT_PRIORITY_LOW",
+        "ANNOUNCEMENT_PRIORITY_MEDIUM",
+        "ANNOUNCEMENT_PRIORITY_HIGH",
+        "ANNOUNCEMENT_PRIORITY_CRITICAL"
+      ],
+      "default": "ANNOUNCEMENT_PRIORITY_UNSPECIFIED"
+    },
+    "v1Attachment": {
+      "type": "object",
+      "properties": {
+        "attachmentId": {
+          "type": "string"
+        },
+        "fileName": {
+          "type": "string"
+        },
+        "fileUrl": {
+          "type": "string"
+        },
+        "contentType": {
+          "$ref": "#/definitions/v1ContentType"
+        },
+        "fileSizeBytes": {
+          "type": "string",
+          "format": "int64"
+        },
+        "uploadedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "title": "File attachment (for reviews, workshops, etc.)"
+    },
+    "v1AuditLog": {
+      "type": "object",
+      "properties": {
+        "logId": {
+          "type": "string"
+        },
+        "adminId": {
+          "type": "string"
+        },
+        "action": {
+          "type": "string"
+        },
+        "targetType": {
+          "type": "string"
+        },
+        "targetId": {
+          "type": "string"
+        },
+        "details": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1Availability": {
+      "type": "object",
+      "properties": {
+        "timeSlots": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1TimeSlot"
+          }
+        },
+        "timezone": {
+          "type": "string"
+        }
+      },
+      "title": "User availability schedule"
+    },
+    "v1BanUserResponse": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        },
+        "banId": {
+          "type": "string"
+        }
+      }
+    },
+    "v1CloseReportResponse": {
+      "type": "object",
+      "properties": {
+        "report": {
+          "$ref": "#/definitions/v1Report"
+        }
+      }
+    },
+    "v1ContentType": {
+      "type": "string",
+      "enum": [
+        "CONTENT_TYPE_UNSPECIFIED",
+        "CONTENT_TYPE_CODE",
+        "CONTENT_TYPE_DESIGN",
+        "CONTENT_TYPE_VIDEO",
+        "CONTENT_TYPE_DOCUMENT",
+        "CONTENT_TYPE_AUDIO"
+      ],
+      "default": "CONTENT_TYPE_UNSPECIFIED",
+      "title": "Content type for reviews"
+    },
+    "v1CreateAnnouncementResponse": {
+      "type": "object",
+      "properties": {
+        "announcement": {
+          "$ref": "#/definitions/v1Announcement"
+        }
+      }
+    },
+    "v1DayOfWeek": {
+      "type": "string",
+      "enum": [
+        "DAY_OF_WEEK_UNSPECIFIED",
+        "DAY_OF_WEEK_MONDAY",
+        "DAY_OF_WEEK_TUESDAY",
+        "DAY_OF_WEEK_WEDNESDAY",
+        "DAY_OF_WEEK_THURSDAY",
+        "DAY_OF_WEEK_FRIDAY",
+        "DAY_OF_WEEK_SATURDAY",
+        "DAY_OF_WEEK_SUNDAY"
+      ],
+      "default": "DAY_OF_WEEK_UNSPECIFIED",
+      "title": "Days of the week for availability"
+    },
+    "v1DeleteUserAccountResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "v1Dispute": {
+      "type": "object",
+      "properties": {
+        "disputeId": {
+          "type": "string"
+        },
+        "disputingUserId": {
+          "type": "string"
+        },
+        "disputedUserId": {
+          "type": "string"
+        },
+        "relatedId": {
+          "type": "string"
+        },
+        "relatedType": {
+          "type": "string"
+        },
+        "reason": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Attachment"
+          }
+        },
+        "status": {
+          "$ref": "#/definitions/v1DisputeStatus"
+        },
+        "assignedAdminId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "resolvedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1DisputeStatus": {
+      "type": "string",
+      "enum": [
+        "DISPUTE_STATUS_UNSPECIFIED",
+        "DISPUTE_STATUS_PENDING",
+        "DISPUTE_STATUS_UNDER_REVIEW",
+        "DISPUTE_STATUS_RESOLVED",
+        "DISPUTE_STATUS_ESCALATED"
+      ],
+      "default": "DISPUTE_STATUS_UNSPECIFIED"
+    },
+    "v1FeatureFlag": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "enabled": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "enabledForUsers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1FlagContentResponse": {
+      "type": "object",
+      "properties": {
+        "flagId": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ReportStatus"
+        }
+      }
+    },
+    "v1FlaggedContent": {
+      "type": "object",
+      "properties": {
+        "flagId": {
+          "type": "string"
+        },
+        "contentId": {
+          "type": "string"
+        },
+        "contentType": {
+          "type": "string"
+        },
+        "contentPreview": {
+          "type": "string"
+        },
+        "reportType": {
+          "$ref": "#/definitions/v1ReportType"
+        },
+        "description": {
+          "type": "string"
+        },
+        "reporterId": {
+          "type": "string"
+        },
+        "reportedUserId": {
+          "type": "string"
+        },
+        "flagCount": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ReportStatus"
+        },
+        "flaggedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1GetAnnouncementsResponse": {
+      "type": "object",
+      "properties": {
+        "announcements": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Announcement"
+          }
+        }
+      }
+    },
+    "v1GetAuditLogsResponse": {
+      "type": "object",
+      "properties": {
+        "logs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1AuditLog"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetDisputesResponse": {
+      "type": "object",
+      "properties": {
+        "disputes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Dispute"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1GetPlatformSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "settings": {
+          "$ref": "#/definitions/v1PlatformSettings"
+        }
+      }
+    },
+    "v1GetReportsResponse": {
+      "type": "object",
+      "properties": {
+        "reports": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1Report"
+          }
+        },
+        "nextPageToken": {
+          "type": "string"
+        }
+      }
+    },
+    "v1InvestigateReportResponse": {
+      "type": "object",
+      "properties": {
+        "report": {
+          "$ref": "#/definitions/v1Report"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1AdminNote"
+          }
+        }
+      }
+    },
+    "v1ListFeatureFlagsResponse": {
+      "type": "object",
+      "properties": {
+        "features": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1FeatureFlag"
+          }
+        }
+      }
+    },
+    "v1ModerationAction": {
+      "type": "string",
+      "enum": [
+        "MODERATION_ACTION_UNSPECIFIED",
+        "MODERATION_ACTION_WARNING",
+        "MODERATION_ACTION_CONTENT_REMOVAL",
+        "MODERATION_ACTION_SUSPENSION",
+        "MODERATION_ACTION_BAN",
+        "MODERATION_ACTION_NO_ACTION"
+      ],
+      "default": "MODERATION_ACTION_UNSPECIFIED"
+    },
+    "v1Money": {
+      "type": "object",
+      "properties": {
+        "currencyCode": {
+          "type": "string"
+        },
+        "amount": {
+          "type": "string",
+          "format": "int64"
+        }
+      },
+      "title": "Money amount for payments"
+    },
+    "v1PlatformSettings": {
+      "type": "object",
+      "properties": {
+        "maintenanceMode": {
+          "type": "boolean"
+        },
+        "maintenanceMessage": {
+          "type": "string"
+        },
+        "newSignupsEnabled": {
+          "type": "boolean"
+        },
+        "maxSessionsPerDay": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "minSessionRating": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "autoApproveCertifications": {
+          "type": "boolean"
+        },
+        "platformFeePercentage": {
+          "type": "number",
+          "format": "double"
+        },
+        "customSettings": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "v1ProficiencyLevel": {
+      "type": "string",
+      "enum": [
+        "PROFICIENCY_LEVEL_UNSPECIFIED",
+        "PROFICIENCY_LEVEL_BEGINNER",
+        "PROFICIENCY_LEVEL_INTERMEDIATE",
+        "PROFICIENCY_LEVEL_EXPERT"
+      ],
+      "default": "PROFICIENCY_LEVEL_UNSPECIFIED",
+      "description": "- PROFICIENCY_LEVEL_BEGINNER: 1-3\n - PROFICIENCY_LEVEL_INTERMEDIATE: 4-7\n - PROFICIENCY_LEVEL_EXPERT: 8-10",
+      "title": "Proficiency level for skills (1-10 scale)"
+    },
+    "v1RemoveContentResponse": {
+      "type": "object",
+      "properties": {
+        "success": {
+          "type": "boolean"
+        },
+        "userNotified": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1Report": {
+      "type": "object",
+      "properties": {
+        "reportId": {
+          "type": "string"
+        },
+        "reporterId": {
+          "type": "string"
+        },
+        "reportedUserId": {
+          "type": "string"
+        },
+        "relatedId": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/definitions/v1ReportType"
+        },
+        "description": {
+          "type": "string"
+        },
+        "status": {
+          "$ref": "#/definitions/v1ReportStatus"
+        },
+        "assignedAdminId": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1ReportStatus": {
+      "type": "string",
+      "enum": [
+        "REPORT_STATUS_UNSPECIFIED",
+        "REPORT_STATUS_PENDING",
+        "REPORT_STATUS_UNDER_REVIEW",
+        "REPORT_STATUS_RESOLVED",
+        "REPORT_STATUS_DISMISSED"
+      ],
+      "default": "REPORT_STATUS_UNSPECIFIED"
+    },
+    "v1ReportType": {
+      "type": "string",
+      "enum": [
+        "REPORT_TYPE_UNSPECIFIED",
+        "REPORT_TYPE_HARASSMENT",
+        "REPORT_TYPE_SPAM",
+        "REPORT_TYPE_INAPPROPRIATE_CONTENT",
+        "REPORT_TYPE_FRAUD",
+        "REPORT_TYPE_COPYRIGHT",
+        "REPORT_TYPE_OTHER"
+      ],
+      "default": "REPORT_TYPE_UNSPECIFIED"
+    },
+    "v1ResolveDisputeResponse": {
+      "type": "object",
+      "properties": {
+        "dispute": {
+          "$ref": "#/definitions/v1Dispute"
+        },
+        "refundIssued": {
+          "type": "boolean"
+        }
+      }
+    },
+    "v1ReviewFlaggedContentResponse": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "$ref": "#/definitions/v1FlaggedContent"
+        }
+      }
+    },
+    "v1RevokeVerificationResponse": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1SubscriptionTier": {
+      "type": "string",
+      "enum": [
+        "SUBSCRIPTION_TIER_UNSPECIFIED",
+        "SUBSCRIPTION_TIER_FREE",
+        "SUBSCRIPTION_TIER_PREMIUM",
+        "SUBSCRIPTION_TIER_PROFESSIONAL"
+      ],
+      "default": "SUBSCRIPTION_TIER_UNSPECIFIED",
+      "description": "- SUBSCRIPTION_TIER_FREE: Basic free tier\n - SUBSCRIPTION_TIER_PREMIUM: $5-10/month\n - SUBSCRIPTION_TIER_PROFESSIONAL: $15-20/month",
+      "title": "Subscription tier"
+    },
+    "v1SuspendUserResponse": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        },
+        "suspendedUntil": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "v1TimeSlot": {
+      "type": "object",
+      "properties": {
+        "day": {
+          "$ref": "#/definitions/v1DayOfWeek"
+        },
+        "startTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        },
+        "endTime": {
+          "type": "string",
+          "title": "Format: \"HH:MM\" (24-hour)"
+        }
+      },
+      "title": "Time slot for availability"
+    },
+    "v1ToggleFeatureFlagResponse": {
+      "type": "object",
+      "properties": {
+        "feature": {
+          "$ref": "#/definitions/v1FeatureFlag"
+        }
+      }
+    },
+    "v1UnsuspendUserResponse": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        }
+      }
+    },
+    "v1UpdatePlatformSettingsResponse": {
+      "type": "object",
+      "properties": {
+        "settings": {
+          "$ref": "#/definitions/v1PlatformSettings"
+        }
+      }
+    },
+    "v1User": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "displayName": {
+          "type": "string"
+        },
+        "bio": {
+          "type": "string"
+        },
+        "avatarUrl": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/commonv1Location"
+        },
+        "availability": {
+          "$ref": "#/definitions/v1Availability"
+        },
+        "status": {
+          "$ref": "#/definitions/v1UserStatus"
+        },
+        "subscriptionTier": {
+          "$ref": "#/definitions/v1SubscriptionTier"
+        },
+        "skillsOffered": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          },
+          "title": "Skills"
+        },
+        "skillsWanted": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "$ref": "#/definitions/v1UserSkill"
+          }
+        },
+        "averageRating": {
+          "type": "number",
+          "format": "double",
+          "title": "Stats"
+        },
+        "totalSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "completedSessions": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "totalReviews": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "title": "Metadata"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "lastActiveAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "isVerified": {
+          "type": "boolean",
+          "description": "Blue checkmark for trusted experts",
+          "title": "Premium features"
+        },
+        "certifications": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "title": "IDs of blockchain certifications"
+        }
+      },
+      "title": "User profile"
+    },
+    "v1UserSkill": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string"
+        },
+        "skillId": {
+          "type": "string"
+        },
+        "proficiencyLevel": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "proficiencyCategory": {
+          "$ref": "#/definitions/v1ProficiencyLevel"
+        },
+        "isOffered": {
+          "type": "boolean",
+          "title": "True if offering, false if wanting"
+        },
+        "acquiredAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "experienceDescription": {
+          "type": "string"
+        }
+      },
+      "title": "User skill association (offered or wanted)"
+    },
+    "v1UserStatus": {
+      "type": "string",
+      "enum": [
+        "USER_STATUS_UNSPECIFIED",
+        "USER_STATUS_ACTIVE",
+        "USER_STATUS_SUSPENDED",
+        "USER_STATUS_BANNED",
+        "USER_STATUS_DELETED"
+      ],
+      "default": "USER_STATUS_UNSPECIFIED",
+      "title": "User account status"
+    },
+    "v1VerifyExpertResponse": {
+      "type": "object",
+      "properties": {
+        "user": {
+          "$ref": "#/definitions/v1User"
+        },
+        "badgeUrl": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

@@ -30,7 +30,7 @@ public object ResetPasswordRequestKt {
     internal fun _build(): com.skillsphere.auth.v1.ResetPasswordRequest = _builder.build()
 
     /**
-     * `string reset_token = 1 [json_name = "resetToken"];`
+     * `string reset_token = 1 [json_name = "resetToken", (.buf.validate.field) = { ... }`
      */
     public var resetToken: kotlin.String
       @kotlin.jvm.JvmName("getResetToken")
@@ -40,14 +40,14 @@ public object ResetPasswordRequestKt {
         _builder.resetToken = value
       }
     /**
-     * `string reset_token = 1 [json_name = "resetToken"];`
+     * `string reset_token = 1 [json_name = "resetToken", (.buf.validate.field) = { ... }`
      */
     public fun clearResetToken() {
       _builder.clearResetToken()
     }
 
     /**
-     * `string new_password = 2 [json_name = "newPassword"];`
+     * `string new_password = 2 [json_name = "newPassword", (.buf.validate.field) = { ... }`
      */
     public var newPassword: kotlin.String
       @kotlin.jvm.JvmName("getNewPassword")
@@ -57,7 +57,7 @@ public object ResetPasswordRequestKt {
         _builder.newPassword = value
       }
     /**
-     * `string new_password = 2 [json_name = "newPassword"];`
+     * `string new_password = 2 [json_name = "newPassword", (.buf.validate.field) = { ... }`
      */
     public fun clearNewPassword() {
       _builder.clearNewPassword()

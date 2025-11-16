@@ -30,7 +30,7 @@ public object PaymentMethodInfoKt {
     internal fun _build(): com.skillsphere.payment.v1.PaymentMethodInfo = _builder.build()
 
     /**
-     * `string payment_method_id = 1 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 1 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public var paymentMethodId: kotlin.String
       @kotlin.jvm.JvmName("getPaymentMethodId")
@@ -40,14 +40,14 @@ public object PaymentMethodInfoKt {
         _builder.paymentMethodId = value
       }
     /**
-     * `string payment_method_id = 1 [json_name = "paymentMethodId"];`
+     * `string payment_method_id = 1 [json_name = "paymentMethodId", (.buf.validate.field) = { ... }`
      */
     public fun clearPaymentMethodId() {
       _builder.clearPaymentMethodId()
     }
 
     /**
-     * `.skillsphere.payment.v1.PaymentMethod type = 2 [json_name = "type"];`
+     * `.skillsphere.payment.v1.PaymentMethod type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.payment.v1.PaymentMethod
       @kotlin.jvm.JvmName("getType")
@@ -64,18 +64,14 @@ public object PaymentMethodInfoKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.payment.v1.PaymentMethod type = 2 [json_name = "type"];`
+     * `.skillsphere.payment.v1.PaymentMethod type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
     }
 
     /**
-     * ```
-     * Last 4 digits of card
-     * ```
-     *
-     * `string last_four = 3 [json_name = "lastFour"];`
+     * `string last_four = 3 [json_name = "lastFour", (.buf.validate.field) = { ... }`
      */
     public var lastFour: kotlin.String
       @kotlin.jvm.JvmName("getLastFour")
@@ -85,22 +81,14 @@ public object PaymentMethodInfoKt {
         _builder.lastFour = value
       }
     /**
-     * ```
-     * Last 4 digits of card
-     * ```
-     *
-     * `string last_four = 3 [json_name = "lastFour"];`
+     * `string last_four = 3 [json_name = "lastFour", (.buf.validate.field) = { ... }`
      */
     public fun clearLastFour() {
       _builder.clearLastFour()
     }
 
     /**
-     * ```
-     * Visa, Mastercard, etc.
-     * ```
-     *
-     * `string brand = 4 [json_name = "brand"];`
+     * `string brand = 4 [json_name = "brand", (.buf.validate.field) = { ... }`
      */
     public var brand: kotlin.String
       @kotlin.jvm.JvmName("getBrand")
@@ -110,18 +98,14 @@ public object PaymentMethodInfoKt {
         _builder.brand = value
       }
     /**
-     * ```
-     * Visa, Mastercard, etc.
-     * ```
-     *
-     * `string brand = 4 [json_name = "brand"];`
+     * `string brand = 4 [json_name = "brand", (.buf.validate.field) = { ... }`
      */
     public fun clearBrand() {
       _builder.clearBrand()
     }
 
     /**
-     * `int32 exp_month = 5 [json_name = "expMonth"];`
+     * `int32 exp_month = 5 [json_name = "expMonth", (.buf.validate.field) = { ... }`
      */
     public var expMonth: kotlin.Int
       @kotlin.jvm.JvmName("getExpMonth")
@@ -131,14 +115,14 @@ public object PaymentMethodInfoKt {
         _builder.expMonth = value
       }
     /**
-     * `int32 exp_month = 5 [json_name = "expMonth"];`
+     * `int32 exp_month = 5 [json_name = "expMonth", (.buf.validate.field) = { ... }`
      */
     public fun clearExpMonth() {
       _builder.clearExpMonth()
     }
 
     /**
-     * `int32 exp_year = 6 [json_name = "expYear"];`
+     * `int32 exp_year = 6 [json_name = "expYear", (.buf.validate.field) = { ... }`
      */
     public var expYear: kotlin.Int
       @kotlin.jvm.JvmName("getExpYear")
@@ -148,7 +132,7 @@ public object PaymentMethodInfoKt {
         _builder.expYear = value
       }
     /**
-     * `int32 exp_year = 6 [json_name = "expYear"];`
+     * `int32 exp_year = 6 [json_name = "expYear", (.buf.validate.field) = { ... }`
      */
     public fun clearExpYear() {
       _builder.clearExpYear()

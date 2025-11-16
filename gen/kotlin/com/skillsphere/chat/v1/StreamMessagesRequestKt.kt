@@ -30,7 +30,7 @@ public object StreamMessagesRequestKt {
     internal fun _build(): com.skillsphere.chat.v1.StreamMessagesRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,7 +40,7 @@ public object StreamMessagesRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
@@ -53,11 +53,7 @@ public object StreamMessagesRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class ConversationIdsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Empty for all conversations
-     * ```
-     *
-     * `repeated string conversation_ids = 2 [json_name = "conversationIds"];`
+     * `repeated string conversation_ids = 2 [json_name = "conversationIds", (.buf.validate.field) = { ... }`
      * @return A list containing the conversationIds.
      */
     public val conversationIds: com.google.protobuf.kotlin.DslList<kotlin.String, ConversationIdsProxy>
@@ -66,11 +62,7 @@ public object StreamMessagesRequestKt {
         _builder.conversationIdsList
       )
     /**
-     * ```
-     * Empty for all conversations
-     * ```
-     *
-     * `repeated string conversation_ids = 2 [json_name = "conversationIds"];`
+     * `repeated string conversation_ids = 2 [json_name = "conversationIds", (.buf.validate.field) = { ... }`
      * @param value The conversationIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -79,11 +71,7 @@ public object StreamMessagesRequestKt {
       _builder.addConversationIds(value)
     }
     /**
-     * ```
-     * Empty for all conversations
-     * ```
-     *
-     * `repeated string conversation_ids = 2 [json_name = "conversationIds"];`
+     * `repeated string conversation_ids = 2 [json_name = "conversationIds", (.buf.validate.field) = { ... }`
      * @param value The conversationIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -93,11 +81,7 @@ public object StreamMessagesRequestKt {
       add(value)
     }
     /**
-     * ```
-     * Empty for all conversations
-     * ```
-     *
-     * `repeated string conversation_ids = 2 [json_name = "conversationIds"];`
+     * `repeated string conversation_ids = 2 [json_name = "conversationIds", (.buf.validate.field) = { ... }`
      * @param values The conversationIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -106,11 +90,7 @@ public object StreamMessagesRequestKt {
       _builder.addAllConversationIds(values)
     }
     /**
-     * ```
-     * Empty for all conversations
-     * ```
-     *
-     * `repeated string conversation_ids = 2 [json_name = "conversationIds"];`
+     * `repeated string conversation_ids = 2 [json_name = "conversationIds", (.buf.validate.field) = { ... }`
      * @param values The conversationIds to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -120,11 +100,7 @@ public object StreamMessagesRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * Empty for all conversations
-     * ```
-     *
-     * `repeated string conversation_ids = 2 [json_name = "conversationIds"];`
+     * `repeated string conversation_ids = 2 [json_name = "conversationIds", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The conversationIds to set.
      */
@@ -133,11 +109,7 @@ public object StreamMessagesRequestKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, ConversationIdsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setConversationIds(index, value)
     }/**
-     * ```
-     * Empty for all conversations
-     * ```
-     *
-     * `repeated string conversation_ids = 2 [json_name = "conversationIds"];`
+     * `repeated string conversation_ids = 2 [json_name = "conversationIds", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setConversationIds")

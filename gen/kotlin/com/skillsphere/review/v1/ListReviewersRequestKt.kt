@@ -30,7 +30,7 @@ public object ListReviewersRequestKt {
     internal fun _build(): com.skillsphere.review.v1.ListReviewersRequest = _builder.build()
 
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public var skillId: kotlin.String
       @kotlin.jvm.JvmName("getSkillId")
@@ -40,14 +40,14 @@ public object ListReviewersRequestKt {
         _builder.skillId = value
       }
     /**
-     * `string skill_id = 1 [json_name = "skillId"];`
+     * `string skill_id = 1 [json_name = "skillId", (.buf.validate.field) = { ... }`
      */
     public fun clearSkillId() {
       _builder.clearSkillId()
     }
 
     /**
-     * `.skillsphere.review.v1.ReviewType type = 2 [json_name = "type"];`
+     * `.skillsphere.review.v1.ReviewType type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public var type: com.skillsphere.review.v1.ReviewType
       @kotlin.jvm.JvmName("getType")
@@ -64,7 +64,7 @@ public object ListReviewersRequestKt {
         _builder.typeValue = value
       }
     /**
-     * `.skillsphere.review.v1.ReviewType type = 2 [json_name = "type"];`
+     * `.skillsphere.review.v1.ReviewType type = 2 [json_name = "type", (.buf.validate.field) = { ... }`
      */
     public fun clearType() {
       _builder.clearType()
@@ -98,7 +98,7 @@ public object ListReviewersRequestKt {
       get() = _builder.maxPriceOrNull
 
     /**
-     * `int32 min_rating = 4 [json_name = "minRating"];`
+     * `int32 min_rating = 4 [json_name = "minRating", (.buf.validate.field) = { ... }`
      */
     public var minRating: kotlin.Int
       @kotlin.jvm.JvmName("getMinRating")
@@ -108,7 +108,7 @@ public object ListReviewersRequestKt {
         _builder.minRating = value
       }
     /**
-     * `int32 min_rating = 4 [json_name = "minRating"];`
+     * `int32 min_rating = 4 [json_name = "minRating", (.buf.validate.field) = { ... }`
      */
     public fun clearMinRating() {
       _builder.clearMinRating()

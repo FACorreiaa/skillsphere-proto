@@ -284,7 +284,7 @@ type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Email         string                 `protobuf:"bytes,1,opt,name=email,proto3" json:"email,omitempty"`
 	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
-	DeviceId      *string                `protobuf:"bytes,3,opt,name=device_id,json=deviceId,proto3,oneof" json:"device_id,omitempty"` // Optional for device tracking
+	DeviceId      *string                `protobuf:"bytes,3,opt,name=device_id,json=deviceId,proto3,oneof" json:"device_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -749,7 +749,7 @@ type ValidateTokenResponse struct {
 	IsValid       bool                   `protobuf:"varint,1,opt,name=is_valid,json=isValid,proto3" json:"is_valid,omitempty"`
 	UserId        string                 `protobuf:"bytes,2,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
 	ExpiresAt     *timestamppb.Timestamp `protobuf:"bytes,3,opt,name=expires_at,json=expiresAt,proto3" json:"expires_at,omitempty"`
-	Permissions   []string               `protobuf:"bytes,4,rep,name=permissions,proto3" json:"permissions,omitempty"` // e.g., "user:read", "session:create"
+	Permissions   []string               `protobuf:"bytes,4,rep,name=permissions,proto3" json:"permissions,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1003,7 +1003,7 @@ func (x *RequestPasswordResetRequest) GetEmail() string {
 type RequestPasswordResetResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Success       bool                   `protobuf:"varint,1,opt,name=success,proto3" json:"success,omitempty"`
-	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"` // "Email sent" or error message
+	Message       string                 `protobuf:"bytes,2,opt,name=message,proto3" json:"message,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1456,102 +1456,128 @@ var File_auth_v1_auth_proto protoreflect.FileDescriptor
 
 const file_auth_v1_auth_proto_rawDesc = "" +
 	"\n" +
-	"\x12auth/v1/auth.proto\x12\x13skillsphere.auth.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\x8b\x01\n" +
-	"\x0fRegisterRequest\x12\x1d\n" +
-	"\x05email\x18\x01 \x01(\tB\a\xbaH\x04r\x02`\x01R\x05email\x12\x1a\n" +
-	"\busername\x18\x02 \x01(\tR\busername\x12\x1a\n" +
-	"\bpassword\x18\x03 \x01(\tR\bpassword\x12!\n" +
-	"\fdisplay_name\x18\x04 \x01(\tR\vdisplayName\"\x9d\x02\n" +
-	"\x10RegisterResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
-	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\x129\n" +
+	"\x12auth/v1/auth.proto\x12\x13skillsphere.auth.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a\x1bbuf/validate/validate.proto\"\xb0\x01\n" +
+	"\x0fRegisterRequest\x12 \n" +
+	"\x05email\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x18\xfe\x01`\x01R\x05email\x12%\n" +
+	"\busername\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x03\x18\x1eR\busername\x12&\n" +
+	"\bpassword\x18\x03 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\b\x18\x80\x01R\bpassword\x12,\n" +
+	"\fdisplay_name\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\vdisplayName\"\xca\x02\n" +
+	"\x10RegisterResponse\x12\"\n" +
+	"\auser_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x06userId\x12-\n" +
+	"\faccess_token\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\vaccessToken\x12/\n" +
+	"\rrefresh_token\x18\x03 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\frefreshToken\x129\n" +
 	"\n" +
 	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12>\n" +
-	"\x1bemail_verification_required\x18\x05 \x01(\bR\x19emailVerificationRequired\x12-\n" +
-	"\x04role\x18\x06 \x01(\x0e2\x19.skillsphere.auth.v1.RoleR\x04role\"p\n" +
-	"\fLoginRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\x12 \n" +
-	"\tdevice_id\x18\x03 \x01(\tH\x00R\bdeviceId\x88\x01\x01B\f\n" +
+	"\x1bemail_verification_required\x18\x05 \x01(\bR\x19emailVerificationRequired\x127\n" +
+	"\x04role\x18\x06 \x01(\x0e2\x19.skillsphere.auth.v1.RoleB\b\xbaH\x05\x82\x01\x02\x10\x01R\x04role\"\x92\x01\n" +
+	"\fLoginRequest\x12 \n" +
+	"\x05email\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x18\xfe\x01`\x01R\x05email\x12&\n" +
+	"\bpassword\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\b\x18\x80\x01R\bpassword\x12*\n" +
+	"\tdevice_id\x18\x03 \x01(\tB\b\xbaH\x05r\x03\x18\x80\x01H\x00R\bdeviceId\x88\x01\x01B\f\n" +
 	"\n" +
-	"_device_id\"\xe1\x01\n" +
-	"\rLoginResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
-	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\x129\n" +
+	"_device_id\"\x84\x02\n" +
+	"\rLoginResponse\x12\"\n" +
+	"\auser_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x06userId\x12-\n" +
+	"\faccess_token\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\vaccessToken\x12/\n" +
+	"\rrefresh_token\x18\x03 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\frefreshToken\x129\n" +
 	"\n" +
 	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x124\n" +
-	"\x04user\x18\x05 \x01(\v2 .skillsphere.auth.v1.UserProfileR\x04user\"\xbb\x01\n" +
-	"\vUserProfile\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12\x14\n" +
-	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
-	"\busername\x18\x03 \x01(\tR\busername\x12!\n" +
-	"\fdisplay_name\x18\x04 \x01(\tR\vdisplayName\x12\x1d\n" +
+	"\x04user\x18\x05 \x01(\v2 .skillsphere.auth.v1.UserProfileR\x04user\"\xf5\x01\n" +
+	"\vUserProfile\x12\"\n" +
+	"\auser_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x06userId\x12 \n" +
+	"\x05email\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x18\xfe\x01`\x01R\x05email\x12%\n" +
+	"\busername\x18\x03 \x01(\tB\t\xbaH\x06r\x04\x10\x03\x18\x1eR\busername\x12,\n" +
+	"\fdisplay_name\x18\x04 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x18dR\vdisplayName\x12*\n" +
 	"\n" +
-	"avatar_url\x18\x05 \x01(\tR\tavatarUrl\x12\x1f\n" +
+	"avatar_url\x18\x05 \x01(\tB\v\xbaH\br\x06\x18\x80\x10\x88\x01\x01R\tavatarUrl\x12\x1f\n" +
 	"\vis_verified\x18\x06 \x01(\bR\n" +
-	"isVerified\"W\n" +
-	"\rLogoutRequest\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\"*\n" +
+	"isVerified\"o\n" +
+	"\rLogoutRequest\x12-\n" +
+	"\faccess_token\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\vaccessToken\x12/\n" +
+	"\rrefresh_token\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\frefreshToken\"*\n" +
 	"\x0eLogoutResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\":\n" +
-	"\x13RefreshTokenRequest\x12#\n" +
-	"\rrefresh_token\x18\x01 \x01(\tR\frefreshToken\"\x99\x01\n" +
-	"\x14RefreshTokenResponse\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x02 \x01(\tR\frefreshToken\x129\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"F\n" +
+	"\x13RefreshTokenRequest\x12/\n" +
+	"\rrefresh_token\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\frefreshToken\"\xb1\x01\n" +
+	"\x14RefreshTokenResponse\x12-\n" +
+	"\faccess_token\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\vaccessToken\x12/\n" +
+	"\rrefresh_token\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\frefreshToken\x129\n" +
 	"\n" +
-	"expires_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"9\n" +
-	"\x14ValidateTokenRequest\x12!\n" +
-	"\faccess_token\x18\x01 \x01(\tR\vaccessToken\"\xa8\x01\n" +
+	"expires_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\"E\n" +
+	"\x14ValidateTokenRequest\x12-\n" +
+	"\faccess_token\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\vaccessToken\"\xc5\x01\n" +
 	"\x15ValidateTokenResponse\x12\x19\n" +
-	"\bis_valid\x18\x01 \x01(\bR\aisValid\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\tR\x06userId\x129\n" +
+	"\bis_valid\x18\x01 \x01(\bR\aisValid\x12\"\n" +
+	"\auser_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x06userId\x129\n" +
 	"\n" +
-	"expires_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x12 \n" +
-	"\vpermissions\x18\x04 \x03(\tR\vpermissions\"\xa5\x01\n" +
-	"\x11OAuthLoginRequest\x12>\n" +
-	"\bprovider\x18\x01 \x01(\x0e2\".skillsphere.auth.v1.OAuthProviderR\bprovider\x12-\n" +
-	"\x12authorization_code\x18\x02 \x01(\tR\x11authorizationCode\x12!\n" +
-	"\fredirect_uri\x18\x03 \x01(\tR\vredirectUri\"\x86\x02\n" +
-	"\x12OAuthLoginResponse\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12!\n" +
-	"\faccess_token\x18\x02 \x01(\tR\vaccessToken\x12#\n" +
-	"\rrefresh_token\x18\x03 \x01(\tR\frefreshToken\x129\n" +
+	"expires_at\x18\x03 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x122\n" +
+	"\vpermissions\x18\x04 \x03(\tB\x10\xbaH\r\x92\x01\n" +
+	"\x102\"\x06r\x04\x10\x01\x18@R\vpermissions\"\xc8\x01\n" +
+	"\x11OAuthLoginRequest\x12H\n" +
+	"\bprovider\x18\x01 \x01(\x0e2\".skillsphere.auth.v1.OAuthProviderB\b\xbaH\x05\x82\x01\x02\x10\x01R\bprovider\x129\n" +
+	"\x12authorization_code\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x04R\x11authorizationCode\x12.\n" +
+	"\fredirect_uri\x18\x03 \x01(\tB\v\xbaH\br\x06\x18\x80\x10\x88\x01\x01R\vredirectUri\"\xa9\x02\n" +
+	"\x12OAuthLoginResponse\x12\"\n" +
+	"\auser_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x06userId\x12-\n" +
+	"\faccess_token\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\vaccessToken\x12/\n" +
+	"\rrefresh_token\x18\x03 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x10R\frefreshToken\x129\n" +
 	"\n" +
 	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt\x124\n" +
 	"\x04user\x18\x05 \x01(\v2 .skillsphere.auth.v1.UserProfileR\x04user\x12\x1e\n" +
-	"\vis_new_user\x18\x06 \x01(\bR\tisNewUser\"3\n" +
-	"\x1bRequestPasswordResetRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\"R\n" +
+	"\vis_new_user\x18\x06 \x01(\bR\tisNewUser\"?\n" +
+	"\x1bRequestPasswordResetRequest\x12 \n" +
+	"\x05email\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x18\xfe\x01`\x01R\x05email\"\\\n" +
 	"\x1cRequestPasswordResetResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\"Z\n" +
-	"\x14ResetPasswordRequest\x12\x1f\n" +
-	"\vreset_token\x18\x01 \x01(\tR\n" +
-	"resetToken\x12!\n" +
-	"\fnew_password\x18\x02 \x01(\tR\vnewPassword\"K\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\"\n" +
+	"\amessage\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\amessage\"r\n" +
+	"\x14ResetPasswordRequest\x12+\n" +
+	"\vreset_token\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x04R\n" +
+	"resetToken\x12-\n" +
+	"\fnew_password\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\b\x18\x80\x01R\vnewPassword\"U\n" +
 	"\x15ResetPasswordResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage\"~\n" +
-	"\x15ChangePasswordRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12)\n" +
-	"\x10current_password\x18\x02 \x01(\tR\x0fcurrentPassword\x12!\n" +
-	"\fnew_password\x18\x03 \x01(\tR\vnewPassword\"2\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\"\n" +
+	"\amessage\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\amessage\"\xa1\x01\n" +
+	"\x15ChangePasswordRequest\x12\"\n" +
+	"\auser_id\x18\x01 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x06userId\x125\n" +
+	"\x10current_password\x18\x02 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\b\x18\x80\x01R\x0fcurrentPassword\x12-\n" +
+	"\fnew_password\x18\x03 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\b\x18\x80\x01R\vnewPassword\"2\n" +
 	"\x16ChangePasswordResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\"C\n" +
-	"\x12VerifyEmailRequest\x12-\n" +
-	"\x12verification_token\x18\x01 \x01(\tR\x11verificationToken\"H\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\"O\n" +
+	"\x12VerifyEmailRequest\x129\n" +
+	"\x12verification_token\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x10\x01\x18\x80\x04R\x11verificationToken\"S\n" +
 	"\x13VerifyEmailResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x17\n" +
-	"\auser_id\x18\x02 \x01(\tR\x06userId\"6\n" +
-	"\x1eResendVerificationEmailRequest\x12\x14\n" +
-	"\x05email\x18\x01 \x01(\tR\x05email\"U\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\"\n" +
+	"\auser_id\x18\x02 \x01(\tB\t\xbaH\x06r\x04\x10\x01\x182R\x06userId\"B\n" +
+	"\x1eResendVerificationEmailRequest\x12 \n" +
+	"\x05email\x18\x01 \x01(\tB\n" +
+	"\xbaH\ar\x05\x18\xfe\x01`\x01R\x05email\"_\n" +
 	"\x1fResendVerificationEmailResponse\x12\x18\n" +
-	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\x18\n" +
-	"\amessage\x18\x02 \x01(\tR\amessage*\x9f\x01\n" +
+	"\asuccess\x18\x01 \x01(\bR\asuccess\x12\"\n" +
+	"\amessage\x18\x02 \x01(\tB\b\xbaH\x05r\x03\x18\xc8\x01R\amessage*\x9f\x01\n" +
 	"\rOAuthProvider\x12\x1e\n" +
 	"\x1aOAUTH_PROVIDER_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15OAUTH_PROVIDER_GOOGLE\x10\x01\x12\x19\n" +

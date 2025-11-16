@@ -30,7 +30,7 @@ public object GetSessionAnalyticsResponseKt {
     internal fun _build(): com.skillsphere.analytics.v1.GetSessionAnalyticsResponse = _builder.build()
 
     /**
-     * `int32 total_sessions = 1 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 1 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public var totalSessions: kotlin.Int
       @kotlin.jvm.JvmName("getTotalSessions")
@@ -40,14 +40,14 @@ public object GetSessionAnalyticsResponseKt {
         _builder.totalSessions = value
       }
     /**
-     * `int32 total_sessions = 1 [json_name = "totalSessions"];`
+     * `int32 total_sessions = 1 [json_name = "totalSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearTotalSessions() {
       _builder.clearTotalSessions()
     }
 
     /**
-     * `int32 completed_sessions = 2 [json_name = "completedSessions"];`
+     * `int32 completed_sessions = 2 [json_name = "completedSessions", (.buf.validate.field) = { ... }`
      */
     public var completedSessions: kotlin.Int
       @kotlin.jvm.JvmName("getCompletedSessions")
@@ -57,14 +57,14 @@ public object GetSessionAnalyticsResponseKt {
         _builder.completedSessions = value
       }
     /**
-     * `int32 completed_sessions = 2 [json_name = "completedSessions"];`
+     * `int32 completed_sessions = 2 [json_name = "completedSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearCompletedSessions() {
       _builder.clearCompletedSessions()
     }
 
     /**
-     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions"];`
+     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions", (.buf.validate.field) = { ... }`
      */
     public var cancelledSessions: kotlin.Int
       @kotlin.jvm.JvmName("getCancelledSessions")
@@ -74,14 +74,14 @@ public object GetSessionAnalyticsResponseKt {
         _builder.cancelledSessions = value
       }
     /**
-     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions"];`
+     * `int32 cancelled_sessions = 3 [json_name = "cancelledSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearCancelledSessions() {
       _builder.clearCancelledSessions()
     }
 
     /**
-     * `int32 no_show_sessions = 4 [json_name = "noShowSessions"];`
+     * `int32 no_show_sessions = 4 [json_name = "noShowSessions", (.buf.validate.field) = { ... }`
      */
     public var noShowSessions: kotlin.Int
       @kotlin.jvm.JvmName("getNoShowSessions")
@@ -91,14 +91,14 @@ public object GetSessionAnalyticsResponseKt {
         _builder.noShowSessions = value
       }
     /**
-     * `int32 no_show_sessions = 4 [json_name = "noShowSessions"];`
+     * `int32 no_show_sessions = 4 [json_name = "noShowSessions", (.buf.validate.field) = { ... }`
      */
     public fun clearNoShowSessions() {
       _builder.clearNoShowSessions()
     }
 
     /**
-     * `double completion_rate = 5 [json_name = "completionRate"];`
+     * `double completion_rate = 5 [json_name = "completionRate", (.buf.validate.field) = { ... }`
      */
     public var completionRate: kotlin.Double
       @kotlin.jvm.JvmName("getCompletionRate")
@@ -108,14 +108,14 @@ public object GetSessionAnalyticsResponseKt {
         _builder.completionRate = value
       }
     /**
-     * `double completion_rate = 5 [json_name = "completionRate"];`
+     * `double completion_rate = 5 [json_name = "completionRate", (.buf.validate.field) = { ... }`
      */
     public fun clearCompletionRate() {
       _builder.clearCompletionRate()
     }
 
     /**
-     * `double average_rating = 6 [json_name = "averageRating"];`
+     * `double average_rating = 6 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public var averageRating: kotlin.Double
       @kotlin.jvm.JvmName("getAverageRating")
@@ -125,14 +125,14 @@ public object GetSessionAnalyticsResponseKt {
         _builder.averageRating = value
       }
     /**
-     * `double average_rating = 6 [json_name = "averageRating"];`
+     * `double average_rating = 6 [json_name = "averageRating", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageRating() {
       _builder.clearAverageRating()
     }
 
     /**
-     * `double average_duration_minutes = 7 [json_name = "averageDurationMinutes"];`
+     * `double average_duration_minutes = 7 [json_name = "averageDurationMinutes", (.buf.validate.field) = { ... }`
      */
     public var averageDurationMinutes: kotlin.Double
       @kotlin.jvm.JvmName("getAverageDurationMinutes")
@@ -142,7 +142,7 @@ public object GetSessionAnalyticsResponseKt {
         _builder.averageDurationMinutes = value
       }
     /**
-     * `double average_duration_minutes = 7 [json_name = "averageDurationMinutes"];`
+     * `double average_duration_minutes = 7 [json_name = "averageDurationMinutes", (.buf.validate.field) = { ... }`
      */
     public fun clearAverageDurationMinutes() {
       _builder.clearAverageDurationMinutes()
@@ -155,7 +155,7 @@ public object GetSessionAnalyticsResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class MostExchangedSkillsProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills"];`
+     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills", (.buf.validate.field) = { ... }`
      * @return A list containing the mostExchangedSkills.
      */
     public val mostExchangedSkills: com.google.protobuf.kotlin.DslList<kotlin.String, MostExchangedSkillsProxy>
@@ -164,7 +164,7 @@ public object GetSessionAnalyticsResponseKt {
         _builder.mostExchangedSkillsList
       )
     /**
-     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills"];`
+     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills", (.buf.validate.field) = { ... }`
      * @param value The mostExchangedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -173,7 +173,7 @@ public object GetSessionAnalyticsResponseKt {
       _builder.addMostExchangedSkills(value)
     }
     /**
-     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills"];`
+     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills", (.buf.validate.field) = { ... }`
      * @param value The mostExchangedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -183,7 +183,7 @@ public object GetSessionAnalyticsResponseKt {
       add(value)
     }
     /**
-     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills"];`
+     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills", (.buf.validate.field) = { ... }`
      * @param values The mostExchangedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -192,7 +192,7 @@ public object GetSessionAnalyticsResponseKt {
       _builder.addAllMostExchangedSkills(values)
     }
     /**
-     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills"];`
+     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills", (.buf.validate.field) = { ... }`
      * @param values The mostExchangedSkills to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -202,7 +202,7 @@ public object GetSessionAnalyticsResponseKt {
       addAll(values)
     }
     /**
-     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills"];`
+     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The mostExchangedSkills to set.
      */
@@ -211,7 +211,7 @@ public object GetSessionAnalyticsResponseKt {
     public operator fun com.google.protobuf.kotlin.DslList<kotlin.String, MostExchangedSkillsProxy>.set(index: kotlin.Int, value: kotlin.String) {
       _builder.setMostExchangedSkills(index, value)
     }/**
-     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills"];`
+     * `repeated string most_exchanged_skills = 8 [json_name = "mostExchangedSkills", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("setMostExchangedSkills")
@@ -225,7 +225,7 @@ public object GetSessionAnalyticsResponseKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class PeakHoursProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours"];`
+     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours", (.buf.validate.field) = { ... }`
      */
      public val peakHours: com.google.protobuf.kotlin.DslList<com.skillsphere.analytics.v1.TimeSlotPopularity, PeakHoursProxy>
       @kotlin.jvm.JvmSynthetic
@@ -233,7 +233,7 @@ public object GetSessionAnalyticsResponseKt {
         _builder.peakHoursList
       )
     /**
-     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours"];`
+     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours", (.buf.validate.field) = { ... }`
      * @param value The peakHours to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -242,7 +242,7 @@ public object GetSessionAnalyticsResponseKt {
       _builder.addPeakHours(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours"];`
+     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours", (.buf.validate.field) = { ... }`
      * @param value The peakHours to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -252,7 +252,7 @@ public object GetSessionAnalyticsResponseKt {
       add(value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours"];`
+     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours", (.buf.validate.field) = { ... }`
      * @param values The peakHours to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -261,7 +261,7 @@ public object GetSessionAnalyticsResponseKt {
       _builder.addAllPeakHours(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours"];`
+     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours", (.buf.validate.field) = { ... }`
      * @param values The peakHours to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -271,7 +271,7 @@ public object GetSessionAnalyticsResponseKt {
       addAll(values)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours"];`
+     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The peakHours to set.
      */
@@ -281,7 +281,7 @@ public object GetSessionAnalyticsResponseKt {
       _builder.setPeakHours(index, value)
     }
     /**
-     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours"];`
+     * `repeated .skillsphere.analytics.v1.TimeSlotPopularity peak_hours = 9 [json_name = "peakHours", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearPeakHours")

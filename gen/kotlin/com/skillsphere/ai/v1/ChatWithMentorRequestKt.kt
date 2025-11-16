@@ -30,7 +30,7 @@ public object ChatWithMentorRequestKt {
     internal fun _build(): com.skillsphere.ai.v1.ChatWithMentorRequest = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,18 +40,14 @@ public object ChatWithMentorRequestKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * Optional for context
-     * ```
-     *
-     * `string session_id = 2 [json_name = "sessionId"];`
+     * `string session_id = 2 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public var sessionId: kotlin.String
       @kotlin.jvm.JvmName("getSessionId")
@@ -61,18 +57,14 @@ public object ChatWithMentorRequestKt {
         _builder.sessionId = value
       }
     /**
-     * ```
-     * Optional for context
-     * ```
-     *
-     * `string session_id = 2 [json_name = "sessionId"];`
+     * `string session_id = 2 [json_name = "sessionId", (.buf.validate.field) = { ... }`
      */
     public fun clearSessionId() {
       _builder.clearSessionId()
     }
 
     /**
-     * `string message = 3 [json_name = "message"];`
+     * `string message = 3 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public var message: kotlin.String
       @kotlin.jvm.JvmName("getMessage")
@@ -82,7 +74,7 @@ public object ChatWithMentorRequestKt {
         _builder.message = value
       }
     /**
-     * `string message = 3 [json_name = "message"];`
+     * `string message = 3 [json_name = "message", (.buf.validate.field) = { ... }`
      */
     public fun clearMessage() {
       _builder.clearMessage()
@@ -95,11 +87,7 @@ public object ChatWithMentorRequestKt {
     @kotlin.OptIn(com.google.protobuf.kotlin.OnlyForUseByGeneratedProtoCode::class)
     public class HistoryProxy private constructor() : com.google.protobuf.kotlin.DslProxy()
     /**
-     * ```
-     * Conversation history
-     * ```
-     *
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history", (.buf.validate.field) = { ... }`
      */
      public val history: com.google.protobuf.kotlin.DslList<com.skillsphere.ai.v1.ChatMessage, HistoryProxy>
       @kotlin.jvm.JvmSynthetic
@@ -107,11 +95,7 @@ public object ChatWithMentorRequestKt {
         _builder.historyList
       )
     /**
-     * ```
-     * Conversation history
-     * ```
-     *
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param value The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -120,11 +104,7 @@ public object ChatWithMentorRequestKt {
       _builder.addHistory(value)
     }
     /**
-     * ```
-     * Conversation history
-     * ```
-     *
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param value The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -134,11 +114,7 @@ public object ChatWithMentorRequestKt {
       add(value)
     }
     /**
-     * ```
-     * Conversation history
-     * ```
-     *
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param values The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -147,11 +123,7 @@ public object ChatWithMentorRequestKt {
       _builder.addAllHistory(values)
     }
     /**
-     * ```
-     * Conversation history
-     * ```
-     *
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param values The history to add.
      */
     @kotlin.jvm.JvmSynthetic
@@ -161,11 +133,7 @@ public object ChatWithMentorRequestKt {
       addAll(values)
     }
     /**
-     * ```
-     * Conversation history
-     * ```
-     *
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history", (.buf.validate.field) = { ... }`
      * @param index The index to set the value at.
      * @param value The history to set.
      */
@@ -175,11 +143,7 @@ public object ChatWithMentorRequestKt {
       _builder.setHistory(index, value)
     }
     /**
-     * ```
-     * Conversation history
-     * ```
-     *
-     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history"];`
+     * `repeated .skillsphere.ai.v1.ChatMessage history = 4 [json_name = "history", (.buf.validate.field) = { ... }`
      */
     @kotlin.jvm.JvmSynthetic
 @kotlin.jvm.JvmName("clearHistory")

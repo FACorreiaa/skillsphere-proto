@@ -30,7 +30,7 @@ public object ReactionKt {
     internal fun _build(): com.skillsphere.chat.v1.Reaction = _builder.build()
 
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public var userId: kotlin.String
       @kotlin.jvm.JvmName("getUserId")
@@ -40,18 +40,14 @@ public object ReactionKt {
         _builder.userId = value
       }
     /**
-     * `string user_id = 1 [json_name = "userId"];`
+     * `string user_id = 1 [json_name = "userId", (.buf.validate.field) = { ... }`
      */
     public fun clearUserId() {
       _builder.clearUserId()
     }
 
     /**
-     * ```
-     * Unicode emoji
-     * ```
-     *
-     * `string emoji = 2 [json_name = "emoji"];`
+     * `string emoji = 2 [json_name = "emoji", (.buf.validate.field) = { ... }`
      */
     public var emoji: kotlin.String
       @kotlin.jvm.JvmName("getEmoji")
@@ -61,11 +57,7 @@ public object ReactionKt {
         _builder.emoji = value
       }
     /**
-     * ```
-     * Unicode emoji
-     * ```
-     *
-     * `string emoji = 2 [json_name = "emoji"];`
+     * `string emoji = 2 [json_name = "emoji", (.buf.validate.field) = { ... }`
      */
     public fun clearEmoji() {
       _builder.clearEmoji()
