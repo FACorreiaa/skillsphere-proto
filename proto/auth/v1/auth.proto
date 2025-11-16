@@ -3,6 +3,7 @@ syntax = "proto3";
 package skillsphere.auth.v1;
 
 import "google/protobuf/timestamp.proto";
+import "buf/validate/validate.proto";
 
 option go_package = "github.com/FACorreiaa/skillsphere-proto/gen/go/auth/v1;authv1";
 
@@ -58,8 +59,15 @@ enum OAuthProvider {
 // Register
 // ============================================================================
 
+
+// Role
+enum Role {
+  IS_ADMIN_UNSPECIFIED = 0;
+  IS_MODERTOR = 1;
+  IS_USER = 2;
+}
 message RegisterRequest {
-  string email = 1;
+  string email = 1 [(buf.validate.field).string.email = true];
   string username = 2;
   string password = 3;
   string display_name = 4;
@@ -71,6 +79,7 @@ message RegisterResponse {
   string refresh_token = 3;
   google.protobuf.Timestamp expires_at = 4;
   bool email_verification_required = 5;
+  Role role = 6;
 }
 
 // ============================================================================
@@ -80,7 +89,7 @@ message RegisterResponse {
 message LoginRequest {
   string email = 1;
   string password = 2;
-  string device_id = 3;                 // Optional for device tracking
+  optional string device_id = 3;                 // Optional for device tracking
 }
 
 message LoginResponse {

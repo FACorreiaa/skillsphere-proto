@@ -13,5 +13,5 @@ breaking:
   use:
     - FILE
 deps:
-  - buf.build/googleapis/googleapis
-  - buf/validate/validate.proto
+  - buf.build/bufbuild/protovalidate
+  - buf.build/protocolbuffers/wellknowntypes:v21.12

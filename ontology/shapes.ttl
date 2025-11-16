@@ -1,0 +1,209 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix sk: <https://ontology.skillsphere.dev/schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix schema: <https://schema.org/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+sk:SkillAssociationShape a sh:NodeShape ;
+  sh:targetClass sk:SkillAssociation ;
+  sh:property [
+    sh:path sk:associationSkill ;
+    sh:minCount 1 ;
+    sh:class sk:Skill
+  ] ;
+  sh:property [
+    sh:path sk:proficiencyValue ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:integer ;
+    sh:minInclusive 1 ;
+    sh:maxInclusive 10
+  ] ;
+  sh:property [
+    sh:path sk:proficiencyLevel ;
+    sh:minCount 1 ;
+    sh:class sk:ProficiencyLevelConcept
+  ] ;
+  sh:property [
+    sh:path sk:experienceText ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1
+  ] .
+
+sk:SessionShape a sh:NodeShape ;
+  sh:targetClass sk:Session ;
+  sh:property [
+    sh:path sk:hasParticipant ;
+    sh:minCount 2 ;
+    sh:maxCount 2 ;
+    sh:class sk:User
+  ] ;
+  sh:property [
+    sh:path sk:initiatedBy ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class sk:User
+  ] ;
+  sh:property [
+    sh:path sk:sessionStatus ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class sk:SessionStatusConcept
+  ] ;
+  sh:property [
+    sh:path sk:scheduledStart ;
+    sh:minCount 1 ;
+    sh:datatype xsd:dateTime
+  ] ;
+  sh:property [
+    sh:path sk:scheduledEnd ;
+    sh:minCount 1 ;
+    sh:datatype xsd:dateTime
+  ] ;
+  sh:property [
+    sh:path sk:meetingUrl ;
+    sh:datatype xsd:anyURI ;
+    sh:maxCount 1
+  ] ;
+  sh:property [
+    sh:path sk:sessionNotes ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1
+  ] .
+
+sk:MatchShape a sh:NodeShape ;
+  sh:targetClass sk:Match ;
+  sh:property [
+    sh:path sk:matchTarget ;
+    sh:minCount 1 ;
+    sh:class sk:User
+  ] ;
+  sh:property [
+    sh:path sk:matchingAlgorithm ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class sk:MatchingAlgorithmConcept
+  ] ;
+  sh:property [
+    sh:path sk:matchScore ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:float ;
+    sh:minInclusive 0 ;
+    sh:maxInclusive 1
+  ] ;
+  sh:property [
+    sh:path sk:explainedBy ;
+    sh:class sk:SkillMatch
+  ] ;
+  sh:property [
+    sh:path sk:isMutual ;
+    sh:datatype xsd:boolean ;
+    sh:maxCount 1
+  ] .
+
+sk:SkillMatchShape a sh:NodeShape ;
+  sh:targetClass sk:SkillMatch ;
+  sh:property [
+    sh:path sk:skillComplement ;
+    sh:minCount 1 ;
+    sh:class sk:Skill
+  ] ;
+  sh:property [
+    sh:path sk:isComplementary ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:boolean
+  ] .
+
+sk:RecommendationShape a sh:NodeShape ;
+  sh:targetClass sk:Recommendation ;
+  sh:property [
+    sh:path sk:generatedFor ;
+    sh:minCount 1 ;
+    sh:class sk:User
+  ] ;
+  sh:property [
+    sh:path sk:recommendationType ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:class sk:RecommendationTypeConcept
+  ] ;
+  sh:property [
+    sh:path sk:recommendsItem ;
+    sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path sk:relevanceScore ;
+    sh:datatype xsd:float ;
+    sh:maxCount 1 ;
+    sh:minInclusive 0 ;
+    sh:maxInclusive 1
+  ] ;
+  sh:property [
+    sh:path sk:reasonText ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1
+  ] .
+
+sk:SkillEmbeddingShape a sh:NodeShape ;
+  sh:targetClass sk:SkillEmbedding ;
+  sh:property [
+    sh:path sk:embeddingVector ;
+    sh:minCount 1
+  ] ;
+  sh:property [
+    sh:path sk:modelVersion ;
+    sh:minCount 1 ;
+    sh:datatype xsd:string ;
+    sh:maxCount 1
+  ] ;
+  sh:property [
+    sh:path sk:embeddingForSkill ;
+    sh:maxCount 1 ;
+    sh:class sk:Skill
+  ] ;
+  sh:property [
+    sh:path sk:embeddingForUser ;
+    sh:maxCount 1 ;
+    sh:class sk:User
+  ] ;
+  sh:or (
+    [ a sh:NodeShape ; sh:property [ sh:path sk:embeddingForSkill ; sh:minCount 1 ] ]
+    [ a sh:NodeShape ; sh:property [ sh:path sk:embeddingForUser ; sh:minCount 1 ] ]
+  ) .
+
+sk:AvailabilityShape a sh:NodeShape ;
+  sh:targetClass sk:Availability ;
+  sh:property [
+    sh:path sk:availableDuring ;
+    sh:minCount 1 ;
+    sh:class sk:TimeSlot
+  ] ;
+  sh:property [
+    sh:path sk:availabilityTimezone ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string
+  ] .
+
+sk:TimeSlotShape a sh:NodeShape ;
+  sh:targetClass sk:TimeSlot ;
+  sh:property [
+    sh:path sk:dayOfWeek ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sk:startTime ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string
+  ] ;
+  sh:property [
+    sh:path sk:endTime ;
+    sh:minCount 1 ;
+    sh:maxCount 1 ;
+    sh:datatype xsd:string
+  ] .
